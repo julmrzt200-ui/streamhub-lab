@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.salive
+*.log
+app/src/main/cpp/native-lib.cpp
+
+# StreamHub additions
+*.apk
+*.aab
+*.jks
+*.keystore
+*.zip
+/app/build
+/navigation/build
+/retrofit-jsoup-converter/build

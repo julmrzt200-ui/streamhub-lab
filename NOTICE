@@ -1,0 +1,18 @@
+StreamHub
+Copyright 2026 StreamHub contributors
+
+This product is a modified version of "Streamflix Reborn" (version 1.7.235), itself a
+continuation of the original "Streamflix" project by Lory-Stan TANASI
+(https://github.com/stantanasi). Both are licensed under the Apache License, Version 2.0
+(see LICENSE). All original copyright, license and attribution notices are retained.
+
+Summary of modifications made for StreamHub (Apache-2.0, section 4(b)):
+  - Renamed the application, Gradle root project and Android package/applicationId to
+    com.streamhub.app; renamed StreamFlixApp to StreamHubApp and the native key library
+    (JNI symbols and library name) accordingly.
+  - Disabled the in-app updater (it pointed at the upstream release feed).
+  - Removed the upstream Telegram link; repointed the Help and Supabase-guide links.
+  - Removed the upstream git.gay release workflow; added a GitHub Actions debug build.
+  - Extracted extractor URL dispatch into Extractor.findExtractor (behaviour unchanged) and made
+    the extractor registry lazy.
+  - Added the VidplayTopExtractor integration point and unit tests for extractor dispatch.
