@@ -10,7 +10,6 @@ import com.streamhub.app.models.Category
 import com.streamhub.app.models.Episode
 import com.streamhub.app.models.Movie
 import com.streamhub.app.models.TvShow
-import com.streamhub.app.providers.AnimeOnlineNinjaProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.ui.UserDataNotifier
 import com.streamhub.app.utils.HomeCacheStore
@@ -427,10 +426,7 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
         currentProvider = provider
         val appContext = StreamHubApp.instance.applicationContext
         val cachedCategories = HomeCacheStore.read(appContext, provider)
-        val deferCachedHomeForClearance =
-                provider === AnimeOnlineNinjaProvider &&
-                        !AnimeOnlineNinjaProvider.hasCurrentClearanceCookie()
-        if (!cachedCategories.isNullOrEmpty() && !deferCachedHomeForClearance) {
+        if (!cachedCategories.isNullOrEmpty()) {
             _state.emit(State.SuccessLoading(cachedCategories))
         } else {
             _state.emit(State.Loading)
@@ -446,8 +442,6 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
             Log.e("HomeViewModel", "getHome: ", e)
             if (cachedCategories.isNullOrEmpty()) {
                 _state.emit(State.FailedLoading(e))
-            } else if (deferCachedHomeForClearance) {
-                _state.emit(State.SuccessLoading(cachedCategories))
             }
         }
     }

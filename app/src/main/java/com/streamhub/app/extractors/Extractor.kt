@@ -99,7 +99,6 @@ abstract class Extractor {
             VidzyExtractor(),
             GuploadExtractor(),
             StreamUpExtractor(),
-            EinschaltenExtractor(),
             VidLinkExtractor(),
             VidsrcRuExtractor(),
             VidflixExtractor(),

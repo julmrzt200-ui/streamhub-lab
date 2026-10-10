@@ -5,6 +5,7 @@ import android.graphics.drawable.PictureDrawable
 import android.webkit.CookieManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.module.AppGlideModule
 import com.caverock.androidsvg.SVG
@@ -92,7 +93,7 @@ class GlideCustomModule : AppGlideModule() {
         registry.replace(
             GlideUrl::class.java,
             InputStream::class.java,
-            AnimeOnlineNinjaCronetUrlLoader.Factory(context, okHttpClient),
+            OkHttpUrlLoader.Factory(okHttpClient),
         )
         registry.append(
             InputStream::class.java,

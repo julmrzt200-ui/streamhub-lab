@@ -26,9 +26,7 @@ object ArtworkRepair {
 
     fun shouldRepair(url: String?, error: GlideException?): Boolean {
         if (url.isNullOrBlank()) return false
-        return !isRemoteArtworkUrl(url) ||
-                containsFileNotFound(error) ||
-                isAnimeOnlineNinjaArtwork(url) && containsAuthFailure(error)
+        return !isRemoteArtworkUrl(url) || containsFileNotFound(error)
     }
 
     fun isRemoteArtworkUrl(url: String?): Boolean {
@@ -211,11 +209,6 @@ object ArtworkRepair {
     private fun Throwable.isHttpAuthFailure(): Boolean {
         val httpException = this as? HttpException ?: return false
         return httpException.statusCode == 401 || httpException.statusCode == 403
-    }
-
-    private fun isAnimeOnlineNinjaArtwork(url: String): Boolean {
-        val lower = url.lowercase()
-        return lower.contains("ww3.animeonline.ninja")
     }
 }
 

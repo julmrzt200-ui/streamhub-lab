@@ -12,8 +12,6 @@ import com.streamhub.app.extractors.VidzeeExtractor
 import com.streamhub.app.extractors.VixSrcExtractor
 import com.streamhub.app.extractors.VidLinkExtractor
 import com.streamhub.app.extractors.VidsrcRuExtractor
-import com.streamhub.app.extractors.EinschaltenExtractor
-import com.streamhub.app.extractors.FrembedExtractor
 import com.streamhub.app.extractors.VidflixExtractor
 import com.streamhub.app.extractors.VidrockExtractor
 import com.streamhub.app.extractors.VideasyExtractor
@@ -810,17 +808,12 @@ class TmdbProvider(override val language: String) : Provider {
 
                 servers.addAll(discoveredGermanServers)
 
-                if (videoType is Video.Type.Movie) {
-                    servers.add(EinschaltenExtractor().server(videoType))
-                }
-
                 VideasyExtractor()
                     .server(videoType, language)
                     ?.let { servers.add(it) }
             }
             "fr" -> {
                 // Solo server francesi
-                servers.addAll(FrembedExtractor(UserPreferences.getProviderCache(FrembedProvider, UserPreferences.PROVIDER_URL)).servers(videoType))
                 servers.addAll(AfterDarkExtractor(UserPreferences.getProviderCache(AfterDarkProvider, UserPreferences.PROVIDER_URL)).servers(videoType))
             }
             "es" -> {
@@ -872,7 +865,7 @@ class TmdbProvider(override val language: String) : Provider {
                 }
 
                 coroutineScope {
-                    val providers = listOf(CuevanaEuProvider, PelisplustoProvider, SoloLatinoProvider, CineCalidadProvider, PoseidonHD2Provider)
+                    val providers = listOf(CuevanaEuProvider, SoloLatinoProvider, CineCalidadProvider, PoseidonHD2Provider)
                     val deferred = providers.map { provider ->
                         async {
                             try {
@@ -971,13 +964,6 @@ class TmdbProvider(override val language: String) : Provider {
     ): List<GermanTmdbProvider> {
         val all = listOf(
             GermanTmdbProvider(
-                "vavoo",
-                "Vavoo VOD",
-                VavooVodProvider.DE,
-                movies = true,
-                tvShows = true,
-            ),
-            GermanTmdbProvider(
                 "hdfilme",
                 "HDFilme",
                 HDFilmeProvider,
@@ -988,13 +974,6 @@ class TmdbProvider(override val language: String) : Provider {
                 "megakino",
                 "MegaKino",
                 MEGAKinoProvider,
-                movies = true,
-                tvShows = true,
-            ),
-            GermanTmdbProvider(
-                "filmpalast",
-                "FilmPalast",
-                FilmPalastProvider,
                 movies = true,
                 tvShows = true,
             ),
@@ -1130,10 +1109,8 @@ class TmdbProvider(override val language: String) : Provider {
         key: String
     ): Provider? =
         when (key) {
-            "vavoo" -> VavooVodProvider.DE
             "hdfilme" -> HDFilmeProvider
             "megakino" -> MEGAKinoProvider
-            "filmpalast" -> FilmPalastProvider
             "kellerkino" -> KellerKinoProvider
             "serienstream" -> SerienStreamProvider
             "aniworld" -> AniWorldProvider

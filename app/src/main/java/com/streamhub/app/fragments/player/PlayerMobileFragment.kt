@@ -938,29 +938,14 @@ class PlayerMobileFragment : Fragment() {
 
         val softwareDecoder = PlayerSettingsView.Settings.SoftwareDecoder.isEnabled
 
-        val vavooTlsHost =
-            if (
-                UserPreferences.currentProvider
-                    ?.javaClass
-                    ?.simpleName == "VavooProvider"
-            ) {
-                runCatching {
-                    java.net.URI(video.source).host
-                }.getOrNull()
-            } else {
-                null
-            }
-
         val needsReinit =
             extraBuffering != currentExtraBuffering ||
-                softwareDecoder != currentSoftwareDecoder ||
-                vavooTlsHost != currentVavooTlsHost
+                softwareDecoder != currentSoftwareDecoder
 
         if (needsReinit) {
             initializePlayer(
                 extraBuffering,
-                softwareDecoder,
-                vavooTlsHost
+                softwareDecoder
             )
             player.playlistMetadata = MediaMetadata.Builder()
                 .setTitle(resolvePlayerTitle())
@@ -1505,7 +1490,6 @@ class PlayerMobileFragment : Fragment() {
 
     private var currentExtraBuffering = false
     private var currentSoftwareDecoder = false
-    private var currentVavooTlsHost: String? = null
 
     private fun buildPlayer(extraBuffering: Boolean): ExoPlayer {
         val loadControl = DefaultLoadControl.Builder()
@@ -1537,30 +1521,15 @@ class PlayerMobileFragment : Fragment() {
 
     private fun initializePlayer(
         extraBuffering: Boolean,
-        softwareDecoder: Boolean = currentSoftwareDecoder,
-        vavooTlsHost: String? = currentVavooTlsHost
+        softwareDecoder: Boolean = currentSoftwareDecoder
     ) {
         releasePlayer()
         currentExtraBuffering = extraBuffering
         currentSoftwareDecoder = softwareDecoder
-        currentVavooTlsHost = vavooTlsHost
 
         var tokenLogged = false
         val okHttpBuilder =
             NetworkClient.default.newBuilder()
-
-        if (!vavooTlsHost.isNullOrBlank()) {
-            com.streamhub.app.utils.VavooTls
-                .relaxForHost(
-                    okHttpBuilder,
-                    vavooTlsHost
-                )
-
-            android.util.Log.d(
-                "VavooTLS",
-                "Relaxed TLS enabled only for host: $vavooTlsHost"
-            )
-        }
 
         val okHttpClient = okHttpBuilder
             .addInterceptor { chain ->

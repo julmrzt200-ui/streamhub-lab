@@ -25,8 +25,6 @@ import com.streamhub.app.R
 import com.streamhub.app.databinding.ActivityMainMobileBinding
 import com.streamhub.app.fragments.player.PlayerMobileFragment
 import com.streamhub.app.providers.Cine24hProvider
-import com.streamhub.app.providers.FilmyOnlineCcProvider
-import com.streamhub.app.providers.GuardaSerieProvider
 import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.ZaluknijProvider
@@ -36,7 +34,6 @@ import com.streamhub.app.utils.ProviderChangeNotifier
 import com.streamhub.app.utils.ThemeManager
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.getCurrentFragment
-import com.streamhub.app.providers.AnimeOnlineNinjaProvider
 import kotlinx.coroutines.launch
 
 class MainMobileActivity : FragmentActivity() {
@@ -56,10 +53,7 @@ class MainMobileActivity : FragmentActivity() {
 
         super.onCreate(savedInstanceState)
 
-        AnimeOnlineNinjaProvider.init(this)
         Cine24hProvider.init(this)
-        FilmyOnlineCcProvider.init(this)
-        GuardaSerieProvider.init(this)
         ZaluknijProvider.init(this)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)

@@ -31,7 +31,6 @@ import com.streamhub.app.activities.main.MainMobileActivity
 import com.streamhub.app.backup.BackupRestoreManager
 import com.streamhub.app.backup.ProviderBackupContext
 import com.streamhub.app.database.AppDatabase
-import com.streamhub.app.providers.AnimeOnlineNinjaProvider
 import com.streamhub.app.providers.FrenchStreamProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.ProviderConfigUrl
@@ -372,7 +371,6 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
         }
 
         bindProviderDomainCheckButtons()
-        bindAnimeOnlineNinjaPreferredServer()
 
         findPreference<Preference>("CLEAR_RECENTLY_WATCHED")?.setOnPreferenceClickListener {
             androidx.appcompat.app.AlertDialog.Builder(requireContext())
@@ -840,11 +838,9 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
     private fun configurableDomainDefault(providerName: String?): String? =
         when (providerName) {
             "AniWorld" -> "https://aniworld.to/"
-            "Filmpalast" -> "https://filmpalast.to/"
             "HDFilme" -> "https://hdfilme.cafe/"
             "MEGAKino" -> "https://megakino12.com"
             "KinoGer" -> "https://kinoger.beer/"
-            "Einschalten" -> "https://einschalten.in"
             "Kellerkino" -> "https://www.kellerkino.com/"
             else -> null
         }
@@ -919,7 +915,6 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
         val isMoflix = UserPreferences.currentProvider is MStreamProvider
         val isCuevana = UserPreferences.currentProvider?.name == "Cuevana 3"
         val isPoseidon = UserPreferences.currentProvider?.name == "Poseidonhd2"
-        val isAnimeOnlineNinja = UserPreferences.currentProvider is AnimeOnlineNinjaProvider
         val hasGenericDomain =
             configurableDomainDefault(UserPreferences.currentProvider?.name) != null
         val hasConfigProvider = UserPreferences.currentProvider is ProviderConfigUrl
@@ -929,7 +924,6 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
                 isMoflix ||
                 isCuevana ||
                 isPoseidon ||
-                isAnimeOnlineNinja ||
                 hasGenericDomain
 
         findPreference<PreferenceCategory>("pc_generic_provider_domain_settings")?.isVisible =
@@ -939,7 +933,6 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
         findPreference<PreferenceCategory>("pc_moflix_settings")?.isVisible = isMoflix
         findPreference<PreferenceCategory>("pc_cuevana_settings")?.isVisible = isCuevana
         findPreference<PreferenceCategory>("pc_poseidon_settings")?.isVisible = isPoseidon
-        findPreference<PreferenceCategory>("pc_animeonlineninja_settings")?.isVisible = isAnimeOnlineNinja
         findPreference<PreferenceCategory>("pc_provider_empty_state")?.isVisible = !hasConfigProvider && !hasSpecificOptions
     }
 
@@ -1007,7 +1000,7 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
         }
 
         // PR1 generic German providers:
-        // AniWorld, FilmPalast, HDFilme, MEGAKino, Einschalten
+        // AniWorld, HDFilme, MEGAKino, KinoGer, Kellerkino
         findPreference<Preference>(
             "provider_domain_generic_check"
         )?.setOnPreferenceClickListener {
@@ -1124,31 +1117,6 @@ class SettingsMobileFragment : PreferenceFragmentCompat() {
                 }
             )
 
-            true
-        }
-    }
-
-    private fun bindAnimeOnlineNinjaPreferredServer() {
-        val preference = findPreference<ListPreference>("provider_animeonlineninja_preferred_server") ?: return
-        val currentValue = UserPreferences.getProviderCache(
-            AnimeOnlineNinjaProvider,
-            UserPreferences.PROVIDER_PREFERRED_SERVER
-        )
-        preference.value = currentValue
-        preference.summary = preference.entries
-            ?.getOrNull(preference.findIndexOfValue(currentValue))
-            ?: getString(R.string.settings_provider_animeonlineninja_preferred_server_summary)
-        preference.setOnPreferenceChangeListener { pref, newValue ->
-            val value = (newValue as String).trim()
-            UserPreferences.setProviderCache(
-                AnimeOnlineNinjaProvider,
-                UserPreferences.PROVIDER_PREFERRED_SERVER,
-                value
-            )
-            if (pref is ListPreference) {
-                pref.summary = pref.entries?.getOrNull(pref.findIndexOfValue(value))
-                    ?: getString(R.string.settings_provider_animeonlineninja_preferred_server_summary)
-            }
             true
         }
     }

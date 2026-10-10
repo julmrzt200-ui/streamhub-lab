@@ -4,6 +4,7 @@ import android.util.Base64
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -11,6 +12,7 @@ import com.streamhub.app.models.doramasflix.ApiResponse
 import com.streamhub.app.models.doramasflix.TokenModel
 import com.streamhub.app.models.doramasflix.VideoToken
 import com.streamhub.app.utils.DnsResolver
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import okhttp3.Cache
@@ -56,12 +58,16 @@ object DoramasflixProvider : Provider {
         .create(DoramasflixService::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
-        val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
+        val cacheDir = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()
+        val appCache = cacheDir?.let { Cache(File(it, "doramasflix-okhttp-cache"), 10 * 1024 * 1024) }
 
         val clientBuilder = OkHttpClient.Builder()
-            .cache(appCache)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
+
+        if (appCache != null) {
+            clientBuilder.cache(appCache)
+        }
 
         return clientBuilder.dns(DnsResolver.doh).build()
     }
@@ -152,6 +158,7 @@ object DoramasflixProvider : Provider {
                 categories
             }
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             emptyList()
         }
     }
@@ -165,8 +172,9 @@ object DoramasflixProvider : Provider {
             )
         }
 
+        val escapedQuery = Gson().toJson(query)
         val searchQuery = """
-            {"operationName":"searchAll","variables":{"input":"$query"},"query":"query searchAll(${'$'}input: String!) {\n  searchDorama(input: ${'$'}input, limit: 32) {\n    _id\n    slug\n    name\n    name_es\n    poster_path\n    poster\n    __typename\n  }\n  searchMovie(input: ${'$'}input, limit: 32) {\n    _id\n    name\n    name_es\n    slug\n    poster_path\n    poster\n    __typename\n  }\n}\n"}
+            {"operationName":"searchAll","variables":{"input":$escapedQuery},"query":"query searchAll(${'$'}input: String!) {\n  searchDorama(input: ${'$'}input, limit: 32) {\n    _id\n    slug\n    name\n    name_es\n    poster_path\n    poster\n    __typename\n  }\n  searchMovie(input: ${'$'}input, limit: 32) {\n    _id\n    name\n    name_es\n    slug\n    poster_path\n    poster\n    __typename\n  }\n}\n"}
         """.trimIndent()
         val body = searchQuery.toRequestBody("application/json".toMediaType())
 
@@ -196,6 +204,7 @@ object DoramasflixProvider : Provider {
 
             results
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             emptyList()
         }
     }
@@ -216,6 +225,7 @@ object DoramasflixProvider : Provider {
                 )
             } ?: emptyList()
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             emptyList()
         }
     }
@@ -236,6 +246,7 @@ object DoramasflixProvider : Provider {
                 )
             } ?: emptyList()
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             emptyList()
         }
     }
@@ -262,6 +273,7 @@ object DoramasflixProvider : Provider {
                 poster = getPosterUrl(movieData.get("poster_path")?.asString ?: movieData.get("poster")?.asString),
             )
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             throw Exception("No se pudieron cargar los detalles de la película: ${e.message}")
         }
     }
@@ -306,13 +318,14 @@ object DoramasflixProvider : Provider {
                 seasons = seasons
             )
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             throw Exception("No se pudieron cargar los detalles del dorama: ${e.message}")
         }
     }
 
     override suspend fun getEpisodesBySeason(seasonId: String): List<Episode> {
         val doramaId = seasonId.substringBefore("/")
-        val seasonNumber = seasonId.substringAfter("/").toInt()
+        val seasonNumber = seasonId.substringAfter("/").toIntOrNull() ?: 1
 
         val episodeQuery = """
             {"operationName":"listEpisodes","variables":{"serie_id":"$doramaId","season_number":$seasonNumber},"query":"query listEpisodes(${'$'}season_number: Float!, ${'$'}serie_id: MongoID!) {\n  listEpisodes(sort: NUMBER_ASC, filter: {type_serie: \"dorama\", serie_id: ${'$'}serie_id, season_number: ${'$'}season_number}) {\n    _id\n    name\n    slug\n    episode_number\n    season_number\n    still_path\n    __typename\n  }\n}\n"}
@@ -330,6 +343,7 @@ object DoramasflixProvider : Provider {
                 )
             } ?: emptyList()
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             emptyList()
         }
     }
@@ -358,13 +372,18 @@ object DoramasflixProvider : Provider {
 
             if (linksOnline != null && linksOnline.size() > 0) {
                 return linksOnline.mapNotNull { serverElement ->
-                    val serverObject = serverElement.asJsonObject
-                    val serverUrl = serverObject.get("link")?.asString ?: return@mapNotNull null
-                    val lang = serverObject.get("lang")?.asString?.getLang() ?: ""
-                    val serverName = URL(serverUrl).host.split(".").first { it != "www" }.replaceFirstChar { it.titlecase(Locale.ROOT) }
+                    try {
+                        val serverObject = serverElement.asJsonObject
+                        val serverUrl = serverObject.get("link")?.asString ?: return@mapNotNull null
+                        val lang = serverObject.get("lang")?.asString?.getLang() ?: ""
+                        val serverName = URL(serverUrl).host.split(".").first { it != "www" }.replaceFirstChar { it.titlecase(Locale.ROOT) }
 
-                    val finalUrl = getRealLink(serverUrl)
-                    Video.Server(id = finalUrl, name = "$serverName $lang".trim())
+                        val finalUrl = getRealLink(serverUrl)
+                        Video.Server(id = finalUrl, name = "$serverName $lang".trim())
+                    } catch (e: Exception) {
+                        if (e is CancellationException) throw e
+                        null
+                    }
                 }
             }
 
@@ -373,19 +392,25 @@ object DoramasflixProvider : Provider {
                 .map { it.value }
 
             return problems.mapNotNull { problemElement ->
-                val serverData = problemElement.asJsonObject
-                    .getAsJsonObject("server")
-                    ?.getAsJsonObject("json")
+                try {
+                    val serverData = problemElement.asJsonObject
+                        .getAsJsonObject("server")
+                        ?.getAsJsonObject("json")
 
-                val serverUrl = serverData?.get("link")?.asString ?: return@mapNotNull null
-                val lang = serverData.get("lang")?.asString?.getLang() ?: ""
-                val serverName = URL(serverUrl).host.split(".").first { it != "www" }.replaceFirstChar { it.titlecase(Locale.ROOT) }
+                    val serverUrl = serverData?.get("link")?.asString ?: return@mapNotNull null
+                    val lang = serverData.get("lang")?.asString?.getLang() ?: ""
+                    val serverName = URL(serverUrl).host.split(".").first { it != "www" }.replaceFirstChar { it.titlecase(Locale.ROOT) }
 
-                val finalUrl = getRealLink(serverUrl)
-                Video.Server(id = finalUrl, name = "$serverName $lang".trim())
+                    val finalUrl = getRealLink(serverUrl)
+                    Video.Server(id = finalUrl, name = "$serverName $lang".trim())
+                } catch (e: Exception) {
+                    if (e is CancellationException) throw e
+                    null
+                }
             }.distinctBy { it.id }
 
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             return emptyList()
         }
     }
@@ -405,6 +430,7 @@ object DoramasflixProvider : Provider {
             val videoResponse = service.postApi("https://fkplayer.xyz/api/decoding", requestBody)
             String(Base64.decode(videoResponse.link, Base64.DEFAULT))
         } catch (e: Exception) {
+            if (e is CancellationException) throw e
             link
         }
     }
@@ -420,14 +446,19 @@ object DoramasflixProvider : Provider {
                     {"operationName":"listDoramas","variables":{"page":$page,"sort":"CREATEDAT_DESC","perPage":32,"filter":{"isTVShow":true}},"query":"query listDoramas(${'$'}page: Int, ${'$'}perPage: Int, ${'$'}sort: SortFindManyDoramaInput, ${'$'}filter: FilterFindManyDoramaInput) {\n  paginationDorama(page: ${'$'}page, perPage: ${'$'}perPage, sort: ${'$'}sort, filter: ${'$'}filter) {\n    items {\n      _id\n      name\n      name_es\n      slug\n      poster_path\n      poster\n      __typename\n    }\n  }\n}\n"}
                 """.trimIndent()
                 val body = query.toRequestBody("application/json".toMediaType())
-                val response = service.getApiResponse(body)
-                response.data?.paginationDorama?.items?.map {
-                    TvShow(
-                        id = it.slug,
-                        title = "${it.name} (${it.nameEs ?: ""})".trim(),
-                        poster = getPosterUrl(it.posterPath ?: it.poster)
-                    )
-                } ?: emptyList()
+                try {
+                    val response = service.getApiResponse(body)
+                    response.data?.paginationDorama?.items?.map {
+                        TvShow(
+                            id = "doramas-online/${it.slug}",
+                            title = "${it.name} (${it.nameEs ?: ""})".trim(),
+                            poster = getPosterUrl(it.posterPath ?: it.poster)
+                        )
+                    } ?: emptyList()
+                } catch (e: Exception) {
+                    if (e is CancellationException) throw e
+                    emptyList()
+                }
             }
             else -> getTvShows(page)
         }
