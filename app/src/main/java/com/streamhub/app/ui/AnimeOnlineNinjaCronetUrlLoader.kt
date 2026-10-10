@@ -11,7 +11,6 @@ import com.bumptech.glide.load.model.ModelLoaderFactory
 import com.bumptech.glide.load.model.MultiModelLoaderFactory
 import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader
 import com.bumptech.glide.signature.ObjectKey
-import com.streamhub.app.utils.AnimeOnlineNinjaCronetClient
 import com.streamhub.app.providers.AnimeOnlineNinjaProvider
 import com.streamhub.app.utils.ArtworkRequestHeaders
 import com.streamhub.app.utils.NetworkClient
@@ -64,7 +63,7 @@ class AnimeOnlineNinjaCronetUrlLoader(
         private val context: Context,
         private val model: GlideUrl,
     ) : DataFetcher<InputStream> {
-        private var call: AnimeOnlineNinjaCronetClient.Call? = null
+        private var call: okhttp3.Call? = null
         private var stream: InputStream? = null
 
         override fun loadData(priority: Priority, callback: DataFetcher.DataCallback<in InputStream>) {
@@ -81,23 +80,28 @@ class AnimeOnlineNinjaCronetUrlLoader(
                     ?.let { put("Cookie", it) }
             }
 
-            call = AnimeOnlineNinjaCronetClient.get(context, requestUrl, headers) { result ->
-                result.fold(
-                    onSuccess = { response ->
-                        if (!response.isSuccessful) {
-                            callback.onLoadFailed(IllegalStateException("Cronet image HTTP ${response.statusCode}: $requestUrl"))
-                        } else {
-                            ByteArrayInputStream(response.body).also {
-                                stream = it
-                                callback.onDataReady(it)
-                            }
+            val requestBuilder = okhttp3.Request.Builder().url(requestUrl)
+            headers.forEach { (key, value) -> requestBuilder.header(key, value) }
+            val request = requestBuilder.build()
+
+            call = NetworkClient.default.newCall(request)
+            call?.enqueue(object : okhttp3.Callback {
+                override fun onFailure(call: okhttp3.Call, e: java.io.IOException) {
+                    callback.onLoadFailed(e)
+                }
+
+                override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
+                    if (!response.isSuccessful) {
+                        callback.onLoadFailed(IllegalStateException("Cronet image HTTP ${response.code}: $requestUrl"))
+                    } else {
+                        val bodyBytes = response.body?.bytes() ?: ByteArray(0)
+                        ByteArrayInputStream(bodyBytes).also {
+                            stream = it
+                            callback.onDataReady(it)
                         }
-                    },
-                    onFailure = { error ->
-                        callback.onLoadFailed(error as? Exception ?: RuntimeException(error))
-                    },
-                )
-            }
+                    }
+                }
+            })
         }
 
         override fun cleanup() {

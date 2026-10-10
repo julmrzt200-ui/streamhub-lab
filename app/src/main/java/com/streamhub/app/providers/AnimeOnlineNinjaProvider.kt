@@ -15,7 +15,6 @@ import com.streamhub.app.models.Season
 import com.streamhub.app.models.Show
 import com.streamhub.app.models.TvShow
 import com.streamhub.app.models.Video
-import com.streamhub.app.utils.AnimeOnlineNinjaCronetClient
 import com.streamhub.app.utils.ArtworkRequestHeaders
 import com.streamhub.app.utils.NetworkClient
 import com.streamhub.app.utils.WebViewResolver
@@ -61,7 +60,6 @@ object AnimeOnlineNinjaProvider : Provider {
 
     fun init(context: Context) {
         webViewResolver = WebViewResolver(context)
-        AnimeOnlineNinjaCronetClient.init(context)
         syncClearanceCookieState()
     }
 
@@ -239,13 +237,10 @@ object AnimeOnlineNinjaProvider : Provider {
 
     private suspend fun fetchJsonDirect(url: String, referer: String): String? {
         val headers = pageHeaders(referer) + ("Accept" to "application/json,text/plain,*/*")
-        val response = AnimeOnlineNinjaCronetClient.get(
-            context = StreamHubApp.instance,
-            url = url,
-            headers = headers,
-            useCache = false,
-        )
-        val body = response.bodyAsString()
+        val requestBuilder = okhttp3.Request.Builder().url(url)
+        headers.forEach { (key, value) -> requestBuilder.header(key, value) }
+        val response = NetworkClient.default.newCall(requestBuilder.build()).execute()
+        val body = response.body?.string() ?: ""
         val trimmed = body.trim()
 
         if (response.isSuccessful &&
@@ -254,7 +249,7 @@ object AnimeOnlineNinjaProvider : Provider {
             return trimmed
         }
 
-        if (requiresClearance(body) || response.finalUrl.contains("/cdn-cgi/", ignoreCase = true)) {
+        if (requiresClearance(body) || response.request.url.toString().contains("/cdn-cgi/", ignoreCase = true)) {
             Log.w(TAG, "Cronet JSON received a challenge -> url=$url")
             throw ChallengeRequiredException(
                 message = "AnimeOnline Ninja Cloudflare challenge detected for $url",
@@ -262,7 +257,7 @@ object AnimeOnlineNinjaProvider : Provider {
             )
         }
         if (!response.isSuccessful || body.isBlank()) {
-            Log.w(TAG, "Cronet JSON rejected -> code=${response.statusCode} url=$url")
+            Log.w(TAG, "Cronet JSON rejected -> code=${response.code} url=$url")
             return null
         }
         return null
@@ -1090,21 +1085,19 @@ object AnimeOnlineNinjaProvider : Provider {
     }
 
     private suspend fun resolveServers(embedUrl: String, source: Int, pageUrl: String): List<Video.Server> {
-        val response = AnimeOnlineNinjaCronetClient.get(
-            context = StreamHubApp.instance,
-            url = embedUrl,
-            headers = mapOf(
+        val headers = mapOf(
                 "Referer" to pageUrl,
                 "User-Agent" to NetworkClient.USER_AGENT,
                 "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                 "Accept-Language" to "es-ES,es;q=0.9,en-US;q=0.8,en;q=0.7",
-            ),
-            useCache = false,
-        )
+            )
+        val requestBuilder = okhttp3.Request.Builder().url(embedUrl)
+        headers.forEach { (key, value) -> requestBuilder.header(key, value) }
+        val response = NetworkClient.default.newCall(requestBuilder.build()).execute()
         if (!response.isSuccessful) {
-            throw IllegalStateException("Cronet embed HTTP ${response.statusCode}: $embedUrl")
+            throw IllegalStateException("Cronet embed HTTP ${response.code}: $embedUrl")
         }
-        val document = Jsoup.parse(response.bodyAsString(), response.finalUrl)
+        val document = Jsoup.parse(response.body?.string() ?: "", response.request.url.toString())
         val servers = linkedMapOf<String, Video.Server>()
 
         document.select("li[onclick*='go_to_player']").forEachIndexed { index, element ->
@@ -1259,37 +1252,34 @@ object AnimeOnlineNinjaProvider : Provider {
 
     private suspend fun fetchDocumentDirect(url: String): Document? {
         val headers = pageHeaders(baseUrl)
-        val response = AnimeOnlineNinjaCronetClient.get(
-            context = StreamHubApp.instance,
-            url = url,
-            headers = headers,
-            useCache = false,
-        )
-        val body = response.bodyAsString()
+        val requestBuilder = okhttp3.Request.Builder().url(url)
+        headers.forEach { (key, value) -> requestBuilder.header(key, value) }
+        val response = NetworkClient.default.newCall(requestBuilder.build()).execute()
+        val body = response.body?.string() ?: ""
 
         // Cloudflare may append challenge-related scripts or tokenized links to a
         // normal WordPress page. Accept a successful, recognizable provider page
         // before inspecting those incidental markers.
         if (response.isSuccessful &&
             body.isNotBlank() &&
-            hasUsableSiteContent(body, response.finalUrl)
+            hasUsableSiteContent(body, response.request.url.toString())
         ) {
-            return Jsoup.parse(body, response.finalUrl).apply { setBaseUri(response.finalUrl) }
+            return Jsoup.parse(body, response.request.url.toString()).apply { setBaseUri(response.request.url.toString()) }
         }
 
-        if (requiresClearance(body) || response.finalUrl.contains("/cdn-cgi/", ignoreCase = true)) {
-            Log.w(TAG, "Cronet page received a challenge -> url=${response.finalUrl}")
+        if (requiresClearance(body) || response.request.url.toString().contains("/cdn-cgi/", ignoreCase = true)) {
+            Log.w(TAG, "Cronet page received a challenge -> url=${response.request.url.toString()}")
             throw ChallengeRequiredException(
                 message = "AnimeOnline Ninja Cloudflare challenge detected for $url",
                 rejectedClearance = clearanceToken(headers["Cookie"]),
             )
         }
         if (!response.isSuccessful || body.isBlank()) {
-            Log.w(TAG, "Cronet page rejected -> code=${response.statusCode} url=$url")
+            Log.w(TAG, "Cronet page rejected -> code=${response.code} url=$url")
             return null
         }
 
-        Log.w(TAG, "Cronet page was incomplete -> url=${response.finalUrl} size=${body.length}")
+        Log.w(TAG, "Cronet page was incomplete -> url=${response.request.url.toString()} size=${body.length}")
         return null
     }
 
