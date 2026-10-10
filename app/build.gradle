@@ -24,8 +24,17 @@ android {
     compileSdk 36
     ndkVersion "26.1.10909125"
 
+    // Keep local.properties optional: it is machine-specific and intentionally not committed.
+    // CI and developer builds without optional API keys must still configure and compile.
     def properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def localPropertiesFile = project.rootProject.file('local.properties')
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.withInputStream { properties.load(it) }
+    }
+    def appLayoutValue = properties.getProperty('APP_LAYOUT', 'universal')
+    def tmdbApiKeyValue = properties.getProperty('TMDB_API_KEY', '')
+    def subdlApiKeyValue = properties.getProperty('SUBDL_API_KEY', '')
+    def rabbitstreamApiValue = properties.getProperty('RABBITSTREAM_SOURCE_API', '')
 
     defaultConfig {
         applicationId "com.streamhub.app"
@@ -34,10 +43,10 @@ android {
         versionCode 164
         versionName "1.7.235"
 
-        buildConfigField "String", "APP_LAYOUT", "\"${properties.getProperty("APP_LAYOUT")}\""
-        buildConfigField "String", "TMDB_API_KEY", "\"${properties.getProperty("TMDB_API_KEY")}\""
-        buildConfigField "String", "SUBDL_API_KEY", "\"${properties.getProperty("SUBDL_API_KEY")}\""
-        buildConfigField "String", "RABBITSTREAM_SOURCE_API", "\"${properties.getProperty("RABBITSTREAM_SOURCE_API")}\""
+        buildConfigField "String", "APP_LAYOUT", "\"${appLayoutValue}\""
+        buildConfigField "String", "TMDB_API_KEY", "\"${tmdbApiKeyValue}\""
+        buildConfigField "String", "SUBDL_API_KEY", "\"${subdlApiKeyValue}\""
+        buildConfigField "String", "RABBITSTREAM_SOURCE_API", "\"${rabbitstreamApiValue}\""
 
         if (file("src/main/cpp/native-lib.cpp").exists()) {
             externalNativeBuild {
@@ -59,7 +68,7 @@ android {
 
     sourceSets {
         main {
-            def appLayout = properties.getProperty("APP_LAYOUT")
+            def appLayout = appLayoutValue
             if (appLayout == "mobile") {
                 manifest.srcFile "${project.rootDir}/app/src/main/mobile/AndroidManifest.xml"
             } else if (appLayout == "tv") {

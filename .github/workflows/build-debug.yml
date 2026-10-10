@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # "universal" = original default build (mobile + TV in one APK); the others are layout-specific.
+        # Universal keeps phone and TV support in one APK; mobile/tv validate their manifests.
         layout: [ universal, mobile, tv ]
     steps:
       - name: Checkout
@@ -27,17 +27,16 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+          cache: gradle
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          packages: |
+            platform-tools
+            platforms;android-36
+            build-tools;36.0.0
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      # The build reads local.properties (it is git-ignored). API keys are OPTIONAL for a debug build:
-      # without them the related features (TMDb metadata, SubDL, Rabbitstream) simply stay unconfigured.
       - name: Create local.properties
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
@@ -54,12 +53,13 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Unit tests
-        if: matrix.layout == 'universal'
-        run: ./gradlew :app:testDebugUnitTest --stacktrace
+      - name: Run unit tests
+        shell: bash
+        run: set -o pipefail; ./gradlew :app:testDebugUnitTest --stacktrace 2>&1 | tee gradle-test.log
 
       - name: Build debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace
+        shell: bash
+        run: set -o pipefail; ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee gradle-build.log
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
@@ -67,11 +67,17 @@ jobs:
           name: streamhub-debug-${{ matrix.layout }}
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+          retention-days: 14
 
-      - name: Upload unit test reports
-        if: always() && matrix.layout == 'universal'
+      - name: Upload Gradle logs and test reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: unit-test-reports
-          path: app/build/reports/tests/
+          name: streamhub-diagnostics-${{ matrix.layout }}
+          path: |
+            gradle-test.log
+            gradle-build.log
+            app/build/reports/tests/
+            app/build/test-results/testDebugUnitTest/
           if-no-files-found: ignore
+          retention-days: 14
