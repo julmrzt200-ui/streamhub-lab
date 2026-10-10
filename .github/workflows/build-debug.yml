@@ -18,6 +18,7 @@ jobs:
       matrix:
         # Universal keeps phone and TV support in one APK; mobile/tv validate their manifests.
         layout: [ universal, mobile, tv ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,10 +33,7 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: |
-            platform-tools
-            platforms;android-36
-            build-tools;36.0.0
+          packages: "platform-tools,platforms;android-36,build-tools;36.0.0"
 
       - name: Create local.properties
         env:
