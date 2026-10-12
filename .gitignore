@@ -17,6 +17,7 @@ app/src/main/cpp/native-lib.cpp
 *.aab
 *.jks
 *.keystore
+!app/debug.keystore
 *.zip
 /app/build
 /navigation/build

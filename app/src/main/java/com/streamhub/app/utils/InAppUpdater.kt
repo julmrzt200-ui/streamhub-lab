@@ -14,12 +14,63 @@ import kotlin.math.max
 
 object InAppUpdater {
 
-    // StreamHub: in-app updates are DISABLED. The original code pointed at the upstream
-    // Streamflix Reborn release feed, which would replace StreamHub with a different app.
-    // Set both values to a StreamHub release feed (Gitea-compatible API) to re-enable.
-    private const val REPO_OWNER = ""
-    private const val REPO_NAME = ""
+    private const val REPO_OWNER = "julmrzt200-ui"
+    private const val REPO_NAME = "streamhub"
     private val updatesConfigured get() = REPO_OWNER.isNotEmpty() && REPO_NAME.isNotEmpty()
+
+    private fun toGitGayRelease(r: GitHub.Release): GitGay.Release {
+        val authorUser = GitGay.User(
+            login = r.author.login,
+            id = r.author.id,
+            nodeId = r.author.nodeId,
+            avatarUrl = r.author.avatarUrl,
+            url = r.author.url,
+            htmlUrl = r.author.htmlUrl,
+        )
+        return GitGay.Release(
+            url = r.url,
+            htmlUrl = r.htmlUrl,
+            assetsUrl = r.assetsUrl,
+            uploadUrl = r.uploadUrl,
+            tarballUrl = r.tarballUrl,
+            zipballUrl = r.zipballUrl,
+            id = r.id,
+            nodeId = r.nodeId,
+            tagName = r.tagName,
+            targetCommitish = r.targetCommitish,
+            name = r.name,
+            body = r.body,
+            draft = r.draft,
+            prerelease = r.prerelease,
+            createdAt = r.createdAt,
+            publishedAt = r.publishedAt,
+            author = authorUser,
+            assets = r.assets.map { a ->
+                GitGay.Release.Asset(
+                    url = a.url,
+                    browserDownloadUrl = a.browserDownloadUrl,
+                    id = a.id,
+                    nodeId = a.nodeId,
+                    name = a.name,
+                    label = a.label,
+                    state = a.state,
+                    contentType = a.contentType,
+                    size = a.size,
+                    downloadCount = a.downloadCount,
+                    createdAt = a.createdAt,
+                    updatedAt = a.updatedAt,
+                    uploader = GitGay.User(
+                        login = a.uploader.login,
+                        id = a.uploader.id,
+                        nodeId = a.uploader.nodeId,
+                        avatarUrl = a.uploader.avatarUrl,
+                        url = a.uploader.url,
+                        htmlUrl = a.uploader.htmlUrl,
+                    ),
+                )
+            }
+        )
+    }
 
     private data class Version(val name: String) : Comparable<Version> {
         override operator fun compareTo(other: Version): Int {
@@ -37,22 +88,23 @@ object InAppUpdater {
 
     suspend fun getReleaseUpdate(): GitGay.Release? {
         if (!updatesConfigured) return null
-        val latestRelease = GitGay.Releases.getLatestRelease(REPO_OWNER, REPO_NAME)
+        val latest = GitHub.Releases.getLatestRelease(REPO_OWNER, REPO_NAME)
         val currentVersion = BuildConfig.VERSION_NAME
 
-        if (Version(latestRelease.tagName.substringAfter("v")) > Version(currentVersion)) {
-            return latestRelease
+        if (Version(latest.tagName.substringAfter("v")) > Version(currentVersion)) {
+            return toGitGayRelease(latest)
         }
         return null
     }
 
     suspend fun getNewReleases(): List<GitGay.Release> {
         if (!updatesConfigured) return emptyList()
-        val releases = GitGay.Releases.getReleases(REPO_OWNER, REPO_NAME)
+        val releases = GitHub.Releases.getReleases(REPO_OWNER, REPO_NAME)
         val currentVersion = BuildConfig.VERSION_NAME
 
         val newReleases = releases
             .filter { Version(it.tagName.substringAfter("v")) > Version(currentVersion) }
+            .map { toGitGayRelease(it) }
 
         return newReleases
     }
@@ -79,15 +131,18 @@ object InAppUpdater {
     }
 
     fun installApk(context: Context, uri: Uri) {
-        val intent = Intent(Intent.ACTION_VIEW).also { intent ->
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true)
-            intent.data = FileProvider.getUriForFile(
-                context,
-                BuildConfig.APPLICATION_ID + ".provider",
-                File(uri.path!!)
-            )
+        val apkFile = File(uri.path ?: return)
+        val apkUri = FileProvider.getUriForFile(
+            context,
+            BuildConfig.APPLICATION_ID + ".provider",
+            apkFile
+        )
+        val intent = Intent(Intent.ACTION_VIEW).apply {
+            setDataAndType(apkUri, "application/vnd.android.package-archive")
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true)
         }
         context.startActivity(intent)
     }

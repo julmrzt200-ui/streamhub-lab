@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -62,11 +62,22 @@ jobs:
         shell: bash
         run: set -o pipefail; ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee gradle-build.log
 
-      - name: Upload APK
+      - name: Prepare APK with versioned name
+        shell: bash
+        run: |
+          mkdir -p release-apks
+          VERSION=$(grep 'versionName' app/build.gradle | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')
+          for apk in app/build/outputs/apk/debug/*.apk; do
+            if [ -f "$apk" ]; then
+              cp "$apk" "release-apks/streamhub-${VERSION}-${{ matrix.layout }}.apk"
+            fi
+          done
+
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: streamhub-debug-${{ matrix.layout }}
-          path: app/build/outputs/apk/debug/*.apk
+          name: streamhub-apk-${{ matrix.layout }}
+          path: release-apks/*.apk
           if-no-files-found: error
           retention-days: 14
 
@@ -82,3 +93,49 @@ jobs:
             app/build/test-results/testDebugUnitTest/
           if-no-files-found: ignore
           retention-days: 14
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download all APK artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: streamhub-apk-*
+          path: apks
+          merge-multiple: true
+
+      - name: Read version
+        id: get_version
+        run: |
+          VERSION=$(grep 'versionName' app/build.gradle | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')
+          echo "version=v$VERSION" >> $GITHUB_OUTPUT
+          echo "tag_name=v$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_version.outputs.tag_name }}
+          name: StreamHub ${{ steps.get_version.outputs.version }}
+          body: |
+            ## Actualización automática de StreamHub (${{ steps.get_version.outputs.version }})
+
+            ### Archivos disponibles para instalación:
+            - **Universal (Móvil y TV):** `streamhub-${{ steps.get_version.outputs.version }}-universal.apk` (Recomendado)
+            - **Móvil:** `streamhub-${{ steps.get_version.outputs.version }}-mobile.apk`
+            - **Android TV / Fire TV:** `streamhub-${{ steps.get_version.outputs.version }}-tv.apk`
+
+            *Actualizable directamente desde la aplicación mediante el actualizador integrado.*
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: apks/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

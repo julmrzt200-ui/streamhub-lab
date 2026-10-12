@@ -50,6 +50,7 @@ class MainViewModel : ViewModel() {
                         else -> !it.name.endsWith("-mobile.apk") && !it.name.endsWith("-tv.apk")
                     }
                 }
+                ?: newReleases.first().assets.firstOrNull { it.name.endsWith(".apk") }
                 ?: throw Exception("Can't find update APK")
 
             _state.emit(State.SuccessCheckingUpdate(newReleases, asset))
