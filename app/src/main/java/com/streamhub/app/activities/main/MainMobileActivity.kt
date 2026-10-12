@@ -27,6 +27,7 @@ import com.streamhub.app.fragments.player.PlayerMobileFragment
 import com.streamhub.app.providers.Cine24hProvider
 import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
+import com.streamhub.app.providers.TheFlixBayProvider
 import com.streamhub.app.providers.ZaluknijProvider
 import com.streamhub.app.ui.UpdateAppMobileDialog
 import com.streamhub.app.utils.AppLanguageManager
@@ -55,6 +56,7 @@ class MainMobileActivity : FragmentActivity() {
 
         Cine24hProvider.init(this)
         ZaluknijProvider.init(this)
+        TheFlixBayProvider.init(this)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
         val palette = ThemeManager.palette(UserPreferences.selectedTheme)

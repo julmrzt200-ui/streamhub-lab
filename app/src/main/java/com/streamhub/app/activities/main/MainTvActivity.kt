@@ -26,6 +26,7 @@ import com.streamhub.app.ui.UpdateAppTvDialog
 import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.Cine24hProvider
+import com.streamhub.app.providers.TheFlixBayProvider
 import com.streamhub.app.providers.ZaluknijProvider
 import com.streamhub.app.utils.AppLanguageManager
 import com.streamhub.app.utils.ThemeManager
@@ -55,6 +56,7 @@ class MainTvActivity : FragmentActivity() {
         // Inizializza il provider con il context dell'attività per gestire eventuali bypass visibili
         Cine24hProvider.init(this)
         ZaluknijProvider.init(this)
+        TheFlixBayProvider.init(this)
 
         _binding = ActivityMainTvBinding.inflate(layoutInflater)
         setContentView(binding.root)

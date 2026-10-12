@@ -31,7 +31,7 @@ object TheFlixBayParser {
         val released: String?,
     )
 
-    private val ITEM_HREF = Regex("""^(?:https?://[^/]+)?/(movie|series)/(\d+)(?:[/?#].*)?$""")
+    private val ITEM_HREF = Regex("""^(?:https?://[^/]+)?/(movie|series)/([^/?#]+)(?:[/?#].*)?$""")
     private val EPISODE_TITLE = Regex(
         """watch\s+.+?\s+season\s+(\d+)\s+episode\s+(\d+)\s+online""",
         RegexOption.IGNORE_CASE
@@ -100,6 +100,16 @@ object TheFlixBayParser {
     private fun cleanTitle(s: String?): String? =
         s?.replace(Regex("""\s+"""), " ")?.trim()?.takeIf { it.isNotEmpty() && it.length < 200 }
 
-    private fun imageUrl(img: Element): String? =
-        listOf("abs:src", "abs:data-src").map { img.attr(it) }.firstOrNull { it.isNotEmpty() }
+    private fun imageUrl(img: Element): String? {
+        val candidates = listOf(
+            img.attr("abs:data-src"),
+            img.attr("data-src"),
+            img.attr("abs:data-lazy-src"),
+            img.attr("data-lazy-src"),
+            img.attr("abs:src"),
+            img.attr("src")
+        )
+        return candidates.firstOrNull { it.isNotBlank() && !it.contains("placeholder") && !it.startsWith("data:") }
+            ?: candidates.firstOrNull { it.isNotBlank() && !it.startsWith("data:") }
+    }
 }
