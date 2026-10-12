@@ -20,22 +20,20 @@ object InAppUpdater {
 
     private fun toGitGayRelease(r: GitHub.Release): GitGay.Release {
         val authorUser = GitGay.User(
+            email = r.author.email,
             login = r.author.login,
             id = r.author.id,
-            nodeId = r.author.nodeId,
             avatarUrl = r.author.avatarUrl,
-            url = r.author.url,
             htmlUrl = r.author.htmlUrl,
         )
         return GitGay.Release(
             url = r.url,
             htmlUrl = r.htmlUrl,
-            assetsUrl = r.assetsUrl,
             uploadUrl = r.uploadUrl,
             tarballUrl = r.tarballUrl,
             zipballUrl = r.zipballUrl,
+            hideArchiveLinks = false,
             id = r.id,
-            nodeId = r.nodeId,
             tagName = r.tagName,
             targetCommitish = r.targetCommitish,
             name = r.name,
@@ -47,26 +45,14 @@ object InAppUpdater {
             author = authorUser,
             assets = r.assets.map { a ->
                 GitGay.Release.Asset(
-                    url = a.url,
                     browserDownloadUrl = a.browserDownloadUrl,
                     id = a.id,
-                    nodeId = a.nodeId,
                     name = a.name,
-                    label = a.label,
-                    state = a.state,
-                    contentType = a.contentType,
-                    size = a.size,
+                    size = a.size.toLong(),
                     downloadCount = a.downloadCount,
                     createdAt = a.createdAt,
-                    updatedAt = a.updatedAt,
-                    uploader = GitGay.User(
-                        login = a.uploader.login,
-                        id = a.uploader.id,
-                        nodeId = a.uploader.nodeId,
-                        avatarUrl = a.uploader.avatarUrl,
-                        url = a.uploader.url,
-                        htmlUrl = a.uploader.htmlUrl,
-                    ),
+                    uuid = a.nodeId,
+                    type = a.contentType,
                 )
             }
         )
