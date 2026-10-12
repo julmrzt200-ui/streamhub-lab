@@ -169,71 +169,92 @@ object TheFlixBayProvider : Provider {
     override suspend fun getPeople(id: String, page: Int): People =
         People(id = id, name = id.replaceFirstChar { it.uppercase() })
 
-    override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> = try {
-        val fullUrl = when (videoType) {
-            is Video.Type.Movie -> if (id.startsWith("http")) id else "$baseUrl/movie/$id"
-            is Video.Type.Episode -> {
-                if (id.startsWith("http")) {
-                    id
-                } else {
-                    val parts = id.split("/")
-                    if (parts.size >= 3) {
-                        "$baseUrl/series/${parts[0]}/season/${parts[1]}/episode/${parts[2]}"
-                    } else {
-                        "$baseUrl/series/$id"
-                    }
-                }
+    private fun fetchAjaxIframe(endpoint: String, referer: String): String? {
+        return try {
+            val client = NetworkClient.default.newBuilder()
+                .connectTimeout(5, TimeUnit.SECONDS)
+                .readTimeout(8, TimeUnit.SECONDS)
+                .build()
+            val request = Request.Builder()
+                .url(endpoint)
+                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+                .header("Referer", referer)
+                .header("X-Requested-With", "XMLHttpRequest")
+                .header("Sec-Fetch-Dest", "empty")
+                .header("Sec-Fetch-Mode", "cors")
+                .header("Sec-Fetch-Site", "same-origin")
+                .build()
+            client.newCall(request).execute().use { response ->
+                if (response.isSuccessful) {
+                    val html = response.body?.string().orEmpty()
+                    var src = Jsoup.parse(html).selectFirst("iframe[src]")?.attr("src")?.trim().orEmpty()
+                    if (src.startsWith("//")) src = "https:$src"
+                    src.takeIf { it.startsWith("http") }
+                } else null
             }
+        } catch (e: Exception) {
+            Log.d(TAG, "fetchAjaxIframe error for $endpoint: ${e.message}")
+            null
         }
-        val doc = getDocument(fullUrl)
+    }
+
+    override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> = try {
         val servers = mutableListOf<Video.Server>()
 
-        // 1. Check direct iframes on page
-        for (iframe in doc.select("iframe[src], iframe[data-src]")) {
-            var src = iframe.attr("src").ifEmpty { iframe.attr("data-src") }
-            if (src.startsWith("//")) src = "https:$src"
-            if (src.startsWith("http") && !src.contains("about:blank") && !src.contains("googletagmanager")) {
-                val host = try { src.toHttpUrl().host.replace("www.", "").substringBefore(".") } catch (_: Exception) { "Servidor" }
-                servers.add(Video.Server(id = src, name = host.replaceFirstChar { it.uppercase() }, src = src))
-            }
-        }
+        when (videoType) {
+            is Video.Type.Movie -> {
+                val moviePageUrl = if (id.startsWith("http")) id else "$baseUrl/movie/$id"
+                val doc = getDocument(moviePageUrl)
+                val tmdbId = TheFlixBayParser.extractMovieTmdbId(doc)
+                    ?: id.filter { it.isDigit() }.ifEmpty { "0" }
 
-        // 2. Check server buttons/links
-        for (el in doc.select("[data-src], [data-url], [data-server], #optionz-group li, .server-item")) {
-            var src = el.attr("data-src").ifEmpty { el.attr("data-url") }
-            if (src.startsWith("//")) src = "https:$src"
-            if (src.startsWith("http")) {
-                val label = el.text().trim().ifEmpty {
-                    el.attr("data-server").ifEmpty {
-                        try { src.toHttpUrl().host.replace("www.", "").substringBefore(".") } catch (_: Exception) { "Servidor" }
-                    }
-                }
-                servers.add(Video.Server(id = src, name = label.replaceFirstChar { it.uppercase() }, src = src))
-            }
-        }
+                // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinemov.php
+                val blackFlagAjax = "$baseUrl/ajax/cinemov.php?t=$tmdbId"
+                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, moviePageUrl)
+                    ?: "https://ythd.org/embed/$tmdbId"
+                servers.add(Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc))
 
-        // 3. Fallback embeds if site uses external embed player proxies by ID
-        if (servers.isEmpty()) {
-            val movieId = id.substringAfterLast("/")
-            val embedServers = when (videoType) {
-                is Video.Type.Movie -> listOf(
-                    "https://vidsrc.to/embed/movie/$movieId" to "VidSrc",
-                    "https://embed.su/embed/movie/$movieId" to "EmbedSu",
-                    "https://superembed.stream/embed/movie/$movieId" to "SuperEmbed"
-                )
-                is Video.Type.Episode -> {
-                    val parts = id.split("/")
-                    val s = parts.getOrNull(1) ?: "1"
-                    val e = parts.getOrNull(2) ?: "1"
-                    listOf(
-                        "https://vidsrc.to/embed/tv/${parts[0]}/$s/$e" to "VidSrc",
-                        "https://embed.su/embed/tv/${parts[0]}/$s/$e" to "EmbedSu",
-                        "https://superembed.stream/embed/tv/${parts[0]}/$s/$e" to "SuperEmbed"
-                    )
-                }
+                // 2. VidLink (CC) - Extractor nativo con subtítulos CC completos
+                servers.add(Video.Server(id = "vidlink", name = "VidLink (CC)", src = "https://vidlink.pro/movie/$tmdbId"))
+
+                // 3. ThePort (VixSrc) - Servidor 2 nativo de TheFlixBay
+                val thePortAjax = "$baseUrl/ajax/cinemov2.php?t=$tmdbId"
+                val thePortSrc = fetchAjaxIframe(thePortAjax, moviePageUrl)
+                    ?: "https://vixsrc.to/movie/$tmdbId/"
+                servers.add(Video.Server(id = "theport", name = "ThePort (VixSrc)", src = thePortSrc))
+
+                // 4. TwoEmbed - Fallback adicional
+                servers.add(Video.Server(id = "twoembed", name = "TwoEmbed", src = "https://www.2embed.cc/embed/$tmdbId"))
             }
-            embedServers.forEach { (url, name) ->
-                servers.add(Video.Server(id = url, name = name, src = url))
+            is Video.Type.Episode -> {
+                val parts = id.split("/")
+                val showId = parts.getOrNull(0) ?: id
+                val seasonNum = parts.getOrNull(1)?.toIntOrNull() ?: videoType.season.number
+                val episodeNum = parts.getOrNull(2)?.toIntOrNull() ?: videoType.number
+
+                val showPageUrl = "$baseUrl/series/$showId"
+                val doc = getDocument(showPageUrl)
+                val (seriesTmdb, seriesImdb) = TheFlixBayParser.extractSeriesTmdbAndImdb(doc)
+                val tmdbId = seriesTmdb ?: showId.filter { it.isDigit() }.ifEmpty { "0" }
+                val imdbId = seriesImdb.orEmpty()
+
+                // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinetv.php
+                val blackFlagAjax = "$baseUrl/ajax/cinetv.php?i=$imdbId&t=$tmdbId&s=$seasonNum&e=$episodeNum"
+                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, showPageUrl)
+                    ?: "https://ythd.org/embed/$tmdbId/$seasonNum-$episodeNum/"
+                servers.add(Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc))
+
+                // 2. VidLink (CC) - Extractor nativo con subtítulos CC completos
+                servers.add(Video.Server(id = "vidlink", name = "VidLink (CC)", src = "https://vidlink.pro/tv/$tmdbId/$seasonNum/$episodeNum"))
+
+                // 3. ThePort (VixSrc) - Servidor 2 nativo de TheFlixBay
+                val thePortAjax = "$baseUrl/ajax/cinetv2.php?i=$imdbId&t=$tmdbId&s=$seasonNum&e=$episodeNum"
+                val thePortSrc = fetchAjaxIframe(thePortAjax, showPageUrl)
+                    ?: "https://vixsrc.to/tv/$tmdbId/$seasonNum/$episodeNum"
+                servers.add(Video.Server(id = "theport", name = "ThePort (VixSrc)", src = thePortSrc))
+
+                // 4. TwoEmbed - Fallback adicional
+                servers.add(Video.Server(id = "twoembed", name = "TwoEmbed", src = "https://www.2embed.cc/embedtv/$tmdbId&s=$seasonNum&e=$episodeNum"))
             }
         }
 
@@ -251,7 +272,7 @@ object TheFlixBayProvider : Provider {
             if (server.src.endsWith(".mp4") || server.src.endsWith(".m3u8")) {
                 Video(source = server.src)
             } else {
-                throw Exception("No se pudo reproducir este servidor (${server.name})")
+                throw Exception("No se pudo reproducir este servidor (${server.name}): ${e.message}")
             }
         }
     }

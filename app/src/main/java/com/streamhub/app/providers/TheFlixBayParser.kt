@@ -29,6 +29,8 @@ object TheFlixBayParser {
         val number: Int,
         val title: String?,
         val released: String?,
+        val tmdbId: String? = null,
+        val imdbId: String? = null,
     )
 
     private val ITEM_HREF = Regex("""^(?:https?://[^/]+)?/(movie|series)/([^/?#]+)(?:[/?#].*)?$""")
@@ -89,9 +91,38 @@ object TheFlixBayParser {
             val title = EPISODE_TEXT.matchEntire(text)?.groupValues?.get(3)
                 ?.let { t -> released?.let { t.removeSuffix(it) } ?: t }
                 ?.trim()?.ifEmpty { null }
-            out += EpisodeInfo(season, number, title, released)
+            val tmdbId = a.attr("data-tmdbid").ifEmpty { a.attr("data-tmdb") }.ifEmpty { null }
+            val imdbId = a.attr("data-imdbid").ifEmpty { a.attr("data-imdb") }.ifEmpty { null }
+            out += EpisodeInfo(season, number, title, released, tmdbId, imdbId)
         }
         return out.sortedWith(compareBy({ it.season }, { it.number }))
+    }
+
+    fun extractMovieTmdbId(doc: Document): String? {
+        val html = doc.html()
+        doc.selectFirst("[data-tmdbid], [data-tmdb]")?.let { el ->
+            val id = el.attr("data-tmdbid").ifEmpty { el.attr("data-tmdb") }
+            if (id.isNotBlank()) return id
+        }
+        val m = Regex("""["']t["']\s*:\s*['"](\d+)['"]""").find(html)
+        if (m != null) return m.groupValues[1]
+        val mVar = Regex("""let\s+tmdbId\s*=\s*['"](\d+)['"]""").find(html)
+        if (mVar != null) return mVar.groupValues[1]
+        return null
+    }
+
+    fun extractSeriesTmdbAndImdb(doc: Document): Pair<String?, String?> {
+        val html = doc.html()
+        doc.selectFirst("a[data-tmdbid], a[data-imdbid]")?.let { el ->
+            val tmdb = el.attr("data-tmdbid").ifEmpty { null }
+            val imdb = el.attr("data-imdbid").ifEmpty { null }
+            if (tmdb != null || imdb != null) return Pair(tmdb, imdb)
+        }
+        val tmdb = Regex("""let\s+tmdbId\s*=\s*['"](\d+)['"]""").find(html)?.groupValues?.get(1)
+            ?: Regex("""["']t["']\s*:\s*['"](\d+)['"]""").find(html)?.groupValues?.get(1)
+        val imdb = Regex("""let\s+imdbId\s*=\s*['"]([^'"]+)['"]""").find(html)?.groupValues?.get(1)
+            ?: Regex("""["']i["']\s*:\s*['"]([^'"]+)['"]""").find(html)?.groupValues?.get(1)
+        return Pair(tmdb, imdb)
     }
 
     fun parseNextPageExists(doc: Document, basePath: String, nextPage: Int): Boolean =

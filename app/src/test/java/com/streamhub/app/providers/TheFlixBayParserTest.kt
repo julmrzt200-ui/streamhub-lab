@@ -71,4 +71,17 @@ class TheFlixBayParserTest {
         assertTrue(TheFlixBayParser.looksLikeChallenge("<title>Just a moment...</title>"))
         assertFalse(TheFlixBayParser.looksLikeChallenge(listingHtml))
     }
+
+    @Test fun extractMovieTmdbIdTest() {
+        val html = "<html><script>$.get('/ajax/cinemov.php', {'t': '533535'});</script></html>"
+        val tmdb = TheFlixBayParser.extractMovieTmdbId(Jsoup.parse(html))
+        assertEquals("533535", tmdb)
+    }
+
+    @Test fun extractSeriesTmdbAndImdbTest() {
+        val html = "<html><script>let imdbId = 'tt2301643'; let tmdbId = '55323';</script></html>"
+        val (tmdb, imdb) = TheFlixBayParser.extractSeriesTmdbAndImdb(Jsoup.parse(html))
+        assertEquals("55323", tmdb)
+        assertEquals("tt2301643", imdb)
+    }
 }

@@ -100,6 +100,7 @@ abstract class Extractor {
             GuploadExtractor(),
             StreamUpExtractor(),
             VidLinkExtractor(),
+            BlackFlagExtractor(),
             VidsrcRuExtractor(),
             VidflixExtractor(),
             VidrockExtractor(),
