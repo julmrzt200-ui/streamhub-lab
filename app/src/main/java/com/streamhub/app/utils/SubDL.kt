@@ -33,7 +33,9 @@ object SubDL {
             ".zip"
         )
 
-        URL(downloadUrl).openStream().use { input ->
+        val connection = URL(downloadUrl).openConnection()
+        connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+        connection.getInputStream().use { input ->
             FileOutputStream(zip).use { output -> input.copyTo(output) }
         }
 

@@ -32,7 +32,7 @@ android {
         localPropertiesFile.withInputStream { properties.load(it) }
     }
     def appLayoutValue = properties.getProperty('APP_LAYOUT', 'universal')
-    def tmdbApiKeyValue = properties.getProperty('TMDB_API_KEY', '')
+    def tmdbApiKeyValue = properties.getProperty('TMDB_API_KEY', 'adc5047f27e588c9347087931a696cf4')
     def subdlApiKeyValue = properties.getProperty('SUBDL_API_KEY', '')
     def rabbitstreamApiValue = properties.getProperty('RABBITSTREAM_SOURCE_API', '')
 
@@ -40,8 +40,8 @@ android {
         applicationId "com.streamhub.app"
         minSdk 21
         targetSdk 35
-        versionCode 165
-        versionName "1.7.236"
+        versionCode 166
+        versionName "1.7.237"
 
         buildConfigField "String", "APP_LAYOUT", "\"${appLayoutValue}\""
         buildConfigField "String", "TMDB_API_KEY", "\"${tmdbApiKeyValue}\""
@@ -107,7 +107,6 @@ android {
             }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            applicationIdSuffix '.debug'
         }
         release {
             minifyEnabled false

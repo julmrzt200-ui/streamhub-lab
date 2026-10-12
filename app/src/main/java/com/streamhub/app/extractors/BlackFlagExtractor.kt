@@ -74,12 +74,20 @@ class BlackFlagExtractor : Extractor() {
                     ): android.webkit.WebResourceResponse? {
                         val reqUrl = request?.url?.toString() ?: ""
 
-                        // Interceptar pistas de subtítulos (VTT, SRT, OpenSubtitles, etc.)
-                        if ((reqUrl.contains(".vtt") || reqUrl.contains(".srt") || reqUrl.contains("subtitles") || reqUrl.contains("opensubtitles"))
-                            && !subtitles.any { it.file == reqUrl }) {
+                        // Interceptar pistas de subtítulos legítimas (VTT, SRT)
+                        val cleanReqUrl = reqUrl.substringBefore("?").substringBefore("#")
+                        val isSubFile = cleanReqUrl.endsWith(".vtt", ignoreCase = true) || cleanReqUrl.endsWith(".srt", ignoreCase = true)
+                        val isSubPath = reqUrl.contains("/subtitles/", ignoreCase = true) || reqUrl.contains("opensubtitles", ignoreCase = true)
+                        val isInvalidExt = reqUrl.contains(".js") || reqUrl.contains(".json") || reqUrl.contains(".php") || reqUrl.contains(".html") || reqUrl.contains(".png") || reqUrl.contains(".css")
+
+                        if ((isSubFile || (isSubPath && !isInvalidExt)) && !subtitles.any { it.file == reqUrl }) {
                             val label = when {
                                 reqUrl.contains("eng", ignoreCase = true) || reqUrl.contains("en-", ignoreCase = true) || reqUrl.contains("/en.", ignoreCase = true) -> "English (CC)"
                                 reqUrl.contains("spa", ignoreCase = true) || reqUrl.contains("es-", ignoreCase = true) || reqUrl.contains("/es.", ignoreCase = true) -> "Español"
+                                reqUrl.contains("fre", ignoreCase = true) || reqUrl.contains("fr-", ignoreCase = true) || reqUrl.contains("/fr.", ignoreCase = true) -> "Français"
+                                reqUrl.contains("ger", ignoreCase = true) || reqUrl.contains("de-", ignoreCase = true) || reqUrl.contains("/de.", ignoreCase = true) -> "Deutsch"
+                                reqUrl.contains("ita", ignoreCase = true) || reqUrl.contains("it-", ignoreCase = true) || reqUrl.contains("/it.", ignoreCase = true) -> "Italiano"
+                                reqUrl.contains("por", ignoreCase = true) || reqUrl.contains("pt-", ignoreCase = true) || reqUrl.contains("/pt.", ignoreCase = true) -> "Português"
                                 else -> "Subtítulo ${subtitles.size + 1}"
                             }
                             subtitles.add(Video.Subtitle(label = label, file = reqUrl))

@@ -65,7 +65,14 @@ object TheFlixBayProvider : Provider {
 
     private suspend fun listing(path: String, page: Int): List<TheFlixBayParser.ListItem> {
         return try {
-            val url = if (page <= 1) "$baseUrl$path" else "$baseUrl$path/date/$page"
+            val cleanPath = path.trimEnd('/')
+            val url = if (page <= 1) {
+                "$baseUrl$cleanPath"
+            } else if (cleanPath.endsWith("/popular")) {
+                "$baseUrl$cleanPath/$page"
+            } else {
+                "$baseUrl$cleanPath/date/$page"
+            }
             TheFlixBayParser.parseListing(getDocument(url))
         } catch (e: Exception) {
             Log.e(TAG, "Error listing $path: ${e.message}")
@@ -74,10 +81,13 @@ object TheFlixBayProvider : Provider {
     }
 
     override suspend fun getHome(): List<Category> {
-        val movies = listing("/movies", 1).filter { it.kind == TheFlixBayParser.Kind.MOVIE }
-        val shows = listing("/tv-shows", 1).filter { it.kind == TheFlixBayParser.Kind.SERIES }
+        val popularMovies = listing("/movies/popular", 1).filter { it.kind == TheFlixBayParser.Kind.MOVIE }
+        val popularShows = listing("/tv-shows/popular", 1).filter { it.kind == TheFlixBayParser.Kind.SERIES }
+        val latestMovies = listing("/movies", 1).filter { it.kind == TheFlixBayParser.Kind.MOVIE }
+        val latestShows = listing("/tv-shows", 1).filter { it.kind == TheFlixBayParser.Kind.SERIES }
+
         val categories = mutableListOf<Category>()
-        val featured = toItems(movies.take(5) + shows.take(5)).map {
+        val featured = toItems(popularMovies.take(5) + popularShows.take(5)).map {
             when (it) {
                 is Movie -> it.copy(poster = null, banner = it.poster)
                 is TvShow -> it.copy(poster = null, banner = it.poster)
@@ -85,15 +95,22 @@ object TheFlixBayProvider : Provider {
             }
         }
         if (featured.isNotEmpty()) categories += Category(Category.FEATURED, featured)
-        if (movies.isNotEmpty()) categories += Category("Películas", toItems(movies))
-        if (shows.isNotEmpty()) categories += Category("Series", toItems(shows))
+        if (popularMovies.isNotEmpty()) categories += Category("Películas Populares", toItems(popularMovies))
+        if (popularShows.isNotEmpty()) categories += Category("Series Populares", toItems(popularShows))
+        if (latestMovies.isNotEmpty()) categories += Category("Películas Recientes", toItems(latestMovies))
+        if (latestShows.isNotEmpty()) categories += Category("Series Recientes", toItems(latestShows))
         return categories
     }
 
     override suspend fun search(query: String, page: Int): List<AppAdapter.Item> {
         if (query.isBlank()) return emptyList()
         return try {
-            val url = "$baseUrl/search?q=${URLEncoder.encode(query, "UTF-8")}"
+            val encoded = URLEncoder.encode(query.trim(), "UTF-8")
+            val url = if (page <= 1) {
+                "$baseUrl/index.php?menu=search&query=$encoded"
+            } else {
+                "$baseUrl/search/$encoded/$page"
+            }
             toItems(TheFlixBayParser.parseListing(getDocument(url)))
         } catch (e: Exception) {
             Log.d(TAG, "Search error for $query: ${e.message}")
@@ -102,10 +119,10 @@ object TheFlixBayProvider : Provider {
     }
 
     override suspend fun getMovies(page: Int): List<Movie> =
-        toItems(listing("/movies", page)).filterIsInstance<Movie>()
+        toItems(listing("/movies/popular", page)).filterIsInstance<Movie>()
 
     override suspend fun getTvShows(page: Int): List<TvShow> =
-        toItems(listing("/tv-shows", page)).filterIsInstance<TvShow>()
+        toItems(listing("/tv-shows/popular", page)).filterIsInstance<TvShow>()
 
     override suspend fun getMovie(id: String): Movie {
         val detail = try {

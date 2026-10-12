@@ -30,7 +30,9 @@ object OpenSubtitles {
             ".${File(subtitle.subDownloadLink).extension}"
         )
 
-        URL(subtitle.subDownloadLink).openStream().use { input ->
+        val connection = URL(subtitle.subDownloadLink).openConnection()
+        connection.setRequestProperty("User-Agent", "TemporaryUserAgent")
+        connection.getInputStream().use { input ->
             FileOutputStream(zip).use { output -> input.copyTo(output) }
         }
 

@@ -298,10 +298,11 @@ inline fun <T1, T2, T3, T4, T5, T6, R> combine(
 }
 
 fun String.toSubtitleMimeType(): String {
+    val clean = substringBefore("?").substringBefore("#")
     return when {
-        endsWith("vtt", true) -> MimeTypes.TEXT_VTT
-        endsWith("srt", true) -> MimeTypes.APPLICATION_SUBRIP
-        endsWith("xml", true) || endsWith("ttml", true) -> MimeTypes.APPLICATION_TTML
+        clean.endsWith("vtt", true) || clean.contains(".vtt") -> MimeTypes.TEXT_VTT
+        clean.endsWith("srt", true) || clean.contains(".srt") -> MimeTypes.APPLICATION_SUBRIP
+        clean.endsWith("xml", true) || clean.endsWith("ttml", true) || clean.contains(".ttml") -> MimeTypes.APPLICATION_TTML
         else -> MimeTypes.APPLICATION_SUBRIP
     }
 }
