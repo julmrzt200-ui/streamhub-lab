@@ -275,6 +275,7 @@ object TheFlixBayProvider : Provider {
             }
         }
 
+        servers.firstOrNull { it.id == "blackflag" }?.let { Log.i(TAG, "BlackFlag source: ${if (it.src.contains("ythd.org")) "respaldo ythd.org" else "iframe original"}, domain=${android.net.Uri.parse(it.src).host}") }
         servers.distinctBy { it.src }
     } catch (e: Exception) {
         Log.e(TAG, "Error getting servers: ${e.message}")
