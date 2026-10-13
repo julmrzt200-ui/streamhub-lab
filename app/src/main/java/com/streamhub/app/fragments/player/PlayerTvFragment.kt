@@ -67,7 +67,7 @@ import com.streamhub.app.databinding.FragmentPlayerTvBinding
 import com.streamhub.app.models.Episode
 import com.streamhub.app.models.Movie
 import com.streamhub.app.models.Season
-import com.streamhub.app.models.OpenSubtitles
+import com.streamhub.app.utils.OpenSubtitles
 import com.streamhub.app.models.TvShow
 import com.streamhub.app.models.Video
 import com.streamhub.app.models.WatchItem
