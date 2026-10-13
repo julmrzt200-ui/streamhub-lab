@@ -202,6 +202,39 @@ class PlayerViewModel(
         }
     }
 
+    fun searchOnlineSubtitles(query: String, subLanguageId: String? = null) = viewModelScope.launch(Dispatchers.IO) {
+        Log.d("PlayerViewModel", "Inizio ricerca manuale sottotitoli: $query, lang: $subLanguageId")
+        _subtitleState.emit(SubtitleState.Loading)
+
+        launch {
+            try {
+                val langFilter = if (subLanguageId == null || subLanguageId.isBlank() || subLanguageId == "all") null else subLanguageId
+                val subtitles = OpenSubtitles.search(
+                    query = query,
+                    subLanguageId = langFilter,
+                ).sortedWith(compareBy({ it.languageName }, { it.subDownloadsCnt }))
+                Log.d("PlayerViewModel", "Ricerca OpenSubtitles manuale completata: ${subtitles.size} risultati")
+                _subtitleState.emit(SubtitleState.SuccessOpenSubtitles(subtitles))
+            } catch (e: Exception) {
+                Log.e("PlayerViewModel", "Errore OpenSubtitles manuale: ", e)
+                _subtitleState.emit(SubtitleState.FailedOpenSubtitles(e))
+            }
+        }
+
+        launch {
+            try {
+                val subtitles = SubDL.search(
+                    filmName = query
+                )
+                Log.d("PlayerViewModel", "Ricerca SubDL manuale completata: ${subtitles.size} risultati")
+                _subtitleState.emit(SubtitleState.SuccessSubDLSubtitles(subtitles))
+            } catch (e: Exception) {
+                Log.e("PlayerViewModel", "Errore SubDL manuale: ", e)
+                _subtitleState.emit(SubtitleState.FailedSubDLSubtitles(e))
+            }
+        }
+    }
+
     fun downloadSubtitle(subtitle: OpenSubtitles.Subtitle) = viewModelScope.launch(Dispatchers.IO) {
         Log.d("PlayerViewModel", "Inizio download sottotitolo OpenSubtitles: ${subtitle.subFileName}")
         _subtitleState.emit(SubtitleState.DownloadingOpenSubtitle)

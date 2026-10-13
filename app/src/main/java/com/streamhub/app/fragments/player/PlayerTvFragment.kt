@@ -19,6 +19,11 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.os.Looper
+import androidx.appcompat.app.AlertDialog
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsCompat
@@ -62,12 +67,14 @@ import com.streamhub.app.databinding.FragmentPlayerTvBinding
 import com.streamhub.app.models.Episode
 import com.streamhub.app.models.Movie
 import com.streamhub.app.models.Season
+import com.streamhub.app.models.OpenSubtitles
 import com.streamhub.app.models.TvShow
 import com.streamhub.app.models.Video
 import com.streamhub.app.models.WatchItem
 import com.streamhub.app.providers.SerienStreamProvider
 import com.streamhub.app.sync.CloudSyncHooks
 import com.streamhub.app.ui.PlayerTvView
+import com.streamhub.app.utils.SubtitleTranslator
 import com.streamhub.app.utils.SubtitleOffsetRenderersFactory
 import com.streamhub.app.utils.DnsResolver
 import com.streamhub.app.utils.NetworkClient
@@ -196,6 +203,215 @@ class PlayerTvFragment : Fragment() {
         )
         player.seekTo(currentPosition)
         player.play()
+    }
+
+    private var pendingShowSearchResults = false
+    private var lastSearchLangCode = "all"
+
+    private val stallWatchdogHandler = android.os.Handler(Looper.getMainLooper())
+    private val stallWatchdogRunnable = Runnable {
+        if (_binding != null && isAdded && ::player.isInitialized && player.playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
+            Log.w("PlayerTvFragment", "Buffering stall detectado (>9s). Intentando cambiar de servidor...")
+            context?.let { ctx ->
+                Toast.makeText(ctx, R.string.server_buffering_stall_timeout, Toast.LENGTH_LONG).show()
+            }
+            switchToNextServer("Buffering stall >9s")
+        }
+    }
+
+    private fun switchToNextServer(reason: String = "") {
+        val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
+        if (nextServer != null) {
+            Log.i("PlayerTvFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
+            viewModel.getVideo(nextServer)
+        } else {
+            Log.w("PlayerTvFragment", "No hay más servidores disponibles para cambiar ($reason)")
+        }
+    }
+
+    private fun showTranslateLanguageDialog() {
+        val currentSubConfigs = player.currentMediaItem?.localConfiguration?.subtitleConfigurations ?: emptyList()
+        val activeSub = currentSubConfigs.lastOrNull()
+        if (activeSub == null) {
+            Toast.makeText(requireContext(), R.string.subtitle_need_load_translate, Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val languages = SubtitleTranslator.getAvailableLanguages(requireContext())
+        val names = languages.map { it.displayName }.toTypedArray()
+        val currentPref = UserPreferences.preferredTranslateLanguage
+        val initialIndex = languages.indexOfFirst { it.code == currentPref }.let { if (it >= 0) it else 0 }
+
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.subtitle_translate_title)
+            .setSingleChoiceItems(names, initialIndex) { dialog, which ->
+                val chosen = languages[which]
+                UserPreferences.preferredTranslateLanguage = chosen.code
+                dialog.dismiss()
+                performSubtitleTranslation(activeSub, chosen)
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
+
+    private fun performSubtitleTranslation(
+        activeSub: MediaItem.SubtitleConfiguration,
+        targetLanguage: SubtitleTranslator.Language,
+    ) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.subtitle_translating, targetLanguage.displayName),
+                Toast.LENGTH_SHORT
+            ).show()
+
+            val sourceFileName = activeSub.label ?: "subtitle.srt"
+            val result = SubtitleTranslator.translateSubtitleFile(
+                context = requireContext(),
+                sourceUri = activeSub.uri,
+                sourceFileName = sourceFileName,
+                targetLangCode = targetLanguage.code
+            )
+
+            result.onSuccess { translatedFile ->
+                val translatedUri = translatedFile.toUri()
+                val currentPosition = player.currentPosition
+                val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                    MediaItem.SubtitleConfiguration.Builder(it.uri)
+                        .setMimeType(it.mimeType)
+                        .setLabel(it.label)
+                        .setLanguage(it.language)
+                        .setSelectionFlags(0)
+                        .build()
+                } ?: listOf()
+
+                val resolvedLang = SubtitleTranslator.resolveTargetLanguageCode(targetLanguage.code)
+                val newLabel = "${targetLanguage.displayName} (${getString(R.string.player_settings_translate_subtitles_label).replace("…", "").replace("...", "").trim()})"
+
+                player.setMediaItem(
+                    MediaItem.Builder()
+                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                        .setSubtitleConfigurations(
+                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
+                                .setMimeType(translatedFile.name.toSubtitleMimeType())
+                                .setLabel(newLabel)
+                                .setLanguage(resolvedLang)
+                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                .build()
+                        )
+                        .setMediaMetadata(player.mediaMetadata)
+                        .build()
+                )
+                UserPreferences.subtitleName = resolvedLang
+                player.seekTo(currentPosition)
+                player.play()
+
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.subtitle_translate_done, targetLanguage.displayName),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }.onFailure { err ->
+                Log.e("PlayerTvFragment", "Error traduciendo subtítulo: ", err)
+                Toast.makeText(
+                    requireContext(),
+                    R.string.subtitle_translate_failed,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+    }
+
+    private fun showSearchOnlineSubtitlesDialog() {
+        val context = requireContext()
+        val videoType = args.videoType
+        val defaultQuery = when (videoType) {
+            is Video.Type.Episode -> "${videoType.tvShow.title} S${String.format(Locale.ROOT, "%02d", videoType.season.number)}E${String.format(Locale.ROOT, "%02d", videoType.number)}"
+            is Video.Type.Movie -> videoType.title
+        }
+
+        val container = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            val pad = (16 * resources.displayMetrics.density).toInt()
+            setPadding(pad, pad / 2, pad, 0)
+        }
+
+        val input = EditText(context).apply {
+            setText(defaultQuery)
+            setSelection(text.length)
+            setSingleLine(true)
+            hint = getString(R.string.subtitle_search_hint)
+            isFocusable = true
+            isFocusableInTouchMode = true
+        }
+
+        val languages = SubtitleTranslator.getAvailableLanguages(context)
+        val langOptions = listOf(SubtitleTranslator.Language("all", getString(R.string.subtitle_search_all_langs))) + languages.filter { it.code != "system" }
+
+        val langButton = Button(context).apply {
+            val initial = langOptions.find { it.code == lastSearchLangCode } ?: langOptions.first()
+            text = initial.displayName
+            isFocusable = true
+        }
+
+        langButton.setOnClickListener {
+            val names = langOptions.map { it.displayName }.toTypedArray()
+            val currentIndex = langOptions.indexOfFirst { it.code == lastSearchLangCode }.let { if (it >= 0) it else 0 }
+            AlertDialog.Builder(context)
+                .setTitle(R.string.subtitle_translate_title)
+                .setSingleChoiceItems(names, currentIndex) { langDialog, which ->
+                    val chosen = langOptions[which]
+                    lastSearchLangCode = chosen.code
+                    langButton.text = chosen.displayName
+                    langDialog.dismiss()
+                }
+                .setNegativeButton(android.R.string.cancel, null)
+                .show()
+        }
+
+        container.addView(input)
+        container.addView(langButton)
+
+        AlertDialog.Builder(context)
+            .setTitle(R.string.subtitle_search_online_title)
+            .setView(container)
+            .setPositiveButton(R.string.subtitle_search_btn) { _, _ ->
+                val queryText = input.text.toString().trim()
+                if (queryText.isNotEmpty()) {
+                    val langParam = if (lastSearchLangCode == "all") null else {
+                        try { Locale(lastSearchLangCode).isO3Language } catch (_: Exception) { lastSearchLangCode }
+                    }
+                    Toast.makeText(context, R.string.subtitle_search_searching, Toast.LENGTH_SHORT).show()
+                    pendingShowSearchResults = true
+                    viewModel.searchOnlineSubtitles(queryText, langParam)
+                }
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
+
+    private fun showSubtitlePickerResults(subtitles: List<OpenSubtitles.Subtitle>) {
+        if (!isAdded || _binding == null) return
+        if (subtitles.isEmpty()) {
+            Toast.makeText(requireContext(), R.string.subtitle_search_no_results, Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val labels = subtitles.map { sub ->
+            val lang = sub.languageName ?: ""
+            val downloads = sub.subDownloadsCnt ?: "0"
+            "${sub.subFileName} [$lang] (↓$downloads)"
+        }.toTypedArray()
+
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.subtitle_search_select_title)
+            .setItems(labels) { _, which ->
+                val selectedSub = subtitles[which]
+                viewModel.downloadSubtitle(selectedSub)
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
     override fun onResume() {
@@ -377,9 +593,18 @@ class PlayerTvFragment : Fragment() {
                             PlayerViewModel.SubtitleState.Loading -> {}
                             is PlayerViewModel.SubtitleState.SuccessOpenSubtitles -> {
                                 binding.settings.openSubtitles = state.subtitles
+                                if (pendingShowSearchResults) {
+                                    pendingShowSearchResults = false
+                                    showSubtitlePickerResults(state.subtitles)
+                                }
                             }
 
-                            is PlayerViewModel.SubtitleState.FailedOpenSubtitles -> {}
+                            is PlayerViewModel.SubtitleState.FailedOpenSubtitles -> {
+                                if (pendingShowSearchResults) {
+                                    pendingShowSearchResults = false
+                                    Toast.makeText(requireContext(), R.string.subtitle_search_no_results, Toast.LENGTH_SHORT).show()
+                                }
+                            }
 
                             PlayerViewModel.SubtitleState.DownloadingOpenSubtitle -> {}
                             is PlayerViewModel.SubtitleState.SuccessDownloadingOpenSubtitle -> {
@@ -538,6 +763,7 @@ class PlayerTvFragment : Fragment() {
 
         override fun onDestroyView() {
             super.onDestroyView()
+            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             nextEpisodePrefetchJob?.cancel()
             releasePlayer()
             try {
@@ -803,6 +1029,12 @@ class PlayerTvFragment : Fragment() {
             }
             binding.settings.setOnSubDLSubtitleSelectedListener { subtitle ->
                 viewModel.downloadSubDLSubtitle(subtitle.subDLSubtitle)
+            }
+            binding.settings.setOnTranslateSubtitlesClickedListener {
+                showTranslateLanguageDialog()
+            }
+            binding.settings.setOnSearchOnlineSubtitlesClickedListener {
+                showSearchOnlineSubtitlesDialog()
             }
             binding.settings.setOnQualitySelectedListener {
                 reloadCurrentVideoForQualityChange()
@@ -1116,6 +1348,23 @@ class PlayerTvFragment : Fragment() {
                         val videoFormat = player.videoFormat
                         updatePlayerScale()
                     }
+
+                    if (playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+                    } else {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                    }
+                }
+
+                override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
+                    super.onPlayWhenReadyChanged(playWhenReady, reason)
+                    if (player.playbackState == Player.STATE_BUFFERING && playWhenReady) {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+                    } else {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                    }
                 }
 
                 override fun onTracksChanged(tracks: androidx.media3.common.Tracks) {
@@ -1235,12 +1484,7 @@ class PlayerTvFragment : Fragment() {
                 override fun onPlayerError(error: PlaybackException) {
                     super.onPlayerError(error)
                     Log.e("PlayerTvFragment", "onPlayerError: ", error)
-
-                    val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
-                    if (nextServer != null) {
-                        Log.i("PlayerTvFragment", "Playback failed, trying next server: ${nextServer.name}")
-                        viewModel.getVideo(nextServer)
-                    }
+                    switchToNextServer("Playback error: ${error.message}")
                 }
             })
 
@@ -1713,6 +1957,7 @@ class PlayerTvFragment : Fragment() {
         }
 
         private fun releasePlayer() {
+            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             stopProgressHandler()
             binding.pvPlayer.player = null
             binding.settings.player = null
