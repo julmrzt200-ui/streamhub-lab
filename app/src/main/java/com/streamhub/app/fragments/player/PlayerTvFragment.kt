@@ -75,6 +75,7 @@ import com.streamhub.app.providers.SerienStreamProvider
 import com.streamhub.app.sync.CloudSyncHooks
 import com.streamhub.app.ui.PlayerTvView
 import com.streamhub.app.utils.SubtitleTranslator
+import com.streamhub.app.utils.TranslatingTextOutput
 import com.streamhub.app.utils.SubtitleOffsetRenderersFactory
 import com.streamhub.app.utils.DnsResolver
 import com.streamhub.app.utils.NetworkClient
@@ -230,13 +231,6 @@ class PlayerTvFragment : Fragment() {
     }
 
     private fun showTranslateLanguageDialog() {
-        val currentSubConfigs = player.currentMediaItem?.localConfiguration?.subtitleConfigurations ?: emptyList()
-        val activeSub = currentSubConfigs.lastOrNull()
-        if (activeSub == null) {
-            Toast.makeText(requireContext(), R.string.subtitle_need_load_translate, Toast.LENGTH_SHORT).show()
-            return
-        }
-
         val languages = SubtitleTranslator.getAvailableLanguages(requireContext())
         val names = languages.map { it.displayName }.toTypedArray()
         val currentPref = UserPreferences.preferredTranslateLanguage
@@ -248,7 +242,21 @@ class PlayerTvFragment : Fragment() {
                 val chosen = languages[which]
                 UserPreferences.preferredTranslateLanguage = chosen.code
                 dialog.dismiss()
-                performSubtitleTranslation(activeSub, chosen)
+
+                TranslatingTextOutput.clearCache()
+
+                val message = if (chosen.code == "off") {
+                    getString(R.string.subtitle_translate_off)
+                } else {
+                    getString(R.string.subtitle_translate_auto_toast, chosen.displayName)
+                }
+                Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+
+                val currentSubConfigs = player.currentMediaItem?.localConfiguration?.subtitleConfigurations ?: emptyList()
+                val activeSub = currentSubConfigs.lastOrNull()
+                if (activeSub != null && chosen.code != "off") {
+                    performSubtitleTranslation(activeSub, chosen)
+                }
             }
             .setNegativeButton(android.R.string.cancel, null)
             .show()

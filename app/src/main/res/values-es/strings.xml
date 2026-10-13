@@ -222,6 +222,8 @@
     <string name="player_settings_translate_subtitles_label">Traducir subtítulos…</string>
     <string name="player_settings_search_online_subtitles_label">Buscar subtítulos en línea…</string>
     <string name="subtitle_translate_title">Traducir a</string>
+    <string name="subtitle_translate_off">Desactivado (Subtítulos originales)</string>
+    <string name="subtitle_translate_auto_toast">Traducción de subtítulos configurada en: %1$s</string>
     <string name="subtitle_translating">Traduciendo subtítulos a %1$s…</string>
     <string name="subtitle_translate_done">Subtítulos traducidos a %1$s</string>
     <string name="subtitle_translate_failed">No se pudo traducir el subtítulo. Mostrando el original.</string>

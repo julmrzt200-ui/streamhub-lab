@@ -42,6 +42,11 @@ object SubtitleTranslator {
      * - Todos los idiomas ISO disponibles del sistema ordenados alfabéticamente por su nombre nativo.
      */
     fun getAvailableLanguages(context: Context): List<Language> {
+        val offOption = Language(
+            code = "off",
+            displayName = context.getString(R.string.subtitle_translate_off),
+            iso3 = "off"
+        )
         val systemLang = Language(
             code = "system",
             displayName = context.getString(R.string.subtitle_system_default),
@@ -75,14 +80,14 @@ object SubtitleTranslator {
             }
             .sortedBy { it.displayName }
 
-        return listOf(systemLang) + languages
+        return listOf(offOption, systemLang) + languages
     }
 
     fun resolveTargetLanguageCode(targetLangCode: String): String {
-        return if (targetLangCode == "system") {
-            Locale.getDefault().language
-        } else {
-            targetLangCode
+        return when (targetLangCode) {
+            "off" -> "off"
+            "system" -> Locale.getDefault().language
+            else -> targetLangCode
         }
     }
 

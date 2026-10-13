@@ -240,6 +240,8 @@
     <string name="player_settings_translate_subtitles_label">Translate subtitles…</string>
     <string name="player_settings_search_online_subtitles_label">Find subtitles online…</string>
     <string name="subtitle_translate_title">Translate to</string>
+    <string name="subtitle_translate_off">Off (Original subtitles)</string>
+    <string name="subtitle_translate_auto_toast">Subtitle translation set to: %1$s</string>
     <string name="subtitle_translating">Translating subtitles to %1$s…</string>
     <string name="subtitle_translate_done">Subtitles translated to %1$s</string>
     <string name="subtitle_translate_failed">Failed to translate subtitles. Showing original.</string>

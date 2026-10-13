@@ -32,7 +32,8 @@ class SubtitleOffsetRenderersFactory(context: Context) : DefaultRenderersFactory
         extensionRendererMode: Int,
         out: ArrayList<Renderer>,
     ) {
-        val textRenderer = TextRenderer(output, outputLooper)
+        val translatingOutput = TranslatingTextOutput(output, outputLooper)
+        val textRenderer = TextRenderer(translatingOutput, outputLooper)
         out.add(object : ForwardingRenderer(textRenderer) {
             private fun adjustedPositionUs(positionUs: Long): Long =
                 (positionUs - SubtitleOffset.offsetMs * 1_000).coerceAtLeast(0)
