@@ -346,6 +346,16 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
         this.onSubDLSubtitleSelected = onSubDLSubtitleSelected
     }
 
+    var onTranslateSubtitlesClicked: (() -> Unit)? = null
+    fun setOnTranslateSubtitlesClickedListener(onTranslateSubtitlesClicked: () -> Unit) {
+        this.onTranslateSubtitlesClicked = onTranslateSubtitlesClicked
+    }
+
+    var onSearchOnlineSubtitlesClicked: (() -> Unit)? = null
+    fun setOnSearchOnlineSubtitlesClickedListener(onSearchOnlineSubtitlesClicked: () -> Unit) {
+        this.onSearchOnlineSubtitlesClicked = onSearchOnlineSubtitlesClicked
+    }
+
     protected var onSpeedSelected: ((Settings.Speed) -> Unit) =
         fun(speed) {
             val player = player ?: return
@@ -714,6 +724,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                     list.clear()
                     list.add(Style)
                     list.add(Offset)
+                    list.add(Translate)
+                    list.add(SearchOnline)
                     list.add(None)
                     list.addAll(
                         player.currentTracks.groups
@@ -1176,6 +1188,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
             }
 
             data object LocalSubtitles : Subtitle()
+            data object Translate : Subtitle()
+            data object SearchOnline : Subtitle()
 
             sealed class OpenSubtitles : Item {
 

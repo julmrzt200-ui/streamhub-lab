@@ -283,6 +283,16 @@ class PlayerSettingsTvView @JvmOverloads constructor(
                                     settingsView.hide()
                                 }
 
+                                Settings.Subtitle.Translate -> {
+                                    settingsView.onTranslateSubtitlesClicked?.invoke()
+                                    settingsView.hide()
+                                }
+
+                                Settings.Subtitle.SearchOnline -> {
+                                    settingsView.onSearchOnlineSubtitlesClicked?.invoke()
+                                    settingsView.hide()
+                                }
+
                                 Settings.Subtitle.OpenSubtitles -> {
                                     settingsView.displaySettings(Setting.OPEN_SUBTITLES)
                                 }
@@ -544,6 +554,8 @@ class PlayerSettingsTvView @JvmOverloads constructor(
                         is Settings.Subtitle.None -> context.getString(R.string.player_settings_subtitles_off)
                         is Settings.Subtitle.TextTrackInformation -> item.label.ifEmpty { item.name }
                         Settings.Subtitle.LocalSubtitles -> context.getString(R.string.player_settings_local_subtitles_label)
+                        Settings.Subtitle.Translate -> context.getString(R.string.player_settings_translate_subtitles_label)
+                        Settings.Subtitle.SearchOnline -> context.getString(R.string.player_settings_search_online_subtitles_label)
                         Settings.Subtitle.OpenSubtitles -> context.getString(R.string.player_settings_open_subtitles_label)
                         Settings.Subtitle.SubDLSubtitles -> context.getString(R.string.player_settings_subdl_label)
                     }
@@ -781,6 +793,8 @@ class PlayerSettingsTvView @JvmOverloads constructor(
                         is Settings.Subtitle.None -> View.GONE
                         is Settings.Subtitle.TextTrackInformation -> View.GONE
                         Settings.Subtitle.LocalSubtitles -> View.VISIBLE
+                        Settings.Subtitle.Translate -> View.VISIBLE
+                        Settings.Subtitle.SearchOnline -> View.VISIBLE
                         Settings.Subtitle.OpenSubtitles -> View.VISIBLE
                         Settings.Subtitle.SubDLSubtitles -> View.VISIBLE
                     }

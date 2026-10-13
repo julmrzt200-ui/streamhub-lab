@@ -432,6 +432,10 @@ object UserPreferences {
     var subtitleName: String?
         get() = Key.SUBTITLE_NAME.getString()
         set(value) = Key.SUBTITLE_NAME.setString(value)
+
+    var preferredTranslateLanguage: String
+        get() = Key.PREFERRED_TRANSLATE_LANGUAGE.getString() ?: "system"
+        set(value) = Key.PREFERRED_TRANSLATE_LANGUAGE.setString(value)
     var streamingcommunityDomain: String
         get() {
             if (!::prefs.isInitialized) {
@@ -670,6 +674,7 @@ object UserPreferences {
         SELECTED_THEME,
         UPDATE_CHECK_ENABLED,
         PROVIDER_LANGUAGE,
+        PREFERRED_TRANSLATE_LANGUAGE,
         FAVORITE_PROVIDERS;
 
         fun getStringSet(): Set<String>? = when {
