@@ -15,7 +15,7 @@ import kotlin.math.max
 object InAppUpdater {
 
     private const val REPO_OWNER = "julmrzt200-ui"
-    private const val REPO_NAME = "streamhub"
+    private const val REPO_NAME = "streamhub-releases"
     private val updatesConfigured get() = REPO_OWNER.isNotEmpty() && REPO_NAME.isNotEmpty()
 
     private fun toGitGayRelease(r: GitHub.Release): GitGay.Release {
