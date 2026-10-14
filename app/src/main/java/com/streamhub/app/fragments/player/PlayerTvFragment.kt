@@ -225,6 +225,7 @@ class PlayerTvFragment : Fragment() {
     private var pendingShowSearchResults = false
     private var lastSearchLangCode = "all"
 
+    private var playerListener: Player.Listener? = null
     private val stallWatchdogHandler = android.os.Handler(Looper.getMainLooper())
     private val stallWatchdogRunnable = Runnable {
         if (_binding != null && isAdded && ::player.isInitialized && player.playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
@@ -236,10 +237,19 @@ class PlayerTvFragment : Fragment() {
         }
     }
 
-    private fun switchToNextServer(reason: String = "") {
-        val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
+    private fun switchToNextServer(reason: String = "", failedServer: Video.Server? = null) {
+        if (viewModel.isExtractingVideo) {
+            Log.d("PlayerTvFragment", "Ignorado cambio a siguiente servidor ($reason): ya hay una extracción en curso")
+            return
+        }
+        val serverReference = failedServer ?: currentServer
+        val nextServer = servers.getOrNull(servers.indexOf(serverReference) + 1)
         if (nextServer != null) {
             Log.i("PlayerTvFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
+            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+            if (::player.isInitialized) {
+                player.stop()
+            }
             viewModel.getVideo(nextServer)
         } else {
             Log.w("PlayerTvFragment", "No hay más servidores disponibles para cambiar ($reason)")
@@ -531,7 +541,13 @@ class PlayerTvFragment : Fragment() {
                             })
                             .build()
                         binding.settings.setOnServerSelectedListener { server ->
-                            viewModel.getVideo(state.servers.find { server.id == it.id }!!)
+                            val selectedServer = state.servers.find { server.id == it.id } ?: return@setOnServerSelectedListener
+                            Log.i("PlayerTvFragment", "Usuario seleccionó manualmente el servidor: ${selectedServer.name}")
+                            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                            if (::player.isInitialized) {
+                                player.stop()
+                            }
+                            viewModel.getVideo(selectedServer)
                         }
                         val preferredServer = state.servers.firstOrNull {
                             it.name.equals(args.preferredServerName, ignoreCase = true)
@@ -548,7 +564,9 @@ class PlayerTvFragment : Fragment() {
                             findNavController().navigateUp()
                         }
 
-                        is PlayerViewModel.State.LoadingVideo -> {}
+                        is PlayerViewModel.State.LoadingVideo -> {
+                            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                        }
 
                         is PlayerViewModel.State.SuccessLoadingVideo -> {
                             PlayerSettingsView.Settings.ExtraBuffering.init(state.video.extraBuffering)
@@ -559,6 +577,10 @@ class PlayerTvFragment : Fragment() {
                         is PlayerViewModel.State.FailedLoadingVideo -> {
                             val nextServer = servers.getOrNull(servers.indexOf(state.server) + 1)
                             if (nextServer != null) {
+                                stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                                if (::player.isInitialized) {
+                                    player.stop()
+                                }
                                 viewModel.getVideo(nextServer)
                             } else {
                                 val providerName = UserPreferences.currentProvider?.name ?: ""
@@ -1352,7 +1374,8 @@ class PlayerTvFragment : Fragment() {
                 }
             }
 
-            player.addListener(object : Player.Listener {
+            playerListener?.let { player.removeListener(it) }
+            val newListener = object : Player.Listener {
                 override fun onPlaybackStateChanged(playbackState: Int) {
                     super.onPlaybackStateChanged(playbackState)
 
@@ -1497,9 +1520,11 @@ class PlayerTvFragment : Fragment() {
                 override fun onPlayerError(error: PlaybackException) {
                     super.onPlayerError(error)
                     Log.e("PlayerTvFragment", "onPlayerError: ", error)
-                    switchToNextServer("Playback error: ${error.message}")
+                    switchToNextServer("Playback error: ${error.message}", currentServer)
                 }
-            })
+            }
+            playerListener = newListener
+            player.addListener(newListener)
 
             if (startPositionMs != null) {
                 player.seekTo(startPositionMs)
@@ -1982,6 +2007,12 @@ class PlayerTvFragment : Fragment() {
             binding.pvPlayer.player = null
             binding.settings.player = null
             binding.settings.subtitleView = null
+            playerListener?.let {
+                if (::player.isInitialized) {
+                    player.removeListener(it)
+                }
+            }
+            playerListener = null
             if (::player.isInitialized) {
                 player.release()
             }

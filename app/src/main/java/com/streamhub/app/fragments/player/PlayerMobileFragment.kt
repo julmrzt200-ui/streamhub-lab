@@ -182,11 +182,20 @@ class PlayerMobileFragment : Fragment() {
         }
     }
 
-    private fun switchToNextServer(reason: String = "") {
-        val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
+    private fun switchToNextServer(reason: String = "", failedServer: Video.Server? = null) {
+        if (viewModel.isExtractingVideo) {
+            Log.d("PlayerMobileFragment", "Ignorado cambio a siguiente servidor ($reason): ya hay una extracción en curso")
+            return
+        }
+        val serverReference = failedServer ?: currentServer
+        val nextServer = servers.getOrNull(servers.indexOf(serverReference) + 1)
         if (nextServer != null) {
             Log.i("PlayerMobileFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
             initialAutoPlayArmed = true
+            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+            if (::player.isInitialized) {
+                player.stop()
+            }
             showPlayerLoading()
             viewModel.getVideo(nextServer)
         } else {
@@ -294,15 +303,12 @@ class PlayerMobileFragment : Fragment() {
             super.onPlayerError(error)
             Log.e("PlayerMobileFragment", "onPlayerError: ", error)
             
-            val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
-            if (nextServer != null) {
-                Log.i("PlayerMobileFragment", "Playback failed, trying next server: ${nextServer.name}")
-                initialAutoPlayArmed = true
-                showPlayerLoading()
-                viewModel.getVideo(nextServer)
-            } else {
-                hidePlayerLoading()
+            if (viewModel.isExtractingVideo) {
+                Log.d("PlayerMobileFragment", "Ignorado onPlayerError porque se está extrayendo un nuevo servidor")
+                return
             }
+
+            switchToNextServer("Playback failed: ${error.message}", currentServer)
         }
 
         override fun onPlaybackStateChanged(playbackState: Int) {
@@ -772,9 +778,15 @@ class PlayerMobileFragment : Fragment() {
                                 })
                                 .build()
                             binding.settings.setOnServerSelectedListener { server ->
+                                val selectedServer = state.servers.find { server.id == it.id } ?: return@setOnServerSelectedListener
+                                Log.i("PlayerMobileFragment", "Usuario seleccionó manualmente el servidor: ${selectedServer.name}")
                                 initialAutoPlayArmed = true
+                                stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                                if (::player.isInitialized) {
+                                    player.stop()
+                                }
                                 showPlayerLoading()
-                                viewModel.getVideo(state.servers.find { server.id == it.id }!!)
+                                viewModel.getVideo(selectedServer)
                             }
                             val preferredServer = state.servers.firstOrNull {
                                 it.name.equals(args.preferredServerName, ignoreCase = true)
@@ -796,6 +808,7 @@ class PlayerMobileFragment : Fragment() {
                     }
 
                     is PlayerViewModel.State.LoadingVideo -> {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                         showPlayerLoading()
                     }
 
@@ -809,6 +822,10 @@ class PlayerMobileFragment : Fragment() {
                         val nextServer = servers.getOrNull(servers.indexOf(state.server) + 1)
                         if (nextServer != null) {
                             initialAutoPlayArmed = true
+                            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                            if (::player.isInitialized) {
+                                player.stop()
+                            }
                             showPlayerLoading()
                             viewModel.getVideo(nextServer)
                         } else {

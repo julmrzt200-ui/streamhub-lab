@@ -12,6 +12,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
 import okhttp3.OkHttpClient
@@ -40,14 +41,15 @@ object SubtitleNormalizer {
 
     private const val TAG = "SubtitleNormalizer"
     private const val MAX_BYTES = 6 * 1024 * 1024
-    private const val PER_TRACK_TIMEOUT_MS = 8_000L
+    private const val PER_TRACK_TIMEOUT_MS = 3_500L
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private val http by lazy {
         OkHttpClient.Builder()
-            .connectTimeout(8, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
+            .connectTimeout(3, TimeUnit.SECONDS)
+            .readTimeout(3, TimeUnit.SECONDS)
+            .callTimeout(4, TimeUnit.SECONDS)
             .followRedirects(true)
             .build()
     }
@@ -103,7 +105,9 @@ object SubtitleNormalizer {
             val out = File(cacheDir, "n_${md5(source)}.vtt")
             if (out.exists() && out.length() > 10) return@withContext Result(out, MimeTypes.TEXT_VTT)
 
-            val bytes = readBytes(context, source, headers) ?: return@withContext null
+            val bytes = runInterruptible(Dispatchers.IO) {
+                readBytes(context, source, headers)
+            } ?: return@withContext null
             val text = decode(bytes)
             val vtt = toVtt(text) ?: return@withContext null
             out.writeText(vtt, Charsets.UTF_8)

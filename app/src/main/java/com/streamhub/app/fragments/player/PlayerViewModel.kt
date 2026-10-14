@@ -12,7 +12,9 @@ import com.streamhub.app.utils.OpenSubtitles
 import com.streamhub.app.utils.SubtitleNormalizer
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.format
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -116,46 +118,67 @@ class PlayerViewModel(
         }
     }
 
-    fun getVideo(server: Video.Server) = viewModelScope.launch(Dispatchers.IO) {
-        Log.d("PlayerViewModel", "Inizio estrazione video dal server: ${server.name}")
-        _state.emit(State.LoadingVideo(server))
-        try {
-            val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
-            if (rawVideo.source.isEmpty()) throw Exception("No source found")
+    private var videoJob: Job? = null
 
-            // Normaliza TODAS las pistas externas (descarga con headers, detecta formato real,
-            // convierte a WebVTT UTF-8) y precalienta la traducción en la caché en vivo.
-            val video = try {
-                SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, rawVideo)
-            } catch (e: Exception) {
-                Log.w("PlayerViewModel", "Normalización de subtítulos falló: ${e.message}")
-                rawVideo
-            }
+    @Volatile
+    var isExtractingVideo: Boolean = false
+        private set
 
-            // LOGICA SOTTOTITOLI GLOBALE: 
-            // Se il provider non ha già impostato un default (es. i "forced" in spagnolo),
-            // allora proviamo ad attivare l'ultimo sottotitolo usato dall'utente.
-            // MA: se siamo su un provider spagnolo e non ci sono forced, non dobbiamo attivare nulla.
-            val currentProviderLang = UserPreferences.currentProvider?.language ?: ""
-            val hasDefaultAlready = video.subtitles.any { it.default }
+    fun getVideo(server: Video.Server): Job {
+        videoJob?.cancel()
+        isExtractingVideo = true
+        val job = viewModelScope.launch(Dispatchers.IO) {
+            Log.d("PlayerViewModel", "Inizio estrazione video dal server: ${server.name}")
+            _state.emit(State.LoadingVideo(server))
+            try {
+                val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
+                if (rawVideo.source.isEmpty()) throw Exception("No source found")
 
-            if (!hasDefaultAlready && currentProviderLang != "es") {
-                if (!(video.useServerSubtitleSetting && UserPreferences.serverAutoSubtitlesDisabled)) {
-                    // Antes: con subtitleName == null ("Ninguno") startsWith("") era siempre true y se
-                    // activaba la 1.ª pista aunque el usuario las hubiera apagado.
-                    UserPreferences.subtitleName?.takeIf { it.isNotBlank() }?.let { pref ->
-                        video.subtitles.firstOrNull { it.label.startsWith(pref, ignoreCase = true) }
-                            ?.default = true
+                // Normaliza TODAS las pistas externas (descarga con headers, detecta formato real,
+                // convierte a WebVTT UTF-8) y precalienta la traducción en la caché en vivo.
+                val video = try {
+                    SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, rawVideo)
+                } catch (e: Exception) {
+                    if (e is CancellationException) throw e
+                    Log.w("PlayerViewModel", "Normalización de subtítulos falló: ${e.message}")
+                    rawVideo
+                }
+
+                // LOGICA SOTTOTITOLI GLOBALE: 
+                // Se il provider non ha già impostato un default (es. i "forced" in spagnolo),
+                // allora proviamo ad attivare l'ultimo sottotitolo usado dall'utente.
+                // MA: se siamo su un provider spagnolo e non ci sono forced, non dobbiamo attivare nulla.
+                val currentProviderLang = UserPreferences.currentProvider?.language ?: ""
+                val hasDefaultAlready = video.subtitles.any { it.default }
+
+                if (!hasDefaultAlready && currentProviderLang != "es") {
+                    if (!(video.useServerSubtitleSetting && UserPreferences.serverAutoSubtitlesDisabled)) {
+                        // Antes: con subtitleName == null ("Ninguno") startsWith("") era siempre true y se
+                        // activaba la 1.ª pista aunque el usuario las hubiera apagado.
+                        UserPreferences.subtitleName?.takeIf { it.isNotBlank() }?.let { pref ->
+                            video.subtitles.firstOrNull { it.label.startsWith(pref, ignoreCase = true) }
+                                ?.default = true
+                        }
                     }
-		}
-            }
+                }
 
-            Log.d("PlayerViewModel", "Estrazione video completata con successo")
-            _state.emit(State.SuccessLoadingVideo(video, server))
-        } catch (e: Exception) {
-            Log.e("PlayerViewModel", "Errore estrazione video: ", e)
-            _state.emit(State.FailedLoadingVideo(e, server))
+                Log.d("PlayerViewModel", "Estrazione video completata con successo")
+                _state.emit(State.SuccessLoadingVideo(video, server))
+            } catch (e: CancellationException) {
+                Log.d("PlayerViewModel", "Estrazione video cancellata per il server: ${server.name}")
+                throw e
+            } catch (e: Exception) {
+                Log.e("PlayerViewModel", "Errore estrazione video: ", e)
+                _state.emit(State.FailedLoadingVideo(e, server))
+            }
         }
+        videoJob = job
+        job.invokeOnCompletion {
+            if (videoJob === job) {
+                isExtractingVideo = false
+            }
+        }
+        return job
     }
 
     fun getSubtitles(videoType: Video.Type) = viewModelScope.launch(Dispatchers.IO) {
