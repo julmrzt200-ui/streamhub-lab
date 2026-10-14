@@ -56,7 +56,9 @@ data class Video(
         val label: String,
         val file: String,
         var default: Boolean = false,
-        val initialDefault: Boolean = false
+        val initialDefault: Boolean = false,
+        /** MIME ya verificado por SubtitleNormalizer (null = adivinar por extensión). */
+        val mimeType: String? = null,
     ) : Serializable
 
     data class Server(

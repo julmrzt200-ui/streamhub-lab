@@ -5,6 +5,11 @@ import android.net.Uri
 import android.util.Log
 import com.streamhub.app.R
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -106,6 +111,7 @@ object SubtitleTranslator {
         sourceUri: Uri,
         sourceFileName: String,
         targetLangCode: String,
+        headers: Map<String, String>? = null,
     ): Result<File> = withContext(Dispatchers.IO) {
         try {
             val resolvedLang = resolveTargetLanguageCode(targetLangCode)
@@ -122,7 +128,7 @@ object SubtitleTranslator {
             }
 
             // Leer contenido de la fuente
-            val content = readUriContent(context, sourceUri)
+            val content = readUriContent(context, sourceUri, headers)
                 ?: return@withContext Result.failure(Exception("No se pudo leer el archivo de subtítulos original"))
 
             val isVtt = content.startsWith("WEBVTT") || extension == "vtt"
@@ -167,13 +173,24 @@ object SubtitleTranslator {
         }
     }
 
-    private fun readUriContent(context: Context, uri: Uri): String? {
+    private fun readUriContent(context: Context, uri: Uri, headers: Map<String, String>? = null): String? {
         return try {
-            if (uri.scheme == "file") {
-                val file = File(uri.path ?: return null)
-                if (file.exists()) file.readText(Charsets.UTF_8) else null
-            } else {
-                context.contentResolver.openInputStream(uri)?.use { stream ->
+            when (uri.scheme?.lowercase()) {
+                "file" -> {
+                    val file = File(uri.path ?: return null)
+                    if (file.exists()) file.readText(Charsets.UTF_8) else null
+                }
+                // Antes los http(s) iban a contentResolver (que no los soporta) y la traducción fallaba.
+                "http", "https" -> {
+                    val rb = Request.Builder().url(uri.toString()).header("User-Agent", "Mozilla/5.0")
+                    headers?.forEach { (k, v) ->
+                        if (!k.equals("Range", true) && !k.equals("Host", true) && !k.equals("Accept-Encoding", true)) rb.header(k, v)
+                    }
+                    httpClient.newCall(rb.build()).execute().use { r ->
+                        if (r.isSuccessful) r.body?.string() else null
+                    }
+                }
+                else -> context.contentResolver.openInputStream(uri)?.use { stream ->
                     stream.bufferedReader(Charsets.UTF_8).readText()
                 }
             }
@@ -236,18 +253,38 @@ object SubtitleTranslator {
         return Pair(headerLines, cues)
     }
 
-    private suspend fun translateBatchList(texts: List<String>, targetLang: String): List<String> = withContext(Dispatchers.IO) {
-        val results = ArrayList<String>(texts.size)
-        val batchSize = 25 // 25 bloques por lote
-
-        var i = 0
-        while (i < texts.size) {
-            val batch = texts.subList(i, minOf(i + batchSize, texts.size))
-            val translatedBatch = translateBatchWithRetry(batch, targetLang)
-            results.addAll(translatedBatch)
-            i += batchSize
+    private suspend fun translateBatchList(texts: List<String>, targetLang: String): List<String> =
+        withContext(Dispatchers.IO) {
+            val batchSize = 40
+            val gate = Semaphore(5) // 5 peticiones en paralelo (antes: secuencial)
+            coroutineScope {
+                texts.chunked(batchSize).map { batch ->
+                    async { gate.withPermit { translateBatchWithRetry(batch, targetLang) } }
+                }.awaitAll().flatten()
+            }
         }
-        results
+
+    /**
+     * Traduce TODAS las líneas de un VTT ya descargado y las inserta en la caché de
+     * [TranslatingTextOutput]. Así, cuando ExoPlayer entrega el cue, la traducción ya está lista
+     * y se ve directamente en español, sin ver el inglés primero. No reinicia el video.
+     */
+    suspend fun prefetchIntoLiveCache(file: File, targetLang: String) {
+        try {
+            if (targetLang == "off" || !file.exists()) return
+            val content = file.readText(Charsets.UTF_8)
+            val (_, cues) = parseCues(content, content.trimStart().startsWith("WEBVTT"))
+            if (cues.isEmpty()) return
+            val originals = cues.map { it.textLines.joinToString("\n") }
+            val translated = translateBatchList(originals, targetLang)
+            originals.forEachIndexed { i, original ->
+                val t = translated.getOrNull(i) ?: return@forEachIndexed
+                if (t != original) TranslatingTextOutput.putTranslation(targetLang, original, t)
+            }
+            Log.d(TAG, "Pre-traducción lista: ${cues.size} cues -> $targetLang")
+        } catch (e: Exception) {
+            Log.w(TAG, "prefetchIntoLiveCache falló: ${e.message}")
+        }
     }
 
     private fun translateBatchWithRetry(batch: List<String>, targetLang: String): List<String> {

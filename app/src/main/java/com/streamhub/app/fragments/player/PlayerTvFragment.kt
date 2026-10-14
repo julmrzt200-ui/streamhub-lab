@@ -74,6 +74,7 @@ import com.streamhub.app.models.WatchItem
 import com.streamhub.app.providers.SerienStreamProvider
 import com.streamhub.app.sync.CloudSyncHooks
 import com.streamhub.app.ui.PlayerTvView
+import com.streamhub.app.utils.SubtitleNormalizer
 import com.streamhub.app.utils.SubtitleTranslator
 import com.streamhub.app.utils.TranslatingTextOutput
 import com.streamhub.app.utils.SubtitleOffsetRenderersFactory
@@ -175,35 +176,50 @@ class PlayerTvFragment : Fragment() {
             Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
         )
 
+        val appContext = requireContext().applicationContext
         val fileName = uri.getFileName(requireContext()) ?: uri.toString()
 
-        val currentPosition = player.currentPosition
-        val currentSubtitleConfigurations =
-            player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                MediaItem.SubtitleConfiguration.Builder(it.uri)
-                    .setMimeType(it.mimeType)
-                    .setLabel(it.label)
-                    .setLanguage(it.language)
-                    .setSelectionFlags(0)
-                    .build()
-            } ?: listOf()
-        player.setMediaItem(
-            MediaItem.Builder()
-                .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                .setSubtitleConfigurations(
-                    currentSubtitleConfigurations
-                            + MediaItem.SubtitleConfiguration.Builder(uri)
-                        .setMimeType(fileName.toSubtitleMimeType())
-                        .setLabel(fileName)
-                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+        viewLifecycleOwner.lifecycleScope.launch {
+            // Detecta el formato REAL (srt/vtt/ass/ttml/json), corrige codificación y convierte a VTT.
+            val normalized = SubtitleNormalizer.normalize(appContext, uri.toString(), null)
+            if (!isAdded || _binding == null) return@launch
+            val subUri = normalized?.file?.toUri() ?: uri
+            val subMime = normalized?.mimeType ?: fileName.toSubtitleMimeType()
+            normalized?.file?.let { f ->
+                val target = UserPreferences.preferredTranslateLanguage
+                if (target != "off") {
+                    launch { SubtitleTranslator.prefetchIntoLiveCache(f, SubtitleTranslator.resolveTargetLanguageCode(target)) }
+                }
+            }
+
+            val currentPosition = player.currentPosition
+            val currentSubtitleConfigurations =
+                player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                    MediaItem.SubtitleConfiguration.Builder(it.uri)
+                        .setMimeType(it.mimeType)
+                        .setLabel(it.label)
+                        .setLanguage(it.language)
+                        .setSelectionFlags(0)
                         .build()
-                )
-                .setMediaMetadata(player.mediaMetadata)
-                .build()
-        )
-        player.seekTo(currentPosition)
-        player.play()
+                } ?: listOf()
+            player.setMediaItem(
+                MediaItem.Builder()
+                    .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                    .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                    .setSubtitleConfigurations(
+                        currentSubtitleConfigurations
+                                + MediaItem.SubtitleConfiguration.Builder(subUri)
+                            .setMimeType(subMime)
+                            .setLabel(fileName)
+                            .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                            .build()
+                    )
+                    .setMediaMetadata(player.mediaMetadata)
+                    .build()
+            )
+            player.seekTo(currentPosition)
+            player.play()
+        }
     }
 
     private var pendingShowSearchResults = false
@@ -1232,7 +1248,7 @@ class PlayerTvFragment : Fragment() {
                     .setMimeType(video.type)
                     .setSubtitleConfigurations(video.subtitles.map { subtitle ->
                         MediaItem.SubtitleConfiguration.Builder(subtitle.file.toUri())
-                            .setMimeType(subtitle.file.toSubtitleMimeType())
+                            .setMimeType(subtitle.mimeType ?: subtitle.file.toSubtitleMimeType())
                             .setLabel(subtitle.label)
                             .setSelectionFlags(if (subtitle.default) C.SELECTION_FLAG_DEFAULT else 0)
                             .build()

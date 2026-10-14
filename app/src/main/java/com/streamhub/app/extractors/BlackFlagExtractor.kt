@@ -23,7 +23,7 @@ class BlackFlagExtractor : Extractor() {
     companion object {
         private const val TAG = "BlackFlagDebug"
         private const val TOTAL_TIMEOUT_MS = 25000L
-        private const val VIDEO_GRACE_WINDOW_MS = 6000L
+        private const val VIDEO_GRACE_WINDOW_MS = 9000L
         private const val SUBTITLE_MARGIN_MS = 1500L
     }
 
@@ -129,46 +129,62 @@ class BlackFlagExtractor : Extractor() {
                     finish("cancelado")
                 }
 
+                fun addSubtitle(url: String, hintLabel: String?) {
+                    if (isResolved.get() || subtitles.any { it.file == url }) return
+                    val label = hintLabel?.takeIf { it.isNotBlank() } ?: labelForSubtitleUrl(url, subtitles.size + 1)
+                    subtitles.add(Video.Subtitle(label = label, file = url, default = false))
+                    Log.d(TAG, "Subtítulo candidato: host=${android.net.Uri.parse(url).host}, label=$label")
+                    if (detectedVideo.get() != null) {
+                        mainHandler.post {
+                            if (!isResolved.get()) {
+                                subtitleMarginRunnable?.let {
+                                    mainHandler.removeCallbacks(it)
+                                    mainHandler.postDelayed(it, SUBTITLE_MARGIN_MS)
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Muchos players web solo piden el .vtt cuando se ACTIVA el CC. Como aquí nadie lo
+                // activa, el WebView nunca lo descargaba. Esta sonda lo fuerza y lee los <track>.
+                fun runCcProbe() {
+                    if (isResolved.get()) return
+                    webView.evaluateJavascript(CC_PROBE_JS) { raw ->
+                        try {
+                            val text = org.json.JSONTokener(raw ?: "").nextValue() as? String ?: return@evaluateJavascript
+                            val arr = org.json.JSONArray(text)
+                            for (i in 0 until arr.length()) {
+                                val o = arr.getJSONObject(i)
+                                val src = o.optString("src")
+                                if (src.startsWith("http")) {
+                                    addSubtitle(src, languageLabel(o.optString("label").ifBlank { o.optString("lang") }))
+                                }
+                            }
+                        } catch (e: Exception) {
+                            Log.w(TAG, "CC probe: ${e.message}")
+                        }
+                    }
+                }
+
                 webView.webViewClient = object : WebViewClient() {
+                    override fun onPageFinished(view: WebView?, url: String?) {
+                        super.onPageFinished(view, url)
+                        // La página cambia (iframes/player tardío): sondear varias veces.
+                        listOf(500L, 2500L, 5000L, 8000L, 12000L).forEach { d ->
+                            mainHandler.postDelayed({ runCcProbe() }, d)
+                        }
+                    }
+
                     override fun shouldInterceptRequest(
                         view: WebView?,
                         request: WebResourceRequest?
                     ): android.webkit.WebResourceResponse? {
                         val reqUrl = request?.url?.toString().orEmpty()
 
-                        // Interceptar pistas de subtítulos legítimas (VTT, SRT)
-                        val cleanReqUrl = reqUrl.substringBefore("?").substringBefore("#")
-                        val isSubFile = cleanReqUrl.endsWith(".vtt", ignoreCase = true) || cleanReqUrl.endsWith(".srt", ignoreCase = true)
-                        val isSubPath = reqUrl.contains("/subtitles/", ignoreCase = true) || reqUrl.contains("opensubtitles", ignoreCase = true)
-                        val isInvalidExt = reqUrl.contains(".js") || reqUrl.contains(".json") || reqUrl.contains(".php") || reqUrl.contains(".html") || reqUrl.contains(".png") || reqUrl.contains(".css")
-
-                        if (!isResolved.get() && (isSubFile || (isSubPath && !isInvalidExt)) && !subtitles.any { it.file == reqUrl }) {
-                            val subUri = android.net.Uri.parse(reqUrl)
-                            val subHost = subUri.host ?: "unknown"
-                            val subExt = if (cleanReqUrl.contains(".")) ".${cleanReqUrl.substringAfterLast(".")}" else ""
-                            Log.d(TAG, "Subtítulo candidato: domain=$subHost, ext=$subExt")
-
-                            val label = when {
-                                reqUrl.contains("eng", ignoreCase = true) || reqUrl.contains("en-", ignoreCase = true) || reqUrl.contains("/en.", ignoreCase = true) -> "English (CC)"
-                                reqUrl.contains("spa", ignoreCase = true) || reqUrl.contains("es-", ignoreCase = true) || reqUrl.contains("/es.", ignoreCase = true) -> "Español"
-                                reqUrl.contains("fre", ignoreCase = true) || reqUrl.contains("fr-", ignoreCase = true) || reqUrl.contains("/fr.", ignoreCase = true) -> "Français"
-                                reqUrl.contains("ger", ignoreCase = true) || reqUrl.contains("de-", ignoreCase = true) || reqUrl.contains("/de.", ignoreCase = true) -> "Deutsch"
-                                reqUrl.contains("ita", ignoreCase = true) || reqUrl.contains("it-", ignoreCase = true) || reqUrl.contains("/it.", ignoreCase = true) -> "Italiano"
-                                reqUrl.contains("por", ignoreCase = true) || reqUrl.contains("pt-", ignoreCase = true) || reqUrl.contains("/pt.", ignoreCase = true) -> "Português"
-                                else -> "Subtítulo ${subtitles.size + 1}"
-                            }
-                            subtitles.add(Video.Subtitle(label = label, file = reqUrl, default = false))
-
-                            if (detectedVideo.get() != null) {
-                                mainHandler.post {
-                                    if (!isResolved.get()) {
-                                        subtitleMarginRunnable?.let {
-                                            mainHandler.removeCallbacks(it)
-                                            mainHandler.postDelayed(it, SUBTITLE_MARGIN_MS)
-                                        }
-                                    }
-                                }
-                            }
+                        // Interceptar pistas de subtítulos (cualquier formato/URL razonable)
+                        if (!isResolved.get() && isSubtitleUrl(reqUrl)) {
+                            addSubtitle(reqUrl, null)
                         }
 
                         // Interceptar playlist de video HLS o MP4
@@ -219,3 +235,87 @@ class BlackFlagExtractor : Extractor() {
         }
     }
 }
+
+// ---------------------------------------------------------------------------------------------
+// Detección de subtítulos
+// ---------------------------------------------------------------------------------------------
+
+private val SUB_EXT = Regex("""\.(vtt|srt|ass|ssa|ttml|dfxp|webvtt|sbv)(?:$|[?#&/])""", RegexOption.IGNORE_CASE)
+private val SUB_HINT = Regex(
+    """(subtitle|caption|/subs?/|/cc/|[?&](?:format|type|kind|fmt)=(?:vtt|srt|webvtt|ass)|opensubtitles)""",
+    RegexOption.IGNORE_CASE,
+)
+private val NOT_SUB = Regex(
+    """\.(js|mjs|css|png|jpe?g|gif|svg|webp|woff2?|ico|html?|php|json|m3u8|ts|mp4|m4s|mpd|map)(?:$|[?#])""",
+    RegexOption.IGNORE_CASE,
+)
+
+/** Antes solo .vtt/.srt o "/subtitles/". Ahora también .ass/.ttml/.dfxp/.sbv, ?format=vtt, /captions/, etc. */
+private fun isSubtitleUrl(url: String): Boolean {
+    if (!url.startsWith("http")) return false
+    val noFragment = url.substringBefore('#')
+    if (SUB_EXT.containsMatchIn(noFragment)) return true
+    val clean = noFragment.substringBefore('?')
+    if (NOT_SUB.containsMatchIn(clean)) return false
+    return SUB_HINT.containsMatchIn(noFragment)
+}
+
+private val LANG_NAMES = mapOf(
+    "English (CC)" to listOf("en", "eng", "english", "enus", "engb"),
+    "Español" to listOf("es", "spa", "spanish", "espanol", "español", "esla", "eslatam", "latino", "castellano"),
+    "Français" to listOf("fr", "fre", "fra", "french", "francais"),
+    "Deutsch" to listOf("de", "ger", "deu", "german", "deutsch"),
+    "Italiano" to listOf("it", "ita", "italian", "italiano"),
+    "Português" to listOf("pt", "por", "portuguese", "portugues", "ptbr", "brazilian"),
+)
+
+/** Convierte "en", "English", "spa"... en la etiqueta que usa el resto de la app. null si no se reconoce. */
+private fun languageLabel(raw: String?): String? {
+    val token = raw?.lowercase()?.replace(Regex("[^a-z]"), "")?.takeIf { it.isNotEmpty() } ?: return null
+    LANG_NAMES.forEach { (label, tokens) -> if (token in tokens) return label }
+    return raw?.trim()?.takeIf { it.isNotEmpty() }
+}
+
+/** Antes: contains("por"/"ita"/"eng"...) etiquetaba mal ("support", "capital" -> Português/Italiano). */
+private fun labelForSubtitleUrl(url: String, index: Int): String {
+    val tokens = url.substringBefore('#').lowercase().split(Regex("[^a-z]+")).filter { it.isNotEmpty() }
+    for (t in tokens) {
+        LANG_NAMES.forEach { (label, set) -> if (t in set) return label }
+    }
+    return "Subtítulo $index"
+}
+
+private const val CC_PROBE_JS = """
+(function(){
+  var out=[];
+  try{
+    document.querySelectorAll('video').forEach(function(v){
+      for(var i=0;i<v.textTracks.length;i++){
+        var t=v.textTracks[i];
+        if((t.kind==='subtitles'||t.kind==='captions') && t.mode==='disabled'){ t.mode='hidden'; }
+      }
+    });
+    document.querySelectorAll('track[src]').forEach(function(t){
+      out.push({src:t.src,label:t.label||'',lang:t.srclang||''});
+    });
+  }catch(e){}
+  try{
+    if(window.jwplayer){
+      var p=jwplayer(), l=p.getCaptionsList&&p.getCaptionsList();
+      if(l&&l.length>1){ p.setCurrentCaptions(1); }
+      var pl=p.getPlaylist&&p.getPlaylist();
+      if(pl&&pl[0]&&pl[0].tracks){ pl[0].tracks.forEach(function(t){ if(t.file&&(t.kind==='captions'||t.kind==='subtitles'||!t.kind)) out.push({src:t.file,label:t.label||'',lang:''}); }); }
+    }
+  }catch(e){}
+  try{
+    if(window.videojs&&videojs.getPlayers){
+      var ps=videojs.getPlayers();
+      for(var k in ps){
+        var tt=ps[k]&&ps[k].textTracks&&ps[k].textTracks();
+        for(var j=0;tt&&j<tt.length;j++){ if(tt[j].kind==='subtitles'||tt[j].kind==='captions'){ tt[j].mode='hidden'; } }
+      }
+    }
+  }catch(e){}
+  return JSON.stringify(out);
+})()
+"""

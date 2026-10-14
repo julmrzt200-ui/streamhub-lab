@@ -9,6 +9,7 @@ import com.streamhub.app.models.Video
 import com.streamhub.app.utils.CustomTabHelper
 import com.streamhub.app.utils.EpisodeManager
 import com.streamhub.app.utils.OpenSubtitles
+import com.streamhub.app.utils.SubtitleNormalizer
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.format
 import kotlinx.coroutines.Dispatchers
@@ -119,8 +120,17 @@ class PlayerViewModel(
         Log.d("PlayerViewModel", "Inizio estrazione video dal server: ${server.name}")
         _state.emit(State.LoadingVideo(server))
         try {
-            val video = UserPreferences.currentProvider!!.getVideo(server)
-            if (video.source.isEmpty()) throw Exception("No source found")
+            val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
+            if (rawVideo.source.isEmpty()) throw Exception("No source found")
+
+            // Normaliza TODAS las pistas externas (descarga con headers, detecta formato real,
+            // convierte a WebVTT UTF-8) y precalienta la traducción en la caché en vivo.
+            val video = try {
+                SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, rawVideo)
+            } catch (e: Exception) {
+                Log.w("PlayerViewModel", "Normalización de subtítulos falló: ${e.message}")
+                rawVideo
+            }
 
             // LOGICA SOTTOTITOLI GLOBALE: 
             // Se il provider non ha già impostato un default (es. i "forced" in spagnolo),
@@ -131,9 +141,12 @@ class PlayerViewModel(
 
             if (!hasDefaultAlready && currentProviderLang != "es") {
                 if (!(video.useServerSubtitleSetting && UserPreferences.serverAutoSubtitlesDisabled)) {
-                    video.subtitles
-                        .firstOrNull { it.label.startsWith(UserPreferences.subtitleName ?: "") }
-                        ?.default = true
+                    // Antes: con subtitleName == null ("Ninguno") startsWith("") era siempre true y se
+                    // activaba la 1.ª pista aunque el usuario las hubiera apagado.
+                    UserPreferences.subtitleName?.takeIf { it.isNotBlank() }?.let { pref ->
+                        video.subtitles.firstOrNull { it.label.startsWith(pref, ignoreCase = true) }
+                            ?.default = true
+                    }
 		}
             }
 
@@ -239,7 +252,11 @@ class PlayerViewModel(
         Log.d("PlayerViewModel", "Inizio download sottotitolo OpenSubtitles: ${subtitle.subFileName}")
         _subtitleState.emit(SubtitleState.DownloadingOpenSubtitle)
         try {
-            val uri = OpenSubtitles.download(subtitle)
+            val downloaded = OpenSubtitles.download(subtitle)
+            // Detecta formato/codificación reales y convierte a WebVTT UTF-8 (si falla, usa el original).
+            val uri = SubtitleNormalizer.normalize(
+                com.streamhub.app.StreamHubApp.instance.applicationContext, downloaded.toString(), null
+            )?.file?.let { android.net.Uri.fromFile(it) } ?: downloaded
             Log.d("PlayerViewModel", "Download OpenSubtitles completato: $uri")
             _subtitleState.emit(SubtitleState.SuccessDownloadingOpenSubtitle(subtitle, uri))
         } catch (e: Exception) {
@@ -252,7 +269,11 @@ class PlayerViewModel(
         Log.d("PlayerViewModel", "Inizio download sottotitolo SubDL: ${subtitle.name}")
         _subtitleState.emit(SubtitleState.DownloadingSubDLSubtitle)
         try {
-            val uri = SubDL.download(subtitle)
+            val downloaded = SubDL.download(subtitle)
+            // Detecta formato/codificación reales y convierte a WebVTT UTF-8 (si falla, usa el original).
+            val uri = SubtitleNormalizer.normalize(
+                com.streamhub.app.StreamHubApp.instance.applicationContext, downloaded.toString(), null
+            )?.file?.let { android.net.Uri.fromFile(it) } ?: downloaded
             Log.d("PlayerViewModel", "Download SubDL completato: $uri")
             _subtitleState.emit(SubtitleState.SuccessDownloadingSubDLSubtitle(subtitle, uri))
         } catch (e: Exception) {
