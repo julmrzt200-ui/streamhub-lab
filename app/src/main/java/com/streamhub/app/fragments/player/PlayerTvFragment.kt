@@ -548,18 +548,7 @@ class PlayerTvFragment : Fragment() {
                             findNavController().navigateUp()
                         }
 
-                        is PlayerViewModel.State.LoadingVideo -> {
-                            player.setMediaItem(
-                                MediaItem.Builder()
-                                    .setUri("".toUri())
-                                    .setMediaMetadata(
-                                        MediaMetadata.Builder()
-                                            .setMediaServerId(state.server.id)
-                                            .build()
-                                    )
-                                    .build()
-                            )
-                        }
+                        is PlayerViewModel.State.LoadingVideo -> {}
 
                         is PlayerViewModel.State.SuccessLoadingVideo -> {
                             PlayerSettingsView.Settings.ExtraBuffering.init(state.video.extraBuffering)
@@ -1537,10 +1526,17 @@ class PlayerTvFragment : Fragment() {
                     }
                 }
                 
-                val lastPlaybackPositionMillis = watchItem?.watchHistory
-                    ?.let { it.lastPlaybackPositionMillis - 10.seconds.inWholeMilliseconds }
+                val history = watchItem?.watchHistory
+                val isNearEnd = history != null && history.durationMillis > 0 &&
+                        history.lastPlaybackPositionMillis >= (history.durationMillis * 0.92)
 
-                player.seekTo(lastPlaybackPositionMillis ?: 0)
+                val targetSeekPosition = when {
+                    watchItem?.isWatched == true || isNearEnd -> 0L
+                    history != null -> (history.lastPlaybackPositionMillis - 10.seconds.inWholeMilliseconds).coerceAtLeast(0L)
+                    else -> 0L
+                }
+
+                player.seekTo(targetSeekPosition)
             } else {
                 player.seekTo(currentPosition)
             }

@@ -151,6 +151,23 @@ class PlayerMobileFragment : Fragment() {
     private var nextEpisodePrefetchJob: Job? = null
     private var nextEpisodeOverlayDismissed = false
 
+    private var initialAutoPlayArmed = true
+
+    private fun showPlayerLoading(message: String? = null) {
+        if (_binding == null) return
+        binding.llPlayerLoading.visibility = View.VISIBLE
+        if (message != null) {
+            binding.tvPlayerLoadingStatus.text = message
+        } else {
+            binding.tvPlayerLoadingStatus.setText(R.string.player_loading_video)
+        }
+    }
+
+    private fun hidePlayerLoading() {
+        if (_binding == null) return
+        binding.llPlayerLoading.visibility = View.GONE
+    }
+
     private var pendingShowSearchResults = false
     private var lastSearchLangCode = "all"
 
@@ -169,9 +186,164 @@ class PlayerMobileFragment : Fragment() {
         val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
         if (nextServer != null) {
             Log.i("PlayerMobileFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
+            initialAutoPlayArmed = true
+            showPlayerLoading()
             viewModel.getVideo(nextServer)
         } else {
+            hidePlayerLoading()
             Log.w("PlayerMobileFragment", "No hay más servidores disponibles para cambiar ($reason)")
+        }
+    }
+
+    private val playerListener = object : Player.Listener {
+        override fun onIsPlayingChanged(isPlaying: Boolean) {
+            super.onIsPlayingChanged(isPlaying)
+            binding.pvPlayer.keepScreenOn = isPlaying || UserPreferences.keepScreenOnWhenPaused
+
+            if (isPlaying) {
+                initialAutoPlayArmed = false
+                hidePlayerLoading()
+                recordRecentlyWatchedStart()
+                startProgressHandler()
+            } else {
+                stopProgressHandler()
+            }
+
+            val hasUri = player.currentMediaItem?.localConfiguration?.uri
+                ?.toString()?.isNotEmpty()
+                ?: false
+
+            if (!isPlaying && hasUri) {
+                val videoType = args.videoType
+                val watchItem: WatchItem? = when (videoType) {
+                    is Video.Type.Movie -> database.movieDao().getById(videoType.id)
+                    is Video.Type.Episode -> database.episodeDao().getById(videoType.id)
+                }
+
+                when {
+                    player.hasStarted() && !player.hasFinished() -> {
+                        watchItem?.isWatched = false
+                        watchItem?.watchedDate = null
+                        watchItem?.watchHistory = WatchItem.WatchHistory(
+                            lastEngagementTimeUtcMillis = System.currentTimeMillis(),
+                            lastPlaybackPositionMillis = player.currentPosition,
+                            durationMillis = player.duration,
+                        )
+                    }
+
+                    player.hasFinished() -> {
+                        watchItem?.isWatched = true
+                        watchItem?.watchedDate = Calendar.getInstance()
+                        watchItem?.watchHistory = null
+                    }
+                }
+
+                when (videoType) {
+                    is Video.Type.Movie -> {
+                        val provider = UserPreferences.currentProvider ?: return
+                        val movie = watchItem as? Movie
+                        movie?.let {
+                            database.movieDao().update(it)
+                            UserDataCache.syncMovieToCache(requireContext(), provider, it)
+                        }
+                    }
+
+                    is Video.Type.Episode -> {
+                        val provider = UserPreferences.currentProvider ?: return
+                        val episode = watchItem as? Episode
+                        episode?.let {
+                            if (player.hasFinished()) {
+                                database.episodeDao().resetProgressionFromEpisode(videoType.id)
+                                UserDataCache.removeEpisodeFromContinueWatching(requireContext(), provider, it.id)
+                                queueNextEpisodeForContinueWatching(provider)
+                            }
+                            database.episodeDao().update(it)
+                            if (!player.hasFinished()) {
+                                UserDataCache.syncEpisodeToCache(requireContext(), provider, it)
+                            }
+
+                            it.tvShow?.let { tvShow ->
+                                database.tvShowDao().getById(tvShow.id)
+                            }?.let { tvShow ->
+                                val episodeDao = database.episodeDao()
+                                val isStillWatching = episodeDao.hasAnyWatchHistoryForTvShow(tvShow.id)
+                                
+                                val updatedTvShow = tvShow.copy().apply {
+                                    merge(tvShow)
+                                    isWatching = !player.hasReallyFinished() || isStillWatching
+                                }
+                                database.tvShowDao().update(updatedTvShow)
+                                CloudSyncHooks.tvShow(
+                                    requireContext(),
+                                    provider,
+                                    updatedTvShow,
+                                )
+                            }
+                        }
+                    }
+                }
+                if (player.hasReallyFinished()) {
+                    if (UserPreferences.autoplay) {
+                        playNextEpisodeAcrossSeasons(autoplay = true)
+                    }
+                }
+            }
+        }
+
+        override fun onPlayerError(error: PlaybackException) {
+            super.onPlayerError(error)
+            Log.e("PlayerMobileFragment", "onPlayerError: ", error)
+            
+            val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
+            if (nextServer != null) {
+                Log.i("PlayerMobileFragment", "Playback failed, trying next server: ${nextServer.name}")
+                initialAutoPlayArmed = true
+                showPlayerLoading()
+                viewModel.getVideo(nextServer)
+            } else {
+                hidePlayerLoading()
+            }
+        }
+
+        override fun onPlaybackStateChanged(playbackState: Int) {
+            super.onPlaybackStateChanged(playbackState)
+            when (playbackState) {
+                Player.STATE_READY -> {
+                    hidePlayerLoading()
+                    if (initialAutoPlayArmed && !player.isPlaying) {
+                        player.playWhenReady = true
+                        player.play()
+                    }
+                }
+                Player.STATE_BUFFERING -> {
+                    if (initialAutoPlayArmed) {
+                        player.playWhenReady = true
+                    }
+                    if (player.playWhenReady) {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+                    } else {
+                        stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                    }
+                }
+                else -> {
+                    stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                }
+            }
+        }
+
+        override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
+            super.onPlayWhenReadyChanged(playWhenReady, reason)
+            if (initialAutoPlayArmed && !playWhenReady && reason == Player.PLAY_WHEN_READY_CHANGE_REASON_AUDIO_FOCUS_LOSS) {
+                Log.d("PlayerMobileFragment", "AudioFocus transitorio durante inicio, rearmando playWhenReady")
+                player.playWhenReady = true
+            }
+            if (player.playbackState == Player.STATE_BUFFERING && playWhenReady) {
+                stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+            } else {
+                stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+            }
         }
     }
 
@@ -523,6 +695,8 @@ class PlayerMobileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialAutoPlayArmed = true
+        showPlayerLoading()
         initializePlayer(false)
         initializeVideo()
         gestureHelper = PlayerGestureHelper(
@@ -540,8 +714,11 @@ class PlayerMobileFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch { 
             viewModel.state.flowWithLifecycle(lifecycle, Lifecycle.State.CREATED).collect { state ->
                 when (state) {
-                    PlayerViewModel.State.LoadingServers -> {}
+                    PlayerViewModel.State.LoadingServers -> {
+                        showPlayerLoading()
+                    }
                     is PlayerViewModel.State.SuccessLoadingServers -> {
+                        showPlayerLoading()
                         servers = state.servers
                         if (waitingForBypass) return@collect
                         val sToServer = servers.firstOrNull {
@@ -568,6 +745,7 @@ class PlayerMobileFragment : Fragment() {
                             val isAD = providerName.contains("AfterDark", ignoreCase = true)
 
                             if (servers.isEmpty()) {
+                                hidePlayerLoading()
                                 val message = if (isTmdb || isAD) {
                                     val langCode = providerName.substringAfter("(").substringBefore(")")
                                     val locale = Locale.forLanguageTag(langCode)
@@ -594,17 +772,21 @@ class PlayerMobileFragment : Fragment() {
                                 })
                                 .build()
                             binding.settings.setOnServerSelectedListener { server ->
+                                initialAutoPlayArmed = true
+                                showPlayerLoading()
                                 viewModel.getVideo(state.servers.find { server.id == it.id }!!)
                             }
                             val preferredServer = state.servers.firstOrNull {
                                 it.name.equals(args.preferredServerName, ignoreCase = true)
                             }
+                            initialAutoPlayArmed = true
                             viewModel.getVideo(preferredServer ?: state.servers.first())
                         }
 
                     }
 
                     is PlayerViewModel.State.FailedLoadingServers -> {
+                        hidePlayerLoading()
                         Toast.makeText(
                             requireContext(),
                             state.error.message ?: "",
@@ -614,16 +796,7 @@ class PlayerMobileFragment : Fragment() {
                     }
 
                     is PlayerViewModel.State.LoadingVideo -> {
-                        player.setMediaItem(
-                            MediaItem.Builder()
-                                .setUri("".toUri())
-                                .setMediaMetadata(
-                                    MediaMetadata.Builder()
-                                        .setMediaServerId(state.server.id)
-                                        .build()
-                                )
-                                .build()
-                        )
+                        showPlayerLoading()
                     }
 
                     is PlayerViewModel.State.SuccessLoadingVideo -> {
@@ -635,8 +808,11 @@ class PlayerMobileFragment : Fragment() {
                     is PlayerViewModel.State.FailedLoadingVideo -> {
                         val nextServer = servers.getOrNull(servers.indexOf(state.server) + 1)
                         if (nextServer != null) {
+                            initialAutoPlayArmed = true
+                            showPlayerLoading()
                             viewModel.getVideo(nextServer)
                         } else {
+                            hidePlayerLoading()
                             val providerName = UserPreferences.currentProvider?.name ?: ""
                             val isTmdb = providerName.contains("TMDb", ignoreCase = true)
                             val isAD = providerName.contains("AfterDark", ignoreCase = true)
@@ -1012,6 +1188,8 @@ class PlayerMobileFragment : Fragment() {
 
         binding.btnNextEpisodeAction.setOnClickListener {
             hideNextEpisodeOverlay()
+            initialAutoPlayArmed = true
+            showPlayerLoading()
             playNextEpisodeAcrossSeasons()
         }
         binding.btnNextEpisodeDismiss.setOnClickListener {
@@ -1117,6 +1295,8 @@ class PlayerMobileFragment : Fragment() {
                     }
                 }
 
+                initialAutoPlayArmed = true
+                showPlayerLoading()
                 playEpisode()
             }
         }
@@ -1151,6 +1331,8 @@ class PlayerMobileFragment : Fragment() {
             if (!hasNextEpisode) return@launch
             if (autoplay && !UserPreferences.autoplay) return@launch
 
+            initialAutoPlayArmed = true
+            showPlayerLoading()
             viewModel.playNextEpisode()
         }
     }
@@ -1317,131 +1499,6 @@ class PlayerMobileFragment : Fragment() {
                 startActivity(Intent.createChooser(intent, getString(R.string.player_external_player_title)))
             }
         }
-        player.addListener(object : Player.Listener {
-            override fun onIsPlayingChanged(isPlaying: Boolean) {
-                super.onIsPlayingChanged(isPlaying)
-                binding.pvPlayer.keepScreenOn = isPlaying || UserPreferences.keepScreenOnWhenPaused
-
-                if (isPlaying) {
-                    recordRecentlyWatchedStart()
-                    startProgressHandler()
-                } else {
-                    stopProgressHandler()
-                }
-
-                val hasUri = player.currentMediaItem?.localConfiguration?.uri
-                    ?.toString()?.isNotEmpty()
-                    ?: false
-
-                if (!isPlaying && hasUri) {
-                    val videoType = args.videoType
-                    val watchItem: WatchItem? = when (videoType) {
-                        is Video.Type.Movie -> database.movieDao().getById(videoType.id)
-                        is Video.Type.Episode -> database.episodeDao().getById(videoType.id)
-                    }
-
-                    when {
-                        player.hasStarted() && !player.hasFinished() -> {
-                            watchItem?.isWatched = false
-                            watchItem?.watchedDate = null
-                            watchItem?.watchHistory = WatchItem.WatchHistory(
-                                lastEngagementTimeUtcMillis = System.currentTimeMillis(),
-                                lastPlaybackPositionMillis = player.currentPosition,
-                                durationMillis = player.duration,
-                            )
-                        }
-
-                        player.hasFinished() -> {
-                            watchItem?.isWatched = true
-                            watchItem?.watchedDate = Calendar.getInstance()
-                            watchItem?.watchHistory = null
-                        }
-                    }
-
-                            when (videoType) {
-                                is Video.Type.Movie -> {
-                                    val provider = UserPreferences.currentProvider ?: return
-                                    val movie = watchItem as? Movie
-                                    movie?.let {
-                                        database.movieDao().update(it)
-                                        UserDataCache.syncMovieToCache(requireContext(), provider, it)
-                                    }
-                                }
-
-                                is Video.Type.Episode -> {
-                                    val provider = UserPreferences.currentProvider ?: return
-                                    val episode = watchItem as? Episode
-                                    episode?.let {
-                                        if (player.hasFinished()) {
-                                            database.episodeDao().resetProgressionFromEpisode(videoType.id)
-                                            UserDataCache.removeEpisodeFromContinueWatching(requireContext(), provider, it.id)
-                                            queueNextEpisodeForContinueWatching(provider)
-                                        }
-                                        database.episodeDao().update(it)
-                                        if (!player.hasFinished()) {
-                                            UserDataCache.syncEpisodeToCache(requireContext(), provider, it)
-                                        }
-
-                                        it.tvShow?.let { tvShow ->
-                                            database.tvShowDao().getById(tvShow.id)
-                                        }?.let { tvShow ->
-                                            val episodeDao = database.episodeDao()
-                                            val isStillWatching = episodeDao.hasAnyWatchHistoryForTvShow(tvShow.id)
-                                            
-                                            val updatedTvShow = tvShow.copy().apply {
-                                                merge(tvShow)
-                                                isWatching = !player.hasReallyFinished() || isStillWatching
-                                            }
-                                            database.tvShowDao().update(updatedTvShow)
-                                            CloudSyncHooks.tvShow(
-                                                requireContext(),
-                                                provider,
-                                                updatedTvShow,
-                                            )
-                                        }
-                                    }
-                                }
-                            }
-                    if (player.hasReallyFinished()) {
-                        if (UserPreferences.autoplay) {
-                            playNextEpisodeAcrossSeasons(autoplay = true)
-                        }
-                    }
-                }
-            }
-
-            override fun onPlayerError(error: PlaybackException) {
-                super.onPlayerError(error)
-                Log.e("PlayerMobileFragment", "onPlayerError: ", error)
-                
-                val nextServer = servers.getOrNull(servers.indexOf(currentServer) + 1)
-                if (nextServer != null) {
-                    Log.i("PlayerMobileFragment", "Playback failed, trying next server: ${nextServer.name}")
-                    viewModel.getVideo(nextServer)
-                }
-            }
-
-            override fun onPlaybackStateChanged(playbackState: Int) {
-                super.onPlaybackStateChanged(playbackState)
-                if (playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
-                    stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                    stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
-                } else {
-                    stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                }
-            }
-
-            override fun onPlayWhenReadyChanged(playWhenReady: Boolean, reason: Int) {
-                super.onPlayWhenReadyChanged(playWhenReady, reason)
-                if (player.playbackState == Player.STATE_BUFFERING && playWhenReady) {
-                    stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                    stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
-                } else {
-                    stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                }
-            }
-        })
-
         if (currentPosition == 0L) {
             val videoType = args.videoType
             val provider = UserPreferences.currentProvider
@@ -1465,14 +1522,23 @@ class PlayerMobileFragment : Fragment() {
                 }
             }
             
-            val lastPlaybackPositionMillis = watchItem?.watchHistory
-                ?.let { it.lastPlaybackPositionMillis - 10.seconds.inWholeMilliseconds }
+            val history = watchItem?.watchHistory
+            val isNearEnd = history != null && history.durationMillis > 0 &&
+                    history.lastPlaybackPositionMillis >= (history.durationMillis * 0.92)
 
-            player.seekTo(lastPlaybackPositionMillis ?: 0)
+            val targetSeekPosition = when {
+                watchItem?.isWatched == true || isNearEnd -> 0L
+                history != null -> (history.lastPlaybackPositionMillis - 10.seconds.inWholeMilliseconds).coerceAtLeast(0L)
+                else -> 0L
+            }
+
+            player.seekTo(targetSeekPosition)
         } else {
             player.seekTo(currentPosition)
         }
 
+        initialAutoPlayArmed = true
+        player.playWhenReady = true
         player.prepare()
         player.play()
     }
@@ -1848,6 +1914,9 @@ class PlayerMobileFragment : Fragment() {
                         .build()
                 }
 
+                player.playWhenReady = true
+                player.addListener(playerListener)
+
                 mediaSession = MediaSession.Builder(requireContext(), player)
                     .build()
             }
@@ -1867,6 +1936,7 @@ class PlayerMobileFragment : Fragment() {
         binding.settings.player = null
         binding.settings.subtitleView = null
         if (::player.isInitialized) {
+            player.removeListener(playerListener)
             player.release()
         }
         if (::mediaSession.isInitialized) {

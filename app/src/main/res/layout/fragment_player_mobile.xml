@@ -24,6 +24,42 @@
         app:show_timeout="2000"
         app:surface_type="texture_view" />
 
+    <LinearLayout
+        android:id="@+id/ll_player_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/pb_player_loading"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:indeterminate="true"
+            android:indeterminateTint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_player_loading_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:shadowColor="#CC000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:text="@string/player_loading_video"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Cargando…" />
+    </LinearLayout>
+
     <com.streamhub.app.fragments.player.settings.PlayerSettingsMobileView
         android:id="@+id/settings"
         android:layout_width="300dp"

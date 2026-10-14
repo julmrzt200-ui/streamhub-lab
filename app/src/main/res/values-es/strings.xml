@@ -543,4 +543,5 @@
     <string name="settings_clear_recently_watched_summary">Elimina todos los elementos guardados de la lista de Vistos recientemente.</string>
     <string name="settings_clear_recently_watched_dialog_message">¿Estás seguro de que deseas borrar todo el historial de Vistos recientemente?</string>
     <string name="settings_clear_recently_watched_done">Historial de Vistos recientemente borrado.</string>
+    <string name="player_loading_video">Cargando…</string>
 </resources>

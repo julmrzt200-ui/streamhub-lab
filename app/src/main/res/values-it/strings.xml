@@ -522,4 +522,5 @@
     <string name="settings_clear_recently_watched_summary">Rimuovi tutti gli elementi salvati dalla lista dei Guardati di recente.</string>
     <string name="settings_clear_recently_watched_dialog_message">Sei sicuro di voler cancellare tutta la cronologia dei Guardati di recente?</string>
     <string name="settings_clear_recently_watched_done">Cronologia Guardati di recente cancellata.</string>
+    <string name="player_loading_video">Caricamento…</string>
 </resources>
