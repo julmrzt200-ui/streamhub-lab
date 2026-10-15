@@ -77,7 +77,9 @@ import com.streamhub.app.ui.PlayerTvView
 import com.streamhub.app.utils.SubtitleNormalizer
 import com.streamhub.app.utils.SubtitleTranslator
 import com.streamhub.app.utils.TranslatingTextOutput
+import com.streamhub.app.utils.SubtitleOffset
 import com.streamhub.app.utils.SubtitleOffsetRenderersFactory
+import androidx.media3.exoplayer.SeekParameters
 import com.streamhub.app.utils.DnsResolver
 import com.streamhub.app.utils.NetworkClient
 import com.streamhub.app.utils.EpisodeManager
@@ -939,6 +941,7 @@ class PlayerTvFragment : Fragment() {
         }
 
         private fun initializeVideo() {
+            SubtitleOffset.reset()
             when (val type = args.videoType) {
                 is Video.Type.Episode -> {
                     nextEpisodeOverlayDismissed = false
@@ -1907,12 +1910,22 @@ class PlayerTvFragment : Fragment() {
         private var currentSoftwareDecoder = false
 
         private fun buildPlayer(extraBuffering: Boolean): ExoPlayer {
+            val minBufferMs = if (extraBuffering) 60_000 else 15_000
+            val maxBufferMs = if (extraBuffering) 300_000 else 60_000
+            val bufferForPlaybackMs = if (extraBuffering) 1_500 else 800
+            val bufferForPlaybackAfterRebufferMs = if (extraBuffering) 3_000 else 1_500
+
             val loadControl = DefaultLoadControl.Builder()
                 .setBufferDurationsMs(
-                    DefaultLoadControl.DEFAULT_MIN_BUFFER_MS,
-                    if (extraBuffering) 300_000 else DefaultLoadControl.DEFAULT_MAX_BUFFER_MS,
-                    DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS,
-                    DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS
+                    minBufferMs,
+                    maxBufferMs,
+                    bufferForPlaybackMs,
+                    bufferForPlaybackAfterRebufferMs
+                )
+                .setPrioritizeTimeOverSizeThresholds(true)
+                .setBackBuffer(
+                    20_000,
+                    true
                 )
                 .build()
 
@@ -1927,6 +1940,11 @@ class PlayerTvFragment : Fragment() {
             val baseBuilder = ExoPlayer.Builder(requireContext(), renderersFactory)
 
             return baseBuilder
+                .setSeekBackIncrementMs(10_000)
+                .setSeekForwardIncrementMs(10_000)
+                .setSeekParameters(SeekParameters.CLOSEST_SYNC)
+                .setHandleAudioBecomingNoisy(true)
+                .setWakeMode(C.WAKE_MODE_NETWORK)
                 .setMediaSourceFactory(DefaultMediaSourceFactory(dataSourceFactory))
                 .setLoadControl(loadControl)
                 .build()
@@ -2002,6 +2020,7 @@ class PlayerTvFragment : Fragment() {
         }
 
         private fun releasePlayer() {
+            SubtitleOffset.reset()
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             stopProgressHandler()
             binding.pvPlayer.player = null

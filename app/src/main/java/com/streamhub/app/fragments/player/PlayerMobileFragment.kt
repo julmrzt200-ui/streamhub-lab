@@ -62,7 +62,9 @@ import com.streamhub.app.providers.SerienStreamProvider
 import com.streamhub.app.sync.CloudSyncHooks
 import com.streamhub.app.ui.PlayerMobileView
 import com.streamhub.app.utils.MediaServer
+import com.streamhub.app.utils.SubtitleOffset
 import com.streamhub.app.utils.SubtitleOffsetRenderersFactory
+import androidx.media3.exoplayer.SeekParameters
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.UserDataCache
 import com.streamhub.app.utils.dp
@@ -1040,6 +1042,7 @@ class PlayerMobileFragment : Fragment() {
 
 
     private fun initializeVideo() {
+        SubtitleOffset.reset()
         WindowCompat.getInsetsController(
             requireActivity().window,
             requireActivity().window.decorView
@@ -1850,12 +1853,22 @@ class PlayerMobileFragment : Fragment() {
     private var currentSoftwareDecoder = false
 
     private fun buildPlayer(extraBuffering: Boolean): ExoPlayer {
+        val minBufferMs = if (extraBuffering) 60_000 else 15_000
+        val maxBufferMs = if (extraBuffering) 300_000 else 60_000
+        val bufferForPlaybackMs = if (extraBuffering) 1_500 else 800
+        val bufferForPlaybackAfterRebufferMs = if (extraBuffering) 3_000 else 1_500
+
         val loadControl = DefaultLoadControl.Builder()
             .setBufferDurationsMs(
-                DefaultLoadControl.DEFAULT_MIN_BUFFER_MS,
-                if (extraBuffering) 300_000 else DefaultLoadControl.DEFAULT_MAX_BUFFER_MS,
-                DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS,
-                DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS
+                minBufferMs,
+                maxBufferMs,
+                bufferForPlaybackMs,
+                bufferForPlaybackAfterRebufferMs
+            )
+            .setPrioritizeTimeOverSizeThresholds(true)
+            .setBackBuffer(
+                30_000,
+                true
             )
             .build()
 
@@ -1872,6 +1885,9 @@ class PlayerMobileFragment : Fragment() {
         return baseBuilder
             .setSeekBackIncrementMs(10_000)
             .setSeekForwardIncrementMs(10_000)
+            .setSeekParameters(SeekParameters.CLOSEST_SYNC)
+            .setHandleAudioBecomingNoisy(true)
+            .setWakeMode(C.WAKE_MODE_NETWORK)
             .setMediaSourceFactory(DefaultMediaSourceFactory(dataSourceFactory))
             .setLoadControl(loadControl)
             .build()
@@ -1947,6 +1963,7 @@ class PlayerMobileFragment : Fragment() {
     }
 
     private fun releasePlayer() {
+        SubtitleOffset.reset()
         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
         stopProgressHandler()
         binding.pvPlayer.player = null

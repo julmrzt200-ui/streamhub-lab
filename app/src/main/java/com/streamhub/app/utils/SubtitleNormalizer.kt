@@ -41,15 +41,15 @@ object SubtitleNormalizer {
 
     private const val TAG = "SubtitleNormalizer"
     private const val MAX_BYTES = 6 * 1024 * 1024
-    private const val PER_TRACK_TIMEOUT_MS = 3_500L
+    private const val PER_TRACK_TIMEOUT_MS = 1_500L
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private val http by lazy {
         OkHttpClient.Builder()
-            .connectTimeout(3, TimeUnit.SECONDS)
-            .readTimeout(3, TimeUnit.SECONDS)
-            .callTimeout(4, TimeUnit.SECONDS)
+            .connectTimeout(2, TimeUnit.SECONDS)
+            .readTimeout(2, TimeUnit.SECONDS)
+            .callTimeout(2, TimeUnit.SECONDS)
             .followRedirects(true)
             .build()
     }

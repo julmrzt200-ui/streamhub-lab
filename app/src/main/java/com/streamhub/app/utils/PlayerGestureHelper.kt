@@ -101,9 +101,30 @@ class PlayerGestureHelper(
             
             override fun onDoubleTap(e: MotionEvent): Boolean {
                 val videoView = playerView.videoSurfaceView ?: return false
-                videoView.scaleX = 1.0f
-                videoView.scaleY = 1.0f
-                return true
+                val width = playerView.width
+                if (width <= 0) return false
+
+                val x = e.x
+                val player = playerView.player
+
+                return when {
+                    x < width * 0.35f -> {
+                        // Doble tap en tercio izquierdo -> retroceder 10s (estilo YouTube)
+                        player?.seekBack()
+                        true
+                    }
+                    x > width * 0.65f -> {
+                        // Doble tap en tercio derecho -> adelantar 10s (estilo YouTube)
+                        player?.seekForward()
+                        true
+                    }
+                    else -> {
+                        // Doble tap central -> reiniciar zoom a 1.0x
+                        videoView.scaleX = 1.0f
+                        videoView.scaleY = 1.0f
+                        true
+                    }
+                }
             }
         })
 
@@ -124,9 +145,9 @@ class PlayerGestureHelper(
             
             scaleGestureDetector.onTouchEvent(event)
             
-            if (!isScaling) {
+            val gestureHandled = if (!isScaling) {
                 gestureDetector.onTouchEvent(event)
-            }
+            } else false
             
             if (event.action == MotionEvent.ACTION_UP || event.action == MotionEvent.ACTION_CANCEL) {
                 isScrolling = false
@@ -134,7 +155,7 @@ class PlayerGestureHelper(
                 hideBars()
             }
             
-            isScrolling || isScaling
+            isScrolling || isScaling || gestureHandled
         }
     }
 

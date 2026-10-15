@@ -17,6 +17,10 @@ import androidx.media3.exoplayer.text.TextRenderer
 object SubtitleOffset {
     @Volatile
     var offsetMs: Long = 0
+
+    fun reset() {
+        offsetMs = 0L
+    }
 }
 
 /**
