@@ -275,12 +275,22 @@ def main():
 
         try:
             r_page = curl_requests.get(page_url, headers=HEADERS_FLIXBAY, impersonate="chrome110", timeout=15)
+            print(f"📡 Respuesta HTTP: {r_page.status_code} | Tamaño: {len(r_page.text)} bytes", flush=True)
+            if r_page.status_code != 200:
+                print(f"[!] Error HTTP {r_page.status_code}. Muestra: {r_page.text[:200]}", flush=True)
+                continue
+
             series_ids = re.findall(r'href=[\"\']/series/(\d+)[\"\']', r_page.text)
             series_ids = sorted(list(dict.fromkeys(series_ids)))
             print(f"📺 Series encontradas en página {page}: {len(series_ids)}", flush=True)
+
+            if len(series_ids) == 0:
+                print(f"⚠️ No se detectaron series en la página {page}!", flush=True)
+                print(f"🔍 Fragmento del servidor: {r_page.text[:300]}", flush=True)
+                break  # Detener para no saltar páginas en falso
         except Exception as e:
-            print(f"[!] Error al cargar página {page}: {e}", flush=True)
-            continue
+            print(f"[!] Error de conexión al cargar página {page}: {e}", flush=True)
+            break
 
         for s_idx, s_id in enumerate(series_ids, 1):
             if s_id in series_completadas:
