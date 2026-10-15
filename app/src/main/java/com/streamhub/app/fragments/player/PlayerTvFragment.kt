@@ -139,7 +139,21 @@ class PlayerTvFragment : Fragment() {
     private lateinit var mediaSession: MediaSession
     private lateinit var progressHandler: android.os.Handler
     private lateinit var progressRunnable: Runnable
-    private lateinit var gestureHelper: PlayerGestureHelper
+
+    private fun showPlayerLoading(message: String? = null) {
+        if (_binding == null) return
+        binding.llPlayerLoading.visibility = View.VISIBLE
+        if (message != null) {
+            binding.tvPlayerLoadingStatus.text = message
+        } else {
+            binding.tvPlayerLoadingStatus.setText(R.string.player_loading_video)
+        }
+    }
+
+    private fun hidePlayerLoading() {
+        if (_binding == null) return
+        binding.llPlayerLoading.visibility = View.GONE
+    }
 
     private var servers = listOf<Video.Server>()
     private var zoomToast: Toast? = null
@@ -252,8 +266,10 @@ class PlayerTvFragment : Fragment() {
             if (::player.isInitialized) {
                 player.stop()
             }
+            showPlayerLoading()
             viewModel.getVideo(nextServer)
         } else {
+            hidePlayerLoading()
             Log.w("PlayerTvFragment", "No hay más servidores disponibles para cambiar ($reason)")
         }
     }
@@ -490,23 +506,17 @@ class PlayerTvFragment : Fragment() {
         initializeVideo()
         binding.pvPlayer.onMediaPreviousClicked = ::handleMediaPrevious
         binding.pvPlayer.onMediaNextClicked = ::handleMediaNext
-        gestureHelper = PlayerGestureHelper(
-            requireContext(),
-            binding.pvPlayer,
-            binding.llBrightness,
-            binding.pbBrightness,
-            binding.tvBrightnessPercentage,
-            binding.llVolume,
-            binding.pbVolume,
-            binding.tvVolumePercentage
-        )
+        showPlayerLoading()
 
         // Stato Video
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.state.flowWithLifecycle(lifecycle, Lifecycle.State.CREATED).collect { state ->
                 when (state) {
-                    PlayerViewModel.State.LoadingServers -> {}
+                    PlayerViewModel.State.LoadingServers -> {
+                        showPlayerLoading()
+                    }
                     is PlayerViewModel.State.SuccessLoadingServers -> {
+                        showPlayerLoading()
                         servers = state.servers
 
                         val providerName = UserPreferences.currentProvider?.name ?: ""
@@ -514,6 +524,7 @@ class PlayerTvFragment : Fragment() {
                         val isAD = providerName.contains("AfterDark", ignoreCase = true)
 
                         if (servers.isEmpty()) {
+                            hidePlayerLoading()
                             val message = if (isTmdb || isAD) {
                                 val langCode = providerName.substringAfter("(").substringBefore(")")
                                 val locale = Locale.forLanguageTag(langCode)
@@ -549,15 +560,18 @@ class PlayerTvFragment : Fragment() {
                             if (::player.isInitialized) {
                                 player.stop()
                             }
+                            showPlayerLoading()
                             viewModel.getVideo(selectedServer)
                         }
                         val preferredServer = state.servers.firstOrNull {
                             it.name.equals(args.preferredServerName, ignoreCase = true)
                         }
+                        showPlayerLoading()
                         viewModel.getVideo(preferredServer ?: state.servers.first())
 
                     }
                         is PlayerViewModel.State.FailedLoadingServers -> {
+                            hidePlayerLoading()
                             Toast.makeText(
                                 requireContext(),
                                 state.error.message ?: "",
@@ -568,6 +582,7 @@ class PlayerTvFragment : Fragment() {
 
                         is PlayerViewModel.State.LoadingVideo -> {
                             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                            showPlayerLoading()
                         }
 
                         is PlayerViewModel.State.SuccessLoadingVideo -> {
@@ -583,8 +598,10 @@ class PlayerTvFragment : Fragment() {
                                 if (::player.isInitialized) {
                                     player.stop()
                                 }
+                                showPlayerLoading()
                                 viewModel.getVideo(nextServer)
                             } else {
+                                hidePlayerLoading()
                                 val providerName = UserPreferences.currentProvider?.name ?: ""
                                 val isTmdb = providerName.contains("TMDb", ignoreCase = true)
                                 val isAD = providerName.contains("AfterDark", ignoreCase = true)
@@ -874,6 +891,7 @@ class PlayerTvFragment : Fragment() {
             if (!hasNextEpisode) return@launch
             if (autoplay && !UserPreferences.autoplay) return@launch
 
+            showPlayerLoading()
             viewModel.playNextEpisode()
         }
     }
@@ -1383,6 +1401,10 @@ class PlayerTvFragment : Fragment() {
                     super.onPlaybackStateChanged(playbackState)
 
                     if (playbackState == Player.STATE_READY) {
+                        hidePlayerLoading()
+                        if (!player.isPlaying && player.playWhenReady) {
+                            player.play()
+                        }
                         binding.pvPlayer.controller.binding.exoPlayPause.nextFocusDownId = -1
                         val videoFormat = player.videoFormat
                         updatePlayerScale()
@@ -1430,6 +1452,7 @@ class PlayerTvFragment : Fragment() {
                     binding.pvPlayer.keepScreenOn = isPlaying
 
                     if (isPlaying) {
+                        hidePlayerLoading()
                         recordRecentlyWatchedStart()
                         startProgressHandler()
                     } else {
@@ -1587,6 +1610,9 @@ class PlayerTvFragment : Fragment() {
 
             player.prepare()
             player.playWhenReady = shouldPlay
+            if (shouldPlay) {
+                player.play()
+            }
         }
 
 

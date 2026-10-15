@@ -812,6 +812,7 @@ class PlayerMobileFragment : Fragment() {
                                 it.name.equals(args.preferredServerName, ignoreCase = true)
                             }
                             initialAutoPlayArmed = true
+                            showPlayerLoading()
                             viewModel.getVideo(preferredServer ?: state.servers.first())
                         }
 

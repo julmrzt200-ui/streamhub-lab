@@ -98,6 +98,15 @@ class PlayerGestureHelper(
                 
                 return true
             }
+
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                if (playerView.isControllerFullyVisible) {
+                    playerView.hideController()
+                } else {
+                    playerView.showController()
+                }
+                return true
+            }
             
             override fun onDoubleTap(e: MotionEvent): Boolean {
                 val videoView = playerView.videoSurfaceView ?: return false
