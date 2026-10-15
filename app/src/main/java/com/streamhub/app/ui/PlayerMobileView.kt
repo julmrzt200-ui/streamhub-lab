@@ -20,10 +20,14 @@ class PlayerMobileView @JvmOverloads constructor(
 ) : PlayerView(context, attrs, defStyle) {
 
     val controller: PlayerControlView
-        get() = PlayerView::class.java.getDeclaredField("controller").let {
-            it.isAccessible = true
-            it.get(this) as PlayerControlView
-        }
+        get() = findViewById(androidx.media3.ui.R.id.exo_controller)
+            ?: runCatching {
+                PlayerView::class.java.getDeclaredField("controller").let {
+                    it.isAccessible = true
+                    it.get(this) as PlayerControlView
+                }
+            }.getOrNull()
+            ?: throw IllegalStateException("PlayerControlView not found")
 
     var isManualZoomEnabled: Boolean = false
         private set
