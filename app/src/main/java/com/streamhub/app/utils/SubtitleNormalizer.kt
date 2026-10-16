@@ -41,15 +41,15 @@ object SubtitleNormalizer {
 
     private const val TAG = "SubtitleNormalizer"
     private const val MAX_BYTES = 6 * 1024 * 1024
-    private const val PER_TRACK_TIMEOUT_MS = 1_500L
+    private const val PER_TRACK_TIMEOUT_MS = 4_000L
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private val http by lazy {
         OkHttpClient.Builder()
-            .connectTimeout(2, TimeUnit.SECONDS)
-            .readTimeout(2, TimeUnit.SECONDS)
-            .callTimeout(2, TimeUnit.SECONDS)
+            .connectTimeout(4, TimeUnit.SECONDS)
+            .readTimeout(4, TimeUnit.SECONDS)
+            .callTimeout(4, TimeUnit.SECONDS)
             .followRedirects(true)
             .build()
     }
@@ -187,7 +187,7 @@ object SubtitleNormalizer {
     // Detección y conversión
     // ---------------------------------------------------------------------------------------
 
-    private val timeSrt = Regex("""\d{1,2}:\d{2}:\d{2},\d{1,3}\s*-->\s*\d{1,2}:\d{2}:\d{2},\d{1,3}""")
+    private val timeSrt = Regex("""(?:\d{1,2}:)?\d{1,2}:\d{2}[,.]\d{1,3}\s*-->\s*(?:\d{1,2}:)?\d{1,2}:\d{2}[,.]\d{1,3}""")
     private val timeVtt = Regex("""(?:\d{1,2}:)?\d{1,2}:\d{2}\.\d{1,3}\s*-->\s*(?:\d{1,2}:)?\d{1,2}:\d{2}\.\d{1,3}""")
 
     private fun sniff(text: String): Format {
@@ -222,9 +222,17 @@ object SubtitleNormalizer {
 
     private fun srtToVtt(text: String): String {
         val sb = StringBuilder("WEBVTT\n\n")
+        val timestampRegex = Regex("""(?:(\d{1,2}):)?(\d{1,2}):(\d{2})[,.](\d{1,3})""")
         for (line in text.split("\n")) {
             if (line.contains("-->")) {
-                sb.append(line.replace(Regex("""(\d{1,2}:\d{2}:\d{2}),(\d{1,3})""")) { "${it.groupValues[1]}.${it.groupValues[2].padEnd(3, '0')}" })
+                val converted = line.replace(timestampRegex) { m ->
+                    val h = m.groupValues[1].ifEmpty { "00" }.padStart(2, '0')
+                    val min = m.groupValues[2].padStart(2, '0')
+                    val sec = m.groupValues[3].padStart(2, '0')
+                    val ms = m.groupValues[4].padEnd(3, '0').take(3)
+                    "$h:$min:$sec.$ms"
+                }
+                sb.append(converted)
             } else {
                 sb.append(line.replace(Regex("""\{\\an?\d\}"""), "")) // {\an8} etc.
             }

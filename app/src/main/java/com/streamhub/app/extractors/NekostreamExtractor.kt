@@ -151,7 +151,7 @@ class NekostreamExtractor : Extractor() {
         return Video(
             source = playbackSource,
             subtitles = metadata?.tracks.orEmpty()
-                .filter { it.kind == null || it.kind == "captions" }
+                .filter { it.kind != "thumbnails" && (it.kind == null || it.kind == "captions" || it.kind == "subtitles") }
                 .mapNotNull {
                     Video.Subtitle(
                         label = it.label?.ifBlank { null } ?: "Subtitle",
