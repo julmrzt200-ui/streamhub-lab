@@ -1,6 +1,7 @@
 package com.streamhub.app.fragments.player
 
 import android.annotation.SuppressLint
+import android.app.ActivityManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -1956,10 +1957,26 @@ class PlayerTvFragment : Fragment() {
         private var currentSoftwareDecoder = false
 
         private fun buildPlayer(extraBuffering: Boolean): ExoPlayer {
-            val minBufferMs = if (extraBuffering) 60_000 else 15_000
-            val maxBufferMs = if (extraBuffering) 300_000 else 60_000
+            val isLowRam = runCatching {
+                val am = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
+                val memInfo = ActivityManager.MemoryInfo()
+                am?.getMemoryInfo(memInfo)
+                am?.isLowRamDevice == true || (memInfo.totalMem > 0 && memInfo.totalMem <= 2_500_000_000L)
+            }.getOrDefault(false)
+
+            val minBufferMs = if (isLowRam) {
+                15_000
+            } else {
+                if (extraBuffering) 60_000 else 15_000
+            }
+            val maxBufferMs = if (isLowRam) {
+                if (extraBuffering) 45_000 else 25_000
+            } else {
+                if (extraBuffering) 300_000 else 60_000
+            }
             val bufferForPlaybackMs = if (extraBuffering) 1_500 else 800
             val bufferForPlaybackAfterRebufferMs = if (extraBuffering) 3_000 else 1_500
+            val backBufferMs = if (isLowRam) 5_000 else 20_000
 
             val loadControl = DefaultLoadControl.Builder()
                 .setBufferDurationsMs(
@@ -1970,7 +1987,7 @@ class PlayerTvFragment : Fragment() {
                 )
                 .setPrioritizeTimeOverSizeThresholds(true)
                 .setBackBuffer(
-                    20_000,
+                    backBufferMs,
                     true
                 )
                 .build()
