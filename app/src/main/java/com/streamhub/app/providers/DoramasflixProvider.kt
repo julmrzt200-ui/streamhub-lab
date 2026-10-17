@@ -114,7 +114,7 @@ object DoramasflixProvider : Provider {
             TvShow(
                 id = it.id,
                 title = it.title,
-                banner = it.banner.ifBlank { it.poster },
+                banner = it.banner?.ifBlank { it.poster } ?: it.poster,
                 poster = it.poster
             )
         }
