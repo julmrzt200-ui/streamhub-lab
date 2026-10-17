@@ -22,3 +22,5 @@ app/src/main/cpp/native-lib.cpp
 /app/build
 /navigation/build
 /retrofit-jsoup-converter/build
+__pycache__/
+*.pyc

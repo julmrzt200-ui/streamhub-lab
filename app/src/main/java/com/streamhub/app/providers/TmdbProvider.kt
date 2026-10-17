@@ -827,13 +827,20 @@ class TmdbProvider(override val language: String) : Provider {
                 Log.i("StreamFlixES", "[SEARCH START] -> Target: $targetTitle (${if (videoType is Video.Type.Movie) "Movie" else "TV Show"})")
 
                 // Funzione di matching rigorosa per i titoli e tipo
+                fun normalize(s: String): String {
+                    return java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+                        .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
+                        .lowercase()
+                        .replace(Regex("[^a-z0-9]"), "")
+                }
+
                 fun isMatch(item: AppAdapter.Item, target: String): Boolean {
                     val isCorrectType = if (videoType is Video.Type.Movie) item is Movie else item is TvShow
                     if (!isCorrectType) return false
 
                     val itemTitle = if (item is Movie) item.title else (item as TvShow).title
-                    val nItem = itemTitle.lowercase().replace(Regex("[^a-z0-9]"), "")
-                    val nTarget = target.lowercase().replace(Regex("[^a-z0-9]"), "")
+                    val nItem = normalize(itemTitle)
+                    val nTarget = normalize(target)
                     
                     // Match esatto (normalizzato) ha la priorità
                     if (nItem == nTarget) return true
@@ -846,7 +853,9 @@ class TmdbProvider(override val language: String) : Provider {
                     
                     // Match per parole (almeno una deve corrispondere esattamente se il target è corto, o tutte se lungo)
                     val cleanWords: (String) -> Set<String> = { s ->
-                        s.lowercase()
+                        java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+                            .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
+                            .lowercase()
                             .replace(Regex("[^a-z0-9 ]"), " ")
                             .split(Regex("\\s+"))
                             .filter { it.length > 2 }
@@ -865,7 +874,7 @@ class TmdbProvider(override val language: String) : Provider {
                 }
 
                 coroutineScope {
-                    val providers = listOf(CuevanaEuProvider, SoloLatinoProvider, CineCalidadProvider, PoseidonHD2Provider)
+                    val providers = listOf(CineCalidadProvider, PelisflixHdProvider, CuevanaEuProvider, SoloLatinoProvider, PoseidonHD2Provider)
                     val deferred = providers.map { provider ->
                         async {
                             try {

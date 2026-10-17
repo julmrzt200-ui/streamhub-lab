@@ -28,6 +28,8 @@ class NuuploadExtractor : Extractor() {
         "https://nupload.top",
         "https://ap.nupload.me/",
         "https://nupload.me/",
+        "https://nupload.my/",
+        "https://nupload.my",
     )
 
     override suspend fun extract(link: String): Video {
@@ -297,7 +299,7 @@ class NuuploadExtractor : Extractor() {
     private fun isInternalNuuploadUrl(url: String): Boolean {
         val host = url.toHttpUrlOrNull()?.host?.lowercase().orEmpty()
         if (host.isBlank()) return false
-        return host.contains("nupload.top") || host.contains("nupload.me") || host.contains("nupupload.top")
+        return host.contains("nupload.top") || host.contains("nupload.me") || host.contains("nupupload.top") || host.contains("nupload.my")
     }
 
     private fun fetchPage(url: String): FetchedPage {

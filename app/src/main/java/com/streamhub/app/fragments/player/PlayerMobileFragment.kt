@@ -103,7 +103,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
-import okhttp3.internal.userAgent
+import com.streamhub.app.utils.StreamValidator
 import java.util.Locale
 import android.os.Looper
 import android.widget.EditText
@@ -1439,7 +1439,7 @@ class PlayerMobileFragment : Fragment() {
 
         httpDataSource.setDefaultRequestProperties(
             mapOf(
-                "User-Agent" to userAgent,
+                "User-Agent" to StreamValidator.DEFAULT_USER_AGENT,
             ) + (video.headers ?: emptyMap())
         )
 
