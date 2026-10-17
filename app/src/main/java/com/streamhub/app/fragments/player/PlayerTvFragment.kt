@@ -2064,12 +2064,14 @@ class PlayerTvFragment : Fragment() {
                     )
 
                     val lang = UserPreferences.currentProvider?.language?.substringBefore("-")
+                    val trackParamsBuilder = player.trackSelectionParameters.buildUpon()
                     if (lang == "es") {
-                        player.trackSelectionParameters =
-                            player.trackSelectionParameters.buildUpon()
-                                .setPreferredAudioLanguage("spa")
-                                .build()
+                        trackParamsBuilder.setPreferredAudioLanguage("spa")
                     }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        trackParamsBuilder.setTunnelingEnabled(true)
+                    }
+                    player.trackSelectionParameters = trackParamsBuilder.build()
 
                     mediaSession = MediaSession.Builder(requireContext(), player)
                         .build()

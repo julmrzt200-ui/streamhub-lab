@@ -180,6 +180,7 @@ class HomeTvFragment : Fragment() {
             adapter = appAdapter.apply {
                 stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
             }
+            setItemViewCacheSize(20)
             setItemSpacing(resources.getDimension(R.dimen.home_spacing).toInt() * 2)
         }
 
@@ -188,7 +189,7 @@ class HomeTvFragment : Fragment() {
 
     private fun displayHome(categories: List<Category>) {
         categories
-            .find { it.name == Category.FEATURED }
+            .find { it.name == Category.FEATURED && it.list.isNotEmpty() }
             ?.also {
                 val index = appAdapter.items
                     .filterIsInstance<Category>()
@@ -272,8 +273,9 @@ class HomeTvFragment : Fragment() {
 
                 val position = appAdapter.items
                     .filterIsInstance<Category>()
-                    .find { it.name == Category.FEATURED }
+                    .find { it.name == Category.FEATURED && it.list.isNotEmpty() }
                     ?.let { category ->
+                        if (category.list.isEmpty()) return@let null
                         category.selectedIndex = (category.selectedIndex + 1) % category.list.size
                         
                         // Update background when swiper rotates automatically
@@ -306,7 +308,7 @@ class HomeTvFragment : Fragment() {
     private fun syncFeaturedBackground() {
         val featured = appAdapter.items
             .filterIsInstance<Category>()
-            .find { it.name == Category.FEATURED }
+            .find { it.name == Category.FEATURED && it.list.isNotEmpty() }
             ?: return
 
         val currentItem = featured.list.getOrNull(featured.selectedIndex)

@@ -130,6 +130,7 @@ class HomeMobileFragment : Fragment() {
             adapter = appAdapter.apply {
                 stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
             }
+            setItemViewCacheSize(20)
             addItemDecoration(
                 SpacingItemDecoration(20.dp(requireContext()))
             )

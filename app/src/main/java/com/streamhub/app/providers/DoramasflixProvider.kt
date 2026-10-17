@@ -34,18 +34,10 @@ object DoramasflixProvider : Provider {
     override val logo: String = "https://doramasflix.in/img/logo.png"
 
     private val client: OkHttpClient by lazy {
-        val cacheDir = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()
-        val appCache = cacheDir?.let { Cache(File(it, "doramasflix-okhttp-cache"), 10 * 1024 * 1024) }
-
-        val builder = NetworkClient.default.newBuilder()
+        NetworkClient.default.newBuilder()
             .readTimeout(20, TimeUnit.SECONDS)
             .connectTimeout(20, TimeUnit.SECONDS)
-            .dns(DnsResolver.doh)
-
-        if (appCache != null) {
-            builder.cache(appCache)
-        }
-        builder.build()
+            .build()
     }
 
     private val languages = mapOf(
@@ -86,12 +78,22 @@ object DoramasflixProvider : Provider {
                     .header("Accept", "application/json")
                     .header("Origin", baseUrl)
                     .header("Referer", "$baseUrl/")
+                    .header("Sec-Fetch-Mode", "cors")
+                    .header("Sec-Fetch-Dest", "empty")
+                    .header("Sec-Fetch-Site", "cross-site")
                     .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
                     .post(body)
                     .build()
 
-                val response = client.newCall(request).execute()
-                if (!response.isSuccessful) return@withContext null
+                var response = runCatching { client.newCall(request).execute() }.getOrNull()
+                if (response == null || !response.isSuccessful) {
+                    response?.close()
+                    response = runCatching { NetworkClient.systemDns.newCall(request).execute() }.getOrNull()
+                }
+                if (response == null || !response.isSuccessful) {
+                    response?.close()
+                    return@withContext null
+                }
                 val rawJson = response.body?.string() ?: return@withContext null
                 val root = JsonParser.parseString(rawJson).asJsonObject
                 if (root.has("data") && !root.get("data").isJsonNull) {
@@ -107,9 +109,14 @@ object DoramasflixProvider : Provider {
         }
 
     override suspend fun getHome(): List<Category> {
-        val popularDoramas = getTvShows(1)
-        val popularMovies = getMovies(1)
+        val popularDoramas = runCatching { getTvShows(1) }.getOrDefault(emptyList())
+        val popularMovies = runCatching { getMovies(1) }.getOrDefault(emptyList())
 
+        if (popularDoramas.isEmpty() && popularMovies.isEmpty()) {
+            throw Exception("No se pudo conectar con el catálogo de DoramasFlix")
+        }
+
+        val categories = mutableListOf<Category>()
         val featured = popularDoramas.take(6).map {
             TvShow(
                 id = it.id,
@@ -119,11 +126,17 @@ object DoramasflixProvider : Provider {
             )
         }
 
-        return listOf(
-            Category(name = Category.FEATURED, list = featured),
-            Category(name = "Doramas Populares", list = popularDoramas),
-            Category(name = "Películas Populares", list = popularMovies)
-        )
+        if (featured.isNotEmpty()) {
+            categories.add(Category(name = Category.FEATURED, list = featured))
+        }
+        if (popularDoramas.isNotEmpty()) {
+            categories.add(Category(name = "Doramas Populares", list = popularDoramas))
+        }
+        if (popularMovies.isNotEmpty()) {
+            categories.add(Category(name = "Películas Populares", list = popularMovies))
+        }
+
+        return categories
     }
 
     override suspend fun search(query: String, page: Int): List<AppAdapter.Item> {

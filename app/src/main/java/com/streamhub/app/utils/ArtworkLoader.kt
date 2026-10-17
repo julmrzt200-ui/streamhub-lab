@@ -6,6 +6,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.streamhub.app.database.AppDatabase
@@ -105,7 +106,11 @@ private fun ImageView.loadRecoverableArtwork(
             }
         }
 
-        configure(Glide.with(this).load(requestedUrl))
+        configure(
+            Glide.with(this)
+                .load(requestedUrl)
+                .downsample(DownsampleStrategy.AT_MOST)
+        )
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(
                     e: GlideException?,

@@ -2,6 +2,7 @@ package com.streamhub.app.utils
 
 import android.util.Log
 import android.webkit.CookieManager
+import okhttp3.ConnectionPool
 import okhttp3.ConnectionSpec
 import com.streamhub.app.BuildConfig
 import okhttp3.Cookie
@@ -56,6 +57,8 @@ object NetworkClient {
         }
     }
 
+    private val connectionPool = ConnectionPool(10, 5, TimeUnit.MINUTES)
+
     val default: OkHttpClient by lazy { buildClient(DnsResolver.doh) }
     val systemDns: OkHttpClient by lazy { buildClient(Dns.SYSTEM) }
     val noRedirects: OkHttpClient by lazy { buildClient(DnsResolver.doh) { it.followRedirects(false).followSslRedirects(false) } }
@@ -108,6 +111,7 @@ object NetworkClient {
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .dns(dns)
+            .connectionPool(connectionPool)
 
         // Modern and compatible TLS configuration
         val spec = ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
