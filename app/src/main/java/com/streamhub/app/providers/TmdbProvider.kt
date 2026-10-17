@@ -817,16 +817,54 @@ class TmdbProvider(override val language: String) : Provider {
                 servers.addAll(AfterDarkExtractor(UserPreferences.getProviderCache(AfterDarkProvider, UserPreferences.PROVIDER_URL)).servers(videoType))
             }
             "es" -> {
-                // TMDB Spagnolo: Utilizza ESCLUSIVAMENTE server certificati con audio spagnolo ([LAT] o [CAST])
-                
-                val targetTitle = when (videoType) {
+                // TMDB Spagnolo: Utilizza server certificati con audio spagnolo ([LAT] o [CAST])
+                val harvestedTitles = linkedSetOf<String>()
+                val baseTitle = when (videoType) {
                     is Video.Type.Movie -> videoType.title
                     is Video.Type.Episode -> videoType.tvShow.title
                 }
-                
-                Log.i("StreamFlixES", "[SEARCH START] -> Target: $targetTitle (${if (videoType is Video.Type.Movie) "Movie" else "TV Show"})")
+                if (baseTitle.isNotBlank()) harvestedTitles.add(baseTitle)
 
-                // Funzione di matching rigorosa per i titoli e tipo
+                val tmdbId = when (videoType) {
+                    is Video.Type.Movie -> videoType.id.toIntOrNull()
+                    is Video.Type.Episode -> videoType.tvShow.id.toIntOrNull()
+                }
+
+                // Cosecha Multi-Idioma TMDB (es-MX, es-ES, en-US, original_title)
+                if (tmdbId != null) {
+                    try {
+                        when (videoType) {
+                            is Video.Type.Movie -> {
+                                listOf("es-MX", "es-ES", "en-US").forEach { loc ->
+                                    try {
+                                        val detail = TMDb3.Movies.details(tmdbId, language = loc)
+                                        if (detail.title.isNotBlank()) harvestedTitles.add(detail.title)
+                                        if (detail.originalTitle.isNotBlank()) harvestedTitles.add(detail.originalTitle)
+                                    } catch (_: Exception) {}
+                                }
+                            }
+                            is Video.Type.Episode -> {
+                                listOf("es-MX", "es-ES", "en-US").forEach { loc ->
+                                    try {
+                                        val detail = TMDb3.TvSeries.details(tmdbId, language = loc)
+                                        if (detail.name.isNotBlank()) harvestedTitles.add(detail.name)
+                                        if (detail.originalName.isNotBlank()) harvestedTitles.add(detail.originalName)
+                                    } catch (_: Exception) {}
+                                }
+                            }
+                        }
+                    } catch (_: Exception) {}
+                }
+
+                // Filter out titles with CJK (Chinese, Japanese, Korean) characters for Spanish searches
+                val isCjkRegex = Regex("""[\u4e00-\u9fff\u3040-\u30ff\uac00-\ud7af]""")
+                val cleanHarvested = harvestedTitles
+                    .filter { !isCjkRegex.containsMatchIn(it) && it.isNotBlank() }
+                    .distinct()
+
+                Log.i("StreamFlixES", "[SEARCH START] -> Base: $baseTitle, Harvested (${cleanHarvested.size}): $cleanHarvested")
+
+                // Matching function
                 fun normalize(s: String): String {
                     return java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
                         .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
@@ -834,77 +872,125 @@ class TmdbProvider(override val language: String) : Provider {
                         .replace(Regex("[^a-z0-9]"), "")
                 }
 
-                fun isMatch(item: AppAdapter.Item, target: String): Boolean {
+                fun isMatch(item: AppAdapter.Item, targetList: Collection<String>): Boolean {
                     val isCorrectType = if (videoType is Video.Type.Movie) item is Movie else item is TvShow
                     if (!isCorrectType) return false
 
                     val itemTitle = if (item is Movie) item.title else (item as TvShow).title
                     val nItem = normalize(itemTitle)
-                    val nTarget = normalize(target)
-                    
-                    // Match esatto (normalizzato) ha la priorità
-                    if (nItem == nTarget) return true
-                    
-                    // Match parziale se contenuto e differenza lunghezza minima
-                    if (nItem.contains(nTarget) || nTarget.contains(nItem)) {
-                        val diff = Math.abs(nItem.length - nTarget.length)
-                        if (diff <= 5) return true
+                    if (nItem.isBlank()) return false
+
+                    for (target in targetList) {
+                        val nTarget = normalize(target)
+                        if (nTarget.isBlank()) continue
+
+                        // Exact match
+                        if (nItem == nTarget) return true
+
+                        // Partial match
+                        if (nItem.contains(nTarget) || nTarget.contains(nItem)) {
+                            val diff = Math.abs(nItem.length - nTarget.length)
+                            if (diff <= 6) return true
+                        }
+
+                        // Word token overlap
+                        val cleanWords: (String) -> Set<String> = { s ->
+                            java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+                                .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
+                                .lowercase()
+                                .replace(Regex("[^a-z0-9 ]"), " ")
+                                .split(Regex("\\s+"))
+                                .filter { it.length > 2 }
+                                .toSet()
+                        }
+                        val nItemWords = cleanWords(itemTitle)
+                        val nTargetWords = cleanWords(target)
+                        if (nItemWords.isNotEmpty() && nTargetWords.isNotEmpty()) {
+                            if (nTargetWords.size == 1 && nItemWords.contains(nTargetWords.first())) return true
+                            if (nItemWords.containsAll(nTargetWords) || nTargetWords.containsAll(nItemWords)) return true
+                        }
                     }
-                    
-                    // Match per parole (almeno una deve corrispondere esattamente se il target è corto, o tutte se lungo)
-                    val cleanWords: (String) -> Set<String> = { s ->
-                        java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
-                            .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
-                            .lowercase()
-                            .replace(Regex("[^a-z0-9 ]"), " ")
-                            .split(Regex("\\s+"))
-                            .filter { it.length > 2 }
-                            .toSet()
-                    }
-                    val nItemWords = cleanWords(itemTitle)
-                    val nTargetWords = cleanWords(target)
-                    
-                    if (nItemWords.isEmpty() || nTargetWords.isEmpty()) return false
-                    
-                    // Se il target ha solo una parola importante, deve esserci
-                    if (nTargetWords.size == 1) return nItemWords.contains(nTargetWords.first())
-                    
-                    // Altrimenti tutte le parole del target devono essere presenti nell'item
-                    return nItemWords.containsAll(nTargetWords) || nTargetWords.containsAll(nItemWords)
+                    return false
                 }
 
                 coroutineScope {
-                    val providers = listOf(CineCalidadProvider, PelisflixHdProvider, CuevanaEuProvider, SoloLatinoProvider, PoseidonHD2Provider)
+                    val providers = listOf(
+                        CineCalidadProvider,
+                        PelisflixHdProvider,
+                        CuevanaEuProvider,
+                        PoseidonHD2Provider,
+                        PelisplustoProvider,
+                        DoramasflixProvider
+                    )
+
+                    val searchQueries = cleanHarvested.take(3)
+
                     val deferred = providers.map { provider ->
                         async {
                             try {
-                                val searchResults = provider.search(targetTitle, 1)
-                                val bestMatch = searchResults.firstOrNull { isMatch(it, targetTitle) }
+                                var bestMatch: AppAdapter.Item? = null
+                                for (query in searchQueries) {
+                                    val searchResults = provider.search(query, 1)
+                                    bestMatch = searchResults.firstOrNull { isMatch(it, cleanHarvested) }
+                                    if (bestMatch != null) break
+                                }
+
                                 val id = if (bestMatch is Movie) bestMatch.id else (bestMatch as? TvShow)?.id
-                                
+
                                 if (id != null) {
                                     val matchTitle = if (bestMatch is Movie) bestMatch.title else (bestMatch as? TvShow)?.title
                                     Log.i("StreamFlixES", "[MATCH FOUND] -> Provider: ${provider.name}, Matched: '$matchTitle', ID: $id")
-                                    
+
                                     val allServers = provider.getServers(id, videoType)
                                     val filtered = allServers.filter { s ->
                                         val n = s.name.uppercase()
                                         n.contains("[LAT]") || n.contains("[CAST]") || n.contains("[CAS]") || n.contains("[ES]") ||
                                         n.contains("(LAT)") || n.contains("(ESP)") || n.contains("LATINO") || n.contains("CASTELLANO")
                                     }
-                                    Log.i("StreamFlixES", "[SERVERS OK] -> ${provider.name}: ${filtered.size}/${allServers.size} servers kept")
-                                    filtered
+
+                                    // If servers don't explicitly contain the [LAT] tag in their name,
+                                    // retain all servers from this Spanish provider with [LAT] suffix added.
+                                    val keptServers = if (filtered.isNotEmpty()) {
+                                        filtered
+                                    } else {
+                                        allServers.map { s ->
+                                            Video.Server(
+                                                id = s.id,
+                                                name = if (s.name.contains("[")) s.name else "${s.name} [LAT]"
+                                            )
+                                        }
+                                    }
+
+                                    Log.i("StreamFlixES", "[SERVERS OK] -> ${provider.name}: ${keptServers.size}/${allServers.size} servers kept")
+                                    keptServers
                                 } else {
-                                    Log.d("StreamFlixES", "[NO MATCH] -> ${provider.name} did not find a valid match for '$targetTitle'")
+                                    Log.d("StreamFlixES", "[NO MATCH] -> ${provider.name} did not find a match for $searchQueries")
                                     emptyList()
                                 }
-                            } catch (e: Exception) { 
+                            } catch (e: Exception) {
                                 Log.e("StreamFlixES", "[PROVIDER ERROR] -> ${provider.name}: ${e.message}")
-                                emptyList() 
+                                emptyList()
                             }
                         }
                     }
                     servers.addAll(deferred.awaitAll().flatten())
+                }
+
+                // Fallbacks if no servers discovered
+                if (servers.isEmpty()) {
+                    Log.i("StreamFlixES", "No Spanish provider found streams for $baseTitle, trying Videasy Spanish fallback")
+                    try {
+                        VideasyExtractor().server(videoType, "es")?.let { servers.add(it) }
+                        VideasyExtractor().server(videoType, "es-MX")?.let { servers.add(it) }
+                    } catch (_: Exception) {}
+                }
+
+                if (servers.isEmpty()) {
+                    Log.i("StreamFlixES", "Spanish fallback trying global embed extractors for $baseTitle")
+                    try {
+                        TwoEmbedExtractor().server(videoType)?.let { servers.add(it) }
+                        VidLinkExtractor().server(videoType)?.let { servers.add(it) }
+                    } catch (_: Exception) {}
                 }
             }
             else -> {
