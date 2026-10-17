@@ -2,6 +2,7 @@ package com.streamhub.app.providers
 
 import android.util.Log
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -64,9 +65,11 @@ object CuevanaEuProvider : Provider {
     private val json = Json { ignoreUnknownKeys = true }
 
     private fun getOkHttpClient(): okhttp3.OkHttpClient {
-        val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
+        val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
+            Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
+        }
         val clientBuilder = okhttp3.OkHttpClient.Builder()
-            .cache(appCache)
+            .apply { appCache?.let { cache(it) } }
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .addInterceptor { chain ->

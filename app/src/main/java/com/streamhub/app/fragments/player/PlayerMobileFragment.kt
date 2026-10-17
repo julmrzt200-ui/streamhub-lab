@@ -1049,15 +1049,18 @@ class PlayerMobileFragment : Fragment() {
         isSetupDone = false
     }
 
-    fun onBackPressed(): Boolean = when {
-        binding.pvPlayer.isManualZoomEnabled -> {
-            binding.pvPlayer.exitManualZoomMode()
-            true
+    fun onBackPressed(): Boolean {
+        val b = _binding ?: return false
+        return when {
+            b.pvPlayer.isManualZoomEnabled -> {
+                b.pvPlayer.exitManualZoomMode()
+                true
+            }
+            b.settings.isVisible -> {
+                b.settings.onBackPressed()
+            }
+            else -> false
         }
-        binding.settings.isVisible -> {
-            binding.settings.onBackPressed()
-        }
-        else -> false
     }
 
 

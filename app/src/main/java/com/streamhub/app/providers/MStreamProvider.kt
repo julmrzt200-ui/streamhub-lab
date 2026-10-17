@@ -1,6 +1,7 @@
 package com.streamhub.app.providers
 
 import android.util.Base64
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.utils.UserPreferences
@@ -391,9 +392,11 @@ object MStreamProvider : Provider {
     interface MStreamService {
         companion object {
             private fun getOkHttpClient(): OkHttpClient {
-                val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
+                val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
+                    Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
+                }
                 val clientBuilder = NetworkClient.default.newBuilder()
-                    .cache(appCache)
+                    .apply { appCache?.let { cache(it) } }
                     .readTimeout(30, TimeUnit.SECONDS)
                     .connectTimeout(30, TimeUnit.SECONDS)
                 clientBuilder.addInterceptor { chain ->

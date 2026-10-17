@@ -2,6 +2,7 @@ package com.streamhub.app.providers
 
 import android.util.Base64
 import android.util.Log
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.Category
@@ -227,7 +228,11 @@ object MkissaProvider : Provider {
         .addConverterFactory(ScalarsConverterFactory.create())
         .client(
             OkHttpClient.Builder()
-                .cache(Cache(File("cacheDir", "mkissa_okhttpcache"), 10 * 1024 * 1024))
+                .apply {
+                    runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
+                        cache(Cache(File(it, "mkissa_okhttpcache"), 10 * 1024 * 1024))
+                    }
+                }
                 .readTimeout(30, TimeUnit.SECONDS)
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .dns(DnsResolver.doh)

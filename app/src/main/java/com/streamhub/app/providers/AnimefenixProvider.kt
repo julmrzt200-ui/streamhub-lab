@@ -1,6 +1,7 @@
 package com.streamhub.app.providers
 
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -36,7 +37,11 @@ object AnimefenixProvider : Provider {
 
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .cache(Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024))
+            .apply {
+                runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
+                    cache(Cache(File(it, "okhttpcache"), 10 * 1024 * 1024))
+                }
+            }
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
             .dns(DnsResolver.doh)

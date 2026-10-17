@@ -2,6 +2,7 @@ package com.streamhub.app.providers
 
 import android.util.Base64
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
+import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -34,9 +35,11 @@ object LatanimeProvider : Provider {
     private val service = retrofit.create(LatanimeService::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
-        val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
+        val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
+            Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
+        }
         val clientBuilder = OkHttpClient.Builder()
-            .cache(appCache)
+            .apply { appCache?.let { cache(it) } }
             .addInterceptor { chain ->
                 val request = chain.request().newBuilder()
                     .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")

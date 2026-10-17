@@ -829,24 +829,25 @@ class PlayerTvFragment : Fragment() {
             isSetupDone = false
         }
 
-    fun onBackPressed(): Boolean = when {
+    fun onBackPressed(): Boolean {
+        val b = _binding ?: return false
+        return when {
+            (b.pvPlayer as? PlayerTvView)?.isManualZoomEnabled == true -> {
+                (b.pvPlayer as? PlayerTvView)?.exitManualZoomMode()
+                true
+            }
 
+            b.settings.isVisible -> {
+                b.settings.onBackPressed()
+            }
 
-        (binding.pvPlayer as? PlayerTvView)?.isManualZoomEnabled == true -> {
-            (binding.pvPlayer as? PlayerTvView)?.exitManualZoomMode()
-            true
+            b.pvPlayer.controller.isVisible -> {
+                b.pvPlayer.hideController()
+                true
+            }
+
+            else -> false
         }
-
-        binding.settings.isVisible -> {
-            binding.settings.onBackPressed()
-        }
-
-        binding.pvPlayer.controller.isVisible -> {
-            binding.pvPlayer.hideController()
-            true
-        }
-
-        else -> false
     }
 
     private fun handleMediaPrevious(): Boolean {
