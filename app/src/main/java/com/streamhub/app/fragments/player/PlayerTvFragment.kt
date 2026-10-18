@@ -259,19 +259,32 @@ class PlayerTvFragment : Fragment() {
             Log.d("PlayerTvFragment", "Ignorado cambio a siguiente servidor ($reason): ya hay una extracción en curso")
             return
         }
-        val serverReference = failedServer ?: currentServer
-        val nextServer = servers.getOrNull(servers.indexOf(serverReference) + 1)
+        val serverReference = failedServer ?: currentServer ?: servers.firstOrNull()
+        if (serverReference == null) {
+            hidePlayerLoading()
+            return
+        }
+        val result = com.streamhub.app.utils.ServerLanguageHelper.findNextServer(serverReference, servers, fallbackToEnglish = true)
+        val nextServer = result.server
         if (nextServer != null) {
-            Log.i("PlayerTvFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
+            Log.i("PlayerTvFragment", "Cambiando a servidor ($reason): ${nextServer.name} (fallback=${result.isCrossLanguageFallback})")
+            if (result.isCrossLanguageFallback) {
+                context?.let { ctx ->
+                    Toast.makeText(ctx, "Servidores agotados en este idioma. Cambiando a ${result.targetLanguage.displayName}...", Toast.LENGTH_SHORT).show()
+                }
+            }
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             if (::player.isInitialized) {
                 player.stop()
             }
-            showPlayerLoading()
+            showPlayerLoading("Cargando ${nextServer.name}...")
             viewModel.getVideo(nextServer)
         } else {
             hidePlayerLoading()
             Log.w("PlayerTvFragment", "No hay más servidores disponibles para cambiar ($reason)")
+            context?.let { ctx ->
+                Toast.makeText(ctx, "No hay más servidores disponibles para este contenido", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -555,14 +568,25 @@ class PlayerTvFragment : Fragment() {
                             })
                             .build()
                         binding.settings.setOnServerSelectedListener { server ->
-                            val selectedServer = state.servers.find { server.id == it.id } ?: return@setOnServerSelectedListener
+                            val selectedServer = servers.find { server.id == it.id } ?: return@setOnServerSelectedListener
                             Log.i("PlayerTvFragment", "Usuario seleccionó manualmente el servidor: ${selectedServer.name}")
                             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                             if (::player.isInitialized) {
                                 player.stop()
                             }
-                            showPlayerLoading()
+                            showPlayerLoading("Cargando ${selectedServer.name}...")
                             viewModel.getVideo(selectedServer)
+                        }
+                        binding.settings.setOnAudioLanguageSelectedListener { targetServerId ->
+                            val targetServer = servers.find { targetServerId == it.id } ?: return@setOnAudioLanguageSelectedListener
+                            val targetLang = com.streamhub.app.utils.ServerLanguageHelper.getAudioLanguage(targetServer.name)
+                            Log.i("PlayerTvFragment", "Usuario seleccionó idioma de audio: ${targetLang.displayName} (${targetServer.name})")
+                            stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                            if (::player.isInitialized) {
+                                player.stop()
+                            }
+                            showPlayerLoading("Cambiando audio a ${targetLang.displayName}...")
+                            viewModel.getVideo(targetServer)
                         }
                         val preferredServer = state.servers.firstOrNull {
                             it.name.equals(args.preferredServerName, ignoreCase = true)
@@ -593,48 +617,7 @@ class PlayerTvFragment : Fragment() {
                         }
 
                         is PlayerViewModel.State.FailedLoadingVideo -> {
-                            val nextServer = servers.getOrNull(servers.indexOf(state.server) + 1)
-                            if (nextServer != null) {
-                                stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                                if (::player.isInitialized) {
-                                    player.stop()
-                                }
-                                showPlayerLoading()
-                                viewModel.getVideo(nextServer)
-                            } else {
-                                hidePlayerLoading()
-                                val providerName = UserPreferences.currentProvider?.name ?: ""
-                                val isTmdb = providerName.contains("TMDb", ignoreCase = true)
-                                val isAD = providerName.contains("AfterDark", ignoreCase = true)
-
-                                val message = if (isTmdb || isAD) {
-                                    val langCode =
-                                        providerName.substringAfter("(").substringBefore(")")
-                                    val locale = Locale.forLanguageTag(langCode)
-                                    val langDisplayName =
-                                        locale.getDisplayLanguage(Locale.getDefault())
-                                            .replaceFirstChar {
-                                                if (it.isLowerCase()) it.titlecase(
-                                                    Locale.getDefault()
-                                                ) else it.toString()
-                                            }
-
-                                    if (isTmdb) getString(
-                                        R.string.player_not_available_lang_message,
-                                        langDisplayName
-                                    )
-                                    else getString(R.string.player_retry_later_message)
-                                } else {
-                                    "All servers failed to load the video."
-                                }
-
-                                Toast.makeText(
-                                    requireContext(),
-                                    message,
-                                    Toast.LENGTH_LONG
-                                ).show()
-                                findNavController().navigateUp()
-                            }
+                            switchToNextServer("Fallo al extraer video: ${state.error.message}", state.server)
                         }
                     }
                 }
@@ -1294,6 +1277,9 @@ class PlayerTvFragment : Fragment() {
                     )
                     .build()
             )
+            player.mediaMetadata = MediaMetadata.Builder()
+                .setMediaServerId(server.id)
+                .build()
 
             binding.pvPlayer.controller.binding.btnExoExternalPlayer.setOnClickListener {
                 val videoTitle = when (val type = args.videoType) {

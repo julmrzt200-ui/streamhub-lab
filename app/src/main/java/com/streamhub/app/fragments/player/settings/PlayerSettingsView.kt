@@ -149,21 +149,31 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
         qualitySelectionListener = listener
     }
 
+    var onAudioLanguageSelected: ((serverId: String) -> Unit)? = null
+    fun setOnAudioLanguageSelectedListener(listener: (serverId: String) -> Unit) {
+        onAudioLanguageSelected = listener
+    }
+
     protected var onAudioSelected: ((Settings.Audio) -> Unit) =
         fun(audio) {
-            val player = player ?: return
-            if (audio !is Settings.Audio.AudioTrackInformation) return
-
-            player.trackSelectionParameters = player.trackSelectionParameters
-                .buildUpon()
-                .setOverrideForType(
-                    TrackSelectionOverride(
-                        audio.trackGroup.mediaTrackGroup,
-                        listOf(audio.trackIndex)
-                    )
-                )
-                .setTrackTypeDisabled(audio.trackGroup.type, false)
-                .build()
+            when (audio) {
+                is Settings.Audio.AudioLanguageOption -> {
+                    onAudioLanguageSelected?.invoke(audio.serverId)
+                }
+                is Settings.Audio.AudioTrackInformation -> {
+                    val player = player ?: return
+                    player.trackSelectionParameters = player.trackSelectionParameters
+                        .buildUpon()
+                        .setOverrideForType(
+                            TrackSelectionOverride(
+                                audio.trackGroup.mediaTrackGroup,
+                                listOf(audio.trackIndex)
+                            )
+                        )
+                        .setTrackTypeDisabled(audio.trackGroup.type, false)
+                        .build()
+                }
+            }
         }
 
     protected var onSubtitleSelected: ((Settings.Subtitle) -> Unit) =
@@ -183,6 +193,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 is Settings.Subtitle.TextTrackInformation -> {
                     player.trackSelectionParameters = player.trackSelectionParameters
                         .buildUpon()
+                        .setIgnoredTextSelectionFlags(0)
                         .setOverrideForType(
                             TrackSelectionOverride(
                                 subtitle.trackGroup.mediaTrackGroup,
@@ -646,25 +657,53 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
         }
 
         sealed class Audio : Item {
+            abstract val name: String
+            abstract val isSelected: Boolean
 
             companion object : Settings() {
-                val list = mutableListOf<AudioTrackInformation>()
+                val list = mutableListOf<Audio>()
 
-                val selected: AudioTrackInformation?
+                val selected: Audio?
                     get() = list.find { it.isSelected }
 
                 fun init(player: ExoPlayer, resources: Resources) {
-                    val currentServerId = player.currentMediaItem?.mediaMetadata?.extras?.getString("mediaServerId")
+                    val currentServerId = player.currentMediaItem?.mediaMetadata?.mediaServerId
+                        ?: player.mediaMetadata.mediaServerId
+                        ?: player.currentMediaItem?.mediaMetadata?.extras?.getString("mediaServerId")
                     val servers = player.playlistMetadata.mediaServers
                     val currentServer = servers.find { it.id == currentServerId }
-                    val serverTag = currentServer?.name?.let { name ->
-                        Regex("\\[(.*?)]").find(name)?.groupValues?.get(1)
-                            ?: Regex("\\((.*?)\\)").find(name)?.groupValues?.get(1)
-                    }
+                    val currentLang = currentServer?.let { com.streamhub.app.utils.ServerLanguageHelper.getAudioLanguage(it.name) }
 
                     list.clear()
-                    list.addAll(
-                        player.currentTracks.groups
+
+                    val languagesMap = linkedMapOf<com.streamhub.app.utils.AudioLanguage, com.streamhub.app.models.MediaServer>()
+                    servers.forEach { server ->
+                        val lang = com.streamhub.app.utils.ServerLanguageHelper.getAudioLanguage(server.name)
+                        if (!languagesMap.containsKey(lang)) {
+                            languagesMap[lang] = server
+                        }
+                    }
+
+                    if (languagesMap.size > 1) {
+                        languagesMap.forEach { (lang, server) ->
+                            val isActive = (currentLang == lang)
+                            list.add(
+                                AudioLanguageOption(
+                                    language = lang,
+                                    serverId = server.id,
+                                    serverName = server.name,
+                                    name = "${lang.flag} ${lang.displayName}",
+                                    active = isActive
+                                )
+                            )
+                        }
+                    } else {
+                        val serverTag = currentServer?.name?.let { name ->
+                            Regex("\\[(.*?)]").find(name)?.groupValues?.get(1)
+                                ?: Regex("\\((.*?)\\)").find(name)?.groupValues?.get(1)
+                        }
+
+                        val trackItems = player.currentTracks.groups
                             .filter { it.type == C.TRACK_TYPE_AUDIO }
                             .flatMap { trackGroup ->
                                 trackGroup.supportedTrackFormats
@@ -672,32 +711,57 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                                     .map { (trackIndex, trackFormat) ->
                                         val trackName = DefaultTrackNameProvider(resources)
                                             .getTrackName(trackFormat)
-                                        
+
                                         val finalName = when {
-                                            trackName.isBlank() || trackName.lowercase() == "und" || trackName.lowercase() == "unknown" -> {
-                                                if (serverTag != null) "Audio $serverTag" else "Track ${trackIndex + 1}"
+                                            trackName.isBlank() || trackName.lowercase() == "und" || trackName.lowercase() == "unknown" || trackName.lowercase() == "desconocido" -> {
+                                                when {
+                                                    currentLang != null && currentLang != com.streamhub.app.utils.AudioLanguage.OTHER -> currentLang.displayName
+                                                    serverTag != null -> "Audio $serverTag"
+                                                    else -> "Pista ${trackIndex + 1}"
+                                                }
                                             }
                                             else -> trackName
                                         }
 
                                         AudioTrackInformation(
                                             name = finalName,
-
                                             trackGroup = trackGroup,
                                             trackIndex = trackIndex,
                                         )
                                     }
                             }
                             .sortedBy { it.name }
-                    )
+
+                        if (trackItems.isNotEmpty()) {
+                            list.addAll(trackItems)
+                        } else if (currentServer != null) {
+                            val lang = currentLang ?: com.streamhub.app.utils.AudioLanguage.OTHER
+                            list.add(
+                                AudioLanguageOption(
+                                    language = lang,
+                                    serverId = currentServer.id,
+                                    serverName = currentServer.name,
+                                    name = "${lang.flag} ${lang.displayName}",
+                                    active = true
+                                )
+                            )
+                        }
+                    }
                 }
             }
 
-            abstract val isSelected: Boolean
+            class AudioLanguageOption(
+                val language: com.streamhub.app.utils.AudioLanguage,
+                val serverId: String,
+                val serverName: String,
+                override val name: String,
+                private val active: Boolean
+            ) : Audio() {
+                override val isSelected: Boolean get() = active
+            }
 
             class AudioTrackInformation(
-                val name: String,
-
+                override val name: String,
                 val trackGroup: Tracks.Group,
                 val trackIndex: Int,
             ) : Audio() {
@@ -1275,6 +1339,9 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                     get() = list.find { it.isSelected }
 
                 fun init(player: ExoPlayer) {
+                    val currentServerId = player.currentMediaItem?.mediaMetadata?.mediaServerId
+                        ?: player.mediaMetadata.mediaServerId
+                        ?: player.currentMediaItem?.mediaMetadata?.extras?.getString("mediaServerId")
                     list.clear()
                     list.addAll(player.playlistMetadata.mediaServers.map {
                         Server(
@@ -1283,12 +1350,21 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                         )
                     })
 
-                    list.firstOrNull()?.isSelected = true
+                    if (currentServerId != null) {
+                        list.forEach { it.isSelected = (it.id == currentServerId) }
+                    } else {
+                        list.firstOrNull()?.isSelected = true
+                    }
                 }
 
                 fun refresh(player: ExoPlayer) {
-                    list.forEach {
-                        it.isSelected = (it.id == player.mediaMetadata.mediaServerId)
+                    val currentServerId = player.currentMediaItem?.mediaMetadata?.mediaServerId
+                        ?: player.mediaMetadata.mediaServerId
+                        ?: player.currentMediaItem?.mediaMetadata?.extras?.getString("mediaServerId")
+                    if (currentServerId != null) {
+                        list.forEach {
+                            it.isSelected = (it.id == currentServerId)
+                        }
                     }
                 }
             }

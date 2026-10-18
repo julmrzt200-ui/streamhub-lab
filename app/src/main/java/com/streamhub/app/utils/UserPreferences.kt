@@ -69,16 +69,38 @@ object UserPreferences {
     }
 
 
+    val systemLanguage: String
+        get() {
+            val locale = java.util.Locale.getDefault()
+            val lang = locale.language.lowercase()
+            return when (lang) {
+                "es" -> "es"
+                "en" -> "en"
+                "fr" -> "fr"
+                "de" -> "de"
+                "it" -> "it"
+                "pt" -> "pt"
+                else -> "en"
+            }
+        }
+
     var currentProvider: Provider?
         get() {
-            val providerName = Key.CURRENT_PROVIDER.getString() ?: return null
+            val providerName = Key.CURRENT_PROVIDER.getString()
+            if (providerName.isNullOrBlank()) {
+                val defaultProv = TmdbProvider(systemLanguage)
+                Key.CURRENT_PROVIDER.setString(defaultProv.name)
+                return defaultProv
+            }
             if (providerName.startsWith("TMDb (") && providerName.endsWith(")")) {
                 val lang = providerName.substringAfter("TMDb (").substringBefore(")")
                 return TmdbProvider(lang)
             }
             val match = Provider.providers.keys.find { it.name == providerName }
             if (match == null) {
-                Key.CURRENT_PROVIDER.setString(null)
+                val defaultProv = TmdbProvider(systemLanguage)
+                Key.CURRENT_PROVIDER.setString(defaultProv.name)
+                return defaultProv
             }
             return match
         }

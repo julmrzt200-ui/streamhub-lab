@@ -976,8 +976,29 @@ class TmdbProvider(override val language: String) : Provider {
                     servers.addAll(deferred.awaitAll().flatten())
                 }
 
-                // Fallbacks if no servers discovered
-                if (servers.isEmpty()) {
+                // Harvest English / VOSE servers (BlackFlag from TheFlixBay as #1 priority)
+                val theFlixBayServers = try {
+                    withTimeoutOrNull(4500L) {
+                        val tmdbIdStr = when (videoType) {
+                            is Video.Type.Movie -> videoType.id
+                            is Video.Type.Episode -> "${videoType.tvShow.id}/${videoType.season.number}/${videoType.number}"
+                        }
+                        TheFlixBayProvider.getServers(tmdbIdStr, videoType).map { s ->
+                            Video.Server(
+                                id = s.id,
+                                name = if (s.name.contains("BlackFlag", ignoreCase = true)) "BlackFlag (CC) [VOSE]" else "${s.name} [VOSE]",
+                                src = s.src,
+                                extra = s.extra
+                            )
+                        }
+                    }.orEmpty()
+                } catch (e: Exception) {
+                    emptyList()
+                }
+                servers.addAll(theFlixBayServers)
+
+                // Fallbacks if no Spanish servers discovered
+                if (servers.none { it.name.uppercase().contains("[LAT]") || it.name.uppercase().contains("[CAST]") }) {
                     Log.i("StreamFlixES", "No Spanish provider found streams for $baseTitle, trying Videasy Spanish fallback")
                     try {
                         VideasyExtractor().server(videoType, "es")?.let { servers.add(it) }
@@ -985,16 +1006,33 @@ class TmdbProvider(override val language: String) : Provider {
                     } catch (_: Exception) {}
                 }
 
-                if (servers.isEmpty()) {
-                    Log.i("StreamFlixES", "Spanish fallback trying global embed extractors for $baseTitle")
-                    try {
-                        TwoEmbedExtractor().server(videoType)?.let { servers.add(it) }
-                        VidLinkExtractor().server(videoType)?.let { servers.add(it) }
-                    } catch (_: Exception) {}
-                }
+                try {
+                    TwoEmbedExtractor().server(videoType)?.let { servers.add(it) }
+                    VidLinkExtractor().server(videoType)?.let { servers.add(it) }
+                } catch (_: Exception) {}
             }
             else -> {
-                // Per inglese (en) o altre lingue non specifiche, usiamo i server globali
+                // English / Universal: TheFlixBay (BlackFlag CC #1) + Global Embeds
+                val theFlixBayServers = try {
+                    withTimeoutOrNull(4500L) {
+                        val tmdbIdStr = when (videoType) {
+                            is Video.Type.Movie -> videoType.id
+                            is Video.Type.Episode -> "${videoType.tvShow.id}/${videoType.season.number}/${videoType.number}"
+                        }
+                        TheFlixBayProvider.getServers(tmdbIdStr, videoType).map { s ->
+                            Video.Server(
+                                id = s.id,
+                                name = if (s.name.contains("BlackFlag", ignoreCase = true)) "BlackFlag (CC) [ENG]" else "${s.name} [ENG]",
+                                src = s.src,
+                                extra = s.extra
+                            )
+                        }
+                    }.orEmpty()
+                } catch (e: Exception) {
+                    emptyList()
+                }
+                servers.addAll(theFlixBayServers)
+
                 servers.addAll(listOf(
                     VixSrcExtractor().server(videoType),
                     TwoEmbedExtractor().server(videoType),
@@ -1018,27 +1056,38 @@ class TmdbProvider(override val language: String) : Provider {
             }
         }
 
-        // ORDINE PRIORITÀ FINALE: Portiamo i server con audio Spagnolo e Filemoon in cima
+        // ORDINE PRIORITÀ FINALE:
         val finalServers = if (language.startsWith("es")) {
             servers.sortedByDescending { server ->
                 val n = server.name.uppercase()
                 when {
-                    // Filemoon e tag audio spagnoli hanno la massima priorità
-                    n.contains("FILEMOON") -> 110
+                    // Filemoon y audio español nativo en la cima
+                    n.contains("FILEMOON") -> 120
                     n.contains("[CAS]") || n.contains("[LAT]") || n.contains("[ES]") || n.contains("SPAIN") || n.contains("[CAST]") ||
                     n.contains("LATINO") || n.contains("SPANISH") || n.contains("CASTELLANO") || n.contains("(LAT)") || n.contains("(ESP)") -> 100
                     
-                    // Altri aggregatori multi-lingua
-                    n.contains("VIDSRC") || n.contains("VIDLINK") -> 80
+                    // BlackFlag de TheFlixBay es el #1 absoluto para VOSE / Inglés
+                    n.contains("BLACKFLAG") -> 90
+
+                    // Otros agregadores multi-lingua
+                    n.contains("VIDSRC") || n.contains("VIDLINK") -> 70
                     
                     // Sottotitoli o inglese
-                    n.contains("[EN]") || n.contains("[SUB]") || n.contains("(EN)") || n.contains("(SUB)") -> 50
+                    n.contains("[EN]") || n.contains("[SUB]") || n.contains("(EN)") || n.contains("(SUB)") || n.contains("[VOSE]") -> 50
                     
                     else -> 0
                 }
             }
         } else {
-            servers
+            servers.sortedByDescending { server ->
+                val n = server.name.uppercase()
+                when {
+                    n.contains("BLACKFLAG") -> 200 // BlackFlag de TheFlixBay siempre #1 en inglés/VOSE
+                    n.contains("VIDLINK") -> 150
+                    n.contains("VIDSRC") -> 100
+                    else -> 50
+                }
+            }
         }
 
         Log.i("StreamFlixES", "[SERVERS LIST] -> Found ${finalServers.size} servers: ${finalServers.joinToString { it.name }}")
@@ -1256,8 +1305,29 @@ class TmdbProvider(override val language: String) : Provider {
             else -> Extractor.extract(url, server)
         }
 
-        // LOGICA SOTTOTITOLI FORZATI: Se siamo in spagnolo, attiviamo solo i forced di default
-        if (language.startsWith("es")) {
+        // LOGICA SOTTOTITOLI INTELIGENTE:
+        val sName = server.name.uppercase()
+        val isVoseOrEnglish = sName.contains("[ENG]") || sName.contains("[VOSE]") ||
+                              sName.contains("BLACKFLAG") || sName.contains("VIDLINK") ||
+                              sName.contains("TWOEMBED") || sName.contains("VIDSRC")
+
+        if (isVoseOrEnglish) {
+            // En VOSE/Inglés, activar automáticamente el primer subtítulo en español si existe
+            var spanishFound = false
+            video.subtitles.forEach { sub ->
+                val label = sub.label.lowercase()
+                val isSpanish = label.contains("spanish") || label.contains("español") || 
+                                label.contains("espanol") || label.contains("castellano")
+                if (isSpanish && !spanishFound) {
+                    sub.default = true
+                    spanishFound = true
+                    Log.i("StreamFlixES", "[SUBTITLE] -> TMDb: Subtítulo español activado por defecto para VOSE: ${sub.label}")
+                } else {
+                    sub.default = false
+                }
+            }
+        } else if (language.startsWith("es")) {
+            // En audio español nativo, activar solo los forzados por defecto
             var forcedFound = false
             video.subtitles.forEach { sub ->
                 val label = sub.label.lowercase()
@@ -1274,10 +1344,8 @@ class TmdbProvider(override val language: String) : Provider {
                     sub.default = false
                 }
             }
-            
             if (!forcedFound) {
                 video.subtitles.forEach { it.default = false }
-                Log.i("StreamFlixES", "[SUBTITLE] -> TMDb (es): No forced subs found, keeping them OFF")
             }
         }
         

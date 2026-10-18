@@ -144,8 +144,9 @@ class HomeMobileFragment : Fragment() {
                 .fitCenter()
                 .into(this)
 
+            // Logo no longer opens provider selector - unified TMDb catalog
             setOnClickListener {
-                findNavController().navigate(R.id.providers)
+                binding.rvHomeFeatured.smoothScrollToPosition(0)
             }
         }
         

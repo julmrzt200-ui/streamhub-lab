@@ -94,13 +94,8 @@ interface Provider {
             HDFilmeProvider to ProviderSupport(movies = true, tvShows = true),
             MEGAKinoProvider to ProviderSupport(movies = true, tvShows = true),
             ZaluknijProvider to ProviderSupport(movies = true, tvShows = true),
-            TvporinternetHDProvider to ProviderSupport(movies = false, tvShows = true),
             KidrazProvider to ProviderSupport(movies = true, tvShows = false),
             FrenchMangaProvider to ProviderSupport(movies = false, tvShows = true),
-            IptvOrgProvider to ProviderSupport(movies = false, tvShows = true),
-            IptvSpainProvider to ProviderSupport(movies = false, tvShows = true),
-            TvLibrefutbolProvider to ProviderSupport(movies = false, tvShows = true),
-            CineCityProvider to ProviderSupport(movies = false, tvShows = true),
             CineHaxProvider to ProviderSupport(movies = true, tvShows = true),
             TheFlixBayProvider to ProviderSupport(movies = true, tvShows = true)
         )
