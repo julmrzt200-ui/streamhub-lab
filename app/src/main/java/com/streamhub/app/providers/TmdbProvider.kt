@@ -830,6 +830,9 @@ class TmdbProvider(override val language: String) : Provider {
                     is Video.Type.Episode -> videoType.tvShow.id.toIntOrNull()
                 }
 
+                var mediaOriginalLanguage = ""
+                var isAsianOrigin = false
+
                 // Cosecha Multi-Idioma TMDB (es-MX, es-ES, en-US, original_title)
                 if (tmdbId != null) {
                     try {
@@ -840,6 +843,9 @@ class TmdbProvider(override val language: String) : Provider {
                                         val detail = TMDb3.Movies.details(tmdbId, language = loc)
                                         if (detail.title.isNotBlank()) harvestedTitles.add(detail.title)
                                         if (detail.originalTitle.isNotBlank()) harvestedTitles.add(detail.originalTitle)
+                                        if (mediaOriginalLanguage.isBlank()) {
+                                            mediaOriginalLanguage = detail.originalLanguage
+                                        }
                                     } catch (_: Exception) {}
                                 }
                             }
@@ -849,11 +855,22 @@ class TmdbProvider(override val language: String) : Provider {
                                         val detail = TMDb3.TvSeries.details(tmdbId, language = loc)
                                         if (detail.name.isNotBlank()) harvestedTitles.add(detail.name)
                                         if (detail.originalName.isNotBlank()) harvestedTitles.add(detail.originalName)
+                                        if (mediaOriginalLanguage.isBlank()) {
+                                            mediaOriginalLanguage = detail.originalLanguage
+                                        }
+                                        if (detail.originCountry.any { it in listOf("KR", "JP", "CN", "TW", "TH") }) {
+                                            isAsianOrigin = true
+                                        }
                                     } catch (_: Exception) {}
                                 }
                             }
                         }
                     } catch (_: Exception) {}
+                }
+
+                val asianLangs = setOf("ko", "ja", "zh", "th", "vi")
+                if (asianLangs.contains(mediaOriginalLanguage.lowercase())) {
+                    isAsianOrigin = true
                 }
 
                 // Filter out titles with CJK (Chinese, Japanese, Korean) characters for Spanish searches
@@ -862,7 +879,7 @@ class TmdbProvider(override val language: String) : Provider {
                     .filter { !isCjkRegex.containsMatchIn(it) && it.isNotBlank() }
                     .distinct()
 
-                Log.i("StreamFlixES", "[SEARCH START] -> Base: $baseTitle, Harvested (${cleanHarvested.size}): $cleanHarvested")
+                Log.i("StreamFlixES", "[SEARCH START] -> Base: $baseTitle (Lang: $mediaOriginalLanguage, Asian: $isAsianOrigin), Harvested (${cleanHarvested.size}): $cleanHarvested")
 
                 // Matching function
                 fun normalize(s: String): String {
@@ -870,6 +887,20 @@ class TmdbProvider(override val language: String) : Provider {
                         .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
                         .lowercase()
                         .replace(Regex("[^a-z0-9]"), "")
+                }
+
+                val stopWords = setOf(
+                    "and", "the", "del", "de", "la", "las", "los", "por", "con", "en", "un", "una", "unos", "unas", "y", "o", "a", "al", "el", "of", "in", "to", "for"
+                )
+
+                fun cleanWords(s: String): Set<String> {
+                    return java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+                        .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
+                        .lowercase()
+                        .replace(Regex("[^a-z0-9 ]"), " ")
+                        .split(Regex("\\s+"))
+                        .filter { it.isNotBlank() && it !in stopWords }
+                        .toSet()
                 }
 
                 fun isMatch(item: AppAdapter.Item, targetList: Collection<String>): Boolean {
@@ -880,48 +911,50 @@ class TmdbProvider(override val language: String) : Provider {
                     val nItem = normalize(itemTitle)
                     if (nItem.isBlank()) return false
 
+                    val nItemWords = cleanWords(itemTitle)
+
                     for (target in targetList) {
                         val nTarget = normalize(target)
                         if (nTarget.isBlank()) continue
 
-                        // Exact match
+                        // Exact normalized match
                         if (nItem == nTarget) return true
 
-                        // Partial match
+                        // Substring match with strict length tolerance (difference <= 4 chars)
                         if (nItem.contains(nTarget) || nTarget.contains(nItem)) {
                             val diff = Math.abs(nItem.length - nTarget.length)
-                            if (diff <= 6) return true
+                            if (diff <= 4) return true
                         }
 
-                        // Word token overlap
-                        val cleanWords: (String) -> Set<String> = { s ->
-                            java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
-                                .replace(Regex("\\p{InCombiningDiacriticalMarks}+"), "")
-                                .lowercase()
-                                .replace(Regex("[^a-z0-9 ]"), " ")
-                                .split(Regex("\\s+"))
-                                .filter { it.length > 2 }
-                                .toSet()
-                        }
-                        val nItemWords = cleanWords(itemTitle)
+                        // Word token overlap with stopword removal & Jaccard index
                         val nTargetWords = cleanWords(target)
                         if (nItemWords.isNotEmpty() && nTargetWords.isNotEmpty()) {
-                            if (nTargetWords.size == 1 && nItemWords.contains(nTargetWords.first())) return true
-                            if (nItemWords.containsAll(nTargetWords) || nTargetWords.containsAll(nItemWords)) return true
+                            val intersection = nItemWords.intersect(nTargetWords).size
+                            val union = nItemWords.union(nTargetWords).size
+                            val jaccard = intersection.toDouble() / union.toDouble()
+
+                            if (jaccard >= 0.70) return true
+
+                            if (nTargetWords.size >= 3 && intersection.toDouble() / nTargetWords.size >= 0.75 && nItemWords.size <= nTargetWords.size + 1) {
+                                return true
+                            }
                         }
                     }
                     return false
                 }
 
                 coroutineScope {
-                    val providers = listOf(
-                        CineCalidadProvider,
-                        PelisflixHdProvider,
-                        CuevanaEuProvider,
-                        PelisPlusHdLaProvider,
-                        PelisplustoProvider,
-                        DoramasflixProvider
-                    )
+                    val providers = mutableListOf<Provider>()
+                    if (videoType is Video.Type.Movie) {
+                        providers.add(CineCalidadProvider)
+                    }
+                    providers.add(PelisflixHdProvider)
+                    providers.add(CuevanaEuProvider)
+                    providers.add(PelisPlusHdLaProvider)
+                    providers.add(PelisplustoProvider)
+                    if (isAsianOrigin) {
+                        providers.add(DoramasflixProvider)
+                    }
 
                     val searchQueries = cleanHarvested.take(3)
 
@@ -949,14 +982,23 @@ class TmdbProvider(override val language: String) : Provider {
                                     }
 
                                     // If servers don't explicitly contain the [LAT] tag in their name,
-                                    // retain all servers from this Spanish provider with [LAT] suffix added.
+                                    // preserve any existing [SUB]/[VOSE] tags or assign appropriate tag without clobbering src.
                                     val keptServers = if (filtered.isNotEmpty()) {
                                         filtered
                                     } else {
                                         allServers.map { s ->
+                                            val n = s.name.uppercase()
+                                            val isSubOrVose = n.contains("[SUB]") || n.contains("[VOSE]") || n.contains("(SUB)") || n.contains("[ENG]")
+                                            val taggedName = when {
+                                                isSubOrVose -> s.name
+                                                s.name.contains("[") -> s.name
+                                                provider == DoramasflixProvider -> "${s.name} [VOSE]"
+                                                else -> "${s.name} [LAT]"
+                                            }
                                             Video.Server(
                                                 id = s.id,
-                                                name = if (s.name.contains("[")) s.name else "${s.name} [LAT]"
+                                                name = taggedName,
+                                                src = s.src
                                             )
                                         }
                                     }

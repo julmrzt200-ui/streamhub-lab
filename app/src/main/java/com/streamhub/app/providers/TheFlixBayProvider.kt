@@ -221,9 +221,20 @@ object TheFlixBayProvider : Provider {
         when (videoType) {
             is Video.Type.Movie -> {
                 val moviePageUrl = if (id.startsWith("http")) id else "$baseUrl/movie/$id"
-                val doc = getDocument(moviePageUrl)
-                val tmdbId = TheFlixBayParser.extractMovieTmdbId(doc)
-                    ?: id.filter { it.isDigit() }.ifEmpty { "0" }
+                var doc = runCatching { getDocument(moviePageUrl) }.getOrNull()
+                var tmdbId = doc?.let { TheFlixBayParser.extractMovieTmdbId(it) }
+
+                if (tmdbId == null && videoType.title.isNotBlank()) {
+                    val searchResults = runCatching { search(videoType.title, 1).filterIsInstance<Movie>() }.getOrDefault(emptyList())
+                    val match = searchResults.firstOrNull { it.title.equals(videoType.title, ignoreCase = true) } ?: searchResults.firstOrNull()
+                    if (match != null) {
+                        val realMovieUrl = "$baseUrl/movie/${match.id}"
+                        doc = runCatching { getDocument(realMovieUrl) }.getOrNull()
+                        tmdbId = doc?.let { TheFlixBayParser.extractMovieTmdbId(it) } ?: match.id.filter { it.isDigit() }
+                    }
+                }
+
+                tmdbId = tmdbId?.takeIf { it.isNotBlank() } ?: videoType.id.takeIf { it.isNotBlank() } ?: id.filter { it.isDigit() }.ifEmpty { "0" }
 
                 // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinemov.php
                 val blackFlagAjax = "$baseUrl/ajax/cinemov.php?t=$tmdbId"
@@ -245,15 +256,30 @@ object TheFlixBayProvider : Provider {
             }
             is Video.Type.Episode -> {
                 val parts = id.split("/")
-                val showId = parts.getOrNull(0) ?: id
+                var showId = parts.getOrNull(0) ?: id
                 val seasonNum = parts.getOrNull(1)?.toIntOrNull() ?: videoType.season.number
                 val episodeNum = parts.getOrNull(2)?.toIntOrNull() ?: videoType.number
 
-                val showPageUrl = "$baseUrl/series/$showId"
-                val doc = getDocument(showPageUrl)
-                val (seriesTmdb, seriesImdb) = TheFlixBayParser.extractSeriesTmdbAndImdb(doc)
-                val tmdbId = seriesTmdb ?: showId.filter { it.isDigit() }.ifEmpty { "0" }
-                val imdbId = seriesImdb.orEmpty()
+                var showPageUrl = "$baseUrl/series/$showId"
+                var doc = runCatching { getDocument(showPageUrl) }.getOrNull()
+                var (seriesTmdb, seriesImdb) = doc?.let { TheFlixBayParser.extractSeriesTmdbAndImdb(it) } ?: (null to null)
+
+                if (seriesTmdb == null && seriesImdb == null && videoType.tvShow.title.isNotBlank()) {
+                    val searchTitle = videoType.tvShow.title
+                    val searchResults = runCatching { search(searchTitle, 1).filterIsInstance<TvShow>() }.getOrDefault(emptyList())
+                    val match = searchResults.firstOrNull { it.title.equals(searchTitle, ignoreCase = true) } ?: searchResults.firstOrNull()
+                    if (match != null) {
+                        showId = match.id
+                        showPageUrl = "$baseUrl/series/$showId"
+                        doc = runCatching { getDocument(showPageUrl) }.getOrNull()
+                        val extracted = doc?.let { TheFlixBayParser.extractSeriesTmdbAndImdb(it) }
+                        seriesTmdb = extracted?.first
+                        seriesImdb = extracted?.second
+                    }
+                }
+
+                val tmdbId = seriesTmdb ?: videoType.tvShow.id.takeIf { it.isNotBlank() } ?: showId.filter { it.isDigit() }.ifEmpty { "0" }
+                val imdbId = seriesImdb ?: videoType.tvShow.imdbId.orEmpty()
 
                 // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinetv.php
                 val blackFlagAjax = "$baseUrl/ajax/cinetv.php?i=$imdbId&t=$tmdbId&s=$seasonNum&e=$episodeNum"

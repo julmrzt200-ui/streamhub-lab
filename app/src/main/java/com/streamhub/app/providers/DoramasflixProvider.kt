@@ -368,8 +368,34 @@ object DoramasflixProvider : Provider {
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
         val episodeUrl = if (id.contains("/cap/")) {
             resolveShowUrl(id)
+        } else if (videoType is Video.Type.Episode) {
+            val seriesDoc = fetchDocument(resolveShowUrl(id))
+            val targetEpNum = videoType.number
+            val epItems = seriesDoc.select("li.ep-item")
+            var matchedHref: String? = null
+            for (item in epItems) {
+                val a = item.selectFirst("a[href]") ?: continue
+                val href = a.attr("href").trim()
+                val num = item.selectFirst(".epl-num")?.text()?.toIntOrNull()
+                    ?: Regex("capitulo-(\\d+)", RegexOption.IGNORE_CASE).find(href)?.groupValues?.getOrNull(1)?.toIntOrNull()
+                if (num == targetEpNum) {
+                    matchedHref = href
+                    break
+                }
+            }
+            if (matchedHref == null) {
+                val links = seriesDoc.select("a[href*='/cap/']")
+                matchedHref = links.firstOrNull { 
+                    val href = it.attr("href")
+                    Regex("capitulo-$targetEpNum\\b", RegexOption.IGNORE_CASE).containsMatchIn(href) ||
+                    Regex("-\\d+x$targetEpNum\\b", RegexOption.IGNORE_CASE).containsMatchIn(href)
+                }?.attr("href")
+            }
+            matchedHref ?: seriesDoc.selectFirst("li.ep-item a[href]")?.attr("href")
+                ?: seriesDoc.selectFirst("a[href*='/cap/']")?.attr("href")
+                ?: resolveShowUrl(id)
         } else {
-            // Might be a series or movie URL; find the first episode
+            // Might be a movie URL; find the first episode
             val seriesDoc = fetchDocument(resolveShowUrl(id))
             val firstEp = seriesDoc.selectFirst("li.ep-item a[href]")?.attr("href")
                 ?: seriesDoc.selectFirst("a[href*='/cap/']")?.attr("href")

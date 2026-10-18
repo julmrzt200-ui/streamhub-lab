@@ -1032,8 +1032,13 @@ object CuevanaEuProvider : Provider {
                     )?.episode?._id
 
                     directEpisode ?: run {
-                        val tvShowSlug = extractSlug(videoType.tvShow.id)
-                        val showPostType = getCuevanaShowPostType(videoType.tvShow.id)
+                        val rawSlug = extractSlug(id)
+                        val tvShowSlug = if (rawSlug.isNotBlank() && !rawSlug.all { it.isDigit() }) {
+                            rawSlug
+                        } else {
+                            extractSlug(videoType.tvShow.id)
+                        }
+                        val showPostType = getCuevanaShowPostType(id).ifEmpty { getCuevanaShowPostType(videoType.tvShow.id) }
                         val tvShow = getFastApi<FastApiSinglePost>(
                             path = "/single/$showPostType",
                             params = mapOf(

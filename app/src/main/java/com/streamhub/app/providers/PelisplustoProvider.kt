@@ -299,12 +299,17 @@ object PelisplustoProvider : Provider {
 
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
         val url = when (videoType) {
-            is Video.Type.Movie -> "$baseUrl/pelicula/${videoType.id}"
+            is Video.Type.Movie -> {
+                val movieId = if (id.isNotBlank() && id != "0") id else videoType.id
+                val cleanId = movieId.removePrefix("pelicula/").removePrefix("/pelicula/")
+                "$baseUrl/pelicula/$cleanId"
+            }
             is Video.Type.Episode -> {
-                val showId = videoType.tvShow.id
+                val showId = if (id.isNotBlank() && id != "0" && !id.contains("/")) id else videoType.tvShow.id
                 val season = videoType.season.number
                 val episode = videoType.number
-                val basePath = if (showId.startsWith("anime/")) "$baseUrl/$showId" else "$baseUrl/serie/$showId"
+                val cleanShowId = showId.removePrefix("serie/").removePrefix("/serie/").removePrefix("anime/").removePrefix("/anime/")
+                val basePath = if (showId.contains("anime")) "$baseUrl/anime/$cleanShowId" else "$baseUrl/serie/$cleanShowId"
                 "$basePath/season/$season/episode/$episode"
             }
         }
