@@ -988,7 +988,6 @@ class TmdbProvider(override val language: String) : Provider {
                                 id = s.id,
                                 name = if (s.name.contains("BlackFlag", ignoreCase = true)) "BlackFlag (CC) [VOSE]" else "${s.name} [VOSE]",
                                 src = s.src,
-                                extra = s.extra
                             )
                         }
                     }.orEmpty()
@@ -1024,7 +1023,6 @@ class TmdbProvider(override val language: String) : Provider {
                                 id = s.id,
                                 name = if (s.name.contains("BlackFlag", ignoreCase = true)) "BlackFlag (CC) [ENG]" else "${s.name} [ENG]",
                                 src = s.src,
-                                extra = s.extra
                             )
                         }
                     }.orEmpty()
