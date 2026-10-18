@@ -52,51 +52,48 @@ object ServerLanguageHelper {
     fun findNextServer(
         currentServer: Video.Server,
         allServers: List<Video.Server>,
-        fallbackToEnglish: Boolean = true
+        fallbackToEnglish: Boolean = true,
+        excludedServerIds: Set<String> = emptySet()
     ): NextServerResult {
         if (allServers.isEmpty()) {
             return NextServerResult(null, false, AudioLanguage.OTHER)
         }
 
         val currentLang = getAudioLanguage(currentServer.name)
+        val candidateServers = allServers.filterNot { it.id in excludedServerIds || it.id == currentServer.id }
 
         // 1. Same exact dialect
-        val sameLangServers = allServers.filter { getAudioLanguage(it.name) == currentLang }
-        val currentIndexInGroup = sameLangServers.indexOfFirst { it.id == currentServer.id }
-        if (currentIndexInGroup != -1 && currentIndexInGroup + 1 < sameLangServers.size) {
-            val nextServer = sameLangServers[currentIndexInGroup + 1]
-            return NextServerResult(nextServer, false, currentLang)
+        val nextInSameDialect = candidateServers.firstOrNull { getAudioLanguage(it.name) == currentLang }
+        if (nextInSameDialect != null) {
+            return NextServerResult(nextInSameDialect, false, currentLang)
         }
 
         // 2. Same Spanish language family (Latino <-> Castellano)
         val isSpanishFamily = currentLang == AudioLanguage.LATINO || currentLang == AudioLanguage.CASTELLANO || currentLang == AudioLanguage.SPANISH
         if (isSpanishFamily) {
-            val otherSpanishServers = allServers.filter {
+            val otherSpanishServer = candidateServers.firstOrNull {
                 val l = getAudioLanguage(it.name)
                 (l == AudioLanguage.LATINO || l == AudioLanguage.CASTELLANO || l == AudioLanguage.SPANISH) && l != currentLang
             }
-            if (otherSpanishServers.isNotEmpty()) {
-                val nextServer = otherSpanishServers.first()
-                val nextLang = getAudioLanguage(nextServer.name)
-                return NextServerResult(nextServer, false, nextLang)
+            if (otherSpanishServer != null) {
+                val nextLang = getAudioLanguage(otherSpanishServer.name)
+                return NextServerResult(otherSpanishServer, false, nextLang)
             }
         }
 
-        // 3. Fallback to English / VOSE
+        // 3. Fallback to English / VOSE (BlackFlag is #1 in candidates)
         if (fallbackToEnglish && currentLang != AudioLanguage.ENGLISH) {
-            val englishServers = allServers.filter { getAudioLanguage(it.name) == AudioLanguage.ENGLISH }
-            if (englishServers.isNotEmpty()) {
-                val nextServer = englishServers.first()
-                return NextServerResult(nextServer, true, AudioLanguage.ENGLISH)
+            val englishServer = candidateServers.firstOrNull { getAudioLanguage(it.name) == AudioLanguage.ENGLISH }
+            if (englishServer != null) {
+                return NextServerResult(englishServer, true, AudioLanguage.ENGLISH)
             }
         }
 
-        // 4. Any remaining server
-        val currentIndexInAll = allServers.indexOfFirst { it.id == currentServer.id }
-        if (currentIndexInAll != -1 && currentIndexInAll + 1 < allServers.size) {
-            val nextServer = allServers[currentIndexInAll + 1]
-            val nextLang = getAudioLanguage(nextServer.name)
-            return NextServerResult(nextServer, nextLang != currentLang, nextLang)
+        // 4. Any remaining candidate server
+        val remainingServer = candidateServers.firstOrNull()
+        if (remainingServer != null) {
+            val nextLang = getAudioLanguage(remainingServer.name)
+            return NextServerResult(remainingServer, nextLang != currentLang, nextLang)
         }
 
         return NextServerResult(null, false, currentLang)

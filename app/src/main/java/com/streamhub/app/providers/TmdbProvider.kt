@@ -918,7 +918,7 @@ class TmdbProvider(override val language: String) : Provider {
                         CineCalidadProvider,
                         PelisflixHdProvider,
                         CuevanaEuProvider,
-                        PoseidonHD2Provider,
+                        PelisPlusHdLaProvider,
                         PelisplustoProvider,
                         DoramasflixProvider
                     )
@@ -1058,21 +1058,28 @@ class TmdbProvider(override val language: String) : Provider {
         val finalServers = if (language.startsWith("es")) {
             servers.sortedByDescending { server ->
                 val n = server.name.uppercase()
+                val isSpanish = n.contains("[CAS]") || n.contains("[LAT]") || n.contains("[ES]") ||
+                                n.contains("SPAIN") || n.contains("[CAST]") || n.contains("LATINO") ||
+                                n.contains("SPANISH") || n.contains("CASTELLANO") || n.contains("(LAT)") || n.contains("(ESP)")
                 when {
-                    // Filemoon y audio español nativo en la cima
-                    n.contains("FILEMOON") -> 120
-                    n.contains("[CAS]") || n.contains("[LAT]") || n.contains("[ES]") || n.contains("SPAIN") || n.contains("[CAST]") ||
-                    n.contains("LATINO") || n.contains("SPANISH") || n.contains("CASTELLANO") || n.contains("(LAT)") || n.contains("(ESP)") -> 100
-                    
-                    // BlackFlag de TheFlixBay es el #1 absoluto para VOSE / Inglés
+                    // Servidores españoles más rápidos (CDNs directos sin buffering)
+                    isSpanish && n.contains("VOE") -> 160
+                    isSpanish && n.contains("STREAMWISH") -> 150
+                    isSpanish && n.contains("FILEMOON") -> 140
+                    isSpanish && n.contains("VIDHIDE") -> 130
+                    isSpanish -> 110
+                    isSpanish && n.contains("STREAMTAPE") -> 100
+
+                    // BlackFlag y VidLink (TheFlixBay) #1 y #2 absolutos para VOSE / Inglés
                     n.contains("BLACKFLAG") -> 90
+                    n.contains("VIDLINK") -> 85
 
                     // Otros agregadores multi-lingua
-                    n.contains("VIDSRC") || n.contains("VIDLINK") -> 70
-                    
+                    n.contains("VIDSRC") || n.contains("TWOEMBED") -> 70
+
                     // Sottotitoli o inglese
                     n.contains("[EN]") || n.contains("[SUB]") || n.contains("(EN)") || n.contains("(SUB)") || n.contains("[VOSE]") -> 50
-                    
+
                     else -> 0
                 }
             }
@@ -1081,8 +1088,11 @@ class TmdbProvider(override val language: String) : Provider {
                 val n = server.name.uppercase()
                 when {
                     n.contains("BLACKFLAG") -> 200 // BlackFlag de TheFlixBay siempre #1 en inglés/VOSE
-                    n.contains("VIDLINK") -> 150
-                    n.contains("VIDSRC") -> 100
+                    n.contains("VIDLINK") -> 180
+                    n.contains("VIDSRC") -> 140
+                    n.contains("VOE") -> 130
+                    n.contains("STREAMWISH") -> 120
+                    n.contains("TWOEMBED") -> 100
                     else -> 50
                 }
             }

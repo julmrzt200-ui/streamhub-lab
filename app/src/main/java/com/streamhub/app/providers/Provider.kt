@@ -71,7 +71,7 @@ interface Provider {
             AnikotoProvider to ProviderSupport(movies = true, tvShows = true),
             WiflixProvider to ProviderSupport(movies = true, tvShows = true),
             MStreamProvider to ProviderSupport(movies = true, tvShows = true),
-            PoseidonHD2Provider to ProviderSupport(movies = true, tvShows = true),
+            PelisPlusHdLaProvider to ProviderSupport(movies = true, tvShows = true),
             CuevanaEuProvider to ProviderSupport(movies = true, tvShows = true),
             LatanimeProvider to ProviderSupport(movies = true, tvShows = true),
             DoramasflixProvider to ProviderSupport(movies = true, tvShows = true),

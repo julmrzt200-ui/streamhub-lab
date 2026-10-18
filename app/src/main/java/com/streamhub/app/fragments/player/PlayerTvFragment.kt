@@ -161,6 +161,7 @@ class PlayerTvFragment : Fragment() {
 
     private var currentVideo: Video? = null
     private var currentServer: Video.Server? = null
+    private val failedServerIds = mutableSetOf<String>()
     private var nextEpisodePrefetchTargetId: String? = null
     private var nextEpisodePrefetchJob: Job? = null
     private var nextEpisodeOverlayDismissed = false
@@ -246,11 +247,11 @@ class PlayerTvFragment : Fragment() {
     private val stallWatchdogHandler = android.os.Handler(Looper.getMainLooper())
     private val stallWatchdogRunnable = Runnable {
         if (_binding != null && isAdded && ::player.isInitialized && player.playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
-            Log.w("PlayerTvFragment", "Buffering stall detectado (>9s). Intentando cambiar de servidor...")
+            Log.w("PlayerTvFragment", "Buffering stall detectado (>5.5s). Intentando cambiar de servidor...")
             context?.let { ctx ->
                 Toast.makeText(ctx, R.string.server_buffering_stall_timeout, Toast.LENGTH_LONG).show()
             }
-            switchToNextServer("Buffering stall >9s")
+            switchToNextServer("Buffering stall >5.5s")
         }
     }
 
@@ -264,9 +265,16 @@ class PlayerTvFragment : Fragment() {
             hidePlayerLoading()
             return
         }
-        val result = com.streamhub.app.utils.ServerLanguageHelper.findNextServer(serverReference, servers, fallbackToEnglish = true)
+        failedServerIds.add(serverReference.id)
+        val result = com.streamhub.app.utils.ServerLanguageHelper.findNextServer(
+            currentServer = serverReference,
+            allServers = servers,
+            fallbackToEnglish = true,
+            excludedServerIds = failedServerIds
+        )
         val nextServer = result.server
         if (nextServer != null) {
+            currentServer = nextServer
             Log.i("PlayerTvFragment", "Cambiando a servidor ($reason): ${nextServer.name} (fallback=${result.isCrossLanguageFallback})")
             if (result.isCrossLanguageFallback) {
                 context?.let { ctx ->
@@ -532,6 +540,7 @@ class PlayerTvFragment : Fragment() {
                     is PlayerViewModel.State.SuccessLoadingServers -> {
                         showPlayerLoading()
                         servers = state.servers
+                        failedServerIds.clear()
 
                         val providerName = UserPreferences.currentProvider?.name ?: ""
                         val isTmdb = providerName.contains("TMDb", ignoreCase = true)
@@ -570,6 +579,7 @@ class PlayerTvFragment : Fragment() {
                         binding.settings.setOnServerSelectedListener { server ->
                             val selectedServer = servers.find { server.id == it.id } ?: return@setOnServerSelectedListener
                             Log.i("PlayerTvFragment", "Usuario seleccionó manualmente el servidor: ${selectedServer.name}")
+                            currentServer = selectedServer
                             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                             if (::player.isInitialized) {
                                 player.stop()
@@ -581,6 +591,7 @@ class PlayerTvFragment : Fragment() {
                             val targetServer = servers.find { targetServerId == it.id } ?: return@setOnAudioLanguageSelectedListener
                             val targetLang = com.streamhub.app.utils.ServerLanguageHelper.getAudioLanguage(targetServer.name)
                             Log.i("PlayerTvFragment", "Usuario seleccionó idioma de audio: ${targetLang.displayName} (${targetServer.name})")
+                            currentServer = targetServer
                             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                             if (::player.isInitialized) {
                                 player.stop()
@@ -591,8 +602,10 @@ class PlayerTvFragment : Fragment() {
                         val preferredServer = state.servers.firstOrNull {
                             it.name.equals(args.preferredServerName, ignoreCase = true)
                         }
+                        val startServer = preferredServer ?: state.servers.first()
+                        currentServer = startServer
                         showPlayerLoading()
-                        viewModel.getVideo(preferredServer ?: state.servers.first())
+                        viewModel.getVideo(startServer)
 
                     }
                         is PlayerViewModel.State.FailedLoadingServers -> {
@@ -1400,7 +1413,7 @@ class PlayerTvFragment : Fragment() {
 
                     if (playbackState == Player.STATE_BUFFERING && player.playWhenReady) {
                         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 5500L)
                     } else {
                         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                     }
@@ -1410,7 +1423,7 @@ class PlayerTvFragment : Fragment() {
                     super.onPlayWhenReadyChanged(playWhenReady, reason)
                     if (player.playbackState == Player.STATE_BUFFERING && playWhenReady) {
                         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
-                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
+                        stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 5500L)
                     } else {
                         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                     }
