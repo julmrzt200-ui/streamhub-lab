@@ -586,7 +586,7 @@ class PlayerSettingsMobileView @JvmOverloads constructor(
                         }
                         Settings.Audio -> Settings.Audio.selected?.name ?: ""
                         Settings.Subtitle -> when (val selected = Settings.Subtitle.selected) {
-                            is Settings.Subtitle.TextTrackInformation -> selected.label
+                            is Settings.Subtitle.TextTrackInformation -> selected.label.ifEmpty { selected.name }
                             else -> context.getString(R.string.player_settings_subtitles_off)
                         }
                         Settings.Speed -> context.getString(Settings.Speed.selected.stringId)

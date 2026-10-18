@@ -186,6 +186,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                     player.trackSelectionParameters = player.trackSelectionParameters
                         .buildUpon()
                         .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                         .setIgnoredTextSelectionFlags(C.SELECTION_FLAG_FORCED.inv())
                         .build()
                     UserPreferences.subtitleName = null
@@ -194,6 +195,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 is Settings.Subtitle.TextTrackInformation -> {
                     player.trackSelectionParameters = player.trackSelectionParameters
                         .buildUpon()
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
                         .setIgnoredTextSelectionFlags(0)
                         .setOverrideForType(
                             TrackSelectionOverride(
@@ -201,9 +204,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                                 listOf(subtitle.trackIndex)
                             )
                         )
-                        .setTrackTypeDisabled(subtitle.trackGroup.type, false)
                         .build()
-                    UserPreferences.subtitleName = (subtitle.language ?: subtitle.label).substringBefore(" ")
+                    UserPreferences.subtitleName = (subtitle.language ?: subtitle.label.ifEmpty { subtitle.name }).substringBefore(" ")
                 }
 
                 else -> {}
@@ -777,13 +779,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 val list = mutableListOf<Subtitle>()
 
                 val selected: Subtitle
-                    get() = list.find {
-                        when (it) {
-                            is None -> it.isSelected
-                            is TextTrackInformation -> it.isSelected
-                            else -> false
-                        }
-                    } ?: None
+                    get() = list.filterIsInstance<TextTrackInformation>().find { it.isSelected } ?: None
 
                 fun init(player: ExoPlayer, resources: Resources) {
                     list.clear()
@@ -807,10 +803,11 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
 
                                             trackGroup = trackGroup,
                                             trackIndex = trackIndex,
+                                            player = player,
                                         )
                                     }
                             }
-                            .sortedBy { it.language ?: it.label }
+                            .sortedBy { it.language ?: it.label.ifEmpty { it.name } }
                     )
                     list.add(LocalSubtitles)
                     list.add(OpenSubtitles)
@@ -1247,9 +1244,17 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
 
                 val trackGroup: Tracks.Group,
                 val trackIndex: Int,
+                val player: ExoPlayer,
             ) : Subtitle() {
                 val isSelected: Boolean
-                    get() = trackGroup.isTrackSelected(trackIndex)
+                    get() {
+                        val isOverridden = player.trackSelectionParameters.overrides.values.any { override ->
+                            override.mediaTrackGroup == trackGroup.mediaTrackGroup &&
+                                override.trackIndices.contains(trackIndex)
+                        }
+                        val isTrackDisabled = player.trackSelectionParameters.disabledTrackTypes.contains(C.TRACK_TYPE_TEXT)
+                        return isOverridden || (!isTrackDisabled && trackGroup.isTrackSelected(trackIndex))
+                    }
             }
 
             data object LocalSubtitles : Subtitle()

@@ -456,7 +456,7 @@ object UserPreferences {
         set(value) = Key.SUBTITLE_NAME.setString(value)
 
     var preferredTranslateLanguage: String
-        get() = Key.PREFERRED_TRANSLATE_LANGUAGE.getString() ?: "system"
+        get() = Key.PREFERRED_TRANSLATE_LANGUAGE.getString() ?: "off"
         set(value) = Key.PREFERRED_TRANSLATE_LANGUAGE.setString(value)
     var streamingcommunityDomain: String
         get() {
