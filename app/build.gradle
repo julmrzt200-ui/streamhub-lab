@@ -33,8 +33,8 @@ android {
         applicationId "com.streamhub.app"
         minSdk 21
         targetSdk 35
-        versionCode 177
-        versionName "1.7.248"
+        versionCode 178
+        versionName "1.7.249"
 
         buildConfigField "String", "APP_LAYOUT", "\"${appLayoutValue}\""
         buildConfigField "String", "TMDB_API_KEY", "\"${tmdbApiKeyValue}\""
