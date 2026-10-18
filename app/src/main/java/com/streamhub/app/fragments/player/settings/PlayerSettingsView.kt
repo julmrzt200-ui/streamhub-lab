@@ -25,6 +25,7 @@ import com.streamhub.app.utils.getAlpha
 import com.streamhub.app.utils.getRgb
 import com.streamhub.app.utils.mediaServerId
 import com.streamhub.app.utils.mediaServers
+import com.streamhub.app.utils.MediaServer
 import com.streamhub.app.utils.setAlpha
 import com.streamhub.app.utils.setRgb
 import com.streamhub.app.utils.supportedTrackFormats
@@ -676,7 +677,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
 
                     list.clear()
 
-                    val languagesMap = linkedMapOf<com.streamhub.app.utils.AudioLanguage, com.streamhub.app.models.MediaServer>()
+                    val languagesMap = linkedMapOf<com.streamhub.app.utils.AudioLanguage, MediaServer>()
                     servers.forEach { server ->
                         val lang = com.streamhub.app.utils.ServerLanguageHelper.getAudioLanguage(server.name)
                         if (!languagesMap.containsKey(lang)) {
