@@ -194,7 +194,6 @@ class TranslatingTextOutput(
                             it.text?.toString()?.let(::normalizeKey) == originalText
                         }
                         if (stillShowing) {
-                            handler.removeCallbacks(releaseHeldCues)
                             delegate.onCues(translateCueGroup(current, targetLang))
                         }
                     }
