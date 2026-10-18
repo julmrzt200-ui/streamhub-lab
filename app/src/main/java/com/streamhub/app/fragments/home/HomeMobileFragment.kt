@@ -146,7 +146,7 @@ class HomeMobileFragment : Fragment() {
 
             // Logo no longer opens provider selector - unified TMDb catalog
             setOnClickListener {
-                binding.rvHomeFeatured.smoothScrollToPosition(0)
+                binding.rvHome.smoothScrollToPosition(0)
             }
         }
         

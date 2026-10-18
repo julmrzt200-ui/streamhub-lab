@@ -1277,7 +1277,7 @@ class PlayerTvFragment : Fragment() {
                     )
                     .build()
             )
-            player.mediaMetadata = MediaMetadata.Builder()
+            player.playlistMetadata = player.playlistMetadata.buildUpon()
                 .setMediaServerId(server.id)
                 .build()
 
