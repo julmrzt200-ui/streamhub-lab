@@ -179,8 +179,9 @@ class MovieViewHolder(
     }
 
     private fun checkProviderAndRun(action: () -> Unit) {
-        if (!movie.providerName.isNullOrBlank() && movie.providerName != UserPreferences.currentProvider?.name) {
-            Provider.findByName(movie.providerName)?.let {
+        val targetProvider = movie.providerName
+        if (!targetProvider.isNullOrBlank() && targetProvider != UserPreferences.currentProvider?.name) {
+            Provider.findByName(targetProvider)?.let {
                 UserPreferences.currentProvider = it
             }
         }

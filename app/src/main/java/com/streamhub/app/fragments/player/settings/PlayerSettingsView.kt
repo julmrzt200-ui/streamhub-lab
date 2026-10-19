@@ -650,6 +650,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
         }
 
         sealed class Audio : Item {
+            abstract val name: String
+            abstract val isSelected: Boolean
 
             companion object : Settings() {
                 val list = mutableListOf<Audio>()
@@ -697,10 +699,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 }
             }
 
-            abstract val isSelected: Boolean
-
             class AudioTrackInformation(
-                val name: String,
+                override val name: String,
 
                 val trackGroup: Tracks.Group,
                 val trackIndex: Int,
