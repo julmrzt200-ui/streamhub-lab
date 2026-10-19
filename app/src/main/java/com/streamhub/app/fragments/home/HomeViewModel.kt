@@ -35,8 +35,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.transformLatest
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import com.streamhub.app.providers.TmdbProvider
 import java.util.concurrent.ConcurrentHashMap
+import java.io.IOException
 
 class HomeViewModel(database: AppDatabase, private val forcedProvider: Provider? = null) : ViewModel() {
 
@@ -437,7 +439,9 @@ class HomeViewModel(database: AppDatabase, private val forcedProvider: Provider?
         loadUserDataCache(provider)
 
         try {
-            val categories = provider.getHome()
+            val categories = withTimeoutOrNull(45_000L) {
+                provider.getHome()
+            } ?: throw IOException("El catálogo de ${provider.name} tardó demasiado en responder")
             HomeCacheStore.write(appContext, provider, categories)
             _state.emit(State.SuccessLoading(categories))
         } catch (e: Exception) {

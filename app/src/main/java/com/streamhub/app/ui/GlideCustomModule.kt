@@ -61,8 +61,9 @@ class GlideCustomModule : AppGlideModule() {
                 }
                 chain.proceed(requestBuilder.build())
             }
-            .readTimeout(30, TimeUnit.SECONDS)
-            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(20, TimeUnit.SECONDS)
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .callTimeout(25, TimeUnit.SECONDS)
             .addInterceptor { chain ->
                 val request = chain.request()
                 val headers = ArtworkRequestHeaders.headersFor(request.url)

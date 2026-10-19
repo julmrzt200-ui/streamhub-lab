@@ -19,8 +19,9 @@ object DnsResolver : Dns {
     private val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)
 
     private var client: OkHttpClient = OkHttpClient.Builder()
-        .readTimeout(30, TimeUnit.SECONDS)
-        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(4, TimeUnit.SECONDS)
+        .connectTimeout(4, TimeUnit.SECONDS)
+        .callTimeout(6, TimeUnit.SECONDS)
         .addInterceptor(logging)
         .build()
 

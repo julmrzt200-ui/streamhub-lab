@@ -21,6 +21,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
 import com.streamhub.app.utils.SubDL
+import kotlinx.coroutines.withTimeoutOrNull
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.isActive
+import java.io.IOException
 
 class PlayerViewModel(
     videoType: Video.Type,
@@ -103,7 +107,11 @@ class PlayerViewModel(
         lastId = id
         _state.emit(State.LoadingServers)
         try {
-            val servers = UserPreferences.currentProvider!!.getServers(id, videoType)
+            val provider = UserPreferences.currentProvider
+                ?: throw IllegalStateException("No provider selected")
+            val servers = withTimeoutOrNull(45_000L) {
+                provider.getServers(id, videoType)
+            } ?: throw IOException("La búsqueda de servidores tardó demasiado en responder")
             if (servers.isEmpty()) throw Exception("No servers found")
             
             // LOG POTENZIATO: Mostra tutti i server disponibili per il player
@@ -131,7 +139,11 @@ class PlayerViewModel(
             Log.d("PlayerViewModel", "Inizio estrazione video dal server: ${server.name}")
             _state.emit(State.LoadingVideo(server))
             try {
-                val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
+                val provider = UserPreferences.currentProvider
+                    ?: throw IllegalStateException("No provider selected")
+                val rawVideo = withTimeoutOrNull(45_000L) {
+                    provider.getVideo(server)
+                } ?: throw IOException("La fuente tardó demasiado en extraer el video")
                 if (rawVideo.source.isEmpty()) throw Exception("No source found")
 
                 val videoWithSubs = try {
@@ -176,8 +188,18 @@ class PlayerViewModel(
                 Log.d("PlayerViewModel", "Estrazione video completata con successo")
                 _state.emit(State.SuccessLoadingVideo(video, server))
             } catch (e: CancellationException) {
-                Log.d("PlayerViewModel", "Estrazione video cancellata per il server: ${server.name}")
-                throw e
+                if (currentCoroutineContext().isActive) {
+                    Log.w("PlayerViewModel", "La fuente interrumpió la extracción de ${server.name}", e)
+                    _state.emit(
+                        State.FailedLoadingVideo(
+                            IOException("La fuente interrumpió la extracción del video", e),
+                            server,
+                        )
+                    )
+                } else {
+                    Log.d("PlayerViewModel", "Estrazione video cancellata per il server: ${server.name}")
+                    throw e
+                }
             } catch (e: Exception) {
                 Log.e("PlayerViewModel", "Errore estrazione video: ", e)
                 _state.emit(State.FailedLoadingVideo(e, server))

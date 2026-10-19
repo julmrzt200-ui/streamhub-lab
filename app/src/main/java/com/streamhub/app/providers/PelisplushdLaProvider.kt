@@ -303,7 +303,9 @@ object PelisplushdLaProvider : Provider {
         val pageUrl = when (videoType) {
             is Video.Type.Movie -> "$baseUrl/pelicula/$id"
             is Video.Type.Episode -> {
-                val showId = videoType.tvShow.id
+                // En TMDb los IDs de catálogo son distintos a los IDs de Pelisplus.
+                // El primer segmento de `id` es el ID de serie devuelto por la búsqueda de Pelisplus.
+                val showId = id.substringBefore("/")
                 val s = videoType.season.number
                 val e = videoType.number
                 "$baseUrl/serie/$showId/temporada/$s/capitulo/$e"

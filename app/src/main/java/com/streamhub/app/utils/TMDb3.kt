@@ -17,6 +17,7 @@ import retrofit2.http.Query
 import retrofit2.http.QueryMap
 import java.lang.reflect.Type
 import java.util.Calendar
+import java.util.concurrent.TimeUnit
 
 object TMDb3 {
 
@@ -931,12 +932,12 @@ object TMDb3 {
 
     val String.w500: String
         get() = when (this.startsWith("/")) {
-            true -> "https://image.tmdb.org/t/p/w500/$this"
+            true -> "https://image.tmdb.org/t/p/w500$this"
             else -> this
         }
     val String.original: String
         get() = when (this.startsWith("/")) {
-            true -> "https://image.tmdb.org/t/p/original/$this"
+            true -> "https://image.tmdb.org/t/p/original$this"
             else -> this
         }
 
@@ -949,7 +950,11 @@ object TMDb3 {
                     BuildConfig.TMDB_API_KEY.ifEmpty { "adc5047f27e588c9347087931a696cf4" }
                 }
 
-                val client = OkHttpClient.Builder().addInterceptor { chain ->
+                val client = OkHttpClient.Builder()
+                    .connectTimeout(8, TimeUnit.SECONDS)
+                    .readTimeout(12, TimeUnit.SECONDS)
+                    .callTimeout(20, TimeUnit.SECONDS)
+                    .addInterceptor { chain ->
                     val original = chain.request()
 
                     val requestBuilder = original.newBuilder()
@@ -960,7 +965,7 @@ object TMDb3 {
                         )
 
                     chain.proceed(requestBuilder.build())
-                }.build()
+                    }.build()
 
                 val retrofit = Retrofit.Builder()
                     .baseUrl(URL)
