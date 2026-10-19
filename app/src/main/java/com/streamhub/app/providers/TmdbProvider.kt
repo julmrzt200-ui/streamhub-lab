@@ -40,6 +40,7 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import kotlinx.coroutines.withTimeoutOrNull
+import java.util.Calendar
 
 class TmdbProvider(override val language: String) : Provider {
     override val baseUrl: String
@@ -915,7 +916,8 @@ class TmdbProvider(override val language: String) : Provider {
 
                 fun extractNumerals(s: String): Set<String> {
                     return s.lowercase()
-                        .split(Regex("[^a-z0-9]"))
+                        .split(Regex("[^a-z0-9]+"))
+                        .filter { it.isNotBlank() }
                         .mapNotNull { token ->
                             when {
                                 token.all { it.isDigit() } -> token
@@ -955,8 +957,8 @@ class TmdbProvider(override val language: String) : Provider {
                         is Video.Type.Episode -> videoType.tvShow.releaseDate?.take(4)?.toIntOrNull()
                     }
                     val itemYear = when (item) {
-                        is Movie -> item.released?.take(4)?.toIntOrNull()
-                        is TvShow -> item.released?.take(4)?.toIntOrNull()
+                        is Movie -> item.released?.get(Calendar.YEAR)
+                        is TvShow -> item.released?.get(Calendar.YEAR)
                         else -> null
                     }
                     if (targetYear != null && itemYear != null) {
