@@ -32,7 +32,9 @@ import com.streamhub.app.utils.LoggingUtils
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.ProviderChangeNotifier
 
-class HomeTvFragment : Fragment() {
+open class HomeTvFragment : Fragment() {
+
+    open val targetProvider: com.streamhub.app.providers.Provider? get() = null
 
     private var hasAutoCleared409: Boolean = false
 
@@ -40,11 +42,12 @@ class HomeTvFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by lazy {
-        val providerKey = UserPreferences.currentProvider?.name ?: "default"
+        val provider = targetProvider ?: UserPreferences.currentProvider
+        val providerKey = provider?.name ?: "default"
         val factory = object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 @Suppress("UNCHECKED_CAST")
-                return HomeViewModel(AppDatabase.getInstance(requireContext())) as T
+                return HomeViewModel(AppDatabase.getInstance(requireContext()), targetProvider) as T
             }
         }
         ViewModelProvider(this, factory).get(providerKey, HomeViewModel::class.java)
@@ -272,8 +275,9 @@ class HomeTvFragment : Fragment() {
 
                 val position = appAdapter.items
                     .filterIsInstance<Category>()
-                    .find { it.name == Category.FEATURED }
+                    .find { it.name == Category.FEATURED && it.list.isNotEmpty() }
                     ?.let { category ->
+                        if (category.list.isEmpty()) return@let null
                         category.selectedIndex = (category.selectedIndex + 1) % category.list.size
                         
                         // Update background when swiper rotates automatically

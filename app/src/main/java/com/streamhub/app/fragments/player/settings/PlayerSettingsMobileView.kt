@@ -423,6 +423,7 @@ class PlayerSettingsMobileView @JvmOverloads constructor(
                         }
 
                         is Settings.Server -> {
+                            Settings.Server.list.forEach { it.isSelected = (it.id == item.id) }
                             settingsView.onServerSelected?.invoke(item)
                             settingsView.displaySettings(Setting.MAIN)
                         }
@@ -481,9 +482,7 @@ class PlayerSettingsMobileView @JvmOverloads constructor(
                         Settings.ManualZoom -> context.getString(R.string.player_settings_manual_zoom_label)
                     }
 
-                    is Settings.Audio -> when (item) {
-                        is Settings.Audio.AudioTrackInformation -> item.name
-                    }
+                    is Settings.Audio -> item.name
 
                     is Settings.Quality -> when (item) {
                         is Settings.Quality.Auto -> when {
@@ -585,9 +584,9 @@ class PlayerSettingsMobileView @JvmOverloads constructor(
                                 selected.height
                             )
                         }
-                        Settings.Audio -> Settings.Audio.selected?.name
+                        Settings.Audio -> Settings.Audio.selected?.name ?: ""
                         Settings.Subtitle -> when (val selected = Settings.Subtitle.selected) {
-                            is Settings.Subtitle.TextTrackInformation -> selected.label
+                            is Settings.Subtitle.TextTrackInformation -> selected.label.ifEmpty { selected.name }
                             else -> context.getString(R.string.player_settings_subtitles_off)
                         }
                         Settings.Speed -> context.getString(Settings.Speed.selected.stringId)

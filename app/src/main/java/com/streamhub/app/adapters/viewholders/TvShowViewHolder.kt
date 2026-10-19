@@ -156,7 +156,7 @@ class TvShowViewHolder(
 
     private fun checkProviderAndRun(action: () -> Unit) {
         if (!tvShow.providerName.isNullOrBlank() && tvShow.providerName != UserPreferences.currentProvider?.name) {
-            Provider.providers.keys.find { it.name == tvShow.providerName }?.let {
+            Provider.findByName(tvShow.providerName)?.let {
                 UserPreferences.currentProvider = it
             }
         }
@@ -321,6 +321,15 @@ class TvShowViewHolder(
         }
         binding.tvTvShowLastEpisode.text = episodeBadgeText()
         binding.tvTvShowTitle.text = tvShow.title
+        binding.tvTvShowRating.apply {
+            val r = tvShow.rating
+            if (r != null && r > 0.0) {
+                text = String.format(Locale.US, "★ %.1f", r)
+                visibility = View.VISIBLE
+            } else {
+                visibility = View.GONE
+            }
+        }
     }
 
     private fun displayGridMobileItem(binding: ItemTvShowGridMobileBinding) {

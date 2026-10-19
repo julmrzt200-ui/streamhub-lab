@@ -30,6 +30,7 @@
     <string name="main_menu_change_provider">Cambiar proveedor</string>
     <string name="main_menu_search">Buscar</string>
     <string name="main_menu_home">Inicio</string>
+    <string name="main_menu_spanish">Español</string>
     <string name="main_menu_movies">Películas</string>
     <string name="main_menu_tv_shows">Series</string>
     <string name="main_menu_all_channels">Todos los canales</string>

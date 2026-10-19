@@ -2,20 +2,22 @@ package com.streamhub.app.providers
 
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.AfterDarkExtractor
+import com.streamhub.app.extractors.BlackFlagExtractor
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.extractors.MoflixExtractor
 import com.streamhub.app.extractors.MoviesapiExtractor
+import com.streamhub.app.extractors.PrimeSrcExtractor
+import com.streamhub.app.extractors.RiveStreamExtractor
 import com.streamhub.app.extractors.TwoEmbedExtractor
+import com.streamhub.app.extractors.VideasyExtractor
+import com.streamhub.app.extractors.VidflixExtractor
+import com.streamhub.app.extractors.VidLinkExtractor
+import com.streamhub.app.extractors.VidrockExtractor
 import com.streamhub.app.extractors.VidsrcNetExtractor
+import com.streamhub.app.extractors.VidsrcRuExtractor
 import com.streamhub.app.extractors.VidsrcToExtractor
 import com.streamhub.app.extractors.VidzeeExtractor
 import com.streamhub.app.extractors.VixSrcExtractor
-import com.streamhub.app.extractors.VidLinkExtractor
-import com.streamhub.app.extractors.VidsrcRuExtractor
-import com.streamhub.app.extractors.VidflixExtractor
-import com.streamhub.app.extractors.VidrockExtractor
-import com.streamhub.app.extractors.VideasyExtractor
-import com.streamhub.app.extractors.PrimeSrcExtractor
 import com.streamhub.app.models.Category
 import com.streamhub.app.models.Episode
 import com.streamhub.app.models.Genre
@@ -62,7 +64,9 @@ class TmdbProvider(override val language: String) : Provider {
                     rating = multi.voteAverage.toDouble(),
                     poster = multi.posterPath?.w500,
                     banner = multi.backdropPath?.original,
-                )
+                ).apply {
+                    providerName = this@TmdbProvider.name
+                }
 
                 is TMDb3.Tv -> TvShow(
                     id = multi.id.toString(),
@@ -72,7 +76,9 @@ class TmdbProvider(override val language: String) : Provider {
                     rating = multi.voteAverage.toDouble(),
                     poster = multi.posterPath?.w500,
                     banner = multi.backdropPath?.original,
-                )
+                ).apply {
+                    providerName = this@TmdbProvider.name
+                }
 
                 else -> null
             }
@@ -900,17 +906,29 @@ class TmdbProvider(override val language: String) : Provider {
             }
             else -> {
                 // Per inglese (en) o altre lingue non specifiche, usiamo i server globali
-                servers.addAll(listOf(
-                    VixSrcExtractor().server(videoType),
-                    TwoEmbedExtractor().server(videoType),
-                    VidsrcNetExtractor().server(videoType),
-                    VidLinkExtractor().server(videoType),
-                    VidsrcRuExtractor().server(videoType),
-                    VidflixExtractor().server(videoType),
-                ))
+                // 1. BlackFlag / TheFlixBay como #1 absoluto
+                val blackFlagServer = try {
+                    TheFlixBayProvider.getBlackFlagServer(id, videoType)
+                } catch (e: Exception) {
+                    BlackFlagExtractor().server(videoType)
+                }
+                servers.add(blackFlagServer)
+
+                // 2. RiveStream [4K HDR] nativo ultrarrápido como #2
+                servers.add(RiveStreamExtractor().server(videoType))
+
+                // 3. VidLink (CC) nativo con subtítulos completos como #3
+                servers.add(VidLinkExtractor().server(videoType))
+
+                // 4. Servidores estables probados
+                servers.add(VixSrcExtractor().server(videoType))
+                servers.add(TwoEmbedExtractor().server(videoType))
+                servers.add(VidsrcNetExtractor().server(videoType))
+                servers.add(VidsrcRuExtractor().server(videoType))
+                servers.add(VidflixExtractor().server(videoType))
 
                 if (videoType is Video.Type.Movie) {
-                    servers.add(2, MoviesapiExtractor().server(videoType))
+                    servers.add(MoviesapiExtractor().server(videoType))
                 }
 
                 servers.addAll(VidrockExtractor().servers(videoType))
@@ -918,7 +936,7 @@ class TmdbProvider(override val language: String) : Provider {
                 servers.addAll(PrimeSrcExtractor().servers(videoType))
 
                 if (language == "en") {
-                    servers.addAll(1, VideasyExtractor().servers(videoType, language))
+                    servers.addAll(VideasyExtractor().servers(videoType, language))
                 }
             }
         }

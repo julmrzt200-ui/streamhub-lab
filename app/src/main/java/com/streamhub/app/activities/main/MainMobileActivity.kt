@@ -28,6 +28,7 @@ import com.streamhub.app.providers.Cine24hProvider
 import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.TheFlixBayProvider
+import com.streamhub.app.providers.TmdbProvider
 import com.streamhub.app.providers.ZaluknijProvider
 import com.streamhub.app.ui.UpdateAppMobileDialog
 import com.streamhub.app.utils.AppLanguageManager
@@ -125,6 +126,18 @@ class MainMobileActivity : FragmentActivity() {
         updateBottomNavigationVisibility(navController.currentDestination?.id)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.spanish -> {
+                    if (UserPreferences.currentProvider?.name != "TMDb (es)") {
+                        UserPreferences.currentProvider = TmdbProvider("es")
+                    }
+                }
+                R.id.home -> {
+                    if (UserPreferences.currentProvider?.name == "TMDb (es)") {
+                        UserPreferences.currentProvider = TmdbProvider("en")
+                    }
+                }
+            }
             updateNavigationVisibility(destination.id)
             updateBottomNavigationVisibility(destination.id)
             binding.mainContent.post { binding.mainContent.requestApplyInsets() }
@@ -266,6 +279,7 @@ class MainMobileActivity : FragmentActivity() {
         return destinationId in setOf(
             R.id.search,
             R.id.home,
+            R.id.spanish,
             R.id.movies,
             R.id.tv_shows,
             R.id.favorites,

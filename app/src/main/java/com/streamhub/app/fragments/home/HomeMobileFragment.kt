@@ -30,7 +30,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeMobileFragment : Fragment() {
+open class HomeMobileFragment : Fragment() {
+
+    open val targetProvider: com.streamhub.app.providers.Provider? get() = null
 
     private var hasAutoCleared409: Boolean = false
 
@@ -38,11 +40,12 @@ class HomeMobileFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by lazy {
-        val providerKey = UserPreferences.currentProvider?.name ?: "default"
+        val provider = targetProvider ?: UserPreferences.currentProvider
+        val providerKey = provider?.name ?: "default"
         val factory = object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 @Suppress("UNCHECKED_CAST")
-                return HomeViewModel(AppDatabase.getInstance(requireContext())) as T
+                return HomeViewModel(AppDatabase.getInstance(requireContext()), targetProvider) as T
             }
         }
         ViewModelProvider(this, factory).get(providerKey, HomeViewModel::class.java)

@@ -180,7 +180,7 @@ class MovieViewHolder(
 
     private fun checkProviderAndRun(action: () -> Unit) {
         if (!movie.providerName.isNullOrBlank() && movie.providerName != UserPreferences.currentProvider?.name) {
-            Provider.providers.keys.find { it.name == movie.providerName }?.let {
+            Provider.findByName(movie.providerName)?.let {
                 UserPreferences.currentProvider = it
             }
         }
@@ -498,6 +498,15 @@ class MovieViewHolder(
         binding.tvMovieReleasedYear.text = movie.released?.format("yyyy")
             ?: context.getString(R.string.movie_item_type)
         binding.tvMovieTitle.text = movie.title
+        binding.tvMovieRating.apply {
+            val r = movie.rating
+            if (r != null && r > 0.0) {
+                text = String.format(Locale.US, "★ %.1f", r)
+                visibility = View.VISIBLE
+            } else {
+                visibility = View.GONE
+            }
+        }
     }
 
     private fun displayGridMobileItem(binding: ItemMovieGridMobileBinding) {

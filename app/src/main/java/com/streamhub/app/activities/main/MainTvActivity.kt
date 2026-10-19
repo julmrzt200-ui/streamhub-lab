@@ -27,6 +27,7 @@ import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.Cine24hProvider
 import com.streamhub.app.providers.TheFlixBayProvider
+import com.streamhub.app.providers.TmdbProvider
 import com.streamhub.app.providers.ZaluknijProvider
 import com.streamhub.app.utils.AppLanguageManager
 import com.streamhub.app.utils.ThemeManager
@@ -126,7 +127,20 @@ class MainTvActivity : FragmentActivity() {
             }
 
             when (destination.id) {
-                R.id.search, R.id.home, R.id.movies, R.id.tv_shows, R.id.favorites, R.id.settings -> {
+                R.id.spanish -> {
+                    if (UserPreferences.currentProvider?.name != "TMDb (es)") {
+                        UserPreferences.currentProvider = TmdbProvider("es")
+                    }
+                }
+                R.id.home -> {
+                    if (UserPreferences.currentProvider?.name == "TMDb (es)") {
+                        UserPreferences.currentProvider = TmdbProvider("en")
+                    }
+                }
+            }
+
+            when (destination.id) {
+                R.id.search, R.id.home, R.id.spanish, R.id.movies, R.id.tv_shows, R.id.favorites, R.id.settings -> {
                     binding.navMain.visibility = View.VISIBLE
                     updateNavigationVisibility()
                 }

@@ -215,6 +215,26 @@ object TheFlixBayProvider : Provider {
         }
     }
 
+    fun getBlackFlagServer(tmdbId: String, videoType: Video.Type): Video.Server {
+        return when (videoType) {
+            is Video.Type.Movie -> {
+                val blackFlagAjax = "$baseUrl/ajax/cinemov.php?t=$tmdbId"
+                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, "$baseUrl/movie/$tmdbId")
+                    ?: "https://ythd.org/embed/$tmdbId"
+                Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc)
+            }
+            is Video.Type.Episode -> {
+                val imdbId = videoType.tvShow.imdbId.orEmpty()
+                val seasonNum = videoType.season.number
+                val episodeNum = videoType.number
+                val blackFlagAjax = "$baseUrl/ajax/cinetv.php?i=$imdbId&t=$tmdbId&s=$seasonNum&e=$episodeNum"
+                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, "$baseUrl/series/$tmdbId")
+                    ?: "https://ythd.org/embed/$tmdbId/$seasonNum-$episodeNum/"
+                Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc)
+            }
+        }
+    }
+
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> = try {
         val servers = mutableListOf<Video.Server>()
 
@@ -226,10 +246,7 @@ object TheFlixBayProvider : Provider {
                     ?: id.filter { it.isDigit() }.ifEmpty { "0" }
 
                 // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinemov.php
-                val blackFlagAjax = "$baseUrl/ajax/cinemov.php?t=$tmdbId"
-                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, moviePageUrl)
-                    ?: "https://ythd.org/embed/$tmdbId"
-                servers.add(Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc))
+                servers.add(getBlackFlagServer(tmdbId, videoType))
 
                 // 2. VidLink (CC) - Extractor nativo con subtítulos CC completos
                 servers.add(Video.Server(id = "vidlink", name = "VidLink (CC)", src = "https://vidlink.pro/movie/$tmdbId"))
@@ -256,10 +273,7 @@ object TheFlixBayProvider : Provider {
                 val imdbId = seriesImdb.orEmpty()
 
                 // 1. BlackFlag (CC) - Recuperado con CORS headers vía cinetv.php
-                val blackFlagAjax = "$baseUrl/ajax/cinetv.php?i=$imdbId&t=$tmdbId&s=$seasonNum&e=$episodeNum"
-                val blackFlagSrc = fetchAjaxIframe(blackFlagAjax, showPageUrl)
-                    ?: "https://ythd.org/embed/$tmdbId/$seasonNum-$episodeNum/"
-                servers.add(Video.Server(id = "blackflag", name = "BlackFlag (CC)", src = blackFlagSrc))
+                servers.add(getBlackFlagServer(tmdbId, videoType))
 
                 // 2. VidLink (CC) - Extractor nativo con subtítulos CC completos
                 servers.add(Video.Server(id = "vidlink", name = "VidLink (CC)", src = "https://vidlink.pro/tv/$tmdbId/$seasonNum/$episodeNum"))

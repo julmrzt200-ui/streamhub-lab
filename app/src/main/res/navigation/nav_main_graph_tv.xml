@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_graph_tv"
-    app:startDestination="@id/providers">
+    app:startDestination="@id/home">
 
     <fragment
         android:id="@+id/providers"
@@ -33,6 +33,18 @@
         android:id="@+id/home"
         android:name="com.streamhub.app.fragments.home.HomeTvFragment"
         android:label="fragment_home_tv"
+        tools:layout="@layout/fragment_home_tv">
+        <action
+            android:id="@+id/action_home_to_movie"
+            app:destination="@id/movie" />
+        <action
+            android:id="@+id/action_home_to_tv_show"
+            app:destination="@id/tv_show" />
+    </fragment>
+    <fragment
+        android:id="@+id/spanish"
+        android:name="com.streamhub.app.fragments.home.SpanishTvFragment"
+        android:label="fragment_spanish_tv"
         tools:layout="@layout/fragment_home_tv">
         <action
             android:id="@+id/action_home_to_movie"

@@ -117,6 +117,10 @@ interface Provider {
         }
 
         fun findByName(name: String): Provider? {
+            if (name.startsWith("TMDb (") && name.endsWith(")")) {
+                val lang = name.substringAfter("TMDb (").substringBefore(")")
+                return TmdbProvider(lang)
+            }
             return providers.keys.find { it.name == name }
         }
     }

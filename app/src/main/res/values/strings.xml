@@ -30,6 +30,7 @@
     <string name="main_menu_change_provider">Change provider</string>
     <string name="main_menu_search">Search</string>
     <string name="main_menu_home">Home</string>
+    <string name="main_menu_spanish">Español</string>
     <string name="main_menu_movies">Movies</string>
     <string name="main_menu_tv_shows">TV Shows</string>
     <string name="main_menu_all_channels">All Channels</string>

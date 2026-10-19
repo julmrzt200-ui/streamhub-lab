@@ -2,7 +2,7 @@ name: Build debug APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, 'feat/**' ]
     paths-ignore:
       - 'subtitles_data/**'
       - 'tools/**'
@@ -124,22 +124,22 @@ jobs:
       - name: Create or Update GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          repository: julmrzt200-ui/streamhub-releases
+          repository: julmrzt200-ui/streamhub-lab
           tag_name: ${{ steps.get_version.outputs.tag_name }}
-          name: StreamHub ${{ steps.get_version.outputs.version }}
+          name: StreamHub Lab ${{ steps.get_version.outputs.version }}
           body: |
-            ## Actualización automática de StreamHub (${{ steps.get_version.outputs.version }})
+            ## Versión Experimental Independiente: StreamHub Lab (${{ steps.get_version.outputs.version }})
 
-            ### Archivos disponibles para instalación:
+            ### Archivos disponibles para prueba:
             - **Universal (Móvil y TV):** `streamhub-${{ steps.get_version.outputs.version }}-universal.apk` (Recomendado)
             - **Móvil:** `streamhub-${{ steps.get_version.outputs.version }}-mobile.apk`
             - **Android TV / Fire TV:** `streamhub-${{ steps.get_version.outputs.version }}-tv.apk`
 
-            *Actualizable directamente desde la aplicación mediante el actualizador integrado.*
+            *Esta versión se instala como app independiente sin sobreescribir tu StreamHub principal.*
           draft: false
           prerelease: false
           make_latest: true
           files: apks/*.apk
-          token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

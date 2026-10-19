@@ -38,7 +38,7 @@ import kotlinx.coroutines.launch
 import com.streamhub.app.providers.TmdbProvider
 import java.util.concurrent.ConcurrentHashMap
 
-class HomeViewModel(database: AppDatabase) : ViewModel() {
+class HomeViewModel(database: AppDatabase, private val forcedProvider: Provider? = null) : ViewModel() {
 
     private data class HomeHistory(
         val continueWatching: List<AppAdapter.Item>,
@@ -331,20 +331,22 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
     }
 
     init {
-        val initialProvider = UserPreferences.currentProvider
+        val initialProvider = forcedProvider ?: UserPreferences.currentProvider
         if (initialProvider != null) {
             currentProvider = initialProvider
             loadUserDataCache(initialProvider)
         }
         viewModelScope.launch {
             ProviderChangeNotifier.providerChangeFlow.collect {
-                getHome()
+                if (forcedProvider == null) {
+                    getHome()
+                }
             }
         }
 
         viewModelScope.launch {
             UserDataNotifier.updates.collect {
-                val provider = UserPreferences.currentProvider ?: return@collect
+                val provider = forcedProvider ?: UserPreferences.currentProvider ?: return@collect
                 loadUserDataCache(provider)
             }
         }
@@ -363,7 +365,7 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
     }
 
     private suspend fun enrichContinueWatchingEpisodes(episodes: List<Episode>): List<Episode> = coroutineScope {
-        val provider = UserPreferences.currentProvider ?: return@coroutineScope episodes
+        val provider = forcedProvider ?: UserPreferences.currentProvider ?: return@coroutineScope episodes
 
         episodes.map { episode ->
             async {
@@ -417,7 +419,7 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
     }
 
     fun getHome() = viewModelScope.launch(Dispatchers.IO) {
-        val provider = UserPreferences.currentProvider ?: run {
+        val provider = forcedProvider ?: UserPreferences.currentProvider ?: run {
             _state.emit(State.FailedLoading(IllegalStateException("No provider selected")))
             return@launch
         }

@@ -97,7 +97,7 @@ import com.streamhub.app.utils.toSubtitleMimeType
 import com.streamhub.app.utils.viewModelsFactory
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
-import okhttp3.internal.userAgent
+import com.streamhub.app.utils.StreamValidator
 import java.util.Calendar
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
@@ -1271,7 +1271,7 @@ class PlayerTvFragment : Fragment() {
 
             httpDataSource.setDefaultRequestProperties(
                 mapOf(
-                    "User-Agent" to userAgent,
+                    "User-Agent" to StreamValidator.DEFAULT_USER_AGENT,
                 ) + (video.headers ?: emptyMap())
             )
             player.setMediaItem(

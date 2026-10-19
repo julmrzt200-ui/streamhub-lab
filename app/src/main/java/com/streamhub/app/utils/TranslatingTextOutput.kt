@@ -47,16 +47,6 @@ class TranslatingTextOutput(
     @Volatile
     private var lastCueGroup: CueGroup? = null
 
-    /** Cuándo vimos por primera vez cada texto sin traducir (solo se toca desde el looper). */
-    private val firstSeenAt = HashMap<String, Long>()
-
-    private val releaseHeldCues = Runnable {
-        val current = lastCueGroup ?: return@Runnable
-        val pref = UserPreferences.preferredTranslateLanguage
-        if (pref == "off") return@Runnable
-        delegate.onCues(translateCueGroup(current, SubtitleTranslator.resolveTargetLanguageCode(pref)))
-    }
-
     init {
         warmUp()
     }
@@ -64,9 +54,6 @@ class TranslatingTextOutput(
     companion object {
         private const val TAG = "TranslatingTextOutput"
         private const val MAX_CACHE_SIZE = 8000
-
-        /** Tiempo máximo que se retiene un cue esperando su traducción. */
-        private const val HOLD_BACK_MS = 1100L
 
         private val cache = LruCache<String, String>(MAX_CACHE_SIZE)
         private val pendingKeys = Collections.synchronizedSet(HashSet<String>())
@@ -163,9 +150,6 @@ class TranslatingTextOutput(
 
     private fun translateCueGroup(cueGroup: CueGroup, targetLang: String): CueGroup {
         val out = ArrayList<Cue>(cueGroup.cues.size)
-        var holding = false
-        val now = SystemClock.elapsedRealtime()
-        if (firstSeenAt.size > 600) firstSeenAt.clear()
 
         for (cue in cueGroup.cues) {
             val raw = cue.text?.toString()
@@ -186,20 +170,11 @@ class TranslatingTextOutput(
                 continue
             }
 
-            // Sin traducción todavía: pedirla y RETENER el cue (no mostrar el inglés).
+            // Sin traducción todavía: pedirla en segundo plano y mostrar el cue original de inmediato
             scheduleTranslation(text, targetLang)
-            val first = firstSeenAt.getOrPut(key) { now }
-            if (now - first >= HOLD_BACK_MS) {
-                out.add(cue)                    // respaldo: la red tardó demasiado
-            } else {
-                holding = true
-            }
+            out.add(cue)
         }
 
-        if (holding) {
-            handler.removeCallbacks(releaseHeldCues)
-            handler.postDelayed(releaseHeldCues, HOLD_BACK_MS)
-        }
         return CueGroup(out, cueGroup.presentationTimeUs)
     }
 
@@ -219,7 +194,6 @@ class TranslatingTextOutput(
                             it.text?.toString()?.let(::normalizeKey) == originalText
                         }
                         if (stillShowing) {
-                            handler.removeCallbacks(releaseHeldCues)
                             delegate.onCues(translateCueGroup(current, targetLang))
                         }
                     }
