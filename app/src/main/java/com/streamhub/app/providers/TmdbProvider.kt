@@ -16,6 +16,7 @@ import com.streamhub.app.extractors.VidflixExtractor
 import com.streamhub.app.extractors.VidrockExtractor
 import com.streamhub.app.extractors.VideasyExtractor
 import com.streamhub.app.extractors.PrimeSrcExtractor
+import com.streamhub.app.extractors.RiveStreamExtractor
 import com.streamhub.app.models.Category
 import com.streamhub.app.models.Episode
 import com.streamhub.app.models.Genre
@@ -903,6 +904,28 @@ class TmdbProvider(override val language: String) : Provider {
                         .toSet()
                 }
 
+                val numberWords = mapOf(
+                    "one" to "1", "two" to "2", "three" to "3", "four" to "4", "five" to "5",
+                    "six" to "6", "seven" to "7", "eight" to "8", "nine" to "9", "ten" to "10",
+                    "uno" to "1", "dos" to "2", "tres" to "3", "cuatro" to "4", "cinco" to "5",
+                    "seis" to "6", "siete" to "7", "ocho" to "8", "nueve" to "9", "diez" to "10",
+                    "i" to "1", "ii" to "2", "iii" to "3", "iv" to "4", "v" to "5",
+                    "vi" to "6", "vii" to "7", "viii" to "8", "ix" to "9", "x" to "10"
+                )
+
+                fun extractNumerals(s: String): Set<String> {
+                    return s.lowercase()
+                        .split(Regex("[^a-z0-9]"))
+                        .mapNotNull { token ->
+                            when {
+                                token.all { it.isDigit() } -> token
+                                token in numberWords -> numberWords[token]
+                                else -> null
+                            }
+                        }
+                        .toSet()
+                }
+
                 fun isMatch(item: AppAdapter.Item, targetList: Collection<String>): Boolean {
                     val isCorrectType = if (videoType is Video.Type.Movie) item is Movie else item is TvShow
                     if (!isCorrectType) return false
@@ -911,22 +934,63 @@ class TmdbProvider(override val language: String) : Provider {
                     val nItem = normalize(itemTitle)
                     if (nItem.isBlank()) return false
 
+                    // 1. Verificación por IMDb ID si ambos lo tienen disponible
+                    val targetImdb = when (videoType) {
+                        is Video.Type.Movie -> videoType.imdbId
+                        is Video.Type.Episode -> videoType.tvShow.imdbId
+                    }
+                    val itemImdb = when (item) {
+                        is Movie -> item.imdbId
+                        is TvShow -> item.imdbId
+                        else -> null
+                    }
+                    if (!targetImdb.isNullOrBlank() && !itemImdb.isNullOrBlank() && targetImdb.equals(itemImdb, ignoreCase = true)) {
+                        Log.i("StreamFlixES", "[IMDB MATCH] Coincidencia 100% segura por IMDb ($targetImdb) para '$itemTitle'")
+                        return true
+                    }
+
+                    // 2. Verificación estricta de Año de estreno (tolerancia máxima de 1 año)
+                    val targetYear = when (videoType) {
+                        is Video.Type.Movie -> videoType.releaseDate.take(4).toIntOrNull()
+                        is Video.Type.Episode -> videoType.tvShow.releaseDate?.take(4)?.toIntOrNull()
+                    }
+                    val itemYear = when (item) {
+                        is Movie -> item.released?.take(4)?.toIntOrNull()
+                        is TvShow -> item.released?.take(4)?.toIntOrNull()
+                        else -> null
+                    }
+                    if (targetYear != null && itemYear != null) {
+                        val yearDiff = kotlin.math.abs(targetYear - itemYear)
+                        if (yearDiff > 1) {
+                            Log.d("StreamFlixES", "[MISMATCH RECHAZADO] Diferencia de año ($targetYear vs $itemYear) para '$itemTitle'")
+                            return false
+                        }
+                    }
+
+                    // 3. Verificación de secuelas y números (ej: Duna 1 vs Duna 2, Halloween 1978 vs 2018)
+                    val nItemNumbers = extractNumerals(itemTitle)
                     val nItemWords = cleanWords(itemTitle)
 
                     for (target in targetList) {
                         val nTarget = normalize(target)
                         if (nTarget.isBlank()) continue
 
-                        // Exact normalized match
+                        val nTargetNumbers = extractNumerals(target)
+                        // Si uno tiene número de secuela y el otro no, o tienen números distintos, NO son la misma película
+                        if (nItemNumbers != nTargetNumbers) {
+                            continue
+                        }
+
+                        // Coincidencia exacta normalizada
                         if (nItem == nTarget) return true
 
-                        // Substring match with strict length tolerance (difference <= 4 chars)
+                        // Coincidencia de subcadena con estricta tolerancia de longitud (<= 4 caracteres)
                         if (nItem.contains(nTarget) || nTarget.contains(nItem)) {
                             val diff = Math.abs(nItem.length - nTarget.length)
                             if (diff <= 4) return true
                         }
 
-                        // Word token overlap with stopword removal & Jaccard index
+                        // Superposición de palabras sin stopwords con índice de Jaccard
                         val nTargetWords = cleanWords(target)
                         if (nItemWords.isNotEmpty() && nTargetWords.isNotEmpty()) {
                             val intersection = nItemWords.intersect(nTargetWords).size
@@ -1038,6 +1102,20 @@ class TmdbProvider(override val language: String) : Provider {
                 }
                 servers.addAll(theFlixBayServers)
 
+                // RiveStream 4K HDR server as top-quality VOSE alternative
+                try {
+                    val riveStream = RiveStreamExtractor().server(videoType)
+                    servers.add(
+                        Video.Server(
+                            id = riveStream.id,
+                            name = "${riveStream.name} [VOSE]",
+                            src = riveStream.src
+                        )
+                    )
+                } catch (e: Exception) {
+                    Log.w("StreamFlixES", "Error adding RiveStream server: ${e.message}")
+                }
+
                 // Fallbacks if no Spanish servers discovered
                 if (servers.none { it.name.uppercase().contains("[LAT]") || it.name.uppercase().contains("[CAST]") }) {
                     Log.i("StreamFlixES", "No Spanish provider found streams for $baseTitle, trying Videasy Spanish fallback")
@@ -1072,6 +1150,12 @@ class TmdbProvider(override val language: String) : Provider {
                     emptyList()
                 }
                 servers.addAll(theFlixBayServers)
+
+                try {
+                    servers.add(RiveStreamExtractor().server(videoType))
+                } catch (e: Exception) {
+                    Log.w("StreamFlix", "Error adding RiveStream server: ${e.message}")
+                }
 
                 servers.addAll(listOf(
                     VixSrcExtractor().server(videoType),
@@ -1112,7 +1196,8 @@ class TmdbProvider(override val language: String) : Provider {
                     isSpanish -> 110
                     isSpanish && n.contains("STREAMTAPE") -> 100
 
-                    // BlackFlag y VidLink (TheFlixBay) #1 y #2 absolutos para VOSE / Inglés
+                    // RiveStream, BlackFlag y VidLink (TheFlixBay) para VOSE / Inglés
+                    n.contains("RIVESTREAM") -> 95
                     n.contains("BLACKFLAG") -> 90
                     n.contains("VIDLINK") -> 85
 
@@ -1129,6 +1214,7 @@ class TmdbProvider(override val language: String) : Provider {
             servers.sortedByDescending { server ->
                 val n = server.name.uppercase()
                 when {
+                    n.contains("RIVESTREAM") -> 210 // RiveStream 4K HDR nativo como primera opción de máxima calidad
                     n.contains("BLACKFLAG") -> 200 // BlackFlag de TheFlixBay siempre #1 en inglés/VOSE
                     n.contains("VIDLINK") -> 180
                     n.contains("VIDSRC") -> 140
@@ -1358,6 +1444,7 @@ class TmdbProvider(override val language: String) : Provider {
         // LOGICA SOTTOTITOLI INTELIGENTE:
         val sName = server.name.uppercase()
         val isVoseOrEnglish = sName.contains("[ENG]") || sName.contains("[VOSE]") ||
+                              sName.contains("RIVESTREAM") ||
                               sName.contains("BLACKFLAG") || sName.contains("VIDLINK") ||
                               sName.contains("TWOEMBED") || sName.contains("VIDSRC")
 
