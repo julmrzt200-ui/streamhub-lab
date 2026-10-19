@@ -1,7 +1,6 @@
 package com.streamhub.app.fragments.player
 
 import android.annotation.SuppressLint
-import android.app.ActivityManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -98,7 +97,7 @@ import com.streamhub.app.utils.toSubtitleMimeType
 import com.streamhub.app.utils.viewModelsFactory
 import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
-import com.streamhub.app.utils.StreamValidator
+import okhttp3.internal.userAgent
 import java.util.Calendar
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
@@ -829,25 +828,24 @@ class PlayerTvFragment : Fragment() {
             isSetupDone = false
         }
 
-    fun onBackPressed(): Boolean {
-        val b = _binding ?: return false
-        return when {
-            (b.pvPlayer as? PlayerTvView)?.isManualZoomEnabled == true -> {
-                (b.pvPlayer as? PlayerTvView)?.exitManualZoomMode()
-                true
-            }
+    fun onBackPressed(): Boolean = when {
 
-            b.settings.isVisible -> {
-                b.settings.onBackPressed()
-            }
 
-            b.pvPlayer.controller.isVisible -> {
-                b.pvPlayer.hideController()
-                true
-            }
-
-            else -> false
+        (binding.pvPlayer as? PlayerTvView)?.isManualZoomEnabled == true -> {
+            (binding.pvPlayer as? PlayerTvView)?.exitManualZoomMode()
+            true
         }
+
+        binding.settings.isVisible -> {
+            binding.settings.onBackPressed()
+        }
+
+        binding.pvPlayer.controller.isVisible -> {
+            binding.pvPlayer.hideController()
+            true
+        }
+
+        else -> false
     }
 
     private fun handleMediaPrevious(): Boolean {
@@ -1273,7 +1271,7 @@ class PlayerTvFragment : Fragment() {
 
             httpDataSource.setDefaultRequestProperties(
                 mapOf(
-                    "User-Agent" to StreamValidator.DEFAULT_USER_AGENT,
+                    "User-Agent" to userAgent,
                 ) + (video.headers ?: emptyMap())
             )
             player.setMediaItem(
@@ -1958,26 +1956,10 @@ class PlayerTvFragment : Fragment() {
         private var currentSoftwareDecoder = false
 
         private fun buildPlayer(extraBuffering: Boolean): ExoPlayer {
-            val isLowRam = runCatching {
-                val am = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
-                val memInfo = ActivityManager.MemoryInfo()
-                am?.getMemoryInfo(memInfo)
-                am?.isLowRamDevice == true || (memInfo.totalMem > 0 && memInfo.totalMem <= 2_500_000_000L)
-            }.getOrDefault(false)
-
-            val minBufferMs = if (isLowRam) {
-                15_000
-            } else {
-                if (extraBuffering) 60_000 else 15_000
-            }
-            val maxBufferMs = if (isLowRam) {
-                if (extraBuffering) 45_000 else 25_000
-            } else {
-                if (extraBuffering) 300_000 else 60_000
-            }
+            val minBufferMs = if (extraBuffering) 60_000 else 15_000
+            val maxBufferMs = if (extraBuffering) 300_000 else 60_000
             val bufferForPlaybackMs = if (extraBuffering) 1_500 else 800
             val bufferForPlaybackAfterRebufferMs = if (extraBuffering) 3_000 else 1_500
-            val backBufferMs = if (isLowRam) 5_000 else 20_000
 
             val loadControl = DefaultLoadControl.Builder()
                 .setBufferDurationsMs(
@@ -1988,7 +1970,7 @@ class PlayerTvFragment : Fragment() {
                 )
                 .setPrioritizeTimeOverSizeThresholds(true)
                 .setBackBuffer(
-                    backBufferMs,
+                    20_000,
                     true
                 )
                 .build()

@@ -2,7 +2,6 @@ package com.streamhub.app.utils
 
 import android.util.Log
 import android.webkit.CookieManager
-import okhttp3.ConnectionPool
 import okhttp3.ConnectionSpec
 import com.streamhub.app.BuildConfig
 import okhttp3.Cookie
@@ -57,8 +56,6 @@ object NetworkClient {
         }
     }
 
-    private val connectionPool = ConnectionPool(10, 5, TimeUnit.MINUTES)
-
     val default: OkHttpClient by lazy { buildClient(DnsResolver.doh) }
     val systemDns: OkHttpClient by lazy { buildClient(Dns.SYSTEM) }
     val noRedirects: OkHttpClient by lazy { buildClient(DnsResolver.doh) { it.followRedirects(false).followSslRedirects(false) } }
@@ -88,15 +85,8 @@ object NetworkClient {
                     requestBuilder.header("User-Agent", USER_AGENT)
                 if (original.header("Accept") == null)
                     requestBuilder.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8")
-                if (original.header("Accept-Language") == null) {
-                    val currentLang = java.util.Locale.getDefault().toLanguageTag().ifBlank { "es-ES" }
-                    val headerVal = if (currentLang.startsWith("es", ignoreCase = true)) {
-                        "$currentLang,es;q=0.9,en-US;q=0.8,en;q=0.7"
-                    } else {
-                        "$currentLang,${currentLang.substringBefore('-')};q=0.9,es;q=0.8,en;q=0.7"
-                    }
-                    requestBuilder.header("Accept-Language", headerVal)
-                }
+                if (original.header("Accept-Language") == null)
+                    requestBuilder.header("Accept-Language", "it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7")
                 if (!isCorsRequest && original.header("Sec-Fetch-Dest") == null)
                     requestBuilder.header("Sec-Fetch-Dest", "document")
                 if (!isCorsRequest && original.header("Sec-Fetch-Mode") == null)
@@ -111,7 +101,6 @@ object NetworkClient {
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .dns(dns)
-            .connectionPool(connectionPool)
 
         // Modern and compatible TLS configuration
         val spec = ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)

@@ -7,7 +7,6 @@ import androidx.tvprovider.media.tv.WatchNextProgram
 object WatchNextUtils {
 
     fun programs(context: Context): List<WatchNextProgram> {
-        val providerName = UserPreferences.currentProvider?.name ?: return listOf()
         return context.contentResolver.query(
             TvContractCompat.WatchNextPrograms.CONTENT_URI,
             WatchNextProgram.PROJECTION,
@@ -16,7 +15,7 @@ object WatchNextUtils {
             null
         )?.use { cursor ->
             cursor.map { WatchNextProgram.fromCursor(it) }
-                .filter { it.internalProviderId == providerName }
+                .filter { it.internalProviderId == UserPreferences.currentProvider!!.name }
         } ?: listOf()
     }
 
@@ -28,7 +27,6 @@ object WatchNextUtils {
     }
 
     fun getProgram(context: Context, contentId: String): WatchNextProgram? {
-        val providerName = UserPreferences.currentProvider?.name ?: return null
         return context.contentResolver.query(
             TvContractCompat.WatchNextPrograms.CONTENT_URI,
             WatchNextProgram.PROJECTION,
@@ -37,7 +35,7 @@ object WatchNextUtils {
             null
         )?.use { cursor ->
             cursor.map { WatchNextProgram.fromCursor(it) }
-                .find { it.contentId == contentId && it.internalProviderId == providerName }
+                .find { it.contentId == contentId && it.internalProviderId == UserPreferences.currentProvider!!.name }
         }
     }
 

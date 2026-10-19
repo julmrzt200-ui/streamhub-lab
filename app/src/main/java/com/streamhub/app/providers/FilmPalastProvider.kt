@@ -1,7 +1,6 @@
 package com.streamhub.app.providers
 
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
-import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.Category
@@ -632,12 +631,8 @@ object FilmPalastProvider : Provider {
 
         companion object {
             private fun getOkHttpClient(): OkHttpClient {
-                val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
-                    Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
-                }
-                val clientBuilder = Builder()
-                    .apply { appCache?.let { cache(it) } }
-                    .readTimeout(30, TimeUnit.SECONDS)
+                val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
+                val clientBuilder = Builder().cache(appCache).readTimeout(30, TimeUnit.SECONDS)
                     .connectTimeout(30, TimeUnit.SECONDS)
 
                 val clientToReturn = clientBuilder.dns(DnsResolver.doh).build()

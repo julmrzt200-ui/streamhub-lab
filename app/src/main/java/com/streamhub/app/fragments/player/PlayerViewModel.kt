@@ -9,7 +9,6 @@ import com.streamhub.app.models.Video
 import com.streamhub.app.utils.CustomTabHelper
 import com.streamhub.app.utils.EpisodeManager
 import com.streamhub.app.utils.OpenSubtitles
-import com.streamhub.app.utils.StreamValidator
 import com.streamhub.app.utils.SubtitleNormalizer
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.format
@@ -135,16 +134,14 @@ class PlayerViewModel(
                 val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
                 if (rawVideo.source.isEmpty()) throw Exception("No source found")
 
-                val validatedVideo = StreamValidator.validateAndEnrich(rawVideo, server)
-
                 // Normaliza TODAS las pistas externas (descarga con headers, detecta formato real,
                 // convierte a WebVTT UTF-8) y precalienta la traducción en la caché en vivo.
                 val video = try {
-                    SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, validatedVideo)
+                    SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, rawVideo)
                 } catch (e: Exception) {
                     if (e is CancellationException) throw e
                     Log.w("PlayerViewModel", "Normalización de subtítulos falló: ${e.message}")
-                    validatedVideo
+                    rawVideo
                 }
 
                 // LOGICA SOTTOTITOLI GLOBALE: 

@@ -1,7 +1,6 @@
 package com.streamhub.app.providers
 
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
-import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -15,24 +14,21 @@ import retrofit2.http.Headers
 import retrofit2.http.Url
 import java.io.File
 import java.util.concurrent.TimeUnit
-import android.util.Base64
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 
 object CineCalidadProvider : Provider {
 
     override val name = "CineCalidad"
-    override val baseUrl = "https://www.cinecalidad.vg"
+    override val baseUrl = "https://www.cinecalidad.ec"
     override val language = "es"
-    override val logo = "https://www.cinecalidad.vg/wp-content/uploads/2021/12/logo.webp"
+    override val logo = "https://www.cinecalidad.ec/wp-content/themes/Cinecalidad/assets/img/logo.png"
 
     private fun getOkHttpClient(): OkHttpClient {
-        val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
-            Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
-        }
+        val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
 
         val clientBuilder = OkHttpClient.Builder()
-            .apply { appCache?.let { cache(it) } }
+            .cache(appCache)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
 
@@ -57,37 +53,28 @@ object CineCalidadProvider : Provider {
 
     private fun parseShows(elements: List<org.jsoup.nodes.Element>): List<Show> {
         return elements.mapNotNull { element ->
-            val a = element.selectFirst("a[href*=/pelicula/], a[href*=/serie/], a[href*=/ver-pelicula/], a[href*=/ver-serie/]")
-                ?: element.selectFirst("a")
-                ?: return@mapNotNull null
+            val a = element.selectFirst("a") ?: return@mapNotNull null
             val href = a.attr("href")
 
-            val img = element.selectFirst("img")
-            val title = a.selectFirst("span.sr-only")?.text()
-                ?: img?.attr("alt")
-                ?: element.selectFirst("h2")?.text()
-                ?: a.attr("title")
+            val img = element.selectFirst("div.poster img") ?: return@mapNotNull null
+            val title = img.attr("alt")
 
-            if (title.isNullOrBlank()) return@mapNotNull null
+            val posterUrl = img.attr("data-src").ifEmpty { img.attr("src") }
 
-            val posterUrl = img?.attr("data-src")?.ifEmpty { img.attr("src") } ?: ""
-
-            when {
-                href.contains("/pelicula/") || href.contains("/ver-pelicula/") -> {
-                    Movie(
-                        id = href,
-                        title = title,
-                        poster = posterUrl
-                    )
-                }
-                href.contains("/serie/") || href.contains("/ver-serie/") -> {
-                    TvShow(
-                        id = href,
-                        title = title,
-                        poster = posterUrl
-                    )
-                }
-                else -> null
+            if (href.contains("/ver-pelicula/")) {
+                Movie(
+                    id = href,
+                    title = title,
+                    poster = posterUrl
+                )
+            } else if (href.contains("/ver-serie/")) {
+                TvShow(
+                    id = href,
+                    title = title,
+                    poster = posterUrl
+                )
+            } else {
+                null
             }
         }
     }
@@ -96,13 +83,48 @@ object CineCalidadProvider : Provider {
         return try {
             coroutineScope {
                 val mainPageDeferred = async { service.getPage(baseUrl) }
+                val actionPageDeferred = async { service.getPage("$baseUrl/genero-de-la-pelicula/accion/") }
+                val comedyPageDeferred = async { service.getPage("$baseUrl/genero-de-la-pelicula/comedia/") }
+
                 val mainDocument = mainPageDeferred.await()
+                val actionDocument = actionPageDeferred.await()
+                val comedyDocument = comedyPageDeferred.await()
+
                 val categories = mutableListOf<Category>()
 
-                val latestReleases = parseShows(mainDocument.select("article"))
+                val featuredShows = mainDocument.select("aside#dtw_content_featured-3 li").mapNotNull {
+                    val a = it.selectFirst("a") ?: return@mapNotNull null
+                    val href = a.attr("href")
+                    val title = a.attr("title")
+                    val imageUrl = a.selectFirst("img")?.attr("data-src")
+
+                    if (href.contains("/ver-pelicula/")) {
+                        Movie(id = href, title = title, banner = imageUrl)
+                    } else if (href.contains("/ver-serie/")) {
+                        TvShow(id = href, title = title, banner = imageUrl)
+                    } else {
+                        null
+                    }
+                }
+                if (featuredShows.isNotEmpty()) {
+                    categories.add(Category(Category.FEATURED, featuredShows))
+                }
+
+                val latestReleases = parseShows(mainDocument.select("article.item[id^=post-]"))
                 if (latestReleases.isNotEmpty()) {
                     categories.add(Category("Últimos Estrenos", latestReleases))
                 }
+
+                val actionShows = parseShows(actionDocument.select("article.item[id^=post-]"))
+                if (actionShows.isNotEmpty()) {
+                    categories.add(Category("Acción", actionShows))
+                }
+
+                val comedyShows = parseShows(comedyDocument.select("article.item[id^=post-]"))
+                if (comedyShows.isNotEmpty()) {
+                    categories.add(Category("Comedia", comedyShows))
+                }
+
                 categories
             }
         } catch (e: Exception) {
@@ -113,36 +135,33 @@ object CineCalidadProvider : Provider {
     override suspend fun search(query: String, page: Int): List<AppAdapter.Item> {
         if (query.isBlank()) {
             return listOf(
-                Genre(id = "categoria/accion", name = "Acción"),
-                Genre(id = "categoria/animacion", name = "Animación"),
-                Genre(id = "categoria/anime", name = "Anime"),
-                Genre(id = "categoria/aventura", name = "Aventura"),
-                Genre(id = "categoria/belica", name = "Bélico"),
-                Genre(id = "categoria/ciencia-ficcion", name = "Ciencia ficción"),
-                Genre(id = "categoria/crimen", name = "Crimen"),
-                Genre(id = "categoria/comedia", name = "Comedia"),
-                Genre(id = "categoria/documental", name = "Documental"),
-                Genre(id = "categoria/drama", name = "Drama"),
-                Genre(id = "categoria/familia", name = "Familiar"),
-                Genre(id = "categoria/fantasia", name = "Fantasía"),
-                Genre(id = "categoria/historia", name = "Historia"),
-                Genre(id = "categoria/musica", name = "Música"),
-                Genre(id = "categoria/misterio", name = "Misterio"),
-                Genre(id = "categoria/terror", name = "Terror"),
-                Genre(id = "categoria/suspense", name = "Suspenso"),
-                Genre(id = "categoria/romance", name = "Romance")
+                Genre(id = "genero-de-la-pelicula/accion", name = "Acción"),
+                Genre(id = "genero-de-la-pelicula/animacion", name = "Animación"),
+                Genre(id = "genero-de-la-pelicula/anime", name = "Anime"),
+                Genre(id = "genero-de-la-pelicula/aventura", name = "Aventura"),
+                Genre(id = "genero-de-la-pelicula/belica", name = "Bélico"),
+                Genre(id = "genero-de-la-pelicula/ciencia-ficcion", name = "Ciencia ficción"),
+                Genre(id = "genero-de-la-pelicula/crimen", name = "Crimen"),
+                Genre(id = "genero-de-la-pelicula/comedia", name = "Comedia"),
+                Genre(id = "genero-de-la-pelicula/documental", name = "Documental"),
+                Genre(id = "genero-de-la-pelicula/drama", name = "Drama"),
+                Genre(id = "genero-de-la-pelicula/familia", name = "Familiar"),
+                Genre(id = "genero-de-la-pelicula/fantasia", name = "Fantasía"),
+                Genre(id = "genero-de-la-pelicula/historia", name = "Historia"),
+                Genre(id = "genero-de-la-pelicula/musica", name = "Música"),
+                Genre(id = "genero-de-la-pelicula/misterio", name = "Misterio"),
+                Genre(id = "genero-de-la-pelicula/terror", name = "Terror"),
+                Genre(id = "genero-de-la-pelicula/suspense", name = "Suspenso"),
+                Genre(id = "genero-de-la-pelicula/romance", name = "Romance"),
+                Genre(id = "genero-de-la-pelicula/peliculas-de-dc-comics-online-cinecalidad", name = "Dc Comics"),
+                Genre(id = "genero-de-la-pelicula/universo-marvel", name = "Marvel")
             )
         }
 
         return try {
-            val url = if (page > 1) "$baseUrl/page/$page/?s=$query" else "$baseUrl/?s=$query"
-            val document = service.getPage(url)
-            val searchResults = parseShows(document.select("article"))
-            if (searchResults.isEmpty()) {
-                parseShows(document.select("article.item[id^=post-], div.item"))
-            } else {
-                searchResults
-            }
+            val document = service.getPage("$baseUrl/page/$page?s=$query")
+            val searchResults = parseShows(document.select("article.item[id^=post-]"))
+            searchResults
         } catch (e: Exception) {
             emptyList()
         }
@@ -150,9 +169,8 @@ object CineCalidadProvider : Provider {
 
     override suspend fun getMovies(page: Int): List<Movie> {
         return try {
-            val url = if (page > 1) "$baseUrl/page/$page/" else baseUrl
-            val document = service.getPage(url)
-            parseShows(document.select("article"))
+            val document = service.getPage("$baseUrl/page/$page")
+            parseShows(document.select("article.item[id^=post-]"))
                 .filterIsInstance<Movie>()
         } catch (e: Exception) {
             emptyList()
@@ -161,9 +179,8 @@ object CineCalidadProvider : Provider {
 
     override suspend fun getTvShows(page: Int): List<TvShow> {
         return try {
-            val url = if (page > 1) "$baseUrl/serie/page/$page/" else "$baseUrl/serie/"
-            val document = service.getPage(url)
-            parseShows(document.select("article"))
+            val document = service.getPage("$baseUrl/ver-serie/page/$page")
+            parseShows(document.select("article.item[id^=post-]"))
                 .filterIsInstance<TvShow>()
         } catch (e: Exception) {
             emptyList()
@@ -171,12 +188,10 @@ object CineCalidadProvider : Provider {
     }
 
     override suspend fun getMovie(id: String): Movie {
-        val targetUrl = if (id.startsWith("http")) id else "$baseUrl/$id"
-        val document = service.getPage(targetUrl)
+        val document = service.getPage(id)
 
-        val title = document.selectFirst("h1, .single_left h1")?.text()?.trim() ?: ""
-        val poster = document.selectFirst("figure img")?.attr("data-src")
-            ?: document.selectFirst(".single_left table img")?.attr("data-src")
+        val title = document.selectFirst(".single_left h1")?.text() ?: ""
+        val poster = document.selectFirst(".single_left table img")?.attr("data-src")
 
         val detailsTd = document.selectFirst(".single_left td[style*=justify]")
         val overview = detailsTd?.selectFirst("p:not(:has(span))")?.text()?.trim()
@@ -215,12 +230,10 @@ object CineCalidadProvider : Provider {
     }
 
     override suspend fun getTvShow(id: String): TvShow {
-        val targetUrl = if (id.startsWith("http")) id else "$baseUrl/$id"
-        val document = service.getPage(targetUrl)
+        val document = service.getPage(id)
 
-        val title = document.selectFirst("h1, .single_left h1")?.text()?.trim() ?: ""
-        val poster = document.selectFirst("figure img")?.attr("data-src")
-            ?: document.selectFirst(".single_left table img")?.attr("data-src")
+        val title = document.selectFirst(".single_left h1")?.text() ?: ""
+        val poster = document.selectFirst(".single_left table img")?.attr("data-src")
 
         val detailsTd = document.selectFirst(".single_left td[style*=justify]")
 
@@ -307,71 +320,30 @@ object CineCalidadProvider : Provider {
 
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
         return try {
-            val targetUrl = if (id.startsWith("http")) id else "$baseUrl/$id"
-            val document = service.getPage(targetUrl)
-            val servers = mutableListOf<Video.Server>()
+            val document = service.getPage(id)
 
-            // 1. Selector moderno de CineCalidad.vg
-            val asides = document.select("aside:has(ul.options.dff)")
-            for (aside in asides) {
-                val langText = aside.select("p.text-sm span").text().lowercase()
-                val audioTag = when {
-                    langText.contains("castellano") || langText.contains("españa") -> "[CAST]"
-                    langText.contains("subtitul") || langText.contains("vose") -> "[SUB]"
-                    else -> "[LAT]"
+            document.select("#playeroptionsul li[data-option]")
+                .filterNot { element ->
+                    // Exclude trailer option
+                    element.hasClass("dooplay_player_option_trailer") || 
+                    element.text().contains("trailer", ignoreCase = true)
                 }
+                .map { element ->
+                    val serverUrl = element.attr("data-option")
+                    val serverName = element.text()
 
-                val options = aside.select("ul.options.dff li a[data-src]")
-                for (opt in options) {
-                    val rawSrc = opt.attr("data-src")
-                    if (rawSrc.isBlank()) continue
-                    val decodedUrl = runCatching {
-                        String(Base64.decode(rawSrc, Base64.DEFAULT), Charsets.UTF_8).trim()
-                    }.getOrNull() ?: continue
-
-                    if (decodedUrl.startsWith("http")) {
-                        val serverName = opt.text().trim().ifEmpty { "Server" }.uppercase()
-                        servers.add(
-                            Video.Server(
-                                id = decodedUrl,
-                                name = "$serverName $audioTag",
-                                src = decodedUrl
-                            )
-                        )
-                    }
+                    Video.Server(
+                        id = serverUrl,
+                        name = "$serverName [LAT]"
+                    )
                 }
-            }
-
-            // 2. Fallback a selectores legacy
-            if (servers.isEmpty()) {
-                document.select("#playeroptionsul li[data-option], .options li a[data-src]").forEach { element ->
-                    val raw = element.attr("data-src").ifEmpty { element.attr("data-option") }
-                    val decoded = if (raw.startsWith("http")) raw else runCatching {
-                        String(Base64.decode(raw, Base64.DEFAULT), Charsets.UTF_8).trim()
-                    }.getOrDefault(raw)
-
-                    if (decoded.startsWith("http")) {
-                        val serverName = element.text().trim().uppercase()
-                        servers.add(
-                            Video.Server(
-                                id = decoded,
-                                name = "$serverName [LAT]",
-                                src = decoded
-                            )
-                        )
-                    }
-                }
-            }
-
-            servers
         } catch (e: Exception) {
             emptyList()
         }
     }
 
     override suspend fun getVideo(server: Video.Server): Video {
-        val url = server.src.ifEmpty { server.id }
-        return Extractor.extract(url, server)
+        return Extractor.extract(server.id, server)
     }
 
     override suspend fun getGenre(id: String, page: Int): Genre {

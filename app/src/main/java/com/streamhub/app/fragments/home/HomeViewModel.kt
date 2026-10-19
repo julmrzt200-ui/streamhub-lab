@@ -436,15 +436,11 @@ class HomeViewModel(database: AppDatabase) : ViewModel() {
 
         try {
             val categories = provider.getHome()
-            val hasContent = categories.any { it.list.isNotEmpty() }
-            if (!hasContent) {
-                throw Exception("El proveedor no devolvió contenido disponible.")
-            }
             HomeCacheStore.write(appContext, provider, categories)
             _state.emit(State.SuccessLoading(categories))
         } catch (e: Exception) {
             Log.e("HomeViewModel", "getHome: ", e)
-            if (cachedCategories.isNullOrEmpty() || cachedCategories.all { it.list.isEmpty() }) {
+            if (cachedCategories.isNullOrEmpty()) {
                 _state.emit(State.FailedLoading(e))
             }
         }

@@ -3,19 +3,23 @@ package com.streamhub.app.extractors
 import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
-import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
 import com.streamhub.app.StreamHubApp
 import com.streamhub.app.models.Video
 import com.streamhub.app.utils.JsUnpacker
-import com.streamhub.app.utils.NetworkClient
-import kotlinx.coroutines.*
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
+import org.jsoup.nodes.Document
+import retrofit2.Retrofit
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Url
 import kotlin.coroutines.resume
+import kotlinx.coroutines.Dispatchers
 
 open class StreamWishExtractor : Extractor() {
 
@@ -112,225 +116,76 @@ open class StreamWishExtractor : Extractor() {
     protected var referer = ""
     val context = StreamHubApp.instance.applicationContext
 
-    private val fastHttpClient: OkHttpClient by lazy {
-        NetworkClient.default.newBuilder()
-            .connectTimeout(5, TimeUnit.SECONDS)
-            .readTimeout(6, TimeUnit.SECONDS)
-            .followRedirects(true)
-            .followSslRedirects(true)
-            .build()
-    }
-
-    override suspend fun extract(link: String): Video = withContext(Dispatchers.IO) {
+    override suspend fun extract(link: String): Video {
         if (referer.isEmpty()) {
             val uri = Uri.parse(link)
             if (uri.scheme != null && uri.host != null) {
                 referer = "${uri.scheme}://${uri.host}/"
             }
         }
-
-        // 1. Extract raw video ID
-        val rawId = Regex("""/(?:e|v|embed|f)/([a-zA-Z0-9_-]+)""").find(link)?.groupValues?.get(1)
-            ?: link.substringAfterLast("/").substringBefore(".").substringBefore("?")
-
-        // 2. Build list of candidate mirror URLs for racing
-        val candidateBases = linkedSetOf<String>()
-        val originalUri = try { Uri.parse(link) } catch (_: Exception) { null }
-        if (originalUri?.scheme != null && originalUri.host != null) {
-            candidateBases.add("${originalUri.scheme}://${originalUri.host}")
-        }
-        candidateBases.addAll(listOf(
-            "https://streamwish.to",
-            "https://hlswish.com",
-            "https://hglink.to",
-            "https://strwish.com",
-            "https://wishfast.top",
-            "https://sfastwish.com",
-            "https://hanerix.com",
-            "https://swishsrv.com",
-            "https://wishembed.pro"
-        ))
-
-        // 3. Mirror Racing (Parallel HTTP Fetching)
-        var winningVideo: Video? = null
-        try {
-            val winnerDeferred = CompletableDeferred<Video>()
-            coroutineScope {
-                val jobs = candidateBases.map { mirrorBase ->
-                    launch {
-                        try {
-                            val candidateEmbedUrl = "$mirrorBase/e/$rawId"
-                            val resolved = tryResolveMirror(fastHttpClient, candidateEmbedUrl, mirrorBase, rawId, referer)
-                            if (resolved != null && !winnerDeferred.isCompleted) {
-                                winnerDeferred.complete(resolved)
-                            }
-                        } catch (_: Exception) {
-                            // Ignored: mirror failed, others continue
-                        }
-                    }
-                }
-
-                winningVideo = withTimeoutOrNull(8000) {
-                    winnerDeferred.await()
-                }
-                jobs.forEach { it.cancel() }
-            }
-        } catch (e: Exception) {
-            Log.w("StreamWishExtractor", "Mirror racing interrupted: ${e.message}")
-        }
-
-        if (winningVideo != null) {
-            return@withContext winningVideo!!
-        }
-
-        // 4. Fallback: Short WebView resolution if all HTTP mirrors fail
-        Log.i("StreamWishExtractor", "HTTP racing did not find stream for $rawId, trying quick WebView fallback")
+        val service = Service.build(mainUrl)
         val redirectedUrl = resolveRedirectWithWebView(context, link, mainUrl)
-        val fallbackVideo = tryResolveMirror(
-            fastHttpClient,
-            redirectedUrl,
-            Uri.parse(redirectedUrl).let { "${it.scheme}://${it.host}" },
-            rawId,
-            referer
-        )
+        val document = service.get(redirectedUrl, referer = referer)
 
-        return@withContext fallbackVideo ?: throw Exception("StreamWish: Could not extract playable stream for $link")
-    }
 
-    private fun tryResolveMirror(
-        client: OkHttpClient,
-        embedUrl: String,
-        mirrorBase: String,
-        rawId: String,
-        initialReferer: String
-    ): Video? {
-        val request = Request.Builder()
-            .url(embedUrl)
-            .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
-            .header("Referer", if (initialReferer.isNotBlank()) initialReferer else "$mirrorBase/")
-            .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-            .header("Accept-Language", "es-ES,es;q=0.9,en;q=0.8")
-            .build()
+        val script = Regex(
+            "<script .*>(eval.*?)</script>",
+            RegexOption.DOT_MATCHES_ALL
+        ).findAll(document.toString())
+            .mapNotNull { it.groupValues[1].let { js -> JsUnpacker(js).unpack() } }
+            .firstOrNull { it.contains("m3u8") }
+            ?: throw Exception("Can't retrieve script")
 
-        val response = client.newCall(request).execute()
-        if (!response.isSuccessful) return null
-        val html = response.body?.string() ?: return null
+        val source = Regex("""(?:["']?hls(\d*)["']?|["']?file["']?)\s*[:=]\s*["']((?:https?://|/)[^"']+\.m3u8[^"']*)["']""")
+            .findAll(script)
+            .map { (it.groupValues[1].toIntOrNull() ?: 0) to it.groupValues[2] }
+            .sortedByDescending { it.first }
+            .map { it.second }
+            .firstOrNull()
+            ?: throw Exception("Can't retrieve m3u8")
 
-        // Try extracting from HTML/Scripts
-        val video = extractVideoFromHtml(html, mirrorBase)
-        if (video != null) return video
-
-        // Check for 32-hex MD5 beacon endpoint: /dl?op=view&file_code=...&hash=...
-        val beaconMatch = Regex("""/dl\?op=view&file_code=([a-zA-Z0-9_-]+)&hash=([a-f0-9]{32})""").find(html)
-        if (beaconMatch != null) {
-            val beaconUrl = "$mirrorBase/dl?op=view&file_code=$rawId&hash=${beaconMatch.groupValues[2]}&embed=1&adb=1&hls4=1"
-            val beaconReq = Request.Builder()
-                .url(beaconUrl)
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36")
-                .header("Referer", embedUrl)
-                .header("X-Requested-With", "XMLHttpRequest")
-                .build()
-            val beaconResp = client.newCall(beaconReq).execute()
-            if (beaconResp.isSuccessful) {
-                val beaconBody = beaconResp.body?.string()
-                if (!beaconBody.isNullOrBlank()) {
-                    val beaconVideo = extractVideoFromHtml(beaconBody, mirrorBase)
-                    if (beaconVideo != null) return beaconVideo
-                }
-            }
-        }
-
-        return null
-    }
-
-    private fun extractVideoFromHtml(html: String, mirrorBase: String): Video? {
-        val scripts = mutableListOf<String>()
-
-        // 1. Packed eval scripts
-        val evalMatches = Regex("""eval\s*\(\s*function\s*\(p,a,c,k[\s\S]*?\)\s*\)""").findAll(html)
-        for (m in evalMatches) {
-            try {
-                val unpacked = JsUnpacker(m.value).unpack()
-                if (!unpacked.isNullOrBlank()) {
-                    scripts.add(unpacked)
-                }
-            } catch (_: Exception) {}
-        }
-
-        // Also add the raw html to cover direct scripts
-        scripts.add(html)
-
-        val m3u8Regexes = listOf(
-            Regex("""(?:["']?hls(?:\d*)["']?|["']?file["']?)\s*[:=]\s*["']((?:https?://|/)[^"']+\.m3u8[^"']*)["']""", RegexOption.IGNORE_CASE),
-            Regex("""sources?\s*:\s*\[[\s\S]*?["']((?:https?://|/)[^"']+\.m3u8[^"']*)["']""", RegexOption.IGNORE_CASE),
-            Regex("""https?://[^\s"'<>]+\.m3u8[^\s"'<>]*""", RegexOption.IGNORE_CASE)
-        )
-
-        var m3u8Url: String? = null
-        var bestScript: String? = null
-
-        for (s in scripts) {
-            for (r in m3u8Regexes) {
-                val match = r.find(s)
-                if (match != null) {
-                    m3u8Url = match.groups[1]?.value ?: match.value
-                    bestScript = s
-                    break
-                }
-            }
-            if (m3u8Url != null) break
-        }
-
-        if (m3u8Url == null) return null
-
-        val finalSource = if (m3u8Url.startsWith("/")) {
-            val uri = Uri.parse(mirrorBase)
-            "${uri.scheme}://${uri.host}$m3u8Url"
+        val finalSource = if (source.startsWith("/")) {
+            val uri = Uri.parse(redirectedUrl)
+            "${uri.scheme}://${uri.host}$source"
         } else {
-            m3u8Url
+            source
         }
 
-        // Extract subtitles
-        val subtitles = mutableListOf<Video.Subtitle>()
-        if (bestScript != null) {
-            try {
-                val tracksMatch = Regex("""tracks:\s*\[([\s\S]*?)\]""").find(bestScript)
-                if (tracksMatch != null) {
-                    val trackItems = Regex("""file:\s*["']([^"']+)["'](?:,label:\s*["']([^"']+)["'])?,kind:\s*["']([^"']+)["']""")
-                        .findAll(tracksMatch.groupValues[1])
-                    for (item in trackItems) {
-                        if (item.groupValues[3] == "captions" || item.groupValues[3] == "subtitles") {
-                            subtitles.add(
-                                Video.Subtitle(
-                                    label = item.groupValues[2].ifEmpty { "Spanish" },
-                                    file = item.groupValues[1]
-                                )
-                            )
-                        }
-                    }
+        val subtitles =
+            Regex("file:\\s*\"(.*?)\"(?:,label:\\s*\"(.*?)\")?,kind:\\s*\"(.*?)\"").findAll(
+                Regex("tracks:\\s*\\[(.*?)]").find(script)
+                    ?.groupValues?.get(1)
+                    ?: ""
+            )
+                .filter { it.groupValues[3] == "captions" }
+                .map {
+                    Video.Subtitle(
+                        label = it.groupValues[2],
+                        file = it.groupValues[1],
+                    )
                 }
-            } catch (_: Exception) {}
-        }
+                .toList()
 
-        val mirrorHost = try { Uri.parse(mirrorBase).host ?: "streamwish.to" } catch (_: Exception) { "streamwish.to" }
-
-        return Video(
+        val video = Video(
             source = finalSource,
             subtitles = subtitles,
             headers = mapOf(
+                "Referer" to referer,
+                "Origin" to "https://${Uri.parse(redirectedUrl).host}",
                 "User-Agent" to "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-                "Referer" to "https://$mirrorHost/",
-                "Origin" to "https://$mirrorHost",
                 "Accept" to "*/*",
-                "Connection" to "keep-alive"
-            )
+                "Accept-Language" to "en-US,en;q=0.5",
+                "Connection" to "keep-alive",
+            ),
         )
+
+        return video
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     suspend fun resolveRedirectWithWebView(context: Context, url: String, mainUrl: String): String =
         withContext(Dispatchers.Main) {
-            val result = withTimeoutOrNull(8000) {
+            val result = withTimeoutOrNull(30000) {
                 suspendCancellableCoroutine { cont ->
                     val webView = WebView(context)
                     webView.settings.javaScriptEnabled = true
@@ -369,6 +224,7 @@ open class StreamWishExtractor : Extractor() {
             result ?: url // Fallback to original URL if timeout
         }
 
+
     class UqloadsXyz : StreamWishExtractor() {
         override val name = "Uqloads"
         override val mainUrl = "https://uqloads.xyz"
@@ -397,5 +253,26 @@ open class StreamWishExtractor : Extractor() {
     class PlayerwishExtractor : StreamWishExtractor() {
         override val name = "Playerwish"
         override val mainUrl = "https://playerwish.com/"
+    }
+
+
+    private interface Service {
+
+        companion object {
+            fun build(baseUrl: String): Service {
+                val retrofit = Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .addConverterFactory(JsoupConverterFactory.create())
+                    .build()
+
+                return retrofit.create(Service::class.java)
+            }
+        }
+
+        @GET
+        suspend fun get(
+            @Url url: String,
+            @Header("referer") referer: String = "",
+        ): Document
     }
 }

@@ -50,10 +50,10 @@ open class VidplayExtractor : Extractor() {
             source = result.sources?.first()?.file
                 ?: throw Exception("Can't retrieve source"),
             subtitles = result.tracks
-                ?.filter { it.kind != "thumbnails" && (it.kind == "captions" || it.kind == "subtitles" || it.kind.isNullOrEmpty()) }
+                ?.filter { it.kind == "captions" }
                 ?.mapNotNull {
                     Video.Subtitle(
-                        it.label ?: "Unknown",
+                        it.label ?: "Unknow",
                         it.file ?: return@mapNotNull null,
                     )
                 }

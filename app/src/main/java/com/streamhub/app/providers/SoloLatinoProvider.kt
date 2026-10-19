@@ -2,7 +2,6 @@ package com.streamhub.app.providers
 
 import android.util.Base64
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
-import com.streamhub.app.StreamHubApp
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
@@ -51,9 +50,7 @@ object SoloLatinoProvider : Provider {
     private val service = retrofit.create(SoloLatinoService::class.java)
 
     private fun getOkHttpClient(): OkHttpClient {
-        val appCache = runCatching { StreamHubApp.instance.cacheDir }.getOrNull()?.let {
-            Cache(File(it, "okhttpcache"), 10 * 1024 * 1024)
-        }
+        val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
 
         val clientBuilder = OkHttpClient.Builder()
             .addInterceptor { chain ->
@@ -63,7 +60,7 @@ object SoloLatinoProvider : Provider {
                 chain.proceed(request)
             }
             .cookieJar(MyCookieJar())
-            .apply { appCache?.let { cache(it) } }
+            .cache(appCache)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
 

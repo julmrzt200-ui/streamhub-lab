@@ -14,7 +14,6 @@ import com.streamhub.app.models.TvShow
 import com.streamhub.app.models.Video
 import com.streamhub.app.utils.DnsResolver
 import com.tanasi.retrofit_jsoup.converter.JsoupConverterFactory
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
@@ -28,9 +27,9 @@ import java.util.concurrent.TimeUnit
 object PelisflixHdProvider : Provider {
 
     override val name = "PelisflixHD"
-    override val baseUrl = "https://pelisflixhd1.online"
+    override val baseUrl = "https://pelisflixhd.win"
     override val language = "es"
-    override val logo = "https://s.pelisflixhd1.online/cat/logo-mini.png"
+    override val logo = "https://s.pelisflixhd.win/cat/logo-mini.png"
 
     private const val USER_AGENT =
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
@@ -215,36 +214,9 @@ object PelisflixHdProvider : Provider {
     }
 
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
-        val targetUrl = when {
-            id.contains("/episodio/") -> normalizeUrl(id)
-            videoType is Video.Type.Episode && id.contains("/serie/") -> {
-                val slug = id.trimEnd('/').substringAfterLast('/')
-                val season = videoType.season.number
-                val episode = videoType.number
-                "$baseUrl/episodio/$slug-${season}x$episode/"
-            }
-            else -> normalizeUrl(id)
-        }
+        val document = service.getPage(normalizeUrl(id))
 
-        val document = try {
-            service.getPage(targetUrl)
-        } catch (e: Exception) {
-            if (videoType is Video.Type.Episode && id.contains("/serie/")) {
-                try {
-                    val seasonNumber = videoType.season.number
-                    val episodeNumber = videoType.number
-                    val episodes = getEpisodesBySeason("$baseUrl/temporada/${id.trimEnd('/').substringAfterLast('/')}-$seasonNumber/")
-                    val matchedEp = episodes.firstOrNull { it.number == episodeNumber }
-                    if (matchedEp != null) {
-                        service.getPage(matchedEp.id)
-                    } else null
-                } catch (ex: Exception) {
-                    null
-                }
-            } else null
-        } ?: return emptyList()
-
-        return document.select("li[data-server], #player li[data-server]").mapIndexedNotNull { index, item ->
+        return document.select("#player li[data-server]").mapIndexedNotNull { index, item ->
             val encoded = item.attr("data-server")
             if (encoded.isBlank()) {
                 return@mapIndexedNotNull null
@@ -253,28 +225,16 @@ object PelisflixHdProvider : Provider {
             val decoded = runCatching { String(Base64.decode(encoded, Base64.DEFAULT)).trim() }.getOrNull()
                 ?: return@mapIndexedNotNull null
 
-            val rawName = item.selectFirst("span")?.text()?.trim().orEmpty()
-            val cleanName = rawName.replace("Reproducir", "").trim()
-            val audioTag = when {
-                cleanName.contains("latino", ignoreCase = true) -> "[LAT]"
-                cleanName.contains("castellano", ignoreCase = true) || cleanName.contains("español", ignoreCase = true) -> "[CAST]"
-                cleanName.contains("sub", ignoreCase = true) -> "[SUB]"
-                else -> "[LAT]"
-            }
-            val serverName = if (cleanName.isBlank()) "Opción ${index + 1} $audioTag" else "$cleanName $audioTag"
-
             Video.Server(
                 id = decoded,
-                name = serverName,
+                name = item.selectFirst("span")?.text()?.trim().orEmpty().ifBlank { "Opción ${index + 1}" },
                 src = decoded
             )
         }.distinctBy { it.src }
     }
 
     override suspend fun getVideo(server: Video.Server): Video {
-        val targetUrl = server.src.ifBlank { server.id }
-        val nestedUrl = targetUrl.toHttpUrlOrNull()?.queryParameter("url")?.takeIf { it.startsWith("http") }
-        return Extractor.extract(nestedUrl ?: targetUrl, server)
+        return Extractor.extract(server.src, server)
     }
 
     private suspend fun getGenres(): List<Genre> {

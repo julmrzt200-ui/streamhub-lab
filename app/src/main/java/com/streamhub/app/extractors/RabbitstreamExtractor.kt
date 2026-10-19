@@ -52,7 +52,7 @@ open class RabbitstreamExtractor : Extractor() {
         val video = Video(
             source = sources.sources.map { it.file }.firstOrNull() ?: "",
             subtitles = sources.tracks
-                .filter { it.kind != "thumbnails" && (it.kind == "captions" || it.kind == "subtitles" || it.kind.isEmpty()) }
+                .filter { it.kind == "captions" }
                 .map {
                     Video.Subtitle(
                         label = it.label,
@@ -102,7 +102,7 @@ open class RabbitstreamExtractor : Extractor() {
                 source = sources.sources.map { it.file }.firstOrNull() ?: "",
                 headers = mapOf("Referer" to hostUrl),
                 subtitles = sources.tracks
-                    .filter { it.kind != "thumbnails" && (it.kind == "captions" || it.kind == "subtitles" || it.kind.isEmpty()) }
+                    .filter { it.kind == "captions" }
                     .map {
                         Video.Subtitle(
                             label = it.label,
