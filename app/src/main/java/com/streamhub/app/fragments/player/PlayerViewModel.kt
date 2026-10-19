@@ -134,14 +134,21 @@ class PlayerViewModel(
                 val rawVideo = UserPreferences.currentProvider!!.getVideo(server)
                 if (rawVideo.source.isEmpty()) throw Exception("No source found")
 
-                // Normaliza TODAS las pistas externas (descarga con headers, detecta formato real,
-                // convierte a WebVTT UTF-8) y precalienta la traducción en la caché en vivo.
-                val video = try {
+                val videoWithSubs = try {
                     SubtitleNormalizer.prepareVideo(com.streamhub.app.StreamHubApp.instance.applicationContext, rawVideo)
                 } catch (e: Exception) {
                     if (e is CancellationException) throw e
                     Log.w("PlayerViewModel", "Normalización de subtítulos falló: ${e.message}")
                     rawVideo
+                }
+
+                // Enriquecimiento de cabeceras para evitar 403 Forbidden en ExoPlayer
+                val video = try {
+                    com.streamhub.app.utils.StreamValidator.validateAndEnrich(videoWithSubs, server)
+                } catch (e: Exception) {
+                    if (e is CancellationException) throw e
+                    Log.w("PlayerViewModel", "Validación y enriquecimiento de stream falló: ${e.message}")
+                    videoWithSubs
                 }
 
                 // LOGICA SOTTOTITOLI GLOBALE: 

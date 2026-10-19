@@ -595,8 +595,8 @@ object CloudSyncManager {
                 UserDataCache.writeMovies(context, provider, db.movieDao().getAll())
                 UserDataCache.writeTvShows(context, provider, db.tvShowDao().getAllForBackup())
                 UserDataCache.writeEpisodes(context, provider, db.episodeDao().getAllForBackup())
-            } finally {
-                db.close()
+            } catch (e: Exception) {
+                Log.e(TAG, "Error applying remote states for provider ${provider.name}: ${e.message}", e)
             }
         }
         UserDataNotifier.notifyChanged()

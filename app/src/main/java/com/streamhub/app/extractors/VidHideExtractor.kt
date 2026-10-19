@@ -25,7 +25,10 @@ class VidHideExtractor: Extractor() {
         "https://minochinos.com",
         "https://moflix-stream.click",
         "https://filelions.to",
-        "https://morencius.com"
+        "https://morencius.com",
+        "https://vidhidepro.com",
+        "https://vidhide.com",
+        "https://callistanise.com"
     )
 
     companion object {
@@ -58,13 +61,13 @@ class VidHideExtractor: Extractor() {
             ?: throw Exception("Unpacked is null")
 
         val links = mutableMapOf<String, String>()
-        Regex("""["'](hls\d+)["']\s*:\s*["'](.*?)["']""")
+        Regex("""["'](hls\d*)["']\s*:\s*["'](.*?)["']""")
             .findAll(unPacked)
             .forEach {
                 links[it.groupValues[1]] = it.groupValues[2]
             }
 
-        val finalUrl = links["hls4"] ?: links["hls2"] ?: throw Exception("No HLS link found")
+        val finalUrl = links["hls4"] ?: links["hls2"] ?: links["hls3"] ?: links["hls1"] ?: links["hls"] ?: links.values.firstOrNull() ?: throw Exception("No HLS link found")
         
         // Add domain if the URL starts with "/"
         val completeUrl = if (finalUrl.startsWith("/")) {
@@ -74,7 +77,14 @@ class VidHideExtractor: Extractor() {
             finalUrl
         }
 
-        return Video(source = completeUrl)
+        return Video(
+            source = completeUrl,
+            headers = mapOf(
+                "User-Agent" to DEFAULT_USER_AGENT,
+                "Referer" to "$mainLink/",
+                "Origin" to mainLink
+            )
+        )
     }
 
     private interface Service {

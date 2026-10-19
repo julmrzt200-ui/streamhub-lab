@@ -253,15 +253,20 @@ class PlayerTvFragment : Fragment() {
         }
     }
 
+    private var attemptingServer: Video.Server? = null
+
     private fun switchToNextServer(reason: String = "", failedServer: Video.Server? = null) {
         if (viewModel.isExtractingVideo) {
             Log.d("PlayerTvFragment", "Ignorado cambio a siguiente servidor ($reason): ya hay una extracción en curso")
             return
         }
-        val serverReference = failedServer ?: currentServer
-        val nextServer = servers.getOrNull(servers.indexOf(serverReference) + 1)
+        val serverReference = failedServer ?: currentServer ?: attemptingServer
+        val currentIndex = if (serverReference != null) servers.indexOf(serverReference) else -1
+        val nextIndex = if (currentIndex >= 0) currentIndex + 1 else 1
+        val nextServer = servers.getOrNull(nextIndex)
         if (nextServer != null) {
             Log.i("PlayerTvFragment", "Cambiando al siguiente servidor ($reason): ${nextServer.name}")
+            attemptingServer = nextServer
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             if (::player.isInitialized) {
                 player.stop()
@@ -561,13 +566,16 @@ class PlayerTvFragment : Fragment() {
                                 player.stop()
                             }
                             showPlayerLoading()
+                            attemptingServer = selectedServer
                             viewModel.getVideo(selectedServer)
                         }
                         val preferredServer = state.servers.firstOrNull {
                             it.name.equals(args.preferredServerName, ignoreCase = true)
                         }
                         showPlayerLoading()
-                        viewModel.getVideo(preferredServer ?: state.servers.first())
+                        val initialServer = preferredServer ?: state.servers.first()
+                        attemptingServer = initialServer
+                        viewModel.getVideo(initialServer)
 
                     }
                         is PlayerViewModel.State.FailedLoadingServers -> {
@@ -592,8 +600,11 @@ class PlayerTvFragment : Fragment() {
                         }
 
                         is PlayerViewModel.State.FailedLoadingVideo -> {
-                            val nextServer = servers.getOrNull(servers.indexOf(state.server) + 1)
+                            val serverIndex = servers.indexOf(state.server)
+                            val nextIndex = if (serverIndex >= 0) serverIndex + 1 else 1
+                            val nextServer = servers.getOrNull(nextIndex)
                             if (nextServer != null) {
+                                attemptingServer = nextServer
                                 stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
                                 if (::player.isInitialized) {
                                     player.stop()
@@ -820,6 +831,7 @@ class PlayerTvFragment : Fragment() {
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             nextEpisodePrefetchJob?.cancel()
             releasePlayer()
+            PlayerSettingsView.Settings.reset()
             try {
                 requireContext().unregisterReceiver(chooserReceiver)
             } catch (ignored: Exception) {

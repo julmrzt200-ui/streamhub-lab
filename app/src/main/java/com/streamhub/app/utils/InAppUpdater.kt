@@ -15,7 +15,7 @@ import kotlin.math.max
 object InAppUpdater {
 
     private const val REPO_OWNER = "julmrzt200-ui"
-    private const val REPO_NAME = "streamhub-releases"
+    private const val REPO_NAME = "streamhub-lab"
     private val updatesConfigured get() = REPO_OWNER.isNotEmpty() && REPO_NAME.isNotEmpty()
 
     private fun toGitGayRelease(r: GitHub.Release): GitGay.Release {
@@ -63,8 +63,8 @@ object InAppUpdater {
             val thisParts = this.name.split(".").toTypedArray()
             val thatParts = other.name.split(".").toTypedArray()
             for (i in 0 until max(thisParts.size, thatParts.size)) {
-                val thisPart = thisParts.getOrNull(i)?.toIntOrNull() ?: 0
-                val thatPart = thatParts.getOrNull(i)?.toIntOrNull() ?: 0
+                val thisPart = thisParts.getOrNull(i)?.takeWhile { it.isDigit() }?.toIntOrNull() ?: 0
+                val thatPart = thatParts.getOrNull(i)?.takeWhile { it.isDigit() }?.toIntOrNull() ?: 0
                 if (thisPart < thatPart) return -1
                 if (thisPart > thatPart) return 1
             }

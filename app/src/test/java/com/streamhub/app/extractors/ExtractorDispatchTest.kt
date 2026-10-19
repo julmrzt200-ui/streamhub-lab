@@ -97,4 +97,10 @@ class ExtractorDispatchTest {
         assertEquals(expected, got)
         assertNotNull(got.subtitles.first().file)
     }
+
+    @Test fun vidHideProResolvesToVidHideExtractor() {
+        val vidHide = VidHideExtractor()
+        val found = Extractor.findExtractor("https://vidhidepro.com/v/cruz5wj7y8vu", null, listOf(vidHide))
+        assertSame(vidHide, found)
+    }
 }

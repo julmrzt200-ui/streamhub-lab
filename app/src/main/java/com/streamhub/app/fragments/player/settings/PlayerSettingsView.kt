@@ -431,6 +431,13 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 SoftwareDecoder,
                 ManualZoom,
             )
+
+            fun reset() {
+                Quality.list.clear()
+                Audio.list.clear()
+                Subtitle.list.clear()
+                Server.list.clear()
+            }
         }
 
         data object ManualZoom : Settings()
@@ -631,21 +638,24 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 val bitrate: Int,
                 val trackGroup: Tracks.Group,
                 val trackIndex: Int,
-                val player: ExoPlayer,
+                player: ExoPlayer,
             ) : Quality() {
+                private val playerRef = java.lang.ref.WeakReference(player)
+                val player: ExoPlayer? get() = playerRef.get()
+
                 val isCurrentlyPlayed: Boolean
                     get() {
-                        val currentFormat = player.videoFormat ?: return false
+                        val currentFormat = player?.videoFormat ?: return false
                         val bitrateMatch = currentFormat.bitrate == bitrate
                         val resolutionMatch = currentFormat.height == height && currentFormat.width == width
 
                         return bitrateMatch || resolutionMatch
                     }
                 override val isSelected: Boolean
-                    get() = player.trackSelectionParameters.overrides.values.any { override ->
+                    get() = player?.trackSelectionParameters?.overrides?.values?.any { override ->
                         override.mediaTrackGroup == trackGroup.mediaTrackGroup &&
                             override.trackIndices.contains(trackIndex)
-                    }
+                    } ?: false
             }
         }
 
@@ -1181,15 +1191,19 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
 
                 val trackGroup: Tracks.Group,
                 val trackIndex: Int,
-                val player: ExoPlayer,
+                player: ExoPlayer,
             ) : Subtitle() {
+                private val playerRef = java.lang.ref.WeakReference(player)
+                val player: ExoPlayer? get() = playerRef.get()
+
                 val isSelected: Boolean
                     get() {
-                        val isOverridden = player.trackSelectionParameters.overrides.values.any { override ->
+                        val p = player ?: return false
+                        val isOverridden = p.trackSelectionParameters.overrides.values.any { override ->
                             override.mediaTrackGroup == trackGroup.mediaTrackGroup &&
                                 override.trackIndices.contains(trackIndex)
                         }
-                        val isTrackDisabled = player.trackSelectionParameters.disabledTrackTypes.contains(C.TRACK_TYPE_TEXT)
+                        val isTrackDisabled = p.trackSelectionParameters.disabledTrackTypes.contains(C.TRACK_TYPE_TEXT)
                         return isOverridden || (!isTrackDisabled && trackGroup.isTrackSelected(trackIndex))
                     }
             }

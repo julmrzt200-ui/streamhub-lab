@@ -53,8 +53,16 @@ class VidLinkExtractor : Extractor() {
                 timeoutHandler.postDelayed(timeoutRunnable, 30000) // 30 seconds timeout
 
                 continuation.invokeOnCancellation {
-                    webView.stopLoading()
-                    webView.destroy()
+                    timeoutHandler.removeCallbacks(timeoutRunnable)
+                    if (Looper.myLooper() == Looper.getMainLooper()) {
+                        webView.stopLoading()
+                        webView.destroy()
+                    } else {
+                        Handler(Looper.getMainLooper()).post {
+                            webView.stopLoading()
+                            webView.destroy()
+                        }
+                    }
                 }
 
                 webView.webViewClient = object : WebViewClient() {

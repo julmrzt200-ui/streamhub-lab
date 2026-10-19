@@ -66,10 +66,9 @@ object StreamValidator {
 
             // 3. Descartar páginas HTML / PHP / iframes que no sean stream
             val hasRejectedExtension = REJECTED_EXTENSIONS.any { path.endsWith(it) }
-            val hasEmbedPath = path.contains("/embed/") ||
-                    path.contains("/iframe/") ||
-                    path.contains("/e/") ||
-                    path.contains("/v/")
+            val hasEmbedPath = path.startsWith("/embed/") ||
+                    path.startsWith("/iframe/") ||
+                    path.contains("/embed-")
 
             if ((hasRejectedExtension || hasEmbedPath) && !hasDirectMediaExtension && !hasStreamingKeyword) {
                 Log.w(TAG, "Descartada página HTML o embebido sin stream directo: $rawSource")

@@ -79,17 +79,29 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // Metodo per forzare il cambio di database quando cambia il provider
+        private val providerInstances = java.util.concurrent.ConcurrentHashMap<String, AppDatabase>()
+
         fun resetInstance() {
             synchronized(this) {
                 INSTANCE?.close()
                 INSTANCE = null
                 currentProviderName = null
+                providerInstances.values.forEach { if (it.isOpen) it.close() }
+                providerInstances.clear()
             }
         }
 
         fun getInstanceForProvider(providerName: String, context: Context): AppDatabase {
-            return buildDatabase(providerName, context)
+            val sanitized = sanitizeProviderName(providerName)
+            val currentSanitized = currentProviderName?.let { sanitizeProviderName(it) }
+            val current = INSTANCE
+            if (current != null && current.isOpen && sanitized == currentSanitized) {
+                return current
+            }
+            return providerInstances.compute(sanitized) { _, existing ->
+                if (existing != null && existing.isOpen) existing
+                else buildDatabase(providerName, context)
+            }!!
         }
 
         private fun buildDatabase(providerName: String, context: Context): AppDatabase {

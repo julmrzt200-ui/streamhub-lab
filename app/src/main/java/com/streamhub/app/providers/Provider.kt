@@ -87,6 +87,7 @@ interface Provider {
             SoloLatinoProvider to ProviderSupport(movies = true, tvShows = true),
             Cine24hProvider to ProviderSupport(movies = true, tvShows = true),
             PelisflixHdProvider to ProviderSupport(movies = true, tvShows = true),
+            PelisplushdLaProvider to ProviderSupport(movies = true, tvShows = true),
             AnimeSaturnProvider to ProviderSupport(movies = false, tvShows = true),
             FrenchStreamProvider to ProviderSupport(movies = true, tvShows = true),
             KellerKinoProvider to ProviderSupport(movies = true, tvShows = false),

@@ -871,7 +871,7 @@ class TmdbProvider(override val language: String) : Provider {
                 }
 
                 coroutineScope {
-                    val providers = listOf(CuevanaEuProvider, SoloLatinoProvider, CineCalidadProvider, PoseidonHD2Provider)
+                    val providers = listOf(PelisplushdLaProvider, SoloLatinoProvider, CineCalidadProvider, CuevanaEuProvider, PoseidonHD2Provider)
                     val deferred = providers.map { provider ->
                         async {
                             try {
@@ -887,7 +887,8 @@ class TmdbProvider(override val language: String) : Provider {
                                     val filtered = allServers.filter { s ->
                                         val n = s.name.uppercase()
                                         n.contains("[LAT]") || n.contains("[CAST]") || n.contains("[CAS]") || n.contains("[ES]") ||
-                                        n.contains("(LAT)") || n.contains("(ESP)") || n.contains("LATINO") || n.contains("CASTELLANO")
+                                        n.contains("(LAT)") || n.contains("(ESP)") || n.contains("LATINO") || n.contains("CASTELLANO") ||
+                                        n.contains("[SUB]")
                                     }
                                     Log.i("StreamFlixES", "[SERVERS OK] -> ${provider.name}: ${filtered.size}/${allServers.size} servers kept")
                                     filtered
@@ -902,6 +903,23 @@ class TmdbProvider(override val language: String) : Provider {
                         }
                     }
                     servers.addAll(deferred.awaitAll().flatten())
+                }
+
+                if (servers.isEmpty()) {
+                    Log.i("StreamFlixES", "[FALLBACK] -> Servidores en español no disponibles, activando respaldo universal con subtítulos")
+                    val blackFlagServer = try {
+                        TheFlixBayProvider.getBlackFlagServer(id, videoType)
+                    } catch (e: Exception) {
+                        BlackFlagExtractor().server(videoType)
+                    }
+                    servers.add(blackFlagServer)
+                    servers.add(RiveStreamExtractor().server(videoType))
+                    servers.add(VidLinkExtractor().server(videoType))
+                    servers.add(VixSrcExtractor().server(videoType))
+                    servers.add(TwoEmbedExtractor().server(videoType))
+                    servers.add(VidsrcNetExtractor().server(videoType))
+                    servers.add(VidsrcRuExtractor().server(videoType))
+                    servers.add(VidflixExtractor().server(videoType))
                 }
             }
             else -> {
