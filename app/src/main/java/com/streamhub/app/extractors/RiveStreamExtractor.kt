@@ -105,9 +105,11 @@ class RiveStreamExtractor : Extractor() {
                             if (captions != null) {
                                 for (i in 0 until captions.length()) {
                                     val cap = captions.optJSONObject(i) ?: continue
-                                    val fileUrl = cap.optString("file").ifBlank { cap.optString("url") }
+                                    var fileUrl = cap.optString("file").ifBlank { cap.optString("url") }
+                                    if (fileUrl.startsWith("//")) fileUrl = "https:$fileUrl"
+                                    else if (fileUrl.startsWith("/")) fileUrl = "https://www.rivestream.app$fileUrl"
                                     val label = cap.optString("label").ifBlank { cap.optString("language") }
-                                    if (fileUrl.isNotBlank()) {
+                                    if (fileUrl.isNotBlank() && fileUrl.startsWith("http")) {
                                         parsedSubtitles.add(Video.Subtitle(label = label.ifBlank { "Subtitle $i" }, file = fileUrl))
                                     }
                                 }

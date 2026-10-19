@@ -156,7 +156,9 @@ class BlackFlagExtractor : Extractor() {
                             val arr = org.json.JSONArray(text)
                             for (i in 0 until arr.length()) {
                                 val o = arr.getJSONObject(i)
-                                val src = o.optString("src")
+                                var src = o.optString("src")
+                                if (src.startsWith("//")) src = "https:$src"
+                                else if (src.startsWith("/")) src = "https://theflixbay.com$src"
                                 if (src.startsWith("http")) {
                                     addSubtitle(src, languageLabel(o.optString("label").ifBlank { o.optString("lang") }))
                                 }

@@ -1442,6 +1442,12 @@ class PlayerMobileFragment : Fragment() {
             ) + (video.headers ?: emptyMap())
         )
 
+        if (video.subtitles.any { it.default }) {
+            player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+                .build()
+        }
+
         player.setMediaItem(
             MediaItem.Builder()
                 .setUri(video.source.toUri())
@@ -1450,6 +1456,17 @@ class PlayerMobileFragment : Fragment() {
                     MediaItem.SubtitleConfiguration.Builder(subtitle.file.toUri())
                         .setMimeType(subtitle.mimeType ?: subtitle.file.toSubtitleMimeType())
                         .setLabel(subtitle.label)
+                        .setLanguage(
+                            when {
+                                subtitle.label.contains("Esp", ignoreCase = true) || subtitle.label.contains("Spa", ignoreCase = true) -> "es"
+                                subtitle.label.contains("Eng", ignoreCase = true) -> "en"
+                                subtitle.label.contains("Fra", ignoreCase = true) || subtitle.label.contains("Fre", ignoreCase = true) -> "fr"
+                                subtitle.label.contains("Deu", ignoreCase = true) || subtitle.label.contains("Ger", ignoreCase = true) -> "de"
+                                subtitle.label.contains("Ita", ignoreCase = true) -> "it"
+                                subtitle.label.contains("Por", ignoreCase = true) -> "pt"
+                                else -> null
+                            }
+                        )
                         .setSelectionFlags(if (subtitle.default) C.SELECTION_FLAG_DEFAULT else 0)
                         .build()
                 })

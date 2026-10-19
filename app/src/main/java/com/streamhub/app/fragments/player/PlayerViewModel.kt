@@ -151,10 +151,14 @@ class PlayerViewModel(
                 val currentProviderLang = UserPreferences.currentProvider?.language ?: ""
                 val hasDefaultAlready = video.subtitles.any { it.default }
 
-                if (!hasDefaultAlready && currentProviderLang != "es") {
-                    if (!(video.useServerSubtitleSetting && UserPreferences.serverAutoSubtitlesDisabled)) {
-                        // Antes: con subtitleName == null ("Ninguno") startsWith("") era siempre true y se
-                        // activaba la 1.ª pista aunque el usuario las hubiera apagado.
+                if (!hasDefaultAlready) {
+                    val isCcServer = server.name.contains("CC", ignoreCase = true)
+                    if (isCcServer) {
+                        val prefSub = video.subtitles.firstOrNull { it.label.contains("Esp", ignoreCase = true) || it.label.contains("Spa", ignoreCase = true) }
+                            ?: video.subtitles.firstOrNull { it.label.contains("Eng", ignoreCase = true) }
+                            ?: video.subtitles.firstOrNull()
+                        prefSub?.default = true
+                    } else if (currentProviderLang != "es" && !(video.useServerSubtitleSetting && UserPreferences.serverAutoSubtitlesDisabled)) {
                         UserPreferences.subtitleName?.takeIf { it.isNotBlank() }?.let { pref ->
                             video.subtitles.firstOrNull { it.label.startsWith(pref, ignoreCase = true) }
                                 ?.default = true

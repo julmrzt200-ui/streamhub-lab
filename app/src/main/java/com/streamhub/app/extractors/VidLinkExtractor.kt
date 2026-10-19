@@ -102,9 +102,13 @@ class VidLinkExtractor : Extractor() {
                                     if (captions != null) {
                                         for (i in 0 until captions.length()) {
                                             val cap = captions.getJSONObject(i)
-                                            val id = cap.optString("id")
-                                            val lang = cap.optString("language")
-                                            captionsList.add(Video.Subtitle(lang, id))
+                                            val lang = cap.optString("language").ifBlank { cap.optString("label", "English") }
+                                            var fileUrl = cap.optString("url").ifBlank { cap.optString("file").ifBlank { cap.optString("id") } }
+                                            if (fileUrl.startsWith("//")) fileUrl = "https:$fileUrl"
+                                            else if (fileUrl.startsWith("/")) fileUrl = "$mainUrl$fileUrl"
+                                            if (fileUrl.isNotBlank() && fileUrl.startsWith("http")) {
+                                                captionsList.add(Video.Subtitle(label = lang, file = fileUrl))
+                                            }
                                         }
                                     }
                                     
