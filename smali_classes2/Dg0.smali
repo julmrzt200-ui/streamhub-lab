@@ -56,12 +56,49 @@
 .method public static a(LEg0;)V
     .locals 1
 
+    .line 1
+    iget-object v0, p0, LEg0;->G:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-static {v0}, LXp0;->K(Ljava/lang/CharSequence;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    xor-int/lit8 v0, v0, 0x1
+
+    .line 8
+    .line 9
+    if-eqz v0, :cond_0
+
+    .line 10
+    .line 11
     sget-object v0, Lpw0;->a:Lpw0;
 
-    const-string v0, "adc5047f27e588c9347087931a696cf4"
+    .line 12
+    .line 13
+    iget-object p0, p0, LEg0;->G:Ljava/lang/String;
 
-    sput-object v0, Lpw0;->b:Ljava/lang/String;
+    .line 14
+    .line 15
+    const-string v0, "<set-?>"
 
+    .line 16
+    .line 17
+    invoke-static {p0, v0}, LJO;->f(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    sput-object p0, Lpw0;->b:Ljava/lang/String;
+
+    .line 21
+    .line 22
+    :cond_0
     return-void
 .end method
 
