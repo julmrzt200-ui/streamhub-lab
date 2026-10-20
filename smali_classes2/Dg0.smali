@@ -1941,29 +1941,28 @@
     .line 823
     :goto_1f
     const-string v8, "tmdb_api_key"
+    const-string v5, "adc5047f27e588c9347087931a696cf4"
 
-    .line 824
-    .line 825
     invoke-interface {v1, v8, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 826
-    .line 827
-    .line 828
     move-result-object v8
 
-    .line 829
     if-nez v8, :cond_34
 
-    .line 830
-    .line 831
     move-object/from16 v45, v5
 
-    .line 832
-    .line 833
     goto :goto_20
 
-    .line 834
     :cond_34
+    invoke-static {v8}, LXp0;->K(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_tmdb_set
+
+    move-object v8, v5
+
+    :cond_tmdb_set
     move-object/from16 v45, v8
 
     .line 835
