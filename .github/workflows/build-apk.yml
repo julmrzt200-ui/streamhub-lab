@@ -39,25 +39,25 @@ jobs:
       - name: Prepare Release Artifacts
         run: |
           SIGNED_APK=$(find out -name "*.apk" | head -n 1)
-          cp "$SIGNED_APK" streamhub-v1.0.8.apk
-          ls -la streamhub-v1.0.8.apk
+          cp "$SIGNED_APK" streamhub-v1.0.9.apk
+          ls -la streamhub-v1.0.9.apk
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: streamhub-apk
-          path: streamhub-v1.0.8.apk
+          path: streamhub-v1.0.9.apk
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/heads/main')
         with:
-          tag_name: v1.0.8-streamhub
-          name: StreamHub v1.0.8 (TV & Mobile)
+          tag_name: v1.0.9-streamhub
+          name: StreamHub v1.0.9 (TV & Mobile)
           body: |
-            StreamHub Rebranded Release:
-            - Full StreamHub identity (app name, branding, launcher icons, TV banner).
-            - Removed signature and genuine-app anti-tamper locks.
-            - Clean TV and mobile layout.
-            - Built and signed with APKTool 3.0.3 & uber-apk-signer.
-          files: streamhub-v1.0.8.apk
+            StreamHub Update v1.0.9:
+            - Fixed home screen title loading (TMDb key configured).
+            - Replaced top toolbar CLIPBOX logo with authentic STREAMHUB wordmark.
+            - Neutralized connection error popups.
+            - Fully signed and ready for TV & Mobile.
+          files: streamhub-v1.0.9.apk

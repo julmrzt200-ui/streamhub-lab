@@ -69,7 +69,7 @@
 
     .line 12
     .line 13
-    const-string v0, ""
+    const-string v0, "adc5047f27e588c9347087931a696cf4"
 
     .line 14
     .line 15

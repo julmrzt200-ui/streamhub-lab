@@ -16,7 +16,7 @@
 
 .field public static final a:Lpw0;
 
-.field public static b:Ljava/lang/String; = ""
+.field public static b:Ljava/lang/String; = "adc5047f27e588c9347087931a696cf4"
 
 .field public static volatile c:J
 
@@ -85,6 +85,10 @@
     .line 6
     .line 7
     sput-object v1, Lpw0;->a:Lpw0;
+
+    const-string v0, "adc5047f27e588c9347087931a696cf4"
+
+    sput-object v0, Lpw0;->b:Ljava/lang/String;
 
     .line 8
     .line 9

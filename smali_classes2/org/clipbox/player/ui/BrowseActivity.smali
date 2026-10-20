@@ -7242,7 +7242,7 @@
 
     .line 22
     .line 23
-    const-string v3, "CLIPBOX"
+    const-string v3, "STREAMHUB"
 
     .line 24
     .line 25
@@ -7277,10 +7277,10 @@
 
     .line 41
     .line 42
-    const/4 v5, 0x4
+    const/4 v5, 0x6
 
     .line 43
-    const/4 v6, 0x7
+    const/16 v6, 0x9
 
     .line 44
     invoke-virtual {v2, v3, v5, v6, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
@@ -17124,7 +17124,7 @@
 
     .line 1268
     .line 1269
-    const-string v4, "CLIPBOX"
+    const-string v4, "STREAMHUB"
 
     .line 1270
     .line 1271
@@ -17159,9 +17159,11 @@
 
     .line 1287
     .line 1288
-    const/4 v8, 0x7
+    const/4 v12, 0x6
 
     .line 1289
+    const/16 v8, 0x9
+
     invoke-virtual {v3, v4, v12, v8, v6}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     .line 1290
