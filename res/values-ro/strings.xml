@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, biblioteci și licențe</string>
     <string name="about_attributions_title">Licente si atributii</string>
     <string name="about_changelog_title">Jurnalul modificărilor</string>
-    <string name="about_credits_body">"ClipBox este un mod curat și liniștit de a vedea filme și seriale pe Android. Totul se află într-un singur loc, așa că poți răsfoi ce este popular, căuta ceva anume sau relua exact de unde ai rămas.
+    <string name="about_credits_body">"StreamHub este un mod curat și liniștit de a vedea filme și seriale pe Android. Totul se află într-un singur loc, așa că poți răsfoi ce este popular, căuta ceva anume sau relua exact de unde ai rămas.
 
 Subtitrările sunt găsite și sincronizate pentru tine într-o gamă largă de limbi, fiecare titlu oferă mai multe surse, iar ce urmărești poate fi trimis către un Chromecast sau un smart TV. Aplicația rulează pe telefoane, tablete, Android TV și Fire TV, iar un cont opțional îți menține lista și istoricul aliniate pe toate.
 
-ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai bun datorită celor ce ne scriu oamenii."</string>
-    <string name="about_credits_title">Despre ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub este făcut de o echipă mică ce îl folosește zilnic și devine mai bun datorită celor ce ne scriu oamenii."</string>
+    <string name="about_credits_title">Despre StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Surse de conținut și mărci comerciale</string>
     <string name="about_disclaimer_title">Disclaimer</string>
     <string name="about_legal_title">Legal</string>
     <string name="about_privacy_subtitle">Ce date sunt colectate și de ce</string>
     <string name="about_privacy_title">Politica de confidențialitate</string>
-    <string name="about_terms_subtitle">Cum poate fi utilizat ClipBox</string>
+    <string name="about_terms_subtitle">Cum poate fi utilizat StreamHub</string>
     <string name="about_terms_title">Termeni și condiții</string>
     <string name="about_title">Despre</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai b
     <string name="account_go_register">Nou aici? Creați un cont</string>
     <string name="account_go_register_action">Creați un cont</string>
     <string name="account_guest">Oaspete</string>
-    <string name="account_member">Membru ClipBox</string>
+    <string name="account_member">Membru StreamHub</string>
     <string name="account_member_since_fmt">Membru din %1$s</string>
     <string name="account_new_password_hint">Parolă nouă</string>
     <string name="account_new_username_hint">Nume de utilizator nou</string>
@@ -65,7 +65,7 @@ ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai b
     <string name="account_recovery_code">Cod de recuperare</string>
     <string name="account_recovery_code_hint">Cod de recuperare</string>
     <string name="account_register">Creați cont</string>
-    <string name="account_register_subtitle">Creați-vă contul ClipBox</string>
+    <string name="account_register_subtitle">Creați-vă contul StreamHub</string>
     <string name="account_session_ended">Contul dvs. nu mai este disponibil. Ați fost deconectat(ă).</string>
     <string name="account_settings_section">Setările contului</string>
     <string name="account_sign_in">Conectați-vă</string>
@@ -73,7 +73,7 @@ ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai b
     <string name="account_sign_out">Deconectați-vă</string>
     <string name="account_signed_out_offline">Deconectat. Lista dvs. nu a putut fi sincronizată, așa că a fost păstrată pe acest dispozitiv.</string>
     <string name="account_signing_in">Se conectează…</string>
-    <string name="account_subtitle">Conectați-vă la contul dvs. ClipBox</string>
+    <string name="account_subtitle">Conectați-vă la contul dvs. StreamHub</string>
     <string name="account_sync_done">Sincronizare finalizată</string>
     <string name="account_terms_required">Vă rugăm să consultați Termenii și condițiile înainte de a vă înregistra</string>
     <string name="account_title">Cont</string>
@@ -99,21 +99,21 @@ ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai b
     <string name="actor_read_more">Citiți mai multe</string>
     <string name="actor_wikipedia_failed">Wikipedia nu a putut fi deschisă.</string>
     <string name="ad_autoclose_fmt">Se închide automat în %1$d s</string>
-    <string name="ad_blocked_note">Un blocant de reclame oprește această reclamă. Reclamele păstrează ClipBox gratuit: dezactivează-l pentru ClipBox sau ia VIP.</string>
+    <string name="ad_blocked_note">Un blocant de reclame oprește această reclamă. Reclamele păstrează StreamHub gratuit: dezactivează-l pentru StreamHub sau ia VIP.</string>
     <string name="ad_close">Închide reclama</string>
     <string name="ad_label">Reclamă</string>
     <string name="ad_loading">Se încarcă reclama…</string>
     <string name="ad_open">Deschide reclama</string>
     <string name="ad_page_hint">Săgețile mută cursorul · OK face clic · Înapoi închide</string>
-    <string name="ad_popup_note">Reclamele păstrează ClipBox gratuit și ajută la plata serverelor și a întreținerii.</string>
+    <string name="ad_popup_note">Reclamele păstrează StreamHub gratuit și ajută la plata serverelor și a întreținerii.</string>
     <string name="ad_remove_with_vip">Fără reclame cu VIP</string>
     <string name="add_to_favourites">Adăugați la Favorite</string>
     <string name="added_to_favourites">Adăugat la Favorite</string>
     <string name="added_to_my_list">Adăugat la Lista mea</string>
     <string name="alert_dialog_title">Observați</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Umpleți</string>
     <string name="aspect_fills_already">imaginea umple deja ecranul</string>
     <string name="aspect_fit">Încadrare</string>
@@ -178,9 +178,9 @@ ClipBox este făcut de o echipă mică ce îl folosește zilnic și devine mai b
     <string name="call_notification_ongoing_text">Apel în desfășurare</string>
     <string name="call_notification_screening_text">Se filtrează un apel primit</string>
     <string name="capture_blocked_exit">Ieșire</string>
-    <string name="capture_blocked_intro">ClipBox nu rulează atâta timp cât pe acest dispozitiv este instalat un instrument de captură a rețelei sau un proxy.</string>
-    <string name="capture_blocked_outro">Dezinstalează-l și deschide ClipBox din nou.</string>
-    <string name="capture_blocked_title">ClipBox nu poate rula pe acest dispozitiv</string>
+    <string name="capture_blocked_intro">StreamHub nu rulează atâta timp cât pe acest dispozitiv este instalat un instrument de captură a rețelei sau un proxy.</string>
+    <string name="capture_blocked_outro">Dezinstalează-l și deschide StreamHub din nou.</string>
+    <string name="capture_blocked_title">StreamHub nu poate rula pe acest dispozitiv</string>
     <string name="cast_ad_label">Anunț</string>
     <string name="cast_button_cast">Distribuție</string>
     <string name="cast_casting_to_device">Se proiectează pe %1$s</string>
@@ -379,7 +379,7 @@ De asemenea, puteți introduce manual IP-ul televizorului."</string>
     <string name="err_service_unavailable">Serviciul este temporar indisponibil. Vă rugăm să încercați din nou.</string>
     <string name="err_signed_out_sign_in">Ai fost deconectat pe acest dispozitiv. Conectează-te din nou.</string>
     <string name="err_too_many_requests">Prea multe cereri. Vă rugăm să așteptați un moment.</string>
-    <string name="err_update_for_recovery">Actualizează ClipBox la cea mai nouă versiune pentru a crea un cod de recuperare nou.</string>
+    <string name="err_update_for_recovery">Actualizează StreamHub la cea mai nouă versiune pentru a crea un cod de recuperare nou.</string>
     <string name="error_a11y_label">Eroare: nevalidă</string>
     <string name="error_bad_intent">A primit un link nevalid. Nu s-a putut deschide.</string>
     <string name="error_icon_content_description">Eroare</string>
@@ -458,16 +458,16 @@ De asemenea, puteți introduce manual IP-ul televizorului."</string>
 
 Nu toate titlurile pot fi redate, unele funcționează, iar altele nu.
 
-ClipBox este nou și în dezvoltare, ar putea exista unele erori."</string>
+StreamHub este nou și în dezvoltare, ar putea exista unele erori."</string>
     <string name="first_launch_ok">Am înțeles</string>
     <string name="first_launch_title">Bine ai revenit!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Descărcați actualizarea</string>
     <string name="force_update_fallback_msg">Este necesară o nouă versiune pentru a continua să utilizați această aplicație.</string>
     <string name="force_update_subtitle">Actualizare necesară</string>
     <string name="gate_connecting">Încărcare</string>
     <string name="gate_retry">Reîncercați</string>
-    <string name="gate_unavailable_message">"ClipBox nu poate ajunge la serverele sale.
+    <string name="gate_unavailable_message">"StreamHub nu poate ajunge la serverele sale.
 Vă rugăm să vă verificați conexiunea și să încercați din nou."</string>
     <string name="gate_unavailable_title">Serviciu indisponibil</string>
     <string name="genre_action">Acțiune</string>
@@ -492,7 +492,7 @@ Vă rugăm să vă verificați conexiunea și să încercați din nou."</string>
     <string name="lang_available_body">În prezent folosiți aplicația în %1$s. Doriți să schimbați? Puteți modifica oricând acest lucru în Setări.</string>
     <string name="lang_available_keep">Păstrează %1$s</string>
     <string name="lang_available_switch">Comută la %1$s</string>
-    <string name="lang_available_title">ClipBox este acum disponibil în %1$s</string>
+    <string name="lang_available_title">StreamHub este acum disponibil în %1$s</string>
     <string name="launcher_instructions">"Nu trebuie să faceți nimic aici.
 
 Dacă aveți o adresă URL a fluxului, o puteți reda direct mai jos.
@@ -639,17 +639,17 @@ Adăugați filme și emisiuni din pagina cu detalii."</string>
     <string name="pair_scan_allow">Permite camera</string>
     <string name="pair_scan_button">Scanează codul QR</string>
     <string name="pair_scan_hint">Îndreaptă camera spre codul QR de pe TV</string>
-    <string name="pair_scan_no_camera">Pentru a scana codul, ClipBox are nevoie de cameră. Este folosită doar cât timp acest ecran e deschis.</string>
+    <string name="pair_scan_no_camera">Pentru a scana codul, StreamHub are nevoie de cameră. Este folosită doar cât timp acest ecran e deschis.</string>
     <string name="pair_scan_torch">Lanternă</string>
     <string name="pair_scan_type_instead">Introdu codul manual</string>
-    <string name="pair_scan_wrong">Acesta nu este un cod TV ClipBox. Scanează codul de pe TV.</string>
+    <string name="pair_scan_wrong">Acesta nu este un cod TV StreamHub. Scanează codul de pe TV.</string>
     <string name="pair_tv_button">Conectează-te cu telefonul</string>
     <string name="pair_tv_confirm_hint">Confirmă pe telefon și acest TV se conectează singur.</string>
     <string name="pair_tv_done_fmt">Conectat ca %1$s</string>
     <string name="pair_tv_expires_fmt">Cod valabil încă %1$s</string>
     <string name="pair_tv_failed">Nu s-a putut obține un cod. Verifică conexiunea și încearcă din nou.</string>
     <string name="pair_tv_new_code">Cod nou</string>
-    <string name="pair_tv_or_code">Sau deschide ClipBox pe telefon, mergi la Cont, apoi Conectare pe TV, și introdu codul de sub codul QR.</string>
+    <string name="pair_tv_or_code">Sau deschide StreamHub pe telefon, mergi la Cont, apoi Conectare pe TV, și introdu codul de sub codul QR.</string>
     <string name="pair_tv_scan">Scanează codul cu camera telefonului</string>
     <string name="pair_tv_waiting">Se așteaptă telefonul…</string>
     <string name="parental_age_fmt">%1$d ani și mai puțin</string>
@@ -718,7 +718,7 @@ Asta e tot. VIP pornește singur pe acest TV imediat ce plata este văzută."</s
 
 1. Atinge Folosește un voucher Azteco › De unde cumpăr un voucher? și cumpără un voucher Bitcoin Azteco (On-Chain) dintr-unul din magazine. Plătești ca de obicei, de exemplu cu cardul.
 2. Primești un cod de 16 cifre.
-3. În ClipBox, atinge Folosește un voucher Azteco, apoi Voucher Bitcoin. Se deschide pagina noastră de vouchere.
+3. În StreamHub, atinge Folosește un voucher Azteco, apoi Voucher Bitcoin. Se deschide pagina noastră de vouchere.
 4. Introdu codul acolo. Îl valorificăm noi pentru tine și verificăm că a ajuns.
 
 Asta e tot. VIP pornește singur în câteva minute."</string>
@@ -751,12 +751,12 @@ Asta e tot. VIP pornește singur pe acest TV în câteva minute."</string>
     <string name="premium_state_confirming_title">Plată primită</string>
     <string name="premium_state_partial_body_fmt">Ai plătit $%1$s. Încă $%2$s și VIP e al tău. Ce ai plătit rămâne în contul tău.</string>
     <string name="premium_state_partial_title">Aproape gata</string>
-    <string name="premium_state_vip_body">Fără reclame pe niciun dispozitiv pe care te conectezi. Mulțumim că susții ClipBox.</string>
+    <string name="premium_state_vip_body">Fără reclame pe niciun dispozitiv pe care te conectezi. Mulțumim că susții StreamHub.</string>
     <string name="premium_state_vip_title">Ești VIP</string>
     <string name="premium_state_waiting_body">Finalizează plata pe pagina de plată. Ecranul acesta se actualizează singur imediat ce plata este văzută.</string>
     <string name="premium_state_waiting_title">Se așteaptă plata ta</string>
     <string name="premium_tagline">O singură plată. A ta pentru totdeauna.</string>
-    <string name="premium_tv_phone_hint">Ai un voucher Lightning? Folosește-l în ClipBox pe telefon, conectat la același cont. VIP te urmează cu contul și pe acest TV.</string>
+    <string name="premium_tv_phone_hint">Ai un voucher Lightning? Folosește-l în StreamHub pe telefon, conectat la același cont. VIP te urmează cu contul și pe acest TV.</string>
     <string name="premium_tv_scan">Scanează cu telefonul pentru a plăti</string>
     <string name="premium_tv_show_checkout">Plătește cu cripto</string>
     <string name="premium_tv_show_voucher">Voucher Bitcoin</string>
@@ -859,7 +859,7 @@ Asta e tot. VIP pornește singur pe acest TV în câteva minute."</string>
     <string name="servers_probe_starting">Se pornește… au rămas %1$d s</string>
     <string name="servers_tab_experimental">Mai multe limbi</string>
     <string name="servers_tab_main">Standard</string>
-    <string name="settings_about">Despre ClipBox</string>
+    <string name="settings_about">Despre StreamHub</string>
     <string name="settings_about_summary">Informații despre versiune, credite și jurnal de modificări</string>
     <string name="settings_account">Contul meu</string>
     <string name="settings_account_loggedout">Neconectat</string>
@@ -891,13 +891,13 @@ Asta e tot. VIP pornește singur pe acest TV în câteva minute."</string>
     <string name="settings_next_episode">Redă automat episodul următor</string>
     <string name="settings_next_episode_summary">Afișează o numărătoare inversă la generic și continuă singur</string>
     <string name="settings_notifications">Notificări</string>
-    <string name="settings_notifications_summary">Primiți anunțuri și actualizări de la ClipBox</string>
+    <string name="settings_notifications_summary">Primiți anunțuri și actualizări de la StreamHub</string>
     <string name="settings_parental">Control parental</string>
     <string name="settings_parental_off">Dezactivat</string>
     <string name="settings_parental_on_fmt">Se ascund titlurile clasificate peste %1$d ani</string>
     <string name="settings_pref_sub_lang">Limba preferată</string>
     <string name="settings_reset_app">Resetați aplicația</string>
-    <string name="settings_reset_app_confirm">Aceasta șterge toate datele aplicației și închide ClipBox. Continua?</string>
+    <string name="settings_reset_app_confirm">Aceasta șterge toate datele aplicației și închide StreamHub. Continua?</string>
     <string name="settings_reset_app_summary">Ștergeți toate datele și începeți din nou</string>
     <string name="settings_reset_tips">Golește Lista mea, favoritele și Continuă vizionarea</string>
     <string name="settings_reset_tips_confirm">Golești toată Lista mea, favoritele tale și tot ce ai început?</string>
@@ -1076,7 +1076,7 @@ Asta e tot. VIP pornește singur pe acest TV în câteva minute."</string>
     <string name="tamper_blocked">Această copie a aplicației nu este autentică.</string>
     <string name="terms_gate_accept">Acceptați</string>
     <string name="terms_gate_decline">Declin</string>
-    <string name="terms_gate_message">Consultați și acceptați Termenii și condițiile noastre pentru a începe să utilizați ClipBox.</string>
+    <string name="terms_gate_message">Consultați și acceptați Termenii și condițiile noastre pentru a începe să utilizați StreamHub.</string>
     <string name="terms_gate_subtitle">Vă rugăm să citiți și să acceptați acestea pentru a continua</string>
     <string name="terms_gate_title">Termeni și condiții</string>
     <string name="touch_lock_desc">Ecran de blocare</string>
@@ -1084,14 +1084,14 @@ Asta e tot. VIP pornește singur pe acest TV în câteva minute."</string>
     <string name="touch_locked_toast">Ecran blocat. Atingeți pictograma de blocare pentru a debloca.</string>
     <string name="track_off">Off</string>
     <string name="tv_account_avatar">Poză de profil</string>
-    <string name="tv_account_avatar_phone_only">Poza de profil se alege dintr-o fotografie de pe dispozitivul tău. Acest televizor nu are nicio aplicație care să facă asta, așa că setează-o în ClipBox pe telefon și va apărea și aici.</string>
+    <string name="tv_account_avatar_phone_only">Poza de profil se alege dintr-o fotografie de pe dispozitivul tău. Acest televizor nu are nicio aplicație care să facă asta, așa că setează-o în StreamHub pe telefon și va apărea și aici.</string>
     <string name="tv_account_choose_image">Alege o imagine</string>
     <string name="tv_account_new_password_hint">Parolă nouă</string>
     <string name="tv_account_recover_action">Resetează parola</string>
     <string name="tv_account_recovery_fmt">"Cod de recuperare: %1$s
 
 Notează-l. Se afișează o singură dată și este singura cale de întoarcere dacă îți uiți parola."</string>
-    <string name="tv_account_register_hint">Nu ai încă un cont? Creează-l în aplicația ClipBox de pe telefon, apoi conectează-te aici.</string>
+    <string name="tv_account_register_hint">Nu ai încă un cont? Creează-l în aplicația StreamHub de pe telefon, apoi conectează-te aici.</string>
     <string name="tv_account_saved">Salvat</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Imagine (estompată)</string>
@@ -1194,7 +1194,7 @@ Notează-l. Se afișează o singură dată și este singura cale de întoarcere 
     <string name="tv_ui_scale_title">Dimensiunea interfeței</string>
     <string name="tv_value_off">Dezactivat</string>
     <string name="tv_value_on">Activat</string>
-    <string name="tv_whatsnew_body">ClipBox a fost reconstruit pentru ecranul mare și pentru telecomanda ta. Tot ce aveai este încă aici, doar că e mai ușor de ajuns la el de pe canapea. Preferi aspectul de dinainte? Poți reveni la el oricând din setări.</string>
+    <string name="tv_whatsnew_body">StreamHub a fost reconstruit pentru ecranul mare și pentru telecomanda ta. Tot ce aveai este încă aici, doar că e mai ușor de ajuns la el de pe canapea. Preferi aspectul de dinainte? Poți reveni la el oricând din setări.</string>
     <string name="tv_whatsnew_classic">Folosește aspectul clasic</string>
     <string name="tv_whatsnew_continue">Aruncă o privire</string>
     <string name="tv_whatsnew_title">Un aspect nou pentru televizor</string>
@@ -1211,21 +1211,21 @@ Descărcați-o și instalați-o acum?"</string>
     <string name="update_downloading">Introducerea noilor biți...</string>
     <string name="update_install_help">"1. Atingeți Actualizare pentru a descărca noul APK.
 2. Când se deschide programul de instalare, atingeți Instalare.
-3. Dacă Android îl blochează, permiteți „Instalați aplicații necunoscute” pentru ClipBox, apoi atingeți Instalare din nou.
+3. Dacă Android îl blochează, permiteți „Instalați aplicații necunoscute” pentru StreamHub, apoi atingeți Instalare din nou.
 4. Setările și lista sunt păstrate, se instalează peste aplicația curentă."</string>
     <string name="update_install_help_summary">Ce trebuie să faceți dacă instalarea este blocată</string>
     <string name="update_install_help_title">Cum se instalează</string>
     <string name="update_later">mai târziu</string>
-    <string name="update_permission_msg_firetv">"Fire TV instalează actualizări doar din aplicațiile pe care le permiți. Alege Deschide setările, activează ClipBox la \"Instalare aplicații necunoscute\" și apasă Înapoi. Actualizarea continuă apoi singură.
+    <string name="update_permission_msg_firetv">"Fire TV instalează actualizări doar din aplicațiile pe care le permiți. Alege Deschide setările, activează StreamHub la \"Instalare aplicații necunoscute\" și apasă Înapoi. Actualizarea continuă apoi singură.
 
-Dacă ecranul nu se deschide: Setări > Fire TV-ul meu > Opțiuni pentru dezvoltatori > Instalare aplicații necunoscute > ClipBox. Nu vezi Opțiuni pentru dezvoltatori? Mergi mai întâi la Setări > Fire TV-ul meu > Despre și apasă OK de 7 ori pe numele dispozitivului."</string>
-    <string name="update_permission_msg_phone">Android instalează actualizări doar din aplicațiile pe care le permiți. Atinge Deschide setările, activează \"Permite din această sursă\" pentru ClipBox și revino. Actualizarea continuă apoi singură.</string>
-    <string name="update_permission_msg_tv">"Televizorul tău instalează actualizări doar din aplicațiile pe care le permiți. Alege Deschide setările, activează ClipBox la \"Instalare aplicații necunoscute\" și apasă Înapoi. Actualizarea continuă apoi singură.
+Dacă ecranul nu se deschide: Setări > Fire TV-ul meu > Opțiuni pentru dezvoltatori > Instalare aplicații necunoscute > StreamHub. Nu vezi Opțiuni pentru dezvoltatori? Mergi mai întâi la Setări > Fire TV-ul meu > Despre și apasă OK de 7 ori pe numele dispozitivului."</string>
+    <string name="update_permission_msg_phone">Android instalează actualizări doar din aplicațiile pe care le permiți. Atinge Deschide setările, activează \"Permite din această sursă\" pentru StreamHub și revino. Actualizarea continuă apoi singură.</string>
+    <string name="update_permission_msg_tv">"Televizorul tău instalează actualizări doar din aplicațiile pe care le permiți. Alege Deschide setările, activează StreamHub la \"Instalare aplicații necunoscute\" și apasă Înapoi. Actualizarea continuă apoi singură.
 
-Dacă ecranul nu se deschide: Setări > Aplicații > Securitate și restricții > Surse necunoscute > ClipBox."</string>
+Dacă ecranul nu se deschide: Setări > Aplicații > Securitate și restricții > Surse necunoscute > StreamHub."</string>
     <string name="update_permission_not_opened">Setările nu au putut fi deschise. Urmează pașii de pe ecran.</string>
     <string name="update_permission_open">Deschide setările</string>
-    <string name="update_permission_title">Permite ClipBox să instaleze actualizări</string>
+    <string name="update_permission_title">Permite StreamHub să instaleze actualizări</string>
     <string name="update_unavailable">Serviciu de actualizare indisponibil. Aplicația nu poate verifica actualizările în acest moment.</string>
     <string name="update_up_to_date">Sunteți deja la cea mai recentă versiune. Frumos.</string>
     <string name="v7_preference_off">DEZACTIVAT</string>
@@ -1240,10 +1240,10 @@ Dacă ecranul nu se deschide: Setări > Aplicații > Securitate și restricții 
     <string name="voucher_ln_bad">Acesta nu pare un link de voucher Lightning. Începe cu LNURL.</string>
     <string name="voucher_ln_redeeming">Se folosește voucherul…</string>
     <string name="voucher_ln_steps">"1. Deschide azte.co, alege Lightning și folosește acolo codul voucherului.
-2. Vei primi un link Lightning (LNURL). Atinge-l pentru a deschide ClipBox sau copiază-l și lipește-l aici."</string>
+2. Vei primi un link Lightning (LNURL). Atinge-l pentru a deschide StreamHub sau copiază-l și lipește-l aici."</string>
     <string name="voucher_loading_address">Se pregătește adresa ta…</string>
     <string name="voucher_onchain">Voucher Bitcoin</string>
-    <string name="voucher_onchain_note">Adresa aceasta aparține contului tău pentru această plată. Poți închide ClipBox între timp; VIP pornește singur.</string>
+    <string name="voucher_onchain_note">Adresa aceasta aparține contului tău pentru această plată. Poți închide StreamHub între timp; VIP pornește singur.</string>
     <string name="voucher_onchain_steps">"1. Deschide azte.co și folosește acolo codul voucherului.
 2. Când ți se cere o adresă Bitcoin, folosește-o pe aceasta:"</string>
     <string name="voucher_onchain_steps_code">"1. Introdu mai jos codul de 16 cifre de pe voucher.

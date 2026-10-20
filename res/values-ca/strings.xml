@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, biblioteques i llicències</string>
     <string name="about_attributions_title">Llicències i atribucions</string>
     <string name="about_changelog_title">Registre de canvis</string>
-    <string name="about_credits_body">"ClipBox és una manera neta i tranquil·la de veure pel·lícules i sèries a Android. Tot és al mateix lloc, així pots explorar què és popular, buscar alguna cosa concreta o continuar exactament on ho vas deixar.
+    <string name="about_credits_body">"StreamHub és una manera neta i tranquil·la de veure pel·lícules i sèries a Android. Tot és al mateix lloc, així pots explorar què és popular, buscar alguna cosa concreta o continuar exactament on ho vas deixar.
 
 Els subtítols es troben i se sincronitzen per tu en molts idiomes, cada títol ofereix diverses fonts, i pots enviar el que estiguis veient a un Chromecast o a una smart TV. L'aplicació funciona en telèfons, tauletes, Android TV i Fire TV, i un compte opcional manté la teva llista i el teu historial sincronitzats en tots ells.
 
-ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que ens explica la gent."</string>
-    <string name="about_credits_title">Sobre ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub el fa un equip petit que l'utilitza cada dia, i millora gràcies al que ens explica la gent."</string>
+    <string name="about_credits_title">Sobre StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Fonts de contingut i marques comercials</string>
     <string name="about_disclaimer_title">Exempció de responsabilitat</string>
     <string name="about_legal_title">Legal</string>
     <string name="about_privacy_subtitle">Quines dades es recullen i per què</string>
     <string name="about_privacy_title">Política de privadesa</string>
-    <string name="about_terms_subtitle">Com es pot utilitzar ClipBox</string>
+    <string name="about_terms_subtitle">Com es pot utilitzar StreamHub</string>
     <string name="about_terms_title">Termes i condicions</string>
     <string name="about_title">Sobre</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que 
     <string name="account_go_register">Nou aquí? Creeu un compte</string>
     <string name="account_go_register_action">Creeu un compte</string>
     <string name="account_guest">Convidat</string>
-    <string name="account_member">Membre de ClipBox</string>
+    <string name="account_member">Membre de StreamHub</string>
     <string name="account_member_since_fmt">Membre des de %1$s</string>
     <string name="account_new_password_hint">Contrasenya nova</string>
     <string name="account_new_username_hint">"Nou nom d'usuari"</string>
@@ -65,7 +65,7 @@ ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que 
     <string name="account_recovery_code">Codi de recuperació</string>
     <string name="account_recovery_code_hint">Codi de recuperació</string>
     <string name="account_register">Crea un compte</string>
-    <string name="account_register_subtitle">Creeu el vostre compte ClipBox</string>
+    <string name="account_register_subtitle">Creeu el vostre compte StreamHub</string>
     <string name="account_session_ended">El teu compte ja no està disponible. Heu tancat la sessió.</string>
     <string name="account_settings_section">Configuració del compte</string>
     <string name="account_sign_in">Inicia sessió</string>
@@ -73,7 +73,7 @@ ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que 
     <string name="account_sign_out">Tanca la sessió</string>
     <string name="account_signed_out_offline">"Tancat la sessió. La vostra llista no s'ha pogut sincronitzar, de manera que s'ha conservat en aquest dispositiu."</string>
     <string name="account_signing_in">"S'està iniciant la sessió…"</string>
-    <string name="account_subtitle">Inicieu la sessió al vostre compte ClipBox</string>
+    <string name="account_subtitle">Inicieu la sessió al vostre compte StreamHub</string>
     <string name="account_sync_done">Sincronització completa</string>
     <string name="account_terms_required">Si us plau, reviseu els Termes i condicions abans de registrar-vos</string>
     <string name="account_title">Compte</string>
@@ -99,21 +99,21 @@ ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que 
     <string name="actor_read_more">Llegeix més</string>
     <string name="actor_wikipedia_failed">"No s'ha pogut obrir la Viquipèdia."</string>
     <string name="ad_autoclose_fmt">"Es tanca automàticament d'aquí a %1$d s"</string>
-    <string name="ad_blocked_note">Un bloquejador d’anuncis atura aquest anunci. Els anuncis mantenen ClipBox gratuït: desactiva’l per a ClipBox o fes-te VIP.</string>
+    <string name="ad_blocked_note">Un bloquejador d’anuncis atura aquest anunci. Els anuncis mantenen StreamHub gratuït: desactiva’l per a StreamHub o fes-te VIP.</string>
     <string name="ad_close">"Tanca l'anunci"</string>
     <string name="ad_label">Anunci</string>
     <string name="ad_loading">"Carregant l'anunci…"</string>
     <string name="ad_open">"Obre l'anunci"</string>
     <string name="ad_page_hint">Les fletxes mouen el punter · OK fa clic · Enrere tanca</string>
-    <string name="ad_popup_note">Els anuncis mantenen ClipBox gratuït i ajuden a pagar els servidors i el manteniment.</string>
+    <string name="ad_popup_note">Els anuncis mantenen StreamHub gratuït i ajuden a pagar els servidors i el manteniment.</string>
     <string name="ad_remove_with_vip">Sense anuncis amb VIP</string>
     <string name="add_to_favourites">Afegeix a Preferits</string>
     <string name="added_to_favourites">"S'ha afegit a Preferits"</string>
     <string name="added_to_my_list">"S'ha afegit a La meva llista"</string>
     <string name="alert_dialog_title">Avís</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Omplir</string>
     <string name="aspect_fills_already">la imatge ja omple la pantalla</string>
     <string name="aspect_fit">Ajustar</string>
@@ -178,9 +178,9 @@ ClipBox el fa un equip petit que l'utilitza cada dia, i millora gràcies al que 
     <string name="call_notification_ongoing_text">Trucada en curs</string>
     <string name="call_notification_screening_text">"S'està filtrant una trucada entrant"</string>
     <string name="capture_blocked_exit">Surt</string>
-    <string name="capture_blocked_intro">El ClipBox no funciona mentre hi hagi instal·lada en aquest dispositiu una eina de captura de xarxa o un servidor intermediari.</string>
-    <string name="capture_blocked_outro">Desinstal·la-la i torna a obrir el ClipBox.</string>
-    <string name="capture_blocked_title">El ClipBox no pot funcionar en aquest dispositiu</string>
+    <string name="capture_blocked_intro">El StreamHub no funciona mentre hi hagi instal·lada en aquest dispositiu una eina de captura de xarxa o un servidor intermediari.</string>
+    <string name="capture_blocked_outro">Desinstal·la-la i torna a obrir el StreamHub.</string>
+    <string name="capture_blocked_title">El StreamHub no pot funcionar en aquest dispositiu</string>
     <string name="cast_ad_label">Anunci</string>
     <string name="cast_button_cast">Cast</string>
     <string name="cast_casting_to_device">"S'està emetent a %1$s"</string>
@@ -379,7 +379,7 @@ També podeu introduir la IP del vostre televisor manualment."</string>
     <string name="err_service_unavailable">Servei temporalment no disponible. Si us plau, torna-ho a provar.</string>
     <string name="err_signed_out_sign_in">"S'ha tancat la sessió en aquest dispositiu. Torna a iniciar la sessió."</string>
     <string name="err_too_many_requests">Massa peticions. Si us plau, espereu un moment.</string>
-    <string name="err_update_for_recovery">Actualitza ClipBox a la darrera versió per crear un codi de recuperació nou.</string>
+    <string name="err_update_for_recovery">Actualitza StreamHub a la darrera versió per crear un codi de recuperació nou.</string>
     <string name="error_a11y_label">Error: no vàlid</string>
     <string name="error_bad_intent">"S'ha rebut un enllaç no vàlid. No s'ha pogut obrir."</string>
     <string name="error_icon_content_description">Error</string>
@@ -458,16 +458,16 @@ També podeu introduir la IP del vostre televisor manualment."</string>
 
 No tots els títols es poden reproduir, alguns funcionen i d'altres no.
 
-ClipBox és nou i en desenvolupament, pot haver-hi alguns errors."</string>
+StreamHub és nou i en desenvolupament, pot haver-hi alguns errors."</string>
     <string name="first_launch_ok">Ho entenc</string>
     <string name="first_launch_title">Benvingut de nou!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">"Descarrega l'actualització"</string>
     <string name="force_update_fallback_msg">Cal una versió nova per continuar utilitzant aquesta aplicació.</string>
     <string name="force_update_subtitle">Actualització necessària</string>
     <string name="gate_connecting">Carregant</string>
     <string name="gate_retry">Torna-ho a provar</string>
-    <string name="gate_unavailable_message">"ClipBox no pot arribar als seus servidors.
+    <string name="gate_unavailable_message">"StreamHub no pot arribar als seus servidors.
 Si us plau, comproveu la vostra connexió i torneu-ho a provar."</string>
     <string name="gate_unavailable_title">Servei no disponible</string>
     <string name="genre_action">Acció</string>
@@ -492,7 +492,7 @@ Si us plau, comproveu la vostra connexió i torneu-ho a provar."</string>
     <string name="lang_available_body">"Actualment feu servir l'aplicació en %1$s. Voleu canviar-la? Podeu modificar-ho en qualsevol moment a Configuració."</string>
     <string name="lang_available_keep">Mantén %1$s</string>
     <string name="lang_available_switch">Canvia a %1$s</string>
-    <string name="lang_available_title">ClipBox ja està disponible en %1$s</string>
+    <string name="lang_available_title">StreamHub ja està disponible en %1$s</string>
     <string name="launcher_instructions">"No heu de fer res aquí.
 
 Si teniu un URL de reproducció, podeu reproduir-lo directament a sota.
@@ -639,17 +639,17 @@ Afegiu pel·lícules i programes des de la pàgina de detalls."</string>
     <string name="pair_scan_allow">Permet la càmera</string>
     <string name="pair_scan_button">Escaneja el codi QR</string>
     <string name="pair_scan_hint">Apunta la càmera al codi QR de la TV</string>
-    <string name="pair_scan_no_camera">"Per escanejar el codi, ClipBox necessita la càmera. Només s'utilitza mentre aquesta pantalla és oberta."</string>
+    <string name="pair_scan_no_camera">"Per escanejar el codi, StreamHub necessita la càmera. Només s'utilitza mentre aquesta pantalla és oberta."</string>
     <string name="pair_scan_torch">Llanterna</string>
     <string name="pair_scan_type_instead">Escriu el codi</string>
-    <string name="pair_scan_wrong">Aquest no és un codi de TV de ClipBox. Escaneja el codi de la TV.</string>
+    <string name="pair_scan_wrong">Aquest no és un codi de TV de StreamHub. Escaneja el codi de la TV.</string>
     <string name="pair_tv_button">Inicia la sessió amb el mòbil</string>
     <string name="pair_tv_confirm_hint">Confirma-ho al mòbil i aquesta TV iniciarà la sessió sola.</string>
     <string name="pair_tv_done_fmt">Sessió iniciada com a %1$s</string>
     <string name="pair_tv_expires_fmt">Codi vàlid %1$s més</string>
     <string name="pair_tv_failed">"No s'ha pogut obtenir un codi. Comprova la connexió i torna-ho a provar."</string>
     <string name="pair_tv_new_code">Codi nou</string>
-    <string name="pair_tv_or_code">O obre ClipBox al mòbil, ves a Compte i després Inicia la sessió a la TV, i introdueix el codi que hi ha sota el codi QR.</string>
+    <string name="pair_tv_or_code">O obre StreamHub al mòbil, ves a Compte i després Inicia la sessió a la TV, i introdueix el codi que hi ha sota el codi QR.</string>
     <string name="pair_tv_scan">Escaneja el codi amb la càmera del mòbil</string>
     <string name="pair_tv_waiting">Esperant el mòbil…</string>
     <string name="parental_age_fmt">%1$d anys o menys</string>
@@ -718,7 +718,7 @@ Ja està. El VIP s'activa sol en aquesta TV tan bon punt es veu el pagament."</s
 
 1. Toca Bescanvia un val Azteco › On compro un val? i compra un val Bitcoin d'Azteco (On-Chain) en una de les botigues. Pagues com sempre, per exemple amb targeta.
 2. Reps un codi de 16 xifres.
-3. A ClipBox, toca Bescanvia un val Azteco i després Val Bitcoin. S'obre la nostra pàgina de vals.
+3. A StreamHub, toca Bescanvia un val Azteco i després Val Bitcoin. S'obre la nostra pàgina de vals.
 4. Introdueix-hi el codi. El bescanviem per tu i comprovem que ha arribat.
 
 Ja està. El VIP s'activa sol en uns minuts."</string>
@@ -751,12 +751,12 @@ Ja està. El VIP s'activa sol en aquesta TV en uns minuts."</string>
     <string name="premium_state_confirming_title">Pagament rebut</string>
     <string name="premium_state_partial_body_fmt">Has pagat $%1$s. Falten $%2$s i el VIP és teu. El que has pagat queda al teu compte.</string>
     <string name="premium_state_partial_title">Gairebé a punt</string>
-    <string name="premium_state_vip_body">Cap anunci en cap dispositiu on iniciïs sessió. Gràcies per donar suport a ClipBox.</string>
+    <string name="premium_state_vip_body">Cap anunci en cap dispositiu on iniciïs sessió. Gràcies per donar suport a StreamHub.</string>
     <string name="premium_state_vip_title">Ets VIP</string>
     <string name="premium_state_waiting_body">"Acaba el pagament a la pàgina de pagament. Aquesta pantalla s'actualitza sola tan bon punt es detecta el pagament."</string>
     <string name="premium_state_waiting_title">Esperant el teu pagament</string>
     <string name="premium_tagline">Un sol pagament. Teu per sempre.</string>
-    <string name="premium_tv_phone_hint">"Tens un val Lightning? Bescanvia'l a ClipBox al mòbil, amb el mateix compte. El VIP segueix el teu compte fins a aquesta TV."</string>
+    <string name="premium_tv_phone_hint">"Tens un val Lightning? Bescanvia'l a StreamHub al mòbil, amb el mateix compte. El VIP segueix el teu compte fins a aquesta TV."</string>
     <string name="premium_tv_scan">Escaneja amb el mòbil per pagar</string>
     <string name="premium_tv_show_checkout">Paga amb cripto</string>
     <string name="premium_tv_show_voucher">Val Bitcoin</string>
@@ -859,7 +859,7 @@ Ja està. El VIP s'activa sol en aquesta TV en uns minuts."</string>
     <string name="servers_probe_starting">"S'està iniciant… queden %1$d s"</string>
     <string name="servers_tab_experimental">Més idiomes</string>
     <string name="servers_tab_main">Estàndard</string>
-    <string name="settings_about">Sobre ClipBox</string>
+    <string name="settings_about">Sobre StreamHub</string>
     <string name="settings_about_summary">Informació de la versió, crèdits i registre de canvis</string>
     <string name="settings_account">El meu compte</string>
     <string name="settings_account_loggedout">"No s'ha iniciat la sessió"</string>
@@ -891,13 +891,13 @@ Ja està. El VIP s'activa sol en aquesta TV en uns minuts."</string>
     <string name="settings_next_episode">Reprodueix el següent episodi automàticament</string>
     <string name="settings_next_episode_summary">Mostra un compte enrere als crèdits i continua tot sol</string>
     <string name="settings_notifications">Notificacions</string>
-    <string name="settings_notifications_summary">Rep anuncis i actualitzacions de ClipBox</string>
+    <string name="settings_notifications_summary">Rep anuncis i actualitzacions de StreamHub</string>
     <string name="settings_parental">Control parental</string>
     <string name="settings_parental_off">Desactivat</string>
     <string name="settings_parental_on_fmt">"S'amaguen els títols classificats per damunt de %1$d"</string>
     <string name="settings_pref_sub_lang">Idioma preferit</string>
     <string name="settings_reset_app">"Restableix l'aplicació"</string>
-    <string name="settings_reset_app_confirm">"Això esborra totes les dades de l'aplicació i es tanca ClipBox. Continuar?"</string>
+    <string name="settings_reset_app_confirm">"Això esborra totes les dades de l'aplicació i es tanca StreamHub. Continuar?"</string>
     <string name="settings_reset_app_summary">Esborra totes les dades i comença de nou</string>
     <string name="settings_reset_tips">Buida La meva llista, els preferits i Continua mirant</string>
     <string name="settings_reset_tips_confirm">Vols buidar tota la teva llista, els preferits i tot el que tens començat?</string>
@@ -1076,7 +1076,7 @@ Ja està. El VIP s'activa sol en aquesta TV en uns minuts."</string>
     <string name="tamper_blocked">"Aquesta còpia de l'aplicació no és genuïna."</string>
     <string name="terms_gate_accept">Acceptar</string>
     <string name="terms_gate_decline">Declinar</string>
-    <string name="terms_gate_message">Reviseu i accepteu els nostres Termes i condicions per començar a utilitzar ClipBox.</string>
+    <string name="terms_gate_message">Reviseu i accepteu els nostres Termes i condicions per començar a utilitzar StreamHub.</string>
     <string name="terms_gate_subtitle">Si us plau, llegiu i accepteu-los per continuar</string>
     <string name="terms_gate_title">Termes i condicions</string>
     <string name="touch_lock_desc">Pantalla de bloqueig</string>
@@ -1084,14 +1084,14 @@ Ja està. El VIP s'activa sol en aquesta TV en uns minuts."</string>
     <string name="touch_locked_toast">Pantalla bloquejada. Toqueu la icona de bloqueig per desbloquejar.</string>
     <string name="track_off">Apagat</string>
     <string name="tv_account_avatar">Foto de perfil</string>
-    <string name="tv_account_avatar_phone_only">"La foto de perfil es tria d'una foto del teu dispositiu. Aquest televisor no té cap aplicació que ho pugui fer, així que configura-la a ClipBox al mòbil i apareixerà aquí."</string>
+    <string name="tv_account_avatar_phone_only">"La foto de perfil es tria d'una foto del teu dispositiu. Aquest televisor no té cap aplicació que ho pugui fer, així que configura-la a StreamHub al mòbil i apareixerà aquí."</string>
     <string name="tv_account_choose_image">Tria una imatge</string>
     <string name="tv_account_new_password_hint">Contrasenya nova</string>
     <string name="tv_account_recover_action">Restableix la contrasenya</string>
     <string name="tv_account_recovery_fmt">"Codi de recuperació: %1$s
 
 Apunta'l. Només es mostra una vegada i és l'única manera de tornar a entrar si oblides la contrasenya."</string>
-    <string name="tv_account_register_hint">"Encara no tens compte? Crea'l a l'aplicació ClipBox del mòbil i després inicia la sessió aquí."</string>
+    <string name="tv_account_register_hint">"Encara no tens compte? Crea'l a l'aplicació StreamHub del mòbil i després inicia la sessió aquí."</string>
     <string name="tv_account_saved">Desat</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Imatge (difuminada)</string>
@@ -1194,7 +1194,7 @@ Apunta'l. Només es mostra una vegada i és l'única manera de tornar a entrar s
     <string name="tv_ui_scale_title">Mida de la interfície</string>
     <string name="tv_value_off">Desactivat</string>
     <string name="tv_value_on">Activat</string>
-    <string name="tv_whatsnew_body">"El ClipBox s'ha refet per a la pantalla gran i el teu comandament. Tot el que tenies encara hi és, només que ara s'hi arriba més fàcilment des del sofà. Prefereixes l'aspecte d'abans? Pots tornar-hi quan vulguis des de la configuració."</string>
+    <string name="tv_whatsnew_body">"El StreamHub s'ha refet per a la pantalla gran i el teu comandament. Tot el que tenies encara hi és, només que ara s'hi arriba més fàcilment des del sofà. Prefereixes l'aspecte d'abans? Pots tornar-hi quan vulguis des de la configuració."</string>
     <string name="tv_whatsnew_classic">"Fes servir l'aspecte clàssic"</string>
     <string name="tv_whatsnew_continue">"Fes-hi un cop d'ull"</string>
     <string name="tv_whatsnew_title">Un aspecte nou per a la televisió</string>
@@ -1211,21 +1211,21 @@ Baixar-la i instal·lar-la ara?"</string>
     <string name="update_downloading">Introduint els nous bits...</string>
     <string name="update_install_help">"1. Toqueu Actualitza per baixar el nou APK.
 2. Quan s'obri l'instal·lador, toqueu Instal·la.
-3. Si Android el bloqueja, permet \"Instal·la aplicacions desconegudes\" per a ClipBox i, a continuació, torna a tocar Instal·la.
+3. Si Android el bloqueja, permet \"Instal·la aplicacions desconegudes\" per a StreamHub i, a continuació, torna a tocar Instal·la.
 4. La vostra configuració i la vostra llista es conserven, s'instal·la sobre l'aplicació actual."</string>
     <string name="update_install_help_summary">Què fer si la instal·lació està bloquejada</string>
     <string name="update_install_help_title">Com instal·lar</string>
     <string name="update_later">Més tard</string>
-    <string name="update_permission_msg_firetv">"La teva Fire TV només instal·la actualitzacions de les aplicacions que permets. Tria Obre la configuració, activa ClipBox a \"Instal·la aplicacions desconegudes\" i prem Enrere. L'actualització continuarà sola.
+    <string name="update_permission_msg_firetv">"La teva Fire TV només instal·la actualitzacions de les aplicacions que permets. Tria Obre la configuració, activa StreamHub a \"Instal·la aplicacions desconegudes\" i prem Enrere. L'actualització continuarà sola.
 
-Si aquesta pantalla no s'obre: Configuració > La meva Fire TV > Opcions per a desenvolupadors > Instal·la aplicacions desconegudes > ClipBox. No hi ha opcions per a desenvolupadors? Ves primer a Configuració > La meva Fire TV > Quant a i prem D'acord 7 vegades sobre el nom del dispositiu."</string>
-    <string name="update_permission_msg_phone">"Android només instal·la actualitzacions de les aplicacions que permets. Toca Obre la configuració, activa \"Permet des d'aquesta font\" per a ClipBox i torna enrere. L'actualització continuarà sola."</string>
-    <string name="update_permission_msg_tv">"La teva TV només instal·la actualitzacions de les aplicacions que permets. Tria Obre la configuració, activa ClipBox a \"Instal·la aplicacions desconegudes\" i prem Enrere. L'actualització continuarà sola.
+Si aquesta pantalla no s'obre: Configuració > La meva Fire TV > Opcions per a desenvolupadors > Instal·la aplicacions desconegudes > StreamHub. No hi ha opcions per a desenvolupadors? Ves primer a Configuració > La meva Fire TV > Quant a i prem D'acord 7 vegades sobre el nom del dispositiu."</string>
+    <string name="update_permission_msg_phone">"Android només instal·la actualitzacions de les aplicacions que permets. Toca Obre la configuració, activa \"Permet des d'aquesta font\" per a StreamHub i torna enrere. L'actualització continuarà sola."</string>
+    <string name="update_permission_msg_tv">"La teva TV només instal·la actualitzacions de les aplicacions que permets. Tria Obre la configuració, activa StreamHub a \"Instal·la aplicacions desconegudes\" i prem Enrere. L'actualització continuarà sola.
 
-Si aquesta pantalla no s'obre: Configuració > Aplicacions > Seguretat i restriccions > Fonts desconegudes > ClipBox."</string>
+Si aquesta pantalla no s'obre: Configuració > Aplicacions > Seguretat i restriccions > Fonts desconegudes > StreamHub."</string>
     <string name="update_permission_not_opened">"No s'ha pogut obrir la configuració. Segueix els passos de la pantalla."</string>
     <string name="update_permission_open">Obre la configuració</string>
-    <string name="update_permission_title">Permet que ClipBox instal·li actualitzacions</string>
+    <string name="update_permission_title">Permet que StreamHub instal·li actualitzacions</string>
     <string name="update_unavailable">"El servei d'actualització no està disponible. L'aplicació no pot comprovar si hi ha actualitzacions en aquest moment."</string>
     <string name="update_up_to_date">"Ja tens l'última versió. Bonic."</string>
     <string name="v7_preference_off">DESACTIVAT</string>
@@ -1240,10 +1240,10 @@ Si aquesta pantalla no s'obre: Configuració > Aplicacions > Seguretat i restric
     <string name="voucher_ln_bad">Això no sembla un enllaç de val Lightning. Comença per LNURL.</string>
     <string name="voucher_ln_redeeming">Bescanviant el teu val…</string>
     <string name="voucher_ln_steps">"1. Obre azte.co, tria Lightning i bescanvia-hi el codi del val.
-2. Apareixerà un enllaç Lightning (LNURL). Toca'l per obrir ClipBox, o copia'l i enganxa'l aquí."</string>
+2. Apareixerà un enllaç Lightning (LNURL). Toca'l per obrir StreamHub, o copia'l i enganxa'l aquí."</string>
     <string name="voucher_loading_address">Preparant la teva adreça…</string>
     <string name="voucher_onchain">Val Bitcoin</string>
-    <string name="voucher_onchain_note">"Aquesta adreça pertany al teu compte per a aquest pagament. Mentrestant pots tancar ClipBox; el VIP s'activarà sol."</string>
+    <string name="voucher_onchain_note">"Aquesta adreça pertany al teu compte per a aquest pagament. Mentrestant pots tancar StreamHub; el VIP s'activarà sol."</string>
     <string name="voucher_onchain_steps">"1. Obre azte.co i bescanvia-hi el codi del val.
 2. Quan et demani una adreça Bitcoin, fes servir aquesta:"</string>
     <string name="voucher_onchain_steps_code">"1. Introdueix a sota el codi de 16 xifres del teu val.

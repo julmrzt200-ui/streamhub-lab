@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, βιβλιοθήκες και άδειες</string>
     <string name="about_attributions_title">Άδειες και παραδόσεις</string>
     <string name="about_changelog_title">Καταγραφή αλλαγών</string>
-    <string name="about_credits_body">"Το ClipBox είναι ένας καθαρός, ήσυχος τρόπος να βλέπετε ταινίες και σειρές στο Android. Όλα βρίσκονται σε ένα μέρος, ώστε να περιηγείστε σε ό,τι είναι δημοφιλές, να αναζητάτε κάτι συγκεκριμένο ή να συνεχίζετε ακριβώς από εκεί που μείνατε.
+    <string name="about_credits_body">"Το StreamHub είναι ένας καθαρός, ήσυχος τρόπος να βλέπετε ταινίες και σειρές στο Android. Όλα βρίσκονται σε ένα μέρος, ώστε να περιηγείστε σε ό,τι είναι δημοφιλές, να αναζητάτε κάτι συγκεκριμένο ή να συνεχίζετε ακριβώς από εκεί που μείνατε.
 
 Οι υπότιτλοι εντοπίζονται και συγχρονίζονται για εσάς σε πολλές γλώσσες, κάθε τίτλος προσφέρει αρκετές πηγές, και ό,τι παρακολουθείτε μπορεί να σταλεί σε Chromecast ή σε smart τηλεόραση. Η εφαρμογή τρέχει σε κινητά, τάμπλετ, Android TV και Fire TV, ενώ ένας προαιρετικός λογαριασμός κρατά τη λίστα και το ιστορικό σας συγχρονισμένα σε όλα.
 
-Το ClipBox το φτιάχνει μια μικρή ομάδα που το χρησιμοποιεί καθημερινά, και βελτιώνεται χάρη σε όσα μας λέει ο κόσμος."</string>
-    <string name="about_credits_title">Σχετικά με το ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+Το StreamHub το φτιάχνει μια μικρή ομάδα που το χρησιμοποιεί καθημερινά, και βελτιώνεται χάρη σε όσα μας λέει ο κόσμος."</string>
+    <string name="about_credits_title">Σχετικά με το StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Πηγές περιεχομένου και εμπορικά σήματα</string>
     <string name="about_disclaimer_title">Αποποίηση ευθύνης</string>
     <string name="about_legal_title">Νομική</string>
     <string name="about_privacy_subtitle">Ποια δεδομένα συλλέγονται και γιατί</string>
     <string name="about_privacy_title">Πολιτική απορρήτου</string>
-    <string name="about_terms_subtitle">Πώς μπορεί να χρησιμοποιηθεί το ClipBox</string>
+    <string name="about_terms_subtitle">Πώς μπορεί να χρησιμοποιηθεί το StreamHub</string>
     <string name="about_terms_title">Όροι &amp; Προϋποθέσεις</string>
     <string name="about_title">Περίπου</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@
     <string name="account_go_register">Νέος εδώ; Δημιουργία λογαριασμού</string>
     <string name="account_go_register_action">Δημιουργία λογαριασμού</string>
     <string name="account_guest">Επισκέπτης</string>
-    <string name="account_member">Μέλος του ClipBox</string>
+    <string name="account_member">Μέλος του StreamHub</string>
     <string name="account_member_since_fmt">Μέλος από %1$s</string>
     <string name="account_new_password_hint">Νέος κωδικός πρόσβασης</string>
     <string name="account_new_username_hint">Νέο όνομα χρήστη</string>
@@ -65,7 +65,7 @@
     <string name="account_recovery_code">Κωδικός ανάκτησης</string>
     <string name="account_recovery_code_hint">Κωδικός ανάκτησης</string>
     <string name="account_register">Δημιουργία λογαριασμού</string>
-    <string name="account_register_subtitle">Δημιουργήστε τον λογαριασμό σας στο ClipBox</string>
+    <string name="account_register_subtitle">Δημιουργήστε τον λογαριασμό σας στο StreamHub</string>
     <string name="account_session_ended">Ο λογαριασμός σας δεν είναι πλέον διαθέσιμος. Έχετε αποσυνδεθεί.</string>
     <string name="account_settings_section">Ρυθμίσεις λογαριασμού</string>
     <string name="account_sign_in">Συνδεθείτε</string>
@@ -73,7 +73,7 @@
     <string name="account_sign_out">Αποσυνδεθείτε</string>
     <string name="account_signed_out_offline">Έγινε αποσύνδεση. Δεν ήταν δυνατός ο συγχρονισμός της λίστας σας, επομένως διατηρήθηκε σε αυτήν τη συσκευή.</string>
     <string name="account_signing_in">Σύνδεση…</string>
-    <string name="account_subtitle">Συνδεθείτε στον λογαριασμό σας στο ClipBox</string>
+    <string name="account_subtitle">Συνδεθείτε στον λογαριασμό σας στο StreamHub</string>
     <string name="account_sync_done">Ο συγχρονισμός ολοκληρώθηκε</string>
     <string name="account_terms_required">Διαβάστε τους Όρους &amp; Προϋποθέσεις πριν εγγραφείτε</string>
     <string name="account_title">Λογαριασμός</string>
@@ -99,21 +99,21 @@
     <string name="actor_read_more">Διαβάστε περισσότερα</string>
     <string name="actor_wikipedia_failed">Δεν ήταν δυνατό το άνοιγμα της Wikipedia.</string>
     <string name="ad_autoclose_fmt">Κλείνει αυτόματα σε %1$d δ</string>
-    <string name="ad_blocked_note">Ένα πρόγραμμα αποκλεισμού διαφημίσεων σταματά αυτή τη διαφήμιση. Οι διαφημίσεις κρατούν το ClipBox δωρεάν: απενεργοποιήστε το για το ClipBox ή πάρτε VIP.</string>
+    <string name="ad_blocked_note">Ένα πρόγραμμα αποκλεισμού διαφημίσεων σταματά αυτή τη διαφήμιση. Οι διαφημίσεις κρατούν το StreamHub δωρεάν: απενεργοποιήστε το για το StreamHub ή πάρτε VIP.</string>
     <string name="ad_close">Κλείσιμο διαφήμισης</string>
     <string name="ad_label">Διαφήμιση</string>
     <string name="ad_loading">Φόρτωση διαφήμισης…</string>
     <string name="ad_open">Άνοιγμα διαφήμισης</string>
     <string name="ad_page_hint">Τα βέλη μετακινούν τον δείκτη · OK για κλικ · Πίσω για κλείσιμο</string>
-    <string name="ad_popup_note">Οι διαφημίσεις κρατούν το ClipBox δωρεάν και βοηθούν να πληρώνονται οι διακομιστές και η συντήρηση.</string>
+    <string name="ad_popup_note">Οι διαφημίσεις κρατούν το StreamHub δωρεάν και βοηθούν να πληρώνονται οι διακομιστές και η συντήρηση.</string>
     <string name="ad_remove_with_vip">Χωρίς διαφημίσεις με VIP</string>
     <string name="add_to_favourites">Προσθήκη στα Αγαπημένα</string>
     <string name="added_to_favourites">Προστέθηκε στα Αγαπημένα</string>
     <string name="added_to_my_list">Προστέθηκε στη λίστα μου</string>
     <string name="alert_dialog_title">Σημείωση</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Συμπληρώστε</string>
     <string name="aspect_fills_already">η εικόνα γεμίζει ήδη την οθόνη</string>
     <string name="aspect_fit">Προσαρμογή</string>
@@ -178,9 +178,9 @@
     <string name="call_notification_ongoing_text">Κλήση σε εξέλιξη</string>
     <string name="call_notification_screening_text">Διαλογή εισερχόμενης κλήσης</string>
     <string name="capture_blocked_exit">Έξοδος</string>
-    <string name="capture_blocked_intro">Το ClipBox δεν λειτουργεί όσο υπάρχει εγκατεστημένο σε αυτή τη συσκευή εργαλείο καταγραφής δικτύου ή διακομιστής μεσολάβησης.</string>
-    <string name="capture_blocked_outro">Απεγκαταστήστε το και ανοίξτε ξανά το ClipBox.</string>
-    <string name="capture_blocked_title">Το ClipBox δεν μπορεί να λειτουργήσει σε αυτή τη συσκευή</string>
+    <string name="capture_blocked_intro">Το StreamHub δεν λειτουργεί όσο υπάρχει εγκατεστημένο σε αυτή τη συσκευή εργαλείο καταγραφής δικτύου ή διακομιστής μεσολάβησης.</string>
+    <string name="capture_blocked_outro">Απεγκαταστήστε το και ανοίξτε ξανά το StreamHub.</string>
+    <string name="capture_blocked_title">Το StreamHub δεν μπορεί να λειτουργήσει σε αυτή τη συσκευή</string>
     <string name="cast_ad_label">Διαφήμιση</string>
     <string name="cast_button_cast">Μετάδοση σε TV</string>
     <string name="cast_casting_to_device">Μετάδοση σε %1$s</string>
@@ -379,7 +379,7 @@
     <string name="err_service_unavailable">Η υπηρεσία δεν είναι διαθέσιμη προσωρινά. Δοκιμάστε ξανά.</string>
     <string name="err_signed_out_sign_in">Αποσυνδέθηκες σε αυτή τη συσκευή. Συνδέσου ξανά.</string>
     <string name="err_too_many_requests">Πάρα πολλά αιτήματα. Περιμένετε λίγο.</string>
-    <string name="err_update_for_recovery">Ενημέρωσε το ClipBox στην πιο πρόσφατη έκδοση για να δημιουργήσεις νέο κωδικό ανάκτησης.</string>
+    <string name="err_update_for_recovery">Ενημέρωσε το StreamHub στην πιο πρόσφατη έκδοση για να δημιουργήσεις νέο κωδικό ανάκτησης.</string>
     <string name="error_a11y_label">Σφάλμα: μη έγκυρο</string>
     <string name="error_bad_intent">Έλαβε μη έγκυρο σύνδεσμο. Δεν μπορούσα να το ανοίξω.</string>
     <string name="error_icon_content_description">Σφάλμα</string>
@@ -458,16 +458,16 @@
 
 Δεν είναι πραγματικά δυνατό να αναπαραχθούν όλοι οι τίτλοι, άλλοι λειτουργούν και άλλοι όχι.
 
-Το ClipBox είναι νέο και υπό ανάπτυξη, ενδέχεται να υπάρχουν ορισμένα σφάλματα."</string>
+Το StreamHub είναι νέο και υπό ανάπτυξη, ενδέχεται να υπάρχουν ορισμένα σφάλματα."</string>
     <string name="first_launch_ok">Κατάλαβα</string>
     <string name="first_launch_title">Καλώς ήρθατε πίσω!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Λήψη ενημέρωσης</string>
     <string name="force_update_fallback_msg">Απαιτείται μια νέα έκδοση για να συνεχίσετε να χρησιμοποιείτε αυτήν την εφαρμογή.</string>
     <string name="force_update_subtitle">Απαιτείται ενημέρωση</string>
     <string name="gate_connecting">Φόρτωση</string>
     <string name="gate_retry">Επανάληψη</string>
-    <string name="gate_unavailable_message">"Το ClipBox δεν μπορεί να φτάσει στους διακομιστές του.
+    <string name="gate_unavailable_message">"Το StreamHub δεν μπορεί να φτάσει στους διακομιστές του.
 Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."</string>
     <string name="gate_unavailable_title">Η υπηρεσία δεν είναι διαθέσιμη</string>
     <string name="genre_action">Δράση</string>
@@ -492,7 +492,7 @@
     <string name="lang_available_body">Αυτήν τη στιγμή χρησιμοποιείτε την εφαρμογή στα %1$s. Θέλετε να αλλάξετε; Μπορείτε να το αλλάξετε ανά πάσα στιγμή στις Ρυθμίσεις.</string>
     <string name="lang_available_keep">Διατήρηση %1$s</string>
     <string name="lang_available_switch">Αλλαγή σε %1$s</string>
-    <string name="lang_available_title">Το ClipBox είναι πλέον διαθέσιμο στα %1$s</string>
+    <string name="lang_available_title">Το StreamHub είναι πλέον διαθέσιμο στα %1$s</string>
     <string name="launcher_instructions">"Δεν χρειάζεται να κάνετε τίποτα εδώ.
 
 Αν έχετε URL ροής, μπορείτε να το παίξετε απευθείας παρακάτω.
@@ -639,17 +639,17 @@
     <string name="pair_scan_allow">Να επιτρέπεται η κάμερα</string>
     <string name="pair_scan_button">Σάρωση κωδικού QR</string>
     <string name="pair_scan_hint">Στρέψτε την κάμερα στον κωδικό QR της τηλεόρασης</string>
-    <string name="pair_scan_no_camera">Για τη σάρωση, το ClipBox χρειάζεται την κάμερα. Χρησιμοποιείται μόνο όσο είναι ανοιχτή αυτή η οθόνη.</string>
+    <string name="pair_scan_no_camera">Για τη σάρωση, το StreamHub χρειάζεται την κάμερα. Χρησιμοποιείται μόνο όσο είναι ανοιχτή αυτή η οθόνη.</string>
     <string name="pair_scan_torch">Φακός</string>
     <string name="pair_scan_type_instead">Πληκτρολόγηση κωδικού</string>
-    <string name="pair_scan_wrong">Αυτός δεν είναι κωδικός τηλεόρασης ClipBox. Σαρώστε τον κωδικό της τηλεόρασής σας.</string>
+    <string name="pair_scan_wrong">Αυτός δεν είναι κωδικός τηλεόρασης StreamHub. Σαρώστε τον κωδικό της τηλεόρασής σας.</string>
     <string name="pair_tv_button">Σύνδεση με το κινητό</string>
     <string name="pair_tv_confirm_hint">Επιβεβαίωσε στο κινητό και αυτή η τηλεόραση θα συνδεθεί μόνη της.</string>
     <string name="pair_tv_done_fmt">Συνδέθηκες ως %1$s</string>
     <string name="pair_tv_expires_fmt">Ο κωδικός ισχύει για %1$s ακόμη</string>
     <string name="pair_tv_failed">Δεν λήφθηκε κωδικός. Έλεγξε τη σύνδεση και δοκίμασε ξανά.</string>
     <string name="pair_tv_new_code">Νέος κωδικός</string>
-    <string name="pair_tv_or_code">Ή άνοιξε το ClipBox στο κινητό, πήγαινε στον Λογαριασμό και μετά Σύνδεση στην τηλεόραση, και γράψε τον κωδικό κάτω από τον κωδικό QR.</string>
+    <string name="pair_tv_or_code">Ή άνοιξε το StreamHub στο κινητό, πήγαινε στον Λογαριασμό και μετά Σύνδεση στην τηλεόραση, και γράψε τον κωδικό κάτω από τον κωδικό QR.</string>
     <string name="pair_tv_scan">Σάρωσε τον κωδικό με την κάμερα του κινητού</string>
     <string name="pair_tv_waiting">Αναμονή για το κινητό…</string>
     <string name="parental_age_fmt">%1$d ετών και κάτω</string>
@@ -718,7 +718,7 @@
 
 1. Πάτησε «Εξαργύρωση κουπονιού Azteco › Πού αγοράζω κουπόνι;» και αγόρασε ένα κουπόνι Bitcoin της Azteco (On-Chain) σε ένα από τα καταστήματα. Πληρώνεις όπως συνήθως, για παράδειγμα με κάρτα.
 2. Παίρνεις έναν κωδικό 16 ψηφίων.
-3. Στο ClipBox, πατήστε Εξαργύρωση κουπονιού Azteco και μετά Κουπόνι Bitcoin. Ανοίγει η σελίδα κουπονιών μας.
+3. Στο StreamHub, πατήστε Εξαργύρωση κουπονιού Azteco και μετά Κουπόνι Bitcoin. Ανοίγει η σελίδα κουπονιών μας.
 4. Πληκτρολογήστε εκεί τον κωδικό. Τον εξαργυρώνουμε για εσάς και ελέγχουμε ότι έφτασε.
 
 Αυτό ήταν. Το VIP ενεργοποιείται μόνο του σε λίγα λεπτά."</string>
@@ -751,12 +751,12 @@
     <string name="premium_state_confirming_title">Η πληρωμή ελήφθη</string>
     <string name="premium_state_partial_body_fmt">Έχεις πληρώσει $%1$s. Ακόμα $%2$s και το VIP είναι δικό σου. Ό,τι πλήρωσες μένει στον λογαριασμό σου.</string>
     <string name="premium_state_partial_title">Σχεδόν έτοιμο</string>
-    <string name="premium_state_vip_body">Καμία διαφήμιση σε όποια συσκευή συνδέεσαι. Ευχαριστούμε που στηρίζεις το ClipBox.</string>
+    <string name="premium_state_vip_body">Καμία διαφήμιση σε όποια συσκευή συνδέεσαι. Ευχαριστούμε που στηρίζεις το StreamHub.</string>
     <string name="premium_state_vip_title">Είσαι VIP</string>
     <string name="premium_state_waiting_body">Ολοκλήρωσε την πληρωμή στη σελίδα πληρωμής. Αυτή η οθόνη ενημερώνεται μόνη της μόλις φανεί η πληρωμή.</string>
     <string name="premium_state_waiting_title">Αναμονή για την πληρωμή σου</string>
     <string name="premium_tagline">Μία πληρωμή. Δικό σου για πάντα.</string>
-    <string name="premium_tv_phone_hint">Έχεις κουπόνι Lightning; Εξαργύρωσέ το στο ClipBox στο κινητό σου, με τον ίδιο λογαριασμό. Το VIP ακολουθεί τον λογαριασμό σου σε αυτή την τηλεόραση.</string>
+    <string name="premium_tv_phone_hint">Έχεις κουπόνι Lightning; Εξαργύρωσέ το στο StreamHub στο κινητό σου, με τον ίδιο λογαριασμό. Το VIP ακολουθεί τον λογαριασμό σου σε αυτή την τηλεόραση.</string>
     <string name="premium_tv_scan">Σάρωσε με το κινητό για πληρωμή</string>
     <string name="premium_tv_show_checkout">Πληρωμή με κρυπτο</string>
     <string name="premium_tv_show_voucher">Κουπόνι Bitcoin</string>
@@ -859,7 +859,7 @@
     <string name="servers_probe_starting">Εκκίνηση… απομένουν %1$d δευτ.</string>
     <string name="servers_tab_experimental">Περισσότερες γλώσσες</string>
     <string name="servers_tab_main">Τυπικοί</string>
-    <string name="settings_about">Σχετικά με το ClipBox</string>
+    <string name="settings_about">Σχετικά με το StreamHub</string>
     <string name="settings_about_summary">Πληροφορίες έκδοσης, πιστώσεις και καταγραφή αλλαγών</string>
     <string name="settings_account">Ο λογαριασμός μου</string>
     <string name="settings_account_loggedout">Δεν έχετε συνδεθεί</string>
@@ -891,13 +891,13 @@
     <string name="settings_next_episode">Αυτόματη αναπαραγωγή επόμενου επεισοδίου</string>
     <string name="settings_next_episode_summary">Εμφάνιση αντίστροφης μέτρησης στους τίτλους και αυτόματη συνέχεια</string>
     <string name="settings_notifications">Ειδοποιήσεις</string>
-    <string name="settings_notifications_summary">Λάβετε ανακοινώσεις και ενημερώσεις από το ClipBox</string>
+    <string name="settings_notifications_summary">Λάβετε ανακοινώσεις και ενημερώσεις από το StreamHub</string>
     <string name="settings_parental">Γονικός έλεγχος</string>
     <string name="settings_parental_off">Ανενεργός</string>
     <string name="settings_parental_on_fmt">Απόκρυψη τίτλων με κατάταξη άνω των %1$d</string>
     <string name="settings_pref_sub_lang">Προτιμώμενη γλώσσα</string>
     <string name="settings_reset_app">Επαναφορά εφαρμογής</string>
-    <string name="settings_reset_app_confirm">Αυτό διαγράφει όλα τα δεδομένα της εφαρμογής και κλείνει το ClipBox. Συνεχίζω;</string>
+    <string name="settings_reset_app_confirm">Αυτό διαγράφει όλα τα δεδομένα της εφαρμογής και κλείνει το StreamHub. Συνεχίζω;</string>
     <string name="settings_reset_app_summary">Διαγράψτε όλα τα δεδομένα και ξεκινήστε από την αρχή</string>
     <string name="settings_reset_tips">Εκκαθάριση της Λίστας μου, των αγαπημένων και της Συνέχισης προβολής</string>
     <string name="settings_reset_tips_confirm">Να διαγραφεί ολόκληρη η Λίστα μου, τα αγαπημένα σου και ό,τι έχεις ξεκινήσει;</string>
@@ -1076,7 +1076,7 @@
     <string name="tamper_blocked">Αυτό το αντίγραφο της εφαρμογής δεν είναι γνήσιο.</string>
     <string name="terms_gate_accept">Αποδοχή</string>
     <string name="terms_gate_decline">Απόρριψη</string>
-    <string name="terms_gate_message">Διαβάστε και αποδεχτείτε τους Όρους &amp; Προϋποθέσεις για να αρχίσετε να χρησιμοποιείτε το ClipBox.</string>
+    <string name="terms_gate_message">Διαβάστε και αποδεχτείτε τους Όρους &amp; Προϋποθέσεις για να αρχίσετε να χρησιμοποιείτε το StreamHub.</string>
     <string name="terms_gate_subtitle">Διαβάστε και αποδεχτείτε τα για να συνεχίσετε</string>
     <string name="terms_gate_title">Όροι &amp; Προϋποθέσεις</string>
     <string name="touch_lock_desc">Οθόνη κλειδώματος</string>
@@ -1084,14 +1084,14 @@
     <string name="touch_locked_toast">Η οθόνη κλειδωμένη. Πατήστε το εικονίδιο κλειδώματος για ξεκλείδωμα.</string>
     <string name="track_off">Απενεργοποίηση</string>
     <string name="tv_account_avatar">Φωτογραφία προφίλ</string>
-    <string name="tv_account_avatar_phone_only">Η φωτογραφία προφίλ επιλέγεται από μια φωτογραφία στη συσκευή σου. Αυτή η τηλεόραση δεν έχει εφαρμογή που να το κάνει, οπότε όρισέ την στο ClipBox στο κινητό και θα εμφανιστεί κι εδώ.</string>
+    <string name="tv_account_avatar_phone_only">Η φωτογραφία προφίλ επιλέγεται από μια φωτογραφία στη συσκευή σου. Αυτή η τηλεόραση δεν έχει εφαρμογή που να το κάνει, οπότε όρισέ την στο StreamHub στο κινητό και θα εμφανιστεί κι εδώ.</string>
     <string name="tv_account_choose_image">Επιλογή εικόνας</string>
     <string name="tv_account_new_password_hint">Νέος κωδικός πρόσβασης</string>
     <string name="tv_account_recover_action">Επαναφορά κωδικού πρόσβασης</string>
     <string name="tv_account_recovery_fmt">"Κωδικός ανάκτησης: %1$s
 
 Σημειώστε τον. Εμφανίζεται μόνο μία φορά και είναι ο μόνος τρόπος να επιστρέψετε αν ξεχάσετε τον κωδικό σας."</string>
-    <string name="tv_account_register_hint">Δεν έχετε ακόμη λογαριασμό; Δημιουργήστε τον στην εφαρμογή ClipBox στο κινητό σας και μετά συνδεθείτε εδώ.</string>
+    <string name="tv_account_register_hint">Δεν έχετε ακόμη λογαριασμό; Δημιουργήστε τον στην εφαρμογή StreamHub στο κινητό σας και μετά συνδεθείτε εδώ.</string>
     <string name="tv_account_saved">Αποθηκεύτηκε</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Εικόνα (θολή)</string>
@@ -1194,7 +1194,7 @@
     <string name="tv_ui_scale_title">Μέγεθος περιβάλλοντος</string>
     <string name="tv_value_off">Ανενεργό</string>
     <string name="tv_value_on">Ενεργό</string>
-    <string name="tv_whatsnew_body">Το ClipBox ξαναχτίστηκε για τη μεγάλη οθόνη και το τηλεχειριστήριό σας. Όλα όσα είχατε είναι ακόμη εδώ, απλώς πιο εύκολα προσβάσιμα από τον καναπέ. Προτιμάτε την προηγούμενη εμφάνιση; Μπορείτε να επιστρέψετε σε αυτήν ανά πάσα στιγμή από τις ρυθμίσεις.</string>
+    <string name="tv_whatsnew_body">Το StreamHub ξαναχτίστηκε για τη μεγάλη οθόνη και το τηλεχειριστήριό σας. Όλα όσα είχατε είναι ακόμη εδώ, απλώς πιο εύκολα προσβάσιμα από τον καναπέ. Προτιμάτε την προηγούμενη εμφάνιση; Μπορείτε να επιστρέψετε σε αυτήν ανά πάσα στιγμή από τις ρυθμίσεις.</string>
     <string name="tv_whatsnew_classic">Χρήση της κλασικής εμφάνισης</string>
     <string name="tv_whatsnew_continue">Ρίξτε μια ματιά</string>
     <string name="tv_whatsnew_title">Νέα εμφάνιση για την τηλεόραση</string>
@@ -1211,21 +1211,21 @@
     <string name="update_downloading">Τραβώντας τα νέα κομμάτια…</string>
     <string name="update_install_help">"1. Πατήστε Ενημέρωση για λήψη του νέου APK.
 2. Όταν ανοίξει το πρόγραμμα εγκατάστασης, πατήστε Εγκατάσταση.
-3. Εάν το Android το αποκλείσει, επιτρέψτε την \"Εγκατάσταση άγνωστων εφαρμογών\" για το ClipBox και, στη συνέχεια, πατήστε ξανά Εγκατάσταση.
+3. Εάν το Android το αποκλείσει, επιτρέψτε την \"Εγκατάσταση άγνωστων εφαρμογών\" για το StreamHub και, στη συνέχεια, πατήστε ξανά Εγκατάσταση.
 4. Οι ρυθμίσεις και η λίστα σας διατηρούνται, εγκαθίσταται πάνω από την τρέχουσα εφαρμογή."</string>
     <string name="update_install_help_summary">Τι να κάνετε εάν η εγκατάσταση είναι αποκλεισμένη</string>
     <string name="update_install_help_title">Πώς να εγκαταστήσετε</string>
     <string name="update_later">Αργότερα</string>
-    <string name="update_permission_msg_firetv">"Το Fire TV σας εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Επιλέξτε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το ClipBox στην ενότητα \"Εγκατάσταση άγνωστων εφαρμογών\" και πατήστε Πίσω. Η ενημέρωση συνεχίζεται μόνη της.
+    <string name="update_permission_msg_firetv">"Το Fire TV σας εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Επιλέξτε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το StreamHub στην ενότητα \"Εγκατάσταση άγνωστων εφαρμογών\" και πατήστε Πίσω. Η ενημέρωση συνεχίζεται μόνη της.
 
-Αν δεν ανοίξει αυτή η οθόνη: Ρυθμίσεις > Το Fire TV μου > Επιλογές για προγραμματιστές > Εγκατάσταση άγνωστων εφαρμογών > ClipBox. Δεν υπάρχουν Επιλογές για προγραμματιστές; Ανοίξτε πρώτα Ρυθμίσεις > Το Fire TV μου > Πληροφορίες και πατήστε OK 7 φορές στο όνομα της συσκευής."</string>
-    <string name="update_permission_msg_phone">Το Android εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Πατήστε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το \"Να επιτρέπεται από αυτή την πηγή\" για το ClipBox και επιστρέψτε. Η ενημέρωση συνεχίζεται μόνη της.</string>
-    <string name="update_permission_msg_tv">"Η τηλεόρασή σας εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Επιλέξτε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το ClipBox στην ενότητα \"Εγκατάσταση άγνωστων εφαρμογών\" και πατήστε Πίσω. Η ενημέρωση συνεχίζεται μόνη της.
+Αν δεν ανοίξει αυτή η οθόνη: Ρυθμίσεις > Το Fire TV μου > Επιλογές για προγραμματιστές > Εγκατάσταση άγνωστων εφαρμογών > StreamHub. Δεν υπάρχουν Επιλογές για προγραμματιστές; Ανοίξτε πρώτα Ρυθμίσεις > Το Fire TV μου > Πληροφορίες και πατήστε OK 7 φορές στο όνομα της συσκευής."</string>
+    <string name="update_permission_msg_phone">Το Android εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Πατήστε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το \"Να επιτρέπεται από αυτή την πηγή\" για το StreamHub και επιστρέψτε. Η ενημέρωση συνεχίζεται μόνη της.</string>
+    <string name="update_permission_msg_tv">"Η τηλεόρασή σας εγκαθιστά ενημερώσεις μόνο από εφαρμογές που επιτρέπετε. Επιλέξτε Άνοιγμα ρυθμίσεων, ενεργοποιήστε το StreamHub στην ενότητα \"Εγκατάσταση άγνωστων εφαρμογών\" και πατήστε Πίσω. Η ενημέρωση συνεχίζεται μόνη της.
 
-Αν δεν ανοίξει αυτή η οθόνη: Ρυθμίσεις > Εφαρμογές > Ασφάλεια και περιορισμοί > Άγνωστες πηγές > ClipBox."</string>
+Αν δεν ανοίξει αυτή η οθόνη: Ρυθμίσεις > Εφαρμογές > Ασφάλεια και περιορισμοί > Άγνωστες πηγές > StreamHub."</string>
     <string name="update_permission_not_opened">Δεν ήταν δυνατό το άνοιγμα των ρυθμίσεων. Ακολουθήστε τα βήματα στην οθόνη.</string>
     <string name="update_permission_open">Άνοιγμα ρυθμίσεων</string>
-    <string name="update_permission_title">Επιτρέψτε στο ClipBox να εγκαθιστά ενημερώσεις</string>
+    <string name="update_permission_title">Επιτρέψτε στο StreamHub να εγκαθιστά ενημερώσεις</string>
     <string name="update_unavailable">Η υπηρεσία ενημέρωσης δεν είναι διαθέσιμη. Η εφαρμογή δεν μπορεί να ελέγξει για ενημερώσεις αυτήν τη στιγμή.</string>
     <string name="update_up_to_date">Είστε ήδη στην πιο πρόσφατη έκδοση. Ομορφη.</string>
     <string name="v7_preference_off">ΑΝΕΝΕΡΓΗ</string>
@@ -1240,10 +1240,10 @@
     <string name="voucher_ln_bad">Αυτό δεν μοιάζει με σύνδεσμο κουπονιού Lightning. Ξεκινά με LNURL.</string>
     <string name="voucher_ln_redeeming">Εξαργύρωση του κουπονιού σου…</string>
     <string name="voucher_ln_steps">"1. Άνοιξε το azte.co, διάλεξε Lightning και εξαργύρωσε εκεί τον κωδικό του κουπονιού.
-2. Θα εμφανιστεί ένας σύνδεσμος Lightning (LNURL). Πάτησέ τον για να ανοίξει το ClipBox ή αντίγραψέ τον και επικόλλησέ τον εδώ."</string>
+2. Θα εμφανιστεί ένας σύνδεσμος Lightning (LNURL). Πάτησέ τον για να ανοίξει το StreamHub ή αντίγραψέ τον και επικόλλησέ τον εδώ."</string>
     <string name="voucher_loading_address">Ετοιμάζουμε τη διεύθυνσή σου…</string>
     <string name="voucher_onchain">Κουπόνι Bitcoin</string>
-    <string name="voucher_onchain_note">Αυτή η διεύθυνση ανήκει στον λογαριασμό σου για αυτή την πληρωμή. Μπορείς να κλείσεις το ClipBox στο μεταξύ· το VIP ενεργοποιείται μόνο του.</string>
+    <string name="voucher_onchain_note">Αυτή η διεύθυνση ανήκει στον λογαριασμό σου για αυτή την πληρωμή. Μπορείς να κλείσεις το StreamHub στο μεταξύ· το VIP ενεργοποιείται μόνο του.</string>
     <string name="voucher_onchain_steps">"1. Άνοιξε το azte.co και εξαργύρωσε εκεί τον κωδικό του κουπονιού.
 2. Όταν ζητηθεί διεύθυνση Bitcoin, χρησιμοποίησε αυτή:"</string>
     <string name="voucher_onchain_steps_code">"1. Γράψε παρακάτω τον 16ψήφιο κωδικό του κουπονιού σου.

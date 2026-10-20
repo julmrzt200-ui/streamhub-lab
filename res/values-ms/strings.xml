@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, perpustakaan &amp; lesen</string>
     <string name="about_attributions_title">Lesen &amp; atribusi</string>
     <string name="about_changelog_title">Changelog</string>
-    <string name="about_credits_body">"ClipBox ialah cara yang bersih dan tenang untuk menonton filem dan siri di Android. Semuanya berada di satu tempat, jadi anda boleh melihat apa yang popular, mencari sesuatu yang khusus, atau menyambung tepat di tempat anda berhenti.
+    <string name="about_credits_body">"StreamHub ialah cara yang bersih dan tenang untuk menonton filem dan siri di Android. Semuanya berada di satu tempat, jadi anda boleh melihat apa yang popular, mencari sesuatu yang khusus, atau menyambung tepat di tempat anda berhenti.
 
 Sari kata dicari dan diselaraskan masanya untuk anda dalam pelbagai bahasa, setiap tajuk menawarkan beberapa sumber, dan apa sahaja yang anda tonton boleh dihantar ke Chromecast atau TV pintar. Apl ini berjalan pada telefon, tablet, Android TV dan Fire TV, dan akaun pilihan mengekalkan senarai serta sejarah anda selari pada kesemuanya.
 
-ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus bertambah baik hasil daripada apa yang orang beritahu kami."</string>
-    <string name="about_credits_title">Mengenai ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus bertambah baik hasil daripada apa yang orang beritahu kami."</string>
+    <string name="about_credits_title">Mengenai StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Sumber kandungan dan tanda dagangan</string>
     <string name="about_disclaimer_title">Penafian</string>
     <string name="about_legal_title">sah</string>
     <string name="about_privacy_subtitle">Apakah data yang dikumpul, dan mengapa</string>
     <string name="about_privacy_title">Dasar privasi</string>
-    <string name="about_terms_subtitle">Bagaimana ClipBox boleh digunakan</string>
+    <string name="about_terms_subtitle">Bagaimana StreamHub boleh digunakan</string>
     <string name="about_terms_title">Terma &amp; Syarat</string>
     <string name="about_title">Tentang</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus 
     <string name="account_go_register">Baru di sini? Buat akaun</string>
     <string name="account_go_register_action">Buat akaun</string>
     <string name="account_guest">tetamu</string>
-    <string name="account_member">Ahli ClipBox</string>
+    <string name="account_member">Ahli StreamHub</string>
     <string name="account_member_since_fmt">Ahli sejak %1$s</string>
     <string name="account_new_password_hint">Kata laluan baharu</string>
     <string name="account_new_username_hint">nama pengguna baharu</string>
@@ -65,7 +65,7 @@ ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus 
     <string name="account_recovery_code">Kod pemulihan</string>
     <string name="account_recovery_code_hint">Kod pemulihan</string>
     <string name="account_register">Buat akaun</string>
-    <string name="account_register_subtitle">Buat akaun ClipBox anda</string>
+    <string name="account_register_subtitle">Buat akaun StreamHub anda</string>
     <string name="account_session_ended">Akaun anda tidak tersedia lagi. Anda telah dilog keluar.</string>
     <string name="account_settings_section">Tetapan akaun</string>
     <string name="account_sign_in">Log masuk</string>
@@ -73,7 +73,7 @@ ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus 
     <string name="account_sign_out">Log keluar</string>
     <string name="account_signed_out_offline">Log keluar. Senarai anda tidak dapat disegerakkan, jadi ia telah disimpan pada peranti ini.</string>
     <string name="account_signing_in">Sedang log masuk…</string>
-    <string name="account_subtitle">Log masuk ke akaun ClipBox anda</string>
+    <string name="account_subtitle">Log masuk ke akaun StreamHub anda</string>
     <string name="account_sync_done">Penyegerakan selesai</string>
     <string name="account_terms_required">Sila semak Terma &amp; Syarat sebelum mendaftar</string>
     <string name="account_title">Akaun</string>
@@ -99,21 +99,21 @@ ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus 
     <string name="actor_read_more">Baca lagi</string>
     <string name="actor_wikipedia_failed">Tidak dapat membuka Wikipedia.</string>
     <string name="ad_autoclose_fmt">Tutup secara automatik dalam %1$d s</string>
-    <string name="ad_blocked_note">Penyekat iklan menghalang iklan ini. Iklan mengekalkan ClipBox percuma: matikannya untuk ClipBox, atau dapatkan VIP.</string>
+    <string name="ad_blocked_note">Penyekat iklan menghalang iklan ini. Iklan mengekalkan StreamHub percuma: matikannya untuk StreamHub, atau dapatkan VIP.</string>
     <string name="ad_close">Tutup iklan</string>
     <string name="ad_label">Iklan</string>
     <string name="ad_loading">Memuatkan iklan…</string>
     <string name="ad_open">Buka iklan</string>
     <string name="ad_page_hint">Anak panah menggerakkan penuding · OK untuk klik · Kembali untuk tutup</string>
-    <string name="ad_popup_note">Iklan mengekalkan ClipBox percuma dan membantu membayar pelayan dan penyelenggaraan.</string>
+    <string name="ad_popup_note">Iklan mengekalkan StreamHub percuma dan membantu membayar pelayan dan penyelenggaraan.</string>
     <string name="ad_remove_with_vip">Tiada iklan dengan VIP</string>
     <string name="add_to_favourites">Tambahkan pada Kegemaran</string>
     <string name="added_to_favourites">Ditambah pada Kegemaran</string>
     <string name="added_to_my_list">Ditambah pada Senarai Saya</string>
     <string name="alert_dialog_title">Notis</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">isi</string>
     <string name="aspect_fills_already">gambar sudah memenuhi skrin</string>
     <string name="aspect_fit">Muatkan</string>
@@ -178,9 +178,9 @@ ClipBox dibina oleh pasukan kecil yang menggunakannya setiap hari, dan ia terus 
     <string name="call_notification_ongoing_text">Panggilan sedang berlangsung</string>
     <string name="call_notification_screening_text">Menyaring panggilan masuk</string>
     <string name="capture_blocked_exit">Keluar</string>
-    <string name="capture_blocked_intro">ClipBox tidak akan berjalan selagi ada alat tangkapan rangkaian atau proksi dipasang pada peranti ini.</string>
-    <string name="capture_blocked_outro">Nyahpasangkannya, kemudian buka ClipBox semula.</string>
-    <string name="capture_blocked_title">ClipBox tidak boleh berjalan pada peranti ini</string>
+    <string name="capture_blocked_intro">StreamHub tidak akan berjalan selagi ada alat tangkapan rangkaian atau proksi dipasang pada peranti ini.</string>
+    <string name="capture_blocked_outro">Nyahpasangkannya, kemudian buka StreamHub semula.</string>
+    <string name="capture_blocked_title">StreamHub tidak boleh berjalan pada peranti ini</string>
     <string name="cast_ad_label">Iklan</string>
     <string name="cast_button_cast">Pelakon</string>
     <string name="cast_casting_to_device">Menghantar ke %1$s</string>
@@ -379,7 +379,7 @@ Anda juga boleh memasukkan IP TV anda secara manual."</string>
     <string name="err_service_unavailable">Perkhidmatan tidak tersedia buat sementara waktu. Sila cuba lagi.</string>
     <string name="err_signed_out_sign_in">Anda telah dilog keluar pada peranti ini. Log masuk semula.</string>
     <string name="err_too_many_requests">Terlalu banyak permintaan. Sila tunggu sebentar.</string>
-    <string name="err_update_for_recovery">Kemas kini ClipBox ke versi terkini untuk mencipta kod pemulihan baharu.</string>
+    <string name="err_update_for_recovery">Kemas kini StreamHub ke versi terkini untuk mencipta kod pemulihan baharu.</string>
     <string name="error_a11y_label">Ralat: tidak sah</string>
     <string name="error_bad_intent">Menerima pautan yang tidak sah. Tidak dapat membukanya.</string>
     <string name="error_icon_content_description">Ralat</string>
@@ -458,16 +458,16 @@ Anda juga boleh memasukkan IP TV anda secara manual."</string>
 
 Bukan setiap tajuk sebenarnya boleh dimainkan, sesetengah kerja dan yang lain tidak.
 
-ClipBox baharu dan dalam pembangunan, mungkin terdapat beberapa pepijat."</string>
+StreamHub baharu dan dalam pembangunan, mungkin terdapat beberapa pepijat."</string>
     <string name="first_launch_ok">faham</string>
     <string name="first_launch_title">Selamat kembali!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Muat turun kemas kini</string>
     <string name="force_update_fallback_msg">Versi baharu diperlukan untuk terus menggunakan apl ini.</string>
     <string name="force_update_subtitle">Kemas kini diperlukan</string>
     <string name="gate_connecting">Memuatkan</string>
     <string name="gate_retry">Cuba semula</string>
-    <string name="gate_unavailable_message">"ClipBox tidak dapat mencapai pelayannya.
+    <string name="gate_unavailable_message">"StreamHub tidak dapat mencapai pelayannya.
 Sila semak sambungan anda dan cuba lagi."</string>
     <string name="gate_unavailable_title">Perkhidmatan Tidak Tersedia</string>
     <string name="genre_action">Tindakan</string>
@@ -492,7 +492,7 @@ Sila semak sambungan anda dan cuba lagi."</string>
     <string name="lang_available_body">Anda kini menggunakan aplikasi dalam %1$s. Mahu bertukar? Anda boleh mengubahnya bila-bila masa dalam Tetapan.</string>
     <string name="lang_available_keep">Kekalkan %1$s</string>
     <string name="lang_available_switch">Tukar ke %1$s</string>
-    <string name="lang_available_title">ClipBox kini tersedia dalam %1$s</string>
+    <string name="lang_available_title">StreamHub kini tersedia dalam %1$s</string>
     <string name="launcher_instructions">"Tiada apa yang perlu anda lakukan di sini.
 
 Jika anda mempunyai URL strim, anda boleh memainkannya terus di bawah.
@@ -639,17 +639,17 @@ Tambahkan filem dan rancangan daripada halaman butiran."</string>
     <string name="pair_scan_allow">Benarkan kamera</string>
     <string name="pair_scan_button">Imbas kod QR</string>
     <string name="pair_scan_hint">Halakan kamera ke kod QR pada TV</string>
-    <string name="pair_scan_no_camera">Untuk mengimbas kod, ClipBox memerlukan kamera. Ia hanya digunakan semasa skrin ini dibuka.</string>
+    <string name="pair_scan_no_camera">Untuk mengimbas kod, StreamHub memerlukan kamera. Ia hanya digunakan semasa skrin ini dibuka.</string>
     <string name="pair_scan_torch">Lampu suluh</string>
     <string name="pair_scan_type_instead">Taip kod sahaja</string>
-    <string name="pair_scan_wrong">Itu bukan kod TV ClipBox. Imbas kod pada TV anda.</string>
+    <string name="pair_scan_wrong">Itu bukan kod TV StreamHub. Imbas kod pada TV anda.</string>
     <string name="pair_tv_button">Log masuk dengan telefon</string>
     <string name="pair_tv_confirm_hint">Sahkan pada telefon dan TV ini akan log masuk sendiri.</string>
     <string name="pair_tv_done_fmt">Log masuk sebagai %1$s</string>
     <string name="pair_tv_expires_fmt">Kod sah %1$s lagi</string>
     <string name="pair_tv_failed">Tidak dapat kod. Semak sambungan dan cuba lagi.</string>
     <string name="pair_tv_new_code">Kod baharu</string>
-    <string name="pair_tv_or_code">Atau buka ClipBox pada telefon, pergi ke Akaun kemudian Log masuk pada TV, dan masukkan kod di bawah kod QR.</string>
+    <string name="pair_tv_or_code">Atau buka StreamHub pada telefon, pergi ke Akaun kemudian Log masuk pada TV, dan masukkan kod di bawah kod QR.</string>
     <string name="pair_tv_scan">Imbas kod dengan kamera telefon</string>
     <string name="pair_tv_waiting">Menunggu telefon anda…</string>
     <string name="parental_age_fmt">%1$d tahun ke bawah</string>
@@ -718,7 +718,7 @@ Itu sahaja. VIP hidup sendiri pada TV ini sebaik sahaja pembayaran dilihat."</st
 
 1. Ketik Tebus baucar Azteco › Di mana saya beli baucar? dan beli baucar Bitcoin Azteco (On-Chain) di salah satu kedai. Anda bayar seperti biasa, contohnya dengan kad.
 2. Anda dapat kod 16 digit.
-3. Dalam ClipBox, ketik Tebus baucar Azteco, kemudian Baucar Bitcoin. Halaman baucar kami akan dibuka.
+3. Dalam StreamHub, ketik Tebus baucar Azteco, kemudian Baucar Bitcoin. Halaman baucar kami akan dibuka.
 4. Masukkan kod di sana. Kami tebus untuk anda dan semak bahawa bayaran telah diterima.
 
 Itu sahaja. VIP hidup sendiri dalam beberapa minit."</string>
@@ -751,12 +751,12 @@ Itu sahaja. VIP hidup sendiri pada TV ini dalam beberapa minit."</string>
     <string name="premium_state_confirming_title">Pembayaran diterima</string>
     <string name="premium_state_partial_body_fmt">Anda telah membayar $%1$s. $%2$s lagi dan VIP milik anda. Apa yang anda bayar kekal dalam akaun anda.</string>
     <string name="premium_state_partial_title">Hampir siap</string>
-    <string name="premium_state_vip_body">Tiada iklan pada mana-mana peranti yang anda log masuk. Terima kasih kerana menyokong ClipBox.</string>
+    <string name="premium_state_vip_body">Tiada iklan pada mana-mana peranti yang anda log masuk. Terima kasih kerana menyokong StreamHub.</string>
     <string name="premium_state_vip_title">Anda VIP</string>
     <string name="premium_state_waiting_body">Selesaikan pembayaran di halaman pembayaran. Skrin ini dikemas kini sendiri sebaik sahaja pembayaran dilihat.</string>
     <string name="premium_state_waiting_title">Menunggu pembayaran anda</string>
     <string name="premium_tagline">Sekali bayar. Milik anda selamanya.</string>
-    <string name="premium_tv_phone_hint">Ada baucar Lightning? Tebusnya dalam ClipBox pada telefon anda, dengan akaun yang sama. VIP mengikut akaun anda ke TV ini.</string>
+    <string name="premium_tv_phone_hint">Ada baucar Lightning? Tebusnya dalam StreamHub pada telefon anda, dengan akaun yang sama. VIP mengikut akaun anda ke TV ini.</string>
     <string name="premium_tv_scan">Imbas dengan telefon untuk bayar</string>
     <string name="premium_tv_show_checkout">Bayar dengan kripto</string>
     <string name="premium_tv_show_voucher">Baucar Bitcoin</string>
@@ -859,7 +859,7 @@ Itu sahaja. VIP hidup sendiri pada TV ini dalam beberapa minit."</string>
     <string name="servers_probe_starting">Bermula… %1$d s lagi</string>
     <string name="servers_tab_experimental">Lagi bahasa</string>
     <string name="servers_tab_main">Standard</string>
-    <string name="settings_about">Mengenai ClipBox</string>
+    <string name="settings_about">Mengenai StreamHub</string>
     <string name="settings_about_summary">Maklumat versi, kredit dan log perubahan</string>
     <string name="settings_account">akaun saya</string>
     <string name="settings_account_loggedout">Tidak dilog masuk</string>
@@ -891,13 +891,13 @@ Itu sahaja. VIP hidup sendiri pada TV ini dalam beberapa minit."</string>
     <string name="settings_next_episode">Main episod seterusnya secara automatik</string>
     <string name="settings_next_episode_summary">Tunjukkan kiraan detik pada kredit dan teruskan sendiri</string>
     <string name="settings_notifications">Pemberitahuan</string>
-    <string name="settings_notifications_summary">Terima pengumuman dan kemas kini daripada ClipBox</string>
+    <string name="settings_notifications_summary">Terima pengumuman dan kemas kini daripada StreamHub</string>
     <string name="settings_parental">Kawalan ibu bapa</string>
     <string name="settings_parental_off">Mati</string>
     <string name="settings_parental_on_fmt">Menyembunyikan tajuk bertaraf melebihi %1$d</string>
     <string name="settings_pref_sub_lang">Bahasa pilihan</string>
     <string name="settings_reset_app">Tetapkan semula apl</string>
-    <string name="settings_reset_app_confirm">Ini memadamkan semua data apl dan menutup ClipBox. teruskan?</string>
+    <string name="settings_reset_app_confirm">Ini memadamkan semua data apl dan menutup StreamHub. teruskan?</string>
     <string name="settings_reset_app_summary">Padamkan semua data dan mulakan dengan baharu</string>
     <string name="settings_reset_tips">Kosongkan Senarai Saya, kegemaran dan Teruskan menonton</string>
     <string name="settings_reset_tips_confirm">Kosongkan seluruh Senarai Saya, kegemaran anda dan semua yang belum habis ditonton?</string>
@@ -1076,7 +1076,7 @@ Itu sahaja. VIP hidup sendiri pada TV ini dalam beberapa minit."</string>
     <string name="tamper_blocked">Salinan apl ini tidak tulen.</string>
     <string name="terms_gate_accept">Terima</string>
     <string name="terms_gate_decline">Tolak</string>
-    <string name="terms_gate_message">Sila semak dan terima Terma &amp; Syarat kami untuk mula menggunakan ClipBox.</string>
+    <string name="terms_gate_message">Sila semak dan terima Terma &amp; Syarat kami untuk mula menggunakan StreamHub.</string>
     <string name="terms_gate_subtitle">Sila baca dan terima ini untuk meneruskan</string>
     <string name="terms_gate_title">Terma &amp; Syarat</string>
     <string name="touch_lock_desc">Kunci skrin</string>
@@ -1084,14 +1084,14 @@ Itu sahaja. VIP hidup sendiri pada TV ini dalam beberapa minit."</string>
     <string name="touch_locked_toast">Skrin dikunci. Ketik ikon kunci untuk membuka kunci.</string>
     <string name="track_off">Mati</string>
     <string name="tv_account_avatar">Gambar profil</string>
-    <string name="tv_account_avatar_phone_only">Gambar profil dipilih daripada foto pada peranti anda. TV ini tiada aplikasi yang boleh memilihnya, jadi tetapkannya dalam ClipBox pada telefon dan ia akan muncul di sini.</string>
+    <string name="tv_account_avatar_phone_only">Gambar profil dipilih daripada foto pada peranti anda. TV ini tiada aplikasi yang boleh memilihnya, jadi tetapkannya dalam StreamHub pada telefon dan ia akan muncul di sini.</string>
     <string name="tv_account_choose_image">Pilih imej</string>
     <string name="tv_account_new_password_hint">Kata laluan baharu</string>
     <string name="tv_account_recover_action">Tetapkan semula kata laluan</string>
     <string name="tv_account_recovery_fmt">"Kod pemulihan: %1$s
 
 Catatkannya. Ia ditunjukkan sekali sahaja dan merupakan satu-satunya jalan masuk semula jika anda terlupa kata laluan."</string>
-    <string name="tv_account_register_hint">Belum ada akaun? Buat satu dalam aplikasi ClipBox pada telefon anda, kemudian log masuk di sini.</string>
+    <string name="tv_account_register_hint">Belum ada akaun? Buat satu dalam aplikasi StreamHub pada telefon anda, kemudian log masuk di sini.</string>
     <string name="tv_account_saved">Disimpan</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Imej (kabur)</string>
@@ -1194,7 +1194,7 @@ Catatkannya. Ia ditunjukkan sekali sahaja dan merupakan satu-satunya jalan masuk
     <string name="tv_ui_scale_title">Saiz antara muka</string>
     <string name="tv_value_off">Mati</string>
     <string name="tv_value_on">Hidup</string>
-    <string name="tv_whatsnew_body">ClipBox telah dibina semula untuk skrin besar dan alat kawalan jauh anda. Semua yang anda miliki masih ada, cuma lebih mudah dicapai dari sofa. Lebih suka rupa yang dahulu? Anda boleh kembali bila-bila masa dalam tetapan.</string>
+    <string name="tv_whatsnew_body">StreamHub telah dibina semula untuk skrin besar dan alat kawalan jauh anda. Semua yang anda miliki masih ada, cuma lebih mudah dicapai dari sofa. Lebih suka rupa yang dahulu? Anda boleh kembali bila-bila masa dalam tetapan.</string>
     <string name="tv_whatsnew_classic">Guna rupa klasik</string>
     <string name="tv_whatsnew_continue">Tengok dulu</string>
     <string name="tv_whatsnew_title">Rupa baharu untuk televisyen</string>
@@ -1211,21 +1211,21 @@ Muat turun dan pasang sekarang?"</string>
     <string name="update_downloading">Menarik bit baru…</string>
     <string name="update_install_help">"1. Ketik Kemas Kini untuk memuat turun APK baharu.
 2. Apabila pemasang dibuka, ketik Pasang.
-3. Jika Android menyekatnya, benarkan \"Pasang apl tidak diketahui\" untuk ClipBox, kemudian ketik Pasang sekali lagi.
+3. Jika Android menyekatnya, benarkan \"Pasang apl tidak diketahui\" untuk StreamHub, kemudian ketik Pasang sekali lagi.
 4. Tetapan dan senarai anda disimpan, ia dipasang pada apl semasa."</string>
     <string name="update_install_help_summary">Apa yang perlu dilakukan jika pemasangan disekat</string>
     <string name="update_install_help_title">Cara memasang</string>
     <string name="update_later">Nanti</string>
-    <string name="update_permission_msg_firetv">"Fire TV anda hanya memasang kemas kini daripada apl yang anda benarkan. Pilih Buka tetapan, hidupkan ClipBox di bawah \"Pasang apl tidak diketahui\" dan tekan Kembali. Kemas kini akan diteruskan dengan sendirinya.
+    <string name="update_permission_msg_firetv">"Fire TV anda hanya memasang kemas kini daripada apl yang anda benarkan. Pilih Buka tetapan, hidupkan StreamHub di bawah \"Pasang apl tidak diketahui\" dan tekan Kembali. Kemas kini akan diteruskan dengan sendirinya.
 
-Jika skrin itu tidak dibuka: Tetapan > Fire TV Saya > Pilihan pembangun > Pasang apl tidak diketahui > ClipBox. Tiada Pilihan pembangun? Pergi dahulu ke Tetapan > Fire TV Saya > Perihal dan tekan OK 7 kali pada nama peranti."</string>
-    <string name="update_permission_msg_phone">Android hanya memasang kemas kini daripada apl yang anda benarkan. Ketik Buka tetapan, hidupkan \"Benarkan daripada sumber ini\" untuk ClipBox dan kembali. Kemas kini akan diteruskan dengan sendirinya.</string>
-    <string name="update_permission_msg_tv">"TV anda hanya memasang kemas kini daripada apl yang anda benarkan. Pilih Buka tetapan, hidupkan ClipBox di bawah \"Pasang apl tidak diketahui\" dan tekan Kembali. Kemas kini akan diteruskan dengan sendirinya.
+Jika skrin itu tidak dibuka: Tetapan > Fire TV Saya > Pilihan pembangun > Pasang apl tidak diketahui > StreamHub. Tiada Pilihan pembangun? Pergi dahulu ke Tetapan > Fire TV Saya > Perihal dan tekan OK 7 kali pada nama peranti."</string>
+    <string name="update_permission_msg_phone">Android hanya memasang kemas kini daripada apl yang anda benarkan. Ketik Buka tetapan, hidupkan \"Benarkan daripada sumber ini\" untuk StreamHub dan kembali. Kemas kini akan diteruskan dengan sendirinya.</string>
+    <string name="update_permission_msg_tv">"TV anda hanya memasang kemas kini daripada apl yang anda benarkan. Pilih Buka tetapan, hidupkan StreamHub di bawah \"Pasang apl tidak diketahui\" dan tekan Kembali. Kemas kini akan diteruskan dengan sendirinya.
 
-Jika skrin itu tidak dibuka: Tetapan > Apl > Keselamatan &amp; sekatan > Sumber tidak diketahui > ClipBox."</string>
+Jika skrin itu tidak dibuka: Tetapan > Apl > Keselamatan &amp; sekatan > Sumber tidak diketahui > StreamHub."</string>
     <string name="update_permission_not_opened">Tetapan tidak dapat dibuka. Ikuti langkah pada skrin.</string>
     <string name="update_permission_open">Buka tetapan</string>
-    <string name="update_permission_title">Benarkan ClipBox memasang kemas kini</string>
+    <string name="update_permission_title">Benarkan StreamHub memasang kemas kini</string>
     <string name="update_unavailable">Perkhidmatan kemas kini tidak tersedia. Apl tidak boleh menyemak kemas kini sekarang.</string>
     <string name="update_up_to_date">Anda sudah pun menggunakan versi terkini. bagus.</string>
     <string name="v7_preference_off">MATI</string>
@@ -1240,10 +1240,10 @@ Jika skrin itu tidak dibuka: Tetapan > Apl > Keselamatan &amp; sekatan > Sumber 
     <string name="voucher_ln_bad">Itu tidak kelihatan seperti pautan baucar Lightning. Ia bermula dengan LNURL.</string>
     <string name="voucher_ln_redeeming">Menebus baucar anda…</string>
     <string name="voucher_ln_steps">"1. Buka azte.co, pilih Lightning dan tebus kod baucar anda di sana.
-2. Pautan Lightning (LNURL) akan dipaparkan. Ketik untuk membuka ClipBox, atau salin dan tampal di sini."</string>
+2. Pautan Lightning (LNURL) akan dipaparkan. Ketik untuk membuka StreamHub, atau salin dan tampal di sini."</string>
     <string name="voucher_loading_address">Menyediakan alamat anda…</string>
     <string name="voucher_onchain">Baucar Bitcoin</string>
-    <string name="voucher_onchain_note">Alamat ini milik akaun anda untuk pembayaran ini. Anda boleh menutup ClipBox sementara itu; VIP akan aktif sendiri.</string>
+    <string name="voucher_onchain_note">Alamat ini milik akaun anda untuk pembayaran ini. Anda boleh menutup StreamHub sementara itu; VIP akan aktif sendiri.</string>
     <string name="voucher_onchain_steps">"1. Buka azte.co dan tebus kod baucar anda di sana.
 2. Apabila diminta alamat Bitcoin, gunakan yang ini:"</string>
     <string name="voucher_onchain_steps_code">"1. Masukkan kod 16 digit daripada baucar anda di bawah.

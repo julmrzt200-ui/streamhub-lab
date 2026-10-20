@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, könyvtárak és licencek</string>
     <string name="about_attributions_title">Licencek és forrásmegjelölések</string>
     <string name="about_changelog_title">Változásnapló</string>
-    <string name="about_credits_body">"A ClipBox tiszta, nyugodt módja annak, hogy filmeket és sorozatokat nézz Androidon. Minden egy helyen van, így böngészheted, mi népszerű, kereshetsz valami konkrétat, vagy folytathatod pontosan onnan, ahol abbahagytad.
+    <string name="about_credits_body">"A StreamHub tiszta, nyugodt módja annak, hogy filmeket és sorozatokat nézz Androidon. Minden egy helyen van, így böngészheted, mi népszerű, kereshetsz valami konkrétat, vagy folytathatod pontosan onnan, ahol abbahagytad.
 
 A feliratokat sok nyelven megkeressük és időzítjük helyetted, minden címhez több forrás tartozik, és amit éppen nézel, elküldheted Chromecastra vagy okostévére. Az alkalmazás telefonon, táblagépen, Android TV-n és Fire TV-n is fut, egy opcionális fiók pedig mindegyiken szinkronban tartja a listádat és az előzményeidet.
 
-A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és attól lesz jobb, amit az emberek írnak nekünk."</string>
-    <string name="about_credits_title">A ClipBoxról</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+A StreamHubot egy kis csapat készíti, akik maguk is minden nap használják, és attól lesz jobb, amit az emberek írnak nekünk."</string>
+    <string name="about_credits_title">A StreamHubról</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Tartalomforrások és védjegyek</string>
     <string name="about_disclaimer_title">Jogi nyilatkozat</string>
     <string name="about_legal_title">Jogi</string>
     <string name="about_privacy_subtitle">Milyen adatokat gyűjtenek, és miért</string>
     <string name="about_privacy_title">Adatvédelmi szabályzat</string>
-    <string name="about_terms_subtitle">Hogyan használható a ClipBox</string>
+    <string name="about_terms_subtitle">Hogyan használható a StreamHub</string>
     <string name="about_terms_title">Általános Szerződési Feltételek</string>
     <string name="about_title">Körülbelül</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és
     <string name="account_go_register">Új itt? Hozzon létre egy fiókot</string>
     <string name="account_go_register_action">Hozzon létre egy fiókot</string>
     <string name="account_guest">Vendég</string>
-    <string name="account_member">ClipBox tag</string>
+    <string name="account_member">StreamHub tag</string>
     <string name="account_member_since_fmt">Tagság %1$s óta</string>
     <string name="account_new_password_hint">Új jelszó</string>
     <string name="account_new_username_hint">Új felhasználónév</string>
@@ -65,7 +65,7 @@ A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és
     <string name="account_recovery_code">Helyreállítási kód</string>
     <string name="account_recovery_code_hint">Helyreállítási kód</string>
     <string name="account_register">Hozzon létre fiókot</string>
-    <string name="account_register_subtitle">Hozd létre a ClipBox fiókodat</string>
+    <string name="account_register_subtitle">Hozd létre a StreamHub fiókodat</string>
     <string name="account_session_ended">Fiókja már nem érhető el. Kijelentkezett.</string>
     <string name="account_settings_section">Fiókbeállítások</string>
     <string name="account_sign_in">Jelentkezzen be</string>
@@ -73,7 +73,7 @@ A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és
     <string name="account_sign_out">Jelentkezzen ki</string>
     <string name="account_signed_out_offline">Kijelentkezve. A listát nem sikerült szinkronizálni, ezért ezen az eszközön tároltuk.</string>
     <string name="account_signing_in">Bejelentkezés…</string>
-    <string name="account_subtitle">Jelentkezzen be ClipBox-fiókjába</string>
+    <string name="account_subtitle">Jelentkezzen be StreamHub-fiókjába</string>
     <string name="account_sync_done">A szinkronizálás befejeződött</string>
     <string name="account_terms_required">Kérjük, regisztráció előtt tekintse át az Általános Szerződési Feltételeket</string>
     <string name="account_title">fiók</string>
@@ -99,21 +99,21 @@ A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és
     <string name="actor_read_more">Olvass tovább</string>
     <string name="actor_wikipedia_failed">Nem sikerült megnyitni a Wikipédiát.</string>
     <string name="ad_autoclose_fmt">Automatikusan bezárul %1$d mp múlva</string>
-    <string name="ad_blocked_note">Egy hirdetésblokkoló megállítja ezt a hirdetést. A hirdetések ingyenesen tartják a ClipBoxot: kapcsold ki a ClipBoxhoz, vagy vegyél VIP-et.</string>
+    <string name="ad_blocked_note">Egy hirdetésblokkoló megállítja ezt a hirdetést. A hirdetések ingyenesen tartják a StreamHubot: kapcsold ki a StreamHubhoz, vagy vegyél VIP-et.</string>
     <string name="ad_close">Hirdetés bezárása</string>
     <string name="ad_label">Hirdetés</string>
     <string name="ad_loading">Hirdetés betöltése…</string>
     <string name="ad_open">Hirdetés megnyitása</string>
     <string name="ad_page_hint">A nyilak mozgatják a mutatót · OK kattint · Vissza bezár</string>
-    <string name="ad_popup_note">A hirdetések ingyenesen tartják a ClipBoxot, és segítenek kifizetni a szervereket és a karbantartást.</string>
+    <string name="ad_popup_note">A hirdetések ingyenesen tartják a StreamHubot, és segítenek kifizetni a szervereket és a karbantartást.</string>
     <string name="ad_remove_with_vip">Reklám nélkül VIP-pel</string>
     <string name="add_to_favourites">Hozzáadás a kedvencekhez</string>
     <string name="added_to_favourites">Hozzáadva a Kedvencekhez</string>
     <string name="added_to_my_list">Hozzáadva a listámhoz</string>
     <string name="alert_dialog_title">Megjegyzés</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Töltse ki</string>
     <string name="aspect_fills_already">a kép már kitölti a képernyőt</string>
     <string name="aspect_fit">Igazítás</string>
@@ -178,9 +178,9 @@ A ClipBoxot egy kis csapat készíti, akik maguk is minden nap használják, és
     <string name="call_notification_ongoing_text">Hívás folyamatban</string>
     <string name="call_notification_screening_text">Bejövő hívás szűrése</string>
     <string name="capture_blocked_exit">Kilépés</string>
-    <string name="capture_blocked_intro">A ClipBox nem fut, amíg hálózatfigyelő vagy proxy eszköz van telepítve erre az eszközre.</string>
-    <string name="capture_blocked_outro">Távolítsd el, majd nyisd meg újra a ClipBoxot.</string>
-    <string name="capture_blocked_title">A ClipBox nem tud futni ezen az eszközön</string>
+    <string name="capture_blocked_intro">A StreamHub nem fut, amíg hálózatfigyelő vagy proxy eszköz van telepítve erre az eszközre.</string>
+    <string name="capture_blocked_outro">Távolítsd el, majd nyisd meg újra a StreamHubot.</string>
+    <string name="capture_blocked_title">A StreamHub nem tud futni ezen az eszközön</string>
     <string name="cast_ad_label">Hirdetés</string>
     <string name="cast_button_cast">Szereplők</string>
     <string name="cast_casting_to_device">Átküldés ide: %1$s</string>
@@ -379,7 +379,7 @@ A TV IP-címét manuálisan is megadhatja."</string>
     <string name="err_service_unavailable">A szolgáltatás átmenetileg nem elérhető. Kérjük, próbálja újra.</string>
     <string name="err_signed_out_sign_in">Ezen az eszközön kijelentkeztettünk. Jelentkezz be újra.</string>
     <string name="err_too_many_requests">Túl sok kérés. Kérem, várjon egy pillanatot.</string>
-    <string name="err_update_for_recovery">Új helyreállítási kód létrehozásához frissítsd a ClipBoxot a legújabb verzióra.</string>
+    <string name="err_update_for_recovery">Új helyreállítási kód létrehozásához frissítsd a StreamHubot a legújabb verzióra.</string>
     <string name="error_a11y_label">Hiba: érvénytelen</string>
     <string name="error_bad_intent">Érvénytelen link érkezett. Nem lehetett kinyitni.</string>
     <string name="error_icon_content_description">Hiba</string>
@@ -458,16 +458,16 @@ A TV IP-címét manuálisan is megadhatja."</string>
 
 Nem minden cím játszható le, egyesek működnek, mások pedig nem.
 
-A ClipBox új, fejlesztés alatt áll, előfordulhatnak hibák."</string>
+A StreamHub új, fejlesztés alatt áll, előfordulhatnak hibák."</string>
     <string name="first_launch_ok">Értem</string>
     <string name="first_launch_title">Üdvözöljük újra!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Frissítés letöltése</string>
     <string name="force_update_fallback_msg">Az alkalmazás használatának folytatásához új verzióra van szükség.</string>
     <string name="force_update_subtitle">Frissítés szükséges</string>
     <string name="gate_connecting">Betöltés</string>
     <string name="gate_retry">Próbálja újra</string>
-    <string name="gate_unavailable_message">"A ClipBox nem tudja elérni a szervereit.
+    <string name="gate_unavailable_message">"A StreamHub nem tudja elérni a szervereit.
 Ellenőrizze a kapcsolatot, és próbálja újra."</string>
     <string name="gate_unavailable_title">A szolgáltatás nem elérhető</string>
     <string name="genre_action">Akció</string>
@@ -492,7 +492,7 @@ Ellenőrizze a kapcsolatot, és próbálja újra."</string>
     <string name="lang_available_body">Jelenleg ezen a nyelven használja az alkalmazást: %1$s. Szeretne váltani? Ezt bármikor módosíthatja a Beállításokban.</string>
     <string name="lang_available_keep">Marad: %1$s</string>
     <string name="lang_available_switch">Váltás erre: %1$s</string>
-    <string name="lang_available_title">A ClipBox már elérhető ezen a nyelven: %1$s</string>
+    <string name="lang_available_title">A StreamHub már elérhető ezen a nyelven: %1$s</string>
     <string name="launcher_instructions">"Itt nem kell semmit tennie.
 
 Ha van stream URL-je, közvetlenül lent játszhatja le.
@@ -639,17 +639,17 @@ Adjon hozzá filmeket és műsorokat a részletek oldaláról."</string>
     <string name="pair_scan_allow">Kamera engedélyezése</string>
     <string name="pair_scan_button">QR-kód beolvasása</string>
     <string name="pair_scan_hint">Irányítsd a kamerát a tévén látható QR-kódra</string>
-    <string name="pair_scan_no_camera">A kód beolvasásához a ClipBoxnak szüksége van a kamerára. Csak addig használja, amíg ez a képernyő nyitva van.</string>
+    <string name="pair_scan_no_camera">A kód beolvasásához a StreamHubnak szüksége van a kamerára. Csak addig használja, amíg ez a képernyő nyitva van.</string>
     <string name="pair_scan_torch">Zseblámpa</string>
     <string name="pair_scan_type_instead">Kód begépelése</string>
-    <string name="pair_scan_wrong">Ez nem ClipBox tévékód. A tévén látható kódot olvasd be.</string>
+    <string name="pair_scan_wrong">Ez nem StreamHub tévékód. A tévén látható kódot olvasd be.</string>
     <string name="pair_tv_button">Bejelentkezés telefonnal</string>
     <string name="pair_tv_confirm_hint">Erősítsd meg a telefonon, és ez a TV magától bejelentkezik.</string>
     <string name="pair_tv_done_fmt">Bejelentkezve: %1$s</string>
     <string name="pair_tv_expires_fmt">A kód még %1$s érvényes</string>
     <string name="pair_tv_failed">Nem sikerült kódot kérni. Ellenőrizd a kapcsolatot, és próbáld újra.</string>
     <string name="pair_tv_new_code">Új kód</string>
-    <string name="pair_tv_or_code">Vagy nyisd meg a ClipBoxot a telefonon, menj a Fiók, majd Bejelentkezés a TV-n menüpontba, és add meg a QR-kód alatti kódot.</string>
+    <string name="pair_tv_or_code">Vagy nyisd meg a StreamHubot a telefonon, menj a Fiók, majd Bejelentkezés a TV-n menüpontba, és add meg a QR-kód alatti kódot.</string>
     <string name="pair_tv_scan">Olvasd be a kódot a telefon kamerájával</string>
     <string name="pair_tv_waiting">Várakozás a telefonra…</string>
     <string name="parental_age_fmt">%1$d éves és fiatalabb</string>
@@ -718,7 +718,7 @@ Ennyi. A VIP magától bekapcsol ezen a tévén, amint a fizetés látszik."</st
 
 1. Koppints erre: Azteco-utalvány beváltása › Hol veszek utalványt?, és vegyél egy Azteco Bitcoin-utalványt (On-Chain) valamelyik boltban. A szokásos módon fizetsz, például kártyával.
 2. Kapsz egy 16 jegyű kódot.
-3. A ClipBoxban koppints a(z) Azteco-utalvány beváltása, majd a(z) Bitcoin-utalvány lehetőségre. Megnyílik a voucheroldalunk.
+3. A StreamHubban koppints a(z) Azteco-utalvány beváltása, majd a(z) Bitcoin-utalvány lehetőségre. Megnyílik a voucheroldalunk.
 4. Ott írd be a kódot. Beváltjuk helyetted, és ellenőrizzük, hogy megérkezett-e.
 
 Ennyi. A VIP néhány percen belül magától bekapcsol."</string>
@@ -751,12 +751,12 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="premium_state_confirming_title">Fizetés megérkezett</string>
     <string name="premium_state_partial_body_fmt">Eddig $%1$s-t fizettél. Még $%2$s, és tiéd a VIP. Amit befizettél, a fiókodon marad.</string>
     <string name="premium_state_partial_title">Majdnem kész</string>
-    <string name="premium_state_vip_body">Nincs reklám egyik eszközödön sem, ahol bejelentkezel. Köszönjük, hogy támogatod a ClipBoxot.</string>
+    <string name="premium_state_vip_body">Nincs reklám egyik eszközödön sem, ahol bejelentkezel. Köszönjük, hogy támogatod a StreamHubot.</string>
     <string name="premium_state_vip_title">VIP vagy</string>
     <string name="premium_state_waiting_body">Fejezd be a fizetést a fizetési oldalon. Ez a képernyő magától frissül, amint látjuk a fizetést.</string>
     <string name="premium_state_waiting_title">Várjuk a fizetésedet</string>
     <string name="premium_tagline">Egyszeri fizetés. Örökre a tiéd.</string>
-    <string name="premium_tv_phone_hint">Van Lightning-utalványod? Váltsd be a telefonodon a ClipBoxban, ugyanabba a fiókba bejelentkezve. A VIP a fiókoddal együtt erre a tévére is átjön.</string>
+    <string name="premium_tv_phone_hint">Van Lightning-utalványod? Váltsd be a telefonodon a StreamHubban, ugyanabba a fiókba bejelentkezve. A VIP a fiókoddal együtt erre a tévére is átjön.</string>
     <string name="premium_tv_scan">Fizess a telefonoddal szkennelve</string>
     <string name="premium_tv_show_checkout">Fizetés kriptóval</string>
     <string name="premium_tv_show_voucher">Bitcoin-utalvány</string>
@@ -859,7 +859,7 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="servers_probe_starting">Indítás… %1$d mp van hátra</string>
     <string name="servers_tab_experimental">További nyelvek</string>
     <string name="servers_tab_main">Normál</string>
-    <string name="settings_about">A ClipBoxról</string>
+    <string name="settings_about">A StreamHubról</string>
     <string name="settings_about_summary">Verzióinformáció, kreditek és változásnapló</string>
     <string name="settings_account">Az én fiókom</string>
     <string name="settings_account_loggedout">Nincs bejelentkezve</string>
@@ -891,13 +891,13 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="settings_next_episode">Következő epizód automatikus lejátszása</string>
     <string name="settings_next_episode_summary">Visszaszámlálás a stáblistánál, majd magától továbblép</string>
     <string name="settings_notifications">Értesítések</string>
-    <string name="settings_notifications_summary">Bejelentéseket és frissítéseket kaphat a ClipBoxtól</string>
+    <string name="settings_notifications_summary">Bejelentéseket és frissítéseket kaphat a StreamHubtól</string>
     <string name="settings_parental">Szülői felügyelet</string>
     <string name="settings_parental_off">Ki</string>
     <string name="settings_parental_on_fmt">A %1$d év feletti besorolású címek rejtve vannak</string>
     <string name="settings_pref_sub_lang">Előnyben részesített nyelv</string>
     <string name="settings_reset_app">Alkalmazás visszaállítása</string>
-    <string name="settings_reset_app_confirm">Ezzel törli az összes alkalmazásadatot, és bezárja a ClipBoxot. Folytatja?</string>
+    <string name="settings_reset_app_confirm">Ezzel törli az összes alkalmazásadatot, és bezárja a StreamHubot. Folytatja?</string>
     <string name="settings_reset_app_summary">Törölje az összes adatot, és kezdje újra</string>
     <string name="settings_reset_tips">A listám, a kedvencek és a Folytatás törlése</string>
     <string name="settings_reset_tips_confirm">Törlöd a teljes listádat, a kedvenceidet és mindent, amit félbehagytál?</string>
@@ -1076,7 +1076,7 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="tamper_blocked">Az alkalmazás ezen példánya nem eredeti.</string>
     <string name="terms_gate_accept">Elfogadás</string>
     <string name="terms_gate_decline">Elutasítás</string>
-    <string name="terms_gate_message">A ClipBox használatának megkezdéséhez olvassa el és fogadja el Általános Szerződési Feltételeinket.</string>
+    <string name="terms_gate_message">A StreamHub használatának megkezdéséhez olvassa el és fogadja el Általános Szerződési Feltételeinket.</string>
     <string name="terms_gate_subtitle">Kérjük, olvassa el és fogadja el ezeket a folytatáshoz</string>
     <string name="terms_gate_title">Általános Szerződési Feltételek</string>
     <string name="touch_lock_desc">Lezárási képernyő</string>
@@ -1084,14 +1084,14 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="touch_locked_toast">Képernyő zárolva. A zárolás feloldásához érintse meg a lakat ikont.</string>
     <string name="track_off">Ki</string>
     <string name="tv_account_avatar">Profilkép</string>
-    <string name="tv_account_avatar_phone_only">A profilkép az eszközödön lévő fényképből választható. Ezen a tévén nincs erre alkalmas alkalmazás, ezért állítsd be a telefonodon a ClipBoxban, és itt is megjelenik.</string>
+    <string name="tv_account_avatar_phone_only">A profilkép az eszközödön lévő fényképből választható. Ezen a tévén nincs erre alkalmas alkalmazás, ezért állítsd be a telefonodon a StreamHubban, és itt is megjelenik.</string>
     <string name="tv_account_choose_image">Válassz képet</string>
     <string name="tv_account_new_password_hint">Új jelszó</string>
     <string name="tv_account_recover_action">Jelszó visszaállítása</string>
     <string name="tv_account_recovery_fmt">"Helyreállítási kód: %1$s
 
 Írd fel. Csak egyszer jelenik meg, és ez az egyetlen visszaút, ha elfelejted a jelszavad."</string>
-    <string name="tv_account_register_hint">Még nincs fiókod? Hozd létre a telefonod ClipBox alkalmazásában, majd jelentkezz be itt.</string>
+    <string name="tv_account_register_hint">Még nincs fiókod? Hozd létre a telefonod StreamHub alkalmazásában, majd jelentkezz be itt.</string>
     <string name="tv_account_saved">Mentve</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Kép (elmosott)</string>
@@ -1194,7 +1194,7 @@ Ennyi. A VIP néhány percen belül magától bekapcsol ezen a tévén."</string
     <string name="tv_ui_scale_title">Felület mérete</string>
     <string name="tv_value_off">Ki</string>
     <string name="tv_value_on">Be</string>
-    <string name="tv_whatsnew_body">A ClipBoxot újraépítettük a nagy képernyőre és a távirányítóra. Minden ott van, ami eddig, csak könnyebben elérhető a kanapéról. Jobban tetszett a korábbi kinézet? Bármikor visszaválthatsz rá a beállításokban.</string>
+    <string name="tv_whatsnew_body">A StreamHubot újraépítettük a nagy képernyőre és a távirányítóra. Minden ott van, ami eddig, csak könnyebben elérhető a kanapéról. Jobban tetszett a korábbi kinézet? Bármikor visszaválthatsz rá a beállításokban.</string>
     <string name="tv_whatsnew_classic">A klasszikus kinézet használata</string>
     <string name="tv_whatsnew_continue">Nézz körül</string>
     <string name="tv_whatsnew_title">Új kinézet a televízióhoz</string>
@@ -1211,21 +1211,21 @@ Letölti és telepíti most?"</string>
     <string name="update_downloading">Az új darabok behúzása…</string>
     <string name="update_install_help">"1. Érintse meg a Frissítés lehetőséget az új APK letöltéséhez.
 2. Amikor megnyílik a telepítő, koppintson a Telepítés lehetőségre.
-3. Ha az Android letiltja, engedélyezze az \"Ismeretlen alkalmazások telepítése\" lehetőséget a ClipBox számára, majd koppintson ismét a Telepítésre.
+3. Ha az Android letiltja, engedélyezze az \"Ismeretlen alkalmazások telepítése\" lehetőséget a StreamHub számára, majd koppintson ismét a Telepítésre.
 4. A beállítások és a lista megmarad, az aktuális alkalmazáson keresztül települ."</string>
     <string name="update_install_help_summary">Mi a teendő, ha a telepítés blokkolva van</string>
     <string name="update_install_help_title">Hogyan kell telepíteni</string>
     <string name="update_later">Később</string>
-    <string name="update_permission_msg_firetv">"A Fire TV csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Válassza a Beállítások megnyitása lehetőséget, kapcsolja be a ClipBoxot az \"Ismeretlen alkalmazások telepítése\" alatt, majd nyomja meg a Vissza gombot. A frissítés ezután magától folytatódik.
+    <string name="update_permission_msg_firetv">"A Fire TV csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Válassza a Beállítások megnyitása lehetőséget, kapcsolja be a StreamHubot az \"Ismeretlen alkalmazások telepítése\" alatt, majd nyomja meg a Vissza gombot. A frissítés ezután magától folytatódik.
 
-Ha a képernyő nem nyílik meg: Beállítások > Saját Fire TV > Fejlesztői beállítások > Ismeretlen alkalmazások telepítése > ClipBox. Nincsenek fejlesztői beállítások? Előbb nyissa meg a Beállítások > Saját Fire TV > Névjegy menüt, és nyomja meg 7-szer az OK gombot az eszköz nevén."</string>
-    <string name="update_permission_msg_phone">Az Android csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Koppintson a Beállítások megnyitása gombra, kapcsolja be a ClipBox esetén \"Engedélyezés ebből a forrásból\" opciót, majd lépjen vissza. A frissítés ezután magától folytatódik.</string>
-    <string name="update_permission_msg_tv">"A tévé csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Válassza a Beállítások megnyitása lehetőséget, kapcsolja be a ClipBoxot az \"Ismeretlen alkalmazások telepítése\" alatt, majd nyomja meg a Vissza gombot. A frissítés ezután magától folytatódik.
+Ha a képernyő nem nyílik meg: Beállítások > Saját Fire TV > Fejlesztői beállítások > Ismeretlen alkalmazások telepítése > StreamHub. Nincsenek fejlesztői beállítások? Előbb nyissa meg a Beállítások > Saját Fire TV > Névjegy menüt, és nyomja meg 7-szer az OK gombot az eszköz nevén."</string>
+    <string name="update_permission_msg_phone">Az Android csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Koppintson a Beállítások megnyitása gombra, kapcsolja be a StreamHub esetén \"Engedélyezés ebből a forrásból\" opciót, majd lépjen vissza. A frissítés ezután magától folytatódik.</string>
+    <string name="update_permission_msg_tv">"A tévé csak azokból az alkalmazásokból telepít frissítést, amelyeknek ezt engedélyezi. Válassza a Beállítások megnyitása lehetőséget, kapcsolja be a StreamHubot az \"Ismeretlen alkalmazások telepítése\" alatt, majd nyomja meg a Vissza gombot. A frissítés ezután magától folytatódik.
 
-Ha a képernyő nem nyílik meg: Beállítások > Alkalmazások > Biztonság és korlátozások > Ismeretlen források > ClipBox."</string>
+Ha a képernyő nem nyílik meg: Beállítások > Alkalmazások > Biztonság és korlátozások > Ismeretlen források > StreamHub."</string>
     <string name="update_permission_not_opened">A beállításokat nem sikerült megnyitni. Kövesse a képernyőn látható lépéseket.</string>
     <string name="update_permission_open">Beállítások megnyitása</string>
-    <string name="update_permission_title">Engedélyezze, hogy a ClipBox frissítéseket telepítsen</string>
+    <string name="update_permission_title">Engedélyezze, hogy a StreamHub frissítéseket telepítsen</string>
     <string name="update_unavailable">A frissítési szolgáltatás nem érhető el. Az alkalmazás jelenleg nem tud frissítéseket keresni.</string>
     <string name="update_up_to_date">Már a legújabb verziót használja. Szép.</string>
     <string name="v7_preference_off">KI</string>
@@ -1240,10 +1240,10 @@ Ha a képernyő nem nyílik meg: Beállítások > Alkalmazások > Biztonság és
     <string name="voucher_ln_bad">Ez nem tűnik Lightning-utalványlinknek. LNURL-lel kezdődik.</string>
     <string name="voucher_ln_redeeming">Utalvány beváltása…</string>
     <string name="voucher_ln_steps">"1. Nyisd meg az azte.co oldalt, válaszd a Lightninget, és váltsd be ott az utalványkódot.
-2. Kapsz egy Lightning-linket (LNURL). Koppints rá a ClipBox megnyitásához, vagy másold ki és illeszd be ide."</string>
+2. Kapsz egy Lightning-linket (LNURL). Koppints rá a StreamHub megnyitásához, vagy másold ki és illeszd be ide."</string>
     <string name="voucher_loading_address">Címed előkészítése…</string>
     <string name="voucher_onchain">Bitcoin-utalvány</string>
-    <string name="voucher_onchain_note">Ez a cím ehhez a fizetéshez a fiókodhoz tartozik. Közben bezárhatod a ClipBoxot; a VIP magától bekapcsol.</string>
+    <string name="voucher_onchain_note">Ez a cím ehhez a fizetéshez a fiókodhoz tartozik. Közben bezárhatod a StreamHubot; a VIP magától bekapcsol.</string>
     <string name="voucher_onchain_steps">"1. Nyisd meg az azte.co oldalt, és váltsd be ott az utalványkódot.
 2. Amikor Bitcoin-címet kér, ezt add meg:"</string>
     <string name="voucher_onchain_steps_code">"1. Írd be alább az utalvány 16 jegyű kódját.

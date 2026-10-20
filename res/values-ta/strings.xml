@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, நூலகங்கள் &amp; உரிமங்கள்</string>
     <string name="about_attributions_title">உரிமங்கள் மற்றும் பண்புக்கூறுகள்</string>
     <string name="about_changelog_title">சேஞ்ச்லாக்</string>
-    <string name="about_credits_body">"Android-ல் திரைப்படங்களையும் தொடர்களையும் பார்ப்பதற்கான தூய்மையான, அமைதியான வழி ClipBox. அனைத்தும் ஒரே இடத்தில் இருப்பதால், பிரபலமானவற்றை உலாவலாம், குறிப்பிட்ட ஒன்றைத் தேடலாம், அல்லது நிறுத்திய இடத்திலிருந்தே தொடரலாம்.
+    <string name="about_credits_body">"Android-ல் திரைப்படங்களையும் தொடர்களையும் பார்ப்பதற்கான தூய்மையான, அமைதியான வழி StreamHub. அனைத்தும் ஒரே இடத்தில் இருப்பதால், பிரபலமானவற்றை உலாவலாம், குறிப்பிட்ட ஒன்றைத் தேடலாம், அல்லது நிறுத்திய இடத்திலிருந்தே தொடரலாம்.
 
 வசன வரிகள் பல மொழிகளில் உங்களுக்காகக் கண்டறியப்பட்டு நேரத்துடன் பொருத்தப்படுகின்றன, ஒவ்வொரு தலைப்புக்கும் பல ஆதாரங்கள் உள்ளன, நீங்கள் பார்ப்பதை Chromecast அல்லது ஸ்மார்ட் டிவிக்கு அனுப்பலாம். இந்த ஆப் ஃபோன், டேப்லெட், Android TV மற்றும் Fire TV-ல் இயங்குகிறது; விருப்பத் தேர்வான கணக்கு உங்கள் பட்டியலையும் வரலாற்றையும் அனைத்திலும் ஒரே மாதிரி வைத்திருக்கும்.
 
-ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன்படுத்தும் ஒரு சிறிய குழு உருவாக்குகிறது; மக்கள் சொல்வதால்தான் இது மேம்பட்டு வருகிறது."</string>
-    <string name="about_credits_title">ClipBox பற்றி</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub-ஐ ஒவ்வொரு நாளும் இதைப் பயன்படுத்தும் ஒரு சிறிய குழு உருவாக்குகிறது; மக்கள் சொல்வதால்தான் இது மேம்பட்டு வருகிறது."</string>
+    <string name="about_credits_title">StreamHub பற்றி</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">உள்ளடக்க ஆதாரங்கள் மற்றும் வர்த்தக முத்திரைகள்</string>
     <string name="about_disclaimer_title">மறுப்பு</string>
     <string name="about_legal_title">சட்டபூர்வமானது</string>
     <string name="about_privacy_subtitle">என்ன தரவு சேகரிக்கப்படுகிறது, ஏன்</string>
     <string name="about_privacy_title">தனியுரிமைக் கொள்கை</string>
-    <string name="about_terms_subtitle">ClipBox எவ்வாறு பயன்படுத்தப்படலாம்</string>
+    <string name="about_terms_subtitle">StreamHub எவ்வாறு பயன்படுத்தப்படலாம்</string>
     <string name="about_terms_title">விதிமுறைகள் &amp; நிபந்தனைகள்</string>
     <string name="about_title">பற்றி</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -99,21 +99,21 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="actor_read_more">மேலும் படிக்கவும்</string>
     <string name="actor_wikipedia_failed">விக்கிபீடியாவை திறக்க முடியவில்லை.</string>
     <string name="ad_autoclose_fmt">%1$d வி-இல் தானாக மூடப்படும்</string>
-    <string name="ad_blocked_note">ஒரு விளம்பரத் தடுப்பான் இந்த விளம்பரத்தை நிறுத்துகிறது. விளம்பரங்கள் ClipBox-ஐ இலவசமாக வைத்திருக்கின்றன: ClipBox-க்கு அதை அணைக்கவும், அல்லது VIP பெறவும்.</string>
+    <string name="ad_blocked_note">ஒரு விளம்பரத் தடுப்பான் இந்த விளம்பரத்தை நிறுத்துகிறது. விளம்பரங்கள் StreamHub-ஐ இலவசமாக வைத்திருக்கின்றன: StreamHub-க்கு அதை அணைக்கவும், அல்லது VIP பெறவும்.</string>
     <string name="ad_close">விளம்பரத்தை மூடு</string>
     <string name="ad_label">விளம்பரம்</string>
     <string name="ad_loading">விளம்பரம் ஏற்றப்படுகிறது…</string>
     <string name="ad_open">விளம்பரத்தைத் திற</string>
     <string name="ad_page_hint">அம்புகள் சுட்டியை நகர்த்தும் · OK கிளிக் செய்யும் · Back மூடும்</string>
-    <string name="ad_popup_note">விளம்பரங்கள் ClipBox-ஐ இலவசமாக வைத்திருக்கின்றன, சர்வர் மற்றும் பராமரிப்புச் செலவுகளைச் செலுத்தவும் உதவுகின்றன.</string>
+    <string name="ad_popup_note">விளம்பரங்கள் StreamHub-ஐ இலவசமாக வைத்திருக்கின்றன, சர்வர் மற்றும் பராமரிப்புச் செலவுகளைச் செலுத்தவும் உதவுகின்றன.</string>
     <string name="ad_remove_with_vip">VIP உடன் விளம்பரமில்லை</string>
     <string name="add_to_favourites">பிடித்தவைகளில் சேர்க்கவும்</string>
     <string name="added_to_favourites">பிடித்தவைகளில் சேர்க்கப்பட்டது</string>
     <string name="added_to_my_list">எனது பட்டியலில் சேர்க்கப்பட்டது</string>
     <string name="alert_dialog_title">கவனிக்கவும்</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">நிரப்பவும்</string>
     <string name="aspect_fills_already">படம் ஏற்கனவே திரையை நிரப்புகிறது</string>
     <string name="aspect_fit">பொருத்து</string>
@@ -178,9 +178,9 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="call_notification_ongoing_text">செயலில் இருக்கும் அழைப்பு</string>
     <string name="call_notification_screening_text">உள்வரும் அழைப்பை மதிப்பாய்வு செய்கிறது</string>
     <string name="capture_blocked_exit">வெளியேறு</string>
-    <string name="capture_blocked_intro">இந்தச் சாதனத்தில் நெட்வொர்க் கேப்சர் அல்லது ப்ராக்ஸி கருவி நிறுவப்பட்டிருக்கும் வரை ClipBox இயங்காது.</string>
-    <string name="capture_blocked_outro">அதை நிறுவல் நீக்கிவிட்டு ClipBox-ஐ மீண்டும் திறக்கவும்.</string>
-    <string name="capture_blocked_title">இந்தச் சாதனத்தில் ClipBox இயங்க முடியாது</string>
+    <string name="capture_blocked_intro">இந்தச் சாதனத்தில் நெட்வொர்க் கேப்சர் அல்லது ப்ராக்ஸி கருவி நிறுவப்பட்டிருக்கும் வரை StreamHub இயங்காது.</string>
+    <string name="capture_blocked_outro">அதை நிறுவல் நீக்கிவிட்டு StreamHub-ஐ மீண்டும் திறக்கவும்.</string>
+    <string name="capture_blocked_title">இந்தச் சாதனத்தில் StreamHub இயங்க முடியாது</string>
     <string name="cast_ad_label">விளம்பரம்</string>
     <string name="cast_button_cast">நடிகர்கள்</string>
     <string name="cast_casting_to_device">%1$sக்கு அனுப்புகிறது</string>
@@ -379,7 +379,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="err_service_unavailable">சேவை தற்காலிகமாக கிடைக்கவில்லை. மீண்டும் முயற்சிக்கவும்.</string>
     <string name="err_signed_out_sign_in">இந்தச் சாதனத்தில் நீங்கள் வெளியேற்றப்பட்டீர்கள். மீண்டும் உள்நுழையவும்.</string>
     <string name="err_too_many_requests">பல கோரிக்கைகள். சிறிது நேரம் காத்திருக்கவும்.</string>
-    <string name="err_update_for_recovery">புதிய மீட்பு குறியீட்டை உருவாக்க ClipBox-ஐ சமீபத்திய பதிப்பிற்குப் புதுப்பிக்கவும்.</string>
+    <string name="err_update_for_recovery">புதிய மீட்பு குறியீட்டை உருவாக்க StreamHub-ஐ சமீபத்திய பதிப்பிற்குப் புதுப்பிக்கவும்.</string>
     <string name="error_a11y_label">பிழை: தவறானது</string>
     <string name="error_bad_intent">தவறான இணைப்பு கிடைத்தது. திறக்க முடியவில்லை.</string>
     <string name="error_icon_content_description">பிழை</string>
@@ -467,7 +467,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="force_update_subtitle">புதுப்பித்தல் தேவை</string>
     <string name="gate_connecting">ஏற்றுகிறது</string>
     <string name="gate_retry">மீண்டும் முயற்சிக்கவும்</string>
-    <string name="gate_unavailable_message">"ClipBox அதன் சேவையகங்களை அடைய முடியவில்லை.
+    <string name="gate_unavailable_message">"StreamHub அதன் சேவையகங்களை அடைய முடியவில்லை.
 உங்கள் இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."</string>
     <string name="gate_unavailable_title">சேவை கிடைக்கவில்லை</string>
     <string name="genre_action">செயல்</string>
@@ -492,7 +492,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="lang_available_body">நீங்கள் தற்போது பயன்பாட்டை %1$s இல் பயன்படுத்துகிறீர்கள். மாற்ற விரும்புகிறீர்களா? அமைப்புகளில் எப்போது வேண்டுமானாலும் இதை மாற்றலாம்.</string>
     <string name="lang_available_keep">%1$s ஐ வைத்திரு</string>
     <string name="lang_available_switch">%1$s க்கு மாற்று</string>
-    <string name="lang_available_title">ClipBox இப்போது %1$s இல் கிடைக்கிறது</string>
+    <string name="lang_available_title">StreamHub இப்போது %1$s இல் கிடைக்கிறது</string>
     <string name="launcher_instructions">"நீங்கள் இங்கு எதுவும் செய்ய வேண்டியதில்லை.
 
 உங்களிடம் ஸ்ட்ரீம் URL இருந்தால், அதை நேரடியாக கீழே இயக்கலாம்.
@@ -639,17 +639,17 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="pair_scan_allow">கேமராவை அனுமதி</string>
     <string name="pair_scan_button">QR குறியீட்டை ஸ்கேன் செய்</string>
     <string name="pair_scan_hint">டிவியில் உள்ள QR குறியீட்டை நோக்கி கேமராவைக் காட்டவும்</string>
-    <string name="pair_scan_no_camera">குறியீட்டை ஸ்கேன் செய்ய ClipBox-க்கு கேமரா தேவை. இந்தத் திரை திறந்திருக்கும்போது மட்டுமே பயன்படுத்தப்படும்.</string>
+    <string name="pair_scan_no_camera">குறியீட்டை ஸ்கேன் செய்ய StreamHub-க்கு கேமரா தேவை. இந்தத் திரை திறந்திருக்கும்போது மட்டுமே பயன்படுத்தப்படும்.</string>
     <string name="pair_scan_torch">டார்ச்</string>
     <string name="pair_scan_type_instead">பதிலாகக் குறியீட்டை உள்ளிடவும்</string>
-    <string name="pair_scan_wrong">இது ClipBox டிவி குறியீடு அல்ல. உங்கள் டிவியில் உள்ள குறியீட்டை ஸ்கேன் செய்யவும்.</string>
+    <string name="pair_scan_wrong">இது StreamHub டிவி குறியீடு அல்ல. உங்கள் டிவியில் உள்ள குறியீட்டை ஸ்கேன் செய்யவும்.</string>
     <string name="pair_tv_button">தொலைபேசி மூலம் உள்நுழை</string>
     <string name="pair_tv_confirm_hint">தொலைபேசியில் உறுதிசெய்தால் இந்த டிவி தானாக உள்நுழையும்.</string>
     <string name="pair_tv_done_fmt">%1$s ஆக உள்நுழைந்தீர்கள்</string>
     <string name="pair_tv_expires_fmt">குறியீடு இன்னும் %1$s செல்லும்</string>
     <string name="pair_tv_failed">குறியீட்டைப் பெற முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும்.</string>
     <string name="pair_tv_new_code">புதிய குறியீடு</string>
-    <string name="pair_tv_or_code">அல்லது தொலைபேசியில் ClipBox-ஐத் திறந்து, கணக்கு, பின்னர் டிவியில் உள்நுழை சென்று QR குறியீட்டின் கீழ் உள்ள குறியீட்டை உள்ளிடவும்.</string>
+    <string name="pair_tv_or_code">அல்லது தொலைபேசியில் StreamHub-ஐத் திறந்து, கணக்கு, பின்னர் டிவியில் உள்நுழை சென்று QR குறியீட்டின் கீழ் உள்ள குறியீட்டை உள்ளிடவும்.</string>
     <string name="pair_tv_scan">தொலைபேசி கேமராவால் குறியீட்டை ஸ்கேன் செய்யவும்</string>
     <string name="pair_tv_waiting">உங்கள் தொலைபேசிக்காகக் காத்திருக்கிறது…</string>
     <string name="parental_age_fmt">%1$d வயது மற்றும் அதற்குக் கீழ்</string>
@@ -718,7 +718,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
 
 1. Azteco வவுச்சரைப் பயன்படுத்துங்கள் › வவுச்சரை எங்கே வாங்குவது? ஐத் தட்டி, ஏதாவது ஒரு கடையில் Azteco Bitcoin வவுச்சரை (On-Chain) வாங்கவும். வழக்கம்போல், உதாரணமாக கார்டு மூலம், பணம் செலுத்துவீர்கள்.
 2. 16 இலக்கக் குறியீடு கிடைக்கும்.
-3. ClipBox-இல் Azteco வவுச்சரைப் பயன்படுத்துங்கள், பிறகு Bitcoin வவுச்சர் என்பதைத் தட்டவும். எங்கள் வவுச்சர் பக்கம் திறக்கும்.
+3. StreamHub-இல் Azteco வவுச்சரைப் பயன்படுத்துங்கள், பிறகு Bitcoin வவுச்சர் என்பதைத் தட்டவும். எங்கள் வவுச்சர் பக்கம் திறக்கும்.
 4. அங்கே குறியீட்டை உள்ளிடவும். உங்களுக்காக அதை மீட்டெடுத்து, பணம் வந்ததா என்று சரிபார்ப்போம்.
 
 அவ்வளவுதான். சில நிமிடங்களில் VIP தானாக இயங்கும்."</string>
@@ -751,12 +751,12 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="premium_state_confirming_title">கட்டணம் பெறப்பட்டது</string>
     <string name="premium_state_partial_body_fmt">நீங்கள் $%1$s செலுத்தியுள்ளீர்கள். இன்னும் $%2$s செலுத்தினால் VIP உங்களுடையது. நீங்கள் செலுத்தியது உங்கள் கணக்கில் இருக்கும்.</string>
     <string name="premium_state_partial_title">கிட்டத்தட்ட முடிந்தது</string>
-    <string name="premium_state_vip_body">நீங்கள் உள்நுழையும் எந்தச் சாதனத்திலும் விளம்பரம் இல்லை. ClipBox-ஐ ஆதரித்ததற்கு நன்றி.</string>
+    <string name="premium_state_vip_body">நீங்கள் உள்நுழையும் எந்தச் சாதனத்திலும் விளம்பரம் இல்லை. StreamHub-ஐ ஆதரித்ததற்கு நன்றி.</string>
     <string name="premium_state_vip_title">நீங்கள் VIP</string>
     <string name="premium_state_waiting_body">கட்டணப் பக்கத்தில் கட்டணத்தை முடியுங்கள். கட்டணம் தெரிந்தவுடன் இந்தத் திரை தானாகப் புதுப்பிக்கப்படும்.</string>
     <string name="premium_state_waiting_title">உங்கள் கட்டணத்திற்காகக் காத்திருக்கிறோம்</string>
     <string name="premium_tagline">ஒரே கட்டணம். என்றும் உங்களுடையது.</string>
-    <string name="premium_tv_phone_hint">Lightning வவுச்சர் உள்ளதா? அதே கணக்குடன் உங்கள் போனில் உள்ள ClipBox-இல் பயன்படுத்துங்கள். VIP உங்கள் கணக்குடன் இந்த டிவிக்கும் வரும்.</string>
+    <string name="premium_tv_phone_hint">Lightning வவுச்சர் உள்ளதா? அதே கணக்குடன் உங்கள் போனில் உள்ள StreamHub-இல் பயன்படுத்துங்கள். VIP உங்கள் கணக்குடன் இந்த டிவிக்கும் வரும்.</string>
     <string name="premium_tv_scan">செலுத்த போனில் ஸ்கேன் செய்யுங்கள்</string>
     <string name="premium_tv_show_checkout">கிரிப்டோவில் செலுத்துங்கள்</string>
     <string name="premium_tv_show_voucher">Bitcoin வவுச்சர்</string>
@@ -859,7 +859,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="servers_probe_starting">தொடங்குகிறது… %1$d வினாடிகள் மீதம்</string>
     <string name="servers_tab_experimental">மேலும் மொழிகள்</string>
     <string name="servers_tab_main">நிலையானது</string>
-    <string name="settings_about">ClipBox பற்றி</string>
+    <string name="settings_about">StreamHub பற்றி</string>
     <string name="settings_about_summary">பதிப்பு தகவல், வரவுகள் மற்றும் சேஞ்ச்லாக்</string>
     <string name="settings_account">என் கணக்கு</string>
     <string name="settings_account_loggedout">உள்நுழையவில்லை</string>
@@ -891,7 +891,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="settings_next_episode">அடுத்த எபிசோடை தானாக இயக்கு</string>
     <string name="settings_next_episode_summary">இறுதிப் பட்டியலில் கவுண்ட்டவுன் காட்டி தானாகவே தொடரும்</string>
     <string name="settings_notifications">அறிவிப்புகள்</string>
-    <string name="settings_notifications_summary">ClipBox இலிருந்து அறிவிப்புகள் மற்றும் புதுப்பிப்புகளைப் பெறுங்கள்</string>
+    <string name="settings_notifications_summary">StreamHub இலிருந்து அறிவிப்புகள் மற்றும் புதுப்பிப்புகளைப் பெறுங்கள்</string>
     <string name="settings_parental">பெற்றோர் கட்டுப்பாடு</string>
     <string name="settings_parental_off">அணைக்கப்பட்டது</string>
     <string name="settings_parental_on_fmt">%1$d-க்கு மேல் தரப்படுத்தப்பட்ட தலைப்புகள் மறைக்கப்படுகின்றன</string>
@@ -1076,7 +1076,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="tamper_blocked">பயன்பாட்டின் இந்த நகல் உண்மையானது அல்ல.</string>
     <string name="terms_gate_accept">ஏற்றுக்கொள்</string>
     <string name="terms_gate_decline">நிராகரி</string>
-    <string name="terms_gate_message">ClipBox ஐப் பயன்படுத்தத் தொடங்க, எங்கள் விதிமுறைகளையும் நிபந்தனைகளையும் மதிப்பாய்வு செய்து ஏற்கவும்.</string>
+    <string name="terms_gate_message">StreamHub ஐப் பயன்படுத்தத் தொடங்க, எங்கள் விதிமுறைகளையும் நிபந்தனைகளையும் மதிப்பாய்வு செய்து ஏற்கவும்.</string>
     <string name="terms_gate_subtitle">தொடர, இவற்றைப் படித்து ஏற்றுக்கொள்ளவும்</string>
     <string name="terms_gate_title">விதிமுறைகள் &amp; நிபந்தனைகள்</string>
     <string name="touch_lock_desc">பூட்டு திரை</string>
@@ -1084,14 +1084,14 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="touch_locked_toast">திரை பூட்டப்பட்டது. திறக்க பூட்டு ஐகானைத் தட்டவும்.</string>
     <string name="track_off">ஆஃப்</string>
     <string name="tv_account_avatar">சுயவிவரப் படம்</string>
-    <string name="tv_account_avatar_phone_only">சுயவிவரப் படம் உங்கள் சாதனத்தில் உள்ள புகைப்படத்திலிருந்து தேர்ந்தெடுக்கப்படுகிறது. இந்த தொலைக்காட்சியில் அதற்கான செயலி இல்லை, எனவே தொலைபேசியில் ClipBox-இல் அமைக்கவும், அது இங்கேயும் தோன்றும்.</string>
+    <string name="tv_account_avatar_phone_only">சுயவிவரப் படம் உங்கள் சாதனத்தில் உள்ள புகைப்படத்திலிருந்து தேர்ந்தெடுக்கப்படுகிறது. இந்த தொலைக்காட்சியில் அதற்கான செயலி இல்லை, எனவே தொலைபேசியில் StreamHub-இல் அமைக்கவும், அது இங்கேயும் தோன்றும்.</string>
     <string name="tv_account_choose_image">படத்தைத் தேர்ந்தெடுக்கவும்</string>
     <string name="tv_account_new_password_hint">புதிய கடவுச்சொல்</string>
     <string name="tv_account_recover_action">கடவுச்சொல்லை மீட்டமை</string>
     <string name="tv_account_recovery_fmt">"மீட்புக் குறியீடு: %1$s
 
 இதை எழுதி வைத்துக்கொள்ளுங்கள். ஒரே முறை மட்டுமே காட்டப்படும், கடவுச்சொல்லை மறந்தால் திரும்ப வர இதுவே ஒரே வழி."</string>
-    <string name="tv_account_register_hint">இன்னும் கணக்கு இல்லையா? உங்கள் மொபைலில் உள்ள ClipBox செயலியில் உருவாக்கி, பிறகு இங்கே உள்நுழையவும்.</string>
+    <string name="tv_account_register_hint">இன்னும் கணக்கு இல்லையா? உங்கள் மொபைலில் உள்ள StreamHub செயலியில் உருவாக்கி, பிறகு இங்கே உள்நுழையவும்.</string>
     <string name="tv_account_saved">சேமிக்கப்பட்டது</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">படம் (மங்கலானது)</string>
@@ -1194,7 +1194,7 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="tv_ui_scale_title">இடைமுக அளவு</string>
     <string name="tv_value_off">அணைப்பு</string>
     <string name="tv_value_on">இயக்கம்</string>
-    <string name="tv_whatsnew_body">பெரிய திரைக்கும் உங்கள் ரிமோட்டுக்கும் ஏற்ப ClipBox மீண்டும் உருவாக்கப்பட்டுள்ளது. உங்களிடம் இருந்த அனைத்தும் இன்னும் இங்கேயே உள்ளன, சோஃபாவிலிருந்து எட்டுவது எளிதாகிவிட்டது. முந்தைய தோற்றம் பிடித்திருக்கிறதா? அமைப்புகளில் எப்போது வேண்டுமானாலும் திரும்பலாம்.</string>
+    <string name="tv_whatsnew_body">பெரிய திரைக்கும் உங்கள் ரிமோட்டுக்கும் ஏற்ப StreamHub மீண்டும் உருவாக்கப்பட்டுள்ளது. உங்களிடம் இருந்த அனைத்தும் இன்னும் இங்கேயே உள்ளன, சோஃபாவிலிருந்து எட்டுவது எளிதாகிவிட்டது. முந்தைய தோற்றம் பிடித்திருக்கிறதா? அமைப்புகளில் எப்போது வேண்டுமானாலும் திரும்பலாம்.</string>
     <string name="tv_whatsnew_classic">பாரம்பரியத் தோற்றத்தைப் பயன்படுத்து</string>
     <string name="tv_whatsnew_continue">ஒரு பார்வை பாருங்கள்</string>
     <string name="tv_whatsnew_title">தொலைக்காட்சிக்கு ஒரு புதிய தோற்றம்</string>
@@ -1216,16 +1216,16 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="update_install_help_summary">நிறுவல் தடுக்கப்பட்டால் என்ன செய்வது</string>
     <string name="update_install_help_title">எப்படி நிறுவுவது</string>
     <string name="update_later">பின்னர்</string>
-    <string name="update_permission_msg_firetv">"நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே உங்கள் Fire TV புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தேர்ந்தெடுத்து, \"அறியப்படாத ஆப்ஸை நிறுவு\" என்பதில் ClipBox-ஐ இயக்கி, பின்செல் அழுத்துங்கள். புதுப்பிப்பு தானாகத் தொடரும்.
+    <string name="update_permission_msg_firetv">"நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே உங்கள் Fire TV புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தேர்ந்தெடுத்து, \"அறியப்படாத ஆப்ஸை நிறுவு\" என்பதில் StreamHub-ஐ இயக்கி, பின்செல் அழுத்துங்கள். புதுப்பிப்பு தானாகத் தொடரும்.
 
-அந்தத் திரை திறக்கவில்லை என்றால்: அமைப்புகள் > எனது Fire TV > டெவலப்பர் விருப்பங்கள் > அறியப்படாத ஆப்ஸை நிறுவு > ClipBox. டெவலப்பர் விருப்பங்கள் இல்லையா? முதலில் அமைப்புகள் > எனது Fire TV > அறிமுகம் சென்று சாதனத்தின் பெயரில் 7 முறை OK அழுத்துங்கள்."</string>
-    <string name="update_permission_msg_phone">நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே Android புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தட்டி, ClipBox-க்கு \"இந்த மூலத்திலிருந்து அனுமதி\" என்பதை இயக்கி, திரும்பிச் செல்லுங்கள். புதுப்பிப்பு தானாகத் தொடரும்.</string>
-    <string name="update_permission_msg_tv">"நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே உங்கள் டிவி புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தேர்ந்தெடுத்து, \"அறியப்படாத ஆப்ஸை நிறுவு\" என்பதில் ClipBox-ஐ இயக்கி, பின்செல் அழுத்துங்கள். புதுப்பிப்பு தானாகத் தொடரும்.
+அந்தத் திரை திறக்கவில்லை என்றால்: அமைப்புகள் > எனது Fire TV > டெவலப்பர் விருப்பங்கள் > அறியப்படாத ஆப்ஸை நிறுவு > StreamHub. டெவலப்பர் விருப்பங்கள் இல்லையா? முதலில் அமைப்புகள் > எனது Fire TV > அறிமுகம் சென்று சாதனத்தின் பெயரில் 7 முறை OK அழுத்துங்கள்."</string>
+    <string name="update_permission_msg_phone">நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே Android புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தட்டி, StreamHub-க்கு \"இந்த மூலத்திலிருந்து அனுமதி\" என்பதை இயக்கி, திரும்பிச் செல்லுங்கள். புதுப்பிப்பு தானாகத் தொடரும்.</string>
+    <string name="update_permission_msg_tv">"நீங்கள் அனுமதிக்கும் ஆப்ஸிலிருந்து மட்டுமே உங்கள் டிவி புதுப்பிப்புகளை நிறுவும். அமைப்புகளைத் திற என்பதைத் தேர்ந்தெடுத்து, \"அறியப்படாத ஆப்ஸை நிறுவு\" என்பதில் StreamHub-ஐ இயக்கி, பின்செல் அழுத்துங்கள். புதுப்பிப்பு தானாகத் தொடரும்.
 
-அந்தத் திரை திறக்கவில்லை என்றால்: அமைப்புகள் > ஆப்ஸ் > பாதுகாப்பு &amp; கட்டுப்பாடுகள் > அறியப்படாத மூலங்கள் > ClipBox."</string>
+அந்தத் திரை திறக்கவில்லை என்றால்: அமைப்புகள் > ஆப்ஸ் > பாதுகாப்பு &amp; கட்டுப்பாடுகள் > அறியப்படாத மூலங்கள் > StreamHub."</string>
     <string name="update_permission_not_opened">அமைப்புகளைத் திறக்க முடியவில்லை. திரையில் உள்ள படிகளைப் பின்பற்றுங்கள்.</string>
     <string name="update_permission_open">அமைப்புகளைத் திற</string>
-    <string name="update_permission_title">புதுப்பிப்புகளை நிறுவ ClipBox-க்கு அனுமதி அளியுங்கள்</string>
+    <string name="update_permission_title">புதுப்பிப்புகளை நிறுவ StreamHub-க்கு அனுமதி அளியுங்கள்</string>
     <string name="update_unavailable">புதுப்பிப்பு சேவை கிடைக்கவில்லை. ஆப்ஸால் இப்போது புதுப்பிப்புகளைச் சரிபார்க்க முடியவில்லை.</string>
     <string name="update_up_to_date">நீங்கள் ஏற்கனவே சமீபத்திய பதிப்பில் உள்ளீர்கள். நைஸ்.</string>
     <string name="v7_preference_off">ஆஃப்</string>
@@ -1240,10 +1240,10 @@ ClipBox-ஐ ஒவ்வொரு நாளும் இதைப் பயன�
     <string name="voucher_ln_bad">இது Lightning வவுச்சர் இணைப்பு போலத் தெரியவில்லை. இது LNURL என்று தொடங்கும்.</string>
     <string name="voucher_ln_redeeming">உங்கள் வவுச்சர் பயன்படுத்தப்படுகிறது…</string>
     <string name="voucher_ln_steps">"1. azte.co-ஐத் திறந்து, Lightning-ஐத் தேர்ந்தெடுத்து அங்கே உங்கள் வவுச்சர் குறியீட்டைப் பயன்படுத்துங்கள்.
-2. ஒரு Lightning இணைப்பு (LNURL) தோன்றும். ClipBox-ஐத் திறக்க அதைத் தட்டுங்கள், அல்லது நகலெடுத்து இங்கே ஒட்டுங்கள்."</string>
+2. ஒரு Lightning இணைப்பு (LNURL) தோன்றும். StreamHub-ஐத் திறக்க அதைத் தட்டுங்கள், அல்லது நகலெடுத்து இங்கே ஒட்டுங்கள்."</string>
     <string name="voucher_loading_address">உங்கள் முகவரி தயாராகிறது…</string>
     <string name="voucher_onchain">Bitcoin வவுச்சர்</string>
-    <string name="voucher_onchain_note">இந்த முகவரி இந்தக் கட்டணத்திற்கு உங்கள் கணக்கிற்குச் சொந்தமானது. இதற்கிடையில் ClipBox-ஐ மூடலாம்; VIP தானாக இயங்கும்.</string>
+    <string name="voucher_onchain_note">இந்த முகவரி இந்தக் கட்டணத்திற்கு உங்கள் கணக்கிற்குச் சொந்தமானது. இதற்கிடையில் StreamHub-ஐ மூடலாம்; VIP தானாக இயங்கும்.</string>
     <string name="voucher_onchain_steps">"1. azte.co-ஐத் திறந்து அங்கே உங்கள் வவுச்சர் குறியீட்டைப் பயன்படுத்துங்கள்.
 2. Bitcoin முகவரி கேட்கப்படும்போது இதைப் பயன்படுத்துங்கள்:"</string>
     <string name="voucher_onchain_steps_code">"1. உங்கள் வவுச்சரின் 16 இலக்கக் குறியீட்டைக் கீழே உள்ளிடவும்.

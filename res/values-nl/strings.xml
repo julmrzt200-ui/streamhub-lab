@@ -97,24 +97,24 @@ v1.1.8
 • Moderne bladerinterface met hero-header
 • Tweetalige UI (Engels / Nederlands)"</string>
     <string name="about_changelog_title">Recente wijzigingen</string>
-    <string name="about_credits_body">"ClipBox is een streamingapp voor Android, gemaakt door een team van gepassioneerde ontwikkelaars.
+    <string name="about_credits_body">"StreamHub is een streamingapp voor Android, gemaakt door een team van gepassioneerde ontwikkelaars.
 
 Alles staat op één plek. Blader door wat populair is, zoek gericht, of pak precies op waar je gebleven was. Elke titel heeft meerdere bronnen, ondertitels worden voor je gevonden en getimed in een breed scala aan talen, en wat je kijkt kun je naar een televisie sturen. Met een account blijven je lijst en je geschiedenis op al je apparaten gelijk."</string>
-    <string name="about_credits_title">Over ClipBox</string>
-    <string name="about_disclaimer_long">"ClipBox is een onafhankelijke mediaspeler voor Android. De app host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio, ondertiteling of ander materiaal. Alles wat via de app wordt afgespeeld komt van externe bronnen die niet aan ClipBox gelieerd zijn, er niet door onderschreven worden en er niet door beheerd worden, en die op elk moment kunnen veranderen of verdwijnen.
+    <string name="about_credits_title">Over StreamHub</string>
+    <string name="about_disclaimer_long">"StreamHub is een onafhankelijke mediaspeler voor Android. De app host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio, ondertiteling of ander materiaal. Alles wat via de app wordt afgespeeld komt van externe bronnen die niet aan StreamHub gelieerd zijn, er niet door onderschreven worden en er niet door beheerd worden, en die op elk moment kunnen veranderen of verdwijnen.
 
-ClipBox claimt geen eigendom van materiaal van derden en geeft geen toestemming voor auteursrechtinbreuk. Je bent zelf verantwoordelijk voor het naleven van de auteursrecht-, licentie- en overige wetgeving die geldt waar jij je bevindt. Verzoeken om materiaal te verwijderen of ontoegankelijk te maken kun je het beste richten aan de betreffende bron of rechthebbende, aangezien ClipBox zelf niets host wat verwijderd kan worden.
+StreamHub claimt geen eigendom van materiaal van derden en geeft geen toestemming voor auteursrechtinbreuk. Je bent zelf verantwoordelijk voor het naleven van de auteursrecht-, licentie- en overige wetgeving die geldt waar jij je bevindt. Verzoeken om materiaal te verwijderen of ontoegankelijk te maken kun je het beste richten aan de betreffende bron of rechthebbende, aangezien StreamHub zelf niets host wat verwijderd kan worden.
 
-Titels, artwork en metadata komen van The Movie Database (TMDB). ClipBox wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald zijn; de juistheid en de timing daarvan zijn niet gegarandeerd.
+Titels, artwork en metadata komen van The Movie Database (TMDB). StreamHub wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald zijn; de juistheid en de timing daarvan zijn niet gegarandeerd.
 
 Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA en alle overige namen en handelsmerken worden uitsluitend ter identificatie gebruikt en impliceren geen sponsoring, goedkeuring of samenwerking."</string>
-    <string name="about_disclaimer_short">ClipBox host of levert zelf geen media. Alle streams, ondertitels en artwork komen van externe bronnen. ClipBox is niet gelieerd aan of onderschreven door Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon of welke contentaanbieder dan ook.</string>
+    <string name="about_disclaimer_short">StreamHub host of levert zelf geen media. Alle streams, ondertitels en artwork komen van externe bronnen. StreamHub is niet gelieerd aan of onderschreven door Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon of welke contentaanbieder dan ook.</string>
     <string name="about_disclaimer_subtitle">Inhoudsbronnen en handelsmerken</string>
     <string name="about_disclaimer_title">Disclaimer</string>
     <string name="about_legal_title">Legaal</string>
     <string name="about_privacy_subtitle">Welke gegevens worden verzameld en waarom</string>
     <string name="about_privacy_title">Privacybeleid</string>
-    <string name="about_terms_subtitle">Hoe ClipBox kan worden gebruikt</string>
+    <string name="about_terms_subtitle">Hoe StreamHub kan worden gebruikt</string>
     <string name="about_terms_title">Algemene voorwaarden</string>
     <string name="about_title">Over</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -135,7 +135,7 @@ Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, F
     <string name="account_go_register">Nieuw hier? Maak een account aan</string>
     <string name="account_go_register_action">Maak een account aan</string>
     <string name="account_guest">Gast</string>
-    <string name="account_member">ClipBox Lid</string>
+    <string name="account_member">StreamHub Lid</string>
     <string name="account_member_since_fmt">Lid sinds %1$s</string>
     <string name="account_new_password_hint">Nieuw wachtwoord</string>
     <string name="account_new_username_hint">Nieuwe gebruikersnaam</string>
@@ -143,7 +143,7 @@ Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, F
     <string name="account_recovery_code">Herstelcode</string>
     <string name="account_recovery_code_hint">Herstelcode</string>
     <string name="account_register">Account aanmaken</string>
-    <string name="account_register_subtitle">Maak je ClipBox account aan</string>
+    <string name="account_register_subtitle">Maak je StreamHub account aan</string>
     <string name="account_session_ended">Je account is niet meer beschikbaar. Je bent uitgelogd.</string>
     <string name="account_settings_section">Account instellingen</string>
     <string name="account_sign_in">Inloggen</string>
@@ -151,7 +151,7 @@ Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, F
     <string name="account_sign_out">Uitloggen</string>
     <string name="account_signed_out_offline">Uitgelogd. Je lijst kan niet worden gesynchroniseerd. Daarom wordt deze op dit apparaat bewaard.</string>
     <string name="account_signing_in">Inloggen…</string>
-    <string name="account_subtitle">Log in op je ClipBox account</string>
+    <string name="account_subtitle">Log in op je StreamHub account</string>
     <string name="account_sync_done">Synchronisatie voltooid</string>
     <string name="account_terms_required">Bekijk de Algemene Voorwaarden voordat je registreert</string>
     <string name="account_title">Account</string>
@@ -177,21 +177,21 @@ Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, F
     <string name="actor_read_more">Lees meer</string>
     <string name="actor_wikipedia_failed">Kon Wikipedia niet openen.</string>
     <string name="ad_autoclose_fmt">Sluit automatisch over %1$d s</string>
-    <string name="ad_blocked_note">Een adblocker houdt deze advertentie tegen. Advertenties houden ClipBox gratis: zet hem uit voor ClipBox, of neem VIP.</string>
+    <string name="ad_blocked_note">Een adblocker houdt deze advertentie tegen. Advertenties houden StreamHub gratis: zet hem uit voor StreamHub, of neem VIP.</string>
     <string name="ad_close">Advertentie sluiten</string>
     <string name="ad_label">Advertentie</string>
     <string name="ad_loading">Advertentie wordt geladen…</string>
     <string name="ad_open">Open advertentie</string>
     <string name="ad_page_hint">Pijltjes bewegen de aanwijzer · OK klikt · Terug sluit</string>
-    <string name="ad_popup_note">Advertenties houden ClipBox gratis en helpen de servers en het onderhoud te betalen.</string>
+    <string name="ad_popup_note">Advertenties houden StreamHub gratis en helpen de servers en het onderhoud te betalen.</string>
     <string name="ad_remove_with_vip">Geen advertenties met VIP</string>
     <string name="add_to_favourites">Toevoegen aan favorieten</string>
     <string name="added_to_favourites">Toegevoegd aan favorieten</string>
     <string name="added_to_my_list">Toegevoegd aan Mijn Lijst</string>
     <string name="alert_dialog_title">Melding</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Vullen</string>
     <string name="aspect_fills_already">het beeld vult het scherm al</string>
     <string name="aspect_fit">Passend</string>
@@ -256,9 +256,9 @@ Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, F
     <string name="call_notification_ongoing_text">Actief gesprek</string>
     <string name="call_notification_screening_text">Een inkomend gesprek screenen</string>
     <string name="capture_blocked_exit">Afsluiten</string>
-    <string name="capture_blocked_intro">ClipBox draait niet zolang er een netwerkcapture- of proxytool op dit apparaat staat.</string>
-    <string name="capture_blocked_outro">Verwijder die en open ClipBox opnieuw.</string>
-    <string name="capture_blocked_title">ClipBox kan niet draaien op dit apparaat</string>
+    <string name="capture_blocked_intro">StreamHub draait niet zolang er een netwerkcapture- of proxytool op dit apparaat staat.</string>
+    <string name="capture_blocked_outro">Verwijder die en open StreamHub opnieuw.</string>
+    <string name="capture_blocked_title">StreamHub kan niet draaien op dit apparaat</string>
     <string name="cast_ad_label">Advertentie</string>
     <string name="cast_button_cast">Cast</string>
     <string name="cast_casting_to_device">Casten naar %1$s</string>
@@ -457,7 +457,7 @@ Je kan ook handmatig het IP invoeren."</string>
     <string name="err_service_unavailable">Service tijdelijk niet beschikbaar. Probeer het opnieuw.</string>
     <string name="err_signed_out_sign_in">Je bent op dit apparaat uitgelogd. Log opnieuw in.</string>
     <string name="err_too_many_requests">Te veel verzoeken. Wacht even.</string>
-    <string name="err_update_for_recovery">Werk ClipBox bij naar de nieuwste versie om een nieuwe herstelcode te maken.</string>
+    <string name="err_update_for_recovery">Werk StreamHub bij naar de nieuwste versie om een nieuwe herstelcode te maken.</string>
     <string name="error_a11y_label">Fout: ongeldig</string>
     <string name="error_bad_intent">Ongeldige link ontvangen. Kon deze niet openen.</string>
     <string name="error_icon_content_description">Fout</string>
@@ -536,16 +536,16 @@ Je kan ook handmatig het IP invoeren."</string>
 
 Niet elke film is daadwerkelijk afspeelbaar, sommige werken wel en andere niet.
 
-ClipBox is nieuw en in ontwikkeling, er kunnen wat bugs zijn."</string>
+StreamHub is nieuw en in ontwikkeling, er kunnen wat bugs zijn."</string>
     <string name="first_launch_ok">Doorgaan</string>
     <string name="first_launch_title">Welkom terug!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Update downloaden</string>
     <string name="force_update_fallback_msg">Een nieuwe versie is vereist om door te gaan met de app.</string>
     <string name="force_update_subtitle">Update vereist</string>
     <string name="gate_connecting">Laden</string>
     <string name="gate_retry">Opnieuw</string>
-    <string name="gate_unavailable_message">"ClipBox kan de servers niet bereiken.
+    <string name="gate_unavailable_message">"StreamHub kan de servers niet bereiken.
 Controleer je verbinding en probeer het opnieuw."</string>
     <string name="gate_unavailable_title">Service niet beschikbaar</string>
     <string name="genre_action">Actie</string>
@@ -570,7 +570,7 @@ Controleer je verbinding en probeer het opnieuw."</string>
     <string name="lang_available_body">Je gebruikt de app momenteel in het %1$s. Wil je overschakelen? Je kunt dit altijd wijzigen in Instellingen.</string>
     <string name="lang_available_keep">%1$s behouden</string>
     <string name="lang_available_switch">Overschakelen naar %1$s</string>
-    <string name="lang_available_title">ClipBox is nu beschikbaar in het %1$s</string>
+    <string name="lang_available_title">StreamHub is nu beschikbaar in het %1$s</string>
     <string name="launcher_instructions">"Er is hier niets dat je hoeft te doen.
 
 Heb je een stream-URL? Speel die hieronder direct af.
@@ -717,17 +717,17 @@ Voeg eerst nieuwe films en series toe"</string>
     <string name="pair_scan_allow">Camera toestaan</string>
     <string name="pair_scan_button">QR-code scannen</string>
     <string name="pair_scan_hint">Richt je camera op de QR-code op je tv</string>
-    <string name="pair_scan_no_camera">Om de code te scannen heeft ClipBox je camera nodig. Die wordt alleen gebruikt zolang dit scherm open is.</string>
+    <string name="pair_scan_no_camera">Om de code te scannen heeft StreamHub je camera nodig. Die wordt alleen gebruikt zolang dit scherm open is.</string>
     <string name="pair_scan_torch">Zaklamp</string>
     <string name="pair_scan_type_instead">Code liever intypen</string>
-    <string name="pair_scan_wrong">Dat is geen ClipBox-tv-code. Scan de code op je tv.</string>
+    <string name="pair_scan_wrong">Dat is geen StreamHub-tv-code. Scan de code op je tv.</string>
     <string name="pair_tv_button">Inloggen met je telefoon</string>
     <string name="pair_tv_confirm_hint">Bevestig op je telefoon, dan logt deze tv vanzelf in.</string>
     <string name="pair_tv_done_fmt">Ingelogd als %1$s</string>
     <string name="pair_tv_expires_fmt">Code geldig nog %1$s</string>
     <string name="pair_tv_failed">Kon geen code ophalen. Controleer de verbinding en probeer het opnieuw.</string>
     <string name="pair_tv_new_code">Nieuwe code</string>
-    <string name="pair_tv_or_code">Of open ClipBox op je telefoon, ga naar Account en dan Inloggen op tv, en vul de code onder de QR-code in.</string>
+    <string name="pair_tv_or_code">Of open StreamHub op je telefoon, ga naar Account en dan Inloggen op tv, en vul de code onder de QR-code in.</string>
     <string name="pair_tv_scan">Scan de code met de camera van je telefoon</string>
     <string name="pair_tv_waiting">Wachten op je telefoon…</string>
     <string name="parental_age_fmt">%1$d en jonger</string>
@@ -796,7 +796,7 @@ Dat is alles. VIP gaat vanzelf aan op deze tv zodra de betaling gezien is."</str
 
 1. Tik op Azteco-voucher inwisselen › Waar koop ik een voucher? en koop een Azteco Bitcoin-voucher (On-Chain) in een van de winkels. Je betaalt zoals je gewend bent, bijvoorbeeld met je pas.
 2. Je krijgt een code van 16 cijfers.
-3. Tik in ClipBox op Azteco-voucher inwisselen, dan op Bitcoin-voucher. Onze voucherpagina opent.
+3. Tik in StreamHub op Azteco-voucher inwisselen, dan op Bitcoin-voucher. Onze voucherpagina opent.
 4. Vul daar de code in. Wij wisselen hem voor je in en controleren of hij binnen is.
 
 Dat is alles. VIP gaat binnen een paar minuten vanzelf aan."</string>
@@ -829,12 +829,12 @@ Dat is alles. VIP gaat binnen een paar minuten vanzelf aan op deze tv."</string>
     <string name="premium_state_confirming_title">Betaling ontvangen</string>
     <string name="premium_state_partial_body_fmt">Je hebt $%1$s betaald. Nog $%2$s en VIP is van jou. Wat je betaald hebt blijft op je account staan.</string>
     <string name="premium_state_partial_title">Bijna klaar</string>
-    <string name="premium_state_vip_body">Geen advertenties op elk apparaat waarop je inlogt. Bedankt voor je steun aan ClipBox.</string>
+    <string name="premium_state_vip_body">Geen advertenties op elk apparaat waarop je inlogt. Bedankt voor je steun aan StreamHub.</string>
     <string name="premium_state_vip_title">Je bent VIP</string>
     <string name="premium_state_waiting_body">Rond de betaling af op de betaalpagina. Dit scherm werkt zichzelf bij zodra de betaling binnen is.</string>
     <string name="premium_state_waiting_title">Wachten op je betaling</string>
     <string name="premium_tagline">Eén keer betalen. Voor altijd van jou.</string>
-    <string name="premium_tv_phone_hint">Heb je een Lightning-voucher? Wissel hem in via ClipBox op je telefoon, ingelogd op hetzelfde account. VIP gaat met je account mee naar deze tv.</string>
+    <string name="premium_tv_phone_hint">Heb je een Lightning-voucher? Wissel hem in via StreamHub op je telefoon, ingelogd op hetzelfde account. VIP gaat met je account mee naar deze tv.</string>
     <string name="premium_tv_scan">Scan met je telefoon om te betalen</string>
     <string name="premium_tv_show_checkout">Betalen met crypto</string>
     <string name="premium_tv_show_voucher">Bitcoin-voucher</string>
@@ -937,7 +937,7 @@ Dat is alles. VIP gaat binnen een paar minuten vanzelf aan op deze tv."</string>
     <string name="servers_probe_starting">Starten… nog %1$d s</string>
     <string name="servers_tab_experimental">Meer talen</string>
     <string name="servers_tab_main">Standaard</string>
-    <string name="settings_about">Over ClipBox</string>
+    <string name="settings_about">Over StreamHub</string>
     <string name="settings_about_summary">Versie-info, credits en changelog</string>
     <string name="settings_account">Mijn account</string>
     <string name="settings_account_loggedout">Niet ingelogd</string>
@@ -969,13 +969,13 @@ Dat is alles. VIP gaat binnen een paar minuten vanzelf aan op deze tv."</string>
     <string name="settings_next_episode">Volgende aflevering automatisch afspelen</string>
     <string name="settings_next_episode_summary">Toon een aftelling bij de aftiteling en ga vanzelf verder</string>
     <string name="settings_notifications">Meldingen</string>
-    <string name="settings_notifications_summary">Ontvang aankondigingen en updates van ClipBox</string>
+    <string name="settings_notifications_summary">Ontvang aankondigingen en updates van StreamHub</string>
     <string name="settings_parental">Ouderlijk toezicht</string>
     <string name="settings_parental_off">Uit</string>
     <string name="settings_parental_on_fmt">Verbergt titels met een leeftijd boven %1$d</string>
     <string name="settings_pref_sub_lang">Voorkeurstaal</string>
     <string name="settings_reset_app">App resetten</string>
-    <string name="settings_reset_app_confirm">Dit wist alle app-gegevens en sluit ClipBox. Doorgaan?</string>
+    <string name="settings_reset_app_confirm">Dit wist alle app-gegevens en sluit StreamHub. Doorgaan?</string>
     <string name="settings_reset_app_summary">Wis alle gegevens en begin opnieuw</string>
     <string name="settings_reset_tips">Mijn lijst, favorieten en verder kijken wissen</string>
     <string name="settings_reset_tips_confirm">Je volledige Mijn lijst, je favorieten en alles waar je halverwege in zit wissen?</string>
@@ -1152,23 +1152,23 @@ Dat is alles. VIP gaat binnen een paar minuten vanzelf aan op deze tv."</string>
     <string name="tab_settings">Instellingen</string>
     <string name="tab_tv">Series</string>
     <string name="tamper_blocked">Deze versie van de app is niet authentiek.</string>
-    <string name="terms_full">"1. Wat ClipBox is
-ClipBox is een gratis mediaspeler voor Android. De app verzorgt het afspelen: videoweergave, ondertiteling, casten en het beheren van je lijst. ClipBox host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio of ondertiteling. Alles wat je afspeelt komt van externe bronnen die niet door ClipBox worden beheerd en er niet aan gelieerd zijn.
+    <string name="terms_full">"1. Wat StreamHub is
+StreamHub is een gratis mediaspeler voor Android. De app verzorgt het afspelen: videoweergave, ondertiteling, casten en het beheren van je lijst. StreamHub host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio of ondertiteling. Alles wat je afspeelt komt van externe bronnen die niet door StreamHub worden beheerd en er niet aan gelieerd zijn.
 
 2. Akkoord met deze voorwaarden
-Door ClipBox te installeren of te gebruiken ga je akkoord met deze voorwaarden. Ga je er niet mee akkoord, gebruik de app dan niet. Deze voorwaarden vormen een bindende overeenkomst tussen jou en ClipBox.
+Door StreamHub te installeren of te gebruiken ga je akkoord met deze voorwaarden. Ga je er niet mee akkoord, gebruik de app dan niet. Deze voorwaarden vormen een bindende overeenkomst tussen jou en StreamHub.
 
 3. Leeftijd
 Je moet minimaal 13 jaar zijn, of de minimumleeftijd die in jouw land geldt als die hoger is. Ben je in jouw land nog niet meerderjarig, dan heb je toestemming nodig van een ouder of voogd.
 
 4. Licentie
-Je krijgt een beperkt, niet-exclusief, niet-overdraagbaar en herroepbaar recht om ClipBox op je eigen Android-apparaten te gebruiken voor persoonlijke, niet-commerciele doeleinden.
+Je krijgt een beperkt, niet-exclusief, niet-overdraagbaar en herroepbaar recht om StreamHub op je eigen Android-apparaten te gebruiken voor persoonlijke, niet-commerciele doeleinden.
 
 5. Jouw verantwoordelijkheid voor content
-Je bent zelf volledig verantwoordelijk voor wat je via de app bekijkt en ervoor dat dit is toegestaan waar jij je bevindt. Het auteursrecht verschilt per land; materiaal bekijken waar je geen recht op hebt kan een overtreding zijn. ClipBox geeft gehoor aan geldige verzoeken tot verwijdering onder de DMCA en vergelijkbare wetgeving, en schakelt functies of koppelingen uit op grond van geldige rechterlijke bevelen. Meldingen kunnen naar info@clipbox.mov — maar omdat ClipBox zelf niets host, kun je je doorgaans beter rechtstreeks tot de betreffende bron of rechthebbende wenden.
+Je bent zelf volledig verantwoordelijk voor wat je via de app bekijkt en ervoor dat dit is toegestaan waar jij je bevindt. Het auteursrecht verschilt per land; materiaal bekijken waar je geen recht op hebt kan een overtreding zijn. StreamHub geeft gehoor aan geldige verzoeken tot verwijdering onder de DMCA en vergelijkbare wetgeving, en schakelt functies of koppelingen uit op grond van geldige rechterlijke bevelen. Meldingen kunnen naar info@streamhub.mov — maar omdat StreamHub zelf niets host, kun je je doorgaans beter rechtstreeks tot de betreffende bron of rechthebbende wenden.
 
 6. Wat niet mag
-Gebruik ClipBox niet om inbreukmakend of onrechtmatig materiaal te bekijken of te verspreiden. Je mag de app niet reverse-engineeren, decompileren of aanpassen buiten wat de wet toestaat, hem niet herdistribueren, doorverkopen of in sublicentie geven, en hem niet commercieel gebruiken zonder onze schriftelijke toestemming. Ook mag je geen systeem of account dat met de dienst verbonden is aanvallen, verstoren of onbevoegd benaderen.
+Gebruik StreamHub niet om inbreukmakend of onrechtmatig materiaal te bekijken of te verspreiden. Je mag de app niet reverse-engineeren, decompileren of aanpassen buiten wat de wet toestaat, hem niet herdistribueren, doorverkopen of in sublicentie geven, en hem niet commercieel gebruiken zonder onze schriftelijke toestemming. Ook mag je geen systeem of account dat met de dienst verbonden is aanvallen, verstoren of onbevoegd benaderen.
 
 7. Accounts
 Een account is optioneel — de app werkt volledig zonder. Maak je er wel een aan, dan kies je een gebruikersnaam en een wachtwoord; een e-mailadres is niet nodig en wordt niet verzameld. Het wachtwoord wordt alleen als salted hash opgeslagen en is voor ons niet leesbaar. Bij het aanmaken krijg je eenmalig een herstelcode: dat is de enige manier om een account terug te krijgen, wij bewaren daar alleen een hash van, en we kunnen hem niet voor je herstellen als je hem kwijtraakt. Je bent zelf verantwoordelijk voor het veilig bewaren van je gegevens. Accounts die worden gebruikt om de dienst te misbruiken of aan te vallen kunnen zonder waarschuwing worden geblokkeerd.
@@ -1182,27 +1182,27 @@ De app stuurt basale, anonieme informatie over de installatie door, zodat we beg
 Die identificatie is willekeurig gegenereerd. Het is geen advertentie-ID en geen serienummer van je apparaat, en hij is niet gekoppeld aan je account of aan gegevens waarmee jij te identificeren bent. We slaan je IP-adres niet op en we verzamelen geen locatiegegevens. Losse kijkgegevens worden na 120 dagen verwijderd.
 
 10. Advertenties
-De gratis versie van ClipBox wordt betaald uit advertenties. Tenzij je account VIP of Founders heeft, kan de app voor het afspelen een korte advertentie tonen en op sommige schermen banners. Advertenties worden geleverd door advertentiepartners (momenteel Monetag, en waar gebruikt de Google Interactive Media Ads SDK). Als een advertentie laadt, kan de partner technische gegevens ontvangen, zoals je IP-adres, het type apparaat en browser, je taal en ongeveer je locatie, en cookies of vergelijkbare technieken gebruiken, volgens zijn eigen privacybeleid. Wij verkopen je persoonsgegevens niet. Wat er geadverteerd wordt, komt van derden; wij staan daar niet voor in. Nep-weergaven of nep-klikken op advertenties zijn niet toegestaan.
+De gratis versie van StreamHub wordt betaald uit advertenties. Tenzij je account VIP of Founders heeft, kan de app voor het afspelen een korte advertentie tonen en op sommige schermen banners. Advertenties worden geleverd door advertentiepartners (momenteel Monetag, en waar gebruikt de Google Interactive Media Ads SDK). Als een advertentie laadt, kan de partner technische gegevens ontvangen, zoals je IP-adres, het type apparaat en browser, je taal en ongeveer je locatie, en cookies of vergelijkbare technieken gebruiken, volgens zijn eigen privacybeleid. Wij verkopen je persoonsgegevens niet. Wat er geadverteerd wordt, komt van derden; wij staan daar niet voor in. Nep-weergaven of nep-klikken op advertenties zijn niet toegestaan.
 
 11. VIP, Founders en betalingen
-VIP en Founders zijn optionele, eenmalige aankopen die de advertenties weghalen en het aantal apparaten verhogen waarop je account werkt. Ze horen bij je account, niet bij een apparaat, en gelden zolang ClipBox de dienst aanbiedt. Het is geen abonnement: er wordt niets verlengd en er valt niets op te zeggen.
+VIP en Founders zijn optionele, eenmalige aankopen die de advertenties weghalen en het aantal apparaten verhogen waarop je account werkt. Ze horen bij je account, niet bij een apparaat, en gelden zolang StreamHub de dienst aanbiedt. Het is geen abonnement: er wordt niets verlengd en er valt niets op te zeggen.
 Je betaalt met cryptovaluta via onze eigen betaalserver (BTCPay Server), of met een Azteco Bitcoin-voucher die je koopt bij Azteco of een van zijn verkopers. Wij ontvangen nooit kaart- of bankgegevens. Prijzen staan in Amerikaanse dollars en het bedrag in cryptovaluta ligt vast op het moment dat je betaalt; eventuele wissel-, netwerk- of omrekenkosten zijn voor jezelf. Een voucher moet van een soort en waarde zijn die de app op dat moment accepteert; wij zijn niet verantwoordelijk voor vouchers die al gebruikt of verlopen zijn, of gekocht bij een niet-erkende verkoper.
 Betalingen in cryptovaluta zijn onomkeerbaar. Omdat een pakket actief wordt zodra je betaling gezien is, vraag je om directe levering; waar de wet je een herroepingsrecht geeft, vervalt dat zodra het pakket actief is. Betalingen worden niet terugbetaald, behalve waar de wet dat verplicht. Een te lage betaling activeert niets tot de rest betaald is; een te hoge betaling wordt niet automatisch teruggestort. Een betaling die ongeldig of frauduleus blijkt, of een pakket dat gebruikt wordt om de dienst te misbruiken, kan worden teruggedraaid en het pakket ingetrokken. Donaties zijn vrijwillig, geven geen extra rechten en worden niet terugbetaald.
 
 12. Diensten van derden
-Titels, artwork en metadata komen van The Movie Database (TMDB); ClipBox wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald worden wanneer je daarom vraagt. Casten verloopt via de Google Cast SDK voor Chromecast en via standaard UPnP/DLNA voor andere ontvangers; er worden alleen gegevens met die diensten uitgewisseld terwijl je actief aan het casten bent. Meldingen komen van onze eigen server — ClipBox gebruikt geen Firebase en geen analyse- of trackingsoftware van derden.
+Titels, artwork en metadata komen van The Movie Database (TMDB); StreamHub wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald worden wanneer je daarom vraagt. Casten verloopt via de Google Cast SDK voor Chromecast en via standaard UPnP/DLNA voor andere ontvangers; er worden alleen gegevens met die diensten uitgewisseld terwijl je actief aan het casten bent. Meldingen komen van onze eigen server — StreamHub gebruikt geen Firebase en geen analyse- of trackingsoftware van derden.
 
 13. Beschikbaarheid
 We kunnen de app of de dienst op elk moment wijzigen, opschorten of stopzetten, met of zonder aankondiging. Bronnen worden door derden beheerd en kunnen op elk moment ophouden te werken; dat ligt buiten onze macht.
 
 14. Geen garantie
-ClipBox wordt geleverd \"zoals het is\" en \"zoals beschikbaar\", zonder enige garantie, expliciet of impliciet, waaronder garanties van verkoopbaarheid, geschiktheid voor een bepaald doel of niet-inbreuk. We garanderen geen beschikbaarheid, geen specifieke titel en geen werking op elk apparaat.
+StreamHub wordt geleverd \"zoals het is\" en \"zoals beschikbaar\", zonder enige garantie, expliciet of impliciet, waaronder garanties van verkoopbaarheid, geschiktheid voor een bepaald doel of niet-inbreuk. We garanderen geen beschikbaarheid, geen specifieke titel en geen werking op elk apparaat.
 
 15. Beperking van aansprakelijkheid
-Voor zover de wet dat toestaat zijn ClipBox en de betrokkenen bij de totstandkoming ervan niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolg- of punitieve schade, noch voor verlies van gegevens, winst of goodwill, voortvloeiend uit je gebruik van of het niet kunnen gebruiken van de app. Waar de wet zulke beperkingen niet toestaat, is onze aansprakelijkheid beperkt tot het maximaal toegestane.
+Voor zover de wet dat toestaat zijn StreamHub en de betrokkenen bij de totstandkoming ervan niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolg- of punitieve schade, noch voor verlies van gegevens, winst of goodwill, voortvloeiend uit je gebruik van of het niet kunnen gebruiken van de app. Waar de wet zulke beperkingen niet toestaat, is onze aansprakelijkheid beperkt tot het maximaal toegestane.
 
 16. Vrijwaring
-Je vrijwaart ClipBox van claims, aansprakelijkheid, schade, verlies en kosten — inclusief redelijke advocaatkosten — die voortvloeien uit jouw schending van deze voorwaarden of uit jouw gebruik van de app, waaronder auteursrechtclaims van derden over materiaal dat je ermee hebt bekeken.
+Je vrijwaart StreamHub van claims, aansprakelijkheid, schade, verlies en kosten — inclusief redelijke advocaatkosten — die voortvloeien uit jouw schending van deze voorwaarden of uit jouw gebruik van de app, waaronder auteursrechtclaims van derden over materiaal dat je ermee hebt bekeken.
 
 17. Toepasselijk recht
 Bevind je je in de Europese Unie, dan blijven de dwingende consumentenregels van je woonland gelden; deze voorwaarden doen daar niets aan af. In andere gevallen zijn de rechtbanken bevoegd van de plaats waar wij hoofdzakelijk gevestigd zijn, tenzij lokale wetgeving anders voorschrijft. Neem alsjeblieft eerst contact met ons op om een geschil onderling op te lossen voordat je een procedure begint.
@@ -1211,16 +1211,16 @@ Bevind je je in de Europese Unie, dan blijven de dwingende consumentenregels van
 Is een bepaling uit deze voorwaarden niet afdwingbaar, dan wordt die tot het strikt noodzakelijke beperkt en blijft de rest onverkort gelden.
 
 19. Wijzigingen in deze voorwaarden
-We kunnen deze voorwaarden herzien. Wezenlijke wijzigingen verschijnen in een nieuwe versie van de app. Blijf je ClipBox gebruiken na een wijziging, dan ga je akkoord met de herziene voorwaarden.
+We kunnen deze voorwaarden herzien. Wezenlijke wijzigingen verschijnen in een nieuwe versie van de app. Blijf je StreamHub gebruiken na een wijziging, dan ga je akkoord met de herziene voorwaarden.
 
 20. Contact
-info@clipbox.mov
+info@streamhub.mov
 
 21. Taal
 Deze Nederlandse vertaling is er voor je gemak. Bij verschillen tussen deze vertaling en de Engelse versie is de Engelse versie doorslaggevend."</string>
     <string name="terms_gate_accept">Accepteren</string>
     <string name="terms_gate_decline">Weigeren</string>
-    <string name="terms_gate_message">Bekijk en accepteer onze Algemene Voorwaarden om ClipBox te gebruiken.</string>
+    <string name="terms_gate_message">Bekijk en accepteer onze Algemene Voorwaarden om StreamHub te gebruiken.</string>
     <string name="terms_gate_subtitle">Lees en accepteer deze om door te gaan</string>
     <string name="terms_gate_title">Algemene Voorwaarden</string>
     <string name="touch_lock_desc">Scherm vergrendelen</string>
@@ -1228,14 +1228,14 @@ Deze Nederlandse vertaling is er voor je gemak. Bij verschillen tussen deze vert
     <string name="touch_locked_toast">Scherm vergrendeld. Tik op het slot om te ontgrendelen.</string>
     <string name="track_off">Uit</string>
     <string name="tv_account_avatar">Profielfoto</string>
-    <string name="tv_account_avatar_phone_only">Een profielfoto kies je uit een foto op je apparaat. Deze tv heeft geen app die dat kan, dus stel hem in via ClipBox op je telefoon; hij verschijnt hier dan vanzelf.</string>
+    <string name="tv_account_avatar_phone_only">Een profielfoto kies je uit een foto op je apparaat. Deze tv heeft geen app die dat kan, dus stel hem in via StreamHub op je telefoon; hij verschijnt hier dan vanzelf.</string>
     <string name="tv_account_choose_image">Kies een afbeelding</string>
     <string name="tv_account_new_password_hint">Nieuw wachtwoord</string>
     <string name="tv_account_recover_action">Wachtwoord opnieuw instellen</string>
     <string name="tv_account_recovery_fmt">"Herstelcode: %1$s
 
 Schrijf deze op. Je ziet hem één keer en het is de enige manier om weer binnen te komen als je je wachtwoord vergeet."</string>
-    <string name="tv_account_register_hint">Nog geen account? Maak er een aan in de ClipBox-app op je telefoon en log hier in.</string>
+    <string name="tv_account_register_hint">Nog geen account? Maak er een aan in de StreamHub-app op je telefoon en log hier in.</string>
     <string name="tv_account_saved">Opgeslagen</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Artwork (vervaagd)</string>
@@ -1338,7 +1338,7 @@ Schrijf deze op. Je ziet hem één keer en het is de enige manier om weer binnen
     <string name="tv_ui_scale_title">Interfacegrootte</string>
     <string name="tv_value_off">Uit</string>
     <string name="tv_value_on">Aan</string>
-    <string name="tv_whatsnew_body">ClipBox is opnieuw opgebouwd voor het grote scherm en je afstandsbediening. Alles wat je had staat er nog, alleen makkelijker te bereiken vanaf de bank. Liever de vorige weergave? Je kunt op elk moment terug via Instellingen.</string>
+    <string name="tv_whatsnew_body">StreamHub is opnieuw opgebouwd voor het grote scherm en je afstandsbediening. Alles wat je had staat er nog, alleen makkelijker te bereiken vanaf de bank. Liever de vorige weergave? Je kunt op elk moment terug via Instellingen.</string>
     <string name="tv_whatsnew_classic">Klassieke weergave gebruiken</string>
     <string name="tv_whatsnew_continue">Bekijken</string>
     <string name="tv_whatsnew_title">Een nieuwe tv-weergave</string>
@@ -1355,21 +1355,21 @@ Nu downloaden en installeren?"</string>
     <string name="update_downloading">Nieuwe versie binnenhalen…</string>
     <string name="update_install_help">"1. Tik op Bijwerken om de nieuwe APK te downloaden.
 2. Tik op Installeren als het installatievenster opent.
-3. Blokkeert Android het, sta dan \"Onbekende apps installeren\" toe voor ClipBox en tik opnieuw op Installeren.
+3. Blokkeert Android het, sta dan \"Onbekende apps installeren\" toe voor StreamHub en tik opnieuw op Installeren.
 4. Je instellingen en lijst blijven behouden, hij wordt over de huidige app geïnstalleerd."</string>
     <string name="update_install_help_summary">Wat te doen als de installatie wordt geblokkeerd</string>
     <string name="update_install_help_title">Installatie-uitleg</string>
     <string name="update_later">Later</string>
-    <string name="update_permission_msg_firetv">"Je Fire TV installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet ClipBox aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
+    <string name="update_permission_msg_firetv">"Je Fire TV installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet StreamHub aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
 
-Opent dat scherm niet? Instellingen > Mijn Fire TV > Opties voor ontwikkelaars > Onbekende apps installeren > ClipBox. Geen Opties voor ontwikkelaars? Ga eerst naar Instellingen > Mijn Fire TV > Over en druk 7 keer op OK bij de apparaatnaam."</string>
-    <string name="update_permission_msg_phone">Android installeert alleen updates van apps die je toestemming geeft. Tik op Instellingen openen, zet \"Toestaan van deze bron\" aan voor ClipBox en ga terug. De update gaat daarna vanzelf verder.</string>
-    <string name="update_permission_msg_tv">"Je tv installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet ClipBox aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
+Opent dat scherm niet? Instellingen > Mijn Fire TV > Opties voor ontwikkelaars > Onbekende apps installeren > StreamHub. Geen Opties voor ontwikkelaars? Ga eerst naar Instellingen > Mijn Fire TV > Over en druk 7 keer op OK bij de apparaatnaam."</string>
+    <string name="update_permission_msg_phone">Android installeert alleen updates van apps die je toestemming geeft. Tik op Instellingen openen, zet \"Toestaan van deze bron\" aan voor StreamHub en ga terug. De update gaat daarna vanzelf verder.</string>
+    <string name="update_permission_msg_tv">"Je tv installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet StreamHub aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
 
-Opent dat scherm niet? Instellingen > Apps > Beveiliging en beperkingen > Onbekende bronnen > ClipBox."</string>
+Opent dat scherm niet? Instellingen > Apps > Beveiliging en beperkingen > Onbekende bronnen > StreamHub."</string>
     <string name="update_permission_not_opened">Instellingen konden niet worden geopend. Volg de stappen op het scherm.</string>
     <string name="update_permission_open">Instellingen openen</string>
-    <string name="update_permission_title">ClipBox toestaan updates te installeren</string>
+    <string name="update_permission_title">StreamHub toestaan updates te installeren</string>
     <string name="update_unavailable">Update-service niet beschikbaar. De app kan nu niet controleren op updates.</string>
     <string name="update_up_to_date">Je hebt al de nieuwste versie. Netjes.</string>
     <string name="v7_preference_off">UIT</string>
@@ -1384,10 +1384,10 @@ Opent dat scherm niet? Instellingen > Apps > Beveiliging en beperkingen > Onbeke
     <string name="voucher_ln_bad">Dit lijkt geen Lightning-voucherlink. Die begint met LNURL.</string>
     <string name="voucher_ln_redeeming">Je voucher wordt ingewisseld…</string>
     <string name="voucher_ln_steps">"1. Open azte.co, kies Lightning en wissel daar je vouchercode in.
-2. Je krijgt een Lightning-link (LNURL). Tik erop om ClipBox te openen, of kopieer hem en plak hem hier."</string>
+2. Je krijgt een Lightning-link (LNURL). Tik erop om StreamHub te openen, of kopieer hem en plak hem hier."</string>
     <string name="voucher_loading_address">Je adres wordt klaargezet…</string>
     <string name="voucher_onchain">Bitcoin-voucher</string>
-    <string name="voucher_onchain_note">Dit adres hoort bij je account voor deze betaling. Je kunt ClipBox intussen sluiten; VIP gaat vanzelf aan.</string>
+    <string name="voucher_onchain_note">Dit adres hoort bij je account voor deze betaling. Je kunt StreamHub intussen sluiten; VIP gaat vanzelf aan.</string>
     <string name="voucher_onchain_steps">"1. Open azte.co en wissel daar je vouchercode in.
 2. Vraagt de site om een Bitcoin-adres, gebruik dan dit adres:"</string>
     <string name="voucher_onchain_steps_code">"1. Vul hieronder de code van 16 cijfers van je voucher in.

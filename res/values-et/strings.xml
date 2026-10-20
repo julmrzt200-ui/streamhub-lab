@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, raamatukogud ja litsentsid</string>
     <string name="about_attributions_title">Litsentsid ja omistamised</string>
     <string name="about_changelog_title">Muudatuste logi</string>
-    <string name="about_credits_body">"ClipBox on puhas ja rahulik viis vaadata Androidis filme ja sarju. Kõik on ühes kohas, nii et saad sirvida populaarset, otsida midagi konkreetset või jätkata täpselt sealt, kus pooleli jäid.
+    <string name="about_credits_body">"StreamHub on puhas ja rahulik viis vaadata Androidis filme ja sarju. Kõik on ühes kohas, nii et saad sirvida populaarset, otsida midagi konkreetset või jätkata täpselt sealt, kus pooleli jäid.
 
 Subtiitrid leitakse ja seatakse sinu eest paika paljudes keeltes, igal pealkirjal on mitu allikat ning vaadatava saab saata Chromecasti või nutitelerisse. Rakendus töötab telefonides, tahvlites, Android TV-s ja Fire TV-s ning valikuline konto hoiab su nimekirja ja ajaloo kõigis neis kooskõlas.
 
-ClipBoxi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremaks tänu sellele, mida inimesed meile kirjutavad."</string>
-    <string name="about_credits_title">ClipBoxi kohta</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHubi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremaks tänu sellele, mida inimesed meile kirjutavad."</string>
+    <string name="about_credits_title">StreamHubi kohta</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Sisuallikad ja kaubamärgid</string>
     <string name="about_disclaimer_title">Vastutusest loobumine</string>
     <string name="about_legal_title">Juriidiline</string>
     <string name="about_privacy_subtitle">Milliseid andmeid kogutakse ja miks</string>
     <string name="about_privacy_title">Privaatsuspoliitika</string>
-    <string name="about_terms_subtitle">Kuidas ClipBoxi saab kasutada</string>
+    <string name="about_terms_subtitle">Kuidas StreamHubi saab kasutada</string>
     <string name="about_terms_title">Tingimused</string>
     <string name="about_title">Umbes</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -65,7 +65,7 @@ ClipBoxi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremak
     <string name="account_recovery_code">Taastekood</string>
     <string name="account_recovery_code_hint">Taastekood</string>
     <string name="account_register">Loo konto</string>
-    <string name="account_register_subtitle">Looge oma ClipBoxi konto</string>
+    <string name="account_register_subtitle">Looge oma StreamHubi konto</string>
     <string name="account_session_ended">Teie konto pole enam saadaval. Teid on välja logitud.</string>
     <string name="account_settings_section">Konto seaded</string>
     <string name="account_sign_in">Logi sisse</string>
@@ -73,7 +73,7 @@ ClipBoxi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremak
     <string name="account_sign_out">Logi välja</string>
     <string name="account_signed_out_offline">Välja logitud. Teie loendit ei saanud sünkroonida, seetõttu on seda selles seadmes hoitud.</string>
     <string name="account_signing_in">Sisselogimine…</string>
-    <string name="account_subtitle">Logige sisse oma ClipBoxi kontole</string>
+    <string name="account_subtitle">Logige sisse oma StreamHubi kontole</string>
     <string name="account_sync_done">Sünkroonimine on lõpetatud</string>
     <string name="account_terms_required">Enne registreerimist tutvuge tingimustega</string>
     <string name="account_title">konto</string>
@@ -99,21 +99,21 @@ ClipBoxi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremak
     <string name="actor_read_more">Loe edasi</string>
     <string name="actor_wikipedia_failed">Vikipeediat ei saanud avada.</string>
     <string name="ad_autoclose_fmt">Sulgub automaatselt %1$d s pärast</string>
-    <string name="ad_blocked_note">Reklaamiblokeerija peatab selle reklaami. Reklaamid hoiavad ClipBoxi tasuta: lülita see ClipBoxi jaoks välja või võta VIP.</string>
+    <string name="ad_blocked_note">Reklaamiblokeerija peatab selle reklaami. Reklaamid hoiavad StreamHubi tasuta: lülita see StreamHubi jaoks välja või võta VIP.</string>
     <string name="ad_close">Sulge reklaam</string>
     <string name="ad_label">Reklaam</string>
     <string name="ad_loading">Reklaam laadib…</string>
     <string name="ad_open">Ava reklaam</string>
     <string name="ad_page_hint">Nooled liigutavad kursorit · OK klõpsab · Tagasi sulgeb</string>
-    <string name="ad_popup_note">Reklaamid hoiavad ClipBoxi tasuta ja aitavad katta serverite ja hoolduse kulud.</string>
+    <string name="ad_popup_note">Reklaamid hoiavad StreamHubi tasuta ja aitavad katta serverite ja hoolduse kulud.</string>
     <string name="ad_remove_with_vip">Reklaamideta VIP-iga</string>
     <string name="add_to_favourites">Lisa lemmikute hulka</string>
     <string name="added_to_favourites">Lisatud lemmikute hulka</string>
     <string name="added_to_my_list">Minu loendisse lisatud</string>
     <string name="alert_dialog_title">Märka</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Täida</string>
     <string name="aspect_fills_already">pilt täidab juba ekraani</string>
     <string name="aspect_fit">Sobita</string>
@@ -178,9 +178,9 @@ ClipBoxi teeb väike tiim, kes seda ise iga päev kasutab, ja see läheb paremak
     <string name="call_notification_ongoing_text">Käimasolev kõne</string>
     <string name="call_notification_screening_text">Sissetuleva kõne filtreerimine</string>
     <string name="capture_blocked_exit">Välju</string>
-    <string name="capture_blocked_intro">ClipBox ei tööta seni, kuni sellesse seadmesse on paigaldatud võrguliikluse püüdmise või puhverserveri tööriist.</string>
-    <string name="capture_blocked_outro">Eemalda see ja ava ClipBox uuesti.</string>
-    <string name="capture_blocked_title">ClipBox ei saa selles seadmes töötada</string>
+    <string name="capture_blocked_intro">StreamHub ei tööta seni, kuni sellesse seadmesse on paigaldatud võrguliikluse püüdmise või puhverserveri tööriist.</string>
+    <string name="capture_blocked_outro">Eemalda see ja ava StreamHub uuesti.</string>
+    <string name="capture_blocked_title">StreamHub ei saa selles seadmes töötada</string>
     <string name="cast_ad_label">Reklaam</string>
     <string name="cast_button_cast">Cast</string>
     <string name="cast_casting_to_device">Ülekandmine seadmesse %1$s</string>
@@ -379,7 +379,7 @@ Saate sisestada ka oma teleri IP-aadressi käsitsi."</string>
     <string name="err_service_unavailable">Teenus pole ajutiselt saadaval. Palun proovi uuesti.</string>
     <string name="err_signed_out_sign_in">Sind logiti selles seadmes välja. Logi uuesti sisse.</string>
     <string name="err_too_many_requests">Liiga palju taotlusi. Palun oodake hetk.</string>
-    <string name="err_update_for_recovery">Uue taastekoodi loomiseks värskenda ClipBox uusimale versioonile.</string>
+    <string name="err_update_for_recovery">Uue taastekoodi loomiseks värskenda StreamHub uusimale versioonile.</string>
     <string name="error_a11y_label">Viga: sobimatu</string>
     <string name="error_bad_intent">Sai kehtetu lingi. Ei saanud seda avada.</string>
     <string name="error_icon_content_description">Viga</string>
@@ -458,7 +458,7 @@ Saate sisestada ka oma teleri IP-aadressi käsitsi."</string>
 
 Kõiki pealkirju ei saa tegelikult esitada, mõned töötavad ja teised mitte.
 
-ClipBox on uus ja arendamisel, võib esineda vigu."</string>
+StreamHub on uus ja arendamisel, võib esineda vigu."</string>
     <string name="first_launch_ok">Sain aru</string>
     <string name="first_launch_title">Tere tulemast tagasi!</string>
     <string name="footer_brand">Lõikekast</string>
@@ -467,7 +467,7 @@ ClipBox on uus ja arendamisel, võib esineda vigu."</string>
     <string name="force_update_subtitle">Värskendus on vajalik</string>
     <string name="gate_connecting">Laadimine</string>
     <string name="gate_retry">Proovi uuesti</string>
-    <string name="gate_unavailable_message">"ClipBox ei saa oma serveritega ühendust.
+    <string name="gate_unavailable_message">"StreamHub ei saa oma serveritega ühendust.
 Kontrollige ühendust ja proovige uuesti."</string>
     <string name="gate_unavailable_title">Teenus pole saadaval</string>
     <string name="genre_action">Tegevus</string>
@@ -492,7 +492,7 @@ Kontrollige ühendust ja proovige uuesti."</string>
     <string name="lang_available_body">Kasutate rakendust praegu keeles %1$s. Kas soovite keelt vahetada? Saate seda igal ajal seadetes muuta.</string>
     <string name="lang_available_keep">Jää keele %1$s juurde</string>
     <string name="lang_available_switch">Vaheta keelele %1$s</string>
-    <string name="lang_available_title">ClipBox on nüüd saadaval keeles %1$s</string>
+    <string name="lang_available_title">StreamHub on nüüd saadaval keeles %1$s</string>
     <string name="launcher_instructions">"Siin pole vaja midagi teha.
 
 Kui teil on voo URL, saate seda otse allpool esitada.
@@ -639,17 +639,17 @@ Lisage filme ja saateid üksikasjade lehelt."</string>
     <string name="pair_scan_allow">Luba kaamera</string>
     <string name="pair_scan_button">Skanni QR-kood</string>
     <string name="pair_scan_hint">Suuna kaamera teleri QR-koodile</string>
-    <string name="pair_scan_no_camera">Koodi skannimiseks vajab ClipBox kaamerat. Seda kasutatakse ainult siis, kui see ekraan on avatud.</string>
+    <string name="pair_scan_no_camera">Koodi skannimiseks vajab StreamHub kaamerat. Seda kasutatakse ainult siis, kui see ekraan on avatud.</string>
     <string name="pair_scan_torch">Taskulamp</string>
     <string name="pair_scan_type_instead">Sisesta kood käsitsi</string>
-    <string name="pair_scan_wrong">See pole ClipBoxi teleri kood. Skanni teleris olev kood.</string>
+    <string name="pair_scan_wrong">See pole StreamHubi teleri kood. Skanni teleris olev kood.</string>
     <string name="pair_tv_button">Logi sisse telefoniga</string>
     <string name="pair_tv_confirm_hint">Kinnita telefonis ja see teler logib ise sisse.</string>
     <string name="pair_tv_done_fmt">Sisse logitud: %1$s</string>
     <string name="pair_tv_expires_fmt">Kood kehtib veel %1$s</string>
     <string name="pair_tv_failed">Koodi ei saadud. Kontrolli ühendust ja proovi uuesti.</string>
     <string name="pair_tv_new_code">Uus kood</string>
-    <string name="pair_tv_or_code">Või ava telefonis ClipBox, mine Konto ja siis Logi sisse teleris, ning sisesta QR-koodi all olev kood.</string>
+    <string name="pair_tv_or_code">Või ava telefonis StreamHub, mine Konto ja siis Logi sisse teleris, ning sisesta QR-koodi all olev kood.</string>
     <string name="pair_tv_scan">Skanni kood telefoni kaameraga</string>
     <string name="pair_tv_waiting">Ootan telefoni…</string>
     <string name="parental_age_fmt">%1$d aastat ja alla selle</string>
@@ -718,7 +718,7 @@ Ongi kõik. VIP lülitub selles teleris ise sisse kohe, kui makse on näha."</st
 
 1. Puuduta nuppu Lunasta Azteco kupong › Kust vautšeri osta? ja osta mõnest poest Azteco Bitcoini vautšer (On-Chain). Maksad nagu tavaliselt, näiteks kaardiga.
 2. Saad 16-kohalise koodi.
-3. Puuduta ClipBoxis Lunasta Azteco kupong ja siis Bitcoini kupong. Avaneb meie vautšerileht.
+3. Puuduta StreamHubis Lunasta Azteco kupong ja siis Bitcoini kupong. Avaneb meie vautšerileht.
 4. Sisesta seal kood. Me lunastame selle sinu eest ja kontrollime, et makse jõudis kohale.
 
 Ongi kõik. VIP lülitub mõne minuti jooksul ise sisse."</string>
@@ -751,12 +751,12 @@ Ongi kõik. VIP lülitub selles teleris mõne minuti jooksul ise sisse."</string
     <string name="premium_state_confirming_title">Makse vastu võetud</string>
     <string name="premium_state_partial_body_fmt">Oled maksnud $%1$s. Veel $%2$s ja VIP on sinu. Makstud summa jääb sinu kontole.</string>
     <string name="premium_state_partial_title">Peaaegu valmis</string>
-    <string name="premium_state_vip_body">Reklaame pole üheski seadmes, kuhu sisse logid. Aitäh, et toetad ClipBoxi.</string>
+    <string name="premium_state_vip_body">Reklaame pole üheski seadmes, kuhu sisse logid. Aitäh, et toetad StreamHubi.</string>
     <string name="premium_state_vip_title">Sa oled VIP</string>
     <string name="premium_state_waiting_body">Lõpeta makse makselehel. See ekraan uueneb ise kohe, kui makset näha on.</string>
     <string name="premium_state_waiting_title">Ootame sinu makset</string>
     <string name="premium_tagline">Üks makse. Sinu igaveseks.</string>
-    <string name="premium_tv_phone_hint">Kas sul on Lightning-kupong? Lunasta see telefonis ClipBoxis sama kontoga. VIP liigub kontoga kaasa ka sellesse telerisse.</string>
+    <string name="premium_tv_phone_hint">Kas sul on Lightning-kupong? Lunasta see telefonis StreamHubis sama kontoga. VIP liigub kontoga kaasa ka sellesse telerisse.</string>
     <string name="premium_tv_scan">Skanni telefoniga ja maksa</string>
     <string name="premium_tv_show_checkout">Maksa krüptoga</string>
     <string name="premium_tv_show_voucher">Bitcoini kupong</string>
@@ -859,7 +859,7 @@ Ongi kõik. VIP lülitub selles teleris mõne minuti jooksul ise sisse."</string
     <string name="servers_probe_starting">Käivitamine… jäänud %1$d s</string>
     <string name="servers_tab_experimental">Rohkem keeli</string>
     <string name="servers_tab_main">Standardne</string>
-    <string name="settings_about">ClipBoxi kohta</string>
+    <string name="settings_about">StreamHubi kohta</string>
     <string name="settings_about_summary">Versiooniteave, tiitrid ja muudatuste logi</string>
     <string name="settings_account">Minu konto</string>
     <string name="settings_account_loggedout">Pole sisse logitud</string>
@@ -891,13 +891,13 @@ Ongi kõik. VIP lülitub selles teleris mõne minuti jooksul ise sisse."</string
     <string name="settings_next_episode">Esita järgmine episood automaatselt</string>
     <string name="settings_next_episode_summary">Näita lõputiitrite ajal loendust ja jätka iseenesest</string>
     <string name="settings_notifications">Märguanded</string>
-    <string name="settings_notifications_summary">Saate ClipBoxist teadaandeid ja värskendusi</string>
+    <string name="settings_notifications_summary">Saate StreamHubist teadaandeid ja värskendusi</string>
     <string name="settings_parental">Vanemlik järelevalve</string>
     <string name="settings_parental_off">Väljas</string>
     <string name="settings_parental_on_fmt">Peidetakse pealkirjad, mille vanusepiirang on üle %1$d</string>
     <string name="settings_pref_sub_lang">Eelistatud keel</string>
     <string name="settings_reset_app">Lähtesta rakendus</string>
-    <string name="settings_reset_app_confirm">See kustutab kõik rakenduse andmed ja sulgeb ClipBoxi. Kas jätkata?</string>
+    <string name="settings_reset_app_confirm">See kustutab kõik rakenduse andmed ja sulgeb StreamHubi. Kas jätkata?</string>
     <string name="settings_reset_app_summary">Kustutage kõik andmed ja alustage uuesti</string>
     <string name="settings_reset_tips">Tühjenda Minu loend, lemmikud ja Jätka vaatamist</string>
     <string name="settings_reset_tips_confirm">Kas tühjendada kogu Minu loend, sinu lemmikud ja kõik pooleli jäänu?</string>
@@ -1076,7 +1076,7 @@ Ongi kõik. VIP lülitub selles teleris mõne minuti jooksul ise sisse."</string
     <string name="tamper_blocked">See rakenduse koopia ei ole ehtne.</string>
     <string name="terms_gate_accept">Nõustu</string>
     <string name="terms_gate_decline">Keeldumine</string>
-    <string name="terms_gate_message">ClipBoxi kasutamise alustamiseks vaadake üle meie nõuded ja tingimused ning nõustuge nendega.</string>
+    <string name="terms_gate_message">StreamHubi kasutamise alustamiseks vaadake üle meie nõuded ja tingimused ning nõustuge nendega.</string>
     <string name="terms_gate_subtitle">Jätkamiseks lugege need läbi ja nõustuge nendega</string>
     <string name="terms_gate_title">Tingimused</string>
     <string name="touch_lock_desc">Lukusta ekraan</string>
@@ -1084,14 +1084,14 @@ Ongi kõik. VIP lülitub selles teleris mõne minuti jooksul ise sisse."</string
     <string name="touch_locked_toast">Ekraan lukus. Avamiseks puudutage lukuikooni.</string>
     <string name="track_off">Väljas</string>
     <string name="tv_account_avatar">Profiilipilt</string>
-    <string name="tv_account_avatar_phone_only">Profiilipilt valitakse seadmes olevast fotost. Sellel teleril pole rakendust, mis seda suudaks, seega määra see telefonis ClipBoxis ja see ilmub ka siia.</string>
+    <string name="tv_account_avatar_phone_only">Profiilipilt valitakse seadmes olevast fotost. Sellel teleril pole rakendust, mis seda suudaks, seega määra see telefonis StreamHubis ja see ilmub ka siia.</string>
     <string name="tv_account_choose_image">Vali pilt</string>
     <string name="tv_account_new_password_hint">Uus parool</string>
     <string name="tv_account_recover_action">Lähtesta parool</string>
     <string name="tv_account_recovery_fmt">"Taastekood: %1$s
 
 Kirjuta see üles. Seda näidatakse ainult korra ja see on ainus tee tagasi, kui unustad oma parooli."</string>
-    <string name="tv_account_register_hint">Pole veel kontot? Loo see telefoni ClipBoxi rakenduses ja logi siis siin sisse.</string>
+    <string name="tv_account_register_hint">Pole veel kontot? Loo see telefoni StreamHubi rakenduses ja logi siis siin sisse.</string>
     <string name="tv_account_saved">Salvestatud</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Pilt (hägustatud)</string>
@@ -1194,7 +1194,7 @@ Kirjuta see üles. Seda näidatakse ainult korra ja see on ainus tee tagasi, kui
     <string name="tv_ui_scale_title">Liidese suurus</string>
     <string name="tv_value_off">Väljas</string>
     <string name="tv_value_on">Sees</string>
-    <string name="tv_whatsnew_body">ClipBox on suure ekraani ja sinu puldi jaoks uuesti üles ehitatud. Kõik, mis sul oli, on endiselt olemas, lihtsalt diivanilt hõlpsamini kättesaadav. Eelistad varasemat välimust? Saad sellele igal ajal seadetes tagasi lülituda.</string>
+    <string name="tv_whatsnew_body">StreamHub on suure ekraani ja sinu puldi jaoks uuesti üles ehitatud. Kõik, mis sul oli, on endiselt olemas, lihtsalt diivanilt hõlpsamini kättesaadav. Eelistad varasemat välimust? Saad sellele igal ajal seadetes tagasi lülituda.</string>
     <string name="tv_whatsnew_classic">Kasuta klassikalist välimust</string>
     <string name="tv_whatsnew_continue">Vaata korra</string>
     <string name="tv_whatsnew_title">Uus välimus teleri jaoks</string>
@@ -1211,21 +1211,21 @@ Kas see kohe alla laadida ja installida?"</string>
     <string name="update_downloading">Uute osade tõmbamine…</string>
     <string name="update_install_help">"1. Uue APK allalaadimiseks puudutage valikut Värskenda.
 2. Kui installiprogramm avaneb, puudutage Installi.
-3. Kui Android selle blokeerib, lubage ClipBoxi jaoks käsk \"Installi tundmatud rakendused\", seejärel puudutage uuesti Installi.
+3. Kui Android selle blokeerib, lubage StreamHubi jaoks käsk \"Installi tundmatud rakendused\", seejärel puudutage uuesti Installi.
 4. Teie seaded ja loend jäetakse alles, see installitakse praeguse rakenduse kaudu."</string>
     <string name="update_install_help_summary">Mida teha, kui installimine on blokeeritud</string>
     <string name="update_install_help_title">Kuidas paigaldada</string>
     <string name="update_later">Hiljem</string>
-    <string name="update_permission_msg_firetv">"Sinu Fire TV installib värskendusi ainult rakendustest, millele oled loa andnud. Vali Ava seaded, lülita ClipBox sisse jaotises \"Tundmatute rakenduste installimine\" ja vajuta Tagasi. Värskendus jätkub seejärel iseenesest.
+    <string name="update_permission_msg_firetv">"Sinu Fire TV installib värskendusi ainult rakendustest, millele oled loa andnud. Vali Ava seaded, lülita StreamHub sisse jaotises \"Tundmatute rakenduste installimine\" ja vajuta Tagasi. Värskendus jätkub seejärel iseenesest.
 
-Kui see ekraan ei avane: Seaded > Minu Fire TV > Arendaja valikud > Tundmatute rakenduste installimine > ClipBox. Arendaja valikuid pole? Ava kõigepealt Seaded > Minu Fire TV > Teave ja vajuta seadme nimel 7 korda OK."</string>
-    <string name="update_permission_msg_phone">Android installib värskendusi ainult rakendustest, millele oled loa andnud. Puuduta Ava seaded, lülita ClipBoxi jaoks sisse \"Luba sellest allikast\" ja mine tagasi. Värskendus jätkub seejärel iseenesest.</string>
-    <string name="update_permission_msg_tv">"Sinu teler installib värskendusi ainult rakendustest, millele oled loa andnud. Vali Ava seaded, lülita ClipBox sisse jaotises \"Tundmatute rakenduste installimine\" ja vajuta Tagasi. Värskendus jätkub seejärel iseenesest.
+Kui see ekraan ei avane: Seaded > Minu Fire TV > Arendaja valikud > Tundmatute rakenduste installimine > StreamHub. Arendaja valikuid pole? Ava kõigepealt Seaded > Minu Fire TV > Teave ja vajuta seadme nimel 7 korda OK."</string>
+    <string name="update_permission_msg_phone">Android installib värskendusi ainult rakendustest, millele oled loa andnud. Puuduta Ava seaded, lülita StreamHubi jaoks sisse \"Luba sellest allikast\" ja mine tagasi. Värskendus jätkub seejärel iseenesest.</string>
+    <string name="update_permission_msg_tv">"Sinu teler installib värskendusi ainult rakendustest, millele oled loa andnud. Vali Ava seaded, lülita StreamHub sisse jaotises \"Tundmatute rakenduste installimine\" ja vajuta Tagasi. Värskendus jätkub seejärel iseenesest.
 
-Kui see ekraan ei avane: Seaded > Rakendused > Turvalisus ja piirangud > Tundmatud allikad > ClipBox."</string>
+Kui see ekraan ei avane: Seaded > Rakendused > Turvalisus ja piirangud > Tundmatud allikad > StreamHub."</string>
     <string name="update_permission_not_opened">Seadeid ei õnnestunud avada. Järgi ekraanil olevaid samme.</string>
     <string name="update_permission_open">Ava seaded</string>
-    <string name="update_permission_title">Luba ClipBoxil värskendusi installida</string>
+    <string name="update_permission_title">Luba StreamHubil värskendusi installida</string>
     <string name="update_unavailable">Värskendusteenus pole saadaval. Rakendus ei saa praegu värskendusi otsida.</string>
     <string name="update_up_to_date">Kasutate juba uusimat versiooni. Tore.</string>
     <string name="v7_preference_off">VÄLJAS</string>
@@ -1240,10 +1240,10 @@ Kui see ekraan ei avane: Seaded > Rakendused > Turvalisus ja piirangud > Tundmat
     <string name="voucher_ln_bad">See ei näe välja nagu Lightning-kupongi link. See algab LNURL-iga.</string>
     <string name="voucher_ln_redeeming">Lunastame sinu kupongi…</string>
     <string name="voucher_ln_steps">"1. Ava azte.co, vali Lightning ja lunasta seal oma kupongikood.
-2. Kuvatakse Lightning-link (LNURL). Puuduta seda, et avada ClipBox, või kopeeri ja kleebi see siia."</string>
+2. Kuvatakse Lightning-link (LNURL). Puuduta seda, et avada StreamHub, või kopeeri ja kleebi see siia."</string>
     <string name="voucher_loading_address">Valmistame sinu aadressi ette…</string>
     <string name="voucher_onchain">Bitcoini kupong</string>
-    <string name="voucher_onchain_note">See aadress kuulub selle makse jaoks sinu kontole. Võid vahepeal ClipBoxi sulgeda; VIP lülitub ise sisse.</string>
+    <string name="voucher_onchain_note">See aadress kuulub selle makse jaoks sinu kontole. Võid vahepeal StreamHubi sulgeda; VIP lülitub ise sisse.</string>
     <string name="voucher_onchain_steps">"1. Ava azte.co ja lunasta seal oma kupongikood.
 2. Kui küsitakse Bitcoini aadressi, kasuta seda:"</string>
     <string name="voucher_onchain_steps_code">"1. Sisesta allpool oma vautšeri 16-kohaline kood.

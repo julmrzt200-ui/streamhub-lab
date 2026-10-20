@@ -23,14 +23,14 @@
     <string name="about_attributions_subtitle">TMDB፣ ቤተ መጻሕፍት እና ፈቃዶች</string>
     <string name="about_attributions_title">ፍቃዶች እና ባህሪያት</string>
     <string name="about_changelog_title">ለውጥ ሎግ</string>
-    <string name="about_credits_body">"ClipBox በአንድሮይድ ላይ ፊልሞችንና ተከታታይ ድራማዎችን ለማየት ንጹህና ጸጥ ያለ መንገድ ነው። ሁሉም ነገር በአንድ ቦታ ስለሚገኝ ተወዳጅ የሆነውን መቃኘት፣ የተወሰነ ነገር መፈለግ ወይም ካቆሙበት ልክ መቀጠል ይችላሉ።
+    <string name="about_credits_body">"StreamHub በአንድሮይድ ላይ ፊልሞችንና ተከታታይ ድራማዎችን ለማየት ንጹህና ጸጥ ያለ መንገድ ነው። ሁሉም ነገር በአንድ ቦታ ስለሚገኝ ተወዳጅ የሆነውን መቃኘት፣ የተወሰነ ነገር መፈለግ ወይም ካቆሙበት ልክ መቀጠል ይችላሉ።
 
 የትርጉም ጽሑፎች በብዙ ቋንቋዎች ተፈልገው በጊዜ ይስተካከሉልዎታል፣ እያንዳንዱ ርዕስ በርካታ ምንጮች አሉት፣ እና የሚመለከቱት ነገር ወደ Chromecast ወይም ወደ ስማርት ቴሌቪዥን ሊላክ ይችላል። መተግበሪያው በስልኮች፣ በጡባዊዎች፣ በAndroid TV እና በFire TV ላይ ይሠራል፣ አማራጭ የሆነ መለያም ዝርዝርዎንና ታሪክዎን በሁሉም ላይ አንድ አድርጎ ይይዛል።
 
-ClipBox በየቀኑ ራሳቸው በሚጠቀሙበት ትንሽ ቡድን ይሠራል፣ እናም ሰዎች በሚነግሩን ነገር እየተሻሻለ ይሄዳል።"</string>
-    <string name="about_credits_title">ስለ ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub በየቀኑ ራሳቸው በሚጠቀሙበት ትንሽ ቡድን ይሠራል፣ እናም ሰዎች በሚነግሩን ነገር እየተሻሻለ ይሄዳል።"</string>
+    <string name="about_credits_title">ስለ StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">የይዘት ምንጮች እና የንግድ ምልክቶች</string>
     <string name="about_disclaimer_title">ማስተባበያ</string>
     <string name="about_legal_title">ህጋዊ</string>
@@ -65,7 +65,7 @@ ClipBox በየቀኑ ራሳቸው በሚጠቀሙበት ትንሽ ቡድን ይ�
     <string name="account_recovery_code">የመልሶ ማግኛ ኮድ</string>
     <string name="account_recovery_code_hint">የመልሶ ማግኛ ኮድ</string>
     <string name="account_register">መለያ ይፍጠሩ</string>
-    <string name="account_register_subtitle">የ ClipBox መለያዎን ይፍጠሩ</string>
+    <string name="account_register_subtitle">የ StreamHub መለያዎን ይፍጠሩ</string>
     <string name="account_session_ended">መለያህ ከአሁን በኋላ አይገኝም። ዘግተህ ወጥተሃል።</string>
     <string name="account_settings_section">የመለያ ቅንብሮች</string>
     <string name="account_sign_in">ይግቡ</string>
@@ -99,21 +99,21 @@ ClipBox በየቀኑ ራሳቸው በሚጠቀሙበት ትንሽ ቡድን ይ�
     <string name="actor_read_more">ተጨማሪ ያንብቡ</string>
     <string name="actor_wikipedia_failed">ዊኪፔዲያን መክፈት አልተቻለም።</string>
     <string name="ad_autoclose_fmt">በ%1$d ሰከንድ ውስጥ በራሱ ይዘጋል</string>
-    <string name="ad_blocked_note">የማስታወቂያ ማገጃ ይህን ማስታወቂያ እያገደ ነው። ማስታወቂያዎች ClipBoxን ነጻ ያደርጋሉ፤ ለClipBox ያጥፉት ወይም VIP ያግኙ።</string>
+    <string name="ad_blocked_note">የማስታወቂያ ማገጃ ይህን ማስታወቂያ እያገደ ነው። ማስታወቂያዎች StreamHubን ነጻ ያደርጋሉ፤ ለStreamHub ያጥፉት ወይም VIP ያግኙ።</string>
     <string name="ad_close">ማስታወቂያውን ዝጋ</string>
     <string name="ad_label">ማስታወቂያ</string>
     <string name="ad_loading">ማስታወቂያ በመጫን ላይ…</string>
     <string name="ad_open">ማስታወቂያውን ክፈት</string>
     <string name="ad_page_hint">ቀስቶች ጠቋሚውን ያንቀሳቅሳሉ · OK ይጫናል · Back ይዘጋል</string>
-    <string name="ad_popup_note">ማስታወቂያዎች ClipBoxን ነጻ ያደርጉታል እና የአገልጋዮቹን እና የጥገናውን ወጪ ለመሸፈን ይረዳሉ።</string>
+    <string name="ad_popup_note">ማስታወቂያዎች StreamHubን ነጻ ያደርጉታል እና የአገልጋዮቹን እና የጥገናውን ወጪ ለመሸፈን ይረዳሉ።</string>
     <string name="ad_remove_with_vip">በVIP ማስታወቂያ የለም</string>
     <string name="add_to_favourites">ወደ ተወዳጆች አክል</string>
     <string name="added_to_favourites">ወደ ተወዳጆች ታክሏል።</string>
     <string name="added_to_my_list">ወደ የእኔ ዝርዝር ታክሏል።</string>
     <string name="alert_dialog_title">ማስታወቂያ</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">ሙላ</string>
     <string name="aspect_fills_already">ምስሉ ማያ ገጹን አስቀድሞ ሞልቷል</string>
     <string name="aspect_fit">አስማማ</string>
@@ -178,9 +178,9 @@ ClipBox በየቀኑ ራሳቸው በሚጠቀሙበት ትንሽ ቡድን ይ�
     <string name="call_notification_ongoing_text">እየተካሄደ ያለ ጥሪ</string>
     <string name="call_notification_screening_text">ገቢ ጥሪ ማጣራት</string>
     <string name="capture_blocked_exit">ውጣ</string>
-    <string name="capture_blocked_intro">በዚህ መሣሪያ ላይ የአውታረ መረብ መቅረጫ ወይም ተኪ መሣሪያ እስከተጫነ ድረስ ClipBox አይሠራም።</string>
-    <string name="capture_blocked_outro">አራግፈው ClipBox ን እንደገና ክፈት።</string>
-    <string name="capture_blocked_title">ClipBox በዚህ መሣሪያ ላይ መሥራት አይችልም</string>
+    <string name="capture_blocked_intro">በዚህ መሣሪያ ላይ የአውታረ መረብ መቅረጫ ወይም ተኪ መሣሪያ እስከተጫነ ድረስ StreamHub አይሠራም።</string>
+    <string name="capture_blocked_outro">አራግፈው StreamHub ን እንደገና ክፈት።</string>
+    <string name="capture_blocked_title">StreamHub በዚህ መሣሪያ ላይ መሥራት አይችልም</string>
     <string name="cast_ad_label">ማስታወቂያ</string>
     <string name="cast_button_cast">ውሰድ</string>
     <string name="cast_casting_to_device">ወደ %1$s cast በማድረግ ላይ</string>
@@ -379,7 +379,7 @@ LG TVs፡ Settings → Network → LG Connect Apps ን ያብሩ።
     <string name="err_service_unavailable">አገልግሎት ለጊዜው አይገኝም። እባክዎ እንደገና ይሞክሩ።</string>
     <string name="err_signed_out_sign_in">በዚህ መሣሪያ ላይ ዘግተው ወጥተዋል። እንደገና ይግቡ።</string>
     <string name="err_too_many_requests">በጣም ብዙ ጥያቄዎች። እባክዎን ትንሽ ይጠብቁ።</string>
-    <string name="err_update_for_recovery">አዲስ የመልሶ ማግኛ ኮድ ለመፍጠር ClipBoxን ወደ የቅርብ ጊዜው ስሪት ያዘምኑ።</string>
+    <string name="err_update_for_recovery">አዲስ የመልሶ ማግኛ ኮድ ለመፍጠር StreamHubን ወደ የቅርብ ጊዜው ስሪት ያዘምኑ።</string>
     <string name="error_a11y_label">ስህተት፦ ልክ ያልሆነ</string>
     <string name="error_bad_intent">ልክ ያልሆነ አገናኝ ተቀብሏል። ሊከፍተው አልቻለም።</string>
     <string name="error_icon_content_description">ስህተት</string>
@@ -458,7 +458,7 @@ LG TVs፡ Settings → Network → LG Connect Apps ን ያብሩ።
 
 እያንዳንዱ ርዕስ በትክክል መጫወት የሚችል አይደለም፣ አንዳንድ ስራዎች እና ሌሎች ግን አይደሉም።
 
-ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስህተቶች ሊኖሩ ይችላሉ።"</string>
+StreamHub አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስህተቶች ሊኖሩ ይችላሉ።"</string>
     <string name="first_launch_ok">ገባኝ</string>
     <string name="first_launch_title">እንኳን ደህና መጣህ!</string>
     <string name="footer_brand">ክሊፕቦክስ</string>
@@ -492,7 +492,7 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="lang_available_body">መተግበሪያውን አሁን በ%1$s እየተጠቀሙ ነው። መቀየር ይፈልጋሉ? ይህን በማንኛውም ጊዜ በቅንብሮች ውስጥ መቀየር ይችላሉ።</string>
     <string name="lang_available_keep">%1$s አቆይ</string>
     <string name="lang_available_switch">ወደ %1$s ቀይር</string>
-    <string name="lang_available_title">ClipBox አሁን በ%1$s ይገኛል</string>
+    <string name="lang_available_title">StreamHub አሁን በ%1$s ይገኛል</string>
     <string name="launcher_instructions">"እዚህ ምንም ማድረግ የሚያስፈልግህ ነገር የለም።
 
 የዥረት ዩአርኤል ካለህ በቀጥታ ከታች ማጫወት ትችላለህ።
@@ -639,17 +639,17 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="pair_scan_allow">ካሜራ ፍቀድ</string>
     <string name="pair_scan_button">QR ኮድ ይቃኙ</string>
     <string name="pair_scan_hint">ካሜራውን በቲቪው ላይ ወዳለው QR ኮድ ያዙሩ</string>
-    <string name="pair_scan_no_camera">ኮዱን ለመቃኘት ClipBox ካሜራ ያስፈልገዋል። ይህ ማያ ገጽ ክፍት እስካለ ድረስ ብቻ ነው የሚጠቀመው።</string>
+    <string name="pair_scan_no_camera">ኮዱን ለመቃኘት StreamHub ካሜራ ያስፈልገዋል። ይህ ማያ ገጽ ክፍት እስካለ ድረስ ብቻ ነው የሚጠቀመው።</string>
     <string name="pair_scan_torch">የእጅ ባትሪ</string>
     <string name="pair_scan_type_instead">በምትኩ ኮዱን ይተይቡ</string>
-    <string name="pair_scan_wrong">ይህ የClipBox የቲቪ ኮድ አይደለም። በቲቪዎ ላይ ያለውን ኮድ ይቃኙ።</string>
+    <string name="pair_scan_wrong">ይህ የStreamHub የቲቪ ኮድ አይደለም። በቲቪዎ ላይ ያለውን ኮድ ይቃኙ።</string>
     <string name="pair_tv_button">በስልክ ይግቡ</string>
     <string name="pair_tv_confirm_hint">በስልክዎ ያረጋግጡ፣ ይህ ቲቪ በራሱ ይገባል።</string>
     <string name="pair_tv_done_fmt">እንደ %1$s ገብተዋል</string>
     <string name="pair_tv_expires_fmt">ኮዱ ለ%1$s ያገለግላል</string>
     <string name="pair_tv_failed">ኮድ ማግኘት አልተቻለም። ግንኙነቱን ፈትሸው እንደገና ይሞክሩ።</string>
     <string name="pair_tv_new_code">አዲስ ኮድ</string>
-    <string name="pair_tv_or_code">ወይም በስልክዎ ClipBoxን ይክፈቱ፣ ወደ መለያ ከዚያ በቲቪ ላይ ግባ ይሂዱ፣ ከQR ኮዱ በታች ያለውን ኮድ ያስገቡ።</string>
+    <string name="pair_tv_or_code">ወይም በስልክዎ StreamHubን ይክፈቱ፣ ወደ መለያ ከዚያ በቲቪ ላይ ግባ ይሂዱ፣ ከQR ኮዱ በታች ያለውን ኮድ ያስገቡ።</string>
     <string name="pair_tv_scan">ኮዱን በስልክዎ ካሜራ ይቃኙ</string>
     <string name="pair_tv_waiting">ስልክዎን በመጠበቅ ላይ…</string>
     <string name="parental_age_fmt">%1$d ዓመትና ከዚያ በታች</string>
@@ -718,7 +718,7 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
 
 1. የAzteco ቫውቸር ይጠቀሙ › ቫውቸር የት ልግዛ?ን ይንኩ እና ከአንዱ ሱቅ የAzteco Bitcoin ቫውቸር (On-Chain) ይግዙ። እንደተለመደው፣ ለምሳሌ በካርድ ይከፍላሉ።
 2. ባለ16 አሃዝ ኮድ ያገኛሉ።
-3. በ ClipBox ውስጥ የAzteco ቫውቸር ይጠቀሙን፣ ከዚያ የBitcoin ቫውቸርን ይንኩ። የቫውቸር ገጻችን ይከፈታል።
+3. በ StreamHub ውስጥ የAzteco ቫውቸር ይጠቀሙን፣ ከዚያ የBitcoin ቫውቸርን ይንኩ። የቫውቸር ገጻችን ይከፈታል።
 4. እዚያ ኮዱን ያስገቡ። እኛ ለእርስዎ እናስመልሰዋለን እና ክፍያው መድረሱን እናረጋግጣለን።
 
 ይኸው ነው። በጥቂት ደቂቃዎች ውስጥ VIP በራሱ ይበራል።"</string>
@@ -751,12 +751,12 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="premium_state_confirming_title">ክፍያ ደርሷል</string>
     <string name="premium_state_partial_body_fmt">$%1$s ከፍለዋል። ተጨማሪ $%2$s እና VIP የእርስዎ ነው። የከፈሉት በመለያዎ ላይ ይቀመጣል።</string>
     <string name="premium_state_partial_title">ሊጠናቀቅ ነው</string>
-    <string name="premium_state_vip_body">በገቡበት በማንኛውም መሣሪያ ላይ ማስታወቂያ የለም። ClipBoxን ስለደገፉ እናመሰግናለን።</string>
+    <string name="premium_state_vip_body">በገቡበት በማንኛውም መሣሪያ ላይ ማስታወቂያ የለም። StreamHubን ስለደገፉ እናመሰግናለን።</string>
     <string name="premium_state_vip_title">እርስዎ VIP ነዎት</string>
     <string name="premium_state_waiting_body">ክፍያውን በክፍያ ገጹ ላይ ያጠናቅቁ። ክፍያው እንደታየ ይህ ማያ ገጽ በራሱ ይዘምናል።</string>
     <string name="premium_state_waiting_title">ክፍያዎን በመጠበቅ ላይ</string>
     <string name="premium_tagline">አንድ ጊዜ ክፍያ። ለዘላለም የእርስዎ።</string>
-    <string name="premium_tv_phone_hint">የLightning ቫውቸር አለዎት? በዚያው መለያ በስልክዎ ClipBox ውስጥ ይጠቀሙት። VIP ከመለያዎ ጋር ወደዚህ ቴሌቪዥንም ይመጣል።</string>
+    <string name="premium_tv_phone_hint">የLightning ቫውቸር አለዎት? በዚያው መለያ በስልክዎ StreamHub ውስጥ ይጠቀሙት። VIP ከመለያዎ ጋር ወደዚህ ቴሌቪዥንም ይመጣል።</string>
     <string name="premium_tv_scan">ለመክፈል በስልክ ይቃኙ</string>
     <string name="premium_tv_show_checkout">በክሪፕቶ ይክፈሉ</string>
     <string name="premium_tv_show_voucher">የBitcoin ቫውቸር</string>
@@ -859,7 +859,7 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="servers_probe_starting">በመጀመር ላይ… %1$d ሰከንድ ቀርቷል</string>
     <string name="servers_tab_experimental">ተጨማሪ ቋንቋዎች</string>
     <string name="servers_tab_main">መደበኛ</string>
-    <string name="settings_about">ስለ ClipBox</string>
+    <string name="settings_about">ስለ StreamHub</string>
     <string name="settings_about_summary">የስሪት መረጃ፣ ምስጋናዎች እና የለውጥ ሎግ</string>
     <string name="settings_account">የእኔ መለያ</string>
     <string name="settings_account_loggedout">አልገባም።</string>
@@ -891,7 +891,7 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="settings_next_episode">ቀጣዩን ክፍል በራስ ሰር አጫውት</string>
     <string name="settings_next_episode_summary">በክሬዲቶች ላይ ቆጠራ አሳይ እና በራሱ ይቀጥል</string>
     <string name="settings_notifications">ማሳወቂያዎች</string>
-    <string name="settings_notifications_summary">ከClipBox ማስታወቂያዎችን እና ዝመናዎችን ይቀበሉ</string>
+    <string name="settings_notifications_summary">ከStreamHub ማስታወቂያዎችን እና ዝመናዎችን ይቀበሉ</string>
     <string name="settings_parental">የወላጅ ቁጥጥር</string>
     <string name="settings_parental_off">ጠፍቷል</string>
     <string name="settings_parental_on_fmt">ከ%1$d በላይ የተመደቡ ርዕሶች ተደብቀዋል</string>
@@ -1084,14 +1084,14 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="touch_locked_toast">ስክሪን ተቆልፏል። ለመክፈት የመቆለፊያ አዶውን ይንኩ።</string>
     <string name="track_off">ጠፍቷል</string>
     <string name="tv_account_avatar">የመገለጫ ፎቶ</string>
-    <string name="tv_account_avatar_phone_only">የመገለጫ ፎቶ ከመሣሪያዎ ፎቶ ይመረጣል። ይህ ቴሌቪዥን ይህን የሚያደርግ መተግበሪያ የለውም፣ ስለዚህ በስልክዎ ላይ ባለው ClipBox ውስጥ ያዘጋጁት፣ እዚህም ይታያል።</string>
+    <string name="tv_account_avatar_phone_only">የመገለጫ ፎቶ ከመሣሪያዎ ፎቶ ይመረጣል። ይህ ቴሌቪዥን ይህን የሚያደርግ መተግበሪያ የለውም፣ ስለዚህ በስልክዎ ላይ ባለው StreamHub ውስጥ ያዘጋጁት፣ እዚህም ይታያል።</string>
     <string name="tv_account_choose_image">ምስል ይምረጡ</string>
     <string name="tv_account_new_password_hint">አዲስ የይለፍ ቃል</string>
     <string name="tv_account_recover_action">የይለፍ ቃል ዳግም አስጀምር</string>
     <string name="tv_account_recovery_fmt">"የመልሶ ማግኛ ኮድ፦ %1$s
 
 ጻፈው። አንድ ጊዜ ብቻ ነው የሚታየው፣ የይለፍ ቃልህን ብትረሳ ተመልሰህ ለመግባት ብቸኛው መንገድ ነው።"</string>
-    <string name="tv_account_register_hint">እስካሁን መለያ የለህም? በስልክህ ላይ ባለው የClipBox መተግበሪያ ፍጠረው፣ ከዚያ እዚህ ግባ።</string>
+    <string name="tv_account_register_hint">እስካሁን መለያ የለህም? በስልክህ ላይ ባለው የStreamHub መተግበሪያ ፍጠረው፣ ከዚያ እዚህ ግባ።</string>
     <string name="tv_account_saved">ተቀምጧል</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">ምስል (የደበዘዘ)</string>
@@ -1194,7 +1194,7 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="tv_ui_scale_title">የበይነገጽ መጠን</string>
     <string name="tv_value_off">ጠፍቷል</string>
     <string name="tv_value_on">በርቷል</string>
-    <string name="tv_whatsnew_body">ClipBox ለትልቁ ማያ ገጽና ለሪሞትህ እንደገና ተገንብቷል። የነበረህ ሁሉ አሁንም እዚሁ አለ፣ ከሶፋው ላይ ሆነህ ለመድረስ ቀላል ሆኗል ብቻ። ቀድሞውን ገጽታ ትመርጣለህ? በቅንብሮች ውስጥ በማንኛውም ጊዜ መመለስ ትችላለህ።</string>
+    <string name="tv_whatsnew_body">StreamHub ለትልቁ ማያ ገጽና ለሪሞትህ እንደገና ተገንብቷል። የነበረህ ሁሉ አሁንም እዚሁ አለ፣ ከሶፋው ላይ ሆነህ ለመድረስ ቀላል ሆኗል ብቻ። ቀድሞውን ገጽታ ትመርጣለህ? በቅንብሮች ውስጥ በማንኛውም ጊዜ መመለስ ትችላለህ።</string>
     <string name="tv_whatsnew_classic">ጥንታዊውን ገጽታ ተጠቀም</string>
     <string name="tv_whatsnew_continue">ተመልከት</string>
     <string name="tv_whatsnew_title">ለቴሌቪዥን አዲስ ገጽታ</string>
@@ -1216,16 +1216,16 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="update_install_help_summary">መጫኑ ከታገደ ምን ማድረግ እንዳለበት</string>
     <string name="update_install_help_title">እንዴት እንደሚጫን</string>
     <string name="update_later">በኋላ</string>
-    <string name="update_permission_msg_firetv">"Fire TVዎ ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ይምረጡ፣ በ\"ያልታወቁ መተግበሪያዎችን ጫን\" ስር ClipBoxን ያብሩ እና ተመለስን ይጫኑ። ዝማኔው በራሱ ይቀጥላል።
+    <string name="update_permission_msg_firetv">"Fire TVዎ ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ይምረጡ፣ በ\"ያልታወቁ መተግበሪያዎችን ጫን\" ስር StreamHubን ያብሩ እና ተመለስን ይጫኑ። ዝማኔው በራሱ ይቀጥላል።
 
-ያ ማያ ገጽ ካልተከፈተ፦ ቅንብሮች > የእኔ Fire TV > የገንቢ አማራጮች > ያልታወቁ መተግበሪያዎችን ጫን > ClipBox. የገንቢ አማራጮች የሉም? መጀመሪያ ወደ ቅንብሮች > የእኔ Fire TV > ስለ ይሂዱ እና በመሣሪያው ስም ላይ OKን 7 ጊዜ ይጫኑ።"</string>
-    <string name="update_permission_msg_phone">Android ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ላይ መታ ያድርጉ፣ ለClipBox \"ከዚህ ምንጭ ፍቀድ\"ን ያብሩ እና ይመለሱ። ዝማኔው በራሱ ይቀጥላል።</string>
-    <string name="update_permission_msg_tv">"ቴሌቪዥንዎ ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ይምረጡ፣ በ\"ያልታወቁ መተግበሪያዎችን ጫን\" ስር ClipBoxን ያብሩ እና ተመለስን ይጫኑ። ዝማኔው በራሱ ይቀጥላል።
+ያ ማያ ገጽ ካልተከፈተ፦ ቅንብሮች > የእኔ Fire TV > የገንቢ አማራጮች > ያልታወቁ መተግበሪያዎችን ጫን > StreamHub. የገንቢ አማራጮች የሉም? መጀመሪያ ወደ ቅንብሮች > የእኔ Fire TV > ስለ ይሂዱ እና በመሣሪያው ስም ላይ OKን 7 ጊዜ ይጫኑ።"</string>
+    <string name="update_permission_msg_phone">Android ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ላይ መታ ያድርጉ፣ ለStreamHub \"ከዚህ ምንጭ ፍቀድ\"ን ያብሩ እና ይመለሱ። ዝማኔው በራሱ ይቀጥላል።</string>
+    <string name="update_permission_msg_tv">"ቴሌቪዥንዎ ዝማኔዎችን የሚጭነው እርስዎ ከፈቀዱላቸው መተግበሪያዎች ብቻ ነው። ቅንብሮችን ክፈት ይምረጡ፣ በ\"ያልታወቁ መተግበሪያዎችን ጫን\" ስር StreamHubን ያብሩ እና ተመለስን ይጫኑ። ዝማኔው በራሱ ይቀጥላል።
 
-ያ ማያ ገጽ ካልተከፈተ፦ ቅንብሮች > መተግበሪያዎች > ደህንነት እና ገደቦች > ያልታወቁ ምንጮች > ClipBox."</string>
+ያ ማያ ገጽ ካልተከፈተ፦ ቅንብሮች > መተግበሪያዎች > ደህንነት እና ገደቦች > ያልታወቁ ምንጮች > StreamHub."</string>
     <string name="update_permission_not_opened">ቅንብሮች ሊከፈቱ አልቻሉም። በማያ ገጹ ላይ ያሉትን ደረጃዎች ይከተሉ።</string>
     <string name="update_permission_open">ቅንብሮችን ክፈት</string>
-    <string name="update_permission_title">ClipBox ዝማኔዎችን እንዲጭን ይፍቀዱ</string>
+    <string name="update_permission_title">StreamHub ዝማኔዎችን እንዲጭን ይፍቀዱ</string>
     <string name="update_unavailable">የዝማኔ አገልግሎት የለም። መተግበሪያው ዝማኔዎችን አሁን ማረጋገጥ አይችልም።</string>
     <string name="update_up_to_date">ቀድሞውኑ በአዲሱ ስሪት ላይ ነዎት። ጥሩ።</string>
     <string name="v7_preference_off">ጠፍቷል</string>
@@ -1240,10 +1240,10 @@ ClipBox አዲስ ነው እና በመገንባት ላይ፣ አንዳንድ ስ
     <string name="voucher_ln_bad">ይህ የLightning ቫውቸር ሊንክ አይመስልም። በLNURL ይጀምራል።</string>
     <string name="voucher_ln_redeeming">ቫውቸርዎን በመጠቀም ላይ…</string>
     <string name="voucher_ln_steps">"1. azte.coን ይክፈቱ፣ Lightningን ይምረጡ እና የቫውቸር ኮድዎን እዚያ ይጠቀሙ።
-2. የLightning ሊንክ (LNURL) ይታያል። ClipBoxን ለመክፈት ይንኩት፣ ወይም ገልብጠው እዚህ ይለጥፉት።"</string>
+2. የLightning ሊንክ (LNURL) ይታያል። StreamHubን ለመክፈት ይንኩት፣ ወይም ገልብጠው እዚህ ይለጥፉት።"</string>
     <string name="voucher_loading_address">አድራሻዎን በማዘጋጀት ላይ…</string>
     <string name="voucher_onchain">የBitcoin ቫውቸር</string>
-    <string name="voucher_onchain_note">ይህ አድራሻ ለዚህ ክፍያ የመለያዎ ነው። እስከዚያው ClipBoxን መዝጋት ይችላሉ፤ VIP በራሱ ይበራል።</string>
+    <string name="voucher_onchain_note">ይህ አድራሻ ለዚህ ክፍያ የመለያዎ ነው። እስከዚያው StreamHubን መዝጋት ይችላሉ፤ VIP በራሱ ይበራል።</string>
     <string name="voucher_onchain_steps">"1. azte.coን ይክፈቱ እና የቫውቸር ኮድዎን እዚያ ይጠቀሙ።
 2. የBitcoin አድራሻ ሲጠየቁ ይህን ይጠቀሙ፦"</string>
     <string name="voucher_onchain_steps_code">"1. የቫውቸርዎን ባለ16 አሃዝ ኮድ ከታች ያስገቡ።

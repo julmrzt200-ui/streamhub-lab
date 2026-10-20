@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, bibliotekos ir licencijos</string>
     <string name="about_attributions_title">Licencijos ir priskyrimai</string>
     <string name="about_changelog_title">Pakeitimų žurnalas</string>
-    <string name="about_credits_body">"ClipBox yra švarus ir ramus būdas žiūrėti filmus ir serialus su Android. Viskas yra vienoje vietoje, todėl galite naršyti, kas populiaru, ieškoti ko nors konkretaus arba tęsti būtent nuo tos vietos, kur baigėte.
+    <string name="about_credits_body">"StreamHub yra švarus ir ramus būdas žiūrėti filmus ir serialus su Android. Viskas yra vienoje vietoje, todėl galite naršyti, kas populiaru, ieškoti ko nors konkretaus arba tęsti būtent nuo tos vietos, kur baigėte.
 
 Subtitrai už jus surandami ir sinchronizuojami daugybe kalbų, kiekvienas kūrinys turi kelis šaltinius, o tai, ką žiūrite, galima siųsti į Chromecast ar išmanųjį televizorių. Programa veikia telefonuose, planšetėse, Android TV ir Fire TV, o neprivaloma paskyra visur išlaiko jūsų sąrašą ir istoriją vienodus.
 
-ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja dėl to, ką mums parašo žmonės."</string>
-    <string name="about_credits_title">Apie ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja dėl to, ką mums parašo žmonės."</string>
+    <string name="about_credits_title">Apie StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Turinio šaltiniai ir prekių ženklai</string>
     <string name="about_disclaimer_title">Atsisakymas</string>
     <string name="about_legal_title">Teisinė</string>
     <string name="about_privacy_subtitle">Kokie duomenys renkami ir kodėl</string>
     <string name="about_privacy_title">Privatumo politika</string>
-    <string name="about_terms_subtitle">Kaip galima naudoti ClipBox</string>
+    <string name="about_terms_subtitle">Kaip galima naudoti StreamHub</string>
     <string name="about_terms_title">Taisyklės ir sąlygos</string>
     <string name="about_title">Apie</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja d
     <string name="account_go_register">Čia nauja? Susikurti paskyrą</string>
     <string name="account_go_register_action">Susikurti paskyrą</string>
     <string name="account_guest">Svečias</string>
-    <string name="account_member">ClipBox narys</string>
+    <string name="account_member">StreamHub narys</string>
     <string name="account_member_since_fmt">Narys nuo %1$s</string>
     <string name="account_new_password_hint">Naujas slaptažodis</string>
     <string name="account_new_username_hint">Naujas vartotojo vardas</string>
@@ -65,7 +65,7 @@ ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja d
     <string name="account_recovery_code">Atkūrimo kodas</string>
     <string name="account_recovery_code_hint">Atkūrimo kodas</string>
     <string name="account_register">Sukurti paskyrą</string>
-    <string name="account_register_subtitle">Sukurkite savo ClipBox paskyrą</string>
+    <string name="account_register_subtitle">Sukurkite savo StreamHub paskyrą</string>
     <string name="account_session_ended">Jūsų paskyra nebepasiekiama. Jūs buvote atjungti.</string>
     <string name="account_settings_section">Paskyros nustatymai</string>
     <string name="account_sign_in">Prisijunkite</string>
@@ -73,7 +73,7 @@ ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja d
     <string name="account_sign_out">Atsijungti</string>
     <string name="account_signed_out_offline">Atsijungta. Jūsų sąrašo nepavyko sinchronizuoti, todėl jis buvo saugomas šiame įrenginyje.</string>
     <string name="account_signing_in">Prisijungiama…</string>
-    <string name="account_subtitle">Prisijunkite prie savo ClipBox paskyros</string>
+    <string name="account_subtitle">Prisijunkite prie savo StreamHub paskyros</string>
     <string name="account_sync_done">Sinchronizavimas baigtas</string>
     <string name="account_terms_required">Prieš registruodamiesi peržiūrėkite Sąlygas ir sąlygas</string>
     <string name="account_title">sąskaita</string>
@@ -99,21 +99,21 @@ ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja d
     <string name="actor_read_more">Skaityti daugiau</string>
     <string name="actor_wikipedia_failed">Nepavyko atidaryti Vikipedijos.</string>
     <string name="ad_autoclose_fmt">Automatiškai užsidarys po %1$d s</string>
-    <string name="ad_blocked_note">Reklamų blokatorius stabdo šią reklamą. Reklamos leidžia ClipBox likti nemokamam: išjunkite jį ClipBox arba įsigykite VIP.</string>
+    <string name="ad_blocked_note">Reklamų blokatorius stabdo šią reklamą. Reklamos leidžia StreamHub likti nemokamam: išjunkite jį StreamHub arba įsigykite VIP.</string>
     <string name="ad_close">Uždaryti reklamą</string>
     <string name="ad_label">Reklama</string>
     <string name="ad_loading">Įkeliama reklama…</string>
     <string name="ad_open">Atidaryti reklamą</string>
     <string name="ad_page_hint">Rodyklės judina žymeklį · OK spusteli · Atgal uždaro</string>
-    <string name="ad_popup_note">Reklamos leidžia ClipBox likti nemokamam ir padeda apmokėti serverius bei priežiūrą.</string>
+    <string name="ad_popup_note">Reklamos leidžia StreamHub likti nemokamam ir padeda apmokėti serverius bei priežiūrą.</string>
     <string name="ad_remove_with_vip">Be reklamų su VIP</string>
     <string name="add_to_favourites">Pridėti prie mėgstamiausių</string>
     <string name="added_to_favourites">Pridėta prie mėgstamiausių</string>
     <string name="added_to_my_list">Įtraukta į Mano sąrašą</string>
     <string name="alert_dialog_title">Pastaba</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Užpildykite</string>
     <string name="aspect_fills_already">vaizdas jau užpildo ekraną</string>
     <string name="aspect_fit">Pritaikyti</string>
@@ -178,9 +178,9 @@ ClipBox kuria maža komanda, kuri pati juo naudojasi kasdien, ir jis tobulėja d
     <string name="call_notification_ongoing_text">Vykstantis skambutis</string>
     <string name="call_notification_screening_text">Gaunamojo skambučio tikrinimas</string>
     <string name="capture_blocked_exit">Išeiti</string>
-    <string name="capture_blocked_intro">„ClipBox“ neveiks tol, kol šiame įrenginyje įdiegtas tinklo srauto perėmimo arba tarpinio serverio įrankis.</string>
-    <string name="capture_blocked_outro">Pašalinkite jį ir vėl atidarykite „ClipBox“.</string>
-    <string name="capture_blocked_title">„ClipBox“ negali veikti šiame įrenginyje</string>
+    <string name="capture_blocked_intro">„StreamHub“ neveiks tol, kol šiame įrenginyje įdiegtas tinklo srauto perėmimo arba tarpinio serverio įrankis.</string>
+    <string name="capture_blocked_outro">Pašalinkite jį ir vėl atidarykite „StreamHub“.</string>
+    <string name="capture_blocked_title">„StreamHub“ negali veikti šiame įrenginyje</string>
     <string name="cast_ad_label">Skelbimas</string>
     <string name="cast_button_cast">Aktoriai</string>
     <string name="cast_casting_to_device">Perduodama į „%1$s“</string>
@@ -379,7 +379,7 @@ Televizoriaus IP taip pat galite įvesti neautomatiškai."</string>
     <string name="err_service_unavailable">Paslauga laikinai nepasiekiama. Bandykite dar kartą.</string>
     <string name="err_signed_out_sign_in">Šiame įrenginyje buvote atjungti. Prisijunkite dar kartą.</string>
     <string name="err_too_many_requests">Per daug prašymų. Šiek tiek palaukite.</string>
-    <string name="err_update_for_recovery">Atnaujinkite ClipBox iki naujausios versijos, kad sukurtumėte naują atkūrimo kodą.</string>
+    <string name="err_update_for_recovery">Atnaujinkite StreamHub iki naujausios versijos, kad sukurtumėte naują atkūrimo kodą.</string>
     <string name="error_a11y_label">Klaida: netinkama</string>
     <string name="error_bad_intent">Gauta neteisinga nuoroda. Nepavyko atidaryti.</string>
     <string name="error_icon_content_description">Klaida</string>
@@ -458,16 +458,16 @@ Televizoriaus IP taip pat galite įvesti neautomatiškai."</string>
 
 Ne visi kūriniai iš tikrųjų gali būti paleisti, kai kurie veikia, o kiti ne.
 
-ClipBox yra nauja ir kuriama, gali būti klaidų."</string>
+StreamHub yra nauja ir kuriama, gali būti klaidų."</string>
     <string name="first_launch_ok">Supratau</string>
     <string name="first_launch_title">Sveiki sugrįžę!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Atsisiųskite naujinimą</string>
     <string name="force_update_fallback_msg">Norint toliau naudoti šią programą, reikalinga nauja versija.</string>
     <string name="force_update_subtitle">Reikia atnaujinti</string>
     <string name="gate_connecting">Įkeliama</string>
     <string name="gate_retry">Bandykite dar kartą</string>
-    <string name="gate_unavailable_message">"ClipBox negali pasiekti savo serverių.
+    <string name="gate_unavailable_message">"StreamHub negali pasiekti savo serverių.
 Patikrinkite ryšį ir bandykite dar kartą."</string>
     <string name="gate_unavailable_title">Paslauga nepasiekiama</string>
     <string name="genre_action">Veiksmas</string>
@@ -492,7 +492,7 @@ Patikrinkite ryšį ir bandykite dar kartą."</string>
     <string name="lang_available_body">Šiuo metu programėlę naudojate %1$s kalba. Ar norite pakeisti? Tai galite bet kada pakeisti nustatymuose.</string>
     <string name="lang_available_keep">Palikti %1$s</string>
     <string name="lang_available_switch">Perjungti į %1$s</string>
-    <string name="lang_available_title">„ClipBox“ jau galima %1$s kalba</string>
+    <string name="lang_available_title">„StreamHub“ jau galima %1$s kalba</string>
     <string name="launcher_instructions">"Čia nieko nereikia daryti.
 
 Jei turite srauto URL, galite jį paleisti tiesiai žemiau.
@@ -639,17 +639,17 @@ Pridėkite filmų ir laidų iš išsamios informacijos puslapio."</string>
     <string name="pair_scan_allow">Leisti kamerą</string>
     <string name="pair_scan_button">Nuskaityti QR kodą</string>
     <string name="pair_scan_hint">Nukreipkite kamerą į QR kodą televizoriuje</string>
-    <string name="pair_scan_no_camera">Kodui nuskaityti ClipBox reikia kameros. Ji naudojama tik kol šis ekranas atidarytas.</string>
+    <string name="pair_scan_no_camera">Kodui nuskaityti StreamHub reikia kameros. Ji naudojama tik kol šis ekranas atidarytas.</string>
     <string name="pair_scan_torch">Žibintuvėlis</string>
     <string name="pair_scan_type_instead">Įvesti kodą</string>
-    <string name="pair_scan_wrong">Tai ne ClipBox TV kodas. Nuskaitykite kodą televizoriuje.</string>
+    <string name="pair_scan_wrong">Tai ne StreamHub TV kodas. Nuskaitykite kodą televizoriuje.</string>
     <string name="pair_tv_button">Prisijungti telefonu</string>
     <string name="pair_tv_confirm_hint">Patvirtinkite telefone ir šis televizorius prisijungs pats.</string>
     <string name="pair_tv_done_fmt">Prisijungta kaip %1$s</string>
     <string name="pair_tv_expires_fmt">Kodas galioja dar %1$s</string>
     <string name="pair_tv_failed">Nepavyko gauti kodo. Patikrinkite ryšį ir bandykite dar kartą.</string>
     <string name="pair_tv_new_code">Naujas kodas</string>
-    <string name="pair_tv_or_code">Arba atidarykite ClipBox telefone, eikite į Paskyra, tada Prisijungti televizoriuje, ir įveskite kodą po QR kodu.</string>
+    <string name="pair_tv_or_code">Arba atidarykite StreamHub telefone, eikite į Paskyra, tada Prisijungti televizoriuje, ir įveskite kodą po QR kodu.</string>
     <string name="pair_tv_scan">Nuskenuokite kodą telefono kamera</string>
     <string name="pair_tv_waiting">Laukiama telefono…</string>
     <string name="parental_age_fmt">%1$d metų ir jaunesniems</string>
@@ -718,7 +718,7 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats, kai tik matomas mokėjimas
 
 1. Bakstelėkite „Panaudoti Azteco kuponą › Kur nusipirkti čekį?“ ir vienoje iš parduotuvių nusipirkite Azteco Bitcoin čekį (On-Chain). Mokate įprastai, pavyzdžiui, kortele.
 2. Gaunate 16 skaitmenų kodą.
-3. ClipBox programėlėje bakstelėkite Panaudoti Azteco kuponą, tada Bitcoin kuponas. Atsidaro mūsų kuponų puslapis.
+3. StreamHub programėlėje bakstelėkite Panaudoti Azteco kuponą, tada Bitcoin kuponas. Atsidaro mūsų kuponų puslapis.
 4. Ten įveskite kodą. Mes jį panaudosime už jus ir patikrinsime, ar mokėjimas gautas.
 
 Tai viskas. VIP įsijungia pats per kelias minutes."</string>
@@ -751,12 +751,12 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats per kelias minutes."</strin
     <string name="premium_state_confirming_title">Mokėjimas gautas</string>
     <string name="premium_state_partial_body_fmt">Sumokėjai $%1$s. Dar $%2$s ir VIP tavo. Tai, ką sumokėjai, lieka tavo paskyroje.</string>
     <string name="premium_state_partial_title">Beveik baigta</string>
-    <string name="premium_state_vip_body">Jokių reklamų jokiame įrenginyje, kuriame prisijungi. Ačiū, kad remi ClipBox.</string>
+    <string name="premium_state_vip_body">Jokių reklamų jokiame įrenginyje, kuriame prisijungi. Ačiū, kad remi StreamHub.</string>
     <string name="premium_state_vip_title">Tu esi VIP</string>
     <string name="premium_state_waiting_body">Užbaik mokėjimą mokėjimo puslapyje. Šis ekranas atsinaujins pats, kai tik mokėjimas bus pastebėtas.</string>
     <string name="premium_state_waiting_title">Laukiame tavo mokėjimo</string>
     <string name="premium_tagline">Vienas mokėjimas. Tavo visam laikui.</string>
-    <string name="premium_tv_phone_hint">Turi Lightning kuponą? Panaudok jį ClipBox telefone su ta pačia paskyra. VIP kartu su paskyra ateis ir į šį televizorių.</string>
+    <string name="premium_tv_phone_hint">Turi Lightning kuponą? Panaudok jį StreamHub telefone su ta pačia paskyra. VIP kartu su paskyra ateis ir į šį televizorių.</string>
     <string name="premium_tv_scan">Nuskenuok telefonu ir sumokėk</string>
     <string name="premium_tv_show_checkout">Mokėti kriptovaliuta</string>
     <string name="premium_tv_show_voucher">Bitcoin kuponas</string>
@@ -859,7 +859,7 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats per kelias minutes."</strin
     <string name="servers_probe_starting">Paleidžiama… liko %1$d s</string>
     <string name="servers_tab_experimental">Daugiau kalbų</string>
     <string name="servers_tab_main">Standartiniai</string>
-    <string name="settings_about">Apie ClipBox</string>
+    <string name="settings_about">Apie StreamHub</string>
     <string name="settings_about_summary">Informacija apie versiją, kreditai ir pakeitimų žurnalas</string>
     <string name="settings_account">Mano paskyra</string>
     <string name="settings_account_loggedout">Neprisijungęs</string>
@@ -891,13 +891,13 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats per kelias minutes."</strin
     <string name="settings_next_episode">Automatiškai paleisti kitą epizodą</string>
     <string name="settings_next_episode_summary">Rodyti atgalinį skaičiavimą per titrus ir tęsti savaime</string>
     <string name="settings_notifications">Pranešimai</string>
-    <string name="settings_notifications_summary">Gaukite pranešimus ir atnaujinimus iš ClipBox</string>
+    <string name="settings_notifications_summary">Gaukite pranešimus ir atnaujinimus iš StreamHub</string>
     <string name="settings_parental">Tėvų kontrolė</string>
     <string name="settings_parental_off">Išjungta</string>
     <string name="settings_parental_on_fmt">Slepiami kūriniai, kurių reitingas didesnis nei %1$d</string>
     <string name="settings_pref_sub_lang">Pageidautina kalba</string>
     <string name="settings_reset_app">Iš naujo nustatyti programą</string>
-    <string name="settings_reset_app_confirm">Tai ištrina visus programos duomenis ir uždaro ClipBox. Tęsti?</string>
+    <string name="settings_reset_app_confirm">Tai ištrina visus programos duomenis ir uždaro StreamHub. Tęsti?</string>
     <string name="settings_reset_app_summary">Ištrinkite visus duomenis ir pradėkite iš naujo</string>
     <string name="settings_reset_tips">Išvalyti Mano sąrašą, mėgstamiausius ir Tęsti žiūrėjimą</string>
     <string name="settings_reset_tips_confirm">Išvalyti visą Mano sąrašą, mėgstamiausius ir viską, ką pradėjote?</string>
@@ -1076,7 +1076,7 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats per kelias minutes."</strin
     <string name="tamper_blocked">Ši programos kopija nėra autentiška.</string>
     <string name="terms_gate_accept">Priimti</string>
     <string name="terms_gate_decline">Atmesti</string>
-    <string name="terms_gate_message">Norėdami pradėti naudoti „ClipBox“, peržiūrėkite ir sutikite su mūsų taisyklėmis ir nuostatomis.</string>
+    <string name="terms_gate_message">Norėdami pradėti naudoti „StreamHub“, peržiūrėkite ir sutikite su mūsų taisyklėmis ir nuostatomis.</string>
     <string name="terms_gate_subtitle">Jei norite tęsti, perskaitykite ir sutikite</string>
     <string name="terms_gate_title">Taisyklės ir sąlygos</string>
     <string name="touch_lock_desc">Užrakinimo ekranas</string>
@@ -1084,14 +1084,14 @@ Tai viskas. VIP šiame televizoriuje įsijungia pats per kelias minutes."</strin
     <string name="touch_locked_toast">Ekranas užrakintas. Norėdami atrakinti, bakstelėkite užrakto piktogramą.</string>
     <string name="track_off">Išjungta</string>
     <string name="tv_account_avatar">Profilio nuotrauka</string>
-    <string name="tv_account_avatar_phone_only">Profilio nuotrauka pasirenkama iš įrenginyje esančios nuotraukos. Šis televizorius neturi programėlės, kuri tai galėtų, todėl nustatykite ją ClipBox telefone – ji pasirodys ir čia.</string>
+    <string name="tv_account_avatar_phone_only">Profilio nuotrauka pasirenkama iš įrenginyje esančios nuotraukos. Šis televizorius neturi programėlės, kuri tai galėtų, todėl nustatykite ją StreamHub telefone – ji pasirodys ir čia.</string>
     <string name="tv_account_choose_image">Pasirinkti paveikslėlį</string>
     <string name="tv_account_new_password_hint">Naujas slaptažodis</string>
     <string name="tv_account_recover_action">Atkurti slaptažodį</string>
     <string name="tv_account_recovery_fmt">"Atkūrimo kodas: %1$s
 
 Užsirašykite jį. Jis parodomas tik kartą ir yra vienintelis būdas sugrįžti, jei pamiršite slaptažodį."</string>
-    <string name="tv_account_register_hint">Dar neturite paskyros? Sukurkite ją telefono „ClipBox“ programėlėje, tada prisijunkite čia.</string>
+    <string name="tv_account_register_hint">Dar neturite paskyros? Sukurkite ją telefono „StreamHub“ programėlėje, tada prisijunkite čia.</string>
     <string name="tv_account_saved">Įrašyta</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Paveikslas (suliejamas)</string>
@@ -1194,7 +1194,7 @@ Užsirašykite jį. Jis parodomas tik kartą ir yra vienintelis būdas sugrįžt
     <string name="tv_ui_scale_title">Sąsajos dydis</string>
     <string name="tv_value_off">Išjungta</string>
     <string name="tv_value_on">Įjungta</string>
-    <string name="tv_whatsnew_body">„ClipBox“ perkurta dideliam ekranui ir jūsų nuotolinio valdymo pultui. Viskas, ką turėjote, tebėra čia – tik lengviau pasiekiama nuo sofos. Labiau patinka ankstesnė išvaizda? Bet kada galite prie jos grįžti nustatymuose.</string>
+    <string name="tv_whatsnew_body">„StreamHub“ perkurta dideliam ekranui ir jūsų nuotolinio valdymo pultui. Viskas, ką turėjote, tebėra čia – tik lengviau pasiekiama nuo sofos. Labiau patinka ankstesnė išvaizda? Bet kada galite prie jos grįžti nustatymuose.</string>
     <string name="tv_whatsnew_classic">Naudoti klasikinę išvaizdą</string>
     <string name="tv_whatsnew_continue">Užmeskite akį</string>
     <string name="tv_whatsnew_title">Nauja televizoriaus išvaizda</string>
@@ -1211,21 +1211,21 @@ Atsisiųsti ir įdiegti dabar?"</string>
     <string name="update_downloading">Įtraukiami nauji elementai…</string>
     <string name="update_install_help">"1. Palieskite Atnaujinti, kad atsisiųstumėte naują APK.
 2. Kai atsidarys diegimo programa, palieskite Diegti.
-3. Jei „Android“ blokuoja, leiskite „ClipBox“ \"Įdiegti nežinomas programas\", tada dar kartą palieskite Įdiegti.
+3. Jei „Android“ blokuoja, leiskite „StreamHub“ \"Įdiegti nežinomas programas\", tada dar kartą palieskite Įdiegti.
 4. Jūsų nustatymai ir sąrašas išsaugomi, jis įdiegiamas per dabartinę programą."</string>
     <string name="update_install_help_summary">Ką daryti, jei diegimas užblokuotas</string>
     <string name="update_install_help_title">Kaip įdiegti</string>
     <string name="update_later">Vėliau</string>
-    <string name="update_permission_msg_firetv">"Jūsų Fire TV diegia naujinius tik iš programų, kurioms leidžiate. Pasirinkite Atidaryti nustatymus, įjunkite ClipBox skiltyje \"Nežinomų programų diegimas\" ir paspauskite Atgal. Naujinimas toliau vyks savaime.
+    <string name="update_permission_msg_firetv">"Jūsų Fire TV diegia naujinius tik iš programų, kurioms leidžiate. Pasirinkite Atidaryti nustatymus, įjunkite StreamHub skiltyje \"Nežinomų programų diegimas\" ir paspauskite Atgal. Naujinimas toliau vyks savaime.
 
-Jei šis ekranas neatsidaro: Nustatymai > Mano Fire TV > Kūrėjo parinktys > Nežinomų programų diegimas > ClipBox. Nėra kūrėjo parinkčių? Pirmiausia atidarykite Nustatymai > Mano Fire TV > Apie ir 7 kartus paspauskite OK ant įrenginio pavadinimo."</string>
-    <string name="update_permission_msg_phone">Android diegia naujinius tik iš programų, kurioms leidžiate. Palieskite Atidaryti nustatymus, įjunkite \"Leisti iš šio šaltinio\" programai ClipBox ir grįžkite. Naujinimas toliau vyks savaime.</string>
-    <string name="update_permission_msg_tv">"Jūsų televizorius diegia naujinius tik iš programų, kurioms leidžiate. Pasirinkite Atidaryti nustatymus, įjunkite ClipBox skiltyje \"Nežinomų programų diegimas\" ir paspauskite Atgal. Naujinimas toliau vyks savaime.
+Jei šis ekranas neatsidaro: Nustatymai > Mano Fire TV > Kūrėjo parinktys > Nežinomų programų diegimas > StreamHub. Nėra kūrėjo parinkčių? Pirmiausia atidarykite Nustatymai > Mano Fire TV > Apie ir 7 kartus paspauskite OK ant įrenginio pavadinimo."</string>
+    <string name="update_permission_msg_phone">Android diegia naujinius tik iš programų, kurioms leidžiate. Palieskite Atidaryti nustatymus, įjunkite \"Leisti iš šio šaltinio\" programai StreamHub ir grįžkite. Naujinimas toliau vyks savaime.</string>
+    <string name="update_permission_msg_tv">"Jūsų televizorius diegia naujinius tik iš programų, kurioms leidžiate. Pasirinkite Atidaryti nustatymus, įjunkite StreamHub skiltyje \"Nežinomų programų diegimas\" ir paspauskite Atgal. Naujinimas toliau vyks savaime.
 
-Jei šis ekranas neatsidaro: Nustatymai > Programos > Sauga ir apribojimai > Nežinomi šaltiniai > ClipBox."</string>
+Jei šis ekranas neatsidaro: Nustatymai > Programos > Sauga ir apribojimai > Nežinomi šaltiniai > StreamHub."</string>
     <string name="update_permission_not_opened">Nustatymų atidaryti nepavyko. Vykdykite ekrane nurodytus veiksmus.</string>
     <string name="update_permission_open">Atidaryti nustatymus</string>
-    <string name="update_permission_title">Leiskite ClipBox diegti naujinius</string>
+    <string name="update_permission_title">Leiskite StreamHub diegti naujinius</string>
     <string name="update_unavailable">Atnaujinimo paslauga nepasiekiama. Programa šiuo metu negali patikrinti, ar yra naujinimų.</string>
     <string name="update_up_to_date">Jau naudojate naujausią versiją. Puiku.</string>
     <string name="v7_preference_off">IŠJUNGTA</string>
@@ -1240,10 +1240,10 @@ Jei šis ekranas neatsidaro: Nustatymai > Programos > Sauga ir apribojimai > Ne�
     <string name="voucher_ln_bad">Tai nepanašu į Lightning kupono nuorodą. Ji prasideda LNURL.</string>
     <string name="voucher_ln_redeeming">Panaudojame tavo kuponą…</string>
     <string name="voucher_ln_steps">"1. Atidaryk azte.co, pasirink Lightning ir ten panaudok kupono kodą.
-2. Pasirodys Lightning nuoroda (LNURL). Paliesk ją, kad atsidarytų ClipBox, arba nukopijuok ir įklijuok čia."</string>
+2. Pasirodys Lightning nuoroda (LNURL). Paliesk ją, kad atsidarytų StreamHub, arba nukopijuok ir įklijuok čia."</string>
     <string name="voucher_loading_address">Ruošiame tavo adresą…</string>
     <string name="voucher_onchain">Bitcoin kuponas</string>
-    <string name="voucher_onchain_note">Šis adresas šiam mokėjimui priklauso tavo paskyrai. Tuo metu gali uždaryti ClipBox; VIP įsijungs pats.</string>
+    <string name="voucher_onchain_note">Šis adresas šiam mokėjimui priklauso tavo paskyrai. Tuo metu gali uždaryti StreamHub; VIP įsijungs pats.</string>
     <string name="voucher_onchain_steps">"1. Atidaryk azte.co ir ten panaudok kupono kodą.
 2. Kai paprašys Bitcoin adreso, naudok šį:"</string>
     <string name="voucher_onchain_steps_code">"1. Žemiau įveskite 16 skaitmenų čekio kodą.

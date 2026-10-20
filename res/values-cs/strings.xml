@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, knihovny a licence</string>
     <string name="about_attributions_title">Licence a atributy</string>
     <string name="about_changelog_title">Seznam změn</string>
-    <string name="about_credits_body">"ClipBox je čistý a klidný způsob, jak na Androidu sledovat filmy a seriály. Všechno je na jednom místě, takže si můžete procházet, co je populární, hledat něco konkrétního nebo navázat přesně tam, kde jste skončili.
+    <string name="about_credits_body">"StreamHub je čistý a klidný způsob, jak na Androidu sledovat filmy a seriály. Všechno je na jednom místě, takže si můžete procházet, co je populární, hledat něco konkrétního nebo navázat přesně tam, kde jste skončili.
 
 Titulky se pro vás najdou a načasují v široké škále jazyků, každý titul nabízí několik zdrojů a cokoli sledujete lze poslat na Chromecast nebo chytrou televizi. Aplikace běží na telefonech, tabletech, Android TV i Fire TV a volitelný účet drží váš seznam a historii v souladu na všech z nich.
 
-ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se díky tomu, co nám lidé píší."</string>
-    <string name="about_credits_title">O ClipBoxu</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub dělá malý tým, který ho sám každý den používá, a zlepšuje se díky tomu, co nám lidé píší."</string>
+    <string name="about_credits_title">O StreamHubu</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Zdroje obsahu a ochranné známky</string>
     <string name="about_disclaimer_title">Zřeknutí se odpovědnosti</string>
     <string name="about_legal_title">Právní</string>
     <string name="about_privacy_subtitle">Jaká data se shromažďují a proč</string>
     <string name="about_privacy_title">Zásady ochrany osobních údajů</string>
-    <string name="about_terms_subtitle">Jak lze ClipBox používat</string>
+    <string name="about_terms_subtitle">Jak lze StreamHub používat</string>
     <string name="about_terms_title">Smluvní podmínky</string>
     <string name="about_title">O</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se
     <string name="account_go_register">Jste tady nový? Vytvořte si účet</string>
     <string name="account_go_register_action">Vytvořte si účet</string>
     <string name="account_guest">Host</string>
-    <string name="account_member">Člen ClipBox</string>
+    <string name="account_member">Člen StreamHub</string>
     <string name="account_member_since_fmt">Členem od %1$s</string>
     <string name="account_new_password_hint">Nové heslo</string>
     <string name="account_new_username_hint">Nové uživatelské jméno</string>
@@ -65,7 +65,7 @@ ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se
     <string name="account_recovery_code">Obnovovací kód</string>
     <string name="account_recovery_code_hint">Kód pro obnovení</string>
     <string name="account_register">Vytvořit účet</string>
-    <string name="account_register_subtitle">Vytvořte si účet ClipBox</string>
+    <string name="account_register_subtitle">Vytvořte si účet StreamHub</string>
     <string name="account_session_ended">Váš účet již není dostupný. Byli jste odhlášeni.</string>
     <string name="account_settings_section">Nastavení účtu</string>
     <string name="account_sign_in">Přihlaste se</string>
@@ -73,7 +73,7 @@ ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se
     <string name="account_sign_out">Odhlaste se</string>
     <string name="account_signed_out_offline">Odhlášen. Váš seznam se nepodařilo synchronizovat, takže byl uchován v tomto zařízení.</string>
     <string name="account_signing_in">Přihlašování…</string>
-    <string name="account_subtitle">Přihlaste se ke svému účtu ClipBox</string>
+    <string name="account_subtitle">Přihlaste se ke svému účtu StreamHub</string>
     <string name="account_sync_done">Synchronizace dokončena</string>
     <string name="account_terms_required">Před registrací si prosím přečtěte Podmínky</string>
     <string name="account_title">účet</string>
@@ -99,21 +99,21 @@ ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se
     <string name="actor_read_more">Přečtěte si více</string>
     <string name="actor_wikipedia_failed">Nelze otevřít Wikipedii.</string>
     <string name="ad_autoclose_fmt">Automaticky se zavře za %1$d s</string>
-    <string name="ad_blocked_note">Blokátor reklam zastavuje tuto reklamu. Reklamy udržují ClipBox zdarma: vypněte ho pro ClipBox, nebo si pořiďte VIP.</string>
+    <string name="ad_blocked_note">Blokátor reklam zastavuje tuto reklamu. Reklamy udržují StreamHub zdarma: vypněte ho pro StreamHub, nebo si pořiďte VIP.</string>
     <string name="ad_close">Zavřít reklamu</string>
     <string name="ad_label">Reklama</string>
     <string name="ad_loading">Načítání reklamy…</string>
     <string name="ad_open">Otevřít reklamu</string>
     <string name="ad_page_hint">Šipky posouvají ukazatel · OK klikne · Zpět zavře</string>
-    <string name="ad_popup_note">Reklamy udržují ClipBox zdarma a pomáhají platit servery a údržbu.</string>
+    <string name="ad_popup_note">Reklamy udržují StreamHub zdarma a pomáhají platit servery a údržbu.</string>
     <string name="ad_remove_with_vip">Bez reklam s VIP</string>
     <string name="add_to_favourites">Přidat k oblíbeným</string>
     <string name="added_to_favourites">Přidáno do oblíbených</string>
     <string name="added_to_my_list">Přidáno do mého seznamu</string>
     <string name="alert_dialog_title">Všimněte si</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Vyplňte</string>
     <string name="aspect_fills_already">obraz už vyplňuje obrazovku</string>
     <string name="aspect_fit">Přizpůsobit</string>
@@ -178,9 +178,9 @@ ClipBox dělá malý tým, který ho sám každý den používá, a zlepšuje se
     <string name="call_notification_ongoing_text">Probíhající hovor</string>
     <string name="call_notification_screening_text">Prověřování příchozího hovoru</string>
     <string name="capture_blocked_exit">Ukončit</string>
-    <string name="capture_blocked_intro">ClipBox neběží, dokud je v tomto zařízení nainstalovaný nástroj pro zachytávání síťového provozu nebo proxy.</string>
-    <string name="capture_blocked_outro">Odinstalujte jej a otevřete ClipBox znovu.</string>
-    <string name="capture_blocked_title">ClipBox nemůže na tomto zařízení běžet</string>
+    <string name="capture_blocked_intro">StreamHub neběží, dokud je v tomto zařízení nainstalovaný nástroj pro zachytávání síťového provozu nebo proxy.</string>
+    <string name="capture_blocked_outro">Odinstalujte jej a otevřete StreamHub znovu.</string>
+    <string name="capture_blocked_title">StreamHub nemůže na tomto zařízení běžet</string>
     <string name="cast_ad_label">Reklama</string>
     <string name="cast_button_cast">Odeslat do TV</string>
     <string name="cast_casting_to_device">Odesílání do zařízení %1$s</string>
@@ -379,7 +379,7 @@ IP svého televizoru můžete zadat také ručně."</string>
     <string name="err_service_unavailable">Služba dočasně nedostupná. Zkuste to prosím znovu.</string>
     <string name="err_signed_out_sign_in">Na tomto zařízení jste byli odhlášeni. Přihlaste se znovu.</string>
     <string name="err_too_many_requests">Příliš mnoho požadavků. Počkejte prosím chvíli.</string>
-    <string name="err_update_for_recovery">Aktualizujte ClipBox na nejnovější verzi, abyste mohli vytvořit nový obnovovací kód.</string>
+    <string name="err_update_for_recovery">Aktualizujte StreamHub na nejnovější verzi, abyste mohli vytvořit nový obnovovací kód.</string>
     <string name="error_a11y_label">Chyba: neplatné</string>
     <string name="error_bad_intent">Obdrželi jste neplatný odkaz. Nešlo otevřít.</string>
     <string name="error_icon_content_description">Chyba</string>
@@ -458,16 +458,16 @@ IP svého televizoru můžete zadat také ručně."</string>
 
 Ne každý titul lze ve skutečnosti přehrát, některé fungují a jiné ne.
 
-ClipBox je nový a ve vývoji, mohou tam být nějaké chyby."</string>
+StreamHub je nový a ve vývoji, mohou tam být nějaké chyby."</string>
     <string name="first_launch_ok">Rozumím</string>
     <string name="first_launch_title">Vítejte zpět!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Stáhnout aktualizaci</string>
     <string name="force_update_fallback_msg">Chcete-li pokračovat v používání této aplikace, je vyžadována nová verze.</string>
     <string name="force_update_subtitle">Je vyžadována aktualizace</string>
     <string name="gate_connecting">Načítání</string>
     <string name="gate_retry">Zkuste to znovu</string>
-    <string name="gate_unavailable_message">"ClipBox nemůže dosáhnout svých serverů.
+    <string name="gate_unavailable_message">"StreamHub nemůže dosáhnout svých serverů.
 Zkontrolujte prosím své připojení a zkuste to znovu."</string>
     <string name="gate_unavailable_title">Služba není k dispozici</string>
     <string name="genre_action">Akce</string>
@@ -492,7 +492,7 @@ Zkontrolujte prosím své připojení a zkuste to znovu."</string>
     <string name="lang_available_body">Aplikaci nyní používáte v jazyce %1$s. Chcete jazyk změnit? Kdykoli to lze upravit v Nastavení.</string>
     <string name="lang_available_keep">Ponechat %1$s</string>
     <string name="lang_available_switch">Přepnout na %1$s</string>
-    <string name="lang_available_title">ClipBox je nyní k dispozici v jazyce %1$s</string>
+    <string name="lang_available_title">StreamHub je nyní k dispozici v jazyce %1$s</string>
     <string name="launcher_instructions">"Zde nemusíte nic dělat.
 
 Pokud máte adresu URL streamu, můžete si ji přehrát přímo níže.
@@ -639,17 +639,17 @@ Přidejte filmy a pořady ze stránky podrobností."</string>
     <string name="pair_scan_allow">Povolit fotoaparát</string>
     <string name="pair_scan_button">Naskenovat QR kód</string>
     <string name="pair_scan_hint">Namiřte fotoaparát na QR kód na televizi</string>
-    <string name="pair_scan_no_camera">Ke skenování kódu potřebuje ClipBox fotoaparát. Používá se jen, dokud je tato obrazovka otevřená.</string>
+    <string name="pair_scan_no_camera">Ke skenování kódu potřebuje StreamHub fotoaparát. Používá se jen, dokud je tato obrazovka otevřená.</string>
     <string name="pair_scan_torch">Svítilna</string>
     <string name="pair_scan_type_instead">Zadat kód ručně</string>
-    <string name="pair_scan_wrong">To není televizní kód ClipBox. Naskenujte kód na televizi.</string>
+    <string name="pair_scan_wrong">To není televizní kód StreamHub. Naskenujte kód na televizi.</string>
     <string name="pair_tv_button">Přihlásit se telefonem</string>
     <string name="pair_tv_confirm_hint">Potvrďte v telefonu a tato TV se přihlásí sama.</string>
     <string name="pair_tv_done_fmt">Přihlášeno jako %1$s</string>
     <string name="pair_tv_expires_fmt">Kód platí ještě %1$s</string>
     <string name="pair_tv_failed">Kód se nepodařilo získat. Zkontrolujte připojení a zkuste to znovu.</string>
     <string name="pair_tv_new_code">Nový kód</string>
-    <string name="pair_tv_or_code">Nebo otevřete ClipBox v telefonu, jděte do Účet, pak Přihlásit na TV, a zadejte kód pod QR kódem.</string>
+    <string name="pair_tv_or_code">Nebo otevřete StreamHub v telefonu, jděte do Účet, pak Přihlásit na TV, a zadejte kód pod QR kódem.</string>
     <string name="pair_tv_scan">Naskenujte kód fotoaparátem telefonu</string>
     <string name="pair_tv_waiting">Čekám na telefon…</string>
     <string name="parental_age_fmt">%1$d let a méně</string>
@@ -718,7 +718,7 @@ To je vše. VIP se na této televizi zapne samo, jakmile je platba vidět."</str
 
 1. Klepněte na Uplatnit poukaz Azteco › Kde koupím poukázku? a v jednom z obchodů kupte bitcoinovou poukázku Azteco (On-Chain). Platíte jako obvykle, třeba kartou.
 2. Dostanete 16místný kód.
-3. V ClipBoxu klepněte na Uplatnit poukaz Azteco a pak na Poukaz Bitcoin. Otevře se naše stránka voucherů.
+3. V StreamHubu klepněte na Uplatnit poukaz Azteco a pak na Poukaz Bitcoin. Otevře se naše stránka voucherů.
 4. Zadejte tam kód. Uplatníme ho za vás a zkontrolujeme, že platba dorazila.
 
 To je vše. VIP se během pár minut zapne samo."</string>
@@ -751,12 +751,12 @@ To je vše. VIP se na této televizi během pár minut zapne samo."</string>
     <string name="premium_state_confirming_title">Platba přijata</string>
     <string name="premium_state_partial_body_fmt">Zaplatil jsi $%1$s. Ještě $%2$s a VIP je tvoje. Co jsi zaplatil, zůstává na tvém účtu.</string>
     <string name="premium_state_partial_title">Skoro hotovo</string>
-    <string name="premium_state_vip_body">Žádné reklamy na žádném zařízení, kde se přihlásíš. Díky, že podporuješ ClipBox.</string>
+    <string name="premium_state_vip_body">Žádné reklamy na žádném zařízení, kde se přihlásíš. Díky, že podporuješ StreamHub.</string>
     <string name="premium_state_vip_title">Máš VIP</string>
     <string name="premium_state_waiting_body">Dokonči platbu na platební stránce. Tato obrazovka se sama aktualizuje, jakmile platbu uvidíme.</string>
     <string name="premium_state_waiting_title">Čekáme na tvou platbu</string>
     <string name="premium_tagline">Jedna platba. Tvoje navždy.</string>
-    <string name="premium_tv_phone_hint">Máš poukaz Lightning? Uplatni ho v ClipBoxu v telefonu přihlášeném ke stejnému účtu. VIP přejde s tvým účtem i na tuto televizi.</string>
+    <string name="premium_tv_phone_hint">Máš poukaz Lightning? Uplatni ho v StreamHubu v telefonu přihlášeném ke stejnému účtu. VIP přejde s tvým účtem i na tuto televizi.</string>
     <string name="premium_tv_scan">Naskenuj telefonem a zaplať</string>
     <string name="premium_tv_show_checkout">Zaplatit kryptem</string>
     <string name="premium_tv_show_voucher">Poukaz Bitcoin</string>
@@ -859,7 +859,7 @@ To je vše. VIP se na této televizi během pár minut zapne samo."</string>
     <string name="servers_probe_starting">Spouštění… zbývá %1$d s</string>
     <string name="servers_tab_experimental">Další jazyky</string>
     <string name="servers_tab_main">Standardní</string>
-    <string name="settings_about">O ClipBoxu</string>
+    <string name="settings_about">O StreamHubu</string>
     <string name="settings_about_summary">Informace o verzi, kredity a changelog</string>
     <string name="settings_account">Můj účet</string>
     <string name="settings_account_loggedout">Nejste přihlášeni</string>
@@ -891,13 +891,13 @@ To je vše. VIP se na této televizi během pár minut zapne samo."</string>
     <string name="settings_next_episode">Automaticky přehrát další epizodu</string>
     <string name="settings_next_episode_summary">U závěrečných titulků zobrazit odpočet a pokračovat samo</string>
     <string name="settings_notifications">Oznámení</string>
-    <string name="settings_notifications_summary">Přijímat oznámení a aktualizace z ClipBoxu</string>
+    <string name="settings_notifications_summary">Přijímat oznámení a aktualizace z StreamHubu</string>
     <string name="settings_parental">Rodičovská kontrola</string>
     <string name="settings_parental_off">Vypnuto</string>
     <string name="settings_parental_on_fmt">Skrývají se tituly s hodnocením nad %1$d let</string>
     <string name="settings_pref_sub_lang">Preferovaný jazyk</string>
     <string name="settings_reset_app">Resetovat aplikaci</string>
-    <string name="settings_reset_app_confirm">Tím se vymažou všechna data aplikace a zavře ClipBox. Pokračovat?</string>
+    <string name="settings_reset_app_confirm">Tím se vymažou všechna data aplikace a zavře StreamHub. Pokračovat?</string>
     <string name="settings_reset_app_summary">Vymažte všechna data a začněte znovu</string>
     <string name="settings_reset_tips">Vymazat Můj seznam, oblíbené a Pokračovat ve sledování</string>
     <string name="settings_reset_tips_confirm">Vymazat celý Můj seznam, oblíbené a vše rozkoukané?</string>
@@ -1076,7 +1076,7 @@ To je vše. VIP se na této televizi během pár minut zapne samo."</string>
     <string name="tamper_blocked">Tato kopie aplikace není pravá.</string>
     <string name="terms_gate_accept">Přijmout</string>
     <string name="terms_gate_decline">Odmítnout</string>
-    <string name="terms_gate_message">Chcete-li začít používat ClipBox, přečtěte si a přijměte naše Smluvní podmínky.</string>
+    <string name="terms_gate_message">Chcete-li začít používat StreamHub, přečtěte si a přijměte naše Smluvní podmínky.</string>
     <string name="terms_gate_subtitle">Chcete-li pokračovat, přečtěte si je a přijměte je</string>
     <string name="terms_gate_title">Smluvní podmínky</string>
     <string name="touch_lock_desc">Uzamknout obrazovku</string>
@@ -1084,14 +1084,14 @@ To je vše. VIP se na této televizi během pár minut zapne samo."</string>
     <string name="touch_locked_toast">Obrazovka uzamčena. Klepnutím na ikonu zámku odemknete.</string>
     <string name="track_off">Vypnuto</string>
     <string name="tv_account_avatar">Profilový obrázek</string>
-    <string name="tv_account_avatar_phone_only">Profilový obrázek se vybírá z fotky ve vašem zařízení. Tato televize nemá aplikaci, která to umí, takže jej nastavte v ClipBoxu v telefonu a objeví se i tady.</string>
+    <string name="tv_account_avatar_phone_only">Profilový obrázek se vybírá z fotky ve vašem zařízení. Tato televize nemá aplikaci, která to umí, takže jej nastavte v StreamHubu v telefonu a objeví se i tady.</string>
     <string name="tv_account_choose_image">Vybrat obrázek</string>
     <string name="tv_account_new_password_hint">Nové heslo</string>
     <string name="tv_account_recover_action">Obnovit heslo</string>
     <string name="tv_account_recovery_fmt">"Kód pro obnovení: %1$s
 
 Zapište si ho. Zobrazuje se jen jednou a je to jediná cesta zpátky, pokud zapomenete heslo."</string>
-    <string name="tv_account_register_hint">Ještě nemáte účet? Založte si ho v aplikaci ClipBox v telefonu a pak se přihlaste tady.</string>
+    <string name="tv_account_register_hint">Ještě nemáte účet? Založte si ho v aplikaci StreamHub v telefonu a pak se přihlaste tady.</string>
     <string name="tv_account_saved">Uloženo</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Obrázek (rozmazaný)</string>
@@ -1194,7 +1194,7 @@ Zapište si ho. Zobrazuje se jen jednou a je to jediná cesta zpátky, pokud zap
     <string name="tv_ui_scale_title">Velikost rozhraní</string>
     <string name="tv_value_off">Vypnuto</string>
     <string name="tv_value_on">Zapnuto</string>
-    <string name="tv_whatsnew_body">ClipBox jsme přestavěli pro velkou obrazovku a váš dálkový ovladač. Všechno, co jste měli, tu pořád je, jen se k tomu z gauče dostanete snáz. Máte radši původní vzhled? Kdykoli se k němu můžete vrátit v nastavení.</string>
+    <string name="tv_whatsnew_body">StreamHub jsme přestavěli pro velkou obrazovku a váš dálkový ovladač. Všechno, co jste měli, tu pořád je, jen se k tomu z gauče dostanete snáz. Máte radši původní vzhled? Kdykoli se k němu můžete vrátit v nastavení.</string>
     <string name="tv_whatsnew_classic">Použít klasický vzhled</string>
     <string name="tv_whatsnew_continue">Podívat se</string>
     <string name="tv_whatsnew_title">Nový vzhled pro televizi</string>
@@ -1211,21 +1211,21 @@ Stáhnout a nainstalovat ji nyní?"</string>
     <string name="update_downloading">Stahování nových kousků…</string>
     <string name="update_install_help">"1. Klepnutím na Aktualizovat stáhněte nový soubor APK.
 2. Po otevření instalačního programu klepněte na Instalovat.
-3. Pokud to Android zablokuje, povolte pro ClipBox \"Instalovat neznámé aplikace\" a poté znovu klepněte na Instalovat.
+3. Pokud to Android zablokuje, povolte pro StreamHub \"Instalovat neznámé aplikace\" a poté znovu klepněte na Instalovat.
 4. Vaše nastavení a seznam zůstanou zachovány, nainstaluje se přes aktuální aplikaci."</string>
     <string name="update_install_help_summary">Co dělat, když je instalace zablokována</string>
     <string name="update_install_help_title">Jak nainstalovat</string>
     <string name="update_later">Později</string>
-    <string name="update_permission_msg_firetv">"Váš Fire TV instaluje aktualizace jen z aplikací, kterým to povolíte. Zvolte Otevřít nastavení, zapněte ClipBox v části \"Instalace neznámých aplikací\" a stiskněte Zpět. Aktualizace pak pokračuje sama.
+    <string name="update_permission_msg_firetv">"Váš Fire TV instaluje aktualizace jen z aplikací, kterým to povolíte. Zvolte Otevřít nastavení, zapněte StreamHub v části \"Instalace neznámých aplikací\" a stiskněte Zpět. Aktualizace pak pokračuje sama.
 
-Pokud se obrazovka neotevře: Nastavení > Můj Fire TV > Možnosti pro vývojáře > Instalace neznámých aplikací > ClipBox. Nevidíte Možnosti pro vývojáře? Nejprve otevřete Nastavení > Můj Fire TV > Informace a 7krát stiskněte OK na názvu zařízení."</string>
-    <string name="update_permission_msg_phone">Android instaluje aktualizace jen z aplikací, kterým to povolíte. Klepněte na Otevřít nastavení, zapněte \"Povolit z tohoto zdroje\" pro ClipBox a vraťte se zpět. Aktualizace pak pokračuje sama.</string>
-    <string name="update_permission_msg_tv">"Vaše televize instaluje aktualizace jen z aplikací, kterým to povolíte. Zvolte Otevřít nastavení, zapněte ClipBox v části \"Instalace neznámých aplikací\" a stiskněte Zpět. Aktualizace pak pokračuje sama.
+Pokud se obrazovka neotevře: Nastavení > Můj Fire TV > Možnosti pro vývojáře > Instalace neznámých aplikací > StreamHub. Nevidíte Možnosti pro vývojáře? Nejprve otevřete Nastavení > Můj Fire TV > Informace a 7krát stiskněte OK na názvu zařízení."</string>
+    <string name="update_permission_msg_phone">Android instaluje aktualizace jen z aplikací, kterým to povolíte. Klepněte na Otevřít nastavení, zapněte \"Povolit z tohoto zdroje\" pro StreamHub a vraťte se zpět. Aktualizace pak pokračuje sama.</string>
+    <string name="update_permission_msg_tv">"Vaše televize instaluje aktualizace jen z aplikací, kterým to povolíte. Zvolte Otevřít nastavení, zapněte StreamHub v části \"Instalace neznámých aplikací\" a stiskněte Zpět. Aktualizace pak pokračuje sama.
 
-Pokud se obrazovka neotevře: Nastavení > Aplikace > Zabezpečení a omezení > Neznámé zdroje > ClipBox."</string>
+Pokud se obrazovka neotevře: Nastavení > Aplikace > Zabezpečení a omezení > Neznámé zdroje > StreamHub."</string>
     <string name="update_permission_not_opened">Nastavení se nepodařilo otevřít. Postupujte podle kroků na obrazovce.</string>
     <string name="update_permission_open">Otevřít nastavení</string>
-    <string name="update_permission_title">Povolte ClipBox instalovat aktualizace</string>
+    <string name="update_permission_title">Povolte StreamHub instalovat aktualizace</string>
     <string name="update_unavailable">Aktualizační služba není k dispozici. Aplikace momentálně nemůže kontrolovat aktualizace.</string>
     <string name="update_up_to_date">Již používáte nejnovější verzi. Pěkný.</string>
     <string name="v7_preference_off">Vypnutí</string>
@@ -1240,10 +1240,10 @@ Pokud se obrazovka neotevře: Nastavení > Aplikace > Zabezpečení a omezení >
     <string name="voucher_ln_bad">Tohle nevypadá jako odkaz na poukaz Lightning. Začíná na LNURL.</string>
     <string name="voucher_ln_redeeming">Uplatňujeme tvůj poukaz…</string>
     <string name="voucher_ln_steps">"1. Otevři azte.co, vyber Lightning a uplatni tam kód poukazu.
-2. Zobrazí se odkaz Lightning (LNURL). Klepni na něj a otevře se ClipBox, nebo ho zkopíruj a vlož sem."</string>
+2. Zobrazí se odkaz Lightning (LNURL). Klepni na něj a otevře se StreamHub, nebo ho zkopíruj a vlož sem."</string>
     <string name="voucher_loading_address">Připravujeme tvou adresu…</string>
     <string name="voucher_onchain">Poukaz Bitcoin</string>
-    <string name="voucher_onchain_note">Tato adresa patří k tvému účtu pro tuto platbu. ClipBox můžeš mezitím zavřít; VIP se zapne samo.</string>
+    <string name="voucher_onchain_note">Tato adresa patří k tvému účtu pro tuto platbu. StreamHub můžeš mezitím zavřít; VIP se zapne samo.</string>
     <string name="voucher_onchain_steps">"1. Otevři azte.co a uplatni tam kód poukazu.
 2. Až se zeptá na Bitcoin adresu, použij tuto:"</string>
     <string name="voucher_onchain_steps_code">"1. Níže zadejte 16místný kód z poukázky.

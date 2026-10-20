@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, ספריות ורישיונות</string>
     <string name="about_attributions_title">רישיונות וייחוסים</string>
     <string name="about_changelog_title">יומן שינויים</string>
-    <string name="about_credits_body">"ClipBox היא דרך נקייה ושקטה לצפות בסרטים ובסדרות באנדרואיד. הכול נמצא במקום אחד, כך שאפשר לעיין במה שפופולרי, לחפש משהו מסוים, או להמשיך בדיוק מהנקודה שבה עצרת.
+    <string name="about_credits_body">"StreamHub היא דרך נקייה ושקטה לצפות בסרטים ובסדרות באנדרואיד. הכול נמצא במקום אחד, כך שאפשר לעיין במה שפופולרי, לחפש משהו מסוים, או להמשיך בדיוק מהנקודה שבה עצרת.
 
 הכתוביות נמצאות ומתוזמנות עבורך במגוון רחב של שפות, לכל כותר יש כמה מקורות, ואפשר לשלוח את מה שאתה צופה בו ל‑Chromecast או לטלוויזיה חכמה. האפליקציה פועלת בטלפונים, בטאבלטים, ב‑Android TV וב‑Fire TV, וחשבון לא חובה שומר על הרשימה וההיסטוריה שלך מסונכרנות בכולם.
 
-ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל יום, והיא משתפרת בזכות מה שאנשים מספרים לנו."</string>
-    <string name="about_credits_title">לגבי ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub נבנית בידי צוות קטן שמשתמש בה בעצמו כל יום, והיא משתפרת בזכות מה שאנשים מספרים לנו."</string>
+    <string name="about_credits_title">לגבי StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">מקורות תוכן וסימנים מסחריים</string>
     <string name="about_disclaimer_title">כתב ויתור</string>
     <string name="about_legal_title">חוקי</string>
     <string name="about_privacy_subtitle">אילו נתונים נאספים ולמה</string>
     <string name="about_privacy_title">מדיניות הפרטיות</string>
-    <string name="about_terms_subtitle">כיצד ניתן להשתמש ב-ClipBox</string>
+    <string name="about_terms_subtitle">כיצד ניתן להשתמש ב-StreamHub</string>
     <string name="about_terms_title">תנאים והגבלות</string>
     <string name="about_title">בערך</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="account_go_register">חדש כאן? צור חשבון</string>
     <string name="account_go_register_action">צור חשבון</string>
     <string name="account_guest">אורח</string>
-    <string name="account_member">חבר ב-ClipBox</string>
+    <string name="account_member">חבר ב-StreamHub</string>
     <string name="account_member_since_fmt">חבר מאז %1$s</string>
     <string name="account_new_password_hint">סיסמה חדשה</string>
     <string name="account_new_username_hint">שם משתמש חדש</string>
@@ -65,7 +65,7 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="account_recovery_code">קוד שחזור</string>
     <string name="account_recovery_code_hint">קוד שחזור</string>
     <string name="account_register">צור חשבון</string>
-    <string name="account_register_subtitle">צור חשבון ClipBox שלך</string>
+    <string name="account_register_subtitle">צור חשבון StreamHub שלך</string>
     <string name="account_session_ended">החשבון שלך אינו זמין יותר. יצאת מהחשבון.</string>
     <string name="account_settings_section">הגדרות חשבון</string>
     <string name="account_sign_in">היכנס</string>
@@ -73,7 +73,7 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="account_sign_out">צא</string>
     <string name="account_signed_out_offline">יצא. לא ניתן היה לסנכרן את הרשימה שלך, אז היא נשמרה במכשיר הזה.</string>
     <string name="account_signing_in">מתחבר…</string>
-    <string name="account_subtitle">היכנס לחשבון ClipBox שלך</string>
+    <string name="account_subtitle">היכנס לחשבון StreamHub שלך</string>
     <string name="account_sync_done">הסנכרון הושלם</string>
     <string name="account_terms_required">אנא עיין בתנאים וההגבלות לפני ההרשמה</string>
     <string name="account_title">חשבון</string>
@@ -99,21 +99,21 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="actor_read_more">קרא עוד</string>
     <string name="actor_wikipedia_failed">לא ניתן היה לפתוח את ויקיפדיה.</string>
     <string name="ad_autoclose_fmt">ייסגר אוטומטית בעוד %1$d ש׳</string>
-    <string name="ad_blocked_note">חוסם פרסומות עוצר את הפרסומת הזו. פרסומות שומרות על ClipBox חינמי: כבו אותו עבור ClipBox או קבלו VIP.</string>
+    <string name="ad_blocked_note">חוסם פרסומות עוצר את הפרסומת הזו. פרסומות שומרות על StreamHub חינמי: כבו אותו עבור StreamHub או קבלו VIP.</string>
     <string name="ad_close">סגור פרסומת</string>
     <string name="ad_label">פרסומת</string>
     <string name="ad_loading">המודעה נטענת…</string>
     <string name="ad_open">פתח מודעה</string>
     <string name="ad_page_hint">החצים מזיזים את הסמן · OK ללחיצה · Back לסגירה</string>
-    <string name="ad_popup_note">הפרסומות שומרות על ClipBox חינמי ועוזרות לשלם על השרתים והתחזוקה.</string>
+    <string name="ad_popup_note">הפרסומות שומרות על StreamHub חינמי ועוזרות לשלם על השרתים והתחזוקה.</string>
     <string name="ad_remove_with_vip">בלי פרסומות עם VIP</string>
     <string name="add_to_favourites">הוסף למועדפים</string>
     <string name="added_to_favourites">נוסף למועדפים</string>
     <string name="added_to_my_list">נוסף לרשימה שלי</string>
     <string name="alert_dialog_title">שימו לב</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">למלא</string>
     <string name="aspect_fills_already">התמונה כבר ממלאת את המסך</string>
     <string name="aspect_fit">התאמה</string>
@@ -178,9 +178,9 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="call_notification_ongoing_text">שיחה פעילה</string>
     <string name="call_notification_screening_text">סינון שיחה נכנסת</string>
     <string name="capture_blocked_exit">יציאה</string>
-    <string name="capture_blocked_intro">‏ClipBox לא פועל כל עוד מותקן במכשיר הזה כלי ליירוט תעבורת רשת או שרת proxy.</string>
-    <string name="capture_blocked_outro">הסירו אותו והפעילו את ClipBox מחדש.</string>
-    <string name="capture_blocked_title">‏ClipBox לא יכול לפעול במכשיר הזה</string>
+    <string name="capture_blocked_intro">‏StreamHub לא פועל כל עוד מותקן במכשיר הזה כלי ליירוט תעבורת רשת או שרת proxy.</string>
+    <string name="capture_blocked_outro">הסירו אותו והפעילו את StreamHub מחדש.</string>
+    <string name="capture_blocked_title">‏StreamHub לא יכול לפעול במכשיר הזה</string>
     <string name="cast_ad_label">מודעה</string>
     <string name="cast_button_cast">שחקנים</string>
     <string name="cast_casting_to_device">מעביר אל %1$s</string>
@@ -379,7 +379,7 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
     <string name="err_service_unavailable">השירות אינו זמין באופן זמני. אנא נסה שוב.</string>
     <string name="err_signed_out_sign_in">התנתקת במכשיר הזה. היכנס שוב.</string>
     <string name="err_too_many_requests">יותר מדי בקשות. אנא המתן רגע.</string>
-    <string name="err_update_for_recovery">עדכן את ClipBox לגרסה האחרונה כדי ליצור קוד שחזור חדש.</string>
+    <string name="err_update_for_recovery">עדכן את StreamHub לגרסה האחרונה כדי ליצור קוד שחזור חדש.</string>
     <string name="error_a11y_label">שגיאה: לא תקין</string>
     <string name="error_bad_intent">קיבל קישור לא חוקי. לא ניתן היה לפתוח אותו.</string>
     <string name="error_icon_content_description">שגיאה</string>
@@ -458,7 +458,7 @@ ClipBox נבנית בידי צוות קטן שמשתמש בה בעצמו כל י
 
 לא כל כותר באמת ניתן לשחק, חלקם עובדים ואחרים לא.
 
-ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
+StreamHub חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="first_launch_ok">הבנתי</string>
     <string name="first_launch_title">ברוך שובך!</string>
     <string name="footer_brand">קליפבוקס</string>
@@ -467,7 +467,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="force_update_subtitle">נדרש עדכון</string>
     <string name="gate_connecting">טוען</string>
     <string name="gate_retry">נסה שוב</string>
-    <string name="gate_unavailable_message">"ClipBox לא יכול להגיע לשרתים שלו.
+    <string name="gate_unavailable_message">"StreamHub לא יכול להגיע לשרתים שלו.
 אנא בדוק את החיבור שלך ונסה שוב."</string>
     <string name="gate_unavailable_title">השירות אינו זמין</string>
     <string name="genre_action">פעולה</string>
@@ -492,7 +492,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="lang_available_body">אתה משתמש כעת באפליקציה ב%1$s. האם ברצונך להחליף? אפשר לשנות זאת בכל עת בהגדרות.</string>
     <string name="lang_available_keep">השאר %1$s</string>
     <string name="lang_available_switch">החלף ל%1$s</string>
-    <string name="lang_available_title">‏ClipBox זמין כעת ב%1$s</string>
+    <string name="lang_available_title">‏StreamHub זמין כעת ב%1$s</string>
     <string name="launcher_instructions">"אין שום דבר שאתה צריך לעשות כאן.
 
 אם יש לך כתובת אתר לסטרימינג, תוכל להפעיל אותו ישירות למטה.
@@ -639,17 +639,17 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="pair_scan_allow">לאפשר מצלמה</string>
     <string name="pair_scan_button">סריקת קוד QR</string>
     <string name="pair_scan_hint">כוונו את המצלמה אל קוד ה-QR בטלוויזיה</string>
-    <string name="pair_scan_no_camera">כדי לסרוק את הקוד, ClipBox צריכה את המצלמה. היא בשימוש רק כל עוד המסך הזה פתוח.</string>
+    <string name="pair_scan_no_camera">כדי לסרוק את הקוד, StreamHub צריכה את המצלמה. היא בשימוש רק כל עוד המסך הזה פתוח.</string>
     <string name="pair_scan_torch">פנס</string>
     <string name="pair_scan_type_instead">להקליד את הקוד במקום</string>
-    <string name="pair_scan_wrong">זה לא קוד טלוויזיה של ClipBox. סרקו את הקוד שבטלוויזיה.</string>
+    <string name="pair_scan_wrong">זה לא קוד טלוויזיה של StreamHub. סרקו את הקוד שבטלוויזיה.</string>
     <string name="pair_tv_button">התחברות עם הטלפון</string>
     <string name="pair_tv_confirm_hint">אשר בטלפון והטלוויזיה תתחבר מעצמה.</string>
     <string name="pair_tv_done_fmt">מחובר בתור %1$s</string>
     <string name="pair_tv_expires_fmt">הקוד בתוקף עוד %1$s</string>
     <string name="pair_tv_failed">לא ניתן לקבל קוד. בדוק את החיבור ונסה שוב.</string>
     <string name="pair_tv_new_code">קוד חדש</string>
-    <string name="pair_tv_or_code">או פתח את ClipBox בטלפון, עבור לחשבון ואז התחברות בטלוויזיה, והזן את הקוד שמתחת לקוד ה-QR.</string>
+    <string name="pair_tv_or_code">או פתח את StreamHub בטלפון, עבור לחשבון ואז התחברות בטלוויזיה, והזן את הקוד שמתחת לקוד ה-QR.</string>
     <string name="pair_tv_scan">סרוק את הקוד במצלמת הטלפון</string>
     <string name="pair_tv_waiting">ממתין לטלפון…</string>
     <string name="parental_age_fmt">גיל %1$d ומטה</string>
@@ -718,7 +718,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
 
 1. הקש על מימוש שובר Azteco › איפה קונים שובר? וקנה שובר Bitcoin של Azteco (On-Chain) באחת החנויות. משלמים כרגיל, למשל בכרטיס.
 2. מקבלים קוד בן 16 ספרות.
-3. ב-ClipBox, הקישו על מימוש שובר Azteco ואז על שובר Bitcoin. דף השוברים שלנו ייפתח.
+3. ב-StreamHub, הקישו על מימוש שובר Azteco ואז על שובר Bitcoin. דף השוברים שלנו ייפתח.
 4. הזינו שם את הקוד. אנחנו נממש אותו בשבילכם ונוודא שהתשלום הגיע.
 
 זה הכול. ה-VIP נדלק מעצמו תוך כמה דקות."</string>
@@ -751,12 +751,12 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="premium_state_confirming_title">התשלום התקבל</string>
     <string name="premium_state_partial_body_fmt">שילמת $%1$s. עוד $%2$s וה-VIP שלך. מה ששילמת נשמר בחשבון שלך.</string>
     <string name="premium_state_partial_title">כמעט שם</string>
-    <string name="premium_state_vip_body">אין פרסומות בכל מכשיר שבו אתה מחובר. תודה שאתה תומך ב-ClipBox.</string>
+    <string name="premium_state_vip_body">אין פרסומות בכל מכשיר שבו אתה מחובר. תודה שאתה תומך ב-StreamHub.</string>
     <string name="premium_state_vip_title">אתה VIP</string>
     <string name="premium_state_waiting_body">השלם את התשלום בדף התשלום. המסך הזה מתעדכן לבד ברגע שהתשלום מזוהה.</string>
     <string name="premium_state_waiting_title">ממתין לתשלום שלך</string>
     <string name="premium_tagline">תשלום אחד. שלך לתמיד.</string>
-    <string name="premium_tv_phone_hint">יש לך שובר Lightning? מַמֵּש אותו ב-ClipBox בטלפון, מחובר לאותו חשבון. ה-VIP עובר עם החשבון שלך גם לטלוויזיה הזו.</string>
+    <string name="premium_tv_phone_hint">יש לך שובר Lightning? מַמֵּש אותו ב-StreamHub בטלפון, מחובר לאותו חשבון. ה-VIP עובר עם החשבון שלך גם לטלוויזיה הזו.</string>
     <string name="premium_tv_scan">סרוק בטלפון כדי לשלם</string>
     <string name="premium_tv_show_checkout">תשלום בקריפטו</string>
     <string name="premium_tv_show_voucher">שובר Bitcoin</string>
@@ -859,7 +859,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="servers_probe_starting">מתחיל… נותרו %1$d שנ׳</string>
     <string name="servers_tab_experimental">שפות נוספות</string>
     <string name="servers_tab_main">רגיל</string>
-    <string name="settings_about">לגבי ClipBox</string>
+    <string name="settings_about">לגבי StreamHub</string>
     <string name="settings_about_summary">פרטי גרסה, קרדיטים ויומן שינויים</string>
     <string name="settings_account">החשבון שלי</string>
     <string name="settings_account_loggedout">לא מחובר</string>
@@ -891,13 +891,13 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="settings_next_episode">הפעלה אוטומטית של הפרק הבא</string>
     <string name="settings_next_episode_summary">הצגת ספירה לאחור בקרדיטים והמשך אוטומטי</string>
     <string name="settings_notifications">התראות</string>
-    <string name="settings_notifications_summary">קבל הודעות ועדכונים מ-ClipBox</string>
+    <string name="settings_notifications_summary">קבל הודעות ועדכונים מ-StreamHub</string>
     <string name="settings_parental">בקרת הורים</string>
     <string name="settings_parental_off">כבויה</string>
     <string name="settings_parental_on_fmt">מסתיר כותרים המדורגים מעל %1$d</string>
     <string name="settings_pref_sub_lang">שפה מועדפת</string>
     <string name="settings_reset_app">אפס את האפליקציה</string>
-    <string name="settings_reset_app_confirm">זה מוחק את כל נתוני האפליקציה וסגירת ClipBox. לְהַמשִׁיך?</string>
+    <string name="settings_reset_app_confirm">זה מוחק את כל נתוני האפליקציה וסגירת StreamHub. לְהַמשִׁיך?</string>
     <string name="settings_reset_app_summary">מחק את כל הנתונים והתחל מחדש</string>
     <string name="settings_reset_tips">ניקוי הרשימה שלי, המועדפים והמשך צפייה</string>
     <string name="settings_reset_tips_confirm">לנקות את כל הרשימה שלך, המועדפים וכל מה שהתחלת?</string>
@@ -1076,7 +1076,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="tamper_blocked">עותק זה של האפליקציה אינו מקורי.</string>
     <string name="terms_gate_accept">קבל</string>
     <string name="terms_gate_decline">דחה</string>
-    <string name="terms_gate_message">אנא עיין וקבל את התנאים וההגבלות שלנו כדי להתחיל להשתמש ב-ClipBox.</string>
+    <string name="terms_gate_message">אנא עיין וקבל את התנאים וההגבלות שלנו כדי להתחיל להשתמש ב-StreamHub.</string>
     <string name="terms_gate_subtitle">אנא קרא וקבל אותם כדי להמשיך</string>
     <string name="terms_gate_title">תנאים והגבלות</string>
     <string name="touch_lock_desc">מסך נעילה</string>
@@ -1084,14 +1084,14 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="touch_locked_toast">מסך נעול. הקש על סמל הנעילה כדי לבטל את הנעילה.</string>
     <string name="track_off">כבוי</string>
     <string name="tv_account_avatar">תמונת פרופיל</string>
-    <string name="tv_account_avatar_phone_only">תמונת הפרופיל נבחרת מתוך תמונה במכשיר שלך. בטלוויזיה הזו אין אפליקציה שיכולה לעשות זאת, לכן הגדר אותה ב-ClipBox בטלפון והיא תופיע גם כאן.</string>
+    <string name="tv_account_avatar_phone_only">תמונת הפרופיל נבחרת מתוך תמונה במכשיר שלך. בטלוויזיה הזו אין אפליקציה שיכולה לעשות זאת, לכן הגדר אותה ב-StreamHub בטלפון והיא תופיע גם כאן.</string>
     <string name="tv_account_choose_image">בחר תמונה</string>
     <string name="tv_account_new_password_hint">סיסמה חדשה</string>
     <string name="tv_account_recover_action">איפוס הסיסמה</string>
     <string name="tv_account_recovery_fmt">"קוד שחזור: %1$s
 
 רשמו אותו. הוא מוצג פעם אחת בלבד וזו הדרך היחידה לחזור אם תשכחו את הסיסמה."</string>
-    <string name="tv_account_register_hint">עוד אין לכם חשבון? צרו אותו באפליקציית ClipBox בטלפון, ואז היכנסו כאן.</string>
+    <string name="tv_account_register_hint">עוד אין לכם חשבון? צרו אותו באפליקציית StreamHub בטלפון, ואז היכנסו כאן.</string>
     <string name="tv_account_saved">נשמר</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">תמונה (מטושטשת)</string>
@@ -1194,7 +1194,7 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="tv_ui_scale_title">גודל הממשק</string>
     <string name="tv_value_off">כבוי</string>
     <string name="tv_value_on">פועל</string>
-    <string name="tv_whatsnew_body">‏ClipBox נבנה מחדש למסך הגדול ולשלט שלכם. כל מה שהיה לכם עדיין כאן, פשוט קל יותר להגיע אליו מהספה. מעדיפים את המראה הקודם? אפשר לחזור אליו בכל רגע בהגדרות.</string>
+    <string name="tv_whatsnew_body">‏StreamHub נבנה מחדש למסך הגדול ולשלט שלכם. כל מה שהיה לכם עדיין כאן, פשוט קל יותר להגיע אליו מהספה. מעדיפים את המראה הקודם? אפשר לחזור אליו בכל רגע בהגדרות.</string>
     <string name="tv_whatsnew_classic">שימוש במראה הקלאסי</string>
     <string name="tv_whatsnew_continue">הציצו</string>
     <string name="tv_whatsnew_title">מראה חדש לטלוויזיה</string>
@@ -1211,21 +1211,21 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="update_downloading">מושך את הקטעים החדשים...</string>
     <string name="update_install_help">"1. הקש על עדכן כדי להוריד את ה-APK החדש.
 2. כאשר תוכנית ההתקנה נפתחת, הקש על התקן.
-3. אם אנדרואיד חוסם אותו, אפשר \"התקן אפליקציות לא ידועות\" עבור ClipBox, ולאחר מכן הקש על התקן שוב.
+3. אם אנדרואיד חוסם אותו, אפשר \"התקן אפליקציות לא ידועות\" עבור StreamHub, ולאחר מכן הקש על התקן שוב.
 4. ההגדרות והרשימה שלך נשמרות, היא מותקנת על פני האפליקציה הנוכחית."</string>
     <string name="update_install_help_summary">מה לעשות אם ההתקנה חסומה</string>
     <string name="update_install_help_title">כיצד להתקין</string>
     <string name="update_later">מאוחר יותר</string>
-    <string name="update_permission_msg_firetv">"ה-Fire TV מתקין עדכונים רק מאפליקציות שאתם מאשרים. בחרו פתיחת ההגדרות, הפעילו את ClipBox תחת \"התקנת אפליקציות לא מוכרות\" ולחצו על חזרה. העדכון ימשיך מעצמו.
+    <string name="update_permission_msg_firetv">"ה-Fire TV מתקין עדכונים רק מאפליקציות שאתם מאשרים. בחרו פתיחת ההגדרות, הפעילו את StreamHub תחת \"התקנת אפליקציות לא מוכרות\" ולחצו על חזרה. העדכון ימשיך מעצמו.
 
-אם המסך לא נפתח: הגדרות > ה-Fire TV שלי > אפשרויות למפתחים > התקנת אפליקציות לא מוכרות > ClipBox. אין אפשרויות למפתחים? עברו קודם אל הגדרות > ה-Fire TV שלי > מידע ולחצו OK שבע פעמים על שם המכשיר."</string>
-    <string name="update_permission_msg_phone">Android מתקין עדכונים רק מאפליקציות שאתם מאשרים. הקישו על פתיחת ההגדרות, הפעילו את \"התרה ממקור זה\" עבור ClipBox וחזרו. העדכון ימשיך מעצמו.</string>
-    <string name="update_permission_msg_tv">"הטלוויזיה מתקינה עדכונים רק מאפליקציות שאתם מאשרים. בחרו פתיחת ההגדרות, הפעילו את ClipBox תחת \"התקנת אפליקציות לא מוכרות\" ולחצו על חזרה. העדכון ימשיך מעצמו.
+אם המסך לא נפתח: הגדרות > ה-Fire TV שלי > אפשרויות למפתחים > התקנת אפליקציות לא מוכרות > StreamHub. אין אפשרויות למפתחים? עברו קודם אל הגדרות > ה-Fire TV שלי > מידע ולחצו OK שבע פעמים על שם המכשיר."</string>
+    <string name="update_permission_msg_phone">Android מתקין עדכונים רק מאפליקציות שאתם מאשרים. הקישו על פתיחת ההגדרות, הפעילו את \"התרה ממקור זה\" עבור StreamHub וחזרו. העדכון ימשיך מעצמו.</string>
+    <string name="update_permission_msg_tv">"הטלוויזיה מתקינה עדכונים רק מאפליקציות שאתם מאשרים. בחרו פתיחת ההגדרות, הפעילו את StreamHub תחת \"התקנת אפליקציות לא מוכרות\" ולחצו על חזרה. העדכון ימשיך מעצמו.
 
-אם המסך לא נפתח: הגדרות > אפליקציות > אבטחה והגבלות > מקורות לא ידועים > ClipBox."</string>
+אם המסך לא נפתח: הגדרות > אפליקציות > אבטחה והגבלות > מקורות לא ידועים > StreamHub."</string>
     <string name="update_permission_not_opened">לא ניתן היה לפתוח את ההגדרות. בצעו את השלבים שעל המסך.</string>
     <string name="update_permission_open">פתיחת ההגדרות</string>
-    <string name="update_permission_title">אפשרו ל-ClipBox להתקין עדכונים</string>
+    <string name="update_permission_title">אפשרו ל-StreamHub להתקין עדכונים</string>
     <string name="update_unavailable">שירות העדכונים אינו זמין. האפליקציה לא יכולה לחפש עדכונים כרגע.</string>
     <string name="update_up_to_date">אתה כבר בגרסה האחרונה. נֶחְמָד.</string>
     <string name="v7_preference_off">כבוי</string>
@@ -1240,10 +1240,10 @@ ClipBox חדש ובפיתוח, ייתכן שיש כמה באגים."</string>
     <string name="voucher_ln_bad">זה לא נראה כמו קישור לשובר Lightning. הוא מתחיל ב-LNURL.</string>
     <string name="voucher_ln_redeeming">מממש את השובר שלך…</string>
     <string name="voucher_ln_steps">"1. פתח את azte.co, בחר Lightning ומַמֵּש שם את קוד השובר.
-2. יופיע קישור Lightning (LNURL). הקש עליו כדי לפתוח את ClipBox, או העתק והדבק אותו כאן."</string>
+2. יופיע קישור Lightning (LNURL). הקש עליו כדי לפתוח את StreamHub, או העתק והדבק אותו כאן."</string>
     <string name="voucher_loading_address">מכין את הכתובת שלך…</string>
     <string name="voucher_onchain">שובר Bitcoin</string>
-    <string name="voucher_onchain_note">הכתובת הזו שייכת לחשבון שלך עבור התשלום הזה. אפשר לסגור את ClipBox בינתיים; ה-VIP יידלק לבד.</string>
+    <string name="voucher_onchain_note">הכתובת הזו שייכת לחשבון שלך עבור התשלום הזה. אפשר לסגור את StreamHub בינתיים; ה-VIP יידלק לבד.</string>
     <string name="voucher_onchain_steps">"1. פתח את azte.co ומַמֵּש שם את קוד השובר.
 2. כשתתבקש כתובת Bitcoin, השתמש בזו:"</string>
     <string name="voucher_onchain_steps_code">"1. הזן למטה את הקוד בן 16 הספרות מהשובר.

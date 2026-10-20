@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, kütüphaneler ve lisanslar</string>
     <string name="about_attributions_title">Lisanslar ve atıflar</string>
     <string name="about_changelog_title">Değişiklik günlüğü</string>
-    <string name="about_credits_body">"ClipBox, Android'de film ve dizi izlemenin sade ve sakin bir yolu. Her şey tek bir yerde: popüler olanlara göz atabilir, belirli bir şey arayabilir ya da tam kaldığın yerden devam edebilirsin.
+    <string name="about_credits_body">"StreamHub, Android'de film ve dizi izlemenin sade ve sakin bir yolu. Her şey tek bir yerde: popüler olanlara göz atabilir, belirli bir şey arayabilir ya da tam kaldığın yerden devam edebilirsin.
 
 Altyazılar senin için pek çok dilde bulunup zamanlanır, her yapımda birden fazla kaynak vardır ve izlediğin şey bir Chromecast'e veya akıllı televizyona gönderilebilir. Uygulama telefonlarda, tabletlerde, Android TV ve Fire TV'de çalışır; isteğe bağlı bir hesap da listeni ve geçmişini hepsinde aynı tutar.
 
-ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanların bize yazdıkları sayesinde gelişiyor."</string>
-    <string name="about_credits_title">ClipBox Hakkında</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanların bize yazdıkları sayesinde gelişiyor."</string>
+    <string name="about_credits_title">StreamHub Hakkında</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">İçerik kaynakları ve ticari markalar</string>
     <string name="about_disclaimer_title">Sorumluluk reddi beyanı</string>
     <string name="about_legal_title">Yasal</string>
     <string name="about_privacy_subtitle">Hangi veriler toplanıyor ve neden</string>
     <string name="about_privacy_title">Gizlilik politikası</string>
-    <string name="about_terms_subtitle">ClipBox nasıl kullanılabilir?</string>
+    <string name="about_terms_subtitle">StreamHub nasıl kullanılabilir?</string>
     <string name="about_terms_title">Şartlar ve Koşullar</string>
     <string name="about_title">Hakkında</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanları
     <string name="account_go_register">Burada yeni misin? Hesap oluştur</string>
     <string name="account_go_register_action">Hesap oluştur</string>
     <string name="account_guest">Misafir</string>
-    <string name="account_member">ClipBox Üyesi</string>
+    <string name="account_member">StreamHub Üyesi</string>
     <string name="account_member_since_fmt">%1$s tarihinden beri üye</string>
     <string name="account_new_password_hint">Yeni şifre</string>
     <string name="account_new_username_hint">Yeni kullanıcı adı</string>
@@ -65,7 +65,7 @@ ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanları
     <string name="account_recovery_code">Kurtarma kodu</string>
     <string name="account_recovery_code_hint">Kurtarma kodu</string>
     <string name="account_register">Hesap oluştur</string>
-    <string name="account_register_subtitle">ClipBox hesabınızı oluşturun</string>
+    <string name="account_register_subtitle">StreamHub hesabınızı oluşturun</string>
     <string name="account_session_ended">Hesabınız artık kullanılamıyor. Oturumunuz kapatıldı.</string>
     <string name="account_settings_section">Hesap ayarları</string>
     <string name="account_sign_in">Oturum aç</string>
@@ -73,7 +73,7 @@ ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanları
     <string name="account_sign_out">Oturumu kapat</string>
     <string name="account_signed_out_offline">Oturumu kapattım. Listeniz senkronize edilemediği için bu cihazda tutuldu.</string>
     <string name="account_signing_in">Giriş yapılıyor…</string>
-    <string name="account_subtitle">ClipBox hesabınızda oturum açın</string>
+    <string name="account_subtitle">StreamHub hesabınızda oturum açın</string>
     <string name="account_sync_done">Senkronizasyon tamamlandı</string>
     <string name="account_terms_required">Lütfen kaydolmadan önce Şartlar ve Koşulları inceleyin</string>
     <string name="account_title">Hesap</string>
@@ -99,21 +99,21 @@ ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanları
     <string name="actor_read_more">Devamını oku</string>
     <string name="actor_wikipedia_failed">Vikipedi açılamadı.</string>
     <string name="ad_autoclose_fmt">%1$d sn içinde otomatik kapanır</string>
-    <string name="ad_blocked_note">"Bir reklam engelleyici bu reklamı durduruyor. Reklamlar ClipBox'ı ücretsiz tutar: ClipBox için kapatın veya VIP alın."</string>
+    <string name="ad_blocked_note">"Bir reklam engelleyici bu reklamı durduruyor. Reklamlar StreamHub'ı ücretsiz tutar: StreamHub için kapatın veya VIP alın."</string>
     <string name="ad_close">Reklamı kapat</string>
     <string name="ad_label">Reklam</string>
     <string name="ad_loading">Reklam yükleniyor…</string>
     <string name="ad_open">Reklamı aç</string>
     <string name="ad_page_hint">Oklar imleci hareket ettirir · OK tıklar · Geri kapatır</string>
-    <string name="ad_popup_note">"Reklamlar ClipBox'ı ücretsiz tutar ve sunucuların ve bakımın ödenmesine yardımcı olur."</string>
+    <string name="ad_popup_note">"Reklamlar StreamHub'ı ücretsiz tutar ve sunucuların ve bakımın ödenmesine yardımcı olur."</string>
     <string name="ad_remove_with_vip">VIP ile reklamsız</string>
     <string name="add_to_favourites">Favorilere Ekle</string>
     <string name="added_to_favourites">Favorilere eklendi</string>
     <string name="added_to_my_list">Listeme Eklendi</string>
     <string name="alert_dialog_title">Uyarı</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Doldur</string>
     <string name="aspect_fills_already">görüntü zaten ekranı dolduruyor</string>
     <string name="aspect_fit">Sığdır</string>
@@ -178,9 +178,9 @@ ClipBox'ı her gün kendisi de kullanan küçük bir ekip yapıyor ve insanları
     <string name="call_notification_ongoing_text">Devam eden arama</string>
     <string name="call_notification_screening_text">Gelen arama süzülüyor</string>
     <string name="capture_blocked_exit">Çık</string>
-    <string name="capture_blocked_intro">Bu cihazda bir ağ yakalama veya proxy aracı kurulu olduğu sürece ClipBox çalışmaz.</string>
-    <string name="capture_blocked_outro">"Onu kaldırın ve ClipBox'ı yeniden açın."</string>
-    <string name="capture_blocked_title">ClipBox bu cihazda çalışamıyor</string>
+    <string name="capture_blocked_intro">Bu cihazda bir ağ yakalama veya proxy aracı kurulu olduğu sürece StreamHub çalışmaz.</string>
+    <string name="capture_blocked_outro">"Onu kaldırın ve StreamHub'ı yeniden açın."</string>
+    <string name="capture_blocked_title">StreamHub bu cihazda çalışamıyor</string>
     <string name="cast_ad_label">Reklam</string>
     <string name="cast_button_cast">Yansıt</string>
     <string name="cast_casting_to_device">%1$s cihazına yayınlanıyor</string>
@@ -379,7 +379,7 @@ TV'nizin IP'sini manuel olarak da girebilirsiniz."</string>
     <string name="err_service_unavailable">Hizmet geçici olarak kullanılamıyor. Lütfen tekrar deneyin.</string>
     <string name="err_signed_out_sign_in">Bu cihazda oturumun kapatıldı. Tekrar oturum aç.</string>
     <string name="err_too_many_requests">Çok fazla istek var. Lütfen biraz bekleyin.</string>
-    <string name="err_update_for_recovery">"Yeni bir kurtarma kodu oluşturmak için ClipBox'ı en son sürüme güncelle."</string>
+    <string name="err_update_for_recovery">"Yeni bir kurtarma kodu oluşturmak için StreamHub'ı en son sürüme güncelle."</string>
     <string name="error_a11y_label">Hata: geçersiz</string>
     <string name="error_bad_intent">Geçersiz bir bağlantı alındı. Açılamadı.</string>
     <string name="error_icon_content_description">Hata</string>
@@ -458,7 +458,7 @@ TV'nizin IP'sini manuel olarak da girebilirsiniz."</string>
 
 Aslında her içerik oynatılamaz, bazıları çalışır, diğerleri çalışmaz.
 
-ClipBox yeni ve geliştirilme aşamasında olduğundan bazı hatalar olabilir."</string>
+StreamHub yeni ve geliştirilme aşamasında olduğundan bazı hatalar olabilir."</string>
     <string name="first_launch_ok">Anladım</string>
     <string name="first_launch_title">Tekrar hoşgeldiniz!</string>
     <string name="footer_brand">Klip Kutusu</string>
@@ -467,7 +467,7 @@ ClipBox yeni ve geliştirilme aşamasında olduğundan bazı hatalar olabilir."<
     <string name="force_update_subtitle">Güncelleme gerekli</string>
     <string name="gate_connecting">Yükleniyor</string>
     <string name="gate_retry">Yeniden dene</string>
-    <string name="gate_unavailable_message">"ClipBox sunucularına ulaşamıyor.
+    <string name="gate_unavailable_message">"StreamHub sunucularına ulaşamıyor.
 Lütfen bağlantınızı kontrol edip tekrar deneyin."</string>
     <string name="gate_unavailable_title">Hizmet Mevcut Değil</string>
     <string name="genre_action">Eylem</string>
@@ -492,7 +492,7 @@ Lütfen bağlantınızı kontrol edip tekrar deneyin."</string>
     <string name="lang_available_body">"Şu anda uygulamayı %1$s dilinde kullanıyorsunuz. Değiştirmek ister misiniz? Bunu istediğiniz zaman Ayarlar'dan değiştirebilirsiniz."</string>
     <string name="lang_available_keep">%1$s kalsın</string>
     <string name="lang_available_switch">%1$s diline geç</string>
-    <string name="lang_available_title">ClipBox artık %1$s dilinde kullanılabilir</string>
+    <string name="lang_available_title">StreamHub artık %1$s dilinde kullanılabilir</string>
     <string name="launcher_instructions">"Burada yapmanız gereken hiçbir şey yok.
 
 Bir yayın URL'niz varsa doğrudan aşağıdan oynatabilirsiniz.
@@ -639,17 +639,17 @@ Ayrıntılar sayfasından film ve dizileri ekleyin."</string>
     <string name="pair_scan_allow">Kameraya izin ver</string>
     <string name="pair_scan_button">QR kodu tara</string>
     <string name="pair_scan_hint">"Kamerayı TV'deki QR koduna tutun"</string>
-    <string name="pair_scan_no_camera">"Kodu taramak için ClipBox'ın kameraya ihtiyacı var. Kamera yalnızca bu ekran açıkken kullanılır."</string>
+    <string name="pair_scan_no_camera">"Kodu taramak için StreamHub'ın kameraya ihtiyacı var. Kamera yalnızca bu ekran açıkken kullanılır."</string>
     <string name="pair_scan_torch">El feneri</string>
     <string name="pair_scan_type_instead">Kodu elle yaz</string>
-    <string name="pair_scan_wrong">"Bu bir ClipBox TV kodu değil. TV'nizdeki kodu tarayın."</string>
+    <string name="pair_scan_wrong">"Bu bir StreamHub TV kodu değil. TV'nizdeki kodu tarayın."</string>
     <string name="pair_tv_button">Telefonla giriş yap</string>
     <string name="pair_tv_confirm_hint">Telefonda onayla, bu TV kendiliğinden giriş yapar.</string>
     <string name="pair_tv_done_fmt">%1$s olarak giriş yapıldı</string>
     <string name="pair_tv_expires_fmt">Kod %1$s daha geçerli</string>
     <string name="pair_tv_failed">Kod alınamadı. Bağlantıyı kontrol edip tekrar dene.</string>
     <string name="pair_tv_new_code">Yeni kod</string>
-    <string name="pair_tv_or_code">"Ya da telefonda ClipBox'ı aç, Hesap'a, ardından TV'de giriş yap'a git ve QR kodun altındaki kodu gir."</string>
+    <string name="pair_tv_or_code">"Ya da telefonda StreamHub'ı aç, Hesap'a, ardından TV'de giriş yap'a git ve QR kodun altındaki kodu gir."</string>
     <string name="pair_tv_scan">Kodu telefon kameranla tara</string>
     <string name="pair_tv_waiting">Telefonun bekleniyor…</string>
     <string name="parental_age_fmt">%1$d ve altı</string>
@@ -718,7 +718,7 @@ Hepsi bu. Ödeme görülür görülmez VIP bu TV'de kendiliğinden açılır."</
 
 1. Azteco kuponu kullan › Kuponu nereden alırım? öğesine dokunun ve mağazalardan birinden Azteco Bitcoin kuponu (On-Chain) alın. Her zamanki gibi, örneğin kartla ödersiniz.
 2. 16 haneli bir kod alırsınız.
-3. ClipBox'ta Azteco kuponu kullan, ardından Bitcoin kuponu seçeneğine dokunun. Kupon sayfamız açılır.
+3. StreamHub'ta Azteco kuponu kullan, ardından Bitcoin kuponu seçeneğine dokunun. Kupon sayfamız açılır.
 4. Kodu orada girin. Kuponu sizin yerinize bozdurur ve ödemenin geldiğini kontrol ederiz.
 
 Hepsi bu. VIP birkaç dakika içinde kendiliğinden açılır."</string>
@@ -751,12 +751,12 @@ Hepsi bu. VIP birkaç dakika içinde bu TV'de kendiliğinden açılır."</string
     <string name="premium_state_confirming_title">Ödeme alındı</string>
     <string name="premium_state_partial_body_fmt">$%1$s ödedin. $%2$s daha ve VIP senin. Ödediğin tutar hesabında kalır.</string>
     <string name="premium_state_partial_title">Neredeyse tamam</string>
-    <string name="premium_state_vip_body">"Giriş yaptığın hiçbir cihazda reklam yok. ClipBox'ı desteklediğin için teşekkürler."</string>
+    <string name="premium_state_vip_body">"Giriş yaptığın hiçbir cihazda reklam yok. StreamHub'ı desteklediğin için teşekkürler."</string>
     <string name="premium_state_vip_title">"VIP'sin"</string>
     <string name="premium_state_waiting_body">Ödemeyi ödeme sayfasında tamamla. Ödeme görünür görünmez bu ekran kendiliğinden güncellenir.</string>
     <string name="premium_state_waiting_title">Ödemen bekleniyor</string>
     <string name="premium_tagline">Tek ödeme. Ömür boyu senin.</string>
-    <string name="premium_tv_phone_hint">"Lightning kuponun mu var? Aynı hesapla telefonundaki ClipBox'ta kullan. VIP hesabınla birlikte bu TV'ye de gelir."</string>
+    <string name="premium_tv_phone_hint">"Lightning kuponun mu var? Aynı hesapla telefonundaki StreamHub'ta kullan. VIP hesabınla birlikte bu TV'ye de gelir."</string>
     <string name="premium_tv_scan">Ödemek için telefonunla tara</string>
     <string name="premium_tv_show_checkout">Kripto ile öde</string>
     <string name="premium_tv_show_voucher">Bitcoin kuponu</string>
@@ -859,7 +859,7 @@ Hepsi bu. VIP birkaç dakika içinde bu TV'de kendiliğinden açılır."</string
     <string name="servers_probe_starting">Başlatılıyor… %1$d sn kaldı</string>
     <string name="servers_tab_experimental">Daha fazla dil</string>
     <string name="servers_tab_main">Standart</string>
-    <string name="settings_about">ClipBox Hakkında</string>
+    <string name="settings_about">StreamHub Hakkında</string>
     <string name="settings_about_summary">Sürüm bilgisi, krediler ve değişiklik günlüğü</string>
     <string name="settings_account">Hesabım</string>
     <string name="settings_account_loggedout">Oturum açılmadı</string>
@@ -891,13 +891,13 @@ Hepsi bu. VIP birkaç dakika içinde bu TV'de kendiliğinden açılır."</string
     <string name="settings_next_episode">Sonraki bölümü otomatik oynat</string>
     <string name="settings_next_episode_summary">Jenerikte geri sayım göster ve kendiliğinden devam et</string>
     <string name="settings_notifications">Bildirimler</string>
-    <string name="settings_notifications_summary">"ClipBox'tan duyuruları ve güncellemeleri alın"</string>
+    <string name="settings_notifications_summary">"StreamHub'tan duyuruları ve güncellemeleri alın"</string>
     <string name="settings_parental">Ebeveyn denetimi</string>
     <string name="settings_parental_off">Kapalı</string>
     <string name="settings_parental_on_fmt">%1$d yaş üstü olarak sınıflandırılanlar gizleniyor</string>
     <string name="settings_pref_sub_lang">Tercih edilen dil</string>
     <string name="settings_reset_app">Uygulamayı sıfırla</string>
-    <string name="settings_reset_app_confirm">"Bu, tüm uygulama verilerini siler ve ClipBox'ı kapatır. Devam etmek?"</string>
+    <string name="settings_reset_app_confirm">"Bu, tüm uygulama verilerini siler ve StreamHub'ı kapatır. Devam etmek?"</string>
     <string name="settings_reset_app_summary">Tüm verileri silin ve yeni bir başlangıç yapın</string>
     <string name="settings_reset_tips">"Listemi, favorileri ve İzlemeye devam et'i temizle"</string>
     <string name="settings_reset_tips_confirm">Listenin tamamı, favorilerin ve yarım bıraktığın her şey silinsin mi?</string>
@@ -1076,7 +1076,7 @@ Hepsi bu. VIP birkaç dakika içinde bu TV'de kendiliğinden açılır."</string
     <string name="tamper_blocked">Uygulamanın bu kopyası orijinal değil.</string>
     <string name="terms_gate_accept">Kabul et</string>
     <string name="terms_gate_decline">Reddet</string>
-    <string name="terms_gate_message">"ClipBox'ı kullanmaya başlamak için lütfen Şartlar ve Koşullarımızı inceleyin ve kabul edin."</string>
+    <string name="terms_gate_message">"StreamHub'ı kullanmaya başlamak için lütfen Şartlar ve Koşullarımızı inceleyin ve kabul edin."</string>
     <string name="terms_gate_subtitle">Devam etmek için lütfen bunları okuyup kabul edin</string>
     <string name="terms_gate_title">Şartlar ve Koşullar</string>
     <string name="touch_lock_desc">Kilit ekranı</string>
@@ -1084,14 +1084,14 @@ Hepsi bu. VIP birkaç dakika içinde bu TV'de kendiliğinden açılır."</string
     <string name="touch_locked_toast">Ekran kilitli. Kilidi açmak için kilit simgesine dokunun.</string>
     <string name="track_off">Kapalı</string>
     <string name="tv_account_avatar">Profil fotoğrafı</string>
-    <string name="tv_account_avatar_phone_only">"Profil fotoğrafı cihazındaki bir fotoğraftan seçilir. Bu televizyonda bunu yapabilecek bir uygulama yok; telefonundaki ClipBox'ta ayarla, burada da görünecek."</string>
+    <string name="tv_account_avatar_phone_only">"Profil fotoğrafı cihazındaki bir fotoğraftan seçilir. Bu televizyonda bunu yapabilecek bir uygulama yok; telefonundaki StreamHub'ta ayarla, burada da görünecek."</string>
     <string name="tv_account_choose_image">Bir görsel seç</string>
     <string name="tv_account_new_password_hint">Yeni parola</string>
     <string name="tv_account_recover_action">Parolayı sıfırla</string>
     <string name="tv_account_recovery_fmt">"Kurtarma kodu: %1$s
 
 Bunu bir yere yazın. Yalnızca bir kez gösterilir ve parolanızı unutursanız geri dönmenin tek yoludur."</string>
-    <string name="tv_account_register_hint">Henüz hesabınız yok mu? Telefonunuzdaki ClipBox uygulamasında bir hesap oluşturun, sonra buradan giriş yapın.</string>
+    <string name="tv_account_register_hint">Henüz hesabınız yok mu? Telefonunuzdaki StreamHub uygulamasında bir hesap oluşturun, sonra buradan giriş yapın.</string>
     <string name="tv_account_saved">Kaydedildi</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Görsel (bulanık)</string>
@@ -1194,7 +1194,7 @@ Bunu bir yere yazın. Yalnızca bir kez gösterilir ve parolanızı unutursanız
     <string name="tv_ui_scale_title">Arayüz boyutu</string>
     <string name="tv_value_off">Kapalı</string>
     <string name="tv_value_on">Açık</string>
-    <string name="tv_whatsnew_body">ClipBox büyük ekran ve kumandanız için yeniden yapıldı. Sahip olduğunuz her şey hâlâ burada, sadece koltuktan erişmesi daha kolay. Eski görünümü mü tercih ediyorsunuz? Ayarlardan istediğiniz zaman geri dönebilirsiniz.</string>
+    <string name="tv_whatsnew_body">StreamHub büyük ekran ve kumandanız için yeniden yapıldı. Sahip olduğunuz her şey hâlâ burada, sadece koltuktan erişmesi daha kolay. Eski görünümü mü tercih ediyorsunuz? Ayarlardan istediğiniz zaman geri dönebilirsiniz.</string>
     <string name="tv_whatsnew_classic">Klasik görünümü kullan</string>
     <string name="tv_whatsnew_continue">Bir göz at</string>
     <string name="tv_whatsnew_title">Televizyon için yeni bir görünüm</string>
@@ -1211,21 +1211,21 @@ Bunu bir yere yazın. Yalnızca bir kez gösterilir ve parolanızı unutursanız
     <string name="update_downloading">Yeni parçaları çekiyoruz…</string>
     <string name="update_install_help">"1. Yeni APK'yı indirmek için Güncelle'ye dokunun.
 2. Yükleyici açıldığında Yükle'ye dokunun.
-3. Android bunu engelliyorsa ClipBox için \"Bilinmeyen uygulamaları yükle\" seçeneğine izin verin ve ardından tekrar Yükle'ye dokunun.
+3. Android bunu engelliyorsa StreamHub için \"Bilinmeyen uygulamaları yükle\" seçeneğine izin verin ve ardından tekrar Yükle'ye dokunun.
 4. Ayarlarınız ve listeniz tutulur, mevcut uygulamanın üzerine kurulur."</string>
     <string name="update_install_help_summary">Kurulum engellenirse ne yapmalı</string>
     <string name="update_install_help_title">Nasıl kurulur</string>
     <string name="update_later">Daha sonra</string>
-    <string name="update_permission_msg_firetv">"Fire TV'niz yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'ı seçin, \"Bilinmeyen uygulamaları yükle\" altında ClipBox'ı açın ve Geri'ye basın. Güncelleme ardından kendiliğinden devam eder.
+    <string name="update_permission_msg_firetv">"Fire TV'niz yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'ı seçin, \"Bilinmeyen uygulamaları yükle\" altında StreamHub'ı açın ve Geri'ye basın. Güncelleme ardından kendiliğinden devam eder.
 
-Bu ekran açılmazsa: Ayarlar > Fire TV'm > Geliştirici seçenekleri > Bilinmeyen uygulamaları yükle > ClipBox. Geliştirici seçenekleri yok mu? Önce Ayarlar > Fire TV'm > Hakkında'ya gidin ve cihaz adının üzerinde 7 kez OK'a basın."</string>
-    <string name="update_permission_msg_phone">"Android yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'a dokunun, ClipBox için \"Bu kaynaktan izin ver\" seçeneğini açın ve geri dönün. Güncelleme ardından kendiliğinden devam eder."</string>
-    <string name="update_permission_msg_tv">"Televizyonunuz yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'ı seçin, \"Bilinmeyen uygulamaları yükle\" altında ClipBox'ı açın ve Geri'ye basın. Güncelleme ardından kendiliğinden devam eder.
+Bu ekran açılmazsa: Ayarlar > Fire TV'm > Geliştirici seçenekleri > Bilinmeyen uygulamaları yükle > StreamHub. Geliştirici seçenekleri yok mu? Önce Ayarlar > Fire TV'm > Hakkında'ya gidin ve cihaz adının üzerinde 7 kez OK'a basın."</string>
+    <string name="update_permission_msg_phone">"Android yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'a dokunun, StreamHub için \"Bu kaynaktan izin ver\" seçeneğini açın ve geri dönün. Güncelleme ardından kendiliğinden devam eder."</string>
+    <string name="update_permission_msg_tv">"Televizyonunuz yalnızca izin verdiğiniz uygulamalardan güncelleme yükler. Ayarları aç'ı seçin, \"Bilinmeyen uygulamaları yükle\" altında StreamHub'ı açın ve Geri'ye basın. Güncelleme ardından kendiliğinden devam eder.
 
-Bu ekran açılmazsa: Ayarlar > Uygulamalar > Güvenlik ve kısıtlamalar > Bilinmeyen kaynaklar > ClipBox."</string>
+Bu ekran açılmazsa: Ayarlar > Uygulamalar > Güvenlik ve kısıtlamalar > Bilinmeyen kaynaklar > StreamHub."</string>
     <string name="update_permission_not_opened">Ayarlar açılamadı. Ekrandaki adımları izleyin.</string>
     <string name="update_permission_open">Ayarları aç</string>
-    <string name="update_permission_title">"ClipBox'ın güncelleme yüklemesine izin verin"</string>
+    <string name="update_permission_title">"StreamHub'ın güncelleme yüklemesine izin verin"</string>
     <string name="update_unavailable">Güncelleme hizmeti kullanılamıyor. Uygulama şu anda güncellemeleri kontrol edemiyor.</string>
     <string name="update_up_to_date">Zaten en son sürümdesiniz. Güzel.</string>
     <string name="v7_preference_off">KAPALI</string>
@@ -1240,10 +1240,10 @@ Bu ekran açılmazsa: Ayarlar > Uygulamalar > Güvenlik ve kısıtlamalar > Bili
     <string name="voucher_ln_bad">Bu bir Lightning kupon bağlantısına benzemiyor. LNURL ile başlar.</string>
     <string name="voucher_ln_redeeming">Kuponun kullanılıyor…</string>
     <string name="voucher_ln_steps">"1. azte.co'yu aç, Lightning'i seç ve kupon kodunu orada kullan.
-2. Bir Lightning bağlantısı (LNURL) görünür. ClipBox'ı açmak için ona dokun ya da kopyalayıp buraya yapıştır."</string>
+2. Bir Lightning bağlantısı (LNURL) görünür. StreamHub'ı açmak için ona dokun ya da kopyalayıp buraya yapıştır."</string>
     <string name="voucher_loading_address">Adresin hazırlanıyor…</string>
     <string name="voucher_onchain">Bitcoin kuponu</string>
-    <string name="voucher_onchain_note">"Bu adres, bu ödeme için hesabına aittir. Bu arada ClipBox'ı kapatabilirsin; VIP kendiliğinden açılır."</string>
+    <string name="voucher_onchain_note">"Bu adres, bu ödeme için hesabına aittir. Bu arada StreamHub'ı kapatabilirsin; VIP kendiliğinden açılır."</string>
     <string name="voucher_onchain_steps">"1. azte.co'yu aç ve kupon kodunu orada kullan.
 2. Bir Bitcoin adresi istendiğinde şunu kullan:"</string>
     <string name="voucher_onchain_steps_code">"1. Kuponunuzdaki 16 haneli kodu aşağıya girin.

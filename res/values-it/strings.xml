@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, librerie e licenze</string>
     <string name="about_attributions_title">Licenze e attribuzioni</string>
     <string name="about_changelog_title">Registro delle modifiche</string>
-    <string name="about_credits_body">"ClipBox è un modo pulito e tranquillo di guardare film e serie su Android. È tutto in un unico posto, così puoi sfogliare cosa va per la maggiore, cercare qualcosa di preciso o riprendere esattamente da dove avevi lasciato.
+    <string name="about_credits_body">"StreamHub è un modo pulito e tranquillo di guardare film e serie su Android. È tutto in un unico posto, così puoi sfogliare cosa va per la maggiore, cercare qualcosa di preciso o riprendere esattamente da dove avevi lasciato.
 
 I sottotitoli vengono trovati e sincronizzati per te in moltissime lingue, ogni titolo offre diverse fonti, e quello che stai guardando può essere inviato a un Chromecast o a una smart TV. L'app gira su telefoni, tablet, Android TV e Fire TV, e un account facoltativo tiene allineati la tua lista e la tua cronologia su tutti.
 
-ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a quello che ci scrivono le persone."</string>
-    <string name="about_credits_title">Informazioni su ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a quello che ci scrivono le persone."</string>
+    <string name="about_credits_title">Informazioni su StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Fonti dei contenuti e marchi</string>
     <string name="about_disclaimer_title">Dichiarazione di non responsabilità</string>
     <string name="about_legal_title">Legale</string>
     <string name="about_privacy_subtitle">Quali dati vengono raccolti e perché</string>
     <string name="about_privacy_title">Informativa sulla privacy</string>
-    <string name="about_terms_subtitle">Come può essere utilizzato ClipBox</string>
+    <string name="about_terms_subtitle">Come può essere utilizzato StreamHub</string>
     <string name="about_terms_title">Termini e condizioni</string>
     <string name="about_title">Circa</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a 
     <string name="account_go_register">Nuovo qui? Crea un account</string>
     <string name="account_go_register_action">Crea un account</string>
     <string name="account_guest">Ospite</string>
-    <string name="account_member">Membro di ClipBox</string>
+    <string name="account_member">Membro di StreamHub</string>
     <string name="account_member_since_fmt">Membro dal %1$s</string>
     <string name="account_new_password_hint">Nuova password</string>
     <string name="account_new_username_hint">Nuovo nome utente</string>
@@ -65,7 +65,7 @@ ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a 
     <string name="account_recovery_code">Codice di ripristino</string>
     <string name="account_recovery_code_hint">Codice di recupero</string>
     <string name="account_register">Crea un account</string>
-    <string name="account_register_subtitle">Crea il tuo account ClipBox</string>
+    <string name="account_register_subtitle">Crea il tuo account StreamHub</string>
     <string name="account_session_ended">Il tuo account non è più disponibile. Sei stato disconnesso.</string>
     <string name="account_settings_section">"Impostazioni dell'account"</string>
     <string name="account_sign_in">Accedi</string>
@@ -73,7 +73,7 @@ ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a 
     <string name="account_sign_out">Esci</string>
     <string name="account_signed_out_offline">Disconnesso. Non è stato possibile sincronizzare la tua lista, quindi è stata conservata su questo dispositivo.</string>
     <string name="account_signing_in">Accesso in corso…</string>
-    <string name="account_subtitle">Accedi al tuo account ClipBox</string>
+    <string name="account_subtitle">Accedi al tuo account StreamHub</string>
     <string name="account_sync_done">Sincronizzazione completata</string>
     <string name="account_terms_required">Si prega di rivedere i Termini e Condizioni prima di registrarsi</string>
     <string name="account_title">Conto</string>
@@ -99,21 +99,21 @@ ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a 
     <string name="actor_read_more">Leggi di più</string>
     <string name="actor_wikipedia_failed">Impossibile aprire Wikipedia.</string>
     <string name="ad_autoclose_fmt">Si chiude automaticamente tra %1$d s</string>
-    <string name="ad_blocked_note">Un blocco pubblicità sta fermando questo annuncio. Gli annunci mantengono ClipBox gratuito: disattivalo per ClipBox o passa a VIP.</string>
+    <string name="ad_blocked_note">Un blocco pubblicità sta fermando questo annuncio. Gli annunci mantengono StreamHub gratuito: disattivalo per StreamHub o passa a VIP.</string>
     <string name="ad_close">Chiudi pubblicità</string>
     <string name="ad_label">Pubblicità</string>
     <string name="ad_loading">Caricamento annuncio…</string>
     <string name="ad_open">Apri annuncio</string>
     <string name="ad_page_hint">Le frecce muovono il puntatore · OK fa clic · Indietro chiude</string>
-    <string name="ad_popup_note">Gli annunci mantengono ClipBox gratuito e aiutano a pagare i server e la manutenzione.</string>
+    <string name="ad_popup_note">Gli annunci mantengono StreamHub gratuito e aiutano a pagare i server e la manutenzione.</string>
     <string name="ad_remove_with_vip">Niente pubblicità con il VIP</string>
     <string name="add_to_favourites">Aggiungi ai preferiti</string>
     <string name="added_to_favourites">Aggiunto ai preferiti</string>
     <string name="added_to_my_list">Aggiunto alla mia lista</string>
     <string name="alert_dialog_title">Avviso</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Riempi</string>
     <string name="aspect_fills_already">"l'immagine riempie già lo schermo"</string>
     <string name="aspect_fit">Adatta</string>
@@ -178,9 +178,9 @@ ClipBox è fatta da un piccolo team che la usa ogni giorno, e migliora grazie a 
     <string name="call_notification_ongoing_text">Chiamata in corso</string>
     <string name="call_notification_screening_text">Applicazione filtro a chiamata in arrivo</string>
     <string name="capture_blocked_exit">Esci</string>
-    <string name="capture_blocked_intro">ClipBox non funziona finché su questo dispositivo è installato uno strumento di cattura di rete o un proxy.</string>
-    <string name="capture_blocked_outro">Disinstallalo e riapri ClipBox.</string>
-    <string name="capture_blocked_title">ClipBox non può funzionare su questo dispositivo</string>
+    <string name="capture_blocked_intro">StreamHub non funziona finché su questo dispositivo è installato uno strumento di cattura di rete o un proxy.</string>
+    <string name="capture_blocked_outro">Disinstallalo e riapri StreamHub.</string>
+    <string name="capture_blocked_title">StreamHub non può funzionare su questo dispositivo</string>
     <string name="cast_ad_label">Annuncio</string>
     <string name="cast_button_cast">Trasmetti alla TV</string>
     <string name="cast_casting_to_device">Trasmissione a %1$s</string>
@@ -379,7 +379,7 @@ Puoi anche inserire manualmente l'IP della tua TV."</string>
     <string name="err_service_unavailable">Servizio momentaneamente non disponibile. Per favore riprova.</string>
     <string name="err_signed_out_sign_in">Sei stato disconnesso su questo dispositivo. Accedi di nuovo.</string>
     <string name="err_too_many_requests">Troppe richieste. Per favore aspetta un momento.</string>
-    <string name="err_update_for_recovery">"Aggiorna ClipBox all'ultima versione per creare un nuovo codice di ripristino."</string>
+    <string name="err_update_for_recovery">"Aggiorna StreamHub all'ultima versione per creare un nuovo codice di ripristino."</string>
     <string name="error_a11y_label">Errore: non valido</string>
     <string name="error_bad_intent">Ricevuto un collegamento non valido. Impossibile aprirlo.</string>
     <string name="error_icon_content_description">Errore</string>
@@ -458,16 +458,16 @@ Puoi anche inserire manualmente l'IP della tua TV."</string>
 
 Non tutti i titoli sono effettivamente riproducibili, alcuni funzionano e altri no.
 
-ClipBox è nuovo e in fase di sviluppo, potrebbero esserci alcuni bug."</string>
+StreamHub è nuovo e in fase di sviluppo, potrebbero esserci alcuni bug."</string>
     <string name="first_launch_ok">Capito</string>
     <string name="first_launch_title">Bentornato!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">"Scarica l'aggiornamento"</string>
     <string name="force_update_fallback_msg">Per continuare a utilizzare questa app è necessaria una nuova versione.</string>
     <string name="force_update_subtitle">Aggiornamento richiesto</string>
     <string name="gate_connecting">Caricamento in corso</string>
     <string name="gate_retry">Riprova</string>
-    <string name="gate_unavailable_message">"ClipBox non riesce a raggiungere i suoi server.
+    <string name="gate_unavailable_message">"StreamHub non riesce a raggiungere i suoi server.
 Controlla la connessione e riprova."</string>
     <string name="gate_unavailable_title">Servizio non disponibile</string>
     <string name="genre_action">Azione</string>
@@ -492,7 +492,7 @@ Controlla la connessione e riprova."</string>
     <string name="lang_available_body">"Stai attualmente usando l'app in %1$s. Vuoi cambiare? Puoi modificarlo in qualsiasi momento nelle Impostazioni."</string>
     <string name="lang_available_keep">Mantieni %1$s</string>
     <string name="lang_available_switch">Passa a %1$s</string>
-    <string name="lang_available_title">ClipBox è ora disponibile in %1$s</string>
+    <string name="lang_available_title">StreamHub è ora disponibile in %1$s</string>
     <string name="launcher_instructions">"Non devi fare nulla qui.
 
 Se disponi dell'URL dello streaming, puoi riprodurlo direttamente qui sotto.
@@ -639,17 +639,17 @@ Aggiungi film e programmi dalla pagina dei dettagli."</string>
     <string name="pair_scan_allow">Consenti fotocamera</string>
     <string name="pair_scan_button">Scansiona codice QR</string>
     <string name="pair_scan_hint">Inquadra il codice QR sulla TV con la fotocamera</string>
-    <string name="pair_scan_no_camera">Per scansionare il codice, ClipBox ha bisogno della fotocamera. Viene usata solo mentre questa schermata è aperta.</string>
+    <string name="pair_scan_no_camera">Per scansionare il codice, StreamHub ha bisogno della fotocamera. Viene usata solo mentre questa schermata è aperta.</string>
     <string name="pair_scan_torch">Torcia</string>
     <string name="pair_scan_type_instead">Digita il codice</string>
-    <string name="pair_scan_wrong">Questo non è un codice TV di ClipBox. Scansiona il codice sulla tua TV.</string>
+    <string name="pair_scan_wrong">Questo non è un codice TV di StreamHub. Scansiona il codice sulla tua TV.</string>
     <string name="pair_tv_button">Accedi con il telefono</string>
     <string name="pair_tv_confirm_hint">Conferma sul telefono e questa TV accederà da sola.</string>
     <string name="pair_tv_done_fmt">Accesso effettuato come %1$s</string>
     <string name="pair_tv_expires_fmt">Codice valido ancora %1$s</string>
     <string name="pair_tv_failed">Impossibile ottenere un codice. Controlla la connessione e riprova.</string>
     <string name="pair_tv_new_code">Nuovo codice</string>
-    <string name="pair_tv_or_code">Oppure apri ClipBox sul telefono, vai su Account, poi Accedi sulla TV, e inserisci il codice sotto il codice QR.</string>
+    <string name="pair_tv_or_code">Oppure apri StreamHub sul telefono, vai su Account, poi Accedi sulla TV, e inserisci il codice sotto il codice QR.</string>
     <string name="pair_tv_scan">Inquadra il codice con la fotocamera del telefono</string>
     <string name="pair_tv_waiting">In attesa del telefono…</string>
     <string name="parental_age_fmt">%1$d anni e meno</string>
@@ -718,7 +718,7 @@ Tutto qui. Il VIP si attiva da solo su questa TV appena il pagamento viene visto
 
 1. Tocca Riscatta un voucher Azteco › Dove compro un voucher? e compra un voucher Bitcoin Azteco (On-Chain) in uno dei negozi. Paghi come al solito, per esempio con carta.
 2. Ricevi un codice di 16 cifre.
-3. In ClipBox, tocca Riscatta un voucher Azteco e poi Voucher Bitcoin. Si apre la nostra pagina dei voucher.
+3. In StreamHub, tocca Riscatta un voucher Azteco e poi Voucher Bitcoin. Si apre la nostra pagina dei voucher.
 4. Inserisci lì il codice. Lo riscattiamo noi per te e controlliamo che sia arrivato.
 
 Tutto qui. Il VIP si attiva da solo in pochi minuti."</string>
@@ -751,12 +751,12 @@ Tutto qui. Il VIP si attiva da solo su questa TV in pochi minuti."</string>
     <string name="premium_state_confirming_title">Pagamento ricevuto</string>
     <string name="premium_state_partial_body_fmt">Hai pagato $%1$s. Ancora $%2$s e il VIP è tuo. Quanto hai pagato resta sul tuo account.</string>
     <string name="premium_state_partial_title">Ci sei quasi</string>
-    <string name="premium_state_vip_body">Niente pubblicità su tutti i dispositivi in cui accedi. Grazie per sostenere ClipBox.</string>
+    <string name="premium_state_vip_body">Niente pubblicità su tutti i dispositivi in cui accedi. Grazie per sostenere StreamHub.</string>
     <string name="premium_state_vip_title">Sei VIP</string>
     <string name="premium_state_waiting_body">Completa il pagamento nella pagina di pagamento. Questa schermata si aggiorna da sola appena il pagamento viene rilevato.</string>
     <string name="premium_state_waiting_title">In attesa del pagamento</string>
     <string name="premium_tagline">Un solo pagamento. Tuo per sempre.</string>
-    <string name="premium_tv_phone_hint">Hai un voucher Lightning? Riscattalo in ClipBox sul telefono, con lo stesso account. Il VIP segue il tuo account fino a questa TV.</string>
+    <string name="premium_tv_phone_hint">Hai un voucher Lightning? Riscattalo in StreamHub sul telefono, con lo stesso account. Il VIP segue il tuo account fino a questa TV.</string>
     <string name="premium_tv_scan">Scansiona con il telefono per pagare</string>
     <string name="premium_tv_show_checkout">Paga in cripto</string>
     <string name="premium_tv_show_voucher">Voucher Bitcoin</string>
@@ -859,7 +859,7 @@ Tutto qui. Il VIP si attiva da solo su questa TV in pochi minuti."</string>
     <string name="servers_probe_starting">Avvio… %1$d s rimanenti</string>
     <string name="servers_tab_experimental">Altre lingue</string>
     <string name="servers_tab_main">Standard</string>
-    <string name="settings_about">Informazioni su ClipBox</string>
+    <string name="settings_about">Informazioni su StreamHub</string>
     <string name="settings_about_summary">Informazioni sulla versione, crediti e registro delle modifiche</string>
     <string name="settings_account">Il mio conto</string>
     <string name="settings_account_loggedout">"Non ho effettuato l'accesso"</string>
@@ -891,13 +891,13 @@ Tutto qui. Il VIP si attiva da solo su questa TV in pochi minuti."</string>
     <string name="settings_next_episode">Riproduci automaticamente il prossimo episodio</string>
     <string name="settings_next_episode_summary">Mostra un conto alla rovescia sui titoli di coda e prosegui da solo</string>
     <string name="settings_notifications">Notifiche</string>
-    <string name="settings_notifications_summary">Ricevi annunci e aggiornamenti da ClipBox</string>
+    <string name="settings_notifications_summary">Ricevi annunci e aggiornamenti da StreamHub</string>
     <string name="settings_parental">Controllo genitori</string>
     <string name="settings_parental_off">Disattivato</string>
     <string name="settings_parental_on_fmt">I titoli con classificazione superiore a %1$d vengono nascosti</string>
     <string name="settings_pref_sub_lang">Lingua preferita</string>
     <string name="settings_reset_app">"Reimposta l'app"</string>
-    <string name="settings_reset_app_confirm">"Questo cancella tutti i dati dell'app e chiude ClipBox. Continuare?"</string>
+    <string name="settings_reset_app_confirm">"Questo cancella tutti i dati dell'app e chiude StreamHub. Continuare?"</string>
     <string name="settings_reset_app_summary">Cancella tutti i dati e ricomincia da capo</string>
     <string name="settings_reset_tips">Cancella La mia lista, i preferiti e Continua a guardare</string>
     <string name="settings_reset_tips_confirm">Cancellare tutta La mia lista, i preferiti e tutto ciò che hai iniziato?</string>
@@ -1076,7 +1076,7 @@ Tutto qui. Il VIP si attiva da solo su questa TV in pochi minuti."</string>
     <string name="tamper_blocked">"Questa copia dell'app non è autentica."</string>
     <string name="terms_gate_accept">Accetta</string>
     <string name="terms_gate_decline">Rifiutare</string>
-    <string name="terms_gate_message">Consulta e accetta i nostri Termini e condizioni per iniziare a utilizzare ClipBox.</string>
+    <string name="terms_gate_message">Consulta e accetta i nostri Termini e condizioni per iniziare a utilizzare StreamHub.</string>
     <string name="terms_gate_subtitle">Si prega di leggerli e accettarli per continuare</string>
     <string name="terms_gate_title">Termini e condizioni</string>
     <string name="touch_lock_desc">Schermata di blocco</string>
@@ -1084,14 +1084,14 @@ Tutto qui. Il VIP si attiva da solo su questa TV in pochi minuti."</string>
     <string name="touch_locked_toast">"Schermo bloccato. Tocca l'icona del lucchetto per sbloccare."</string>
     <string name="track_off">Spento</string>
     <string name="tv_account_avatar">Immagine del profilo</string>
-    <string name="tv_account_avatar_phone_only">"L'immagine del profilo si sceglie da una foto sul tuo dispositivo. Questo televisore non ha un'app in grado di farlo: impostala in ClipBox sul telefono e comparirà anche qui."</string>
+    <string name="tv_account_avatar_phone_only">"L'immagine del profilo si sceglie da una foto sul tuo dispositivo. Questo televisore non ha un'app in grado di farlo: impostala in StreamHub sul telefono e comparirà anche qui."</string>
     <string name="tv_account_choose_image">"Scegli un'immagine"</string>
     <string name="tv_account_new_password_hint">Nuova password</string>
     <string name="tv_account_recover_action">Reimposta la password</string>
     <string name="tv_account_recovery_fmt">"Codice di recupero: %1$s
 
 Annotalo. Viene mostrato una sola volta ed è l'unico modo per rientrare se dimentichi la password."</string>
-    <string name="tv_account_register_hint">"Non hai ancora un account? Creane uno nell'app ClipBox sul telefono, poi accedi qui."</string>
+    <string name="tv_account_register_hint">"Non hai ancora un account? Creane uno nell'app StreamHub sul telefono, poi accedi qui."</string>
     <string name="tv_account_saved">Salvato</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Immagine (sfocata)</string>
@@ -1194,7 +1194,7 @@ Annotalo. Viene mostrato una sola volta ed è l'unico modo per rientrare se dime
     <string name="tv_ui_scale_title">Dimensione interfaccia</string>
     <string name="tv_value_off">Disattivato</string>
     <string name="tv_value_on">Attivato</string>
-    <string name="tv_whatsnew_body">"ClipBox è stato ricostruito per il grande schermo e per il tuo telecomando. Tutto quello che avevi è ancora qui, solo più facile da raggiungere dal divano. Preferisci l'interfaccia di prima? Puoi tornarci quando vuoi dalle impostazioni."</string>
+    <string name="tv_whatsnew_body">"StreamHub è stato ricostruito per il grande schermo e per il tuo telecomando. Tutto quello che avevi è ancora qui, solo più facile da raggiungere dal divano. Preferisci l'interfaccia di prima? Puoi tornarci quando vuoi dalle impostazioni."</string>
     <string name="tv_whatsnew_classic">"Usa l'interfaccia classica"</string>
     <string name="tv_whatsnew_continue">"Dai un'occhiata"</string>
     <string name="tv_whatsnew_title">Un nuovo aspetto per la televisione</string>
@@ -1211,21 +1211,21 @@ Scaricarla e installarla adesso?"</string>
     <string name="update_downloading">Inserendo i nuovi pezzi...</string>
     <string name="update_install_help">"1. Tocca Aggiorna per scaricare il nuovo APK.
 2. Quando si apre il programma di installazione, tocca Installa.
-3. Se Android lo blocca, consenti \"Installa app sconosciute\" per ClipBox, quindi tocca nuovamente Installa.
+3. Se Android lo blocca, consenti \"Installa app sconosciute\" per StreamHub, quindi tocca nuovamente Installa.
 4. Le tue impostazioni e il tuo elenco vengono mantenuti, si installa sull'app corrente."</string>
     <string name="update_install_help_summary">"Cosa fare se l'installazione è bloccata"</string>
     <string name="update_install_help_title">Come installare</string>
     <string name="update_later">Più tardi</string>
-    <string name="update_permission_msg_firetv">"La tua Fire TV installa aggiornamenti solo dalle app che autorizzi. Scegli Apri impostazioni, attiva ClipBox in \"Installa app sconosciute\" e premi Indietro. L'aggiornamento poi continua da solo.
+    <string name="update_permission_msg_firetv">"La tua Fire TV installa aggiornamenti solo dalle app che autorizzi. Scegli Apri impostazioni, attiva StreamHub in \"Installa app sconosciute\" e premi Indietro. L'aggiornamento poi continua da solo.
 
-Se quella schermata non si apre: Impostazioni > La mia Fire TV > Opzioni sviluppatore > Installa app sconosciute > ClipBox. Non vedi Opzioni sviluppatore? Vai prima in Impostazioni > La mia Fire TV > Informazioni e premi OK 7 volte sul nome del dispositivo."</string>
-    <string name="update_permission_msg_phone">"Android installa aggiornamenti solo dalle app che autorizzi. Tocca Apri impostazioni, attiva \"Consenti da questa fonte\" per ClipBox e torna indietro. L'aggiornamento poi continua da solo."</string>
-    <string name="update_permission_msg_tv">"La tua TV installa aggiornamenti solo dalle app che autorizzi. Scegli Apri impostazioni, attiva ClipBox in \"Installa app sconosciute\" e premi Indietro. L'aggiornamento poi continua da solo.
+Se quella schermata non si apre: Impostazioni > La mia Fire TV > Opzioni sviluppatore > Installa app sconosciute > StreamHub. Non vedi Opzioni sviluppatore? Vai prima in Impostazioni > La mia Fire TV > Informazioni e premi OK 7 volte sul nome del dispositivo."</string>
+    <string name="update_permission_msg_phone">"Android installa aggiornamenti solo dalle app che autorizzi. Tocca Apri impostazioni, attiva \"Consenti da questa fonte\" per StreamHub e torna indietro. L'aggiornamento poi continua da solo."</string>
+    <string name="update_permission_msg_tv">"La tua TV installa aggiornamenti solo dalle app che autorizzi. Scegli Apri impostazioni, attiva StreamHub in \"Installa app sconosciute\" e premi Indietro. L'aggiornamento poi continua da solo.
 
-Se quella schermata non si apre: Impostazioni > App > Sicurezza e limitazioni > Origini sconosciute > ClipBox."</string>
+Se quella schermata non si apre: Impostazioni > App > Sicurezza e limitazioni > Origini sconosciute > StreamHub."</string>
     <string name="update_permission_not_opened">Impossibile aprire le impostazioni. Segui i passaggi sullo schermo.</string>
     <string name="update_permission_open">Apri impostazioni</string>
-    <string name="update_permission_title">Consenti a ClipBox di installare gli aggiornamenti</string>
+    <string name="update_permission_title">Consenti a StreamHub di installare gli aggiornamenti</string>
     <string name="update_unavailable">"Servizio di aggiornamento non disponibile. L'app non può verificare la presenza di aggiornamenti in questo momento."</string>
     <string name="update_up_to_date">"Sei già sull'ultima versione. Carino."</string>
     <string name="v7_preference_off">OFF</string>
@@ -1240,10 +1240,10 @@ Se quella schermata non si apre: Impostazioni > App > Sicurezza e limitazioni > 
     <string name="voucher_ln_bad">Non sembra un link di voucher Lightning. Inizia con LNURL.</string>
     <string name="voucher_ln_redeeming">Riscatto del voucher in corso…</string>
     <string name="voucher_ln_steps">"1. Apri azte.co, scegli Lightning e riscatta lì il codice del voucher.
-2. Comparirà un link Lightning (LNURL). Toccalo per aprire ClipBox, oppure copialo e incollalo qui."</string>
+2. Comparirà un link Lightning (LNURL). Toccalo per aprire StreamHub, oppure copialo e incollalo qui."</string>
     <string name="voucher_loading_address">"Preparazione dell'indirizzo…"</string>
     <string name="voucher_onchain">Voucher Bitcoin</string>
-    <string name="voucher_onchain_note">Questo indirizzo è legato al tuo account per questo pagamento. Intanto puoi chiudere ClipBox; il VIP si attiva da solo.</string>
+    <string name="voucher_onchain_note">Questo indirizzo è legato al tuo account per questo pagamento. Intanto puoi chiudere StreamHub; il VIP si attiva da solo.</string>
     <string name="voucher_onchain_steps">"1. Apri azte.co e riscatta lì il codice del voucher.
 2. Quando ti chiede un indirizzo Bitcoin, usa questo:"</string>
     <string name="voucher_onchain_steps_code">"1. Inserisci qui sotto il codice di 16 cifre del tuo voucher.

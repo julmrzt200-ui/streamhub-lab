@@ -39,24 +39,25 @@ jobs:
       - name: Prepare Release Artifacts
         run: |
           SIGNED_APK=$(find out -name "*.apk" | head -n 1)
-          cp "$SIGNED_APK" streamhub-clipbox-v1.0.7.apk
-          ls -la streamhub-clipbox-v1.0.7.apk
+          cp "$SIGNED_APK" streamhub-v1.0.8.apk
+          ls -la streamhub-v1.0.8.apk
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: streamhub-clipbox-apk
-          path: streamhub-clipbox-v1.0.7.apk
+          name: streamhub-apk
+          path: streamhub-v1.0.8.apk
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/heads/main')
         with:
-          tag_name: v1.0.7-clipbox
-          name: StreamHub ClipBox v1.0.7
+          tag_name: v1.0.8-streamhub
+          name: StreamHub v1.0.8 (TV & Mobile)
           body: |
-            StreamHub reconstructed with ClipBox TV/Mobile skeleton and optimized video servers:
-            - TMDb English & Global servers (VixSrc, VidLink, TwoEmbed, VidsrcNet, VidsrcRu, Vidflix, Moviesapi, Vidrock, Vidzee, PrimeSrc, Videasy)
-            - Spanish fallback routed directly to fast multi-server pipeline
-            - Built and signed with APKTool 3.0.3 & uber-apk-signer
-          files: streamhub-clipbox-v1.0.7.apk
+            StreamHub Rebranded Release:
+            - Full StreamHub identity (app name, branding, launcher icons, TV banner).
+            - Removed signature and genuine-app anti-tamper locks.
+            - Clean TV and mobile layout.
+            - Built and signed with APKTool 3.0.3 & uber-apk-signer.
+          files: streamhub-v1.0.8.apk

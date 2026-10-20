@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, biblioteker og licenser</string>
     <string name="about_attributions_title">Licenser og tilskrivninger</string>
     <string name="about_changelog_title">Ændringslog</string>
-    <string name="about_credits_body">"ClipBox er en ren og rolig måde at se film og serier på Android. Alt findes ét sted, så du kan browse hvad der er populært, søge efter noget bestemt eller fortsætte præcis hvor du slap.
+    <string name="about_credits_body">"StreamHub er en ren og rolig måde at se film og serier på Android. Alt findes ét sted, så du kan browse hvad der er populært, søge efter noget bestemt eller fortsætte præcis hvor du slap.
 
 Undertekster bliver fundet og synkroniseret for dig på en lang række sprog, hver titel har flere kilder, og alt hvad du ser kan sendes til en Chromecast eller et smart-tv. Appen kører på telefoner, tablets, Android TV og Fire TV, og en valgfri konto holder din liste og din historik i takt på tværs af dem alle.
 
-ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedre af det folk fortæller os."</string>
-    <string name="about_credits_title">Om ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub laves af et lille team, der selv bruger den hver dag, og den bliver bedre af det folk fortæller os."</string>
+    <string name="about_credits_title">Om StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Indholdskilder og varemærker</string>
     <string name="about_disclaimer_title">Ansvarsfraskrivelse</string>
     <string name="about_legal_title">Juridisk</string>
     <string name="about_privacy_subtitle">Hvilke data indsamles, og hvorfor</string>
     <string name="about_privacy_title">Privatlivspolitik</string>
-    <string name="about_terms_subtitle">Hvordan ClipBox kan bruges</string>
+    <string name="about_terms_subtitle">Hvordan StreamHub kan bruges</string>
     <string name="about_terms_title">Vilkår og betingelser</string>
     <string name="about_title">Om</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedr
     <string name="account_go_register">Ny her? Opret en konto</string>
     <string name="account_go_register_action">Opret en konto</string>
     <string name="account_guest">Gæst</string>
-    <string name="account_member">ClipBox medlem</string>
+    <string name="account_member">StreamHub medlem</string>
     <string name="account_member_since_fmt">Medlem siden %1$s</string>
     <string name="account_new_password_hint">Ny adgangskode</string>
     <string name="account_new_username_hint">Nyt brugernavn</string>
@@ -65,7 +65,7 @@ ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedr
     <string name="account_recovery_code">Gendannelseskode</string>
     <string name="account_recovery_code_hint">Gendannelseskode</string>
     <string name="account_register">Opret konto</string>
-    <string name="account_register_subtitle">Opret din ClipBox-konto</string>
+    <string name="account_register_subtitle">Opret din StreamHub-konto</string>
     <string name="account_session_ended">Din konto er ikke længere tilgængelig. Du er blevet logget ud.</string>
     <string name="account_settings_section">Kontoindstillinger</string>
     <string name="account_sign_in">Log ind</string>
@@ -73,7 +73,7 @@ ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedr
     <string name="account_sign_out">Log ud</string>
     <string name="account_signed_out_offline">Logget ud. Din liste kunne ikke synkroniseres, så den er blevet gemt på denne enhed.</string>
     <string name="account_signing_in">Logger ind…</string>
-    <string name="account_subtitle">Log ind på din ClipBox-konto</string>
+    <string name="account_subtitle">Log ind på din StreamHub-konto</string>
     <string name="account_sync_done">Synkronisering fuldført</string>
     <string name="account_terms_required">Gennemgå venligst vilkår og betingelser, før du tilmelder dig</string>
     <string name="account_title">Konto</string>
@@ -99,21 +99,21 @@ ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedr
     <string name="actor_read_more">Læs mere</string>
     <string name="actor_wikipedia_failed">Kunne ikke åbne Wikipedia.</string>
     <string name="ad_autoclose_fmt">Lukker automatisk om %1$d s</string>
-    <string name="ad_blocked_note">En annonceblokering stopper denne annonce. Annoncer holder ClipBox gratis: slå den fra for ClipBox, eller få VIP.</string>
+    <string name="ad_blocked_note">En annonceblokering stopper denne annonce. Annoncer holder StreamHub gratis: slå den fra for StreamHub, eller få VIP.</string>
     <string name="ad_close">Luk reklame</string>
     <string name="ad_label">Reklame</string>
     <string name="ad_loading">Indlæser reklame…</string>
     <string name="ad_open">Åbn reklame</string>
     <string name="ad_page_hint">Pilene flytter markøren · OK klikker · Tilbage lukker</string>
-    <string name="ad_popup_note">Reklamer holder ClipBox gratis og hjælper med at betale for serverne og vedligeholdelsen.</string>
+    <string name="ad_popup_note">Reklamer holder StreamHub gratis og hjælper med at betale for serverne og vedligeholdelsen.</string>
     <string name="ad_remove_with_vip">Ingen reklamer med VIP</string>
     <string name="add_to_favourites">Føj til favoritter</string>
     <string name="added_to_favourites">Tilføjet til favoritter</string>
     <string name="added_to_my_list">Tilføjet til Min liste</string>
     <string name="alert_dialog_title">Bemærk</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Fyld</string>
     <string name="aspect_fills_already">billedet fylder allerede skærmen</string>
     <string name="aspect_fit">Tilpas</string>
@@ -178,9 +178,9 @@ ClipBox laves af et lille team, der selv bruger den hver dag, og den bliver bedr
     <string name="call_notification_ongoing_text">Igangværende opkald</string>
     <string name="call_notification_screening_text">Et indgående opkald screenes</string>
     <string name="capture_blocked_exit">Afslut</string>
-    <string name="capture_blocked_intro">ClipBox kører ikke, så længe der er installeret et netværksopsnapnings- eller proxyværktøj på denne enhed.</string>
-    <string name="capture_blocked_outro">Afinstallér det, og åbn ClipBox igen.</string>
-    <string name="capture_blocked_title">ClipBox kan ikke køre på denne enhed</string>
+    <string name="capture_blocked_intro">StreamHub kører ikke, så længe der er installeret et netværksopsnapnings- eller proxyværktøj på denne enhed.</string>
+    <string name="capture_blocked_outro">Afinstallér det, og åbn StreamHub igen.</string>
+    <string name="capture_blocked_title">StreamHub kan ikke køre på denne enhed</string>
     <string name="cast_ad_label">Annonce</string>
     <string name="cast_button_cast">Cast</string>
     <string name="cast_casting_to_device">Caster til %1$s</string>
@@ -379,7 +379,7 @@ Du kan også indtaste dit tv's IP manuelt."</string>
     <string name="err_service_unavailable">Tjenesten er midlertidigt utilgængelig. Prøv venligst igen.</string>
     <string name="err_signed_out_sign_in">Du er blevet logget ud på denne enhed. Log ind igen.</string>
     <string name="err_too_many_requests">For mange anmodninger. Vent venligst et øjeblik.</string>
-    <string name="err_update_for_recovery">Opdater ClipBox til den nyeste version for at oprette en ny gendannelseskode.</string>
+    <string name="err_update_for_recovery">Opdater StreamHub til den nyeste version for at oprette en ny gendannelseskode.</string>
     <string name="error_a11y_label">Fejl: ugyldig</string>
     <string name="error_bad_intent">Modtog et ugyldigt link. Kunne ikke åbne den.</string>
     <string name="error_icon_content_description">Fejl</string>
@@ -458,16 +458,16 @@ Du kan også indtaste dit tv's IP manuelt."</string>
 
 Ikke alle titler kan faktisk afspilles, nogle virker og andre ikke.
 
-ClipBox er ny og under udvikling, der kan være nogle fejl."</string>
+StreamHub er ny og under udvikling, der kan være nogle fejl."</string>
     <string name="first_launch_ok">Forstår det</string>
     <string name="first_launch_title">Velkommen tilbage!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Download opdatering</string>
     <string name="force_update_fallback_msg">En ny version er påkrævet for at fortsætte med at bruge denne app.</string>
     <string name="force_update_subtitle">Opdatering påkrævet</string>
     <string name="gate_connecting">Indlæser</string>
     <string name="gate_retry">Prøv igen</string>
-    <string name="gate_unavailable_message">"ClipBox kan ikke nå sine servere.
+    <string name="gate_unavailable_message">"StreamHub kan ikke nå sine servere.
 Tjek venligst din forbindelse og prøv igen."</string>
     <string name="gate_unavailable_title">Tjenesten er ikke tilgængelig</string>
     <string name="genre_action">Handling</string>
@@ -492,7 +492,7 @@ Tjek venligst din forbindelse og prøv igen."</string>
     <string name="lang_available_body">Du bruger i øjeblikket appen på %1$s. Vil du skifte? Du kan ændre dette når som helst under Indstillinger.</string>
     <string name="lang_available_keep">Behold %1$s</string>
     <string name="lang_available_switch">Skift til %1$s</string>
-    <string name="lang_available_title">ClipBox er nu tilgængelig på %1$s</string>
+    <string name="lang_available_title">StreamHub er nu tilgængelig på %1$s</string>
     <string name="launcher_instructions">"Der er ikke noget, du skal gøre her.
 
 Hvis du har en stream-URL, kan du afspille den direkte nedenfor.
@@ -639,17 +639,17 @@ Tilføj film og serier fra detaljesiden."</string>
     <string name="pair_scan_allow">Tillad kamera</string>
     <string name="pair_scan_button">Scan QR-kode</string>
     <string name="pair_scan_hint">Ret kameraet mod QR-koden på dit tv</string>
-    <string name="pair_scan_no_camera">For at scanne koden skal ClipBox bruge dit kamera. Det bruges kun, mens denne skærm er åben.</string>
+    <string name="pair_scan_no_camera">For at scanne koden skal StreamHub bruge dit kamera. Det bruges kun, mens denne skærm er åben.</string>
     <string name="pair_scan_torch">Lommelygte</string>
     <string name="pair_scan_type_instead">Skriv koden i stedet</string>
-    <string name="pair_scan_wrong">Det er ikke en ClipBox-tv-kode. Scan koden på dit tv.</string>
+    <string name="pair_scan_wrong">Det er ikke en StreamHub-tv-kode. Scan koden på dit tv.</string>
     <string name="pair_tv_button">Log ind med din telefon</string>
     <string name="pair_tv_confirm_hint">Bekræft på telefonen, så logger dette tv selv ind.</string>
     <string name="pair_tv_done_fmt">Logget ind som %1$s</string>
     <string name="pair_tv_expires_fmt">Koden gælder i %1$s endnu</string>
     <string name="pair_tv_failed">Kunne ikke hente en kode. Tjek forbindelsen og prøv igen.</string>
     <string name="pair_tv_new_code">Ny kode</string>
-    <string name="pair_tv_or_code">Eller åbn ClipBox på telefonen, gå til Konto og så Log ind på tv, og indtast koden under QR-koden.</string>
+    <string name="pair_tv_or_code">Eller åbn StreamHub på telefonen, gå til Konto og så Log ind på tv, og indtast koden under QR-koden.</string>
     <string name="pair_tv_scan">Scan koden med telefonens kamera</string>
     <string name="pair_tv_waiting">Venter på din telefon…</string>
     <string name="parental_age_fmt">%1$d år og derunder</string>
@@ -718,7 +718,7 @@ Det var det. VIP slår selv til på dette tv, så snart betalingen er set."</str
 
 1. Tryk på Indløs en Azteco-voucher › Hvor køber jeg en voucher? og køb en Azteco Bitcoin-voucher (On-Chain) i en af butikkerne. Du betaler som du plejer, fx med kort.
 2. Du får en kode på 16 cifre.
-3. Tryk på Indløs en Azteco-voucher i ClipBox og derefter på Bitcoin-voucher. Vores voucherside åbner.
+3. Tryk på Indløs en Azteco-voucher i StreamHub og derefter på Bitcoin-voucher. Vores voucherside åbner.
 4. Indtast koden der. Vi indløser den for dig og tjekker, at den er kommet frem.
 
 Det var det. VIP slår selv til inden for et par minutter."</string>
@@ -751,12 +751,12 @@ Det var det. VIP slår selv til på dette tv inden for et par minutter."</string
     <string name="premium_state_confirming_title">Betaling modtaget</string>
     <string name="premium_state_partial_body_fmt">Du har betalt $%1$s. $%2$s mere, så er VIP dit. Det, du har betalt, gemmes på din konto.</string>
     <string name="premium_state_partial_title">Næsten færdig</string>
-    <string name="premium_state_vip_body">Ingen reklamer på nogen enhed, du logger ind på. Tak fordi du støtter ClipBox.</string>
+    <string name="premium_state_vip_body">Ingen reklamer på nogen enhed, du logger ind på. Tak fordi du støtter StreamHub.</string>
     <string name="premium_state_vip_title">Du er VIP</string>
     <string name="premium_state_waiting_body">Gennemfør betalingen på betalingssiden. Denne skærm opdaterer sig selv, så snart betalingen ses.</string>
     <string name="premium_state_waiting_title">Venter på din betaling</string>
     <string name="premium_tagline">Én betaling. Din for altid.</string>
-    <string name="premium_tv_phone_hint">Har du en Lightning-voucher? Indløs den i ClipBox på din telefon, logget ind på samme konto. VIP følger din konto til dette tv.</string>
+    <string name="premium_tv_phone_hint">Har du en Lightning-voucher? Indløs den i StreamHub på din telefon, logget ind på samme konto. VIP følger din konto til dette tv.</string>
     <string name="premium_tv_scan">Scan med telefonen for at betale</string>
     <string name="premium_tv_show_checkout">Betal med krypto</string>
     <string name="premium_tv_show_voucher">Bitcoin-voucher</string>
@@ -859,7 +859,7 @@ Det var det. VIP slår selv til på dette tv inden for et par minutter."</string
     <string name="servers_probe_starting">Starter… %1$d s tilbage</string>
     <string name="servers_tab_experimental">Flere sprog</string>
     <string name="servers_tab_main">Standard</string>
-    <string name="settings_about">Om ClipBox</string>
+    <string name="settings_about">Om StreamHub</string>
     <string name="settings_about_summary">Version info, kreditter og changelog</string>
     <string name="settings_account">Min konto</string>
     <string name="settings_account_loggedout">Ikke logget ind</string>
@@ -891,13 +891,13 @@ Det var det. VIP slår selv til på dette tv inden for et par minutter."</string
     <string name="settings_next_episode">Afspil næste afsnit automatisk</string>
     <string name="settings_next_episode_summary">Vis en nedtælling ved rulleteksterne og fortsæt af sig selv</string>
     <string name="settings_notifications">Meddelelser</string>
-    <string name="settings_notifications_summary">Modtag meddelelser og opdateringer fra ClipBox</string>
+    <string name="settings_notifications_summary">Modtag meddelelser og opdateringer fra StreamHub</string>
     <string name="settings_parental">Forældrekontrol</string>
     <string name="settings_parental_off">Fra</string>
     <string name="settings_parental_on_fmt">Skjuler titler med en aldersgrænse over %1$d</string>
     <string name="settings_pref_sub_lang">Foretrukken sprog</string>
     <string name="settings_reset_app">Nulstil app</string>
-    <string name="settings_reset_app_confirm">Dette sletter alle appdata og lukker ClipBox. Fortsætte?</string>
+    <string name="settings_reset_app_confirm">Dette sletter alle appdata og lukker StreamHub. Fortsætte?</string>
     <string name="settings_reset_app_summary">Slet alle data og start på en frisk</string>
     <string name="settings_reset_tips">Ryd Min liste, favoritter og Fortsæt med at se</string>
     <string name="settings_reset_tips_confirm">Ryd hele Min liste, dine favoritter og alt, du er midt i?</string>
@@ -1076,7 +1076,7 @@ Det var det. VIP slår selv til på dette tv inden for et par minutter."</string
     <string name="tamper_blocked">Denne kopi af appen er ikke ægte.</string>
     <string name="terms_gate_accept">Accepter</string>
     <string name="terms_gate_decline">Afslå</string>
-    <string name="terms_gate_message">Gennemgå og accepter vores vilkår og betingelser for at begynde at bruge ClipBox.</string>
+    <string name="terms_gate_message">Gennemgå og accepter vores vilkår og betingelser for at begynde at bruge StreamHub.</string>
     <string name="terms_gate_subtitle">Læs og accepter disse for at fortsætte</string>
     <string name="terms_gate_title">Vilkår og betingelser</string>
     <string name="touch_lock_desc">Låseskærm</string>
@@ -1084,14 +1084,14 @@ Det var det. VIP slår selv til på dette tv inden for et par minutter."</string
     <string name="touch_locked_toast">Skærm låst. Tryk på låseikonet for at låse op.</string>
     <string name="track_off">Fra</string>
     <string name="tv_account_avatar">Profilbillede</string>
-    <string name="tv_account_avatar_phone_only">Et profilbillede vælges fra et foto på din enhed. Dette tv har ingen app, der kan det, så indstil det i ClipBox på telefonen, så dukker det op her.</string>
+    <string name="tv_account_avatar_phone_only">Et profilbillede vælges fra et foto på din enhed. Dette tv har ingen app, der kan det, så indstil det i StreamHub på telefonen, så dukker det op her.</string>
     <string name="tv_account_choose_image">Vælg et billede</string>
     <string name="tv_account_new_password_hint">Ny adgangskode</string>
     <string name="tv_account_recover_action">Nulstil adgangskoden</string>
     <string name="tv_account_recovery_fmt">"Gendannelseskode: %1$s
 
 Skriv den ned. Den vises kun én gang og er den eneste vej ind igen, hvis du glemmer din adgangskode."</string>
-    <string name="tv_account_register_hint">Har du ikke en konto endnu? Opret en i ClipBox-appen på din telefon, og log så ind her.</string>
+    <string name="tv_account_register_hint">Har du ikke en konto endnu? Opret en i StreamHub-appen på din telefon, og log så ind her.</string>
     <string name="tv_account_saved">Gemt</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Billede (sløret)</string>
@@ -1194,7 +1194,7 @@ Skriv den ned. Den vises kun én gang og er den eneste vej ind igen, hvis du gle
     <string name="tv_ui_scale_title">Grænsefladens størrelse</string>
     <string name="tv_value_off">Fra</string>
     <string name="tv_value_on">Til</string>
-    <string name="tv_whatsnew_body">ClipBox er bygget om til det store skærmbillede og din fjernbetjening. Alt det, du havde, er her stadig, bare nemmere at nå fra sofaen. Foretrækker du det gamle udseende? Du kan skifte tilbage når som helst i indstillingerne.</string>
+    <string name="tv_whatsnew_body">StreamHub er bygget om til det store skærmbillede og din fjernbetjening. Alt det, du havde, er her stadig, bare nemmere at nå fra sofaen. Foretrækker du det gamle udseende? Du kan skifte tilbage når som helst i indstillingerne.</string>
     <string name="tv_whatsnew_classic">Brug det klassiske udseende</string>
     <string name="tv_whatsnew_continue">Tag et kig</string>
     <string name="tv_whatsnew_title">Et nyt udseende til tv</string>
@@ -1211,21 +1211,21 @@ Download og installer den nu?"</string>
     <string name="update_downloading">Trækker de nye bits ind...</string>
     <string name="update_install_help">"1. Tryk på Opdater for at downloade den nye APK.
 2. Når installationsprogrammet åbnes, skal du trykke på Installer.
-3. Hvis Android blokerer det, tillad \"Installer ukendte apps\" for ClipBox, og tryk derefter på Installer igen.
+3. Hvis Android blokerer det, tillad \"Installer ukendte apps\" for StreamHub, og tryk derefter på Installer igen.
 4. Dine indstillinger og liste bevares, den installeres over den aktuelle app."</string>
     <string name="update_install_help_summary">Hvad skal man gøre, hvis installationen er blokeret</string>
     <string name="update_install_help_title">Sådan installeres</string>
     <string name="update_later">Senere</string>
-    <string name="update_permission_msg_firetv">"Dit Fire TV installerer kun opdateringer fra apps, du tillader. Vælg Åbn indstillinger, slå ClipBox til under \"Installer ukendte apps\", og tryk på Tilbage. Opdateringen fortsætter derefter af sig selv.
+    <string name="update_permission_msg_firetv">"Dit Fire TV installerer kun opdateringer fra apps, du tillader. Vælg Åbn indstillinger, slå StreamHub til under \"Installer ukendte apps\", og tryk på Tilbage. Opdateringen fortsætter derefter af sig selv.
 
-Hvis skærmen ikke åbner: Indstillinger > Mit Fire TV > Udviklerindstillinger > Installer ukendte apps > ClipBox. Ingen udviklerindstillinger? Gå først til Indstillinger > Mit Fire TV > Om, og tryk 7 gange på OK på enhedens navn."</string>
-    <string name="update_permission_msg_phone">Android installerer kun opdateringer fra apps, du tillader. Tryk på Åbn indstillinger, slå \"Tillad fra denne kilde\" til for ClipBox, og gå tilbage. Opdateringen fortsætter derefter af sig selv.</string>
-    <string name="update_permission_msg_tv">"Dit tv installerer kun opdateringer fra apps, du tillader. Vælg Åbn indstillinger, slå ClipBox til under \"Installer ukendte apps\", og tryk på Tilbage. Opdateringen fortsætter derefter af sig selv.
+Hvis skærmen ikke åbner: Indstillinger > Mit Fire TV > Udviklerindstillinger > Installer ukendte apps > StreamHub. Ingen udviklerindstillinger? Gå først til Indstillinger > Mit Fire TV > Om, og tryk 7 gange på OK på enhedens navn."</string>
+    <string name="update_permission_msg_phone">Android installerer kun opdateringer fra apps, du tillader. Tryk på Åbn indstillinger, slå \"Tillad fra denne kilde\" til for StreamHub, og gå tilbage. Opdateringen fortsætter derefter af sig selv.</string>
+    <string name="update_permission_msg_tv">"Dit tv installerer kun opdateringer fra apps, du tillader. Vælg Åbn indstillinger, slå StreamHub til under \"Installer ukendte apps\", og tryk på Tilbage. Opdateringen fortsætter derefter af sig selv.
 
-Hvis skærmen ikke åbner: Indstillinger > Apps > Sikkerhed og begrænsninger > Ukendte kilder > ClipBox."</string>
+Hvis skærmen ikke åbner: Indstillinger > Apps > Sikkerhed og begrænsninger > Ukendte kilder > StreamHub."</string>
     <string name="update_permission_not_opened">Indstillingerne kunne ikke åbnes. Følg trinene på skærmen.</string>
     <string name="update_permission_open">Åbn indstillinger</string>
-    <string name="update_permission_title">Tillad ClipBox at installere opdateringer</string>
+    <string name="update_permission_title">Tillad StreamHub at installere opdateringer</string>
     <string name="update_unavailable">Opdateringstjenesten er ikke tilgængelig. Appen kan ikke søge efter opdateringer lige nu.</string>
     <string name="update_up_to_date">Du er allerede på den seneste version. Pæn.</string>
     <string name="v7_preference_off">FRA</string>
@@ -1240,10 +1240,10 @@ Hvis skærmen ikke åbner: Indstillinger > Apps > Sikkerhed og begrænsninger > 
     <string name="voucher_ln_bad">Det ligner ikke et Lightning-voucherlink. Det starter med LNURL.</string>
     <string name="voucher_ln_redeeming">Indløser din voucher…</string>
     <string name="voucher_ln_steps">"1. Åbn azte.co, vælg Lightning, og indløs din vouchercode der.
-2. Du får et Lightning-link (LNURL). Tryk på det for at åbne ClipBox, eller kopiér det og indsæt det her."</string>
+2. Du får et Lightning-link (LNURL). Tryk på det for at åbne StreamHub, eller kopiér det og indsæt det her."</string>
     <string name="voucher_loading_address">Gør din adresse klar…</string>
     <string name="voucher_onchain">Bitcoin-voucher</string>
-    <string name="voucher_onchain_note">Adressen hører til din konto for denne betaling. Du kan lukke ClipBox imens; VIP slås til af sig selv.</string>
+    <string name="voucher_onchain_note">Adressen hører til din konto for denne betaling. Du kan lukke StreamHub imens; VIP slås til af sig selv.</string>
     <string name="voucher_onchain_steps">"1. Åbn azte.co og indløs din vouchercode der.
 2. Når siden beder om en Bitcoin-adresse, så brug denne:"</string>
     <string name="voucher_onchain_steps_code">"1. Indtast den 16-cifrede kode fra din voucher herunder.

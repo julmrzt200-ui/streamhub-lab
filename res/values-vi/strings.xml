@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, thư viện và giấy phép</string>
     <string name="about_attributions_title">Giấy phép &amp; ghi công</string>
     <string name="about_changelog_title">Nhật ký thay đổi</string>
-    <string name="about_credits_body">"ClipBox là một cách gọn gàng và điềm tĩnh để xem phim và loạt phim trên Android. Mọi thứ nằm ở một chỗ, nên bạn có thể xem qua những gì đang phổ biến, tìm một tựa cụ thể, hoặc xem tiếp đúng chỗ đã dừng.
+    <string name="about_credits_body">"StreamHub là một cách gọn gàng và điềm tĩnh để xem phim và loạt phim trên Android. Mọi thứ nằm ở một chỗ, nên bạn có thể xem qua những gì đang phổ biến, tìm một tựa cụ thể, hoặc xem tiếp đúng chỗ đã dừng.
 
 Phụ đề được tìm và căn thời gian giúp bạn ở rất nhiều ngôn ngữ, mỗi tựa đều có vài nguồn, và thứ bạn đang xem có thể gửi sang Chromecast hoặc TV thông minh. Ứng dụng chạy trên điện thoại, máy tính bảng, Android TV và Fire TV, còn tài khoản tuỳ chọn giữ danh sách và lịch sử xem của bạn đồng nhất trên tất cả.
 
-ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên nhờ những gì mọi người nói với chúng tôi."</string>
-    <string name="about_credits_title">Giới thiệu về ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên nhờ những gì mọi người nói với chúng tôi."</string>
+    <string name="about_credits_title">Giới thiệu về StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Nguồn nội dung và nhãn hiệu</string>
     <string name="about_disclaimer_title">Tuyên bố từ chối trách nhiệm</string>
     <string name="about_legal_title">pháp lý</string>
     <string name="about_privacy_subtitle">Dữ liệu nào được thu thập và tại sao</string>
     <string name="about_privacy_title">Chính sách bảo mật</string>
-    <string name="about_terms_subtitle">Cách sử dụng ClipBox</string>
+    <string name="about_terms_subtitle">Cách sử dụng StreamHub</string>
     <string name="about_terms_title">Điều khoản &amp; Điều kiện</string>
     <string name="about_title">Giới thiệu</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên 
     <string name="account_go_register">Mới ở đây à? Tạo một tài khoản</string>
     <string name="account_go_register_action">Tạo một tài khoản</string>
     <string name="account_guest">khách</string>
-    <string name="account_member">Thành viên ClipBox</string>
+    <string name="account_member">Thành viên StreamHub</string>
     <string name="account_member_since_fmt">Thành viên kể từ %1$s</string>
     <string name="account_new_password_hint">Mật khẩu mới</string>
     <string name="account_new_username_hint">tên người dùng mới</string>
@@ -65,7 +65,7 @@ ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên 
     <string name="account_recovery_code">Mã khôi phục</string>
     <string name="account_recovery_code_hint">Mã khôi phục</string>
     <string name="account_register">Tạo tài khoản</string>
-    <string name="account_register_subtitle">Tạo tài khoản ClipBox của bạn</string>
+    <string name="account_register_subtitle">Tạo tài khoản StreamHub của bạn</string>
     <string name="account_session_ended">Tài khoản của bạn không còn có sẵn. Bạn đã đăng xuất.</string>
     <string name="account_settings_section">Cài đặt tài khoản</string>
     <string name="account_sign_in">Đăng nhập</string>
@@ -73,7 +73,7 @@ ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên 
     <string name="account_sign_out">Đăng xuất</string>
     <string name="account_signed_out_offline">Đã đăng xuất. Không thể đồng bộ hóa danh sách của bạn nên danh sách này đã được lưu trên thiết bị này.</string>
     <string name="account_signing_in">Đang đăng nhập…</string>
-    <string name="account_subtitle">Đăng nhập vào tài khoản ClipBox của bạn</string>
+    <string name="account_subtitle">Đăng nhập vào tài khoản StreamHub của bạn</string>
     <string name="account_sync_done">Đồng bộ hóa hoàn tất</string>
     <string name="account_terms_required">Vui lòng xem lại Điều khoản &amp; Điều kiện trước khi đăng ký</string>
     <string name="account_title">Tài khoản</string>
@@ -99,21 +99,21 @@ ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên 
     <string name="actor_read_more">Đọc thêm</string>
     <string name="actor_wikipedia_failed">Không thể mở Wikipedia.</string>
     <string name="ad_autoclose_fmt">Tự đóng sau %1$d giây</string>
-    <string name="ad_blocked_note">Trình chặn quảng cáo đang chặn quảng cáo này. Quảng cáo giúp ClipBox miễn phí: hãy tắt nó cho ClipBox, hoặc mua VIP.</string>
+    <string name="ad_blocked_note">Trình chặn quảng cáo đang chặn quảng cáo này. Quảng cáo giúp StreamHub miễn phí: hãy tắt nó cho StreamHub, hoặc mua VIP.</string>
     <string name="ad_close">Đóng quảng cáo</string>
     <string name="ad_label">Quảng cáo</string>
     <string name="ad_loading">Đang tải quảng cáo…</string>
     <string name="ad_open">Mở quảng cáo</string>
     <string name="ad_page_hint">Mũi tên di chuyển con trỏ · OK để nhấp · Quay lại để đóng</string>
-    <string name="ad_popup_note">Quảng cáo giúp ClipBox miễn phí và góp phần trả chi phí máy chủ và bảo trì.</string>
+    <string name="ad_popup_note">Quảng cáo giúp StreamHub miễn phí và góp phần trả chi phí máy chủ và bảo trì.</string>
     <string name="ad_remove_with_vip">Không quảng cáo với VIP</string>
     <string name="add_to_favourites">Thêm vào mục yêu thích</string>
     <string name="added_to_favourites">Đã thêm vào mục yêu thích</string>
     <string name="added_to_my_list">Đã thêm vào danh sách của tôi</string>
     <string name="alert_dialog_title">Thông báo</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Điền vào</string>
     <string name="aspect_fills_already">hình ảnh đã lấp đầy màn hình</string>
     <string name="aspect_fit">Vừa khung</string>
@@ -178,9 +178,9 @@ ClipBox do một nhóm nhỏ tự dùng mỗi ngày làm ra, và nó tốt lên 
     <string name="call_notification_ongoing_text">Cuộc gọi đang thực hiện</string>
     <string name="call_notification_screening_text">Đang sàng lọc cuộc gọi đến</string>
     <string name="capture_blocked_exit">Thoát</string>
-    <string name="capture_blocked_intro">ClipBox không chạy khi thiết bị này có cài công cụ bắt gói mạng hoặc proxy.</string>
-    <string name="capture_blocked_outro">Hãy gỡ nó rồi mở lại ClipBox.</string>
-    <string name="capture_blocked_title">ClipBox không thể chạy trên thiết bị này</string>
+    <string name="capture_blocked_intro">StreamHub không chạy khi thiết bị này có cài công cụ bắt gói mạng hoặc proxy.</string>
+    <string name="capture_blocked_outro">Hãy gỡ nó rồi mở lại StreamHub.</string>
+    <string name="capture_blocked_title">StreamHub không thể chạy trên thiết bị này</string>
     <string name="cast_ad_label">Quảng cáo</string>
     <string name="cast_button_cast">Truyền tới TV</string>
     <string name="cast_casting_to_device">Đang truyền tới %1$s</string>
@@ -379,7 +379,7 @@ Bạn cũng có thể nhập IP của TV theo cách thủ công."</string>
     <string name="err_service_unavailable">Dịch vụ tạm thời không có sẵn. Vui lòng thử lại.</string>
     <string name="err_signed_out_sign_in">Bạn đã bị đăng xuất trên thiết bị này. Hãy đăng nhập lại.</string>
     <string name="err_too_many_requests">Quá nhiều yêu cầu. Xin vui lòng chờ một lát.</string>
-    <string name="err_update_for_recovery">Hãy cập nhật ClipBox lên phiên bản mới nhất để tạo mã khôi phục mới.</string>
+    <string name="err_update_for_recovery">Hãy cập nhật StreamHub lên phiên bản mới nhất để tạo mã khôi phục mới.</string>
     <string name="error_a11y_label">Lỗi: không hợp lệ</string>
     <string name="error_bad_intent">Đã nhận được một liên kết không hợp lệ. Không thể mở nó.</string>
     <string name="error_icon_content_description">Lỗi</string>
@@ -458,7 +458,7 @@ Bạn cũng có thể nhập IP của TV theo cách thủ công."</string>
 
 Không phải mọi tựa game đều thực sự có thể chơi được, một số tựa game hoạt động được và một số khác thì không.
 
-ClipBox là sản phẩm mới và đang trong quá trình phát triển nên có thể có một số lỗi."</string>
+StreamHub là sản phẩm mới và đang trong quá trình phát triển nên có thể có một số lỗi."</string>
     <string name="first_launch_ok">Hiểu rồi</string>
     <string name="first_launch_title">Chào mừng trở lại!</string>
     <string name="footer_brand">hộp kẹp</string>
@@ -467,7 +467,7 @@ ClipBox là sản phẩm mới và đang trong quá trình phát triển nên c�
     <string name="force_update_subtitle">Yêu cầu cập nhật</string>
     <string name="gate_connecting">Đang tải</string>
     <string name="gate_retry">Thử lại</string>
-    <string name="gate_unavailable_message">"ClipBox không thể truy cập máy chủ của nó.
+    <string name="gate_unavailable_message">"StreamHub không thể truy cập máy chủ của nó.
 Vui lòng kiểm tra kết nối của bạn và thử lại."</string>
     <string name="gate_unavailable_title">Dịch vụ không có sẵn</string>
     <string name="genre_action">hành động</string>
@@ -492,7 +492,7 @@ Vui lòng kiểm tra kết nối của bạn và thử lại."</string>
     <string name="lang_available_body">Bạn hiện đang dùng ứng dụng bằng %1$s. Bạn có muốn chuyển không? Bạn có thể thay đổi bất cứ lúc nào trong Cài đặt.</string>
     <string name="lang_available_keep">Giữ %1$s</string>
     <string name="lang_available_switch">Chuyển sang %1$s</string>
-    <string name="lang_available_title">ClipBox hiện đã có bằng %1$s</string>
+    <string name="lang_available_title">StreamHub hiện đã có bằng %1$s</string>
     <string name="launcher_instructions">"Bạn không cần phải làm gì ở đây.
 
 Nếu có URL luồng, bạn có thể phát URL đó ngay bên dưới.
@@ -639,17 +639,17 @@ Thêm phim và chương trình từ trang chi tiết."</string>
     <string name="pair_scan_allow">Cho phép camera</string>
     <string name="pair_scan_button">Quét mã QR</string>
     <string name="pair_scan_hint">Hướng camera vào mã QR trên TV</string>
-    <string name="pair_scan_no_camera">Để quét mã, ClipBox cần dùng camera. Camera chỉ được dùng khi màn hình này đang mở.</string>
+    <string name="pair_scan_no_camera">Để quét mã, StreamHub cần dùng camera. Camera chỉ được dùng khi màn hình này đang mở.</string>
     <string name="pair_scan_torch">Đèn pin</string>
     <string name="pair_scan_type_instead">Nhập mã thay thế</string>
-    <string name="pair_scan_wrong">Đây không phải mã TV của ClipBox. Hãy quét mã trên TV của bạn.</string>
+    <string name="pair_scan_wrong">Đây không phải mã TV của StreamHub. Hãy quét mã trên TV của bạn.</string>
     <string name="pair_tv_button">Đăng nhập bằng điện thoại</string>
     <string name="pair_tv_confirm_hint">Xác nhận trên điện thoại, TV này sẽ tự đăng nhập.</string>
     <string name="pair_tv_done_fmt">Đã đăng nhập là %1$s</string>
     <string name="pair_tv_expires_fmt">Mã còn hiệu lực %1$s</string>
     <string name="pair_tv_failed">Không lấy được mã. Kiểm tra kết nối rồi thử lại.</string>
     <string name="pair_tv_new_code">Mã mới</string>
-    <string name="pair_tv_or_code">Hoặc mở ClipBox trên điện thoại, vào Tài khoản, rồi Đăng nhập trên TV, và nhập mã bên dưới mã QR.</string>
+    <string name="pair_tv_or_code">Hoặc mở StreamHub trên điện thoại, vào Tài khoản, rồi Đăng nhập trên TV, và nhập mã bên dưới mã QR.</string>
     <string name="pair_tv_scan">Quét mã bằng camera điện thoại</string>
     <string name="pair_tv_waiting">Đang chờ điện thoại…</string>
     <string name="parental_age_fmt">%1$d tuổi trở xuống</string>
@@ -718,7 +718,7 @@ Vậy là xong. VIP tự bật trên TV này ngay khi thấy khoản thanh toán
 
 1. Nhấn Đổi phiếu Azteco › Mua phiếu ở đâu? và mua một phiếu Bitcoin Azteco (On-Chain) ở một trong các cửa hàng. Bạn trả tiền như bình thường, ví dụ bằng thẻ.
 2. Bạn nhận được một mã 16 chữ số.
-3. Trong ClipBox, chạm vào Đổi phiếu Azteco, rồi Phiếu Bitcoin. Trang voucher của chúng tôi sẽ mở ra.
+3. Trong StreamHub, chạm vào Đổi phiếu Azteco, rồi Phiếu Bitcoin. Trang voucher của chúng tôi sẽ mở ra.
 4. Nhập mã tại đó. Chúng tôi đổi mã giúp bạn và kiểm tra xem khoản thanh toán đã đến chưa.
 
 Vậy là xong. VIP tự bật trong vài phút."</string>
@@ -751,12 +751,12 @@ Vậy là xong. VIP tự bật trên TV này trong vài phút."</string>
     <string name="premium_state_confirming_title">Đã nhận thanh toán</string>
     <string name="premium_state_partial_body_fmt">Bạn đã trả $%1$s. Thêm $%2$s nữa là VIP thuộc về bạn. Số tiền đã trả được giữ trong tài khoản của bạn.</string>
     <string name="premium_state_partial_title">Sắp xong</string>
-    <string name="premium_state_vip_body">Không quảng cáo trên mọi thiết bị bạn đăng nhập. Cảm ơn bạn đã ủng hộ ClipBox.</string>
+    <string name="premium_state_vip_body">Không quảng cáo trên mọi thiết bị bạn đăng nhập. Cảm ơn bạn đã ủng hộ StreamHub.</string>
     <string name="premium_state_vip_title">Bạn là VIP</string>
     <string name="premium_state_waiting_body">Hoàn tất thanh toán trên trang thanh toán. Màn hình này tự cập nhật ngay khi thấy khoản thanh toán.</string>
     <string name="premium_state_waiting_title">Đang chờ thanh toán của bạn</string>
     <string name="premium_tagline">Thanh toán một lần. Của bạn mãi mãi.</string>
-    <string name="premium_tv_phone_hint">Có phiếu Lightning? Hãy đổi trong ClipBox trên điện thoại, đăng nhập cùng tài khoản. VIP sẽ theo tài khoản đến TV này.</string>
+    <string name="premium_tv_phone_hint">Có phiếu Lightning? Hãy đổi trong StreamHub trên điện thoại, đăng nhập cùng tài khoản. VIP sẽ theo tài khoản đến TV này.</string>
     <string name="premium_tv_scan">Quét bằng điện thoại để thanh toán</string>
     <string name="premium_tv_show_checkout">Thanh toán bằng tiền mã hóa</string>
     <string name="premium_tv_show_voucher">Phiếu Bitcoin</string>
@@ -859,7 +859,7 @@ Vậy là xong. VIP tự bật trên TV này trong vài phút."</string>
     <string name="servers_probe_starting">Đang bắt đầu… còn %1$d giây</string>
     <string name="servers_tab_experimental">Thêm ngôn ngữ</string>
     <string name="servers_tab_main">Tiêu chuẩn</string>
-    <string name="settings_about">Giới thiệu về ClipBox</string>
+    <string name="settings_about">Giới thiệu về StreamHub</string>
     <string name="settings_about_summary">Thông tin phiên bản, tín dụng và nhật ký thay đổi</string>
     <string name="settings_account">Tài khoản của tôi</string>
     <string name="settings_account_loggedout">Chưa đăng nhập</string>
@@ -891,13 +891,13 @@ Vậy là xong. VIP tự bật trên TV này trong vài phút."</string>
     <string name="settings_next_episode">Tự động phát tập tiếp theo</string>
     <string name="settings_next_episode_summary">Hiển thị đếm ngược ở phần cuối và tự chuyển tiếp</string>
     <string name="settings_notifications">Thông báo</string>
-    <string name="settings_notifications_summary">Nhận thông báo và cập nhật từ ClipBox</string>
+    <string name="settings_notifications_summary">Nhận thông báo và cập nhật từ StreamHub</string>
     <string name="settings_parental">Kiểm soát của phụ huynh</string>
     <string name="settings_parental_off">Tắt</string>
     <string name="settings_parental_on_fmt">Đang ẩn nội dung được xếp hạng trên %1$d tuổi</string>
     <string name="settings_pref_sub_lang">Ngôn ngữ ưa thích</string>
     <string name="settings_reset_app">Đặt lại ứng dụng</string>
-    <string name="settings_reset_app_confirm">Thao tác này sẽ xóa tất cả dữ liệu ứng dụng và đóng ClipBox. Tiếp tục?</string>
+    <string name="settings_reset_app_confirm">Thao tác này sẽ xóa tất cả dữ liệu ứng dụng và đóng StreamHub. Tiếp tục?</string>
     <string name="settings_reset_app_summary">Xóa tất cả dữ liệu và bắt đầu lại</string>
     <string name="settings_reset_tips">Xóa Danh sách của tôi, mục yêu thích và Xem tiếp</string>
     <string name="settings_reset_tips_confirm">Xóa toàn bộ Danh sách của tôi, mục yêu thích và mọi thứ bạn đang xem dở?</string>
@@ -1076,7 +1076,7 @@ Vậy là xong. VIP tự bật trên TV này trong vài phút."</string>
     <string name="tamper_blocked">Bản sao của ứng dụng này không phải là chính hãng.</string>
     <string name="terms_gate_accept">Chấp nhận</string>
     <string name="terms_gate_decline">Từ chối</string>
-    <string name="terms_gate_message">Vui lòng xem lại và chấp nhận Điều khoản &amp; Điều kiện của chúng tôi để bắt đầu sử dụng ClipBox.</string>
+    <string name="terms_gate_message">Vui lòng xem lại và chấp nhận Điều khoản &amp; Điều kiện của chúng tôi để bắt đầu sử dụng StreamHub.</string>
     <string name="terms_gate_subtitle">Vui lòng đọc và chấp nhận những điều này để tiếp tục</string>
     <string name="terms_gate_title">Điều khoản &amp; Điều kiện</string>
     <string name="touch_lock_desc">Màn hình khóa</string>
@@ -1084,14 +1084,14 @@ Vậy là xong. VIP tự bật trên TV này trong vài phút."</string>
     <string name="touch_locked_toast">Màn hình bị khóa. Nhấn vào biểu tượng khóa để mở khóa.</string>
     <string name="track_off">Tắt</string>
     <string name="tv_account_avatar">Ảnh đại diện</string>
-    <string name="tv_account_avatar_phone_only">Ảnh đại diện được chọn từ ảnh trên thiết bị của bạn. TV này không có ứng dụng nào làm được việc đó, vì vậy hãy đặt ảnh trong ClipBox trên điện thoại và nó sẽ xuất hiện ở đây.</string>
+    <string name="tv_account_avatar_phone_only">Ảnh đại diện được chọn từ ảnh trên thiết bị của bạn. TV này không có ứng dụng nào làm được việc đó, vì vậy hãy đặt ảnh trong StreamHub trên điện thoại và nó sẽ xuất hiện ở đây.</string>
     <string name="tv_account_choose_image">Chọn ảnh</string>
     <string name="tv_account_new_password_hint">Mật khẩu mới</string>
     <string name="tv_account_recover_action">Đặt lại mật khẩu</string>
     <string name="tv_account_recovery_fmt">"Mã khôi phục: %1$s
 
 Hãy ghi lại. Mã chỉ hiện một lần và là cách duy nhất để vào lại nếu bạn quên mật khẩu."</string>
-    <string name="tv_account_register_hint">Chưa có tài khoản? Hãy tạo trong ứng dụng ClipBox trên điện thoại, rồi đăng nhập tại đây.</string>
+    <string name="tv_account_register_hint">Chưa có tài khoản? Hãy tạo trong ứng dụng StreamHub trên điện thoại, rồi đăng nhập tại đây.</string>
     <string name="tv_account_saved">Đã lưu</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Hình ảnh (làm mờ)</string>
@@ -1194,7 +1194,7 @@ Hãy ghi lại. Mã chỉ hiện một lần và là cách duy nhất để vào
     <string name="tv_ui_scale_title">Kích thước giao diện</string>
     <string name="tv_value_off">Tắt</string>
     <string name="tv_value_on">Bật</string>
-    <string name="tv_whatsnew_body">ClipBox đã được dựng lại cho màn hình lớn và chiếc điều khiển của bạn. Mọi thứ bạn từng có vẫn còn đó, chỉ là dễ với tới hơn khi ngồi trên ghế. Bạn thích giao diện cũ hơn? Có thể chuyển lại bất cứ lúc nào trong phần cài đặt.</string>
+    <string name="tv_whatsnew_body">StreamHub đã được dựng lại cho màn hình lớn và chiếc điều khiển của bạn. Mọi thứ bạn từng có vẫn còn đó, chỉ là dễ với tới hơn khi ngồi trên ghế. Bạn thích giao diện cũ hơn? Có thể chuyển lại bất cứ lúc nào trong phần cài đặt.</string>
     <string name="tv_whatsnew_classic">Dùng giao diện cổ điển</string>
     <string name="tv_whatsnew_continue">Xem thử</string>
     <string name="tv_whatsnew_title">Diện mạo mới dành cho TV</string>
@@ -1211,21 +1211,21 @@ Tải xuống và cài đặt ngay bây giờ?"</string>
     <string name="update_downloading">Kéo vào các bit mới…</string>
     <string name="update_install_help">"1. Nhấn vào Cập nhật để tải APK mới xuống.
 2. Khi trình cài đặt mở ra, hãy nhấn vào Cài đặt.
-3. Nếu Android chặn ứng dụng này, hãy cho phép \"Cài đặt ứng dụng không xác định\" cho ClipBox, sau đó nhấn lại vào Cài đặt.
+3. Nếu Android chặn ứng dụng này, hãy cho phép \"Cài đặt ứng dụng không xác định\" cho StreamHub, sau đó nhấn lại vào Cài đặt.
 4. Cài đặt và danh sách của bạn được giữ lại, nó sẽ cài đặt trên ứng dụng hiện tại."</string>
     <string name="update_install_help_summary">Phải làm gì nếu cài đặt bị chặn</string>
     <string name="update_install_help_title">Cách cài đặt</string>
     <string name="update_later">sau này</string>
-    <string name="update_permission_msg_firetv">"Fire TV của bạn chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Chọn Mở cài đặt, bật ClipBox trong \"Cài đặt ứng dụng không xác định\" rồi nhấn Quay lại. Bản cập nhật sẽ tự tiếp tục.
+    <string name="update_permission_msg_firetv">"Fire TV của bạn chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Chọn Mở cài đặt, bật StreamHub trong \"Cài đặt ứng dụng không xác định\" rồi nhấn Quay lại. Bản cập nhật sẽ tự tiếp tục.
 
-Nếu màn hình đó không mở: Cài đặt > Fire TV của tôi > Tùy chọn nhà phát triển > Cài đặt ứng dụng không xác định > ClipBox. Không thấy Tùy chọn nhà phát triển? Trước tiên vào Cài đặt > Fire TV của tôi > Giới thiệu và nhấn OK 7 lần trên tên thiết bị."</string>
-    <string name="update_permission_msg_phone">Android chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Nhấn Mở cài đặt, bật \"Cho phép từ nguồn này\" cho ClipBox rồi quay lại. Bản cập nhật sẽ tự tiếp tục.</string>
-    <string name="update_permission_msg_tv">"TV của bạn chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Chọn Mở cài đặt, bật ClipBox trong \"Cài đặt ứng dụng không xác định\" rồi nhấn Quay lại. Bản cập nhật sẽ tự tiếp tục.
+Nếu màn hình đó không mở: Cài đặt > Fire TV của tôi > Tùy chọn nhà phát triển > Cài đặt ứng dụng không xác định > StreamHub. Không thấy Tùy chọn nhà phát triển? Trước tiên vào Cài đặt > Fire TV của tôi > Giới thiệu và nhấn OK 7 lần trên tên thiết bị."</string>
+    <string name="update_permission_msg_phone">Android chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Nhấn Mở cài đặt, bật \"Cho phép từ nguồn này\" cho StreamHub rồi quay lại. Bản cập nhật sẽ tự tiếp tục.</string>
+    <string name="update_permission_msg_tv">"TV của bạn chỉ cài bản cập nhật từ những ứng dụng bạn cho phép. Chọn Mở cài đặt, bật StreamHub trong \"Cài đặt ứng dụng không xác định\" rồi nhấn Quay lại. Bản cập nhật sẽ tự tiếp tục.
 
-Nếu màn hình đó không mở: Cài đặt > Ứng dụng > Bảo mật và hạn chế > Nguồn không xác định > ClipBox."</string>
+Nếu màn hình đó không mở: Cài đặt > Ứng dụng > Bảo mật và hạn chế > Nguồn không xác định > StreamHub."</string>
     <string name="update_permission_not_opened">Không mở được cài đặt. Hãy làm theo các bước trên màn hình.</string>
     <string name="update_permission_open">Mở cài đặt</string>
-    <string name="update_permission_title">Cho phép ClipBox cài đặt bản cập nhật</string>
+    <string name="update_permission_title">Cho phép StreamHub cài đặt bản cập nhật</string>
     <string name="update_unavailable">Dịch vụ cập nhật không có sẵn. Ứng dụng không thể kiểm tra các bản cập nhật ngay bây giờ.</string>
     <string name="update_up_to_date">Bạn đã sử dụng phiên bản mới nhất. Đẹp.</string>
     <string name="v7_preference_off">TẮT</string>
@@ -1240,10 +1240,10 @@ Nếu màn hình đó không mở: Cài đặt > Ứng dụng > Bảo mật và 
     <string name="voucher_ln_bad">Đây không giống liên kết phiếu Lightning. Liên kết bắt đầu bằng LNURL.</string>
     <string name="voucher_ln_redeeming">Đang đổi phiếu của bạn…</string>
     <string name="voucher_ln_steps">"1. Mở azte.co, chọn Lightning và đổi mã phiếu ở đó.
-2. Một liên kết Lightning (LNURL) sẽ hiện ra. Chạm vào để mở ClipBox, hoặc sao chép rồi dán vào đây."</string>
+2. Một liên kết Lightning (LNURL) sẽ hiện ra. Chạm vào để mở StreamHub, hoặc sao chép rồi dán vào đây."</string>
     <string name="voucher_loading_address">Đang chuẩn bị địa chỉ của bạn…</string>
     <string name="voucher_onchain">Phiếu Bitcoin</string>
-    <string name="voucher_onchain_note">Địa chỉ này thuộc tài khoản của bạn cho lần thanh toán này. Bạn có thể đóng ClipBox trong lúc chờ; VIP sẽ tự bật.</string>
+    <string name="voucher_onchain_note">Địa chỉ này thuộc tài khoản của bạn cho lần thanh toán này. Bạn có thể đóng StreamHub trong lúc chờ; VIP sẽ tự bật.</string>
     <string name="voucher_onchain_steps">"1. Mở azte.co và đổi mã phiếu ở đó.
 2. Khi được hỏi địa chỉ Bitcoin, hãy dùng địa chỉ này:"</string>
     <string name="voucher_onchain_steps_code">"1. Nhập mã 16 chữ số trên phiếu của bạn vào bên dưới.

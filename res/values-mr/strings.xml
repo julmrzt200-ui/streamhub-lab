@@ -23,14 +23,14 @@
     <string name="about_attributions_subtitle">TMDB, लायब्ररी आणि परवाने</string>
     <string name="about_attributions_title">परवाने आणि विशेषता</string>
     <string name="about_changelog_title">चेंजलॉग</string>
-    <string name="about_credits_body">"ClipBox हा Android वर चित्रपट आणि मालिका पाहण्याचा स्वच्छ, शांत मार्ग आहे. सर्व काही एकाच ठिकाणी असते, त्यामुळे लोकप्रिय काय आहे ते पाहता येते, विशिष्ट काही शोधता येते किंवा जिथे थांबला होतात तिथूनच पुढे जाता येते.
+    <string name="about_credits_body">"StreamHub हा Android वर चित्रपट आणि मालिका पाहण्याचा स्वच्छ, शांत मार्ग आहे. सर्व काही एकाच ठिकाणी असते, त्यामुळे लोकप्रिय काय आहे ते पाहता येते, विशिष्ट काही शोधता येते किंवा जिथे थांबला होतात तिथूनच पुढे जाता येते.
 
 उपशीर्षके अनेक भाषांमध्ये तुमच्यासाठी शोधली जातात आणि वेळेनुसार जुळवली जातात, प्रत्येक शीर्षकासाठी अनेक स्रोत असतात, आणि तुम्ही जे पाहत आहात ते Chromecast किंवा स्मार्ट टीव्हीवर पाठवता येते. अ‍ॅप फोन, टॅबलेट, Android TV आणि Fire TV वर चालते, आणि पर्यायी खाते तुमची यादी व इतिहास सर्वत्र एकसारखा ठेवते.
 
-ClipBox एक छोटी टीम बनवते जी स्वतः तो रोज वापरते, आणि लोक जे सांगतात त्यामुळेच तो सुधारत राहतो."</string>
+StreamHub एक छोटी टीम बनवते जी स्वतः तो रोज वापरते, आणि लोक जे सांगतात त्यामुळेच तो सुधारत राहतो."</string>
     <string name="about_credits_title">क्लिपबॉक्स बद्दल</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">सामग्री स्रोत आणि ट्रेडमार्क</string>
     <string name="about_disclaimer_title">अस्वीकरण</string>
     <string name="about_legal_title">कायदेशीर</string>
@@ -99,21 +99,21 @@ ClipBox एक छोटी टीम बनवते जी स्वतः त
     <string name="actor_read_more">अधिक वाचा</string>
     <string name="actor_wikipedia_failed">विकिपीडिया उघडू शकलो नाही.</string>
     <string name="ad_autoclose_fmt">%1$d सेकंदांत आपोआप बंद होईल</string>
-    <string name="ad_blocked_note">एक ॲड ब्लॉकर ही जाहिरात थांबवत आहे. जाहिरातींमुळे ClipBox मोफत राहते: ClipBox साठी ते बंद करा, किंवा VIP घ्या.</string>
+    <string name="ad_blocked_note">एक ॲड ब्लॉकर ही जाहिरात थांबवत आहे. जाहिरातींमुळे StreamHub मोफत राहते: StreamHub साठी ते बंद करा, किंवा VIP घ्या.</string>
     <string name="ad_close">जाहिरात बंद करा</string>
     <string name="ad_label">जाहिरात</string>
     <string name="ad_loading">जाहिरात लोड होत आहे…</string>
     <string name="ad_open">जाहिरात उघडा</string>
     <string name="ad_page_hint">बाण पॉइंटर हलवतात · OK क्लिक करते · Back बंद करते</string>
-    <string name="ad_popup_note">जाहिरातींमुळे ClipBox मोफत राहते आणि सर्व्हर व देखभालीचा खर्च भागवण्यास मदत होते.</string>
+    <string name="ad_popup_note">जाहिरातींमुळे StreamHub मोफत राहते आणि सर्व्हर व देखभालीचा खर्च भागवण्यास मदत होते.</string>
     <string name="ad_remove_with_vip">VIP सह जाहिराती नाहीत</string>
     <string name="add_to_favourites">आवडींमध्ये जोडा</string>
     <string name="added_to_favourites">आवडींमध्ये जोडले</string>
     <string name="added_to_my_list">माझ्या यादीत जोडले</string>
     <string name="alert_dialog_title">लक्ष द्या</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">भरा</string>
     <string name="aspect_fills_already">चित्र आधीच स्क्रीन भरत आहे</string>
     <string name="aspect_fit">बसवा</string>
@@ -178,9 +178,9 @@ ClipBox एक छोटी टीम बनवते जी स्वतः त
     <string name="call_notification_ongoing_text">सुरू असलेला कॉल</string>
     <string name="call_notification_screening_text">इनकमिंग कॉल स्क्रीन करत आहे</string>
     <string name="capture_blocked_exit">बाहेर पडा</string>
-    <string name="capture_blocked_intro">या डिव्हाइसवर नेटवर्क कॅप्चर किंवा प्रॉक्सी साधन इन्स्टॉल असेपर्यंत ClipBox चालणार नाही.</string>
-    <string name="capture_blocked_outro">ते अनइन्स्टॉल करा आणि ClipBox पुन्हा उघडा.</string>
-    <string name="capture_blocked_title">या डिव्हाइसवर ClipBox चालू शकत नाही</string>
+    <string name="capture_blocked_intro">या डिव्हाइसवर नेटवर्क कॅप्चर किंवा प्रॉक्सी साधन इन्स्टॉल असेपर्यंत StreamHub चालणार नाही.</string>
+    <string name="capture_blocked_outro">ते अनइन्स्टॉल करा आणि StreamHub पुन्हा उघडा.</string>
+    <string name="capture_blocked_title">या डिव्हाइसवर StreamHub चालू शकत नाही</string>
     <string name="cast_ad_label">जाहिरात</string>
     <string name="cast_button_cast">कास्ट</string>
     <string name="cast_casting_to_device">%1$s वर कास्ट करत आहे</string>
@@ -379,7 +379,7 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="err_service_unavailable">सेवा तात्पुरती अनुपलब्ध. कृपया पुन्हा प्रयत्न करा.</string>
     <string name="err_signed_out_sign_in">या डिव्हाइसवर तुम्हाला साइन आउट केले आहे. पुन्हा साइन इन करा.</string>
     <string name="err_too_many_requests">खूप विनंत्या. कृपया थोडा वेळ थांबा.</string>
-    <string name="err_update_for_recovery">नवीन पुनर्प्राप्ती कोड तयार करण्यासाठी ClipBox नवीनतम आवृत्तीवर अपडेट करा.</string>
+    <string name="err_update_for_recovery">नवीन पुनर्प्राप्ती कोड तयार करण्यासाठी StreamHub नवीनतम आवृत्तीवर अपडेट करा.</string>
     <string name="error_a11y_label">एरर: चुकीचा</string>
     <string name="error_bad_intent">एक अवैध दुवा प्राप्त झाला. ते उघडू शकलो नाही.</string>
     <string name="error_icon_content_description">एरर</string>
@@ -492,7 +492,7 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="lang_available_body">तुम्ही सध्या अ‍ॅप %1$s मध्ये वापरत आहात. तुम्हाला बदलायचे आहे का? तुम्ही हे कधीही सेटिंग्जमध्ये बदलू शकता.</string>
     <string name="lang_available_keep">%1$s ठेवा</string>
     <string name="lang_available_switch">%1$s मध्ये बदला</string>
-    <string name="lang_available_title">ClipBox आता %1$s मध्ये उपलब्ध आहे</string>
+    <string name="lang_available_title">StreamHub आता %1$s मध्ये उपलब्ध आहे</string>
     <string name="launcher_instructions">"तुम्हाला येथे काहीही करण्याची आवश्यकता नाही.
 
 तुमच्याकडे स्ट्रीम URL असल्यास, तुम्ही ती थेट खाली प्ले करू शकता.
@@ -639,17 +639,17 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="pair_scan_allow">कॅमेऱ्याला परवानगी द्या</string>
     <string name="pair_scan_button">QR कोड स्कॅन करा</string>
     <string name="pair_scan_hint">कॅमेरा टीव्हीवरील QR कोडकडे धरा</string>
-    <string name="pair_scan_no_camera">कोड स्कॅन करण्यासाठी ClipBox ला कॅमेरा लागतो. ही स्क्रीन उघडी असेपर्यंतच तो वापरला जातो.</string>
+    <string name="pair_scan_no_camera">कोड स्कॅन करण्यासाठी StreamHub ला कॅमेरा लागतो. ही स्क्रीन उघडी असेपर्यंतच तो वापरला जातो.</string>
     <string name="pair_scan_torch">टॉर्च</string>
     <string name="pair_scan_type_instead">त्याऐवजी कोड टाइप करा</string>
-    <string name="pair_scan_wrong">हा ClipBox टीव्ही कोड नाही. तुमच्या टीव्हीवरील कोड स्कॅन करा.</string>
+    <string name="pair_scan_wrong">हा StreamHub टीव्ही कोड नाही. तुमच्या टीव्हीवरील कोड स्कॅन करा.</string>
     <string name="pair_tv_button">फोनने साइन इन करा</string>
     <string name="pair_tv_confirm_hint">फोनवर पुष्टी करा, हा टीव्ही आपोआप साइन इन होईल.</string>
     <string name="pair_tv_done_fmt">%1$s म्हणून साइन इन</string>
     <string name="pair_tv_expires_fmt">कोड आणखी %1$s वैध</string>
     <string name="pair_tv_failed">कोड मिळाला नाही. कनेक्शन तपासून पुन्हा प्रयत्न करा.</string>
     <string name="pair_tv_new_code">नवीन कोड</string>
-    <string name="pair_tv_or_code">किंवा फोनवर ClipBox उघडा, खाते आणि मग टीव्हीवर साइन इन मध्ये जा, आणि QR कोडखालील कोड टाका.</string>
+    <string name="pair_tv_or_code">किंवा फोनवर StreamHub उघडा, खाते आणि मग टीव्हीवर साइन इन मध्ये जा, आणि QR कोडखालील कोड टाका.</string>
     <string name="pair_tv_scan">फोनच्या कॅमेऱ्याने कोड स्कॅन करा</string>
     <string name="pair_tv_waiting">तुमच्या फोनची वाट पाहत आहे…</string>
     <string name="parental_age_fmt">%1$d वर्षे व त्याहून कमी</string>
@@ -718,7 +718,7 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
 
 1. Azteco व्हाउचर रिडीम करा › व्हाउचर कुठे खरेदी करायचे? वर टॅप करा आणि एखाद्या दुकानातून Azteco Bitcoin व्हाउचर (On-Chain) खरेदी करा. तुम्ही नेहमीप्रमाणे, उदाहरणार्थ कार्डने, पैसे भरता.
 2. तुम्हाला 16 अंकी कोड मिळतो.
-3. ClipBox मध्ये Azteco व्हाउचर रिडीम करा वर, नंतर Bitcoin व्हाउचर वर टॅप करा. आमचे व्हाउचर पेज उघडेल.
+3. StreamHub मध्ये Azteco व्हाउचर रिडीम करा वर, नंतर Bitcoin व्हाउचर वर टॅप करा. आमचे व्हाउचर पेज उघडेल.
 4. तिथे कोड टाका. आम्ही तुमच्यासाठी तो रिडीम करू आणि पेमेंट पोहोचले का ते तपासू.
 
 बस इतकेच. काही मिनिटांत VIP आपोआप सुरू होते."</string>
@@ -751,12 +751,12 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="premium_state_confirming_title">पेमेंट मिळाले</string>
     <string name="premium_state_partial_body_fmt">तुम्ही $%1$s भरले आहेत. आणखी $%2$s आणि VIP तुमचे. तुम्ही भरलेली रक्कम तुमच्या खात्यात राहते.</string>
     <string name="premium_state_partial_title">जवळजवळ झाले</string>
-    <string name="premium_state_vip_body">तुम्ही साइन इन केलेल्या कोणत्याही डिव्हाइसवर जाहिराती नाहीत. ClipBox ला पाठिंबा दिल्याबद्दल धन्यवाद.</string>
+    <string name="premium_state_vip_body">तुम्ही साइन इन केलेल्या कोणत्याही डिव्हाइसवर जाहिराती नाहीत. StreamHub ला पाठिंबा दिल्याबद्दल धन्यवाद.</string>
     <string name="premium_state_vip_title">तुम्ही VIP आहात</string>
     <string name="premium_state_waiting_body">पेमेंट पेजवर पेमेंट पूर्ण करा. पेमेंट दिसताच ही स्क्रीन आपोआप अपडेट होईल.</string>
     <string name="premium_state_waiting_title">तुमच्या पेमेंटची वाट पाहत आहोत</string>
     <string name="premium_tagline">एकदाच पेमेंट. कायमचे तुमचे.</string>
-    <string name="premium_tv_phone_hint">Lightning व्हाउचर आहे? तेच खाते वापरून तुमच्या फोनवरील ClipBox मध्ये रिडीम करा. VIP तुमच्या खात्यासह या टीव्हीवरही येईल.</string>
+    <string name="premium_tv_phone_hint">Lightning व्हाउचर आहे? तेच खाते वापरून तुमच्या फोनवरील StreamHub मध्ये रिडीम करा. VIP तुमच्या खात्यासह या टीव्हीवरही येईल.</string>
     <string name="premium_tv_scan">पेमेंटसाठी फोनने स्कॅन करा</string>
     <string name="premium_tv_show_checkout">क्रिप्टोने पेमेंट करा</string>
     <string name="premium_tv_show_voucher">Bitcoin व्हाउचर</string>
@@ -891,7 +891,7 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="settings_next_episode">पुढचा भाग आपोआप चालवा</string>
     <string name="settings_next_episode_summary">श्रेयनामावलीवर काउंटडाउन दाखवा आणि आपोआप पुढे जा</string>
     <string name="settings_notifications">सूचना</string>
-    <string name="settings_notifications_summary">ClipBox वरून घोषणा आणि अद्यतने प्राप्त करा</string>
+    <string name="settings_notifications_summary">StreamHub वरून घोषणा आणि अद्यतने प्राप्त करा</string>
     <string name="settings_parental">पालक नियंत्रण</string>
     <string name="settings_parental_off">बंद</string>
     <string name="settings_parental_on_fmt">%1$d पेक्षा वरचे रेटिंग असलेली शीर्षके लपवली जात आहेत</string>
@@ -1084,14 +1084,14 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="touch_locked_toast">स्क्रीन लॉक केली. अनलॉक करण्यासाठी लॉक चिन्हावर टॅप करा.</string>
     <string name="track_off">बंद</string>
     <string name="tv_account_avatar">प्रोफाइल फोटो</string>
-    <string name="tv_account_avatar_phone_only">प्रोफाइल फोटो तुमच्या डिव्हाइसवरील फोटोमधून निवडला जातो. या टीव्हीवर असे कोणतेही अ‍ॅप नाही, म्हणून फोनवरील ClipBox मध्ये सेट करा, तो इथेही दिसेल.</string>
+    <string name="tv_account_avatar_phone_only">प्रोफाइल फोटो तुमच्या डिव्हाइसवरील फोटोमधून निवडला जातो. या टीव्हीवर असे कोणतेही अ‍ॅप नाही, म्हणून फोनवरील StreamHub मध्ये सेट करा, तो इथेही दिसेल.</string>
     <string name="tv_account_choose_image">प्रतिमा निवडा</string>
     <string name="tv_account_new_password_hint">नवीन पासवर्ड</string>
     <string name="tv_account_recover_action">पासवर्ड रीसेट करा</string>
     <string name="tv_account_recovery_fmt">"रिकव्हरी कोड: %1$s
 
 हा लिहून ठेवा. तो एकदाच दाखवला जातो आणि पासवर्ड विसरल्यास परत येण्याचा हाच एकमेव मार्ग आहे."</string>
-    <string name="tv_account_register_hint">अजून खाते नाही? तुमच्या फोनवरील ClipBox अ‍ॅपमध्ये तयार करा, मग इथे साइन इन करा.</string>
+    <string name="tv_account_register_hint">अजून खाते नाही? तुमच्या फोनवरील StreamHub अ‍ॅपमध्ये तयार करा, मग इथे साइन इन करा.</string>
     <string name="tv_account_saved">जतन केले</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">चित्र (अस्पष्ट)</string>
@@ -1194,7 +1194,7 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="tv_ui_scale_title">इंटरफेसचा आकार</string>
     <string name="tv_value_off">बंद</string>
     <string name="tv_value_on">सुरू</string>
-    <string name="tv_whatsnew_body">मोठ्या स्क्रीनसाठी आणि तुमच्या रिमोटसाठी ClipBox नव्याने बांधले आहे. तुमच्याकडे जे होते ते सगळे अजूनही इथेच आहे, फक्त सोफ्यावरून गाठणे सोपे झाले आहे. पूर्वीचा लुक जास्त आवडतो? सेटिंग्जमध्ये जाऊन कधीही परत बदलू शकता.</string>
+    <string name="tv_whatsnew_body">मोठ्या स्क्रीनसाठी आणि तुमच्या रिमोटसाठी StreamHub नव्याने बांधले आहे. तुमच्याकडे जे होते ते सगळे अजूनही इथेच आहे, फक्त सोफ्यावरून गाठणे सोपे झाले आहे. पूर्वीचा लुक जास्त आवडतो? सेटिंग्जमध्ये जाऊन कधीही परत बदलू शकता.</string>
     <string name="tv_whatsnew_classic">क्लासिक लुक वापरा</string>
     <string name="tv_whatsnew_continue">एक नजर टाका</string>
     <string name="tv_whatsnew_title">टीव्हीसाठी नवा लुक</string>
@@ -1211,21 +1211,21 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="update_downloading">नवीन बिट्स खेचत आहे...</string>
     <string name="update_install_help">"1. नवीन APK डाउनलोड करण्यासाठी अपडेट वर टॅप करा.
 2. इंस्टॉलर उघडल्यावर, इंस्टॉल करा वर टॅप करा.
-३. Android ने ते ब्लॉक केल्यास, ClipBox साठी \"अज्ञात ॲप्स इंस्टॉल करा\" ला अनुमती द्या, त्यानंतर पुन्हा स्थापित करा वर टॅप करा.
+३. Android ने ते ब्लॉक केल्यास, StreamHub साठी \"अज्ञात ॲप्स इंस्टॉल करा\" ला अनुमती द्या, त्यानंतर पुन्हा स्थापित करा वर टॅप करा.
 4. तुमची सेटिंग्ज आणि यादी ठेवली जाते, ती सध्याच्या ॲपवर इंस्टॉल होते."</string>
     <string name="update_install_help_summary">स्थापना अवरोधित असल्यास काय करावे</string>
     <string name="update_install_help_title">कसे स्थापित करावे</string>
     <string name="update_later">नंतर</string>
-    <string name="update_permission_msg_firetv">"तुमचा Fire TV फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करतो. सेटिंग्ज उघडा निवडा, \"अज्ञात अ‍ॅप्स इन्स्टॉल करा\" मध्ये ClipBox सुरू करा आणि मागे दाबा. अपडेट आपोआप पुढे सुरू राहील.
+    <string name="update_permission_msg_firetv">"तुमचा Fire TV फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करतो. सेटिंग्ज उघडा निवडा, \"अज्ञात अ‍ॅप्स इन्स्टॉल करा\" मध्ये StreamHub सुरू करा आणि मागे दाबा. अपडेट आपोआप पुढे सुरू राहील.
 
-ती स्क्रीन उघडली नाही तर: सेटिंग्ज > माझा Fire TV > डेव्हलपर पर्याय > अज्ञात अ‍ॅप्स इन्स्टॉल करा > ClipBox. डेव्हलपर पर्याय दिसत नाहीत? आधी सेटिंग्ज > माझा Fire TV > माहिती येथे जा आणि डिव्हाइसच्या नावावर 7 वेळा OK दाबा."</string>
-    <string name="update_permission_msg_phone">Android फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करते. सेटिंग्ज उघडा वर टॅप करा, ClipBox साठी \"या स्रोतातून परवानगी द्या\" सुरू करा आणि मागे जा. अपडेट आपोआप पुढे सुरू राहील.</string>
-    <string name="update_permission_msg_tv">"तुमचा टीव्ही फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करतो. सेटिंग्ज उघडा निवडा, \"अज्ञात अ‍ॅप्स इन्स्टॉल करा\" मध्ये ClipBox सुरू करा आणि मागे दाबा. अपडेट आपोआप पुढे सुरू राहील.
+ती स्क्रीन उघडली नाही तर: सेटिंग्ज > माझा Fire TV > डेव्हलपर पर्याय > अज्ञात अ‍ॅप्स इन्स्टॉल करा > StreamHub. डेव्हलपर पर्याय दिसत नाहीत? आधी सेटिंग्ज > माझा Fire TV > माहिती येथे जा आणि डिव्हाइसच्या नावावर 7 वेळा OK दाबा."</string>
+    <string name="update_permission_msg_phone">Android फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करते. सेटिंग्ज उघडा वर टॅप करा, StreamHub साठी \"या स्रोतातून परवानगी द्या\" सुरू करा आणि मागे जा. अपडेट आपोआप पुढे सुरू राहील.</string>
+    <string name="update_permission_msg_tv">"तुमचा टीव्ही फक्त तुम्ही परवानगी दिलेल्या अ‍ॅप्समधून अपडेट इन्स्टॉल करतो. सेटिंग्ज उघडा निवडा, \"अज्ञात अ‍ॅप्स इन्स्टॉल करा\" मध्ये StreamHub सुरू करा आणि मागे दाबा. अपडेट आपोआप पुढे सुरू राहील.
 
-ती स्क्रीन उघडली नाही तर: सेटिंग्ज > अ‍ॅप्स > सुरक्षा आणि निर्बंध > अज्ञात स्रोत > ClipBox."</string>
+ती स्क्रीन उघडली नाही तर: सेटिंग्ज > अ‍ॅप्स > सुरक्षा आणि निर्बंध > अज्ञात स्रोत > StreamHub."</string>
     <string name="update_permission_not_opened">सेटिंग्ज उघडता आल्या नाहीत. स्क्रीनवरील पायऱ्या फॉलो करा.</string>
     <string name="update_permission_open">सेटिंग्ज उघडा</string>
-    <string name="update_permission_title">ClipBox ला अपडेट इन्स्टॉल करण्याची परवानगी द्या</string>
+    <string name="update_permission_title">StreamHub ला अपडेट इन्स्टॉल करण्याची परवानगी द्या</string>
     <string name="update_unavailable">अपडेट सेवा अनुपलब्ध. ॲप आत्ता अपडेट तपासू शकत नाही.</string>
     <string name="update_up_to_date">तुम्ही आधीपासूनच नवीनतम आवृत्तीवर आहात. छान.</string>
     <string name="v7_preference_off">बंद</string>
@@ -1240,10 +1240,10 @@ LG टीव्ही: सेटिंग्ज → नेटवर्क → LG
     <string name="voucher_ln_bad">ही Lightning व्हाउचर लिंक वाटत नाही. ती LNURL ने सुरू होते.</string>
     <string name="voucher_ln_redeeming">तुमचे व्हाउचर रिडीम होत आहे…</string>
     <string name="voucher_ln_steps">"1. azte.co उघडा, Lightning निवडा आणि तिथे तुमचा व्हाउचर कोड रिडीम करा.
-2. एक Lightning लिंक (LNURL) दिसेल. ClipBox उघडण्यासाठी त्यावर टॅप करा, किंवा ती कॉपी करून इथे पेस्ट करा."</string>
+2. एक Lightning लिंक (LNURL) दिसेल. StreamHub उघडण्यासाठी त्यावर टॅप करा, किंवा ती कॉपी करून इथे पेस्ट करा."</string>
     <string name="voucher_loading_address">तुमचा पत्ता तयार होत आहे…</string>
     <string name="voucher_onchain">Bitcoin व्हाउचर</string>
-    <string name="voucher_onchain_note">हा पत्ता या पेमेंटसाठी तुमच्या खात्याचा आहे. दरम्यान तुम्ही ClipBox बंद करू शकता; VIP आपोआप सुरू होईल.</string>
+    <string name="voucher_onchain_note">हा पत्ता या पेमेंटसाठी तुमच्या खात्याचा आहे. दरम्यान तुम्ही StreamHub बंद करू शकता; VIP आपोआप सुरू होईल.</string>
     <string name="voucher_onchain_steps">"1. azte.co उघडा आणि तिथे तुमचा व्हाउचर कोड रिडीम करा.
 2. Bitcoin पत्ता विचारल्यावर हा वापरा:"</string>
     <string name="voucher_onchain_steps_code">"1. खाली तुमच्या व्हाउचरचा 16 अंकी कोड टाका.

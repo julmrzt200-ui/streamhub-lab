@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, mga aklatan at lisensya</string>
     <string name="about_attributions_title">Mga lisensya at attribution</string>
     <string name="about_changelog_title">Changelog</string>
-    <string name="about_credits_body">"Ang ClipBox ay isang malinis at tahimik na paraan para manood ng mga pelikula at serye sa Android. Nasa iisang lugar ang lahat, kaya puwede mong tingnan kung ano ang sikat, maghanap ng partikular na bagay, o ituloy mismo kung saan ka huminto.
+    <string name="about_credits_body">"Ang StreamHub ay isang malinis at tahimik na paraan para manood ng mga pelikula at serye sa Android. Nasa iisang lugar ang lahat, kaya puwede mong tingnan kung ano ang sikat, maghanap ng partikular na bagay, o ituloy mismo kung saan ka huminto.
 
 Hinahanap at itinatapat ang timing ng mga subtitle para sa iyo sa maraming wika, may ilang pinagkukunan ang bawat pamagat, at ang pinapanood mo ay puwedeng ipadala sa Chromecast o smart TV. Gumagana ang app sa mga telepono, tablet, Android TV at Fire TV, at pinapanatiling magkatugma ng isang opsyonal na account ang listahan at kasaysayan mo sa lahat ng ito.
 
-Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti ito dahil sa mga sinasabi sa amin ng mga tao."</string>
-    <string name="about_credits_title">Tungkol sa ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+Ginawa ang StreamHub ng maliit na grupo na gumagamit nito araw-araw, at bumubuti ito dahil sa mga sinasabi sa amin ng mga tao."</string>
+    <string name="about_credits_title">Tungkol sa StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Mga mapagkukunan ng nilalaman at mga trademark</string>
     <string name="about_disclaimer_title">Disclaimer</string>
     <string name="about_legal_title">Legal</string>
     <string name="about_privacy_subtitle">Anong data ang nakolekta, at bakit</string>
     <string name="about_privacy_title">Patakaran sa privacy</string>
-    <string name="about_terms_subtitle">Paano maaaring gamitin ang ClipBox</string>
+    <string name="about_terms_subtitle">Paano maaaring gamitin ang StreamHub</string>
     <string name="about_terms_title">Mga Tuntunin at Kundisyon</string>
     <string name="about_title">Tungkol sa</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti i
     <string name="account_go_register">Bago dito? Gumawa ng account</string>
     <string name="account_go_register_action">Gumawa ng account</string>
     <string name="account_guest">panauhin</string>
-    <string name="account_member">Miyembro ng ClipBox</string>
+    <string name="account_member">Miyembro ng StreamHub</string>
     <string name="account_member_since_fmt">Miyembro mula noong %1$s</string>
     <string name="account_new_password_hint">Bagong password</string>
     <string name="account_new_username_hint">Bagong username</string>
@@ -65,7 +65,7 @@ Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti i
     <string name="account_recovery_code">Code sa pagbawi</string>
     <string name="account_recovery_code_hint">Recovery code</string>
     <string name="account_register">Gumawa ng account</string>
-    <string name="account_register_subtitle">Lumikha ng iyong ClipBox account</string>
+    <string name="account_register_subtitle">Lumikha ng iyong StreamHub account</string>
     <string name="account_session_ended">Hindi na available ang iyong account. Na-sign out ka.</string>
     <string name="account_settings_section">Mga setting ng account</string>
     <string name="account_sign_in">Mag-sign in</string>
@@ -73,7 +73,7 @@ Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti i
     <string name="account_sign_out">Mag-sign out</string>
     <string name="account_signed_out_offline">Naka-sign out. Hindi ma-sync ang iyong listahan, kaya itinago ito sa device na ito.</string>
     <string name="account_signing_in">Nagsa-sign in…</string>
-    <string name="account_subtitle">Mag-sign in sa iyong ClipBox account</string>
+    <string name="account_subtitle">Mag-sign in sa iyong StreamHub account</string>
     <string name="account_sync_done">Kumpleto na ang pag-sync</string>
     <string name="account_terms_required">Mangyaring suriin ang Mga Tuntunin at Kundisyon bago magparehistro</string>
     <string name="account_title">Account</string>
@@ -99,21 +99,21 @@ Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti i
     <string name="actor_read_more">Magbasa pa</string>
     <string name="actor_wikipedia_failed">Hindi mabuksan ang Wikipedia.</string>
     <string name="ad_autoclose_fmt">Awtomatikong magsasara sa %1$d s</string>
-    <string name="ad_blocked_note">May ad blocker na humaharang sa ad na ito. Pinapanatiling libre ng mga ad ang ClipBox: i-off ito para sa ClipBox, o kumuha ng VIP.</string>
+    <string name="ad_blocked_note">May ad blocker na humaharang sa ad na ito. Pinapanatiling libre ng mga ad ang StreamHub: i-off ito para sa StreamHub, o kumuha ng VIP.</string>
     <string name="ad_close">Isara ang ad</string>
     <string name="ad_label">Patalastas</string>
     <string name="ad_loading">Nilo-load ang ad…</string>
     <string name="ad_open">Buksan ang ad</string>
     <string name="ad_page_hint">Ginagalaw ng mga arrow ang pointer · OK para mag-click · Back para isara</string>
-    <string name="ad_popup_note">Pinapanatiling libre ng mga ad ang ClipBox at tumutulong silang bayaran ang mga server at ang pagpapanatili.</string>
+    <string name="ad_popup_note">Pinapanatiling libre ng mga ad ang StreamHub at tumutulong silang bayaran ang mga server at ang pagpapanatili.</string>
     <string name="ad_remove_with_vip">Walang ads kapag VIP</string>
     <string name="add_to_favourites">Idagdag sa Mga Paborito</string>
     <string name="added_to_favourites">Idinagdag sa Mga Paborito</string>
     <string name="added_to_my_list">Idinagdag sa Aking Listahan</string>
     <string name="alert_dialog_title">Pansinin</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Punan</string>
     <string name="aspect_fills_already">puno na ng larawan ang screen</string>
     <string name="aspect_fit">Ikasya</string>
@@ -178,9 +178,9 @@ Ginawa ang ClipBox ng maliit na grupo na gumagamit nito araw-araw, at bumubuti i
     <string name="call_notification_ongoing_text">Kasalukuyang tawag</string>
     <string name="call_notification_screening_text">Nagsi-screen ng papasok na tawag</string>
     <string name="capture_blocked_exit">Lumabas</string>
-    <string name="capture_blocked_intro">Hindi tatakbo ang ClipBox habang may naka-install na network capture o proxy tool sa device na ito.</string>
-    <string name="capture_blocked_outro">I-uninstall ito at buksan ulit ang ClipBox.</string>
-    <string name="capture_blocked_title">Hindi makakatakbo ang ClipBox sa device na ito</string>
+    <string name="capture_blocked_intro">Hindi tatakbo ang StreamHub habang may naka-install na network capture o proxy tool sa device na ito.</string>
+    <string name="capture_blocked_outro">I-uninstall ito at buksan ulit ang StreamHub.</string>
+    <string name="capture_blocked_title">Hindi makakatakbo ang StreamHub sa device na ito</string>
     <string name="cast_ad_label">Ad</string>
     <string name="cast_button_cast">Cast</string>
     <string name="cast_casting_to_device">Nagka-cast sa %1$s</string>
@@ -379,7 +379,7 @@ Maaari mo ring ipasok nang manu-mano ang IP ng iyong TV."</string>
     <string name="err_service_unavailable">Pansamantalang hindi available ang serbisyo. Pakisubukang muli.</string>
     <string name="err_signed_out_sign_in">Na-sign out ka sa device na ito. Mag-sign in ulit.</string>
     <string name="err_too_many_requests">Masyadong maraming kahilingan. Mangyaring maghintay ng ilang sandali.</string>
-    <string name="err_update_for_recovery">I-update ang ClipBox sa pinakabagong bersyon para makagawa ng bagong code sa pagbawi.</string>
+    <string name="err_update_for_recovery">I-update ang StreamHub sa pinakabagong bersyon para makagawa ng bagong code sa pagbawi.</string>
     <string name="error_a11y_label">Error: invalid</string>
     <string name="error_bad_intent">Nakatanggap ng di-wastong link. Hindi ito mabuksan.</string>
     <string name="error_icon_content_description">Error</string>
@@ -458,16 +458,16 @@ Maaari mo ring ipasok nang manu-mano ang IP ng iyong TV."</string>
 
 Hindi lahat ng pamagat ay talagang nape-play, ang ilang trabaho at ang iba ay hindi.
 
-Ang ClipBox ay bago at nasa pagbuo, maaaring may ilang mga bug."</string>
+Ang StreamHub ay bago at nasa pagbuo, maaaring may ilang mga bug."</string>
     <string name="first_launch_ok">Nakuha ko</string>
     <string name="first_launch_title">Maligayang pagbabalik!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">I-download ang update</string>
     <string name="force_update_fallback_msg">Ang isang bagong bersyon ay kinakailangan upang magpatuloy sa paggamit ng app na ito.</string>
     <string name="force_update_subtitle">Kinakailangan ang pag-update</string>
     <string name="gate_connecting">Naglo-load</string>
     <string name="gate_retry">Subukan muli</string>
-    <string name="gate_unavailable_message">"Hindi maabot ng ClipBox ang mga server nito.
+    <string name="gate_unavailable_message">"Hindi maabot ng StreamHub ang mga server nito.
 Pakisuri ang iyong koneksyon at subukang muli."</string>
     <string name="gate_unavailable_title">Hindi Available ang Serbisyo</string>
     <string name="genre_action">Aksyon</string>
@@ -492,7 +492,7 @@ Pakisuri ang iyong koneksyon at subukang muli."</string>
     <string name="lang_available_body">Kasalukuyan mong ginagamit ang app sa %1$s. Gusto mo bang lumipat? Mababago mo ito anumang oras sa Mga Setting.</string>
     <string name="lang_available_keep">Panatilihin ang %1$s</string>
     <string name="lang_available_switch">Lumipat sa %1$s</string>
-    <string name="lang_available_title">Available na ang ClipBox sa %1$s</string>
+    <string name="lang_available_title">Available na ang StreamHub sa %1$s</string>
     <string name="launcher_instructions">"Wala kang kailangang gawin dito.
 
 Kung mayroon kang stream URL, maaari mo itong i-play nang direkta sa ibaba.
@@ -639,17 +639,17 @@ Magdagdag ng mga pelikula at palabas mula sa page ng detalye."</string>
     <string name="pair_scan_allow">Payagan ang camera</string>
     <string name="pair_scan_button">I-scan ang QR code</string>
     <string name="pair_scan_hint">Itapat ang camera sa QR code sa TV</string>
-    <string name="pair_scan_no_camera">Kailangan ng ClipBox ang camera para ma-scan ang code. Ginagamit lang ito habang bukas ang screen na ito.</string>
+    <string name="pair_scan_no_camera">Kailangan ng StreamHub ang camera para ma-scan ang code. Ginagamit lang ito habang bukas ang screen na ito.</string>
     <string name="pair_scan_torch">Flashlight</string>
     <string name="pair_scan_type_instead">I-type na lang ang code</string>
-    <string name="pair_scan_wrong">Hindi iyan ClipBox TV code. I-scan ang code sa TV mo.</string>
+    <string name="pair_scan_wrong">Hindi iyan StreamHub TV code. I-scan ang code sa TV mo.</string>
     <string name="pair_tv_button">Mag-sign in gamit ang telepono</string>
     <string name="pair_tv_confirm_hint">Kumpirmahin sa telepono at kusang magsa-sign in ang TV na ito.</string>
     <string name="pair_tv_done_fmt">Naka-sign in bilang %1$s</string>
     <string name="pair_tv_expires_fmt">Valid pa ang code nang %1$s</string>
     <string name="pair_tv_failed">Hindi makakuha ng code. Tingnan ang koneksyon at subukan ulit.</string>
     <string name="pair_tv_new_code">Bagong code</string>
-    <string name="pair_tv_or_code">O buksan ang ClipBox sa telepono, pumunta sa Account, tapos Mag-sign in sa TV, at ilagay ang code sa ilalim ng QR code.</string>
+    <string name="pair_tv_or_code">O buksan ang StreamHub sa telepono, pumunta sa Account, tapos Mag-sign in sa TV, at ilagay ang code sa ilalim ng QR code.</string>
     <string name="pair_tv_scan">I-scan ang code gamit ang camera ng telepono</string>
     <string name="pair_tv_waiting">Hinihintay ang telepono mo…</string>
     <string name="parental_age_fmt">%1$d taong gulang pababa</string>
@@ -718,7 +718,7 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito kapag nakita na ang bayad."</stri
 
 1. I-tap ang Gamitin ang Azteco voucher › Saan ako bibili ng voucher? at bumili ng Azteco Bitcoin voucher (On-Chain) sa isa sa mga tindahan. Magbabayad ka gaya ng dati, halimbawa gamit ang card.
 2. Makakakuha ka ng code na 16 na digit.
-3. Sa ClipBox, i-tap ang Gamitin ang Azteco voucher, tapos ang Voucher ng Bitcoin. Magbubukas ang aming voucher page.
+3. Sa StreamHub, i-tap ang Gamitin ang Azteco voucher, tapos ang Voucher ng Bitcoin. Magbubukas ang aming voucher page.
 4. Ilagay doon ang code. Kami ang magre-redeem nito para sa iyo at titingnan kung dumating na ang bayad.
 
 Iyon lang. Kusang bubukas ang VIP sa loob ng ilang minuto."</string>
@@ -751,12 +751,12 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito sa loob ng ilang minuto."</string
     <string name="premium_state_confirming_title">Natanggap ang bayad</string>
     <string name="premium_state_partial_body_fmt">Nakapagbayad ka na ng $%1$s. $%2$s pa at sa iyo na ang VIP. Nananatili sa account mo ang naibayad mo.</string>
     <string name="premium_state_partial_title">Malapit na</string>
-    <string name="premium_state_vip_body">Walang ads sa kahit anong device na pinag-sign in-an mo. Salamat sa pagsuporta sa ClipBox.</string>
+    <string name="premium_state_vip_body">Walang ads sa kahit anong device na pinag-sign in-an mo. Salamat sa pagsuporta sa StreamHub.</string>
     <string name="premium_state_vip_title">VIP ka na</string>
     <string name="premium_state_waiting_body">Tapusin ang pagbabayad sa payment page. Kusang mag-a-update ang screen na ito kapag nakita na ang bayad.</string>
     <string name="premium_state_waiting_title">Hinihintay ang bayad mo</string>
     <string name="premium_tagline">Isang bayad. Iyo habambuhay.</string>
-    <string name="premium_tv_phone_hint">May Lightning voucher ka? I-redeem ito sa ClipBox sa phone mo, naka-sign in sa parehong account. Susunod ang VIP sa account mo sa TV na ito.</string>
+    <string name="premium_tv_phone_hint">May Lightning voucher ka? I-redeem ito sa StreamHub sa phone mo, naka-sign in sa parehong account. Susunod ang VIP sa account mo sa TV na ito.</string>
     <string name="premium_tv_scan">I-scan gamit ang phone para magbayad</string>
     <string name="premium_tv_show_checkout">Magbayad gamit ang crypto</string>
     <string name="premium_tv_show_voucher">Voucher ng Bitcoin</string>
@@ -859,7 +859,7 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito sa loob ng ilang minuto."</string
     <string name="servers_probe_starting">Nagsisimula… %1$d s na lang</string>
     <string name="servers_tab_experimental">Higit pang wika</string>
     <string name="servers_tab_main">Standard</string>
-    <string name="settings_about">Tungkol sa ClipBox</string>
+    <string name="settings_about">Tungkol sa StreamHub</string>
     <string name="settings_about_summary">Impormasyon ng bersyon, mga kredito at changelog</string>
     <string name="settings_account">Ang aking account</string>
     <string name="settings_account_loggedout">Hindi naka-sign in</string>
@@ -891,13 +891,13 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito sa loob ng ilang minuto."</string
     <string name="settings_next_episode">Awtomatikong i-play ang susunod na episode</string>
     <string name="settings_next_episode_summary">Magpakita ng countdown sa credits at magpatuloy nang mag-isa</string>
     <string name="settings_notifications">Mga abiso</string>
-    <string name="settings_notifications_summary">Makatanggap ng mga anunsyo at update mula sa ClipBox</string>
+    <string name="settings_notifications_summary">Makatanggap ng mga anunsyo at update mula sa StreamHub</string>
     <string name="settings_parental">Parental controls</string>
     <string name="settings_parental_off">Naka-off</string>
     <string name="settings_parental_on_fmt">Itinatago ang mga pamagat na mas mataas sa %1$d ang rating</string>
     <string name="settings_pref_sub_lang">Ginustong wika</string>
     <string name="settings_reset_app">I-reset ang app</string>
-    <string name="settings_reset_app_confirm">Buburahin nito ang lahat ng data ng app at isasara ang ClipBox. Magpatuloy?</string>
+    <string name="settings_reset_app_confirm">Buburahin nito ang lahat ng data ng app at isasara ang StreamHub. Magpatuloy?</string>
     <string name="settings_reset_app_summary">Burahin ang lahat ng data at magsimulang bago</string>
     <string name="settings_reset_tips">I-clear ang Aking Listahan, mga paborito at Ipagpatuloy ang panonood</string>
     <string name="settings_reset_tips_confirm">I-clear ang buong Aking Listahan, ang iyong mga paborito, at lahat ng hindi mo pa natatapos?</string>
@@ -1076,7 +1076,7 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito sa loob ng ilang minuto."</string
     <string name="tamper_blocked">Ang kopyang ito ng app ay hindi tunay.</string>
     <string name="terms_gate_accept">Tanggapin</string>
     <string name="terms_gate_decline">Tanggihan</string>
-    <string name="terms_gate_message">Mangyaring suriin at tanggapin ang aming Mga Tuntunin at Kundisyon upang simulan ang paggamit ng ClipBox.</string>
+    <string name="terms_gate_message">Mangyaring suriin at tanggapin ang aming Mga Tuntunin at Kundisyon upang simulan ang paggamit ng StreamHub.</string>
     <string name="terms_gate_subtitle">Mangyaring basahin at tanggapin ang mga ito upang magpatuloy</string>
     <string name="terms_gate_title">Mga Tuntunin at Kundisyon</string>
     <string name="touch_lock_desc">Lock screen</string>
@@ -1084,14 +1084,14 @@ Iyon lang. Kusang bubukas ang VIP sa TV na ito sa loob ng ilang minuto."</string
     <string name="touch_locked_toast">Naka-lock ang screen. I-tap ang icon ng lock para i-unlock.</string>
     <string name="track_off">Naka-off</string>
     <string name="tv_account_avatar">Larawan sa profile</string>
-    <string name="tv_account_avatar_phone_only">Pinipili ang larawan sa profile mula sa isang litrato sa iyong device. Walang app ang TV na ito na makakapili nito, kaya itakda ito sa ClipBox sa iyong telepono at lalabas ito rito.</string>
+    <string name="tv_account_avatar_phone_only">Pinipili ang larawan sa profile mula sa isang litrato sa iyong device. Walang app ang TV na ito na makakapili nito, kaya itakda ito sa StreamHub sa iyong telepono at lalabas ito rito.</string>
     <string name="tv_account_choose_image">Pumili ng larawan</string>
     <string name="tv_account_new_password_hint">Bagong password</string>
     <string name="tv_account_recover_action">I-reset ang password</string>
     <string name="tv_account_recovery_fmt">"Recovery code: %1$s
 
 Isulat mo ito. Isang beses lang itong ipinapakita at ito lang ang paraan para makabalik kung makalimutan mo ang password mo."</string>
-    <string name="tv_account_register_hint">Wala pang account? Gumawa sa ClipBox app sa telepono mo, tapos mag-sign in dito.</string>
+    <string name="tv_account_register_hint">Wala pang account? Gumawa sa StreamHub app sa telepono mo, tapos mag-sign in dito.</string>
     <string name="tv_account_saved">Na-save</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Larawan (malabo)</string>
@@ -1194,7 +1194,7 @@ Isulat mo ito. Isang beses lang itong ipinapakita at ito lang ang paraan para ma
     <string name="tv_ui_scale_title">Laki ng interface</string>
     <string name="tv_value_off">Naka-off</string>
     <string name="tv_value_on">Naka-on</string>
-    <string name="tv_whatsnew_body">Muling ginawa ang ClipBox para sa malaking screen at sa remote mo. Nandiyan pa rin ang lahat ng dati mong meron, mas madali lang itong maabot mula sa sofa. Mas gusto mo ang dating hitsura? Puwede kang bumalik anumang oras sa mga setting.</string>
+    <string name="tv_whatsnew_body">Muling ginawa ang StreamHub para sa malaking screen at sa remote mo. Nandiyan pa rin ang lahat ng dati mong meron, mas madali lang itong maabot mula sa sofa. Mas gusto mo ang dating hitsura? Puwede kang bumalik anumang oras sa mga setting.</string>
     <string name="tv_whatsnew_classic">Gamitin ang klasikong hitsura</string>
     <string name="tv_whatsnew_continue">Tingnan mo</string>
     <string name="tv_whatsnew_title">Bagong hitsura para sa telebisyon</string>
@@ -1211,21 +1211,21 @@ I-download at i-install ito ngayon?"</string>
     <string name="update_downloading">Pagkuha ng mga bagong bit...</string>
     <string name="update_install_help">"1. I-tap ang Update para i-download ang bagong APK.
 2. Kapag nagbukas ang installer, i-tap ang I-install.
-3. Kung iba-block ito ng Android, payagan ang \"Mag-install ng mga hindi kilalang app\" para sa ClipBox, pagkatapos ay i-tap muli ang I-install.
+3. Kung iba-block ito ng Android, payagan ang \"Mag-install ng mga hindi kilalang app\" para sa StreamHub, pagkatapos ay i-tap muli ang I-install.
 4. Ang iyong mga setting at listahan ay pinananatili, nag-i-install ito sa kasalukuyang app."</string>
     <string name="update_install_help_summary">Ano ang gagawin kung na-block ang pag-install</string>
     <string name="update_install_help_title">Paano mag-install</string>
     <string name="update_later">Mamaya</string>
-    <string name="update_permission_msg_firetv">"Nag-i-install ang iyong Fire TV ng mga update mula sa mga app na pinahintulutan mo. Piliin ang Buksan ang settings, i-on ang ClipBox sa \"I-install ang mga hindi kilalang app\" at pindutin ang Bumalik. Kusang magpapatuloy ang update.
+    <string name="update_permission_msg_firetv">"Nag-i-install ang iyong Fire TV ng mga update mula sa mga app na pinahintulutan mo. Piliin ang Buksan ang settings, i-on ang StreamHub sa \"I-install ang mga hindi kilalang app\" at pindutin ang Bumalik. Kusang magpapatuloy ang update.
 
-Kung hindi bumukas ang screen: Settings > My Fire TV > Developer options > Install unknown apps > ClipBox. Walang Developer options? Pumunta sa Settings > My Fire TV > About at pindutin ang OK 7 beses sa pangalan ng device."</string>
-    <string name="update_permission_msg_phone">Nag-i-install ang Android ng mga update mula sa mga app na pinahintulutan mo. I-tap ang Buksan ang settings, i-on ang \"Pahintulutan mula sa source na ito\" para sa ClipBox at bumalik. Kusang magpapatuloy ang update.</string>
-    <string name="update_permission_msg_tv">"Nag-i-install ang iyong TV ng mga update mula sa mga app na pinahintulutan mo. Piliin ang Buksan ang settings, i-on ang ClipBox sa \"I-install ang mga hindi kilalang app\" at pindutin ang Bumalik. Kusang magpapatuloy ang update.
+Kung hindi bumukas ang screen: Settings > My Fire TV > Developer options > Install unknown apps > StreamHub. Walang Developer options? Pumunta sa Settings > My Fire TV > About at pindutin ang OK 7 beses sa pangalan ng device."</string>
+    <string name="update_permission_msg_phone">Nag-i-install ang Android ng mga update mula sa mga app na pinahintulutan mo. I-tap ang Buksan ang settings, i-on ang \"Pahintulutan mula sa source na ito\" para sa StreamHub at bumalik. Kusang magpapatuloy ang update.</string>
+    <string name="update_permission_msg_tv">"Nag-i-install ang iyong TV ng mga update mula sa mga app na pinahintulutan mo. Piliin ang Buksan ang settings, i-on ang StreamHub sa \"I-install ang mga hindi kilalang app\" at pindutin ang Bumalik. Kusang magpapatuloy ang update.
 
-Kung hindi bumukas ang screen: Settings > Apps > Security at mga paghihigpit > Mga hindi kilalang source > ClipBox."</string>
+Kung hindi bumukas ang screen: Settings > Apps > Security at mga paghihigpit > Mga hindi kilalang source > StreamHub."</string>
     <string name="update_permission_not_opened">Hindi nabuksan ang settings. Sundin ang mga hakbang sa screen.</string>
     <string name="update_permission_open">Buksan ang settings</string>
-    <string name="update_permission_title">Pahintulutan ang ClipBox na mag-install ng mga update</string>
+    <string name="update_permission_title">Pahintulutan ang StreamHub na mag-install ng mga update</string>
     <string name="update_unavailable">Hindi available ang serbisyo sa pag-update. Hindi masusuri ng app ang mga update sa ngayon.</string>
     <string name="update_up_to_date">Nasa pinakabagong bersyon ka na. Ang ganda.</string>
     <string name="v7_preference_off">NAKA-OFF</string>
@@ -1240,10 +1240,10 @@ Kung hindi bumukas ang screen: Settings > Apps > Security at mga paghihigpit > M
     <string name="voucher_ln_bad">Mukhang hindi ito Lightning voucher link. Nagsisimula ito sa LNURL.</string>
     <string name="voucher_ln_redeeming">Nire-redeem ang voucher mo…</string>
     <string name="voucher_ln_steps">"1. Buksan ang azte.co, piliin ang Lightning at doon i-redeem ang voucher code mo.
-2. May lalabas na Lightning link (LNURL). I-tap ito para buksan ang ClipBox, o kopyahin at i-paste dito."</string>
+2. May lalabas na Lightning link (LNURL). I-tap ito para buksan ang StreamHub, o kopyahin at i-paste dito."</string>
     <string name="voucher_loading_address">Inihahanda ang address mo…</string>
     <string name="voucher_onchain">Voucher ng Bitcoin</string>
-    <string name="voucher_onchain_note">Sa account mo nakatali ang address na ito para sa bayad na ito. Puwede mo munang isara ang ClipBox; kusang mag-o-on ang VIP.</string>
+    <string name="voucher_onchain_note">Sa account mo nakatali ang address na ito para sa bayad na ito. Puwede mo munang isara ang StreamHub; kusang mag-o-on ang VIP.</string>
     <string name="voucher_onchain_steps">"1. Buksan ang azte.co at doon i-redeem ang voucher code mo.
 2. Kapag hiningan ng Bitcoin address, gamitin ito:"</string>
     <string name="voucher_onchain_steps_code">"1. Ilagay sa ibaba ang 16-digit na code ng iyong voucher.

@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, maktaba na leseni</string>
     <string name="about_attributions_title">Leseni na sifa</string>
     <string name="about_changelog_title">Changelog</string>
-    <string name="about_credits_body">"ClipBox ni njia safi na tulivu ya kutazama filamu na misururu kwenye Android. Kila kitu kiko mahali pamoja, hivyo unaweza kuvinjari kinachopendwa, kutafuta kitu mahususi, au kuendelea pale pale ulipoishia.
+    <string name="about_credits_body">"StreamHub ni njia safi na tulivu ya kutazama filamu na misururu kwenye Android. Kila kitu kiko mahali pamoja, hivyo unaweza kuvinjari kinachopendwa, kutafuta kitu mahususi, au kuendelea pale pale ulipoishia.
 
 Manukuu hutafutwa na kupangwa kwa wakati kwa ajili yako katika lugha nyingi, kila kichwa kina vyanzo kadhaa, na chochote unachotazama kinaweza kutumwa kwenye Chromecast au TV janja. Programu hufanya kazi kwenye simu, tableti, Android TV na Fire TV, na akaunti ya hiari huweka orodha na historia yako sawa katika vyote.
 
-ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka kwa sababu ya yale watu wanayotuambia."</string>
-    <string name="about_credits_title">Kuhusu ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka kwa sababu ya yale watu wanayotuambia."</string>
+    <string name="about_credits_title">Kuhusu StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Vyanzo vya maudhui na alama za biashara</string>
     <string name="about_disclaimer_title">Kanusho</string>
     <string name="about_legal_title">Kisheria</string>
     <string name="about_privacy_subtitle">Data gani inakusanywa, na kwa nini</string>
     <string name="about_privacy_title">Sera ya faragha</string>
-    <string name="about_terms_subtitle">Jinsi ClipBox inaweza kutumika</string>
+    <string name="about_terms_subtitle">Jinsi StreamHub inaweza kutumika</string>
     <string name="about_terms_title">Sheria na Masharti</string>
     <string name="about_title">Kuhusu</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -57,7 +57,7 @@ ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka
     <string name="account_go_register">Mpya hapa? Fungua akaunti</string>
     <string name="account_go_register_action">Fungua akaunti</string>
     <string name="account_guest">Mgeni</string>
-    <string name="account_member">Mwanachama wa ClipBox</string>
+    <string name="account_member">Mwanachama wa StreamHub</string>
     <string name="account_member_since_fmt">Mwanachama tangu %1$s</string>
     <string name="account_new_password_hint">Nenosiri mpya</string>
     <string name="account_new_username_hint">Jina jipya la mtumiaji</string>
@@ -65,7 +65,7 @@ ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka
     <string name="account_recovery_code">Msimbo wa kurejesha</string>
     <string name="account_recovery_code_hint">Msimbo wa kurejesha</string>
     <string name="account_register">Fungua akaunti</string>
-    <string name="account_register_subtitle">Fungua akaunti yako ya ClipBox</string>
+    <string name="account_register_subtitle">Fungua akaunti yako ya StreamHub</string>
     <string name="account_session_ended">Akaunti yako haipatikani tena. Umeondolewa kwenye akaunti.</string>
     <string name="account_settings_section">Mipangilio ya akaunti</string>
     <string name="account_sign_in">Ingia</string>
@@ -73,7 +73,7 @@ ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka
     <string name="account_sign_out">Ondoka</string>
     <string name="account_signed_out_offline">Umeondoka. Orodha yako haikuweza kusawazishwa, kwa hivyo imehifadhiwa kwenye kifaa hiki.</string>
     <string name="account_signing_in">Inaingia…</string>
-    <string name="account_subtitle">Ingia kwenye akaunti yako ya ClipBox</string>
+    <string name="account_subtitle">Ingia kwenye akaunti yako ya StreamHub</string>
     <string name="account_sync_done">Usawazishaji umekamilika</string>
     <string name="account_terms_required">Tafadhali kagua Sheria na Masharti kabla ya kujisajili</string>
     <string name="account_title">Akaunti</string>
@@ -99,21 +99,21 @@ ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka
     <string name="actor_read_more">Soma zaidi</string>
     <string name="actor_wikipedia_failed">Haikuweza kufungua Wikipedia.</string>
     <string name="ad_autoclose_fmt">Itafunga yenyewe baada ya sekunde %1$d</string>
-    <string name="ad_blocked_note">Kizuia matangazo kinazuia tangazo hili. Matangazo yanaifanya ClipBox iwe bure: kizime kwa ClipBox, au pata VIP.</string>
+    <string name="ad_blocked_note">Kizuia matangazo kinazuia tangazo hili. Matangazo yanaifanya StreamHub iwe bure: kizime kwa StreamHub, au pata VIP.</string>
     <string name="ad_close">Funga tangazo</string>
     <string name="ad_label">Tangazo</string>
     <string name="ad_loading">Tangazo linapakia…</string>
     <string name="ad_open">Fungua tangazo</string>
     <string name="ad_page_hint">Mishale husogeza kiashiria · OK hubofya · Nyuma hufunga</string>
-    <string name="ad_popup_note">Matangazo yanaifanya ClipBox iwe bure na husaidia kulipia seva na matengenezo.</string>
+    <string name="ad_popup_note">Matangazo yanaifanya StreamHub iwe bure na husaidia kulipia seva na matengenezo.</string>
     <string name="ad_remove_with_vip">Bila matangazo ukiwa na VIP</string>
     <string name="add_to_favourites">Ongeza kwa Vipendwa</string>
     <string name="added_to_favourites">Imeongezwa kwa Vipendwa</string>
     <string name="added_to_my_list">Imeongezwa kwa Orodha Yangu</string>
     <string name="alert_dialog_title">Taarifa</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Jaza</string>
     <string name="aspect_fills_already">picha tayari inajaza skrini</string>
     <string name="aspect_fit">Toshesha</string>
@@ -178,9 +178,9 @@ ClipBox hutengenezwa na timu ndogo inayoitumia kila siku, na inaendelea kuboreka
     <string name="call_notification_ongoing_text">Simu inayoendelea</string>
     <string name="call_notification_screening_text">Inachuja simu unayopigiwa</string>
     <string name="capture_blocked_exit">Toka</string>
-    <string name="capture_blocked_intro">ClipBox haitafanya kazi wakati kifaa hiki kina zana ya kunasa mtandao au proksi iliyosakinishwa.</string>
-    <string name="capture_blocked_outro">Iondoe kisha ufungue ClipBox tena.</string>
-    <string name="capture_blocked_title">ClipBox haiwezi kufanya kazi kwenye kifaa hiki</string>
+    <string name="capture_blocked_intro">StreamHub haitafanya kazi wakati kifaa hiki kina zana ya kunasa mtandao au proksi iliyosakinishwa.</string>
+    <string name="capture_blocked_outro">Iondoe kisha ufungue StreamHub tena.</string>
+    <string name="capture_blocked_title">StreamHub haiwezi kufanya kazi kwenye kifaa hiki</string>
     <string name="cast_ad_label">Tangazo</string>
     <string name="cast_button_cast">Tuma</string>
     <string name="cast_casting_to_device">Inatuma kwa %1$s</string>
@@ -379,7 +379,7 @@ Unaweza pia kuweka IP ya TV yako wewe mwenyewe."</string>
     <string name="err_service_unavailable">Huduma haipatikani kwa muda. Tafadhali jaribu tena.</string>
     <string name="err_signed_out_sign_in">Umeondolewa kwenye akaunti kwenye kifaa hiki. Ingia tena.</string>
     <string name="err_too_many_requests">Maombi mengi sana. Tafadhali subiri kidogo.</string>
-    <string name="err_update_for_recovery">Sasisha ClipBox hadi toleo jipya zaidi ili kuunda msimbo mpya wa kurejesha.</string>
+    <string name="err_update_for_recovery">Sasisha StreamHub hadi toleo jipya zaidi ili kuunda msimbo mpya wa kurejesha.</string>
     <string name="error_a11y_label">Hitilafu: si sahihi</string>
     <string name="error_bad_intent">Imepokea kiungo batili. Haikuweza kuifungua.</string>
     <string name="error_icon_content_description">Hitilafu</string>
@@ -458,16 +458,16 @@ Unaweza pia kuweka IP ya TV yako wewe mwenyewe."</string>
 
 Si kila mada inaweza kuchezwa, baadhi ya kazi na nyingine hazifanyiki.
 
-ClipBox ni mpya na inatengenezwa, huenda kukawa na hitilafu."</string>
+StreamHub ni mpya na inatengenezwa, huenda kukawa na hitilafu."</string>
     <string name="first_launch_ok">Nimeipata</string>
     <string name="first_launch_title">Karibu tena!</string>
-    <string name="footer_brand">ClipBox</string>
+    <string name="footer_brand">StreamHub</string>
     <string name="force_update_download">Pakua sasisho</string>
     <string name="force_update_fallback_msg">Toleo jipya linahitajika ili kuendelea kutumia programu hii.</string>
     <string name="force_update_subtitle">Usasishaji unahitajika</string>
     <string name="gate_connecting">Inapakia</string>
     <string name="gate_retry">Jaribu tena</string>
-    <string name="gate_unavailable_message">"ClipBox haiwezi kufikia seva zake.
+    <string name="gate_unavailable_message">"StreamHub haiwezi kufikia seva zake.
 Tafadhali angalia muunganisho wako na ujaribu tena."</string>
     <string name="gate_unavailable_title">Huduma Haipatikani</string>
     <string name="genre_action">Kitendo</string>
@@ -492,7 +492,7 @@ Tafadhali angalia muunganisho wako na ujaribu tena."</string>
     <string name="lang_available_body">Kwa sasa unatumia programu kwa %1$s. Ungependa kubadilisha? Unaweza kubadilisha hili wakati wowote katika Mipangilio.</string>
     <string name="lang_available_keep">Endelea na %1$s</string>
     <string name="lang_available_switch">Badilisha hadi %1$s</string>
-    <string name="lang_available_title">ClipBox sasa inapatikana kwa %1$s</string>
+    <string name="lang_available_title">StreamHub sasa inapatikana kwa %1$s</string>
     <string name="launcher_instructions">"Hakuna unachohitaji kufanya hapa.
 
 Ikiwa una URL ya mtiririko, unaweza kuicheza moja kwa moja hapa chini.
@@ -639,17 +639,17 @@ Ongeza filamu na maonyesho kutoka kwa ukurasa wa maelezo."</string>
     <string name="pair_scan_allow">Ruhusu kamera</string>
     <string name="pair_scan_button">Changanua msimbo wa QR</string>
     <string name="pair_scan_hint">Elekeza kamera kwenye msimbo wa QR ulio kwenye TV</string>
-    <string name="pair_scan_no_camera">Ili kuchanganua msimbo, ClipBox inahitaji kamera. Inatumika tu skrini hii ikiwa wazi.</string>
+    <string name="pair_scan_no_camera">Ili kuchanganua msimbo, StreamHub inahitaji kamera. Inatumika tu skrini hii ikiwa wazi.</string>
     <string name="pair_scan_torch">Tochi</string>
     <string name="pair_scan_type_instead">Andika msimbo badala yake</string>
-    <string name="pair_scan_wrong">Huu si msimbo wa TV wa ClipBox. Changanua msimbo ulio kwenye TV yako.</string>
+    <string name="pair_scan_wrong">Huu si msimbo wa TV wa StreamHub. Changanua msimbo ulio kwenye TV yako.</string>
     <string name="pair_tv_button">Ingia kwa simu</string>
     <string name="pair_tv_confirm_hint">Thibitisha kwenye simu na TV hii itaingia yenyewe.</string>
     <string name="pair_tv_done_fmt">Umeingia kama %1$s</string>
     <string name="pair_tv_expires_fmt">Msimbo unafaa kwa %1$s zaidi</string>
     <string name="pair_tv_failed">Imeshindwa kupata msimbo. Kagua muunganisho ujaribu tena.</string>
     <string name="pair_tv_new_code">Msimbo mpya</string>
-    <string name="pair_tv_or_code">Au fungua ClipBox kwenye simu, nenda Akaunti kisha Ingia kwenye TV, na uweke msimbo ulio chini ya msimbo wa QR.</string>
+    <string name="pair_tv_or_code">Au fungua StreamHub kwenye simu, nenda Akaunti kisha Ingia kwenye TV, na uweke msimbo ulio chini ya msimbo wa QR.</string>
     <string name="pair_tv_scan">Changanua msimbo kwa kamera ya simu</string>
     <string name="pair_tv_waiting">Inasubiri simu yako…</string>
     <string name="parental_age_fmt">Miaka %1$d na chini yake</string>
@@ -718,7 +718,7 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii mara malipo yanapoonekana."</strin
 
 1. Gusa Tumia vocha ya Azteco › Ninunue vocha wapi? na ununue vocha ya Bitcoin ya Azteco (On-Chain) katika mojawapo ya maduka. Unalipa kama kawaida, kwa mfano kwa kadi.
 2. Unapata msimbo wa tarakimu 16.
-3. Katika ClipBox, gusa Tumia vocha ya Azteco, kisha Vocha ya Bitcoin. Ukurasa wetu wa vocha utafunguka.
+3. Katika StreamHub, gusa Tumia vocha ya Azteco, kisha Vocha ya Bitcoin. Ukurasa wetu wa vocha utafunguka.
 4. Weka msimbo hapo. Tutaukomboa kwa niaba yako na kuhakikisha malipo yamefika.
 
 Ni hayo tu. VIP inawaka yenyewe ndani ya dakika chache."</string>
@@ -751,12 +751,12 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii ndani ya dakika chache."</string>
     <string name="premium_state_confirming_title">Malipo yamepokelewa</string>
     <string name="premium_state_partial_body_fmt">Umelipa $%1$s. Zimebaki $%2$s na VIP ni yako. Ulicholipa kinabaki kwenye akaunti yako.</string>
     <string name="premium_state_partial_title">Karibu kumaliza</string>
-    <string name="premium_state_vip_body">Hakuna matangazo kwenye kifaa chochote unachoingia. Asante kwa kuunga mkono ClipBox.</string>
+    <string name="premium_state_vip_body">Hakuna matangazo kwenye kifaa chochote unachoingia. Asante kwa kuunga mkono StreamHub.</string>
     <string name="premium_state_vip_title">Wewe ni VIP</string>
     <string name="premium_state_waiting_body">Kamilisha malipo kwenye ukurasa wa malipo. Skrini hii itajisasisha yenyewe mara malipo yanapoonekana.</string>
     <string name="premium_state_waiting_title">Tunasubiri malipo yako</string>
     <string name="premium_tagline">Malipo moja. Yako milele.</string>
-    <string name="premium_tv_phone_hint">Una vocha ya Lightning? Itumie kwenye ClipBox ya simu yako ukiwa na akaunti ileile. VIP itafuata akaunti yako hadi kwenye TV hii.</string>
+    <string name="premium_tv_phone_hint">Una vocha ya Lightning? Itumie kwenye StreamHub ya simu yako ukiwa na akaunti ileile. VIP itafuata akaunti yako hadi kwenye TV hii.</string>
     <string name="premium_tv_scan">Changanua kwa simu ili kulipa</string>
     <string name="premium_tv_show_checkout">Lipa kwa crypto</string>
     <string name="premium_tv_show_voucher">Vocha ya Bitcoin</string>
@@ -859,7 +859,7 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii ndani ya dakika chache."</string>
     <string name="servers_probe_starting">Inaanza… zimebaki sekunde %1$d</string>
     <string name="servers_tab_experimental">Lugha zaidi</string>
     <string name="servers_tab_main">Kawaida</string>
-    <string name="settings_about">Kuhusu ClipBox</string>
+    <string name="settings_about">Kuhusu StreamHub</string>
     <string name="settings_about_summary">Maelezo ya toleo, mikopo na mabadiliko</string>
     <string name="settings_account">Akaunti yangu</string>
     <string name="settings_account_loggedout">Hujaingia</string>
@@ -891,13 +891,13 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii ndani ya dakika chache."</string>
     <string name="settings_next_episode">Cheza kipindi kinachofuata kiotomatiki</string>
     <string name="settings_next_episode_summary">Onyesha kihesabu kwenye hitimisho na uendelee kivyake</string>
     <string name="settings_notifications">Arifa</string>
-    <string name="settings_notifications_summary">Pokea matangazo na masasisho kutoka kwa ClipBox</string>
+    <string name="settings_notifications_summary">Pokea matangazo na masasisho kutoka kwa StreamHub</string>
     <string name="settings_parental">Udhibiti wa wazazi</string>
     <string name="settings_parental_off">Umezimwa</string>
     <string name="settings_parental_on_fmt">Inaficha vichwa vilivyokadiriwa zaidi ya %1$d</string>
     <string name="settings_pref_sub_lang">Lugha inayopendekezwa</string>
     <string name="settings_reset_app">Weka upya programu</string>
-    <string name="settings_reset_app_confirm">Hii itafuta data yote ya programu na kufunga ClipBox. Ungependa kuendelea?</string>
+    <string name="settings_reset_app_confirm">Hii itafuta data yote ya programu na kufunga StreamHub. Ungependa kuendelea?</string>
     <string name="settings_reset_app_summary">Futa data yote na uanze upya</string>
     <string name="settings_reset_tips">Futa Orodha Yangu, vipendwa na Endelea kutazama</string>
     <string name="settings_reset_tips_confirm">Futa Orodha Yangu yote, vipendwa vyako na kila kitu ulichoanza?</string>
@@ -1076,7 +1076,7 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii ndani ya dakika chache."</string>
     <string name="tamper_blocked">Nakala hii ya programu si halisi.</string>
     <string name="terms_gate_accept">Kubali</string>
     <string name="terms_gate_decline">Kataa</string>
-    <string name="terms_gate_message">Tafadhali kagua na ukubali Sheria na Masharti yetu ili kuanza kutumia ClipBox.</string>
+    <string name="terms_gate_message">Tafadhali kagua na ukubali Sheria na Masharti yetu ili kuanza kutumia StreamHub.</string>
     <string name="terms_gate_subtitle">Tafadhali soma na ukubali haya ili kuendelea</string>
     <string name="terms_gate_title">Sheria na Masharti</string>
     <string name="touch_lock_desc">Funga skrini</string>
@@ -1084,14 +1084,14 @@ Ni hayo tu. VIP inawaka yenyewe kwenye TV hii ndani ya dakika chache."</string>
     <string name="touch_locked_toast">Skrini imefungwa. Gonga aikoni ya kufunga ili kufungua.</string>
     <string name="track_off">Imezimwa</string>
     <string name="tv_account_avatar">Picha ya wasifu</string>
-    <string name="tv_account_avatar_phone_only">Picha ya wasifu huchaguliwa kutoka picha kwenye kifaa chako. Televisheni hii haina programu inayoweza kufanya hivyo, kwa hivyo iweke katika ClipBox kwenye simu yako nayo itaonekana hapa.</string>
+    <string name="tv_account_avatar_phone_only">Picha ya wasifu huchaguliwa kutoka picha kwenye kifaa chako. Televisheni hii haina programu inayoweza kufanya hivyo, kwa hivyo iweke katika StreamHub kwenye simu yako nayo itaonekana hapa.</string>
     <string name="tv_account_choose_image">Chagua picha</string>
     <string name="tv_account_new_password_hint">Nenosiri jipya</string>
     <string name="tv_account_recover_action">Weka upya nenosiri</string>
     <string name="tv_account_recovery_fmt">"Msimbo wa kurejesha: %1$s
 
 Uandike. Unaonyeshwa mara moja tu na ndio njia pekee ya kurudi ukisahau nenosiri lako."</string>
-    <string name="tv_account_register_hint">Bado huna akaunti? Iunde katika programu ya ClipBox kwenye simu yako, kisha uingie hapa.</string>
+    <string name="tv_account_register_hint">Bado huna akaunti? Iunde katika programu ya StreamHub kwenye simu yako, kisha uingie hapa.</string>
     <string name="tv_account_saved">Imehifadhiwa</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Picha (iliyofifishwa)</string>
@@ -1194,7 +1194,7 @@ Uandike. Unaonyeshwa mara moja tu na ndio njia pekee ya kurudi ukisahau nenosiri
     <string name="tv_ui_scale_title">Ukubwa wa kiolesura</string>
     <string name="tv_value_off">Imezimwa</string>
     <string name="tv_value_on">Imewashwa</string>
-    <string name="tv_whatsnew_body">ClipBox imejengwa upya kwa ajili ya skrini kubwa na rimoti yako. Kila kitu ulichokuwa nacho bado kipo, ni rahisi tu kukifikia ukiwa kwenye kochi. Unapendelea mwonekano wa awali? Unaweza kurudi wakati wowote katika mipangilio.</string>
+    <string name="tv_whatsnew_body">StreamHub imejengwa upya kwa ajili ya skrini kubwa na rimoti yako. Kila kitu ulichokuwa nacho bado kipo, ni rahisi tu kukifikia ukiwa kwenye kochi. Unapendelea mwonekano wa awali? Unaweza kurudi wakati wowote katika mipangilio.</string>
     <string name="tv_whatsnew_classic">Tumia mwonekano wa kawaida</string>
     <string name="tv_whatsnew_continue">Angalia</string>
     <string name="tv_whatsnew_title">Mwonekano mpya kwa televisheni</string>
@@ -1211,21 +1211,21 @@ Pakua na uisakinishe sasa?"</string>
     <string name="update_downloading">Inavuta vipande vipya...</string>
     <string name="update_install_help">"1. Gusa Sasisha ili kupakua APK mpya.
 2. Kisakinishi kinapofungua, gusa Sakinisha.
-3. Android ikiizuia, ruhusu \"Sakinisha programu zisizojulikana\" za ClipBox, kisha uguse Sakinisha tena.
+3. Android ikiizuia, ruhusu \"Sakinisha programu zisizojulikana\" za StreamHub, kisha uguse Sakinisha tena.
 4. Mipangilio na orodha yako huhifadhiwa, inasakinishwa kupitia programu ya sasa."</string>
     <string name="update_install_help_summary">Nini cha kufanya ikiwa usakinishaji umezuiwa</string>
     <string name="update_install_help_title">Jinsi ya kufunga</string>
     <string name="update_later">Baadaye</string>
-    <string name="update_permission_msg_firetv">"Fire TV yako husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Chagua Fungua mipangilio, washa ClipBox chini ya \"Sakinisha programu zisizojulikana\" kisha ubonyeze Nyuma. Sasisho litaendelea lenyewe.
+    <string name="update_permission_msg_firetv">"Fire TV yako husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Chagua Fungua mipangilio, washa StreamHub chini ya \"Sakinisha programu zisizojulikana\" kisha ubonyeze Nyuma. Sasisho litaendelea lenyewe.
 
-Ikiwa skrini hiyo haifunguki: Mipangilio > Fire TV Yangu > Chaguo za msanidi programu > Sakinisha programu zisizojulikana > ClipBox. Hakuna chaguo za msanidi programu? Kwanza nenda Mipangilio > Fire TV Yangu > Kuhusu na ubonyeze OK mara 7 kwenye jina la kifaa."</string>
-    <string name="update_permission_msg_phone">Android husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Gusa Fungua mipangilio, washa \"Ruhusu kutoka chanzo hiki\" kwa ClipBox kisha urudi. Sasisho litaendelea lenyewe.</string>
-    <string name="update_permission_msg_tv">"TV yako husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Chagua Fungua mipangilio, washa ClipBox chini ya \"Sakinisha programu zisizojulikana\" kisha ubonyeze Nyuma. Sasisho litaendelea lenyewe.
+Ikiwa skrini hiyo haifunguki: Mipangilio > Fire TV Yangu > Chaguo za msanidi programu > Sakinisha programu zisizojulikana > StreamHub. Hakuna chaguo za msanidi programu? Kwanza nenda Mipangilio > Fire TV Yangu > Kuhusu na ubonyeze OK mara 7 kwenye jina la kifaa."</string>
+    <string name="update_permission_msg_phone">Android husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Gusa Fungua mipangilio, washa \"Ruhusu kutoka chanzo hiki\" kwa StreamHub kisha urudi. Sasisho litaendelea lenyewe.</string>
+    <string name="update_permission_msg_tv">"TV yako husakinisha masasisho kutoka kwa programu unazoruhusu pekee. Chagua Fungua mipangilio, washa StreamHub chini ya \"Sakinisha programu zisizojulikana\" kisha ubonyeze Nyuma. Sasisho litaendelea lenyewe.
 
-Ikiwa skrini hiyo haifunguki: Mipangilio > Programu > Usalama na vikwazo > Vyanzo visivyojulikana > ClipBox."</string>
+Ikiwa skrini hiyo haifunguki: Mipangilio > Programu > Usalama na vikwazo > Vyanzo visivyojulikana > StreamHub."</string>
     <string name="update_permission_not_opened">Mipangilio haikuweza kufunguliwa. Fuata hatua zilizo kwenye skrini.</string>
     <string name="update_permission_open">Fungua mipangilio</string>
-    <string name="update_permission_title">Ruhusu ClipBox kusakinisha masasisho</string>
+    <string name="update_permission_title">Ruhusu StreamHub kusakinisha masasisho</string>
     <string name="update_unavailable">Huduma ya kusasisha haipatikani. Programu haiwezi kuangalia masasisho kwa sasa.</string>
     <string name="update_up_to_date">Tayari uko kwenye toleo jipya zaidi. Nzuri.</string>
     <string name="v7_preference_off">IMEZIMWA</string>
@@ -1240,10 +1240,10 @@ Ikiwa skrini hiyo haifunguki: Mipangilio > Programu > Usalama na vikwazo > Vyanz
     <string name="voucher_ln_bad">Hiki hakionekani kama kiungo cha vocha ya Lightning. Huanza na LNURL.</string>
     <string name="voucher_ln_redeeming">Tunatumia vocha yako…</string>
     <string name="voucher_ln_steps">"1. Fungua azte.co, chagua Lightning na utumie msimbo wa vocha yako hapo.
-2. Kiungo cha Lightning (LNURL) kitaonekana. Kigonge ili kufungua ClipBox, au kinakili na ukibandike hapa."</string>
+2. Kiungo cha Lightning (LNURL) kitaonekana. Kigonge ili kufungua StreamHub, au kinakili na ukibandike hapa."</string>
     <string name="voucher_loading_address">Tunaandaa anwani yako…</string>
     <string name="voucher_onchain">Vocha ya Bitcoin</string>
-    <string name="voucher_onchain_note">Anwani hii ni ya akaunti yako kwa malipo haya. Unaweza kufunga ClipBox kwa sasa; VIP itawaka yenyewe.</string>
+    <string name="voucher_onchain_note">Anwani hii ni ya akaunti yako kwa malipo haya. Unaweza kufunga StreamHub kwa sasa; VIP itawaka yenyewe.</string>
     <string name="voucher_onchain_steps">"1. Fungua azte.co na utumie msimbo wa vocha yako hapo.
 2. Ukiombwa anwani ya Bitcoin, tumia hii:"</string>
     <string name="voucher_onchain_steps_code">"1. Weka hapa chini msimbo wa tarakimu 16 wa vocha yako.

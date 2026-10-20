@@ -3,20 +3,20 @@
     <string name="about_attributions_subtitle">"TMDB, amaterekero g'ebitabo &amp; layisinsi"</string>
     <string name="about_attributions_title">Layisinsi &amp; ebikwata ku biwandiiko</string>
     <string name="about_changelog_title">Enkyukakyuka mu biwandiiko</string>
-    <string name="about_credits_body">"ClipBox ngeri nnyangu era nteefu ey'okulabiramu firimu n'ebitundutundu ku Android. Buli kimu kiri mu kifo kimu, n'olwekyo osobola okunoonyereza ku bimanyiddwa ennyo, okunoonya ekintu ekimu, oba okweyongera mu kifo we wakoma.
+    <string name="about_credits_body">"StreamHub ngeri nnyangu era nteefu ey'okulabiramu firimu n'ebitundutundu ku Android. Buli kimu kiri mu kifo kimu, n'olwekyo osobola okunoonyereza ku bimanyiddwa ennyo, okunoonya ekintu ekimu, oba okweyongera mu kifo we wakoma.
 
 Ebiwandiiko eby'obuvvuunuzi binoonyezebwa ne bitegekebwa mu budde ku lulwo mu nnimi nnyingi, buli mutwe gulina ensibuko eziwera, era ky'olabako kiyinza okusindikibwa ku Chromecast oba ku ttivi ey'omulembe. App ekola ku ssimu, ku tabuleti, ku Android TV ne ku Fire TV, era akawunti ey'okwesalirawo eterekera olukalala lwo n'ebyafaayo byo nga bifaanana ku byonna.
 
-ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw'ebyo abantu bye batubuulira."</string>
-    <string name="about_credits_title">Ebikwata ku ClipBox</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+StreamHub ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw'ebyo abantu bye batubuulira."</string>
+    <string name="about_credits_title">Ebikwata ku StreamHub</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Ensonda z’ebirimu n’obubonero bw’obusuubuzi</string>
     <string name="about_disclaimer_title">Okwegaana</string>
     <string name="about_legal_title">Mu mateeka</string>
     <string name="about_privacy_subtitle">Data ki ekuŋŋaanyizibwa, era lwaki</string>
     <string name="about_privacy_title">Enkola y’eby’ekyama</string>
-    <string name="about_terms_subtitle">"Engeri ClipBox gy'eyinza okukozesebwa"</string>
+    <string name="about_terms_subtitle">"Engeri StreamHub gy'eyinza okukozesebwa"</string>
     <string name="about_terms_title">"Ebiragiro n'Obukwakkulizo"</string>
     <string name="about_title">Ebikwata ku...</string>
     <string name="about_version_fmt">v%1$s (%2$d) .</string>
@@ -37,7 +37,7 @@ ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw
     <string name="account_go_register">Omupya wano? Tonda akawunti</string>
     <string name="account_go_register_action">Tonda akawunti</string>
     <string name="account_guest">Omugenyi</string>
-    <string name="account_member">Omukiise wa ClipBox</string>
+    <string name="account_member">Omukiise wa StreamHub</string>
     <string name="account_member_since_fmt">Member okuva ku %1$s</string>
     <string name="account_new_password_hint">"Ekigambo ky'okuyingira ekipya"</string>
     <string name="account_new_username_hint">"Erinnya ly'omukozesa eppya"</string>
@@ -45,7 +45,7 @@ ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw
     <string name="account_recovery_code">"Koodi y'okuzzaawo"</string>
     <string name="account_recovery_code_hint">"Koodi y'okuzzaawo"</string>
     <string name="account_register">Tonda akawunti</string>
-    <string name="account_register_subtitle">Tonda akawunti yo eya ClipBox</string>
+    <string name="account_register_subtitle">Tonda akawunti yo eya StreamHub</string>
     <string name="account_session_ended">Akawunti yo tekyaliwo. Obadde oyingiziddwa.</string>
     <string name="account_settings_section">Enteekateeka za akawunti</string>
     <string name="account_sign_in">Yingira mu</string>
@@ -53,7 +53,7 @@ ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw
     <string name="account_sign_out">Weewandiise</string>
     <string name="account_signed_out_offline">Yassa omukono ku ndagaano. Olukalala lwo terwasobodde kukwatagana, kale lukuumiddwa ku kyuma kino.</string>
     <string name="account_signing_in">Tuyingira…</string>
-    <string name="account_subtitle">Yingira ku akawunti yo eya ClipBox</string>
+    <string name="account_subtitle">Yingira ku akawunti yo eya StreamHub</string>
     <string name="account_sync_done">Sync ewedde</string>
     <string name="account_terms_required">"Nsaba okwetegereza Ebiragiro n'Obukwakkulizo nga tonnaba kwewandiisa"</string>
     <string name="account_title">Akawunti</string>
@@ -79,21 +79,21 @@ ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw
     <string name="actor_read_more">Soma wano ebisingawo</string>
     <string name="actor_wikipedia_failed">Teyasobodde kuggulawo Wikipedia.</string>
     <string name="ad_autoclose_fmt">Kijja kuggalawo kyokka mu sikonda %1$d</string>
-    <string name="ad_blocked_note">Ekiziyiza ebirango kiziyiza ekirango kino. Ebirango bikuuma ClipBox nga ya bwereere: kiggyeko ku ClipBox, oba funa VIP.</string>
+    <string name="ad_blocked_note">Ekiziyiza ebirango kiziyiza ekirango kino. Ebirango bikuuma StreamHub nga ya bwereere: kiggyeko ku StreamHub, oba funa VIP.</string>
     <string name="ad_close">Ggalawo kirango</string>
     <string name="ad_label">Kirango</string>
     <string name="ad_loading">Ekirango kiteekebwamu…</string>
     <string name="ad_open">Ggulawo ekirango</string>
     <string name="ad_page_hint">Obusaale butambuza akasonga · OK kunyiga · Back kuggalawo</string>
-    <string name="ad_popup_note">"Ebirango bikuuma ClipBox nga ya bwereere era biyamba okusasulira seeva n'okuzilabirira."</string>
+    <string name="ad_popup_note">"Ebirango bikuuma StreamHub nga ya bwereere era biyamba okusasulira seeva n'okuzilabirira."</string>
     <string name="ad_remove_with_vip">Tewali birango ne VIP</string>
     <string name="add_to_favourites">Yongera ku Favorites</string>
     <string name="added_to_favourites">Yayongedde ku Favorites</string>
     <string name="added_to_my_list">Yayongedde ku lukalala lwange</string>
     <string name="alert_dialog_title">Weetegereze</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Jjuza</string>
     <string name="aspect_fills_already">ekifaananyi kijjuza dda olutimbe</string>
     <string name="aspect_fit">Tuukanya</string>
@@ -145,9 +145,9 @@ ClipBox ekolebwa ttiimu ntono egikozesa buli lunaku, era yeeyongera obulungi olw
     <string name="bug_report_sent">Got it, webale nnyo! Tujja kutunulako.</string>
     <string name="bug_report_title">"Lipoota y'ebiwuka"</string>
     <string name="capture_blocked_exit">Fuluma</string>
-    <string name="capture_blocked_intro">ClipBox tekola nga ku kyuma kino kuliko ekikozesebwa okukwata ebiyita ku mutimbagano oba proxy.</string>
-    <string name="capture_blocked_outro">Kiggyeko olyoke oggulewo ClipBox nate.</string>
-    <string name="capture_blocked_title">ClipBox tesobola kukola ku kyuma kino</string>
+    <string name="capture_blocked_intro">StreamHub tekola nga ku kyuma kino kuliko ekikozesebwa okukwata ebiyita ku mutimbagano oba proxy.</string>
+    <string name="capture_blocked_outro">Kiggyeko olyoke oggulewo StreamHub nate.</string>
+    <string name="capture_blocked_title">StreamHub tesobola kukola ku kyuma kino</string>
     <string name="cast_button_cast">Abazannyi</string>
     <string name="cast_connecting">Okuyunga ku kyuma ekisuula...</string>
     <string name="cast_device_fallback">Ekyuma ekisuula</string>
@@ -283,7 +283,7 @@ Osobola n'okuyingiza IP ya TV yo mu ngalo."</string>
     <string name="err_service_unavailable">Empeereza okumala akaseera tesobola kubaawo. Nsaba oddemu ogezeeko.</string>
     <string name="err_signed_out_sign_in">Ofulumiziddwa ku kyuma kino. Yingira nate.</string>
     <string name="err_too_many_requests">Okusaba kungi nnyo. Nsaba mulindeko katono.</string>
-    <string name="err_update_for_recovery">"Zzaamu ClipBox ku nkyusa esembayo okukola koodi y'okuzzaawo empya."</string>
+    <string name="err_update_for_recovery">"Zzaamu StreamHub ku nkyusa esembayo okukola koodi y'okuzzaawo empya."</string>
     <string name="error_bad_intent">Yafunye enkolagana etali ntuufu. Teyasobodde kugiggulawo.</string>
     <string name="error_no_browser">Tewali app ya browser ezuuliddwa</string>
     <string name="error_no_content_pull_to_refresh">Ebirimu tebiyingiziddwa. Sika wansi okuzza obuggya.</string>
@@ -295,16 +295,16 @@ Osobola n'okuyingiza IP ya TV yo mu ngalo."</string>
 
 Si buli mutwe mu butuufu nti guzannyibwa, ogumu gukola ate ebirala tebikola.
 
-ClipBox mpya era eri mu nkulaakulana, wayinza okubaawo obuzibu obumu."</string>
+StreamHub mpya era eri mu nkulaakulana, wayinza okubaawo obuzibu obumu."</string>
     <string name="first_launch_ok">Yakifunye</string>
     <string name="first_launch_title">Mwaniriziddwa okuddayo!</string>
-    <string name="footer_brand">ClipBox ya ClipBox</string>
+    <string name="footer_brand">StreamHub ya StreamHub</string>
     <string name="force_update_download">Download update</string>
     <string name="force_update_fallback_msg">Enkyusa empya yeetaagibwa okugenda mu maaso n’okukozesa app eno.</string>
     <string name="force_update_subtitle">Update yeetaagibwa</string>
     <string name="gate_connecting">Okutikka</string>
     <string name="gate_retry">Ddamu gezaako</string>
-    <string name="gate_unavailable_message">"ClipBox tesobola kutuuka ku seeva zaayo.
+    <string name="gate_unavailable_message">"StreamHub tesobola kutuuka ku seeva zaayo.
 Nsaba okebere omukago gwo era ogezeeko nate."</string>
     <string name="gate_unavailable_title">Empeereza Tekiriwo</string>
     <string name="genre_action">Ekikolwa</string>
@@ -326,7 +326,7 @@ Nsaba okebere omukago gwo era ogezeeko nate."</string>
     <string name="lang_available_body">Kati okozesa app mu %1$s. Oyagala okukyusa? Osobola okukyusa kino ekiseera kyonna mu Settings.</string>
     <string name="lang_available_keep">Sigala ku %1$s</string>
     <string name="lang_available_switch">Kyusa ku %1$s</string>
-    <string name="lang_available_title">ClipBox kati esobose mu %1$s</string>
+    <string name="lang_available_title">StreamHub kati esobose mu %1$s</string>
     <string name="launcher_instructions">"Tewali kyolina kukola wano.
 
 Bw'oba olina URL y'omugga, osobola okugizannya butereevu wansi.
@@ -383,17 +383,17 @@ Ongerako firimu n'ebiraga okuva ku lupapula lw'ebikwata ku nsonga."</string>
     <string name="pair_scan_allow">Kkiriza kkamera</string>
     <string name="pair_scan_button">Sika koodi ya QR</string>
     <string name="pair_scan_hint">Tunuulira kkamera ku koodi ya QR eri ku TV</string>
-    <string name="pair_scan_no_camera">Okusika koodi, ClipBox yeetaaga kkamera. Ekozesebwa wokka nga olupapula luno lugguddwawo.</string>
+    <string name="pair_scan_no_camera">Okusika koodi, StreamHub yeetaaga kkamera. Ekozesebwa wokka nga olupapula luno lugguddwawo.</string>
     <string name="pair_scan_torch">Tooki</string>
     <string name="pair_scan_type_instead">"Wandiika koodi mu kifo ky'ekyo"</string>
-    <string name="pair_scan_wrong">Eno si koodi ya TV eya ClipBox. Sika koodi eri ku TV yo.</string>
+    <string name="pair_scan_wrong">Eno si koodi ya TV eya StreamHub. Sika koodi eri ku TV yo.</string>
     <string name="pair_tv_button">"Yingira ng'okozesa essimu"</string>
     <string name="pair_tv_confirm_hint">Kakasa ku ssimu, TV eno ejja kuyingira yokka.</string>
     <string name="pair_tv_done_fmt">Oyingidde nga %1$s</string>
     <string name="pair_tv_expires_fmt">Koodi ekola okumala %1$s</string>
     <string name="pair_tv_failed">Tetusobodde kufuna koodi. Kebera omukutu ogezeeko nate.</string>
     <string name="pair_tv_new_code">Koodi empya</string>
-    <string name="pair_tv_or_code">Oba ggulawo ClipBox ku ssimu, genda ku Akawunti, oluvannyuma Yingira ku TV, oyingize koodi eri wansi wa QR koodi.</string>
+    <string name="pair_tv_or_code">Oba ggulawo StreamHub ku ssimu, genda ku Akawunti, oluvannyuma Yingira ku TV, oyingize koodi eri wansi wa QR koodi.</string>
     <string name="pair_tv_scan">"Sika koodi ne kamera y'essimu"</string>
     <string name="pair_tv_waiting">Tulindirira essimu yo…</string>
     <string name="parental_age_fmt">"Emyaka %1$d n'okukka"</string>
@@ -460,7 +460,7 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno amangu ddala ng’okusasula kulabiddwa
 
 1. Nyiga Kozesa vawuca ya Azteco › Vawuca ngigula wa? ogule vawuca ya Bitcoin eya Azteco (On-Chain) mu dduuka limu. Osasula nga bulijjo, okugeza ne kaadi.
 2. Ofuna koodi ya nnamba 16.
-3. Mu ClipBox, nyiga Kozesa vawuca ya Azteco, oluvannyuma Vawuca ya Bitcoin. Omukutu gwaffe ogwa vawuca gujja kugguka.
+3. Mu StreamHub, nyiga Kozesa vawuca ya Azteco, oluvannyuma Vawuca ya Bitcoin. Omukutu gwaffe ogwa vawuca gujja kugguka.
 4. Yingiza koodi eyo. Tugikozesa ku lulwo era ne tukebera nti okusasula kutuuse.
 
 Kye kyokka. VIP yeggulawo yokka mu ddakiika ntono."</string>
@@ -493,12 +493,12 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno mu ddakiika ntono."</string>
     <string name="premium_state_confirming_title">Ssente zifunye</string>
     <string name="premium_state_partial_body_fmt">"Osasudde $%1$s. Ssente $%2$s endala era VIP yiyo. By'osasudde bisigala ku akawunti yo."</string>
     <string name="premium_state_partial_title">Kumpi kuwedde</string>
-    <string name="premium_state_vip_body">"Tewali birango ku kyuma kyonna ky'oyingiramu. Webale okuwagira ClipBox."</string>
+    <string name="premium_state_vip_body">"Tewali birango ku kyuma kyonna ky'oyingiramu. Webale okuwagira StreamHub."</string>
     <string name="premium_state_vip_title">Oli VIP</string>
     <string name="premium_state_waiting_body">"Maliriza okusasula ku lupapula lw'okusasula. Olutimbe luno lujja kwekyusa lwokka nga okusasula kulabise."</string>
     <string name="premium_state_waiting_title">Tulinda okusasula kwo</string>
     <string name="premium_tagline">Osasula omulundi gumu. Kiba kikyo emirembe gyonna.</string>
-    <string name="premium_tv_phone_hint">"Olina vawuca ya Lightning? Gikozese mu ClipBox ku ssimu yo, ng'oyingidde mu akawunti y'emu. VIP egoberera akawunti yo ku TV eno."</string>
+    <string name="premium_tv_phone_hint">"Olina vawuca ya Lightning? Gikozese mu StreamHub ku ssimu yo, ng'oyingidde mu akawunti y'emu. VIP egoberera akawunti yo ku TV eno."</string>
     <string name="premium_tv_scan">"Sika n'essimu okusasula"</string>
     <string name="premium_tv_show_checkout">Sasula ne crypto</string>
     <string name="premium_tv_show_voucher">Vawuca ya Bitcoin</string>
@@ -598,7 +598,7 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno mu ddakiika ntono."</string>
     <string name="servers_probe_starting">Kutandika… ebbanga %1$d ss</string>
     <string name="servers_tab_experimental">Ennimi endala</string>
     <string name="servers_tab_main">Eya bulijjo</string>
-    <string name="settings_about">Ebikwata ku ClipBox</string>
+    <string name="settings_about">Ebikwata ku StreamHub</string>
     <string name="settings_about_summary">"Enkyusa info, credits n'enkyukakyuka"</string>
     <string name="settings_account">Akawunti yange</string>
     <string name="settings_account_loggedout">Teyayingidde mukono</string>
@@ -630,13 +630,13 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno mu ddakiika ntono."</string>
     <string name="settings_next_episode">Autoplay ekitundu ekiddako</string>
     <string name="settings_next_episode_summary">"Laga okubala ku bigambo eby'enkomerero era weyongereyo kyokka"</string>
     <string name="settings_notifications">Ebimanyisibwa</string>
-    <string name="settings_notifications_summary">"Funa ebirango n'ebipya okuva ku ClipBox"</string>
+    <string name="settings_notifications_summary">"Funa ebirango n'ebipya okuva ku StreamHub"</string>
     <string name="settings_parental">"Obufuzi bw'abazadde"</string>
     <string name="settings_parental_off">Kizikiziddwa</string>
     <string name="settings_parental_on_fmt">Emitwe egiweereddwa omutendera ogusukka %1$d gikwekebwa</string>
     <string name="settings_pref_sub_lang">Olulimi olusinga okwettanirwa</string>
     <string name="settings_reset_app">Reset app</string>
-    <string name="settings_reset_app_confirm">Kino kisangula data ya app yonna era ne kiggalawo ClipBox. Eeyongera?</string>
+    <string name="settings_reset_app_confirm">Kino kisangula data ya app yonna era ne kiggalawo StreamHub. Eeyongera?</string>
     <string name="settings_reset_app_summary">Sangulawo data zonna otandike obuggya</string>
     <string name="settings_reset_tips">"Sazaamu Olukalala Lwange, ebyagalwa n'Okweyongera okulaba"</string>
     <string name="settings_reset_tips_confirm">"Osazeewo okusazaamu Olukalala Lwange lwonna, ebyagalwa byo ne buli kimu ky'otandise?"</string>
@@ -812,7 +812,7 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno mu ddakiika ntono."</string>
     <string name="tamper_blocked">Kopi eno eya app si ya ddala.</string>
     <string name="terms_gate_accept">Kkiriza</string>
     <string name="terms_gate_decline">Okukendeera</string>
-    <string name="terms_gate_message">"Nkusaba okwetegereza era okkirize Ebiragiro n'Obukwakkulizo bwaffe okutandika okukozesa ClipBox."</string>
+    <string name="terms_gate_message">"Nkusaba okwetegereza era okkirize Ebiragiro n'Obukwakkulizo bwaffe okutandika okukozesa StreamHub."</string>
     <string name="terms_gate_subtitle">Nsaba bino obisome era mukkirize ogende mu maaso</string>
     <string name="terms_gate_title">"Ebiragiro n'Obukwakkulizo"</string>
     <string name="touch_lock_desc">Okusiba screen</string>
@@ -820,14 +820,14 @@ Kye kyokka. VIP yeggulawo yokka ku TV eno mu ddakiika ntono."</string>
     <string name="touch_locked_toast">Screen eggaddwa. Koona ku kabonero ka kkufulu okusumulula.</string>
     <string name="track_off">Off</string>
     <string name="tv_account_avatar">"Ekifaananyi ky'omuntu"</string>
-    <string name="tv_account_avatar_phone_only">"Ekifaananyi ky'omuntu kirondebwa okuva mu kifaananyi ekiri ku kyuma kyo. Ttivvi eno terina puloguramu esobola okukikola, n'olwekyo kiteeke mu ClipBox ku ssimu yo, kijja kulabika wano."</string>
+    <string name="tv_account_avatar_phone_only">"Ekifaananyi ky'omuntu kirondebwa okuva mu kifaananyi ekiri ku kyuma kyo. Ttivvi eno terina puloguramu esobola okukikola, n'olwekyo kiteeke mu StreamHub ku ssimu yo, kijja kulabika wano."</string>
     <string name="tv_account_choose_image">Londa ekifaananyi</string>
     <string name="tv_account_new_password_hint">"Ekigambo eky'ekyama ekipya"</string>
     <string name="tv_account_recover_action">"Zzaawo ekigambo eky'ekyama"</string>
     <string name="tv_account_recovery_fmt">"Koodi y'okuzzaawo: %1$s
 
 Giwandiike. Eragibwa omulundi gumu gwokka era y'ekkubo lyokka ery'okudda singa werabira ekigambo kyo eky'ekyama."</string>
-    <string name="tv_account_register_hint">Tolina akawunti? Gikolere mu app ya ClipBox ku ssimu yo, olyoke oyingire wano.</string>
+    <string name="tv_account_register_hint">Tolina akawunti? Gikolere mu app ya StreamHub ku ssimu yo, olyoke oyingire wano.</string>
     <string name="tv_account_saved">Kitereezeddwa</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Ekifaananyi (ekitabikkulukuse)</string>
@@ -930,7 +930,7 @@ Giwandiike. Eragibwa omulundi gumu gwokka era y'ekkubo lyokka ery'okudda singa w
     <string name="tv_ui_scale_title">"Obunene bw'enkola"</string>
     <string name="tv_value_off">Kizikiziddwa</string>
     <string name="tv_value_on">Kikoleddwa</string>
-    <string name="tv_whatsnew_body">"ClipBox ezzeemu okuzimbibwa olwa ssirini ennene ne rimootu yo. Byonna bye walina bikyaliwo, kyokka kaakano byangu okutuukako ng'otudde ku sofa. Osiima endabika eyasooka? Osobola okuddayo ku yo mu nteekateeka ekiseera kyonna."</string>
+    <string name="tv_whatsnew_body">"StreamHub ezzeemu okuzimbibwa olwa ssirini ennene ne rimootu yo. Byonna bye walina bikyaliwo, kyokka kaakano byangu okutuukako ng'otudde ku sofa. Osiima endabika eyasooka? Osobola okuddayo ku yo mu nteekateeka ekiseera kyonna."</string>
     <string name="tv_whatsnew_classic">Kozesa endabika eya kale</string>
     <string name="tv_whatsnew_continue">Tunulako</string>
     <string name="tv_whatsnew_title">Endabika empya eya tiivi</string>
@@ -947,21 +947,21 @@ Giwandiike. Eragibwa omulundi gumu gwokka era y'ekkubo lyokka ery'okudda singa w
     <string name="update_downloading">Okusika mu bitundu ebipya...</string>
     <string name="update_install_help">"1. Koona ku Update okuwanula APK empya.
 2. Omuteeka bw'aggulawo, koona ku Install.
-3. Singa Android ekiziyiza, kiriza \"Teeka apps ezitamanyiddwa\" ku ClipBox, olwo koona ku Teeka nate.
+3. Singa Android ekiziyiza, kiriza \"Teeka apps ezitamanyiddwa\" ku StreamHub, olwo koona ku Teeka nate.
 4. Ensengeka zo n'olukalala lwo bikuumibwa, biteekebwa ku app eriwo kati."</string>
     <string name="update_install_help_summary">"Eky'okukola singa install ezibiddwa"</string>
     <string name="update_install_help_title">"Engeri y'okussaako"</string>
     <string name="update_later">Oluvannyuma</string>
-    <string name="update_permission_msg_firetv">"Fire TV yo eteekamu ebipya okuva mu apps z'okkirizza zokka. Londa Ggulawo settings, teeka ku ClipBox wansi wa \"Install unknown apps\" onyige Emabega. Okuzza obuggya kujja kugenda mu maaso kwokka.
+    <string name="update_permission_msg_firetv">"Fire TV yo eteekamu ebipya okuva mu apps z'okkirizza zokka. Londa Ggulawo settings, teeka ku StreamHub wansi wa \"Install unknown apps\" onyige Emabega. Okuzza obuggya kujja kugenda mu maaso kwokka.
 
-Olutimbe olwo bwe lutaggulwawo: Settings > My Fire TV > Developer options > Install unknown apps > ClipBox. Tolaba Developer options? Sooka ogende ku Settings > My Fire TV > About onyige OK emirundi 7 ku linnya lya kyuma."</string>
-    <string name="update_permission_msg_phone">"Android eteekamu ebipya okuva mu apps z'okkirizza zokka. Nyiga Ggulawo settings, ku ClipBox teeka ku \"Kkiriza okuva mu nsibuko eno\" oddeyo emabega. Okuzza obuggya kujja kugenda mu maaso kwokka."</string>
-    <string name="update_permission_msg_tv">"TV yo eteekamu ebipya okuva mu apps z'okkirizza zokka. Londa Ggulawo settings, teeka ku ClipBox wansi wa \"Teekamu apps ezitamanyiddwa\" onyige Emabega. Okuzza obuggya kujja kugenda mu maaso kwokka.
+Olutimbe olwo bwe lutaggulwawo: Settings > My Fire TV > Developer options > Install unknown apps > StreamHub. Tolaba Developer options? Sooka ogende ku Settings > My Fire TV > About onyige OK emirundi 7 ku linnya lya kyuma."</string>
+    <string name="update_permission_msg_phone">"Android eteekamu ebipya okuva mu apps z'okkirizza zokka. Nyiga Ggulawo settings, ku StreamHub teeka ku \"Kkiriza okuva mu nsibuko eno\" oddeyo emabega. Okuzza obuggya kujja kugenda mu maaso kwokka."</string>
+    <string name="update_permission_msg_tv">"TV yo eteekamu ebipya okuva mu apps z'okkirizza zokka. Londa Ggulawo settings, teeka ku StreamHub wansi wa \"Teekamu apps ezitamanyiddwa\" onyige Emabega. Okuzza obuggya kujja kugenda mu maaso kwokka.
 
-Olutimbe olwo bwe lutaggulwawo: Settings > Apps > Security &amp; restrictions > Unknown sources > ClipBox."</string>
+Olutimbe olwo bwe lutaggulwawo: Settings > Apps > Security &amp; restrictions > Unknown sources > StreamHub."</string>
     <string name="update_permission_not_opened">Settings tezisobodde kuggulwawo. Goberera emitendera egiri ku lutimbe.</string>
     <string name="update_permission_open">Ggulawo settings</string>
-    <string name="update_permission_title">Kkiriza ClipBox okuteekamu ebipya</string>
+    <string name="update_permission_title">Kkiriza StreamHub okuteekamu ebipya</string>
     <string name="update_unavailable">"Empeereza y'okutereeza tesobola. App tesobola kukebera bipya mu kiseera kino."</string>
     <string name="update_up_to_date">Obadde dda ku nkyusa eyasembyeyo. Kirungi.</string>
     <string name="voucher_address_copied">Endagiriro ekoppoddwa. Gikuteeke ku azte.co.</string>
@@ -974,10 +974,10 @@ Olutimbe olwo bwe lutaggulwawo: Settings > Apps > Security &amp; restrictions > 
     <string name="voucher_ln_bad">Kino tekifaanana nga linki ya vawuca ya Lightning. Etandika ne LNURL.</string>
     <string name="voucher_ln_redeeming">Tukozesa vawuca yo…</string>
     <string name="voucher_ln_steps">"1. Ggulawo azte.co, londa Lightning era okozese koodi ya vawuca yo eyo.
-2. Wajja kulabika linki ya Lightning (LNURL). Gikoneko okuggulawo ClipBox, oba gikoppe ogiteeke wano."</string>
+2. Wajja kulabika linki ya Lightning (LNURL). Gikoneko okuggulawo StreamHub, oba gikoppe ogiteeke wano."</string>
     <string name="voucher_loading_address">Tuteekateeka endagiriro yo…</string>
     <string name="voucher_onchain">Vawuca ya Bitcoin</string>
-    <string name="voucher_onchain_note">Endagiriro eno ya akawunti yo ku kusasula kuno. Osobola okuggalawo ClipBox mu kaseera kano; VIP ejja kwaka yokka.</string>
+    <string name="voucher_onchain_note">Endagiriro eno ya akawunti yo ku kusasula kuno. Osobola okuggalawo StreamHub mu kaseera kano; VIP ejja kwaka yokka.</string>
     <string name="voucher_onchain_steps">"1. Ggulawo azte.co era okozese koodi ya vawuca yo eyo.
 2. Bwe bakusaba endagiriro ya Bitcoin, kozesa eno:"</string>
     <string name="voucher_onchain_steps_code">"1. Wandiika wansi koodi ey'ennamba 16 eri ku vawuca yo.

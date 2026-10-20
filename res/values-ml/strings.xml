@@ -23,20 +23,20 @@
     <string name="about_attributions_subtitle">TMDB, ലൈബ്രറികൾ &amp; ലൈസൻസുകൾ</string>
     <string name="about_attributions_title">ലൈസൻസുകളും ആട്രിബ്യൂഷനുകളും</string>
     <string name="about_changelog_title">ചേഞ്ച്ലോഗ്</string>
-    <string name="about_credits_body">"Android-ൽ സിനിമകളും സീരീസുകളും കാണാനുള്ള വൃത്തിയുള്ളതും ശാന്തവുമായ ഒരു വഴിയാണ് ClipBox. എല്ലാം ഒരിടത്തുതന്നെ ഉള്ളതിനാൽ ജനപ്രിയമായവ നോക്കാം, പ്രത്യേകിച്ചൊന്ന് തിരയാം, അല്ലെങ്കിൽ നിർത്തിയ അതേ സ്ഥലത്തുനിന്ന് തുടരാം.
+    <string name="about_credits_body">"Android-ൽ സിനിമകളും സീരീസുകളും കാണാനുള്ള വൃത്തിയുള്ളതും ശാന്തവുമായ ഒരു വഴിയാണ് StreamHub. എല്ലാം ഒരിടത്തുതന്നെ ഉള്ളതിനാൽ ജനപ്രിയമായവ നോക്കാം, പ്രത്യേകിച്ചൊന്ന് തിരയാം, അല്ലെങ്കിൽ നിർത്തിയ അതേ സ്ഥലത്തുനിന്ന് തുടരാം.
 
 സബ്ടൈറ്റിലുകൾ നിരവധി ഭാഷകളിൽ നിങ്ങൾക്കുവേണ്ടി കണ്ടെത്തി സമയം ക്രമീകരിക്കുന്നു, ഓരോ ടൈറ്റിലിനും പല ഉറവിടങ്ങളുണ്ട്, കാണുന്നത് Chromecast-ലേക്കോ സ്മാർട്ട് ടിവിയിലേക്കോ അയയ്ക്കാം. ഫോൺ, ടാബ്‌ലെറ്റ്, Android TV, Fire TV എന്നിവയിൽ ആപ്പ് പ്രവർത്തിക്കുന്നു; ഓപ്ഷണലായ ഒരു അക്കൗണ്ട് നിങ്ങളുടെ ലിസ്റ്റും ചരിത്രവും എല്ലാത്തിലും ഒരുപോലെ നിലനിർത്തുന്നു.
 
-ദിവസവും ഇത് ഉപയോഗിക്കുന്ന ഒരു ചെറിയ സംഘമാണ് ClipBox ഉണ്ടാക്കുന്നത്; ആളുകൾ പറയുന്ന കാര്യങ്ങൾ കൊണ്ടാണ് ഇത് മെച്ചപ്പെടുന്നത്."</string>
-    <string name="about_credits_title">ClipBox-നെ കുറിച്ച്</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+ദിവസവും ഇത് ഉപയോഗിക്കുന്ന ഒരു ചെറിയ സംഘമാണ് StreamHub ഉണ്ടാക്കുന്നത്; ആളുകൾ പറയുന്ന കാര്യങ്ങൾ കൊണ്ടാണ് ഇത് മെച്ചപ്പെടുന്നത്."</string>
+    <string name="about_credits_title">StreamHub-നെ കുറിച്ച്</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">ഉള്ളടക്ക ഉറവിടങ്ങളും വ്യാപാരമുദ്രകളും</string>
     <string name="about_disclaimer_title">നിരാകരണം</string>
     <string name="about_legal_title">നിയമപരമായ</string>
     <string name="about_privacy_subtitle">എന്ത് ഡാറ്റയാണ് ശേഖരിക്കുന്നത്, എന്തുകൊണ്ട്</string>
     <string name="about_privacy_title">സ്വകാര്യതാ നയം</string>
-    <string name="about_terms_subtitle">ClipBox എങ്ങനെ ഉപയോഗിക്കാം</string>
+    <string name="about_terms_subtitle">StreamHub എങ്ങനെ ഉപയോഗിക്കാം</string>
     <string name="about_terms_title">നിബന്ധനകളും വ്യവസ്ഥകളും</string>
     <string name="about_title">കുറിച്ച്</string>
     <string name="about_version_fmt">v%1$s (%2$d)</string>
@@ -65,7 +65,7 @@
     <string name="account_recovery_code">വീണ്ടെടുക്കൽ കോഡ്</string>
     <string name="account_recovery_code_hint">വീണ്ടെടുക്കൽ കോഡ്</string>
     <string name="account_register">അക്കൗണ്ട് സൃഷ്ടിക്കുക</string>
-    <string name="account_register_subtitle">നിങ്ങളുടെ ClipBox അക്കൗണ്ട് സൃഷ്ടിക്കുക</string>
+    <string name="account_register_subtitle">നിങ്ങളുടെ StreamHub അക്കൗണ്ട് സൃഷ്ടിക്കുക</string>
     <string name="account_session_ended">നിങ്ങളുടെ അക്കൗണ്ട് ഇനി ലഭ്യമല്ല. നിങ്ങൾ സൈൻ ഔട്ട് ചെയ്‌തു.</string>
     <string name="account_settings_section">അക്കൗണ്ട് ക്രമീകരണങ്ങൾ</string>
     <string name="account_sign_in">സൈൻ ഇൻ ചെയ്യുക</string>
@@ -73,7 +73,7 @@
     <string name="account_sign_out">സൈൻ ഔട്ട് ചെയ്യുക</string>
     <string name="account_signed_out_offline">സൈൻ ഔട്ട് ചെയ്തു. നിങ്ങളുടെ ലിസ്റ്റ് സമന്വയിപ്പിക്കാൻ കഴിയാത്തതിനാൽ അത് ഈ ഉപകരണത്തിൽ സൂക്ഷിച്ചിരിക്കുന്നു.</string>
     <string name="account_signing_in">സൈൻ ഇൻ ചെയ്യുന്നു…</string>
-    <string name="account_subtitle">നിങ്ങളുടെ ClipBox അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യുക</string>
+    <string name="account_subtitle">നിങ്ങളുടെ StreamHub അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യുക</string>
     <string name="account_sync_done">സമന്വയം പൂർത്തിയായി</string>
     <string name="account_terms_required">രജിസ്റ്റർ ചെയ്യുന്നതിന് മുമ്പ് നിബന്ധനകളും വ്യവസ്ഥകളും അവലോകനം ചെയ്യുക</string>
     <string name="account_title">അക്കൗണ്ട്</string>
@@ -99,21 +99,21 @@
     <string name="actor_read_more">കൂടുതൽ വായിക്കുക</string>
     <string name="actor_wikipedia_failed">വിക്കിപീഡിയ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
     <string name="ad_autoclose_fmt">%1$d സെക്കൻഡിൽ സ്വയം അടയും</string>
-    <string name="ad_blocked_note">ഒരു ആഡ് ബ്ലോക്കർ ഈ പരസ്യം തടയുന്നു. പരസ്യങ്ങൾ ClipBox സൗജന്യമായി നിലനിർത്തുന്നു: ClipBox-നായി ഇത് ഓഫാക്കുക, അല്ലെങ്കിൽ VIP എടുക്കുക.</string>
+    <string name="ad_blocked_note">ഒരു ആഡ് ബ്ലോക്കർ ഈ പരസ്യം തടയുന്നു. പരസ്യങ്ങൾ StreamHub സൗജന്യമായി നിലനിർത്തുന്നു: StreamHub-നായി ഇത് ഓഫാക്കുക, അല്ലെങ്കിൽ VIP എടുക്കുക.</string>
     <string name="ad_close">പരസ്യം അടയ്ക്കുക</string>
     <string name="ad_label">പരസ്യം</string>
     <string name="ad_loading">പരസ്യം ലോഡ് ചെയ്യുന്നു…</string>
     <string name="ad_open">പരസ്യം തുറക്കുക</string>
     <string name="ad_page_hint">അമ്പടയാളങ്ങൾ പോയിന്റർ നീക്കുന്നു · OK ക്ലിക്ക് · Back അടയ്ക്കുന്നു</string>
-    <string name="ad_popup_note">പരസ്യങ്ങൾ ClipBox സൗജന്യമായി നിലനിർത്തുകയും സെർവറുകളുടെയും പരിപാലനത്തിന്റെയും ചെലവ് വഹിക്കാൻ സഹായിക്കുകയും ചെയ്യുന്നു.</string>
+    <string name="ad_popup_note">പരസ്യങ്ങൾ StreamHub സൗജന്യമായി നിലനിർത്തുകയും സെർവറുകളുടെയും പരിപാലനത്തിന്റെയും ചെലവ് വഹിക്കാൻ സഹായിക്കുകയും ചെയ്യുന്നു.</string>
     <string name="ad_remove_with_vip">VIP-യിൽ പരസ്യങ്ങളില്ല</string>
     <string name="add_to_favourites">പ്രിയപ്പെട്ടവയിലേക്ക് ചേർക്കുക</string>
     <string name="added_to_favourites">പ്രിയപ്പെട്ടവയിലേക്ക് ചേർത്തു</string>
     <string name="added_to_my_list">എൻ്റെ ലിസ്റ്റിലേക്ക് ചേർത്തു</string>
     <string name="alert_dialog_title">ശ്രദ്ധിക്കുക</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">പൂരിപ്പിക്കുക</string>
     <string name="aspect_fills_already">ചിത്രം ഇതിനകം സ്ക്രീൻ നിറയ്ക്കുന്നു</string>
     <string name="aspect_fit">ഒതുക്കുക</string>
@@ -178,9 +178,9 @@
     <string name="call_notification_ongoing_text">സജീവമായ കോൾ</string>
     <string name="call_notification_screening_text">ഇൻകമിംഗ് കോൾ സ്‌ക്രീൻ ചെയ്യുന്നു</string>
     <string name="capture_blocked_exit">പുറത്തുകടക്കുക</string>
-    <string name="capture_blocked_intro">ഈ ഉപകരണത്തിൽ നെറ്റ്‌വർക്ക് ക്യാപ്ചർ അല്ലെങ്കിൽ പ്രോക്സി ഉപകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നിടത്തോളം ClipBox പ്രവർത്തിക്കില്ല.</string>
-    <string name="capture_blocked_outro">അത് അൺഇൻസ്റ്റാൾ ചെയ്ത് ClipBox വീണ്ടും തുറക്കുക.</string>
-    <string name="capture_blocked_title">ഈ ഉപകരണത്തിൽ ClipBox പ്രവർത്തിക്കാനാവില്ല</string>
+    <string name="capture_blocked_intro">ഈ ഉപകരണത്തിൽ നെറ്റ്‌വർക്ക് ക്യാപ്ചർ അല്ലെങ്കിൽ പ്രോക്സി ഉപകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നിടത്തോളം StreamHub പ്രവർത്തിക്കില്ല.</string>
+    <string name="capture_blocked_outro">അത് അൺഇൻസ്റ്റാൾ ചെയ്ത് StreamHub വീണ്ടും തുറക്കുക.</string>
+    <string name="capture_blocked_title">ഈ ഉപകരണത്തിൽ StreamHub പ്രവർത്തിക്കാനാവില്ല</string>
     <string name="cast_ad_label">പരസ്യം</string>
     <string name="cast_button_cast">കാസ്റ്റ്</string>
     <string name="cast_casting_to_device">%1$s എന്നതിലേക്ക് കാസ്റ്റുചെയ്യുന്നു</string>
@@ -379,7 +379,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="err_service_unavailable">സേവനം താൽക്കാലികമായി ലഭ്യമല്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</string>
     <string name="err_signed_out_sign_in">ഈ ഉപകരണത്തിൽ നിങ്ങൾ സൈൻ ഔട്ട് ചെയ്യപ്പെട്ടു. വീണ്ടും സൈൻ ഇൻ ചെയ്യുക.</string>
     <string name="err_too_many_requests">വളരെയധികം അഭ്യർത്ഥനകൾ. ദയവായി ഒരു നിമിഷം കാത്തിരിക്കൂ.</string>
-    <string name="err_update_for_recovery">പുതിയ വീണ്ടെടുക്കൽ കോഡ് സൃഷ്ടിക്കാൻ ClipBox ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യുക.</string>
+    <string name="err_update_for_recovery">പുതിയ വീണ്ടെടുക്കൽ കോഡ് സൃഷ്ടിക്കാൻ StreamHub ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യുക.</string>
     <string name="error_a11y_label">പിശക്: അസാധുവാണ്</string>
     <string name="error_bad_intent">അസാധുവായ ഒരു ലിങ്ക് ലഭിച്ചു. അത് തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
     <string name="error_icon_content_description">പിശക്</string>
@@ -467,7 +467,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="force_update_subtitle">അപ്ഡേറ്റ് ആവശ്യമാണ്</string>
     <string name="gate_connecting">ലോഡ് ചെയ്യുന്നു</string>
     <string name="gate_retry">വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="gate_unavailable_message">"ClipBox-ന് അതിൻ്റെ സെർവറുകളിൽ എത്താൻ കഴിയുന്നില്ല.
+    <string name="gate_unavailable_message">"StreamHub-ന് അതിൻ്റെ സെർവറുകളിൽ എത്താൻ കഴിയുന്നില്ല.
 ദയവായി നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."</string>
     <string name="gate_unavailable_title">സേവനം ലഭ്യമല്ല</string>
     <string name="genre_action">ആക്ഷൻ</string>
@@ -492,7 +492,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="lang_available_body">നിങ്ങൾ നിലവിൽ ആപ്പ് %1$s ൽ ഉപയോഗിക്കുന്നു. മാറ്റണോ? ക്രമീകരണങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും ഇത് മാറ്റാം.</string>
     <string name="lang_available_keep">%1$s നിലനിർത്തുക</string>
     <string name="lang_available_switch">%1$s ലേക്ക് മാറുക</string>
-    <string name="lang_available_title">ClipBox ഇപ്പോൾ %1$s ൽ ലഭ്യമാണ്</string>
+    <string name="lang_available_title">StreamHub ഇപ്പോൾ %1$s ൽ ലഭ്യമാണ്</string>
     <string name="launcher_instructions">"നിങ്ങൾ ഇവിടെ ഒന്നും ചെയ്യേണ്ടതില്ല.
 
 നിങ്ങൾക്ക് ഒരു സ്ട്രീം URL ഉണ്ടെങ്കിൽ, നിങ്ങൾക്ക് അത് നേരിട്ട് താഴെ പ്ലേ ചെയ്യാം.
@@ -639,17 +639,17 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="pair_scan_allow">ക്യാമറ അനുവദിക്കുക</string>
     <string name="pair_scan_button">QR കോഡ് സ്കാൻ ചെയ്യുക</string>
     <string name="pair_scan_hint">ടിവിയിലെ QR കോഡിലേക്ക് ക്യാമറ തിരിക്കുക</string>
-    <string name="pair_scan_no_camera">കോഡ് സ്കാൻ ചെയ്യാൻ ClipBox-ന് ക്യാമറ വേണം. ഈ സ്ക്രീൻ തുറന്നിരിക്കുമ്പോൾ മാത്രമേ ഉപയോഗിക്കൂ.</string>
+    <string name="pair_scan_no_camera">കോഡ് സ്കാൻ ചെയ്യാൻ StreamHub-ന് ക്യാമറ വേണം. ഈ സ്ക്രീൻ തുറന്നിരിക്കുമ്പോൾ മാത്രമേ ഉപയോഗിക്കൂ.</string>
     <string name="pair_scan_torch">ടോർച്ച്</string>
     <string name="pair_scan_type_instead">പകരം കോഡ് ടൈപ്പ് ചെയ്യുക</string>
-    <string name="pair_scan_wrong">ഇത് ClipBox ടിവി കോഡ് അല്ല. ടിവിയിലെ കോഡ് സ്കാൻ ചെയ്യുക.</string>
+    <string name="pair_scan_wrong">ഇത് StreamHub ടിവി കോഡ് അല്ല. ടിവിയിലെ കോഡ് സ്കാൻ ചെയ്യുക.</string>
     <string name="pair_tv_button">ഫോൺ വഴി സൈൻ ഇൻ ചെയ്യുക</string>
     <string name="pair_tv_confirm_hint">ഫോണിൽ സ്ഥിരീകരിക്കുക, ഈ ടിവി സ്വയം സൈൻ ഇൻ ചെയ്യും.</string>
     <string name="pair_tv_done_fmt">%1$s ആയി സൈൻ ഇൻ ചെയ്തു</string>
     <string name="pair_tv_expires_fmt">കോഡ് ഇനി %1$s സാധുവാണ്</string>
     <string name="pair_tv_failed">കോഡ് ലഭിച്ചില്ല. കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.</string>
     <string name="pair_tv_new_code">പുതിയ കോഡ്</string>
-    <string name="pair_tv_or_code">അല്ലെങ്കിൽ ഫോണിൽ ClipBox തുറന്ന്, അക്കൗണ്ട്, പിന്നെ ടിവിയിൽ സൈൻ ഇൻ എന്നതിൽ പോയി QR കോഡിന് താഴെയുള്ള കോഡ് നൽകുക.</string>
+    <string name="pair_tv_or_code">അല്ലെങ്കിൽ ഫോണിൽ StreamHub തുറന്ന്, അക്കൗണ്ട്, പിന്നെ ടിവിയിൽ സൈൻ ഇൻ എന്നതിൽ പോയി QR കോഡിന് താഴെയുള്ള കോഡ് നൽകുക.</string>
     <string name="pair_tv_scan">ഫോൺ ക്യാമറ കൊണ്ട് കോഡ് സ്കാൻ ചെയ്യുക</string>
     <string name="pair_tv_waiting">നിങ്ങളുടെ ഫോണിനായി കാത്തിരിക്കുന്നു…</string>
     <string name="parental_age_fmt">%1$d വയസ്സും അതിൽ താഴെയും</string>
@@ -718,7 +718,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
 
 1. Azteco വൗച്ചർ റിഡീം ചെയ്യൂ › വൗച്ചർ എവിടെ വാങ്ങാം? ടാപ്പ് ചെയ്ത് ഏതെങ്കിലും കടയിൽ നിന്ന് Azteco Bitcoin വൗച്ചർ (On-Chain) വാങ്ങുക. പതിവുപോലെ, ഉദാഹരണത്തിന് കാർഡ് ഉപയോഗിച്ച്, പണമടയ്ക്കാം.
 2. നിങ്ങൾക്ക് 16 അക്ക കോഡ് ലഭിക്കും.
-3. ClipBox-ൽ Azteco വൗച്ചർ റിഡീം ചെയ്യൂ, തുടർന്ന് Bitcoin വൗച്ചർ ടാപ്പ് ചെയ്യുക. ഞങ്ങളുടെ വൗച്ചർ പേജ് തുറക്കും.
+3. StreamHub-ൽ Azteco വൗച്ചർ റിഡീം ചെയ്യൂ, തുടർന്ന് Bitcoin വൗച്ചർ ടാപ്പ് ചെയ്യുക. ഞങ്ങളുടെ വൗച്ചർ പേജ് തുറക്കും.
 4. അവിടെ കോഡ് നൽകുക. നിങ്ങൾക്കായി ഞങ്ങൾ അത് റിഡീം ചെയ്യുകയും പേയ്‌മെന്റ് എത്തിയോ എന്ന് പരിശോധിക്കുകയും ചെയ്യും.
 
 ഇത്രമാത്രം. കുറച്ച് മിനിറ്റുകൾക്കുള്ളിൽ VIP സ്വയം ഓണാകും."</string>
@@ -751,12 +751,12 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="premium_state_confirming_title">പേയ്‌മെന്റ് ലഭിച്ചു</string>
     <string name="premium_state_partial_body_fmt">നിങ്ങൾ $%1$s അടച്ചു. ഇനി $%2$s കൂടി, VIP നിങ്ങളുടേതാകും. അടച്ച തുക നിങ്ങളുടെ അക്കൗണ്ടിൽ സൂക്ഷിക്കും.</string>
     <string name="premium_state_partial_title">ഏകദേശം പൂർത്തിയായി</string>
-    <string name="premium_state_vip_body">നിങ്ങൾ സൈൻ ഇൻ ചെയ്യുന്ന ഒരു ഉപകരണത്തിലും പരസ്യങ്ങളില്ല. ClipBox-നെ പിന്തുണച്ചതിന് നന്ദി.</string>
+    <string name="premium_state_vip_body">നിങ്ങൾ സൈൻ ഇൻ ചെയ്യുന്ന ഒരു ഉപകരണത്തിലും പരസ്യങ്ങളില്ല. StreamHub-നെ പിന്തുണച്ചതിന് നന്ദി.</string>
     <string name="premium_state_vip_title">നിങ്ങൾ VIP ആണ്</string>
     <string name="premium_state_waiting_body">പേയ്‌മെന്റ് പേജിൽ പേയ്‌മെന്റ് പൂർത്തിയാക്കൂ. പേയ്‌മെന്റ് കാണുന്ന ഉടൻ ഈ സ്‌ക്രീൻ സ്വയം അപ്‌ഡേറ്റ് ആകും.</string>
     <string name="premium_state_waiting_title">നിങ്ങളുടെ പേയ്‌മെന്റിനായി കാത്തിരിക്കുന്നു</string>
     <string name="premium_tagline">ഒറ്റത്തവണ പേയ്‌മെന്റ്. എന്നും നിങ്ങളുടേത്.</string>
-    <string name="premium_tv_phone_hint">Lightning വൗച്ചർ ഉണ്ടോ? അതേ അക്കൗണ്ടിൽ നിങ്ങളുടെ ഫോണിലെ ClipBox-ൽ റിഡീം ചെയ്യൂ. VIP നിങ്ങളുടെ അക്കൗണ്ടിനൊപ്പം ഈ ടിവിയിലും എത്തും.</string>
+    <string name="premium_tv_phone_hint">Lightning വൗച്ചർ ഉണ്ടോ? അതേ അക്കൗണ്ടിൽ നിങ്ങളുടെ ഫോണിലെ StreamHub-ൽ റിഡീം ചെയ്യൂ. VIP നിങ്ങളുടെ അക്കൗണ്ടിനൊപ്പം ഈ ടിവിയിലും എത്തും.</string>
     <string name="premium_tv_scan">പണമടയ്ക്കാൻ ഫോണിൽ സ്‌കാൻ ചെയ്യൂ</string>
     <string name="premium_tv_show_checkout">ക്രിപ്‌റ്റോ ഉപയോഗിച്ച് പണമടയ്ക്കൂ</string>
     <string name="premium_tv_show_voucher">Bitcoin വൗച്ചർ</string>
@@ -859,7 +859,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="servers_probe_starting">ആരംഭിക്കുന്നു… %1$d സെക്കൻഡ് ബാക്കി</string>
     <string name="servers_tab_experimental">കൂടുതൽ ഭാഷകൾ</string>
     <string name="servers_tab_main">സ്റ്റാൻഡേർഡ്</string>
-    <string name="settings_about">ClipBox-നെ കുറിച്ച്</string>
+    <string name="settings_about">StreamHub-നെ കുറിച്ച്</string>
     <string name="settings_about_summary">പതിപ്പ് വിവരങ്ങൾ, ക്രെഡിറ്റുകൾ, ചേഞ്ച്ലോഗ്</string>
     <string name="settings_account">എൻ്റെ അക്കൗണ്ട്</string>
     <string name="settings_account_loggedout">സൈൻ ഇൻ ചെയ്തിട്ടില്ല</string>
@@ -891,13 +891,13 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="settings_next_episode">അടുത്ത എപ്പിസോഡ് സ്വയമേവ പ്ലേ ചെയ്യുക</string>
     <string name="settings_next_episode_summary">ക്രെഡിറ്റ്സിൽ കൗണ്ട്ഡൗൺ കാണിച്ച് സ്വയം തുടരുക</string>
     <string name="settings_notifications">അറിയിപ്പുകൾ</string>
-    <string name="settings_notifications_summary">ClipBox-ൽ നിന്ന് അറിയിപ്പുകളും അപ്‌ഡേറ്റുകളും സ്വീകരിക്കുക</string>
+    <string name="settings_notifications_summary">StreamHub-ൽ നിന്ന് അറിയിപ്പുകളും അപ്‌ഡേറ്റുകളും സ്വീകരിക്കുക</string>
     <string name="settings_parental">രക്ഷാകർതൃ നിയന്ത്രണം</string>
     <string name="settings_parental_off">ഓഫ്</string>
     <string name="settings_parental_on_fmt">%1$d-നു മുകളിൽ റേറ്റ് ചെയ്ത ശീർഷകങ്ങൾ മറയ്ക്കുന്നു</string>
     <string name="settings_pref_sub_lang">ഇഷ്ടപ്പെട്ട ഭാഷ</string>
     <string name="settings_reset_app">ആപ്പ് റീസെറ്റ് ചെയ്യുക</string>
-    <string name="settings_reset_app_confirm">ഇത് എല്ലാ ആപ്പ് ഡാറ്റയും മായ്‌ക്കുകയും ClipBox അടയ്‌ക്കുകയും ചെയ്യുന്നു. തുടരണോ?</string>
+    <string name="settings_reset_app_confirm">ഇത് എല്ലാ ആപ്പ് ഡാറ്റയും മായ്‌ക്കുകയും StreamHub അടയ്‌ക്കുകയും ചെയ്യുന്നു. തുടരണോ?</string>
     <string name="settings_reset_app_summary">എല്ലാ ഡാറ്റയും മായ്‌ച്ച് പുതുതായി ആരംഭിക്കുക</string>
     <string name="settings_reset_tips">എന്റെ ലിസ്റ്റ്, പ്രിയപ്പെട്ടവ, കാണൽ തുടരുക എന്നിവ മായ്ക്കുക</string>
     <string name="settings_reset_tips_confirm">നിങ്ങളുടെ മുഴുവൻ ലിസ്റ്റും പ്രിയപ്പെട്ടവയും പാതി കണ്ടതെല്ലാം മായ്ക്കണോ?</string>
@@ -1076,7 +1076,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="tamper_blocked">ആപ്പിൻ്റെ ഈ പകർപ്പ് യഥാർത്ഥമല്ല.</string>
     <string name="terms_gate_accept">സ്വീകരിക്കുക</string>
     <string name="terms_gate_decline">നിരസിക്കുക</string>
-    <string name="terms_gate_message">ClipBox ഉപയോഗിക്കുന്നത് ആരംഭിക്കാൻ ഞങ്ങളുടെ നിബന്ധനകളും വ്യവസ്ഥകളും അവലോകനം ചെയ്ത് അംഗീകരിക്കുക.</string>
+    <string name="terms_gate_message">StreamHub ഉപയോഗിക്കുന്നത് ആരംഭിക്കാൻ ഞങ്ങളുടെ നിബന്ധനകളും വ്യവസ്ഥകളും അവലോകനം ചെയ്ത് അംഗീകരിക്കുക.</string>
     <string name="terms_gate_subtitle">തുടരാൻ ഇവ വായിക്കുകയും അംഗീകരിക്കുകയും ചെയ്യുക</string>
     <string name="terms_gate_title">നിബന്ധനകളും വ്യവസ്ഥകളും</string>
     <string name="touch_lock_desc">ലോക്ക് സ്ക്രീൻ</string>
@@ -1084,14 +1084,14 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="touch_locked_toast">സ്ക്രീൻ ലോക്ക് ചെയ്തു. അൺലോക്ക് ചെയ്യാൻ ലോക്ക് ഐക്കണിൽ ടാപ്പ് ചെയ്യുക.</string>
     <string name="track_off">ഓഫ്</string>
     <string name="tv_account_avatar">പ്രൊഫൈൽ ചിത്രം</string>
-    <string name="tv_account_avatar_phone_only">പ്രൊഫൈൽ ചിത്രം നിങ്ങളുടെ ഉപകരണത്തിലെ ഫോട്ടോയിൽ നിന്നാണ് തിരഞ്ഞെടുക്കുന്നത്. ഈ ടിവിയിൽ അതിനുള്ള ആപ്പ് ഇല്ല, അതിനാൽ ഫോണിലെ ClipBox-ൽ സജ്ജമാക്കുക, അത് ഇവിടെയും കാണാം.</string>
+    <string name="tv_account_avatar_phone_only">പ്രൊഫൈൽ ചിത്രം നിങ്ങളുടെ ഉപകരണത്തിലെ ഫോട്ടോയിൽ നിന്നാണ് തിരഞ്ഞെടുക്കുന്നത്. ഈ ടിവിയിൽ അതിനുള്ള ആപ്പ് ഇല്ല, അതിനാൽ ഫോണിലെ StreamHub-ൽ സജ്ജമാക്കുക, അത് ഇവിടെയും കാണാം.</string>
     <string name="tv_account_choose_image">ചിത്രം തിരഞ്ഞെടുക്കുക</string>
     <string name="tv_account_new_password_hint">പുതിയ പാസ്‌വേഡ്</string>
     <string name="tv_account_recover_action">പാസ്‌വേഡ് പുനഃസജ്ജമാക്കുക</string>
     <string name="tv_account_recovery_fmt">"വീണ്ടെടുക്കൽ കോഡ്: %1$s
 
 ഇത് എഴുതി വയ്ക്കുക. ഒരിക്കൽ മാത്രമേ കാണിക്കൂ, പാസ്‌വേഡ് മറന്നാൽ തിരികെ വരാനുള്ള ഏക വഴി ഇതാണ്."</string>
-    <string name="tv_account_register_hint">ഇതുവരെ അക്കൗണ്ട് ഇല്ലേ? ഫോണിലെ ClipBox ആപ്പിൽ ഉണ്ടാക്കി ഇവിടെ സൈൻ ഇൻ ചെയ്യുക.</string>
+    <string name="tv_account_register_hint">ഇതുവരെ അക്കൗണ്ട് ഇല്ലേ? ഫോണിലെ StreamHub ആപ്പിൽ ഉണ്ടാക്കി ഇവിടെ സൈൻ ഇൻ ചെയ്യുക.</string>
     <string name="tv_account_saved">സംരക്ഷിച്ചു</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">ചിത്രം (മങ്ങിയത്)</string>
@@ -1194,7 +1194,7 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="tv_ui_scale_title">ഇന്റർഫേസ് വലുപ്പം</string>
     <string name="tv_value_off">ഓഫ്</string>
     <string name="tv_value_on">ഓൺ</string>
-    <string name="tv_whatsnew_body">വലിയ സ്ക്രീനിനും നിങ്ങളുടെ റിമോട്ടിനും വേണ്ടി ClipBox പുതുക്കിപ്പണിതിരിക്കുന്നു. നിങ്ങൾക്കുണ്ടായിരുന്നതെല്ലാം ഇപ്പോഴും ഇവിടെയുണ്ട്, സോഫയിൽ ഇരുന്ന് എത്തിപ്പിടിക്കാൻ എളുപ്പമായെന്നു മാത്രം. പഴയ രൂപമാണ് ഇഷ്ടമെങ്കിൽ ക്രമീകരണങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും തിരികെ മാറാം.</string>
+    <string name="tv_whatsnew_body">വലിയ സ്ക്രീനിനും നിങ്ങളുടെ റിമോട്ടിനും വേണ്ടി StreamHub പുതുക്കിപ്പണിതിരിക്കുന്നു. നിങ്ങൾക്കുണ്ടായിരുന്നതെല്ലാം ഇപ്പോഴും ഇവിടെയുണ്ട്, സോഫയിൽ ഇരുന്ന് എത്തിപ്പിടിക്കാൻ എളുപ്പമായെന്നു മാത്രം. പഴയ രൂപമാണ് ഇഷ്ടമെങ്കിൽ ക്രമീകരണങ്ങളിൽ എപ്പോൾ വേണമെങ്കിലും തിരികെ മാറാം.</string>
     <string name="tv_whatsnew_classic">ക്ലാസിക് രൂപം ഉപയോഗിക്കുക</string>
     <string name="tv_whatsnew_continue">ഒന്നു നോക്കൂ</string>
     <string name="tv_whatsnew_title">ടിവിക്കായി ഒരു പുതിയ രൂപം</string>
@@ -1211,21 +1211,21 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="update_downloading">പുതിയ ബിറ്റുകൾ വലിക്കുന്നു...</string>
     <string name="update_install_help">"1. പുതിയ APK ഡൗൺലോഡ് ചെയ്യാൻ അപ്‌ഡേറ്റ് ടാപ്പ് ചെയ്യുക.
 2. ഇൻസ്റ്റാളർ തുറക്കുമ്പോൾ, ഇൻസ്റ്റാൾ ചെയ്യുക ടാപ്പ് ചെയ്യുക.
-3. Android അതിനെ തടയുകയാണെങ്കിൽ, ClipBox-നായി \"അജ്ഞാതമായ ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" അനുവദിക്കുക, തുടർന്ന് വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുക ടാപ്പ് ചെയ്യുക.
+3. Android അതിനെ തടയുകയാണെങ്കിൽ, StreamHub-നായി \"അജ്ഞാതമായ ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" അനുവദിക്കുക, തുടർന്ന് വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുക ടാപ്പ് ചെയ്യുക.
 4. നിങ്ങളുടെ ക്രമീകരണങ്ങളും ലിസ്റ്റും സൂക്ഷിച്ചിരിക്കുന്നു, അത് നിലവിലെ ആപ്പിൽ ഇൻസ്റ്റാൾ ചെയ്യുന്നു."</string>
     <string name="update_install_help_summary">ഇൻസ്റ്റാളേഷൻ തടഞ്ഞാൽ എന്തുചെയ്യും</string>
     <string name="update_install_help_title">എങ്ങനെ ഇൻസ്റ്റാൾ ചെയ്യാം</string>
     <string name="update_later">പിന്നീട്</string>
-    <string name="update_permission_msg_firetv">"നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ നിങ്ങളുടെ Fire TV അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക തിരഞ്ഞെടുത്ത്, \"അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" എന്നതിൽ ClipBox ഓണാക്കി, തിരികെ അമർത്തുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.
+    <string name="update_permission_msg_firetv">"നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ നിങ്ങളുടെ Fire TV അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക തിരഞ്ഞെടുത്ത്, \"അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" എന്നതിൽ StreamHub ഓണാക്കി, തിരികെ അമർത്തുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.
 
-ആ സ്ക്രീൻ തുറക്കുന്നില്ലെങ്കിൽ: ക്രമീകരണം > എന്റെ Fire TV > ഡെവലപ്പർ ഓപ്ഷനുകൾ > അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക > ClipBox. ഡെവലപ്പർ ഓപ്ഷനുകൾ ഇല്ലേ? ആദ്യം ക്രമീകരണം > എന്റെ Fire TV > കുറിച്ച് എന്നതിൽ പോയി ഉപകരണത്തിന്റെ പേരിൽ 7 തവണ OK അമർത്തുക."</string>
-    <string name="update_permission_msg_phone">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ Android അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക ടാപ്പ് ചെയ്ത്, ClipBox-ന് \"ഈ ഉറവിടത്തിൽ നിന്ന് അനുവദിക്കുക\" ഓണാക്കി തിരികെ പോകുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.</string>
-    <string name="update_permission_msg_tv">"നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ നിങ്ങളുടെ ടിവി അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക തിരഞ്ഞെടുത്ത്, \"അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" എന്നതിൽ ClipBox ഓണാക്കി, തിരികെ അമർത്തുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.
+ആ സ്ക്രീൻ തുറക്കുന്നില്ലെങ്കിൽ: ക്രമീകരണം > എന്റെ Fire TV > ഡെവലപ്പർ ഓപ്ഷനുകൾ > അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക > StreamHub. ഡെവലപ്പർ ഓപ്ഷനുകൾ ഇല്ലേ? ആദ്യം ക്രമീകരണം > എന്റെ Fire TV > കുറിച്ച് എന്നതിൽ പോയി ഉപകരണത്തിന്റെ പേരിൽ 7 തവണ OK അമർത്തുക."</string>
+    <string name="update_permission_msg_phone">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ Android അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക ടാപ്പ് ചെയ്ത്, StreamHub-ന് \"ഈ ഉറവിടത്തിൽ നിന്ന് അനുവദിക്കുക\" ഓണാക്കി തിരികെ പോകുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.</string>
+    <string name="update_permission_msg_tv">"നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകളിൽ നിന്ന് മാത്രമേ നിങ്ങളുടെ ടിവി അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യൂ. ക്രമീകരണം തുറക്കുക തിരഞ്ഞെടുത്ത്, \"അജ്ഞാത ആപ്പുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക\" എന്നതിൽ StreamHub ഓണാക്കി, തിരികെ അമർത്തുക. അപ്‌ഡേറ്റ് സ്വയം തുടരും.
 
-ആ സ്ക്രീൻ തുറക്കുന്നില്ലെങ്കിൽ: ക്രമീകരണം > ആപ്പുകൾ > സുരക്ഷയും നിയന്ത്രണങ്ങളും > അജ്ഞാത ഉറവിടങ്ങൾ > ClipBox."</string>
+ആ സ്ക്രീൻ തുറക്കുന്നില്ലെങ്കിൽ: ക്രമീകരണം > ആപ്പുകൾ > സുരക്ഷയും നിയന്ത്രണങ്ങളും > അജ്ഞാത ഉറവിടങ്ങൾ > StreamHub."</string>
     <string name="update_permission_not_opened">ക്രമീകരണം തുറക്കാനായില്ല. സ്ക്രീനിലെ ഘട്ടങ്ങൾ പിന്തുടരുക.</string>
     <string name="update_permission_open">ക്രമീകരണം തുറക്കുക</string>
-    <string name="update_permission_title">അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ ClipBox-നെ അനുവദിക്കുക</string>
+    <string name="update_permission_title">അപ്‌ഡേറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്യാൻ StreamHub-നെ അനുവദിക്കുക</string>
     <string name="update_unavailable">അപ്ഡേറ്റ് സേവനം ലഭ്യമല്ല. ആപ്പിന് ഇപ്പോൾ അപ്‌ഡേറ്റുകൾ പരിശോധിക്കാൻ കഴിയില്ല.</string>
     <string name="update_up_to_date">നിങ്ങൾ ഇതിനകം ഏറ്റവും പുതിയ പതിപ്പിലാണ്. കൊള്ളാം.</string>
     <string name="v7_preference_off">ഓഫാണ്</string>
@@ -1240,10 +1240,10 @@ LG ടിവികൾ: ക്രമീകരണം → നെറ്റ്‌വ�
     <string name="voucher_ln_bad">ഇത് ഒരു Lightning വൗച്ചർ ലിങ്ക് പോലെ തോന്നുന്നില്ല. ഇത് LNURL എന്നാണ് തുടങ്ങുന്നത്.</string>
     <string name="voucher_ln_redeeming">നിങ്ങളുടെ വൗച്ചർ റിഡീം ചെയ്യുന്നു…</string>
     <string name="voucher_ln_steps">"1. azte.co തുറന്ന് Lightning തിരഞ്ഞെടുത്ത് അവിടെ നിങ്ങളുടെ വൗച്ചർ കോഡ് റിഡീം ചെയ്യൂ.
-2. ഒരു Lightning ലിങ്ക് (LNURL) കാണിക്കും. ClipBox തുറക്കാൻ അതിൽ ടാപ്പ് ചെയ്യൂ, അല്ലെങ്കിൽ പകർത്തി ഇവിടെ ഒട്ടിക്കൂ."</string>
+2. ഒരു Lightning ലിങ്ക് (LNURL) കാണിക്കും. StreamHub തുറക്കാൻ അതിൽ ടാപ്പ് ചെയ്യൂ, അല്ലെങ്കിൽ പകർത്തി ഇവിടെ ഒട്ടിക്കൂ."</string>
     <string name="voucher_loading_address">നിങ്ങളുടെ വിലാസം തയ്യാറാക്കുന്നു…</string>
     <string name="voucher_onchain">Bitcoin വൗച്ചർ</string>
-    <string name="voucher_onchain_note">ഈ വിലാസം ഈ പേയ്‌മെന്റിനായി നിങ്ങളുടെ അക്കൗണ്ടിന്റേതാണ്. ഇതിനിടയിൽ ClipBox അടയ്ക്കാം; VIP സ്വയം ഓണാകും.</string>
+    <string name="voucher_onchain_note">ഈ വിലാസം ഈ പേയ്‌മെന്റിനായി നിങ്ങളുടെ അക്കൗണ്ടിന്റേതാണ്. ഇതിനിടയിൽ StreamHub അടയ്ക്കാം; VIP സ്വയം ഓണാകും.</string>
     <string name="voucher_onchain_steps">"1. azte.co തുറന്ന് അവിടെ നിങ്ങളുടെ വൗച്ചർ കോഡ് റിഡീം ചെയ്യൂ.
 2. Bitcoin വിലാസം ചോദിക്കുമ്പോൾ ഇത് ഉപയോഗിക്കൂ:"</string>
     <string name="voucher_onchain_steps_code">"1. നിങ്ങളുടെ വൗച്ചറിലെ 16 അക്ക കോഡ് താഴെ നൽകുക.

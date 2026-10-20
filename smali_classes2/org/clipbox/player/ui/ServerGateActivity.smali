@@ -717,7 +717,7 @@
     xor-int/2addr p1, v0
 
     .line 90
-    if-eqz p1, :cond_0
+    goto :cond_0
 
     .line 91
     .line 92

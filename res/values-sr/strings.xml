@@ -23,14 +23,14 @@
     <string name="about_attributions_subtitle">ТМДБ, библиотеке и лиценце</string>
     <string name="about_attributions_title">Лиценце и атрибуције</string>
     <string name="about_changelog_title">Цхангелог</string>
-    <string name="about_credits_body">"ClipBox је чист и миран начин да на Андроиду гледате филмове и серије. Све је на једном месту, па можете да прегледате шта је популарно, потражите нешто одређено или наставите тачно тамо где сте стали.
+    <string name="about_credits_body">"StreamHub је чист и миран начин да на Андроиду гледате филмове и серије. Све је на једном месту, па можете да прегледате шта је популарно, потражите нешто одређено или наставите тачно тамо где сте стали.
 
 Титлови се уместо вас проналазе и усклађују на великом броју језика, сваки наслов нуди више извора, а оно што гледате може да се пошаље на Chromecast или паметни телевизор. Апликација ради на телефонима, таблетима, Android TV и Fire TV уређајима, а необавезан налог држи вашу листу и историју усклађеним на свима њима.
 
-ClipBox прави мали тим који га и сам користи сваког дана, а напредује захваљујући ономе што нам људи јаве."</string>
+StreamHub прави мали тим који га и сам користи сваког дана, а напредује захваљујући ономе што нам људи јаве."</string>
     <string name="about_credits_title">О ЦлипБок-у</string>
-    <string name="about_disclaimer_long">ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time. ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
-    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+    <string name="about_disclaimer_long">StreamHub is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by StreamHub, and that may change or disappear at any time. StreamHub claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as StreamHub holds no content to remove. Title and artwork metadata is provided by The Movie Database (TMDB). StreamHub is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed. Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation.</string>
+    <string name="about_disclaimer_short">StreamHub does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. StreamHub is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
     <string name="about_disclaimer_subtitle">Извори садржаја и жигови</string>
     <string name="about_disclaimer_title">Одрицање од одговорности</string>
     <string name="about_legal_title">Правна</string>
@@ -99,21 +99,21 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="actor_read_more">Прочитајте више</string>
     <string name="actor_wikipedia_failed">Није могуће отворити Википедију.</string>
     <string name="ad_autoclose_fmt">Аутоматски се затвара за %1$d с</string>
-    <string name="ad_blocked_note">Блокатор огласа зауставља овај оглас. Огласи одржавају ClipBox бесплатним: искључите га за ClipBox или узмите VIP.</string>
+    <string name="ad_blocked_note">Блокатор огласа зауставља овај оглас. Огласи одржавају StreamHub бесплатним: искључите га за StreamHub или узмите VIP.</string>
     <string name="ad_close">Затвори оглас</string>
     <string name="ad_label">Оглас</string>
     <string name="ad_loading">Оглас се учитава…</string>
     <string name="ad_open">Отвори оглас</string>
     <string name="ad_page_hint">Стрелице померају показивач · OK кликће · Назад затвара</string>
-    <string name="ad_popup_note">Огласи одржавају ClipBox бесплатним и помажу да се плате сервери и одржавање.</string>
+    <string name="ad_popup_note">Огласи одржавају StreamHub бесплатним и помажу да се плате сервери и одржавање.</string>
     <string name="ad_remove_with_vip">Без огласа уз VIP</string>
     <string name="add_to_favourites">Додај у фаворите</string>
     <string name="added_to_favourites">Додато у фаворите</string>
     <string name="added_to_my_list">Додато на моју листу</string>
     <string name="alert_dialog_title">Напомена</string>
     <string name="app_brand_subtitle" />
-    <string name="app_brand_title">CLIPBOX</string>
-    <string name="app_name">ClipBox</string>
+    <string name="app_brand_title">STREAMHUB</string>
+    <string name="app_name">StreamHub</string>
     <string name="aspect_fill">Филл</string>
     <string name="aspect_fills_already">слика већ испуњава екран</string>
     <string name="aspect_fit">Prilagodi</string>
@@ -178,9 +178,9 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="call_notification_ongoing_text">Позив је у току</string>
     <string name="call_notification_screening_text">Проверава се долазни позив</string>
     <string name="capture_blocked_exit">Izađi</string>
-    <string name="capture_blocked_intro">ClipBox ne radi dok je na ovom uređaju instaliran alat za presretanje mrežnog saobraćaja ili proksi.</string>
-    <string name="capture_blocked_outro">Deinstalirajte ga i ponovo otvorite ClipBox.</string>
-    <string name="capture_blocked_title">ClipBox ne može da radi na ovom uređaju</string>
+    <string name="capture_blocked_intro">StreamHub ne radi dok je na ovom uređaju instaliran alat za presretanje mrežnog saobraćaja ili proksi.</string>
+    <string name="capture_blocked_outro">Deinstalirajte ga i ponovo otvorite StreamHub.</string>
+    <string name="capture_blocked_title">StreamHub ne može da radi na ovom uređaju</string>
     <string name="cast_ad_label">Оглас</string>
     <string name="cast_button_cast">Цаст</string>
     <string name="cast_casting_to_device">Пребацивање на %1$s</string>
@@ -379,7 +379,7 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="err_service_unavailable">Услуга је привремено недоступна. Покушајте поново.</string>
     <string name="err_signed_out_sign_in">Одјављени сте на овом уређају. Пријавите се поново.</string>
     <string name="err_too_many_requests">Превише захтева. Молим вас сачекајте тренутак.</string>
-    <string name="err_update_for_recovery">Ажурирајте ClipBox на најновију верзију да бисте направили нови код за опоравак.</string>
+    <string name="err_update_for_recovery">Ажурирајте StreamHub на најновију верзију да бисте направили нови код за опоравак.</string>
     <string name="error_a11y_label">Грешка: неважеће</string>
     <string name="error_bad_intent">Примљена је неважећа веза. Нисам могао да га отворим.</string>
     <string name="error_icon_content_description">Грешка</string>
@@ -492,7 +492,7 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="lang_available_body">Тренутно користите апликацију на језику %1$s. Желите ли да промените? То можете променити у било ком тренутку у подешавањима.</string>
     <string name="lang_available_keep">Задржи %1$s</string>
     <string name="lang_available_switch">Пребаци на %1$s</string>
-    <string name="lang_available_title">ClipBox је сада доступан на језику %1$s</string>
+    <string name="lang_available_title">StreamHub је сада доступан на језику %1$s</string>
     <string name="launcher_instructions">"Овде не морате ништа да радите.
 
 Ако имате УРЛ стрима, можете да га пустите директно испод.
@@ -639,17 +639,17 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="pair_scan_allow">Dozvoli kameru</string>
     <string name="pair_scan_button">Skeniraj QR kod</string>
     <string name="pair_scan_hint">Usmerite kameru ka QR kodu na televizoru</string>
-    <string name="pair_scan_no_camera">Za skeniranje koda ClipBox-u je potrebna kamera. Koristi se samo dok je ovaj ekran otvoren.</string>
+    <string name="pair_scan_no_camera">Za skeniranje koda StreamHub-u je potrebna kamera. Koristi se samo dok je ovaj ekran otvoren.</string>
     <string name="pair_scan_torch">Baterijska lampa</string>
     <string name="pair_scan_type_instead">Unesi kod</string>
-    <string name="pair_scan_wrong">To nije ClipBox TV kod. Skenirajte kod na televizoru.</string>
+    <string name="pair_scan_wrong">To nije StreamHub TV kod. Skenirajte kod na televizoru.</string>
     <string name="pair_tv_button">Пријава телефоном</string>
     <string name="pair_tv_confirm_hint">Потврдите на телефону и овај ТВ ће се сам пријавити.</string>
     <string name="pair_tv_done_fmt">Пријављени сте као %1$s</string>
     <string name="pair_tv_expires_fmt">Код важи још %1$s</string>
     <string name="pair_tv_failed">Код није добијен. Проверите везу и покушајте поново.</string>
     <string name="pair_tv_new_code">Нови код</string>
-    <string name="pair_tv_or_code">Или отворите ClipBox на телефону, идите на Налог, па Пријава на ТВ, и унесите код испод QR кода.</string>
+    <string name="pair_tv_or_code">Или отворите StreamHub на телефону, идите на Налог, па Пријава на ТВ, и унесите код испод QR кода.</string>
     <string name="pair_tv_scan">Скенирајте код камером телефона</string>
     <string name="pair_tv_waiting">Чека се телефон…</string>
     <string name="parental_age_fmt">%1$d godina i manje</string>
@@ -718,7 +718,7 @@ ClipBox прави мали тим који га и сам користи сва
 
 1. Додирните „Искористи Azteco ваучер › Где да купим ваучер?“ и купите Azteco Bitcoin ваучер (On-Chain) у некој од продавница. Плаћате као и обично, на пример картицом.
 2. Добијате код од 16 цифара.
-3. U ClipBox-u dodirnite Искористи Azteco ваучер, zatim Bitcoin ваучер. Otvara se naša stranica za vaučere.
+3. U StreamHub-u dodirnite Искористи Azteco ваучер, zatim Bitcoin ваучер. Otvara se naša stranica za vaučere.
 4. Tamo unesite kod. Iskoristićemo ga za vas i proveriti da li je uplata stigla.
 
 То је све. VIP се сам укључује за неколико минута."</string>
@@ -751,12 +751,12 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="premium_state_confirming_title">Плаћање примљено</string>
     <string name="premium_state_partial_body_fmt">Платио си $%1$s. Још $%2$s и VIP је твој. Оно што си платио остаје на твом налогу.</string>
     <string name="premium_state_partial_title">Скоро готово</string>
-    <string name="premium_state_vip_body">Без огласа на сваком уређају на који се пријавиш. Хвала што подржаваш ClipBox.</string>
+    <string name="premium_state_vip_body">Без огласа на сваком уређају на који се пријавиш. Хвала што подржаваш StreamHub.</string>
     <string name="premium_state_vip_title">Ти си VIP</string>
     <string name="premium_state_waiting_body">Заврши плаћање на страници за плаћање. Овај екран се сам освежи чим се плаћање види.</string>
     <string name="premium_state_waiting_title">Чекамо твоје плаћање</string>
     <string name="premium_tagline">Једно плаћање. Твоје заувек.</string>
-    <string name="premium_tv_phone_hint">Имаш Lightning ваучер? Искористи га у ClipBox-у на телефону, пријављен на исти налог. VIP прати твој налог и на овај телевизор.</string>
+    <string name="premium_tv_phone_hint">Имаш Lightning ваучер? Искористи га у StreamHub-у на телефону, пријављен на исти налог. VIP прати твој налог и на овај телевизор.</string>
     <string name="premium_tv_scan">Скенирај телефоном за плаћање</string>
     <string name="premium_tv_show_checkout">Плати криптом</string>
     <string name="premium_tv_show_voucher">Bitcoin ваучер</string>
@@ -1084,14 +1084,14 @@ ClipBox прави мали тим који га и сам користи сва
     <string name="touch_locked_toast">Екран је закључан. Додирните икону закључавања да бисте откључали.</string>
     <string name="track_off">Офф</string>
     <string name="tv_account_avatar">Слика профила</string>
-    <string name="tv_account_avatar_phone_only">Слика профила се бира из фотографије на твом уређају. Овај телевизор нема апликацију која то може, па је подеси у ClipBox-у на телефону и појавиће се и овде.</string>
+    <string name="tv_account_avatar_phone_only">Слика профила се бира из фотографије на твом уређају. Овај телевизор нема апликацију која то може, па је подеси у StreamHub-у на телефону и појавиће се и овде.</string>
     <string name="tv_account_choose_image">Изабери слику</string>
     <string name="tv_account_new_password_hint">Nova lozinka</string>
     <string name="tv_account_recover_action">Resetuj lozinku</string>
     <string name="tv_account_recovery_fmt">"Kôd za oporavak: %1$s
 
 Zapišite ga. Prikazuje se samo jednom i jedini je način da se vratite ako zaboravite lozinku."</string>
-    <string name="tv_account_register_hint">Još nemate nalog? Napravite ga u ClipBox aplikaciji na telefonu, pa se prijavite ovde.</string>
+    <string name="tv_account_register_hint">Još nemate nalog? Napravite ga u StreamHub aplikaciji na telefonu, pa se prijavite ovde.</string>
     <string name="tv_account_saved">Сачувано</string>
     <string name="tv_account_vip_fmt">%1$s · VIP</string>
     <string name="tv_backdrop_art">Слика (замућена)</string>
@@ -1194,7 +1194,7 @@ Zapišite ga. Prikazuje se samo jednom i jedini je način da se vratite ako zabo
     <string name="tv_ui_scale_title">Величина интерфејса</string>
     <string name="tv_value_off">Isključeno</string>
     <string name="tv_value_on">Uključeno</string>
-    <string name="tv_whatsnew_body">ClipBox je iznova napravljen za veliki ekran i vaš daljinski. Sve što ste imali i dalje je tu, samo je lakše dohvatiti sa kauča. Više vam se dopadao raniji izgled? Možete mu se vratiti u svakom trenutku u podešavanjima.</string>
+    <string name="tv_whatsnew_body">StreamHub je iznova napravljen za veliki ekran i vaš daljinski. Sve što ste imali i dalje je tu, samo je lakše dohvatiti sa kauča. Više vam se dopadao raniji izgled? Možete mu se vratiti u svakom trenutku u podešavanjima.</string>
     <string name="tv_whatsnew_classic">Koristi klasičan izgled</string>
     <string name="tv_whatsnew_continue">Pogledajte</string>
     <string name="tv_whatsnew_title">Novi izgled za televizor</string>
@@ -1216,16 +1216,16 @@ Zapišite ga. Prikazuje se samo jednom i jedini je način da se vratite ako zabo
     <string name="update_install_help_summary">Шта учинити ако је инсталација блокирана</string>
     <string name="update_install_help_title">Како инсталирати</string>
     <string name="update_later">касније</string>
-    <string name="update_permission_msg_firetv">"Ваш Fire TV инсталира ажурирања само из апликација којима то дозволите. Изаберите Отвори подешавања, укључите ClipBox под „Инсталирање непознатих апликација“ и притисните Назад. Ажурирање се затим наставља само.
+    <string name="update_permission_msg_firetv">"Ваш Fire TV инсталира ажурирања само из апликација којима то дозволите. Изаберите Отвори подешавања, укључите StreamHub под „Инсталирање непознатих апликација“ и притисните Назад. Ажурирање се затим наставља само.
 
-Ако се екран не отвори: Подешавања > Мој Fire TV > Опције за програмере > Инсталирање непознатих апликација > ClipBox. Нема опција за програмере? Прво отворите Подешавања > Мој Fire TV > О уређају и 7 пута притисните OK на називу уређаја."</string>
-    <string name="update_permission_msg_phone">Android инсталира ажурирања само из апликација којима то дозволите. Додирните Отвори подешавања, укључите „Дозволи из овог извора“ за ClipBox и вратите се. Ажурирање се затим наставља само.</string>
-    <string name="update_permission_msg_tv">"Ваш телевизор инсталира ажурирања само из апликација којима то дозволите. Изаберите Отвори подешавања, укључите ClipBox под „Инсталирање непознатих апликација“ и притисните Назад. Ажурирање се затим наставља само.
+Ако се екран не отвори: Подешавања > Мој Fire TV > Опције за програмере > Инсталирање непознатих апликација > StreamHub. Нема опција за програмере? Прво отворите Подешавања > Мој Fire TV > О уређају и 7 пута притисните OK на називу уређаја."</string>
+    <string name="update_permission_msg_phone">Android инсталира ажурирања само из апликација којима то дозволите. Додирните Отвори подешавања, укључите „Дозволи из овог извора“ за StreamHub и вратите се. Ажурирање се затим наставља само.</string>
+    <string name="update_permission_msg_tv">"Ваш телевизор инсталира ажурирања само из апликација којима то дозволите. Изаберите Отвори подешавања, укључите StreamHub под „Инсталирање непознатих апликација“ и притисните Назад. Ажурирање се затим наставља само.
 
-Ако се екран не отвори: Подешавања > Апликације > Безбедност и ограничења > Непознати извори > ClipBox."</string>
+Ако се екран не отвори: Подешавања > Апликације > Безбедност и ограничења > Непознати извори > StreamHub."</string>
     <string name="update_permission_not_opened">Подешавања није могуће отворити. Пратите кораке на екрану.</string>
     <string name="update_permission_open">Отвори подешавања</string>
-    <string name="update_permission_title">Дозволите да ClipBox инсталира ажурирања</string>
+    <string name="update_permission_title">Дозволите да StreamHub инсталира ажурирања</string>
     <string name="update_unavailable">Услуга ажурирања није доступна. Апликација тренутно не може да провери да ли постоје ажурирања.</string>
     <string name="update_up_to_date">Већ сте на најновијој верзији. Лепо.</string>
     <string name="v7_preference_off">ИСКЉУЧЕНО</string>
@@ -1240,10 +1240,10 @@ Zapišite ga. Prikazuje se samo jednom i jedini je način da se vratite ako zabo
     <string name="voucher_ln_bad">Ово не личи на линк Lightning ваучера. Почиње са LNURL.</string>
     <string name="voucher_ln_redeeming">Користимо твој ваучер…</string>
     <string name="voucher_ln_steps">"1. Отвори azte.co, изабери Lightning и тамо искористи код ваучера.
-2. Добићеш Lightning линк (LNURL). Додирни га да отвориш ClipBox или га копирај и налепи овде."</string>
+2. Добићеш Lightning линк (LNURL). Додирни га да отвориш StreamHub или га копирај и налепи овде."</string>
     <string name="voucher_loading_address">Припремамо твоју адресу…</string>
     <string name="voucher_onchain">Bitcoin ваучер</string>
-    <string name="voucher_onchain_note">Ова адреса припада твом налогу за ово плаћање. У међувремену можеш да затвориш ClipBox; VIP се укључи сам.</string>
+    <string name="voucher_onchain_note">Ова адреса припада твом налогу за ово плаћање. У међувремену можеш да затвориш StreamHub; VIP се укључи сам.</string>
     <string name="voucher_onchain_steps">"1. Отвори azte.co и тамо искористи код ваучера.
 2. Кад затражи Bitcoin адресу, унеси ову:"</string>
     <string name="voucher_onchain_steps_code">"1. Унесите испод код од 16 цифара са ваучера.
