@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/tvDetailRoot" android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/tvBackdrop" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" />
+    <View android:background="@drawable/tv_scrim_side" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:layout_gravity="bottom" android:background="@drawable/tv_scrim_bottom" android:layout_width="match_parent" android:layout_height="380.0dp" />
+    <View android:id="@id/tvPageFade" android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.0" />
+    <androidx.leanback.widget.VerticalGridView android:id="@id/tvRows" android:focusable="false" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:layout_gravity="top" android:id="@id/tvTopScrim" android:background="@drawable/tv_scrim_top_solid" android:layout_width="match_parent" android:layout_height="200.0dp" android:alpha="0.0" />
+    <ImageView android:layout_gravity="start|top" android:id="@id/tvBack" android:background="@drawable/tv_circle_back" android:padding="10.0dp" android:focusable="true" android:clickable="true" android:layout_width="48.0dp" android:layout_height="48.0dp" android:layout_marginTop="@dimen/tv_safe_vertical" android:src="@drawable/ic_arrow_back" android:tint="@color/tv_text_primary" android:contentDescription="@string/tv_cd_back" android:layout_marginStart="@dimen/tv_safe_horizontal" />
+</FrameLayout>

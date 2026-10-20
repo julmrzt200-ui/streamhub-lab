@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/tv_safe_horizontal" android:paddingEnd="@dimen/tv_safe_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <org.clipbox.player.tv.widget.TvPanel android:id="@id/tvCell" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" app:tvPanelCornerRadius="@dimen/tv_card_radius" app:tvPanelTint="@color/tv_panel_tint">
+        <LinearLayout android:orientation="vertical" android:paddingTop="20.0dp" android:paddingBottom="22.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="26.0dp" android:paddingEnd="26.0dp">
+            <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:id="@id/tvAboutTextTitle" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/tv_text_secondary" android:id="@id/tvAboutTextBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:lineSpacingExtra="5.0dp" />
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:id="@id/tvAboutTextMore" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" />
+        </LinearLayout>
+    </org.clipbox.player.tv.widget.TvPanel>
+</FrameLayout>

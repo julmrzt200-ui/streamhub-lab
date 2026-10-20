@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Bình thường</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Đang thức dậy %1$s…</item>
+        <item>Đang kết nối với %1$s…</item>
+        <item>Đang quay %1$s…</item>
+        <item>Đang quay số %1$s…</item>
+        <item>Đang khởi động %1$s…</item>
+        <item>Đang kích hoạt %1$s…</item>
+        <item>Hãy thử %1$s…</item>
+    </string-array>
+</resources>

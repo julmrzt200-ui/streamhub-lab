@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_hero_height">380.0dp</dimen>
+    <dimen name="hero_fade_height">96.0dp</dimen>
+    <dimen name="poster_card_height">144.0dp</dimen>
+    <dimen name="poster_card_width">96.0dp</dimen>
+</resources>

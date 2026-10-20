@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:background="@drawable/card_bg" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:padding="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView android:layout_width="64.0dp" android:layout_height="64.0dp" app:cardBackgroundColor="@color/surface" app:cardCornerRadius="32.0dp" app:cardElevation="0.0dp">
+                <ImageView android:id="@id/actorPhoto" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" />
+            </androidx.cardview.widget.CardView>
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="14.0dp">
+                <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:ellipsize="end" android:id="@id/actorName" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:ellipsize="end" android:id="@id/actorKnownFor" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:maxLines="1" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:ellipsize="end" android:id="@id/actorFacts" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dp" android:maxLines="2" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="top" android:id="@id/actorWikiButton" android:background="@drawable/scroll_hint_bg" android:padding="8.0dp" android:focusable="true" android:clickable="true" android:layout_width="38.0dp" android:layout_height="38.0dp" android:foreground="@drawable/ripple_circle" android:src="@drawable/ic_article_shortcut" android:contentDescription="@string/actor_open_wikipedia" android:layout_marginStart="8.0dp" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/actorBioContainer" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dp">
+            <androidx.core.widget.NestedScrollView android:scrollbarSize="4.0dp" android:scrollbarThumbVertical="@drawable/scrollbar_thumb_red" android:id="@id/actorBioScroll" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:fadeScrollbars="false" android:verticalScrollbarPosition="defaultPosition">
+                <TextView android:textSize="13.5sp" android:textColor="@color/text_secondary" android:ellipsize="end" android:id="@id/actorBio" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="6" android:lineSpacingExtra="3.0dp" android:paddingEnd="12.0dp" />
+            </androidx.core.widget.NestedScrollView>
+        </FrameLayout>
+        <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="@color/clipbox_red" android:id="@id/actorBioMore" android:paddingTop="2.0dp" android:paddingBottom="2.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:text="@string/actor_read_more" android:paddingVertical="2.0dp" />
+        <ProgressBar android:layout_gravity="center_horizontal" android:id="@id/actorLoading" android:layout_width="32.0dp" android:layout_height="32.0dp" android:layout_marginTop="20.0dp" android:indeterminateTint="@color/clipbox_red" />
+        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:id="@id/actorMoviesLabel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:text="@string/actor_known_for" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/actorMovies" android:visibility="gone" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:overScrollMode="never" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

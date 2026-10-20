@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/tvWhatsNewRoot" android:background="#cc000000" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <org.clipbox.player.tv.widget.TvPanel android:layout_gravity="center" android:paddingTop="40.0dp" android:paddingBottom="36.0dp" android:layout_width="@dimen/tv_whatsnew_width" android:layout_height="wrap_content" android:paddingStart="48.0dp" android:paddingEnd="48.0dp" app:tvPanelCornerRadius="24.0dp" app:tvPanelTint="@color/tv_panel_tint">
+        <LinearLayout android:orientation="vertical" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:id="@id/tvWhatsNewTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tv_whatsnew_title" />
+            <TextView android:textSize="19.0sp" android:textColor="@color/tv_text_secondary" android:id="@id/tvWhatsNewBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:text="@string/tv_whatsnew_body" android:lineSpacingMultiplier="1.25" />
+            <LinearLayout android:orientation="horizontal" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dp">
+                <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/tv_text_on_light" android:gravity="center" android:id="@id/tvWhatsNewContinue" android:background="@drawable/tv_pill_white" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="@dimen/tv_action_height" android:minWidth="200.0dp" android:text="@string/tv_whatsnew_continue" android:paddingStart="28.0dp" android:paddingEnd="28.0dp" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/tv_text_primary" android:gravity="center" android:id="@id/tvWhatsNewClassic" android:background="@drawable/tv_chip_idle" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="@dimen/tv_action_height" android:minWidth="200.0dp" android:text="@string/tv_whatsnew_classic" android:paddingStart="28.0dp" android:paddingEnd="28.0dp" android:layout_marginStart="16.0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </org.clipbox.player.tv.widget.TvPanel>
+</FrameLayout>

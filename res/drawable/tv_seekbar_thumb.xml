@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="34.0dp" android:width="34.0dp" />
+                    <solid android:color="#00000000" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="34.0dp" android:width="34.0dp" />
+                    <solid android:color="#ffffffff" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="18.0dp" android:width="18.0dp" />
+                    <solid android:color="@color/clipbox_red" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="34.0dp" android:width="34.0dp" />
+                    <solid android:color="#00000000" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="34.0dp" android:width="34.0dp" />
+                    <solid android:color="#ffffffff" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="22.0dp" android:width="22.0dp" />
+                    <solid android:color="@color/clipbox_red" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="34.0dp" android:width="34.0dp" />
+                    <solid android:color="#00000000" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="22.0dp" android:width="22.0dp" />
+                    <solid android:color="#ffcfcfd4" />
+                </shape>
+            </item>
+            <item android:gravity="center">
+                <shape android:shape="oval">
+                    <size android:height="11.0dp" android:width="11.0dp" />
+                    <solid android:color="@color/clipbox_red" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

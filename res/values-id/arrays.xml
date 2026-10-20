@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loading_server_phrases">
+        <item>Bangun %1$s…</item>
+        <item>Menghubungkan ke %1$s…</item>
+        <item>Memutar %1$s…</item>
+        <item>Memanggil %1$s…</item>
+        <item>Mem-boot %1$s…</item>
+        <item>Membangkitkan %1$s…</item>
+        <item>Mencoba %1$s…</item>
+    </string-array>
+</resources>

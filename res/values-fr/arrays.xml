@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>x 0,25</item>
+        <item>x 0,5</item>
+        <item>x 0,75</item>
+        <item>Normal</item>
+        <item>x 1,25</item>
+        <item>x 1,5</item>
+        <item>x 2</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Réveiller %1$s…</item>
+        <item>Connexion à %1$s…</item>
+        <item>Faire tourner %1$s…</item>
+        <item>Appel de %1$s…</item>
+        <item>Démarrage de %1$s…</item>
+        <item>Réveiller %1$s…</item>
+        <item>Je donne une chance à %1$s…</item>
+    </string-array>
+</resources>

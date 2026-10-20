@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:background="@color/background" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:navigationIcon="@drawable/ic_arrow_back" app:navigationIconTint="@color/text_primary" app:title="@string/devices_title" app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:id="@id/devicesScroll" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="20.0dp" android:paddingTop="8.0dp" android:paddingRight="20.0dp" android:paddingBottom="32.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="20.0dp">
+            <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:id="@id/summary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" />
+            <ProgressBar android:layout_gravity="center_horizontal" android:id="@id/loading" android:layout_width="32.0dp" android:layout_height="32.0dp" android:layout_marginTop="24.0dp" android:indeterminateTint="@color/clipbox_red" />
+            <LinearLayout android:orientation="vertical" android:id="@id/list" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

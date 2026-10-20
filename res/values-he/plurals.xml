@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="remove_items_fmt">
+        <item quantity="one">אתה בטוח? (פריט אחד)</item>
+        <item quantity="two">אתה בטוח? (שני פריטים)</item>
+        <item quantity="other">אתה בטוח? (%1$d פריטים)</item>
+    </plurals>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/tvHomeRoot" android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/tvBackdrop" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" />
+    <ImageView android:id="@id/tvBackdropNext" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" android:alpha="0.0" />
+    <View android:id="@id/tvScrimSide" android:background="@drawable/tv_scrim_side" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:layout_gravity="bottom" android:id="@id/tvScrimBottom" android:background="@drawable/tv_scrim_bottom" android:layout_width="match_parent" android:layout_height="380.0dp" />
+    <View android:id="@id/tvPageFade" android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.0" />
+    <androidx.leanback.widget.VerticalGridView android:id="@id/tvRows" android:focusable="false" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:layout_gravity="top" android:id="@id/tvTopScrim" android:background="@drawable/tv_scrim_top" android:layout_width="match_parent" android:layout_height="200.0dp" android:alpha="0.0" />
+    <org.clipbox.player.tv.widget.TvNavBar android:layout_gravity="end|top" android:id="@id/tvNav" android:layout_width="wrap_content" android:layout_height="@dimen/tv_nav_height" android:layout_marginTop="@dimen/tv_safe_vertical" android:layout_marginEnd="@dimen/tv_safe_horizontal" app:tvPanelCornerRadius="@dimen/tv_nav_radius" app:tvPanelTint="@color/tv_panel_tint" />
+    <TextView android:textSize="@dimen/tv_brand_text_size" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:gravity="center_vertical" android:layout_gravity="start|top" android:id="@id/tvBrand" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tv_safe_vertical" android:minHeight="@dimen/tv_nav_height" android:maxLines="1" android:singleLine="true" android:shadowColor="#a6000000" android:shadowDy="1.0" android:shadowRadius="4.0" android:fontFamily="sans-serif-black" android:layout_marginStart="@dimen/tv_safe_horizontal" android:letterSpacing="0.12" />
+</FrameLayout>

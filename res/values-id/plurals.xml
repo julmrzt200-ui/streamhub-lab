@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="remove_items_fmt">
+        <item quantity="one">Apa kamu yakin? (%1$d barang)</item>
+        <item quantity="other">Apa kamu yakin? (%1$d item)</item>
+    </plurals>
+</resources>

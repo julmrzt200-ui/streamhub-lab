@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normaal</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Rondsnuffelen bij %1$s…</item>
+        <item>Gluren bij %1$s…</item>
+        <item>%1$s wakker schudden…</item>
+        <item>Kijken wat %1$s te bieden heeft…</item>
+        <item>%1$s eventjes checken</item>
+        <item>Aan het zoeken bij %1$s…</item>
+        <item>%1$s aan het opstarten…</item>
+    </string-array>
+</resources>

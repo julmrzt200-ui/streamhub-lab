@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingTop="5.0dp" android:paddingBottom="5.0dp" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/tv_safe_horizontal" android:paddingEnd="@dimen/tv_safe_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <org.clipbox.player.tv.widget.TvPanel android:layout_width="match_parent" android:layout_height="wrap_content" app:tvPanelCornerRadius="@dimen/tv_card_radius" app:tvPanelTint="@color/tv_panel_tint">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="14.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="76.0dp" android:paddingStart="26.0dp" android:paddingEnd="26.0dp">
+            <org.clipbox.player.tv.widget.TvEntryRow android:orientation="horizontal" android:id="@id/tvAboutSocials" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </org.clipbox.player.tv.widget.TvPanel>
+</FrameLayout>

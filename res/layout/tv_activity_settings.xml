@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/tvSettingsRoot" android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/tvBackdrop" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" android:alpha="0.18" />
+    <View android:background="@drawable/tv_scrim_bottom" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:textSize="30.0sp" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tvSettingsTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tv_safe_vertical" android:minHeight="@dimen/tv_nav_height" android:text="@string/tab_settings" android:maxLines="1" android:shadowColor="#cc000000" android:shadowDx="0.0" android:shadowDy="2.0" android:shadowRadius="10.0" android:layout_marginStart="@dimen/tv_safe_horizontal" />
+        <org.clipbox.player.tv.widget.TvFadingGridView android:id="@id/tvSettingsList" android:focusable="false" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" />
+    </LinearLayout>
+    <org.clipbox.player.tv.widget.TvNavBar android:layout_gravity="end|top" android:id="@id/tvNav" android:layout_width="wrap_content" android:layout_height="@dimen/tv_nav_height" android:layout_marginTop="@dimen/tv_safe_vertical" android:layout_marginEnd="@dimen/tv_safe_horizontal" app:tvPanelCornerRadius="@dimen/tv_nav_radius" app:tvPanelTint="@color/tv_panel_tint" />
+</FrameLayout>

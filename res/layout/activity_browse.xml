@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout android:id="@id/drawerLayout" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipeRefresh" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rowsRecycler" android:paddingBottom="74.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:overScrollMode="never" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:background="@drawable/scrim_toolbar" android:paddingTop="0.0dp" android:paddingBottom="0.0dp" android:layout_width="match_parent" android:layout_height="?actionBarSize" android:paddingStart="14.0dp" android:paddingEnd="14.0dp" app:contentInsetStart="0.0dp" app:contentInsetStartWithNavigation="0.0dp" app:navigationIcon="@drawable/ic_menu" app:navigationIconTint="#ffffff" app:title="CLIPBOX" app:titleCentered="true" app:titleTextAppearance="@style/ToolbarTitleAppearance" app:titleTextColor="#ffffff">
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="end" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                <ImageView android:id="@id/searchIcon" android:background="@drawable/ripple_toolbar_icon" android:padding="10.0dp" android:layout_width="44.0dp" android:layout_height="44.0dp" android:src="@drawable/ic_tab_search" android:contentDescription="Search" app:tint="#ffffff" />
+                <FrameLayout android:id="@id/accountIcon" android:background="@drawable/ripple_toolbar_icon" android:layout_width="44.0dp" android:layout_height="44.0dp" android:contentDescription="Account">
+                    <ImageView android:id="@id/accountIconImage" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_account" app:tint="#ffffff" />
+                    <ImageView android:layout_gravity="center" android:id="@id/accountAvatarImage" android:visibility="gone" android:layout_width="26.0dp" android:layout_height="26.0dp" android:scaleType="centerCrop" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/accountInitial" android:background="@drawable/circle_red" android:visibility="gone" android:layout_width="26.0dp" android:layout_height="26.0dp" android:fontFamily="sans-serif-medium" />
+                </FrameLayout>
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/searchBar" android:background="@color/background" android:paddingLeft="8.0dp" android:paddingRight="8.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="?actionBarSize" android:paddingHorizontal="8.0dp">
+            <ImageView android:id="@id/searchBack" android:background="?selectableItemBackgroundBorderless" android:padding="10.0dp" android:layout_width="44.0dp" android:layout_height="44.0dp" android:src="@drawable/ic_arrow_back" android:contentDescription="Close search" app:tint="@color/text_primary" />
+            <EditText android:textSize="15.0sp" android:textColor="@color/text_primary" android:textColorHint="@color/text_tertiary" android:id="@id/searchInput" android:background="@android:color/transparent" android:layout_width="0.0dp" android:layout_height="match_parent" android:hint="@string/search_hint" android:singleLine="true" android:layout_weight="1.0" android:inputType="text" android:imeOptions="actionSearch" />
+        </LinearLayout>
+        <ProgressBar android:layout_gravity="center" android:id="@id/loadingBar" android:visibility="gone" android:layout_width="48.0dp" android:layout_height="48.0dp" android:indeterminateTint="@color/clipbox_red" />
+        <View android:layout_gravity="bottom" android:id="@id/bottomNavDivider" android:background="#28ffffff" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/bottomNav" android:background="@color/surface" android:layout_width="match_parent" android:layout_height="66.0dp" android:elevation="12.0dp">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tabHome" android:background="?selectableItemBackgroundBorderless" android:paddingTop="6.0dp" android:paddingBottom="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="22.0dp" android:layout_height="22.0dp" android:src="@drawable/ic_tab_home" android:scaleType="fitCenter" android:importantForAccessibility="no" app:tint="#ffffff" />
+                <TextView android:textSize="10.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tab_home" android:includeFontPadding="false" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tabMovies" android:background="?selectableItemBackgroundBorderless" android:paddingTop="6.0dp" android:paddingBottom="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="22.0dp" android:layout_height="22.0dp" android:src="@drawable/ic_tab_movies" android:scaleType="fitCenter" android:importantForAccessibility="no" app:tint="#ffffff" />
+                <TextView android:textSize="10.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tab_movies" android:includeFontPadding="false" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tabTv" android:background="?selectableItemBackgroundBorderless" android:paddingTop="6.0dp" android:paddingBottom="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="22.0dp" android:layout_height="22.0dp" android:src="@drawable/ic_tab_tv" android:scaleType="fitCenter" android:importantForAccessibility="no" app:tint="#ffffff" />
+                <TextView android:textSize="10.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tab_tv" android:includeFontPadding="false" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tabMyList" android:background="?selectableItemBackgroundBorderless" android:paddingTop="6.0dp" android:paddingBottom="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="22.0dp" android:layout_height="22.0dp" android:src="@drawable/ic_tab_mylist" android:scaleType="fitCenter" android:importantForAccessibility="no" app:tint="#ffffff" />
+                <TextView android:textSize="10.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tab_mylist" android:includeFontPadding="false" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/tabSettings" android:background="?selectableItemBackgroundBorderless" android:paddingTop="6.0dp" android:paddingBottom="5.0dp" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                <ImageView android:layout_width="22.0dp" android:layout_height="22.0dp" android:src="@drawable/ic_tab_settings" android:scaleType="fitCenter" android:importantForAccessibility="no" app:tint="#ffffff" />
+                <TextView android:textSize="10.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tab_settings" android:includeFontPadding="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.navigation.NavigationView android:layout_gravity="start" android:id="@id/navView" android:background="@color/background" android:layout_width="wrap_content" android:layout_height="match_parent" app:headerLayout="@layout/launcher_drawer_header" app:itemIconTint="@color/text_primary" app:itemTextColor="@color/text_primary" app:menu="@menu/browse_drawer" />
+</androidx.drawerlayout.widget.DrawerLayout>

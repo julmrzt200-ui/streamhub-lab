@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="24.0dp" android:paddingTop="8.0dp" android:paddingRight="24.0dp" android:paddingBottom="0.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/paste_url_hint" style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText android:id="@id/urlInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:inputType="textUri" android:imeOptions="actionDone" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

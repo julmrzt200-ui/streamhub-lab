@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/toolbar" android:background="@color/background" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:navigationIcon="@drawable/ic_arrow_back" app:navigationIconTint="@color/text_primary" app:title="@string/premium_title" app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:scrollbarSize="4.0dp" android:scrollbarThumbVertical="@drawable/premium_scroll_thumb" android:scrollbarTrackVertical="@drawable/premium_scroll_track" android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="insideOverlay" android:id="@id/premiumScroll" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:fadeScrollbars="false" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:id="@id/premiumContent" android:paddingLeft="20.0dp" android:paddingTop="8.0dp" android:paddingRight="20.0dp" android:paddingBottom="32.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="20.0dp">
+            <LinearLayout android:orientation="vertical" android:id="@id/hero" android:background="@drawable/premium_hero_bg" android:paddingLeft="24.0dp" android:paddingTop="26.0dp" android:paddingRight="24.0dp" android:paddingBottom="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp">
+                <ImageView android:id="@id/heroCrown" android:layout_width="44.0dp" android:layout_height="44.0dp" android:src="@drawable/ic_crown" android:contentDescription="@null" />
+                <TextView android:textSize="26.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dp" android:text="@string/premium_title" android:fontFamily="sans-serif-medium" />
+                <TextView android:textSize="15.0sp" android:textColor="@color/text_secondary" android:id="@id/taglineText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:text="@string/premium_tagline" />
+                <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:id="@id/priceTextRow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dp">
+                    <TextView android:textSize="42.0sp" android:textColor="#ffd166" android:id="@id/priceText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="sans-serif-medium" />
+                    <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dp" android:text="@string/premium_price_note" android:layout_marginStart="10.0dp" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/priceTextVipPill" android:background="@drawable/premium_vip_pill" android:paddingTop="9.0dp" android:paddingBottom="9.0dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" android:elevation="3.0dp">
+                    <ImageView android:layout_width="18.0dp" android:layout_height="18.0dp" android:src="@drawable/ic_check" android:contentDescription="@null" app:tint="#3a2400" />
+                    <TextView android:textSize="17.0sp" android:textStyle="bold" android:textColor="#3a2400" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/premium_vip_active" android:fontFamily="sans-serif-medium" android:layout_marginStart="8.0dp" android:letterSpacing="0.02" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/stateCard" android:background="@drawable/premium_state_bg" android:padding="16.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dp">
+                <FrameLayout android:layout_width="36.0dp" android:layout_height="36.0dp">
+                    <ImageView android:id="@id/stateIcon" android:background="@drawable/premium_check_bg" android:padding="6.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_crown" android:contentDescription="@null" />
+                    <ProgressBar android:id="@id/stateProgress" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:indeterminateTint="#ffd166" />
+                </FrameLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="14.0dp">
+                    <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:id="@id/stateTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" />
+                    <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:id="@id/stateBody" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:lineSpacingMultiplier="1.25" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/benefits" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22.0dp" />
+            <TextView android:textSize="11.0sp" android:textColor="@color/text_tertiary" android:id="@id/paySection" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="26.0dp" android:layout_marginBottom="10.0dp" android:text="@string/premium_section_pay" android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:letterSpacing="0.08" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:id="@id/notice" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:lineSpacingMultiplier="1.25" />
+            <include android:id="@id/payCrypto" layout="@layout/item_premium_action" />
+            <include android:id="@id/payVoucher" layout="@layout/item_premium_action" />
+            <include android:id="@id/signIn" layout="@layout/item_premium_action" />
+            <include android:id="@id/manageDevices" layout="@layout/item_premium_action" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dp" android:text="@string/premium_footnote" android:lineSpacingMultiplier="1.3" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ImageView android:layout_gravity="center|bottom" android:id="@id/scrollIndicator" android:background="@drawable/scroll_hint_bg" android:padding="6.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:layout_marginBottom="16.0dp" android:foreground="@drawable/ripple_circle" android:src="@drawable/ic_chevron_down_light" android:contentDescription="@null" android:elevation="4.0dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

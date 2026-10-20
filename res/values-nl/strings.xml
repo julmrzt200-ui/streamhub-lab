@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">Omhoog navigeren</string>
+    <string name="abc_action_mode_done">Klaar</string>
+    <string name="abc_capital_off">UIT</string>
+    <string name="abc_capital_on">AAN</string>
+    <string name="abc_menu_alt_shortcut_label">Alt +</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl +</string>
+    <string name="abc_menu_delete_shortcut_label">Delete</string>
+    <string name="abc_menu_enter_shortcut_label">Enter</string>
+    <string name="abc_menu_function_shortcut_label">Functie +</string>
+    <string name="abc_menu_meta_shortcut_label">Meta +</string>
+    <string name="abc_menu_shift_shortcut_label">Shift +</string>
+    <string name="abc_menu_space_shortcut_label">spatie</string>
+    <string name="abc_menu_sym_shortcut_label">Sym +</string>
+    <string name="abc_prepend_shortcut_label">Menu +</string>
+    <string name="abc_search_hint">Zoeken…</string>
+    <string name="abc_searchview_description_clear">Zoekopdracht wissen</string>
+    <string name="abc_searchview_description_search">Zoeken</string>
+    <string name="abc_searchview_description_submit">Zoekopdracht verzenden</string>
+    <string name="abc_searchview_description_voice">Gesproken zoekopdracht</string>
+    <string name="abc_toolbar_collapse_description">Samenvouwen</string>
+    <string name="about_attributions_subtitle">TMDB, bibliotheken &amp; licenties</string>
+    <string name="about_attributions_title">Licenties &amp; vermeldingen</string>
+    <string name="about_changelog_body">"v1.5.9
+• Televisie: tegels van streamingdiensten en studio's op het startscherm; afleveringen- en bronkiezer opnieuw gebouwd als panelen voor de afstandsbediening; rijen schuiven alleen als de gemarkeerde kaart uit beeld zou raken
+• Titelpagina's openen in één keer met artwork, logo, feiten en studiologo's tegelijk, en daarna verschuift er niets meer; Meer lezen scrolt mee met de tekst
+• Achtergrondkeuze: vervaagd artwork of een van drie kleurpatronen; zachtere standaardvervaging met een extra sterkte; een kleinere standaardgrootte van de interface en een nieuwe maat Piepklein
+• Automatische ondertitelkeuze geeft voorrang aan bestanden voor web-releases en aan het meest gedownloade bestand, hetzelfde bestand dat de handmatige lijst bovenaan zet
+• Ondertitels synchroniseren luistert nu op het apparaat zelf naar de dialoog en legt die naast de ondertiteltekst; binnen een paar minuten een antwoord, vanaf elk punt in een titel; start automatisch en houdt zich in als een titel niet te matchen is
+• Ondertitels online zoeken vanuit de speler, vooraf ingevuld met wat er speelt; een zelf gekozen ondertitel wordt nooit automatisch verschoven
+• Eén bron toegevoegd, twee verhuisd naar hun nieuwe adres; drie bronnen alleen voor anime, waarvan één met Indiase audio
+• Een handmatig gekozen bron blijft gekozen; casten waarschuwt als een VPN het zou blokkeren
+• Ouderlijk toezicht verbergt ook titels zonder leeftijdsclassificatie; bulk verwijderen in Mijn Lijst; Mijn Lijst leegmaken leegt ook Favorieten
+• Zoeksuggesties zijn even breed als het zoekvak en de knop om de zoekgeschiedenis te wissen is altijd zichtbaar
+• Vertalingen aangevuld in alle talen
+
+v1.5.8
+• Nieuwe televisie-interface gebouwd voor de afstandsbediening: start met een uitgelichte titel, bladeren, zoeken met suggesties, titelpagina's met seizoenen, cast en vergelijkbare titels, Mijn Lijst, ouderlijk toezicht en instellingen
+• Ondertitels worden niet meer automatisch verschoven; synchroniseren gebeurt alleen op verzoek, meet twee stukken geluid en grijpt alleen in als beide het eens zijn
+• Opgelost: ondertitels die tijdens een titel wegdreven, verdwenen bij het wisselen van bron, dubbel getekend werden of in de verkeerde taal kwamen
+• De positie van ondertitels is instelbaar; de voorkeurstaal voor ondertitels wordt gerespecteerd
+• Automatische kwaliteit begint op een verstandige resolutie en de kwaliteitsknop toont wat er echt speelt; elke kwaliteit van een bron is te kiezen, ook 4K; HDR schakelt zichzelf niet meer uit
+• Eén kaart voor de volgende aflevering in plaats van twee, een instelling voor automatisch doorspelen en een afleveringenknop in de speler
+• Afleveringenlijsten opnieuw gebouwd met stills, uitzenddata, speelduur en beschrijvingen; tikken op een aflevering speelt hem af; gekeken afleveringen tonen een voortgangsbalk
+• Zoeken kan beperkt worden tot films of series en gesorteerd op beoordeling of datum; rommelresultaten worden verborgen
+• Ouderlijk toezicht met een leeftijdsgrens die titels in de hele app verbergt; leeftijdsclassificaties worden veel betrouwbaarder gelezen
+• Opgelost: kijkvoortgang die niet tussen apparaten synchroniseerde, en een crash bij het opstarten voor wie daar last van had
+• Opgelost: laadproblemen op bepaalde VPN's en netwerken die de filmdatabase blokkeren; het hulpscherm voor de verbinding werkt op meer apparaten
+• Bronnen die niet reageren worden sneller overgeslagen; bronnen die niet meer bestaan zijn verwijderd
+• Profielfoto's kunnen worden ingezoomd en verschoven; de Over-pagina is herschreven; vertalingen bijgewerkt in alle talen
+
+v1.4.0
+• Gelokaliseerde Metadata: Film- en seriebeschrijvingen, taglines en afleveringtitels verschijnen nu automatisch in het Nederlands wanneer de app-taal is ingesteld op Nederlands
+• Globale App-toegangsslot: Een verplicht beveiligingsscherm bij het opstarten geïmplementeerd om uitsluitend geautoriseerde toegang te garanderen
+• Beveiligingsharding: Interne beschermingsmechanismen verbeterd om de app-integriteit en gebruikersgegevens te waarborgen
+• UI Prestatiepiek: Beeldverwerking geoptimaliseerd en cachecapaciteit verhoogd, wat resulteert in perfect vloeiend 120Hz scrollen door categorieën
+• Snelle Interacties: Standaard systeem long-press vervangen door een aangepaste interactie op hoge snelheid en haptische feedback toegevoegd voor een premium gevoel
+• Stabiliteitsfixes: Een kritieke crash in Beeld-in-Beeld modus opgelost en gegevensverwerking verfijnd voor het nieuwe favorietensysteem
+
+v1.3.9
+• Favorietensysteem: Een nieuw tabblad 'Favorieten' toegevoegd aan Mijn Lijst. Je kunt nu titels een ster geven via het detailscherm of het optiemenu
+• PIP Stabiliteitsfix: Een crash en herstart opgelost bij het openen van Beeld-in-Beeld modus met actieve ondertiteling
+• UI Zichtbaarheid: Subtiele schaduwen toegevoegd aan de knoppen om zichtbaarheid op lichte achtergronden te garanderen
+• Ondertiteling Zoeken Automatisering: Tikken op 'Handmatig zoeken' start nu direct een zoekopdracht met de huidige titel
+• Verbeterde Stabiliteit: Experimentele componenten volledig verwijderd en teruggezet naar stabiele ondertitellogica
+• Geverifieerde Prestaties: Alle recente stabiliteitsfixes (Browse deduplicatie, serververbinding) behouden
+• Geheugenstabiliteit: Bitmap-caching geoptimaliseerd om haperingen te voorkomen
+• Scraper Stabiliteit: Problemen met de achtergrond-zoekmachine opgelost
+• Achtergrond Audio Patch: Een bug verholpen waarbij audio door bleef spelen bij het wisselen van titel
+
+v1.3.8
+• Een grote crash opgelost die optrad bij het overslaan naar de volgende aflevering in Beeld-in-Beeld modus
+• Probleem verholpen waarbij het laadscherm de Beeld-in-Beeld weergave kon blokkeren
+• Een melding toegevoegd wanneer een nieuwe stream wordt gezocht
+• Casting betrouwbaarheid verbeterd door problemen in de verbindingslaag op te lossen
+• Bug verholpen waarbij het laadscherm bleef hangen na een succesvolle cast
+• Slimme internetverbinding checks toegevoegd met meldingen
+• Beeldformaat logica herzien voor verschillende beeldverhoudingen
+• Nederlandse vertalingen voor willekeurige laadteksten gecorrigeerd
+
+v1.3.7
+• Problemen met video zoeken opgelost door stabiele sessies te behouden
+• Server prioriteitslijst geoptimaliseerd voor snellere verbindingen
+• Ontbrekende interface teksten vertaald naar het Nederlands
+• Geschiedenis en Mijn Lijst compacter gemaakt
+• Multi-selectie modus toegevoegd aan Mijn Lijst
+• 'Selecteer Alles' en 'Verwijder Alles' toegevoegd aan Geschiedenis en Mijn Lijst
+• Veegbare tabs toegevoegd aan Mijn Lijst
+• Kijkgeschiedenis vernieuwd naar een gecombineerde lijst
+• Bug verholpen waarbij categorieën soms niet laadden door API limieten
+• Browse tabs gereorganiseerd voor betere vindbaarheid
+
+v1.1.8
+• Initiële streambron integratie
+• DLNA casten via lokale proxy
+• Moderne bladerinterface met hero-header
+• Tweetalige UI (Engels / Nederlands)"</string>
+    <string name="about_changelog_title">Recente wijzigingen</string>
+    <string name="about_credits_body">"ClipBox is een streamingapp voor Android, gemaakt door een team van gepassioneerde ontwikkelaars.
+
+Alles staat op één plek. Blader door wat populair is, zoek gericht, of pak precies op waar je gebleven was. Elke titel heeft meerdere bronnen, ondertitels worden voor je gevonden en getimed in een breed scala aan talen, en wat je kijkt kun je naar een televisie sturen. Met een account blijven je lijst en je geschiedenis op al je apparaten gelijk."</string>
+    <string name="about_credits_title">Over ClipBox</string>
+    <string name="about_disclaimer_long">"ClipBox is een onafhankelijke mediaspeler voor Android. De app host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio, ondertiteling of ander materiaal. Alles wat via de app wordt afgespeeld komt van externe bronnen die niet aan ClipBox gelieerd zijn, er niet door onderschreven worden en er niet door beheerd worden, en die op elk moment kunnen veranderen of verdwijnen.
+
+ClipBox claimt geen eigendom van materiaal van derden en geeft geen toestemming voor auteursrechtinbreuk. Je bent zelf verantwoordelijk voor het naleven van de auteursrecht-, licentie- en overige wetgeving die geldt waar jij je bevindt. Verzoeken om materiaal te verwijderen of ontoegankelijk te maken kun je het beste richten aan de betreffende bron of rechthebbende, aangezien ClipBox zelf niets host wat verwijderd kan worden.
+
+Titels, artwork en metadata komen van The Movie Database (TMDB). ClipBox wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald zijn; de juistheid en de timing daarvan zijn niet gegarandeerd.
+
+Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA en alle overige namen en handelsmerken worden uitsluitend ter identificatie gebruikt en impliceren geen sponsoring, goedkeuring of samenwerking."</string>
+    <string name="about_disclaimer_short">ClipBox host of levert zelf geen media. Alle streams, ondertitels en artwork komen van externe bronnen. ClipBox is niet gelieerd aan of onderschreven door Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon of welke contentaanbieder dan ook.</string>
+    <string name="about_disclaimer_subtitle">Inhoudsbronnen en handelsmerken</string>
+    <string name="about_disclaimer_title">Disclaimer</string>
+    <string name="about_legal_title">Legaal</string>
+    <string name="about_privacy_subtitle">Welke gegevens worden verzameld en waarom</string>
+    <string name="about_privacy_title">Privacybeleid</string>
+    <string name="about_terms_subtitle">Hoe ClipBox kan worden gebruikt</string>
+    <string name="about_terms_title">Algemene voorwaarden</string>
+    <string name="about_title">Over</string>
+    <string name="about_version_fmt">v%1$s (%2$d)</string>
+    <string name="account_change_password">Wachtwoord wijzigen</string>
+    <string name="account_change_username">Gebruikersnaam wijzigen</string>
+    <string name="account_confirm_password_hint">Bevestig wachtwoord</string>
+    <string name="account_creating">Account aanmaken…</string>
+    <string name="account_current_password_hint">Huidig wachtwoord</string>
+    <string name="account_delete_account">Account verwijderen</string>
+    <string name="account_delete_confirm">Dit zal je account en alle gesynchroniseerde data permanent verwijderen. Dit kan niet ongedaan worden gemaakt. Voer je wachtwoord in om te bevestigen.</string>
+    <string name="account_display_name">Weergavenaam</string>
+    <string name="account_display_name_hint">De naam die in de app te zien is</string>
+    <string name="account_display_name_unset">Niet ingesteld, je gebruikersnaam wordt getoond</string>
+    <string name="account_forgot_password">Wachtwoord vergeten?</string>
+    <string name="account_founder_member">Founder</string>
+    <string name="account_go_login">Heb je al een account? Log in</string>
+    <string name="account_go_login_action">Log in</string>
+    <string name="account_go_register">Nieuw hier? Maak een account aan</string>
+    <string name="account_go_register_action">Maak een account aan</string>
+    <string name="account_guest">Gast</string>
+    <string name="account_member">ClipBox Lid</string>
+    <string name="account_member_since_fmt">Lid sinds %1$s</string>
+    <string name="account_new_password_hint">Nieuw wachtwoord</string>
+    <string name="account_new_username_hint">Nieuwe gebruikersnaam</string>
+    <string name="account_password_hint">Wachtwoord</string>
+    <string name="account_recovery_code">Herstelcode</string>
+    <string name="account_recovery_code_hint">Herstelcode</string>
+    <string name="account_register">Account aanmaken</string>
+    <string name="account_register_subtitle">Maak je ClipBox account aan</string>
+    <string name="account_session_ended">Je account is niet meer beschikbaar. Je bent uitgelogd.</string>
+    <string name="account_settings_section">Account instellingen</string>
+    <string name="account_sign_in">Inloggen</string>
+    <string name="account_sign_in_prompt">Log in om je account te bekijken</string>
+    <string name="account_sign_out">Uitloggen</string>
+    <string name="account_signed_out_offline">Uitgelogd. Je lijst kan niet worden gesynchroniseerd. Daarom wordt deze op dit apparaat bewaard.</string>
+    <string name="account_signing_in">Inloggen…</string>
+    <string name="account_subtitle">Log in op je ClipBox account</string>
+    <string name="account_sync_done">Synchronisatie voltooid</string>
+    <string name="account_terms_required">Bekijk de Algemene Voorwaarden voordat je registreert</string>
+    <string name="account_title">Account</string>
+    <string name="account_username_hint">Gebruikersnaam</string>
+    <string name="account_username_taken">Gebruikersnaam is al in gebruik</string>
+    <string name="account_vip_ads_off">Advertenties uitgeschakeld voor VIP leden</string>
+    <string name="account_vip_member">VIP Lid</string>
+    <string name="action_continue">Verder</string>
+    <string name="action_copy">Kopiëren</string>
+    <string name="action_done">Klaar</string>
+    <string name="action_generate">Genereren</string>
+    <string name="action_open_in_browser">Openen in browser</string>
+    <string name="action_remove">Verwijderen</string>
+    <string name="action_save">Opslaan</string>
+    <string name="actor_born_fmt">Geboren %1$s</string>
+    <string name="actor_died_fmt">Overleden %1$s</string>
+    <string name="actor_gender_female">Vrouw</string>
+    <string name="actor_gender_male">Man</string>
+    <string name="actor_gender_nonbinary">Non-binair</string>
+    <string name="actor_known_for">Bekend van</string>
+    <string name="actor_no_bio">Geen biografie beschikbaar.</string>
+    <string name="actor_open_wikipedia">Openen op Wikipedia</string>
+    <string name="actor_read_more">Lees meer</string>
+    <string name="actor_wikipedia_failed">Kon Wikipedia niet openen.</string>
+    <string name="ad_autoclose_fmt">Sluit automatisch over %1$d s</string>
+    <string name="ad_blocked_note">Een adblocker houdt deze advertentie tegen. Advertenties houden ClipBox gratis: zet hem uit voor ClipBox, of neem VIP.</string>
+    <string name="ad_close">Advertentie sluiten</string>
+    <string name="ad_label">Advertentie</string>
+    <string name="ad_loading">Advertentie wordt geladen…</string>
+    <string name="ad_open">Open advertentie</string>
+    <string name="ad_page_hint">Pijltjes bewegen de aanwijzer · OK klikt · Terug sluit</string>
+    <string name="ad_popup_note">Advertenties houden ClipBox gratis en helpen de servers en het onderhoud te betalen.</string>
+    <string name="ad_remove_with_vip">Geen advertenties met VIP</string>
+    <string name="add_to_favourites">Toevoegen aan favorieten</string>
+    <string name="added_to_favourites">Toegevoegd aan favorieten</string>
+    <string name="added_to_my_list">Toegevoegd aan Mijn Lijst</string>
+    <string name="alert_dialog_title">Melding</string>
+    <string name="app_brand_subtitle" />
+    <string name="app_brand_title">CLIPBOX</string>
+    <string name="app_name">ClipBox</string>
+    <string name="aspect_fill">Vullen</string>
+    <string name="aspect_fills_already">het beeld vult het scherm al</string>
+    <string name="aspect_fit">Passend</string>
+    <string name="aspect_zoom">Zoom</string>
+    <string name="attr_cast_license">Proprietary Google SDK</string>
+    <string name="attr_cast_trademark">Google Cast is een handelsmerk van Google LLC.</string>
+    <string name="attr_license_unavailable">Licentietekst niet beschikbaar.</string>
+    <string name="attr_opensubs_text">Ondertitelzoekopdrachten en ondertitelmetadata worden geleverd door OpenSubtitles.</string>
+    <string name="attr_page_title">Vermeldingen &amp; Licenties</string>
+    <string name="attr_section_community">Community</string>
+    <string name="attr_section_data">Gegevensleveranciers</string>
+    <string name="attr_section_libs">Externe Bibliotheken</string>
+    <string name="attr_section_licenses">Open Source Licenties</string>
+    <string name="attr_skip_text">Intro- en outromarkeringen worden geleverd door IntroDB en AniSkip.</string>
+    <string name="attr_tmdb_detail">Films, tv-series, cast, crew, artwork en metadata worden aangeleverd door TMDB.</string>
+    <string name="attr_tmdb_disclaimer">Dit product maakt gebruik van de TMDB API maar wordt niet onderschreven of gecertificeerd door TMDB.</string>
+    <string name="attr_tmdb_logo_desc">TMDB-logo</string>
+    <string name="audio_button">Audio</string>
+    <string name="audio_import">Audiospoor importeren…</string>
+    <string name="audio_import_cast_hls_only">Deze stream kan tijdens het casten geen extra audiospoor meedragen. Probeer een andere server of speel af op de telefoon.</string>
+    <string name="audio_import_failed">Kan de bestandskiezer niet openen</string>
+    <string name="audio_import_no_permission">Toestemming is nodig om audiobestanden te lezen</string>
+    <string name="audio_import_none_found">Geen audiobestanden op dit apparaat gevonden</string>
+    <string name="audio_import_remove">Geïmporteerd audiospoor verwijderen</string>
+    <string name="audio_import_removed">Geïmporteerd audiospoor verwijderd</string>
+    <string name="audio_imported_toast">Geïmporteerd audiospoor toegepast</string>
+    <string name="audio_imported_track">Geïmporteerde audio</string>
+    <string name="avatar_process_failed">Verwerken van afbeelding mislukt</string>
+    <string name="avatar_remove_confirm">Weet je zeker dat je je profielfoto wilt verwijderen?</string>
+    <string name="avatar_remove_failed">Verwijderen van foto mislukt</string>
+    <string name="avatar_remove_title">Profielfoto verwijderen</string>
+    <string name="avatar_removed">Profielfoto verwijderd</string>
+    <string name="avatar_updated">Profielfoto bijgewerkt</string>
+    <string name="avatar_upload_failed">Uploaden van foto mislukt</string>
+    <string name="back_button_text">Sluiten</string>
+    <string name="bottomsheet_action_collapse">Het blad onderaan samenvouwen</string>
+    <string name="bottomsheet_action_expand">Het blad onderaan uitvouwen</string>
+    <string name="bottomsheet_action_expand_halfway">Half uitvouwen</string>
+    <string name="bottomsheet_drag_handle_clicked">Dubbelgetikt op handgreep voor slepen</string>
+    <string name="bottomsheet_drag_handle_content_description">Handgreep voor slepen</string>
+    <string name="brightness_button">Helderheid</string>
+    <string name="brightness_system_default">Systeemhelderheid gebruiken</string>
+    <string name="brightness_title">Helderheid</string>
+    <string name="btn_continue_watching">Verder kijken</string>
+    <string name="btn_play">Afspelen</string>
+    <string name="btn_resume">Hervatten</string>
+    <string name="btn_trailer">Trailer</string>
+    <string name="bug_report_contact_hint">Waar kunnen we je bereiken? (optioneel)</string>
+    <string name="bug_report_contact_placeholder">Telegram, Discord of e-mail</string>
+    <string name="bug_report_failed">Versturen mislukt. Controleer je verbinding.</string>
+    <string name="bug_report_hint">Beschrijf duidelijk wat er misging en wat je op dat moment aan het doen was.</string>
+    <string name="bug_report_message">Beschrijf het probleem. Je toestel en app-versie worden automatisch toegevoegd.</string>
+    <string name="bug_report_send">Versturen</string>
+    <string name="bug_report_sending">Dat vlieg er zo uit…</string>
+    <string name="bug_report_sent">Ontvangen, bedankt! We kijken er naar.</string>
+    <string name="bug_report_title">Bug melden</string>
+    <string name="call_notification_answer_action">Beantwoorden</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Weigeren</string>
+    <string name="call_notification_hang_up_action">Ophangen</string>
+    <string name="call_notification_incoming_text">Inkomend gesprek</string>
+    <string name="call_notification_ongoing_text">Actief gesprek</string>
+    <string name="call_notification_screening_text">Een inkomend gesprek screenen</string>
+    <string name="capture_blocked_exit">Afsluiten</string>
+    <string name="capture_blocked_intro">ClipBox draait niet zolang er een netwerkcapture- of proxytool op dit apparaat staat.</string>
+    <string name="capture_blocked_outro">Verwijder die en open ClipBox opnieuw.</string>
+    <string name="capture_blocked_title">ClipBox kan niet draaien op dit apparaat</string>
+    <string name="cast_ad_label">Advertentie</string>
+    <string name="cast_button_cast">Cast</string>
+    <string name="cast_casting_to_device">Casten naar %1$s</string>
+    <string name="cast_closed_captions">Ondertiteling</string>
+    <string name="cast_closed_captions_unavailable">Ondertiteling niet beschikbaar</string>
+    <string name="cast_connecting">Verbinden met TV…</string>
+    <string name="cast_connecting_to_device">Verbinden met %1$s</string>
+    <string name="cast_device_fallback">Cast-apparaat</string>
+    <string name="cast_disconnect">Verbinding verbreken</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_enter_ip">Voer IP in</string>
+    <string name="cast_expanded_controller_ad_image_description">Afbeelding die wordt weergegeven terwijl de Cast-receiver een advertentie afspeelt</string>
+    <string name="cast_expanded_controller_ad_in_progress">Advertentie wordt uitgevoerd…</string>
+    <string name="cast_expanded_controller_background_image">Albumhoes</string>
+    <string name="cast_expanded_controller_live_head_description">Huidige positie is aan het begin van de live stream</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Live stream</string>
+    <string name="cast_expanded_controller_loading">Laden…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Advertentie overslaan</string>
+    <string name="cast_expanded_controller_skip_ad_text">Advertentie overslaan over %1$d…</string>
+    <string name="cast_failed_fmt">Cast mislukt: %1$s</string>
+    <string name="cast_forward">Vooruitspoelen</string>
+    <string name="cast_forward_10">Tien seconden vooruitspoelen</string>
+    <string name="cast_forward_30">Dertig seconden vooruitspoelen</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_keepalive_text">TV lekker warm houden</string>
+    <string name="cast_keepalive_title">Casten naar TV</string>
+    <string name="cast_live_label">LIVE</string>
+    <string name="cast_load_failed">laden mislukt</string>
+    <string name="cast_load_fmt">Cast: %1$s</string>
+    <string name="cast_loading_next">Volgende staat klaar…</string>
+    <string name="cast_loading_prev">Terug in de tijd…</string>
+    <string name="cast_manual_msg">"Vind je TV's IP in:
+Instellingen → Netwerk → Wi-Fi → Geavanceerd"</string>
+    <string name="cast_manual_title">Voer TV IP-adres in</string>
+    <string name="cast_mute">Dempen</string>
+    <string name="cast_next_episode">Volgende aflevering</string>
+    <string name="cast_no_devices_msg">"Check of je TV aan staat en op dezelfde WiFi zit.
+
+LG TVs: zet Instellingen → Netwerk → LG Connect Apps aan.
+
+Je kan ook handmatig het IP invoeren."</string>
+    <string name="cast_no_devices_title">Geen TVs gevonden</string>
+    <string name="cast_no_response_fmt">TV op %1$s geeft geen sjoege. Check DLNA op de TV.</string>
+    <string name="cast_no_stream">Niks aan het afspelen bro.</string>
+    <string name="cast_notification_connected_message">Verbonden met %1$s</string>
+    <string name="cast_notification_connecting_message">Verbinden met %1$s</string>
+    <string name="cast_notification_default_channel_name">Casten</string>
+    <string name="cast_notification_disconnect">Verbinding verbreken</string>
+    <string name="cast_pause">Pauzeren</string>
+    <string name="cast_pick_device">Cast naar…</string>
+    <string name="cast_play">Afspelen</string>
+    <string name="cast_prev_episode">Vorige aflevering</string>
+    <string name="cast_proxy_failed">Kon stream niet doorsturen naar TV. Probeer een andere server.</string>
+    <string name="cast_proxy_starting">Dit wordt ingepakt voor de TV…</string>
+    <string name="cast_quality_refused">Je apparaat kon die kwaliteit niet afspelen — de huidige blijft staan</string>
+    <string name="cast_quality_set_fmt">Kwaliteit: %1$s</string>
+    <string name="cast_rewind">Terugspoelen</string>
+    <string name="cast_rewind_10">Tien seconden terugspoelen</string>
+    <string name="cast_rewind_30">Dertig seconden terugspoelen</string>
+    <string name="cast_role_archive">archiefbeelden</string>
+    <string name="cast_role_fmt">%1$s (%2$s)</string>
+    <string name="cast_role_uncredited">niet vermeld</string>
+    <string name="cast_role_voice">stem</string>
+    <string name="cast_search_again">Zoek opnieuw</string>
+    <string name="cast_search_done">Zoeken voltooid</string>
+    <string name="cast_searching_msg">Rondspieken in je netwerk (%1$ds)</string>
+    <string name="cast_searching_title">Tv’s opsnuffelen…</string>
+    <string name="cast_section_chromecast">Chromecast</string>
+    <string name="cast_section_other">"Andere tv's &amp; apparaten"</string>
+    <string name="cast_seek_bar">Scrollbar voor afspelen</string>
+    <string name="cast_skip_next">Overslaan en naar volgend item</string>
+    <string name="cast_skip_prev">Overslaan en naar vorig item</string>
+    <string name="cast_started_fmt">Casten naar %1$s</string>
+    <string name="cast_status_buffering">Aan het bufferen…</string>
+    <string name="cast_status_casting">Aan het casten</string>
+    <string name="cast_status_error_next">Castfout — volgende bron zoeken…</string>
+    <string name="cast_status_finished">Voltooid</string>
+    <string name="cast_status_idle">Inactief</string>
+    <string name="cast_status_paused">Gepauzeerd</string>
+    <string name="cast_status_playing">Speelt af op TV</string>
+    <string name="cast_status_stopped">Gestopt</string>
+    <string name="cast_stop">Stoppen</string>
+    <string name="cast_stop_button">Stop</string>
+    <string name="cast_stop_live_stream">Livestream stoppen</string>
+    <string name="cast_subs_failed">Kon die ondertitel niet op de TV laden.</string>
+    <string name="cast_subs_loading">Ondertitels naar de TV sturen…</string>
+    <string name="cast_subtitles_button">Ondertitels</string>
+    <string name="cast_tracks_chooser_dialog_audio">Audio</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Annuleren</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Ondertiteling</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Nummer %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">Geen</string>
+    <string name="cast_tracks_chooser_dialog_ok">OK</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Ondertiteling</string>
+    <string name="cast_unmute">Dempen opheffen</string>
+    <string name="cast_volume_down">Volume omlaag</string>
+    <string name="cast_volume_title">Volume</string>
+    <string name="cast_volume_up">Volume omhoog</string>
+    <string name="cast_vpn_body">Je VPN staat aan, waardoor de app je tv niet kan bereiken op het thuisnetwerk. Zet de VPN even uit om te casten.</string>
+    <string name="cast_vpn_title">Casten werkt niet met een VPN</string>
+    <string name="cast_vpn_warning">Let op: casten kan soms instabiel zijn. Een VPN kan casten ook blokkeren, zet het uit als casten mislukt.</string>
+    <string name="character_counter_content_description">%1$d van %2$d tekens opgegeven</string>
+    <string name="character_counter_overflowed_content_description">Tekenlimiet heeft %1$d van %2$d overschreden</string>
+    <string name="clear_text_end_icon_content_description">Tekst wissen</string>
+    <string name="color_blue">Blauw</string>
+    <string name="color_brightness">Helderheid</string>
+    <string name="color_custom">Eigen kleur</string>
+    <string name="color_green">Groen</string>
+    <string name="color_red">Rood</string>
+    <string name="common_google_play_services_enable_button">Aanzetten</string>
+    <string name="common_google_play_services_enable_text">%1$s werkt niet, tenzij je Google Play-services aanzet.</string>
+    <string name="common_google_play_services_enable_title">Google Play-services aanzetten</string>
+    <string name="common_google_play_services_install_button">Installeren</string>
+    <string name="common_google_play_services_install_text">%1$s kan niet worden uitgevoerd zonder Google Play-services, die je nog niet op je apparaat hebt.</string>
+    <string name="common_google_play_services_install_title">Google Play-services ophalen</string>
+    <string name="common_google_play_services_notification_channel_name">Beschikbaarheid van Google Play-services</string>
+    <string name="common_google_play_services_notification_ticker">Fout met Google Play-services</string>
+    <string name="common_google_play_services_unknown_issue">%1$s ondervindt problemen met Google Play-services. Probeer het opnieuw.</string>
+    <string name="common_google_play_services_unsupported_text">%1$s kan niet worden uitgevoerd zonder Google Play-services, die niet worden ondersteund op je apparaat.</string>
+    <string name="common_google_play_services_update_button">Updaten</string>
+    <string name="common_google_play_services_update_text">%1$s kan niet worden uitgevoerd, tenzij je Google Play-services updatet.</string>
+    <string name="common_google_play_services_update_title">Google Play-services updaten</string>
+    <string name="common_google_play_services_updating_text">%1$s kan niet worden uitgevoerd zonder Google Play-services, die momenteel worden geüpdatet.</string>
+    <string name="common_google_play_services_wear_update_text">Er is een nieuwe versie van Google Play-services vereist. De update wordt binnenkort automatisch uitgevoerd.</string>
+    <string name="common_open_on_phone">Openen op telefoon</string>
+    <string name="common_signin_button_text">Inloggen</string>
+    <string name="common_signin_button_text_long">Inloggen met Google</string>
+    <string name="conn_help_body">Je internet werkt, maar de dienst met film- en serie-informatie was niet bereikbaar. Sommige providers blokkeren die. Deze twee stappen helpen meestal.</string>
+    <string name="conn_help_dismiss">Niet nu</string>
+    <string name="conn_help_dns_body">Kies ‘Hostnaam van privé-DNS-provider’ en vul %1$s in — dat is Cloudflare, de %2$s-dienst.</string>
+    <string name="conn_help_dns_manual">Zoek in Instellingen naar ‘Privé-DNS’.</string>
+    <string name="conn_help_dns_title">Privé-DNS instellen op Cloudflare</string>
+    <string name="conn_help_open_dns">DNS-instellingen openen</string>
+    <string name="conn_help_retry">Opnieuw proberen</string>
+    <string name="conn_help_title">Kan titels niet laden</string>
+    <string name="conn_help_vpn_body">Gebruik je een VPN? Zet die dan even uit. Zo niet, dan omzeilt een VPN meestal een blokkade.</string>
+    <string name="conn_help_vpn_title">Zet je VPN aan of uit</string>
+    <string name="countdown_next_server_fmt">Volgende server over %1$ds</string>
+    <string name="default_notification_channel_name">Wordt nu afgespeeld</string>
+    <string name="delete">Verwijderen</string>
+    <string name="delete_all">Alles verwijderen</string>
+    <string name="detail_cast">Cast</string>
+    <string name="detail_episodes">Afleveringen</string>
+    <string name="detail_failed_load">Laden mislukt.</string>
+    <string name="detail_more_like_this">Meer zoals dit</string>
+    <string name="devices_empty">Nog geen apparaten.</string>
+    <string name="devices_last_active_fmt">Laatst actief %1$s</string>
+    <string name="devices_limit_body_fmt">Je account is al ingelogd op %1$d apparaten. Kies er één om uit te loggen; dit apparaat neemt die plek in.</string>
+    <string name="devices_limit_on_me">Dit apparaat telt nog niet mee als een van je apparaten, dus VIP staat hier uit. Log een apparaat uit dat je niet meer gebruikt om het aan te zetten.</string>
+    <string name="devices_limit_pick_fmt">Ingelogd op %1$d apparaten. Kies er één om uit te loggen.</string>
+    <string name="devices_limit_title">Te veel apparaten</string>
+    <string name="devices_manage">Apparaten beheren</string>
+    <string name="devices_now">zojuist</string>
+    <string name="devices_phone">Telefoon</string>
+    <string name="devices_sign_out">Uitloggen</string>
+    <string name="devices_sign_out_body_fmt">%1$s wordt uitgelogd van je account zodra het weer gebruikt wordt.</string>
+    <string name="devices_sign_out_self">Dit is het apparaat dat je nu gebruikt. Je wordt hier uitgelogd.</string>
+    <string name="devices_sign_out_title">Dit apparaat uitloggen?</string>
+    <string name="devices_summary_fmt">%1$d van %2$d apparaten zijn ingelogd op je account.</string>
+    <string name="devices_this_device">Dit apparaat</string>
+    <string name="devices_title">Je apparaten</string>
+    <string name="devices_tv">Tv</string>
+    <string name="devices_unnamed">Naamloos apparaat</string>
+    <string name="dialog_no">Nee</string>
+    <string name="dialog_yes">Ja</string>
+    <string name="dismiss">Sluiten</string>
+    <string name="empty_url">Voer eerst een stream-URL in.</string>
+    <string name="episode_button_short">S%1$d • A%2$d</string>
+    <string name="episode_fmt">Aflevering %d</string>
+    <string name="episode_info">Afleveringsinfo</string>
+    <string name="episode_mark_unwatched">Als niet bekeken markeren</string>
+    <string name="episode_mark_watched">Als bekeken markeren</string>
+    <string name="episode_no_overview">Geen beschrijving beschikbaar voor deze aflevering.</string>
+    <string name="episode_number_short_fmt">A%1$d</string>
+    <string name="episode_options">Aflevering-opties</string>
+    <string name="episode_picker_empty">Geen afleveringen gevonden voor dit seizoen.</string>
+    <string name="episode_picker_loading">Afleveringen laden…</string>
+    <string name="episode_play_this">Deze aflevering afspelen</string>
+    <string name="episode_row_fmt">Afl. %1$d: %2$s</string>
+    <string name="episode_runtime_fmt">%1$d min</string>
+    <string name="episode_select_this">Deze aflevering selecteren</string>
+    <string name="episode_title">Aflevering</string>
+    <string name="episode_upcoming">Nog niet uitgezonden</string>
+    <string name="episodes_show_all_fmt">Alle %1$d afleveringen tonen</string>
+    <string name="episodes_show_less">Minder afleveringen tonen</string>
+    <string name="err_access_denied">Toegang geweigerd</string>
+    <string name="err_account_not_found">Account niet gevonden</string>
+    <string name="err_avatar_too_large">Afbeelding is te groot. Maximale grootte is 100KB</string>
+    <string name="err_current_password_incorrect">Huidig wachtwoord is onjuist</string>
+    <string name="err_generic">Er ging iets mis. Probeer het opnieuw.</string>
+    <string name="err_incorrect_password">Onjuist wachtwoord</string>
+    <string name="err_invalid_credentials">Onjuiste gebruikersnaam of wachtwoord</string>
+    <string name="err_invalid_recovery">Ongeldige gebruikersnaam of herstelcode</string>
+    <string name="err_password_required_delete">Wachtwoord is vereist om je account te verwijderen</string>
+    <string name="err_server">Serverfout. Probeer het later opnieuw.</string>
+    <string name="err_service_unavailable">Service tijdelijk niet beschikbaar. Probeer het opnieuw.</string>
+    <string name="err_signed_out_sign_in">Je bent op dit apparaat uitgelogd. Log opnieuw in.</string>
+    <string name="err_too_many_requests">Te veel verzoeken. Wacht even.</string>
+    <string name="err_update_for_recovery">Werk ClipBox bij naar de nieuwste versie om een nieuwe herstelcode te maken.</string>
+    <string name="error_a11y_label">Fout: ongeldig</string>
+    <string name="error_bad_intent">Ongeldige link ontvangen. Kon deze niet openen.</string>
+    <string name="error_icon_content_description">Fout</string>
+    <string name="error_message_authentication_expired">Log in om deze app te gebruiken</string>
+    <string name="error_message_bad_value">Onjuiste invoergegevens</string>
+    <string name="error_message_concurrent_stream_limit">Er wordt op te veel apparaten geluisterd</string>
+    <string name="error_message_content_already_playing">Die content wordt al afgespeeld</string>
+    <string name="error_message_description_text">Er is iets misgegaan bij het ophalen van meer informatie over deze advertentie</string>
+    <string name="error_message_disconnected">Verbinding met media-app verbroken</string>
+    <string name="error_message_end_of_playlist">Er staat niets anders in de wachtrij</string>
+    <string name="error_message_fallback">Er is iets misgegaan. Probeer het later opnieuw.</string>
+    <string name="error_message_info_cancelled">Kan niet afronden. Probeer het opnieuw.</string>
+    <string name="error_message_invalid_state">Kan dat nu niet doen</string>
+    <string name="error_message_io">Invoer-/uitvoerfout</string>
+    <string name="error_message_not_available_in_region">Kan die content hier niet krijgen</string>
+    <string name="error_message_not_supported">Deze app kan dat niet doen</string>
+    <string name="error_message_parental_control_restricted">Die content is geblokkeerd</string>
+    <string name="error_message_permission_denied">Toegang geweigerd</string>
+    <string name="error_message_premium_account_required">Premium toegang vereist</string>
+    <string name="error_message_setup_required">Instellen vereist</string>
+    <string name="error_message_skip_limit_reached">Kan geen nummers meer overslaan</string>
+    <string name="error_message_text">Er is iets misgegaan</string>
+    <string name="error_no_browser">Geen browser-app gevonden</string>
+    <string name="error_no_content_pull_to_refresh">Kon inhoud niet laden. Trek omlaag om te vernieuwen.</string>
+    <string name="error_no_intent">Niets om af te spelen.</string>
+    <string name="error_no_internet_pull_to_refresh">Geen internetverbinding. Maak verbinding en trek om te vernieuwen.</string>
+    <string name="exo_controls_cc_disabled_description">Ondertiteling aanzetten</string>
+    <string name="exo_controls_cc_enabled_description">Ondertiteling uitzetten</string>
+    <string name="exo_controls_fastforward_description">Vooruitspoelen</string>
+    <string name="exo_controls_fullscreen_enter_description">Volledig scherm openen</string>
+    <string name="exo_controls_fullscreen_exit_description">Volledig scherm sluiten</string>
+    <string name="exo_controls_hide">Afspeelbediening verbergen</string>
+    <string name="exo_controls_next_description">Volgende</string>
+    <string name="exo_controls_overflow_hide_description">Aanvullende instellingen verbergen</string>
+    <string name="exo_controls_overflow_show_description">Aanvullende instellingen tonen</string>
+    <string name="exo_controls_pause_description">Pauzeren</string>
+    <string name="exo_controls_play_description">Afspelen</string>
+    <string name="exo_controls_playback_speed">Snelheid</string>
+    <string name="exo_controls_previous_description">Vorige</string>
+    <string name="exo_controls_repeat_all_description">Huidige modus: Alles herhalen. Herhaalmodus schakelen.</string>
+    <string name="exo_controls_repeat_off_description">Huidige modus: Niets herhalen. Herhaalmodus schakelen.</string>
+    <string name="exo_controls_repeat_one_description">Huidige modus: 1 herhalen. Herhaalmodus schakelen.</string>
+    <string name="exo_controls_rewind_description">Terugspoelen</string>
+    <string name="exo_controls_settings_description">Instellingen</string>
+    <string name="exo_controls_show">Afspeelbediening tonen</string>
+    <string name="exo_controls_shuffle_off_description">Shuffle aanzetten</string>
+    <string name="exo_controls_shuffle_on_description">Shuffle uitzetten</string>
+    <string name="exo_controls_stop_description">Stoppen</string>
+    <string name="exo_controls_vr_description">VR-modus</string>
+    <string name="exo_item_list">%1$s, %2$s</string>
+    <string name="exo_track_bitrate">%1$.2f Mbps</string>
+    <string name="exo_track_mono">Mono</string>
+    <string name="exo_track_resolution">%1$d × %2$d</string>
+    <string name="exo_track_role_alternate">Alternatief</string>
+    <string name="exo_track_role_closed_captions">CC</string>
+    <string name="exo_track_role_commentary">Commentaar</string>
+    <string name="exo_track_role_supplementary">Aanvullend</string>
+    <string name="exo_track_selection_auto">Auto</string>
+    <string name="exo_track_selection_none">Geen</string>
+    <string name="exo_track_selection_title_audio">Audio</string>
+    <string name="exo_track_stereo">Stereo</string>
+    <string name="exo_track_surround">Surround sound</string>
+    <string name="exo_track_surround_5_point_1">5.1 surroundgeluid</string>
+    <string name="exo_track_surround_7_point_1">7.1 surroundgeluid</string>
+    <string name="exo_track_unknown">Onbekend</string>
+    <string name="exo_track_unknown_name">Onbekend (%1$s)</string>
+    <string name="expand_button_title">Geavanceerd</string>
+    <string name="exposed_dropdown_menu_content_description">Dropdownmenu tonen</string>
+    <string name="extracted_subtitles">Gevonden ondertitels</string>
+    <string name="fallback_image_content_descriptor">Waarom deze advertentie?</string>
+    <string name="fallback_menu_item_copy_link">Link kopiëren</string>
+    <string name="fallback_menu_item_open_in_browser">Openen in browser</string>
+    <string name="fallback_menu_item_share_link">Link delen</string>
+    <string name="filter_title">Sorteer op</string>
+    <string name="first_launch_body">"Een VPN kan sommige films en series blokkeren. Werkt een server niet, schakel je VPN dan even uit.
+
+Niet elke film is daadwerkelijk afspeelbaar, sommige werken wel en andere niet.
+
+ClipBox is nieuw en in ontwikkeling, er kunnen wat bugs zijn."</string>
+    <string name="first_launch_ok">Doorgaan</string>
+    <string name="first_launch_title">Welkom terug!</string>
+    <string name="footer_brand">ClipBox</string>
+    <string name="force_update_download">Update downloaden</string>
+    <string name="force_update_fallback_msg">Een nieuwe versie is vereist om door te gaan met de app.</string>
+    <string name="force_update_subtitle">Update vereist</string>
+    <string name="gate_connecting">Laden</string>
+    <string name="gate_retry">Opnieuw</string>
+    <string name="gate_unavailable_message">"ClipBox kan de servers niet bereiken.
+Controleer je verbinding en probeer het opnieuw."</string>
+    <string name="gate_unavailable_title">Service niet beschikbaar</string>
+    <string name="genre_action">Actie</string>
+    <string name="genre_animation">Animatie</string>
+    <string name="genre_anime">Anime</string>
+    <string name="genre_comedy">Komedie</string>
+    <string name="genre_drama">Drama</string>
+    <string name="genre_horror">Horror</string>
+    <string name="genre_romance">Romantiek</string>
+    <string name="genre_scifi">Sci-Fi</string>
+    <string name="genre_thriller">Thriller</string>
+    <string name="hero_btn_info">ⓘ Info</string>
+    <string name="hero_btn_play">Afspelen</string>
+    <string name="hint_dismiss">klik om door te gaan</string>
+    <string name="hint_dismiss_tv">druk op OK om door te gaan</string>
+    <string name="history_empty">Nog niets hier. Films en series die je bekijkt verschijnen hier.</string>
+    <string name="history_search_hint">Zoeken in geschiedenis…</string>
+    <string name="ic_media_route_learn_more_accessibility">Meer informatie over casten</string>
+    <string name="icon_content_description">Icoon voor dialoogvenster</string>
+    <string name="item_view_role_description">Tabblad</string>
+    <string name="items_selected_fmt">%1$d geselecteerd</string>
+    <string name="lang_available_body">Je gebruikt de app momenteel in het %1$s. Wil je overschakelen? Je kunt dit altijd wijzigen in Instellingen.</string>
+    <string name="lang_available_keep">%1$s behouden</string>
+    <string name="lang_available_switch">Overschakelen naar %1$s</string>
+    <string name="lang_available_title">ClipBox is nu beschikbaar in het %1$s</string>
+    <string name="launcher_instructions">"Er is hier niets dat je hoeft te doen.
+
+Heb je een stream-URL? Speel die hieronder direct af.
+"</string>
+    <string name="lock_button">Ontgrendelen</string>
+    <string name="lock_error_invalid">Ongeldig wachtwoord</string>
+    <string name="lock_hint">Voer wachwoord in</string>
+    <string name="lock_toast_identify">Voer het juiste wachtwoord in.</string>
+    <string name="lock_welcome">Welkom terug</string>
+    <string name="long_press_hint">Houd ingedrukt voor opties</string>
+    <string name="long_press_hint_tv">Houd OK ingedrukt voor opties</string>
+    <string name="material_clock_toggle_content_description">Selecteer a.m. of p.m.</string>
+    <string name="material_timepicker_am">a.m.</string>
+    <string name="material_timepicker_pm">p.m.</string>
+    <string name="media3_controls_pause_description">Pauzeren</string>
+    <string name="media3_controls_play_description">Afspelen</string>
+    <string name="media3_controls_seek_back_description">Achteruit springen</string>
+    <string name="media3_controls_seek_forward_description">Vooruit springen</string>
+    <string name="media3_controls_seek_to_next_description">Naar volgende item springen</string>
+    <string name="media3_controls_seek_to_previous_description">Naar vorige item springen</string>
+    <string name="media_notification_channel_name">Casten</string>
+    <string name="media_type_movie">Film</string>
+    <string name="media_type_series">Serie</string>
+    <string name="mr_button_content_description">Casten</string>
+    <string name="mr_cast_button_connected">Casten. Verbonden.</string>
+    <string name="mr_cast_button_connecting">Casten. Verbinding maken.</string>
+    <string name="mr_cast_button_disconnected">Casten. Verbinding verbroken.</string>
+    <string name="mr_cast_dialog_title_view_placeholder">Geen informatie beschikbaar</string>
+    <string name="mr_chooser_looking_for_devices">Apparaten zoeken...</string>
+    <string name="mr_chooser_searching">Apparaten zoeken</string>
+    <string name="mr_chooser_title">Casten naar</string>
+    <string name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">Meer informatie</a></string>
+    <string name="mr_chooser_wifi_warning_description_car">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als deze auto</string>
+    <string name="mr_chooser_wifi_warning_description_phone">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als deze telefoon</string>
+    <string name="mr_chooser_wifi_warning_description_tablet">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als deze tablet</string>
+    <string name="mr_chooser_wifi_warning_description_tv">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als deze tv</string>
+    <string name="mr_chooser_wifi_warning_description_unknown">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als dit apparaat</string>
+    <string name="mr_chooser_wifi_warning_description_watch">Zorg dat het andere apparaat is verbonden met hetzelfde wifi-netwerk als deze smartwatch</string>
+    <string name="mr_chooser_zero_routes_found_title">Geen apparaten beschikbaar</string>
+    <string name="mr_controller_album_art">Albumhoes</string>
+    <string name="mr_controller_casting_screen">Scherm casten</string>
+    <string name="mr_controller_close_description">Sluiten</string>
+    <string name="mr_controller_collapse_group">Samenvouwen</string>
+    <string name="mr_controller_disconnect">Verbinding verbreken</string>
+    <string name="mr_controller_expand_group">Uitvouwen</string>
+    <string name="mr_controller_no_info_available">Geen informatie beschikbaar</string>
+    <string name="mr_controller_no_media_selected">Geen media geselecteerd</string>
+    <string name="mr_controller_pause">Pauzeren</string>
+    <string name="mr_controller_play">Afspelen</string>
+    <string name="mr_controller_stop">Stoppen</string>
+    <string name="mr_controller_stop_casting">Casten stoppen</string>
+    <string name="mr_controller_volume_slider">Volumeschuifregelaar</string>
+    <string name="mr_dialog_default_group_name">Groep</string>
+    <string name="mr_dialog_groupable_header">Een apparaat toevoegen</string>
+    <string name="mr_dialog_transferable_header">Afspelen in een groep</string>
+    <string name="mr_system_route_name">Systeem</string>
+    <string name="mr_user_route_category_name">Apparaten</string>
+    <string name="msg_all_fields_required">Alle velden zijn verplicht</string>
+    <string name="msg_copied">Gekopieerd</string>
+    <string name="msg_failed">Mislukt</string>
+    <string name="msg_password_min">Wachtwoord moet minstens 8 tekens zijn</string>
+    <string name="msg_passwords_no_match">Wachtwoorden komen niet overeen</string>
+    <string name="msg_register_failed">Registratie mislukt</string>
+    <string name="msg_sign_in_failed">Inloggen mislukt</string>
+    <string name="msg_too_many_attempts_fmt">Te veel pogingen. Probeer over %1$ds opnieuw</string>
+    <string name="msg_username_empty">Gebruikersnaam mag niet leeg zijn</string>
+    <string name="msg_username_password_required">Gebruikersnaam en wachtwoord verplicht</string>
+    <string name="msg_username_rules">Gebruikersnaam: 3–30 tekens, alleen letters/cijfers/underscore</string>
+    <string name="mtrl_badge_numberless_content_description">Nieuwe melding</string>
+    <string name="mtrl_checkbox_state_description_checked">Aangevinkt</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">Gedeeltelijk aangevinkt</string>
+    <string name="mtrl_checkbox_state_description_unchecked">Niet aangevinkt</string>
+    <string name="mtrl_chip_close_icon_content_description">%1$s verwijderen</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">Meer dan %1$d nieuwe meldingen</string>
+    <string name="mtrl_picker_a11y_next_month">Naar volgende maand gaan</string>
+    <string name="mtrl_picker_a11y_prev_month">Naar vorige maand gaan</string>
+    <string name="mtrl_picker_announce_current_range_selection">Startdatumselectie: %1$s – Einddatumselectie: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">Huidige selectie: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">geen</string>
+    <string name="mtrl_picker_cancel">Annuleren</string>
+    <string name="mtrl_picker_confirm">OK</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Selecteer een datum</string>
+    <string name="mtrl_picker_date_header_unselected">Geselecteerde datum</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">Einddatum %1$s</string>
+    <string name="mtrl_picker_invalid_format">Ongeldige indeling.</string>
+    <string name="mtrl_picker_invalid_format_example">Voorbeeld: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Gebruik: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Ongeldig bereik.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">Naar het huidige jaar %1$d gaan</string>
+    <string name="mtrl_picker_navigate_to_year_description">Naar jaar %1$d navigeren</string>
+    <string name="mtrl_picker_out_of_range">Valt buiten bereik: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Startdatum - %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – einddatum</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Selecteer een periode</string>
+    <string name="mtrl_picker_range_header_unselected">Startdatum - einddatum</string>
+    <string name="mtrl_picker_save">Opslaan</string>
+    <string name="mtrl_picker_start_date_description">Startdatum %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">Datum</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">Einddatum</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Startdatum</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">j</string>
+    <string name="mtrl_picker_today_description">Vandaag %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Overschakelen naar agenda-invoermodus</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Tik om over te schakelen naar de agendaweergave</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Overschakelen naar tekstinvoermodus</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Tik om over te schakelen naar de jaarweergave</string>
+    <string name="mtrl_timepicker_cancel">Annuleren</string>
+    <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="my_list_empty">"Je lijst is nog leeg.
+
+Voeg eerst nieuwe films en series toe"</string>
+    <string name="mylist_search_hint">Zoek in je lijst</string>
+    <string name="nav_about">Over</string>
+    <string name="nav_close_drawer">Sluit menu</string>
+    <string name="nav_history">Geschiedenis</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_more">Meer</string>
+    <string name="nav_mylist">Mijn lijst</string>
+    <string name="nav_open_drawer">Menu openen</string>
+    <string name="nav_settings">Instellingen</string>
+    <string name="nav_support">Support</string>
+    <string name="next_episode_auto">Speelt automatisch verder aan het einde</string>
+    <string name="next_episode_cancel">Stop</string>
+    <string name="next_episode_countdown_fmt">Volgende over %1$ds</string>
+    <string name="next_episode_label">Volgende aflevering</string>
+    <string name="next_episode_play_now">Volgende afspelen</string>
+    <string name="no_description_available">Nog geen beschrijving beschikbaar.</string>
+    <string name="no_streams_found">Niks gevonden. De servers trekken zich er niks van aan.</string>
+    <string name="not_set">Niet ingesteld</string>
+    <string name="pair_phone_confirm_body_fmt">%1$s wordt ingelogd op je account %2$s.</string>
+    <string name="pair_phone_confirm_title">Inloggen op deze tv?</string>
+    <string name="pair_phone_confirm_warning">Ga alleen verder als deze code nu op je eigen tv-scherm staat. Keur nooit een code goed die iemand je heeft gestuurd.</string>
+    <string name="pair_phone_done_fmt">%1$s is ingelogd</string>
+    <string name="pair_phone_enter_title">Code van je tv</string>
+    <string name="pair_phone_not_found">Deze code bestaat niet of is verlopen. Vraag op de tv een nieuwe code.</string>
+    <string name="pair_phone_row">Inloggen op tv</string>
+    <string name="pair_phone_row_sub">Met de code op je tv, zonder wachtwoord</string>
+    <string name="pair_phone_sign_in_first">Log eerst in op deze telefoon, dan kun je je tv koppelen.</string>
+    <string name="pair_scan_allow">Camera toestaan</string>
+    <string name="pair_scan_button">QR-code scannen</string>
+    <string name="pair_scan_hint">Richt je camera op de QR-code op je tv</string>
+    <string name="pair_scan_no_camera">Om de code te scannen heeft ClipBox je camera nodig. Die wordt alleen gebruikt zolang dit scherm open is.</string>
+    <string name="pair_scan_torch">Zaklamp</string>
+    <string name="pair_scan_type_instead">Code liever intypen</string>
+    <string name="pair_scan_wrong">Dat is geen ClipBox-tv-code. Scan de code op je tv.</string>
+    <string name="pair_tv_button">Inloggen met je telefoon</string>
+    <string name="pair_tv_confirm_hint">Bevestig op je telefoon, dan logt deze tv vanzelf in.</string>
+    <string name="pair_tv_done_fmt">Ingelogd als %1$s</string>
+    <string name="pair_tv_expires_fmt">Code geldig nog %1$s</string>
+    <string name="pair_tv_failed">Kon geen code ophalen. Controleer de verbinding en probeer het opnieuw.</string>
+    <string name="pair_tv_new_code">Nieuwe code</string>
+    <string name="pair_tv_or_code">Of open ClipBox op je telefoon, ga naar Account en dan Inloggen op tv, en vul de code onder de QR-code in.</string>
+    <string name="pair_tv_scan">Scan de code met de camera van je telefoon</string>
+    <string name="pair_tv_waiting">Wachten op je telefoon…</string>
+    <string name="parental_age_fmt">%1$d en jonger</string>
+    <string name="parental_age_limit">Leeftijdsgrens</string>
+    <string name="parental_age_off">Uit, toon alles</string>
+    <string name="parental_blocked_toast">Deze titel is geblokkeerd door ouderlijk toezicht.</string>
+    <string name="parental_change_pin">Pincode wijzigen</string>
+    <string name="parental_confirm_pin">Voer hem nog een keer in</string>
+    <string name="parental_enter_pin">Voer je pincode in</string>
+    <string name="parental_explainer">"Titels met een hogere leeftijd dan je kiest worden overal in de app verborgen, niet alleen geblokkeerd om af te spelen.
+
+Titels zonder leeftijdsaanduiding worden ook verborgen. Als we niet kunnen achterhalen vanaf welke leeftijd een titel bedoeld is, tonen we hem niet."</string>
+    <string name="parental_needs_pin">Stel eerst een pincode in, zodat de grens later weer opgeheven kan worden.</string>
+    <string name="parental_new_pin">Kies een pincode van vier cijfers</string>
+    <string name="parental_pin_mismatch">Die kwamen niet overeen.</string>
+    <string name="parental_pin_short">Een pincode bestaat uit vier cijfers.</string>
+    <string name="parental_pin_wrong">Verkeerde pincode.</string>
+    <string name="parental_set_pin">Pincode instellen</string>
+    <string name="parental_title">Ouderlijk toezicht</string>
+    <string name="parental_turn_off">Ouderlijk toezicht uitschakelen</string>
+    <string name="password_toggle_content_description">Wachtwoord tonen</string>
+    <string name="paste_url_button">Plak stream URL</string>
+    <string name="paste_url_hint">https://… (.mp4, .m3u8)</string>
+    <string name="paste_url_title">Gooi een stream URL</string>
+    <string name="pick_audio_track">Kies audiotrack</string>
+    <string name="pick_server">Kies een server</string>
+    <string name="pip_button">Beeld in beeld</string>
+    <string name="play">Afspelen</string>
+    <string name="play_episode_fmt">S%1$d • A%2$d</string>
+    <string name="playback_speed_title">Afspeelsnelheid</string>
+    <string name="player_ad_badge">Advertentie</string>
+    <string name="player_no_episode_match">Geen exacte aflevering gevonden, beste resultaten worden getoond</string>
+    <string name="player_no_quality">Geen kwaliteitsvarianten</string>
+    <string name="player_skip_ad">Advertentie overslaan ›</string>
+    <string name="player_try_different_server">Andere server proberen</string>
+    <string name="preference_copied">"'%1$s' is gekopieerd naar het klembord."</string>
+    <string name="premium_benefit_ads">Nooit meer advertenties</string>
+    <string name="premium_benefit_devices_fmt">Op maximaal &lt;b>%1$d apparaten&lt;/b> met je account</string>
+    <string name="premium_benefit_lifetime">Alle toekomstige updates inbegrepen</string>
+    <string name="premium_benefit_priority">Exclusieve voorrang in de serverwachtrij</string>
+    <string name="premium_benefit_status_fmt">Exclusieve &lt;b>%1$s&lt;/b>-profielstatus</string>
+    <string name="premium_benefit_support">Houdt de servers draaiende en de app in ontwikkeling</string>
+    <string name="premium_devices">Je apparaten</string>
+    <string name="premium_devices_fmt">Je apparaten (%1$d van %2$d)</string>
+    <string name="premium_footnote">VIP hoort bij je account, dus het gaat mee naar elk apparaat waarop je inlogt. Betalingen lopen via onze eigen betaalserver: geen bankgegevens, geen persoonsgegevens.</string>
+    <string name="premium_get_vip">VIP nemen</string>
+    <string name="premium_get_vip_from_fmt">Geen advertenties, vanaf eenmalig $%1$s</string>
+    <string name="premium_get_vip_sub">Geen advertenties, eenmalig $%1$s</string>
+    <string name="premium_info_button">Hoe werkt het?</string>
+    <string name="premium_info_crypto_body">"Het duurt maar een paar minuten:
+
+1. Tik op Betalen met crypto. Onze betaalpagina opent.
+2. Kies Bitcoin, of een andere munt die je hebt.
+3. Betaal met je wallet-app: scan de QR-code, of tik op de knop die je wallet opent. Het bedrag staat er al in.
+
+Dat is alles. VIP gaat vanzelf aan zodra de betaling gezien is. Je kunt de pagina sluiten en gewoon verder kijken."</string>
+    <string name="premium_info_crypto_body_tv">"Het duurt maar een paar minuten:
+
+1. Scan de QR-code op de tv met de camera van je telefoon. Onze betaalpagina opent op je telefoon.
+2. Kies Bitcoin, of een andere munt die je hebt.
+3. Betaal met je wallet-app: tik op de knop die je wallet opent. Het bedrag staat er al in.
+
+Dat is alles. VIP gaat vanzelf aan op deze tv zodra de betaling gezien is."</string>
+    <string name="premium_info_crypto_title">Betalen met crypto</string>
+    <string name="premium_info_voucher_body">"Geen crypto? Een voucher werkt als een cadeaukaart, en het duurt maar een paar minuten:
+
+1. Tik op Azteco-voucher inwisselen › Waar koop ik een voucher? en koop een Azteco Bitcoin-voucher (On-Chain) in een van de winkels. Je betaalt zoals je gewend bent, bijvoorbeeld met je pas.
+2. Je krijgt een code van 16 cijfers.
+3. Tik in ClipBox op Azteco-voucher inwisselen, dan op Bitcoin-voucher. Onze voucherpagina opent.
+4. Vul daar de code in. Wij wisselen hem voor je in en controleren of hij binnen is.
+
+Dat is alles. VIP gaat binnen een paar minuten vanzelf aan."</string>
+    <string name="premium_info_voucher_body_tv">"Geen crypto? Een voucher werkt als een cadeaukaart, en het duurt maar een paar minuten:
+
+1. Koop online een Azteco Bitcoin-voucher (On-Chain), bijvoorbeeld bij G2A of Kinguin. Je betaalt zoals je gewend bent en krijgt een code van 16 cijfers.
+2. Kies op de tv Bitcoin-voucher en scan de QR-code met de camera van je telefoon. Onze voucherpagina opent op je telefoon.
+3. Vul daar de code in. Wij wisselen hem voor je in en controleren of hij binnen is.
+
+Dat is alles. VIP gaat binnen een paar minuten vanzelf aan op deze tv."</string>
+    <string name="premium_info_voucher_title">Betalen met een voucher</string>
+    <string name="premium_join_now">Word nu lid</string>
+    <string name="premium_not_open">VIP kopen kan binnenkort. Kijk over een tijdje nog eens.</string>
+    <string name="premium_now_founders">Je bent nu Founder. Je badge staat bij je account.</string>
+    <string name="premium_now_vip">Je bent nu VIP. Je badge staat bij je account.</string>
+    <string name="premium_pay_crypto">Betalen met crypto</string>
+    <string name="premium_pay_crypto_sub">Bitcoin, Lightning en meer</string>
+    <string name="premium_pay_crypto_sub_plain">Bitcoin en meer</string>
+    <string name="premium_price_note">eenmalig, geen abonnement</string>
+    <string name="premium_scan_amount_fmt">Bedrag: $%1$s</string>
+    <string name="premium_scan_body">Scan deze code met de camera van je telefoon om de betaalpagina te openen. Dit scherm werkt zichzelf bij zodra de betaling binnen is.</string>
+    <string name="premium_scan_open_title">Scan om op je telefoon te openen</string>
+    <string name="premium_scan_title">Scan om te betalen</string>
+    <string name="premium_section_pay">VIP nemen</string>
+    <string name="premium_sign_in">Log in om VIP te nemen</string>
+    <string name="premium_sign_in_hint">Nog geen account? Aanmaken is gratis en duurt maar een minuutje.</string>
+    <string name="premium_sign_in_needed">VIP hoort bij je account, zodat het werkt op je telefoon en je tv. Log eerst in of maak gratis een account aan.</string>
+    <string name="premium_state_admin_body">Je account heeft VIP gekregen. Geen advertenties op elk apparaat waarop je inlogt.</string>
+    <string name="premium_state_confirming_body">VIP staat al aan. De betaling wacht nog op bevestiging van het netwerk, meestal 10 tot 60 minuten. Je hoeft niets meer te doen.</string>
+    <string name="premium_state_confirming_title">Betaling ontvangen</string>
+    <string name="premium_state_partial_body_fmt">Je hebt $%1$s betaald. Nog $%2$s en VIP is van jou. Wat je betaald hebt blijft op je account staan.</string>
+    <string name="premium_state_partial_title">Bijna klaar</string>
+    <string name="premium_state_vip_body">Geen advertenties op elk apparaat waarop je inlogt. Bedankt voor je steun aan ClipBox.</string>
+    <string name="premium_state_vip_title">Je bent VIP</string>
+    <string name="premium_state_waiting_body">Rond de betaling af op de betaalpagina. Dit scherm werkt zichzelf bij zodra de betaling binnen is.</string>
+    <string name="premium_state_waiting_title">Wachten op je betaling</string>
+    <string name="premium_tagline">Eén keer betalen. Voor altijd van jou.</string>
+    <string name="premium_tv_phone_hint">Heb je een Lightning-voucher? Wissel hem in via ClipBox op je telefoon, ingelogd op hetzelfde account. VIP gaat met je account mee naar deze tv.</string>
+    <string name="premium_tv_scan">Scan met je telefoon om te betalen</string>
+    <string name="premium_tv_show_checkout">Betalen met crypto</string>
+    <string name="premium_tv_show_voucher">Bitcoin-voucher</string>
+    <string name="premium_tv_voucher_scan">Scan om je vouchercode in te vullen</string>
+    <string name="premium_unavailable">Betalen lukt nu even niet. Probeer het later opnieuw.</string>
+    <string name="premium_upgrade_note">om te upgraden</string>
+    <string name="premium_upgrade_sub">Meer apparaten en extra voordelen</string>
+    <string name="premium_upgrade_title">Upgrade naar Founders</string>
+    <string name="premium_vip_active">Actief, voor altijd</string>
+    <string name="premium_voucher">Azteco-voucher inwisselen</string>
+    <string name="premium_voucher_sub">Vouchers die je met contant geld of een kaart koopt</string>
+    <string name="premium_welcome_toast">Welkom bij VIP. Advertenties staan uit.</string>
+    <string name="quality_auto">Automatisch</string>
+    <string name="quality_auto_short">Auto</string>
+    <string name="quality_no_variants">Geen kwaliteitsopties beschikbaar.</string>
+    <string name="quality_title">Kwaliteit</string>
+    <string name="rating_all">Alle</string>
+    <string name="ready_to_load">klaar om te laden</string>
+    <string name="recovery_code_hint">Herstelcode</string>
+    <string name="recovery_failed">Herstellen mislukt</string>
+    <string name="recovery_forgot_info">Voer je gebruikersnaam en de herstelcode in die je bij registratie hebt opgeslagen om een nieuw wachtwoord in te stellen.</string>
+    <string name="recovery_regenerate_confirm">Een nieuwe herstelcode genereren? Een vorige code werkt dan niet meer. De nieuwe code wordt maar één keer getoond.</string>
+    <string name="recovery_reset_btn">Herstellen</string>
+    <string name="recovery_reset_success">Wachtwoord opnieuw ingesteld, je bent ingelogd.</string>
+    <string name="recovery_save_info">Bewaar deze code op een veilige plek! Het is de enige manier om je wachtwoord opnieuw in te stellen als je het vergeet, en een vorige code werkt niet meer. Hij wordt niet opnieuw getoond.</string>
+    <string name="recovery_saved_btn">Ik heb het opgeslagen</string>
+    <string name="register_terms_link">Algemene Voorwaarden</string>
+    <string name="register_terms_notice">Door een account aan te maken ga je akkoord met onze Algemene Voorwaarden</string>
+    <string name="remove_from_continue">Verwijderen</string>
+    <string name="remove_from_favourites">Verwijder uit favorieten</string>
+    <string name="remove_from_my_list">Verwijder uit Mijn Lijst</string>
+    <string name="removed_from_continue">Verwijderd uit Verder kijken</string>
+    <string name="removed_from_favourites">Verwijderd uit favorieten</string>
+    <string name="removed_from_my_list">Verwijderd uit Mijn Lijst</string>
+    <string name="reset_default">Standaard</string>
+    <string name="resume_dialog_msg_fmt">Je bent gestopt bij %1$s. Daar verder?</string>
+    <string name="resume_dialog_resume">Verder</string>
+    <string name="resume_dialog_start_over">Vanaf begin</string>
+    <string name="resume_dialog_title">Verder kijken?</string>
+    <string name="resume_finished_msg_fmt">Je bent tot %1$s gekomen, en dat is het einde. Opnieuw beginnen, of daar verdergaan?</string>
+    <string name="resume_finished_title">Je hebt dit al uitgekeken</string>
+    <string name="retry">Probeer het opnieuw</string>
+    <string name="rotation_lock_desc">Rotatie vergrendelen</string>
+    <string name="row_box_office">Kaskrakers</string>
+    <string name="row_companies">"Studio's"</string>
+    <string name="row_continue_watching">Verder kijken</string>
+    <string name="row_latest_releases">Recent toegevoegd</string>
+    <string name="row_networks">Streamingdiensten</string>
+    <string name="row_on_the_air">Nieuwe afleveringen</string>
+    <string name="row_popular_movies">Populaire films</string>
+    <string name="row_popular_tv">Populaire series</string>
+    <string name="row_recommended">Aanbevolen voor jou</string>
+    <string name="row_see_all">Alles</string>
+    <string name="row_trending_now">Nu trending</string>
+    <string name="row_trending_series">Trending series</string>
+    <string name="save_to_my_list">Opslaan in Mijn Lijst</string>
+    <string name="search_clear">Wissen</string>
+    <string name="search_clear_history">Alles wissen</string>
+    <string name="search_clear_history_confirm">Recente zoekopdrachten wissen?</string>
+    <string name="search_corrected_fmt">Resultaten voor \"%1$s\"</string>
+    <string name="search_empty_hint">Begin met typen om te zoeken</string>
+    <string name="search_filter_all">Alles</string>
+    <string name="search_filter_movies">Films</string>
+    <string name="search_filter_newest">Nieuwste</string>
+    <string name="search_filter_no_matches">Niets in deze zoekopdracht voldoet aan dat filter.</string>
+    <string name="search_filter_series">Series</string>
+    <string name="search_filter_top_rated">Best beoordeeld</string>
+    <string name="search_hint">Zoek films en series</string>
+    <string name="search_in_network">Zoeken in %1$s…</string>
+    <string name="search_language_hint">Zoek taal...</string>
+    <string name="search_menu_title">Zoeken</string>
+    <string name="search_no_results_fmt">Geen resultaten voor \"%1$s\"</string>
+    <string name="search_recent">Recent gezocht</string>
+    <string name="search_suggestions">Suggesties</string>
+    <string name="searching_subtitle">Ondertiteling zoeken…</string>
+    <string name="searchview_clear_text_content_description">Tekst wissen</string>
+    <string name="searchview_navigation_content_description">Terug</string>
+    <string name="season_episode_fmt">S%1$d • A%2$d</string>
+    <string name="season_fmt">Seizoen %d</string>
+    <string name="season_title">Seizoen</string>
+    <string name="select">Selecteren</string>
+    <string name="select_all">Alles selecteren</string>
+    <string name="select_items_to_remove">Selecteer items om te verwijderen</string>
+    <string name="series_finished">Dit was de finale — geen afleveringen meer.</string>
+    <string name="server_desc_alternative">Alternatieve server</string>
+    <string name="server_desc_backup">Goede betrouwbaarheid • Reserveserver</string>
+    <string name="server_desc_experimental">Experimentele server • Reservebron</string>
+    <string name="server_desc_fastest">Snelste reactietijd • Hoge betrouwbaarheid</string>
+    <string name="server_desc_indian_audio">Meerdere audiotalen</string>
+    <string name="server_desc_stable">Hoge betrouwbaarheid • Stabiele verbinding</string>
+    <string name="server_name_fmt">Server %1$d</string>
+    <string name="server_name_generic">Server</string>
+    <string name="server_option_fmt">Optie %1$d</string>
+    <string name="servers_experimental_data">Als u dit UIT laat staan, wordt er meer data verbruikt.</string>
+    <string name="servers_experimental_notice">Experimenteel, sommige servers werken mogelijk niet. Kies een andere server als het niet laadt.</string>
+    <string name="servers_finding_experimental">Servers in andere talen zoeken…</string>
+    <string name="servers_label">Servers (%1$d)</string>
+    <string name="servers_none_experimental">Geen taalspecifieke servers voor deze titel</string>
+    <string name="servers_probe_progress">%1$d gevonden · %2$d van %3$d gecontroleerd · nog %4$d s</string>
+    <string name="servers_probe_starting">Starten… nog %1$d s</string>
+    <string name="servers_tab_experimental">Meer talen</string>
+    <string name="servers_tab_main">Standaard</string>
+    <string name="settings_about">Over ClipBox</string>
+    <string name="settings_about_summary">Versie-info, credits en changelog</string>
+    <string name="settings_account">Mijn account</string>
+    <string name="settings_account_loggedout">Niet ingelogd</string>
+    <string name="settings_app_version">App versie</string>
+    <string name="settings_audio_normalize">Audio normaliseren</string>
+    <string name="settings_audio_normalize_summary">Egaliseert stille en luide stukken in elke stream</string>
+    <string name="settings_auto_enable_subs">Automatische ondertiteling</string>
+    <string name="settings_auto_enable_subs_summary">Zet automatisch ondertiteling aan in je voorkeurstaal</string>
+    <string name="settings_auto_pip">Automatisch beeld-in-beeld</string>
+    <string name="settings_auto_pip_summary">Video zweeft verder wanneer je de app verlaat</string>
+    <string name="settings_auto_resume">Automatisch hervatten</string>
+    <string name="settings_auto_resume_summary">Spring direct naar waar je gebleven was, zonder te vragen</string>
+    <string name="settings_autoplay">Auto naar volgende server bij fout</string>
+    <string name="settings_autoplay_summary">Gaat na een time-out automatisch verder naar de volgende server</string>
+    <string name="settings_clear_resume">Opgeslagen posities wissen</string>
+    <string name="settings_clear_resume_done">Alles gewist.</string>
+    <string name="settings_clear_resume_summary">Vergeet waar elke video stopte</string>
+    <string name="settings_double_tap">Dubbeltik om te skippen</string>
+    <string name="settings_double_tap_summary">Tik 2x links/rechts voor 10s</string>
+    <string name="settings_gestures">Volume / helderheid gestures</string>
+    <string name="settings_gestures_summary">Veeg links voor helderheid, rechts voor volume</string>
+    <string name="settings_interface">Interface</string>
+    <string name="settings_interface_summary">Welke weergave dit apparaat gebruikt (start de app opnieuw)</string>
+    <string name="settings_lang_en">English</string>
+    <string name="settings_lang_nl">Nederlands</string>
+    <string name="settings_lang_system">Systeemtaal</string>
+    <string name="settings_language">Taal</string>
+    <string name="settings_language_summary">Kies je vibe</string>
+    <string name="settings_next_episode">Volgende aflevering automatisch afspelen</string>
+    <string name="settings_next_episode_summary">Toon een aftelling bij de aftiteling en ga vanzelf verder</string>
+    <string name="settings_notifications">Meldingen</string>
+    <string name="settings_notifications_summary">Ontvang aankondigingen en updates van ClipBox</string>
+    <string name="settings_parental">Ouderlijk toezicht</string>
+    <string name="settings_parental_off">Uit</string>
+    <string name="settings_parental_on_fmt">Verbergt titels met een leeftijd boven %1$d</string>
+    <string name="settings_pref_sub_lang">Voorkeurstaal</string>
+    <string name="settings_reset_app">App resetten</string>
+    <string name="settings_reset_app_confirm">Dit wist alle app-gegevens en sluit ClipBox. Doorgaan?</string>
+    <string name="settings_reset_app_summary">Wis alle gegevens en begin opnieuw</string>
+    <string name="settings_reset_tips">Mijn lijst, favorieten en verder kijken wissen</string>
+    <string name="settings_reset_tips_confirm">Je volledige Mijn lijst, je favorieten en alles waar je halverwege in zit wissen?</string>
+    <string name="settings_reset_tips_done">Mijn lijst, favorieten en Verder kijken gewist.</string>
+    <string name="settings_reset_tips_summary">Verwijder alle opgeslagen titels en favorieten, en stop met hervatten</string>
+    <string name="settings_resolution">Voorkeursresolutie</string>
+    <string name="settings_resolution_auto">Automatisch (hoogste)</string>
+    <string name="settings_resume">Onthoud waar je gebleven was</string>
+    <string name="settings_resume_summary">Pak op waar je was gestopt</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_section_advanced">Geavanceerd</string>
+    <string name="settings_section_general">Algemeen</string>
+    <string name="settings_section_interface">Weergave</string>
+    <string name="settings_section_parental">Ouderlijk toezicht</string>
+    <string name="settings_section_player">Speler</string>
+    <string name="settings_section_reset">Herstellen</string>
+    <string name="settings_section_subtitles">Ondertitels</string>
+    <string name="settings_section_support">Hulp</string>
+    <string name="settings_show_adult">Content voor volwassenen toestaan</string>
+    <string name="settings_show_adult_summary">Erotische en 18+ films tonen in zoekresultaten en lijsten</string>
+    <string name="settings_show_poster_meta">Beoordeling &amp; jaar tonen</string>
+    <string name="settings_show_poster_meta_summary">Score en jaar weergeven op posterkaarten</string>
+    <string name="settings_size_huge">Mega</string>
+    <string name="settings_size_large">Groot</string>
+    <string name="settings_size_normal">Normaal</string>
+    <string name="settings_size_small">Klein</string>
+    <string name="settings_static_sources">Kant-en-klare lijst voor tabblad Talen</string>
+    <string name="settings_static_sources_summary">Toont de lijst direct in plaats van te zoeken. Sommige servers kunnen falen. Als u dit UIT laat staan, wordt er meer data verbruikt.</string>
+    <string name="settings_subtitle_auto_sync">Ondertiteltiming automatisch corrigeren</string>
+    <string name="settings_subtitle_auto_sync_summary">Corrigeert de ondertiteling automatisch met AI. Kost extra internetdata en rekenkracht. Eenmalige download van 57 MB, die wordt verwijderd als je dit uitzet.</string>
+    <string name="settings_subtitle_bg">Ondertitel achtergrond</string>
+    <string name="settings_subtitle_bg_summary">Zwart blokje achter tekst</string>
+    <string name="settings_subtitle_color">Ondertitelkleur</string>
+    <string name="settings_subtitle_position">Positie ondertitels</string>
+    <string name="settings_subtitle_position_summary">Verplaats de ondertitels omhoog of omlaag in beeld</string>
+    <string name="settings_subtitle_size">Ondertitel grootte</string>
+    <string name="settings_subtitle_size_summary">Hoe groot moet die zooi zijn</string>
+    <string name="settings_support_summary">Antwoorden op de bekende problemen en hoe je ons bereikt</string>
+    <string name="settings_title">Instellingen</string>
+    <string name="settings_tv_mode">Tv-modus</string>
+    <string name="settings_tv_mode_summary">Gebruik de televisie-indeling op dit apparaat (start de app opnieuw)</string>
+    <string name="settings_tv_poster_size">Kaartgrootte</string>
+    <string name="settings_wifi_only">Alleen afspelen via wifi</string>
+    <string name="settings_wifi_only_summary">Voorkom dat afspelen en casten mobiele data gebruiken</string>
+    <string name="share">Delen</string>
+    <string name="share_text_fmt">Check dit: %1$s: %2$s</string>
+    <string name="share_via">Delen via</string>
+    <string name="shelf_true_crime">True crime</string>
+    <string name="side_sheet_accessibility_pane_title">Zijblad</string>
+    <string name="skip_intro">Intro overslaan</string>
+    <string name="skip_outro">Aftiteling overslaan</string>
+    <string name="skip_outro_countdown_fmt">Volgende aflevering over %1$ds</string>
+    <string name="skip_outro_finale">Aftiteling overslaan</string>
+    <string name="skip_recap">Samenvatting overslaan</string>
+    <string name="sort_newest">Nieuwste</string>
+    <string name="sort_popular">Populair</string>
+    <string name="sort_rating">Best beoordeeld</string>
+    <string name="sort_title">Titel (A tot Z)</string>
+    <string name="sort_title_desc">Titel (Z tot A)</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_loading_info">Ik zoek naar de beste server. Dit kan soms een tijdje duren, even geduld aub. Je kunt ook zelf een server kiezen.</string>
+    <string name="status_searching">Iets opgraven…</string>
+    <string name="status_stream_failed_fmt">Die deed het niet, probeer %1$s…</string>
+    <string name="status_trying_fmt">%1$s een kans geven…</string>
+    <string name="subtitle_autosync_action">Ondertitels automatisch synchroniseren</string>
+    <string name="subtitle_autosync_already">Ondertitels lopen al gelijk.</string>
+    <string name="subtitle_autosync_applied_fmt">Ondertitels %1$+.2f s verschoven</string>
+    <string name="subtitle_autosync_done_fmt">Synchroniseren geslaagd! Ondertitels %1$+.2f s verschoven</string>
+    <string name="subtitle_autosync_started">Automatisch synchroniseren gestart</string>
+    <string name="subtitle_autosynced">Ondertiteling automatisch gesynchroniseerd</string>
+    <string name="subtitle_change">Andere ondertitel</string>
+    <string name="subtitle_color_cream">Crème</string>
+    <string name="subtitle_color_cyan">Cyaan</string>
+    <string name="subtitle_color_gold">Goud</string>
+    <string name="subtitle_color_green">Groen</string>
+    <string name="subtitle_color_orange">Oranje</string>
+    <string name="subtitle_color_pink">Roze</string>
+    <string name="subtitle_color_purple">Paars</string>
+    <string name="subtitle_color_silver">Zilver</string>
+    <string name="subtitle_color_white">Wit</string>
+    <string name="subtitle_color_yellow">Geel</string>
+    <string name="subtitle_find_all_langs">Alle talen</string>
+    <string name="subtitle_find_hint">Titel of releasenaam</string>
+    <string name="subtitle_find_online">Ondertitels online zoeken</string>
+    <string name="subtitle_found_late">Auto-ondertiteling (%1$s) beschikbaar. Open CC menu om te activeren.</string>
+    <string name="subtitle_import">Ondertitelingsbestand importeren…</string>
+    <string name="subtitle_import_failed">Kan het ondertitelbestand niet lezen</string>
+    <string name="subtitle_import_invalid">Ongeldig ondertitelbestandsformaat</string>
+    <string name="subtitle_import_none">Er zijn geen ondertitelbestanden gevonden op dit apparaat</string>
+    <string name="subtitle_import_picker_title">Kies ondertitelbestand</string>
+    <string name="subtitle_imported_label">Geïmporteerd</string>
+    <string name="subtitle_imported_toast">Ondertitels geïmporteerd</string>
+    <string name="subtitle_languages">Taal</string>
+    <string name="subtitle_need_load">Laad eerst een ondertitel en pas dan de timing aan.</string>
+    <string name="subtitle_need_load_translate">Laad eerst een ondertiteling en vertaal die daarna.</string>
+    <string name="subtitle_none_found">Geen ondertiteling gevonden voor deze taal</string>
+    <string name="subtitle_not_found">Niks gevonden. Probeer een andere titel.</string>
+    <string name="subtitle_options">Opties</string>
+    <string name="subtitle_pick_result">Kies een ondertitel</string>
+    <string name="subtitle_position_default">Standaard</string>
+    <string name="subtitle_position_higher">Hoger</string>
+    <string name="subtitle_position_lower">Lager</string>
+    <string name="subtitle_preparing">Ondertiteling voorbereiden…</string>
+    <string name="subtitle_preview_sample">De snelle bruine vos</string>
+    <string name="subtitle_search">Auto zoek ondertiteling</string>
+    <string name="subtitle_search_error">Kon de ondertitelservers niet bereiken. Check je verbinding.</string>
+    <string name="subtitle_search_go">Zoeken</string>
+    <string name="subtitle_search_hint">Filmtitel</string>
+    <string name="subtitle_search_lang_hint">Taal zoeken…</string>
+    <string name="subtitle_search_manual">Handmatig zoeken</string>
+    <string name="subtitle_searching">Ondertitels aan het uitgraven…</string>
+    <string name="subtitle_speechsync_disagree">De dialoog is herkend, maar wijst in verschillende scènes op verschillende timings, dus er is niets gewijzigd.</string>
+    <string name="subtitle_speechsync_download">Downloaden</string>
+    <string name="subtitle_speechsync_downloading">Even voorbereiden…</string>
+    <string name="subtitle_speechsync_downloading_pct">Even voorbereiden… %1$d%%</string>
+    <string name="subtitle_speechsync_listening_fmt">Luisteren naar de dialoog… %1$d van %2$d</string>
+    <string name="subtitle_speechsync_metered_fmt">Hiervoor wordt naar de spraak geluisterd om de timing te bepalen. Dat vraagt een eenmalige download van %1$d MB, en je zit niet op wifi.</string>
+    <string name="subtitle_speechsync_nomatch">Niets van wat er gezegd wordt, staat in deze ondertitel. Mogelijk hoort die bij een andere versie van deze titel.</string>
+    <string name="subtitle_speechsync_ready">Klaar — ondertiteling kan nu gesynchroniseerd worden</string>
+    <string name="subtitle_speechsync_removed">AI-bestand verwijderd - 57 MB vrijgemaakt</string>
+    <string name="subtitle_speechsync_title">Ondertitels synchroniseren</string>
+    <string name="subtitle_style_bg">Achtergrondvlak</string>
+    <string name="subtitle_style_color">Tekstkleur</string>
+    <string name="subtitle_style_menu">Ondertitel uiterlijk</string>
+    <string name="subtitle_style_position">Positie op het scherm</string>
+    <string name="subtitle_style_size">Grootte</string>
+    <string name="subtitle_style_title">Ondertitel uiterlijk</string>
+    <string name="subtitle_sync_earlier">−0.25s (eerder)</string>
+    <string name="subtitle_sync_earlier_big">−2s</string>
+    <string name="subtitle_sync_hint">Lopen de ondertitels voor, zet ze later. Lopen ze achter, zet ze eerder.</string>
+    <string name="subtitle_sync_later">+0.25s (later)</string>
+    <string name="subtitle_sync_later_big">+2s</string>
+    <string name="subtitle_sync_menu">Timing aanpassen (sync)</string>
+    <string name="subtitle_sync_offset_fmt">Verschuiving: %1$+.2f s</string>
+    <string name="subtitle_sync_reset">Herstellen</string>
+    <string name="subtitle_sync_title">Ondertitel timing</string>
+    <string name="subtitle_tapsync_applied_rate_fmt">Ondertitels %1$+.2f s verschoven, en afwijking hersteld voor de rest</string>
+    <string name="subtitle_tapsync_disagree">De twee metingen kwamen niet overeen, dus er is niets gewijzigd. Probeer het opnieuw tijdens een scène met duidelijke spraak.</string>
+    <string name="subtitle_tapsync_drift_fixed">Verloop gecorrigeerd. De ondertitels blijven nu gelijklopen.</string>
+    <string name="subtitle_tapsync_failed">Kon de timing niet bepalen. Probeer het opnieuw tijdens een scène met duidelijke spraak.</string>
+    <string name="subtitle_tapsync_hint">Je kunt dit sluiten — hij werkt gewoon door.</string>
+    <string name="subtitle_tapsync_listening_early">Luistert bij het begin…</string>
+    <string name="subtitle_tapsync_listening_late">Luistert bij het einde…</string>
+    <string name="subtitle_tapsync_needs_play">Start het afspelen — hiervoor wordt de audio beluisterd.</string>
+    <string name="subtitle_tapsync_progress_fmt">Luisteren naar de audio… %1$ds van %2$ds</string>
+    <string name="subtitle_tapsync_title">Ondertitels synchroniseren</string>
+    <string name="subtitle_tapsync_working">Timing berekenen…</string>
+    <string name="subtitle_toggle_off">Ondertiteling uitzetten</string>
+    <string name="subtitle_toggle_on">Ondertiteling aanzetten</string>
+    <string name="subtitle_translate_done">Ondertiteling vertaald</string>
+    <string name="subtitle_translate_failed">Vertalen mislukt</string>
+    <string name="subtitle_translate_failed_fmt">Kon niet vertalen naar %1$s. De originele ondertitels worden getoond.</string>
+    <string name="subtitle_translate_menu">Ondertiteling vertalen…</string>
+    <string name="subtitle_translate_title">Vertalen naar</string>
+    <string name="subtitle_translated_fmt">%1$s (vertaald)</string>
+    <string name="subtitle_translated_note">Vertaald naar %1$s</string>
+    <string name="subtitle_translating">Vertalen…</string>
+    <string name="subtitle_translating_from_fmt">Geen %1$s ondertiteling gevonden — vertalen…</string>
+    <string name="subtitle_translating_pct">Vertalen… %1$d%%</string>
+    <string name="subtitle_unknown">onbekend</string>
+    <string name="subtitles_button">Ondertitels</string>
+    <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <string name="super_milan_mode">Oui oui</string>
+    <string name="support_no_browser">Geen app op dit apparaat kan die link openen</string>
+    <string name="support_offline">De helpdesk is niet bereikbaar. Controleer je verbinding.</string>
+    <string name="support_retry">Opnieuw proberen</string>
+    <string name="sync_only_downloaded">Alleen beschikbaar voor gedownloade ondertitels</string>
+    <string name="tab_all">Alles</string>
+    <string name="tab_favourites">Favorieten</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_movies">Films</string>
+    <string name="tab_mylist">Mijn Lijst</string>
+    <string name="tab_search">Zoeken</string>
+    <string name="tab_settings">Instellingen</string>
+    <string name="tab_tv">Series</string>
+    <string name="tamper_blocked">Deze versie van de app is niet authentiek.</string>
+    <string name="terms_full">"1. Wat ClipBox is
+ClipBox is een gratis mediaspeler voor Android. De app verzorgt het afspelen: videoweergave, ondertiteling, casten en het beheren van je lijst. ClipBox host, bewaart, uploadt, verzendt en beheert zelf geen enkele video, audio of ondertiteling. Alles wat je afspeelt komt van externe bronnen die niet door ClipBox worden beheerd en er niet aan gelieerd zijn.
+
+2. Akkoord met deze voorwaarden
+Door ClipBox te installeren of te gebruiken ga je akkoord met deze voorwaarden. Ga je er niet mee akkoord, gebruik de app dan niet. Deze voorwaarden vormen een bindende overeenkomst tussen jou en ClipBox.
+
+3. Leeftijd
+Je moet minimaal 13 jaar zijn, of de minimumleeftijd die in jouw land geldt als die hoger is. Ben je in jouw land nog niet meerderjarig, dan heb je toestemming nodig van een ouder of voogd.
+
+4. Licentie
+Je krijgt een beperkt, niet-exclusief, niet-overdraagbaar en herroepbaar recht om ClipBox op je eigen Android-apparaten te gebruiken voor persoonlijke, niet-commerciele doeleinden.
+
+5. Jouw verantwoordelijkheid voor content
+Je bent zelf volledig verantwoordelijk voor wat je via de app bekijkt en ervoor dat dit is toegestaan waar jij je bevindt. Het auteursrecht verschilt per land; materiaal bekijken waar je geen recht op hebt kan een overtreding zijn. ClipBox geeft gehoor aan geldige verzoeken tot verwijdering onder de DMCA en vergelijkbare wetgeving, en schakelt functies of koppelingen uit op grond van geldige rechterlijke bevelen. Meldingen kunnen naar info@clipbox.mov — maar omdat ClipBox zelf niets host, kun je je doorgaans beter rechtstreeks tot de betreffende bron of rechthebbende wenden.
+
+6. Wat niet mag
+Gebruik ClipBox niet om inbreukmakend of onrechtmatig materiaal te bekijken of te verspreiden. Je mag de app niet reverse-engineeren, decompileren of aanpassen buiten wat de wet toestaat, hem niet herdistribueren, doorverkopen of in sublicentie geven, en hem niet commercieel gebruiken zonder onze schriftelijke toestemming. Ook mag je geen systeem of account dat met de dienst verbonden is aanvallen, verstoren of onbevoegd benaderen.
+
+7. Accounts
+Een account is optioneel — de app werkt volledig zonder. Maak je er wel een aan, dan kies je een gebruikersnaam en een wachtwoord; een e-mailadres is niet nodig en wordt niet verzameld. Het wachtwoord wordt alleen als salted hash opgeslagen en is voor ons niet leesbaar. Bij het aanmaken krijg je eenmalig een herstelcode: dat is de enige manier om een account terug te krijgen, wij bewaren daar alleen een hash van, en we kunnen hem niet voor je herstellen als je hem kwijtraakt. Je bent zelf verantwoordelijk voor het veilig bewaren van je gegevens. Accounts die worden gebruikt om de dienst te misbruiken of aan te vallen kunnen zonder waarschuwing worden geblokkeerd.
+
+8. Wat er met je account meegaat
+Zolang je bent ingelogd worden je lijst, kijkgeschiedenis, favorieten, kijkposities en app-instellingen op onze server bewaard, zodat ze met je meegaan tussen apparaten. Log je uit, dan wordt die bibliotheek van het apparaat verwijderd en blijft die alleen in je account staan, zodat de volgende die op hetzelfde apparaat inlogt hem niet overneemt. Verwijder je je account via het accountscherm, dan worden deze gegevens definitief van onze server gewist.
+
+9. Anonieme gebruiksgegevens
+De app stuurt basale, anonieme informatie over de installatie door, zodat we begrijpen hoe de app gebruikt wordt en welke apparaten we moeten ondersteunen: een willekeurig gegenereerde identificatie die bij de installatie wordt aangemaakt, het model en merk van je apparaat, de Android- en app-versie, de taal waarop de app staat, een tweeletterige landcode afgeleid van ons contentnetwerk, de schermgrootte, hoe vaak de app geopend wordt, en wat er is bekeken en hoe lang.
+
+Die identificatie is willekeurig gegenereerd. Het is geen advertentie-ID en geen serienummer van je apparaat, en hij is niet gekoppeld aan je account of aan gegevens waarmee jij te identificeren bent. We slaan je IP-adres niet op en we verzamelen geen locatiegegevens. Losse kijkgegevens worden na 120 dagen verwijderd.
+
+10. Advertenties
+De gratis versie van ClipBox wordt betaald uit advertenties. Tenzij je account VIP of Founders heeft, kan de app voor het afspelen een korte advertentie tonen en op sommige schermen banners. Advertenties worden geleverd door advertentiepartners (momenteel Monetag, en waar gebruikt de Google Interactive Media Ads SDK). Als een advertentie laadt, kan de partner technische gegevens ontvangen, zoals je IP-adres, het type apparaat en browser, je taal en ongeveer je locatie, en cookies of vergelijkbare technieken gebruiken, volgens zijn eigen privacybeleid. Wij verkopen je persoonsgegevens niet. Wat er geadverteerd wordt, komt van derden; wij staan daar niet voor in. Nep-weergaven of nep-klikken op advertenties zijn niet toegestaan.
+
+11. VIP, Founders en betalingen
+VIP en Founders zijn optionele, eenmalige aankopen die de advertenties weghalen en het aantal apparaten verhogen waarop je account werkt. Ze horen bij je account, niet bij een apparaat, en gelden zolang ClipBox de dienst aanbiedt. Het is geen abonnement: er wordt niets verlengd en er valt niets op te zeggen.
+Je betaalt met cryptovaluta via onze eigen betaalserver (BTCPay Server), of met een Azteco Bitcoin-voucher die je koopt bij Azteco of een van zijn verkopers. Wij ontvangen nooit kaart- of bankgegevens. Prijzen staan in Amerikaanse dollars en het bedrag in cryptovaluta ligt vast op het moment dat je betaalt; eventuele wissel-, netwerk- of omrekenkosten zijn voor jezelf. Een voucher moet van een soort en waarde zijn die de app op dat moment accepteert; wij zijn niet verantwoordelijk voor vouchers die al gebruikt of verlopen zijn, of gekocht bij een niet-erkende verkoper.
+Betalingen in cryptovaluta zijn onomkeerbaar. Omdat een pakket actief wordt zodra je betaling gezien is, vraag je om directe levering; waar de wet je een herroepingsrecht geeft, vervalt dat zodra het pakket actief is. Betalingen worden niet terugbetaald, behalve waar de wet dat verplicht. Een te lage betaling activeert niets tot de rest betaald is; een te hoge betaling wordt niet automatisch teruggestort. Een betaling die ongeldig of frauduleus blijkt, of een pakket dat gebruikt wordt om de dienst te misbruiken, kan worden teruggedraaid en het pakket ingetrokken. Donaties zijn vrijwillig, geven geen extra rechten en worden niet terugbetaald.
+
+12. Diensten van derden
+Titels, artwork en metadata komen van The Movie Database (TMDB); ClipBox wordt niet door TMDB onderschreven of gecertificeerd. Ondertitels kunnen machinaal vertaald worden wanneer je daarom vraagt. Casten verloopt via de Google Cast SDK voor Chromecast en via standaard UPnP/DLNA voor andere ontvangers; er worden alleen gegevens met die diensten uitgewisseld terwijl je actief aan het casten bent. Meldingen komen van onze eigen server — ClipBox gebruikt geen Firebase en geen analyse- of trackingsoftware van derden.
+
+13. Beschikbaarheid
+We kunnen de app of de dienst op elk moment wijzigen, opschorten of stopzetten, met of zonder aankondiging. Bronnen worden door derden beheerd en kunnen op elk moment ophouden te werken; dat ligt buiten onze macht.
+
+14. Geen garantie
+ClipBox wordt geleverd \"zoals het is\" en \"zoals beschikbaar\", zonder enige garantie, expliciet of impliciet, waaronder garanties van verkoopbaarheid, geschiktheid voor een bepaald doel of niet-inbreuk. We garanderen geen beschikbaarheid, geen specifieke titel en geen werking op elk apparaat.
+
+15. Beperking van aansprakelijkheid
+Voor zover de wet dat toestaat zijn ClipBox en de betrokkenen bij de totstandkoming ervan niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolg- of punitieve schade, noch voor verlies van gegevens, winst of goodwill, voortvloeiend uit je gebruik van of het niet kunnen gebruiken van de app. Waar de wet zulke beperkingen niet toestaat, is onze aansprakelijkheid beperkt tot het maximaal toegestane.
+
+16. Vrijwaring
+Je vrijwaart ClipBox van claims, aansprakelijkheid, schade, verlies en kosten — inclusief redelijke advocaatkosten — die voortvloeien uit jouw schending van deze voorwaarden of uit jouw gebruik van de app, waaronder auteursrechtclaims van derden over materiaal dat je ermee hebt bekeken.
+
+17. Toepasselijk recht
+Bevind je je in de Europese Unie, dan blijven de dwingende consumentenregels van je woonland gelden; deze voorwaarden doen daar niets aan af. In andere gevallen zijn de rechtbanken bevoegd van de plaats waar wij hoofdzakelijk gevestigd zijn, tenzij lokale wetgeving anders voorschrijft. Neem alsjeblieft eerst contact met ons op om een geschil onderling op te lossen voordat je een procedure begint.
+
+18. Deelbaarheid
+Is een bepaling uit deze voorwaarden niet afdwingbaar, dan wordt die tot het strikt noodzakelijke beperkt en blijft de rest onverkort gelden.
+
+19. Wijzigingen in deze voorwaarden
+We kunnen deze voorwaarden herzien. Wezenlijke wijzigingen verschijnen in een nieuwe versie van de app. Blijf je ClipBox gebruiken na een wijziging, dan ga je akkoord met de herziene voorwaarden.
+
+20. Contact
+info@clipbox.mov
+
+21. Taal
+Deze Nederlandse vertaling is er voor je gemak. Bij verschillen tussen deze vertaling en de Engelse versie is de Engelse versie doorslaggevend."</string>
+    <string name="terms_gate_accept">Accepteren</string>
+    <string name="terms_gate_decline">Weigeren</string>
+    <string name="terms_gate_message">Bekijk en accepteer onze Algemene Voorwaarden om ClipBox te gebruiken.</string>
+    <string name="terms_gate_subtitle">Lees en accepteer deze om door te gaan</string>
+    <string name="terms_gate_title">Algemene Voorwaarden</string>
+    <string name="touch_lock_desc">Scherm vergrendelen</string>
+    <string name="touch_lock_unlock">Ontgrendelen</string>
+    <string name="touch_locked_toast">Scherm vergrendeld. Tik op het slot om te ontgrendelen.</string>
+    <string name="track_off">Uit</string>
+    <string name="tv_account_avatar">Profielfoto</string>
+    <string name="tv_account_avatar_phone_only">Een profielfoto kies je uit een foto op je apparaat. Deze tv heeft geen app die dat kan, dus stel hem in via ClipBox op je telefoon; hij verschijnt hier dan vanzelf.</string>
+    <string name="tv_account_choose_image">Kies een afbeelding</string>
+    <string name="tv_account_new_password_hint">Nieuw wachtwoord</string>
+    <string name="tv_account_recover_action">Wachtwoord opnieuw instellen</string>
+    <string name="tv_account_recovery_fmt">"Herstelcode: %1$s
+
+Schrijf deze op. Je ziet hem één keer en het is de enige manier om weer binnen te komen als je je wachtwoord vergeet."</string>
+    <string name="tv_account_register_hint">Nog geen account? Maak er een aan in de ClipBox-app op je telefoon en log hier in.</string>
+    <string name="tv_account_saved">Opgeslagen</string>
+    <string name="tv_account_vip_fmt">%1$s · VIP</string>
+    <string name="tv_backdrop_art">Artwork (vervaagd)</string>
+    <string name="tv_backdrop_midnight">Middernacht</string>
+    <string name="tv_backdrop_ocean">Oceaan</string>
+    <string name="tv_backdrop_summary">Het artwork achter de panelen, of een kleurpatroon</string>
+    <string name="tv_backdrop_sunset">Zonsondergang</string>
+    <string name="tv_backdrop_title">Achtergrond</string>
+    <string name="tv_blur_normal">Normaal</string>
+    <string name="tv_blur_off">Uit</string>
+    <string name="tv_blur_soft">Zacht</string>
+    <string name="tv_blur_strong">Sterk</string>
+    <string name="tv_blur_stronger">Sterker</string>
+    <string name="tv_blur_summary">Hoe sterk de panelen de achtergrond vervagen</string>
+    <string name="tv_blur_title">Blursterkte</string>
+    <string name="tv_cd_back">Terug</string>
+    <string name="tv_cd_more_info">Meer info</string>
+    <string name="tv_cd_poster">Poster</string>
+    <string name="tv_cd_title_logo">Titel</string>
+    <string name="tv_classic_layout">Klassieke tv-interface</string>
+    <string name="tv_classic_layout_summary">Gebruik de vorige televisie-interface (start de app opnieuw)</string>
+    <string name="tv_decoder_ceiling">Hardwaredecodering</string>
+    <string name="tv_decoder_height_fmt">Tot %1$dp</string>
+    <string name="tv_decoder_unknown">Onbekend</string>
+    <string name="tv_director_fmt">Regisseur: %1$s</string>
+    <string name="tv_empty_category">Hier is momenteel niets te tonen.</string>
+    <string name="tv_empty_favourites">Nog geen favorieten. Open een titel en druk op de ster om hem hier te zetten.</string>
+    <string name="tv_empty_history">Nog niets bekeken.</string>
+    <string name="tv_empty_watchlist">Nog niets opgeslagen. Open een titel en druk op + om hem hier te zetten.</string>
+    <string name="tv_fact_budget">Budget</string>
+    <string name="tv_fact_language">Taal</string>
+    <string name="tv_fact_release">Releasedatum</string>
+    <string name="tv_fact_revenue">Opbrengst</string>
+    <string name="tv_fact_runtime">Speelduur</string>
+    <string name="tv_fact_seasons">Seizoenen</string>
+    <string name="tv_fact_status">Status</string>
+    <string name="tv_filter_hint">Deze lijst filteren</string>
+    <string name="tv_filter_no_matches">Niets hier komt overeen met “%1$s”</string>
+    <string name="tv_hero_rotate_summary">Laat de uitgelichte afbeelding vanzelf doorlopen. Gebruikt merkbaar meer processor.</string>
+    <string name="tv_hero_rotate_title">Achtergrond blijven wisselen</string>
+    <string name="tv_minutes_fmt">%1$d min</string>
+    <string name="tv_mode_auto">Automatisch</string>
+    <string name="tv_mode_off">Uit</string>
+    <string name="tv_mode_on">Aan</string>
+    <string name="tv_modern_layout">Nieuwe tv-weergave</string>
+    <string name="tv_modern_layout_summary">Terug naar de nieuwe televisie-interface (start de app opnieuw)</string>
+    <string name="tv_nav_position_side">Zijkant</string>
+    <string name="tv_nav_position_summary">Bovenaan het scherm, of aan de zijkant</string>
+    <string name="tv_nav_position_title">Positie van het menu</string>
+    <string name="tv_nav_position_top">Boven</string>
+    <string name="tv_phone_layout">Normale (telefoon) interface</string>
+    <string name="tv_pin_clear">Wissen</string>
+    <string name="tv_poster_large">Groot</string>
+    <string name="tv_poster_medium">Gemiddeld</string>
+    <string name="tv_poster_size_summary">Hoe groot de posterkaarten worden getoond</string>
+    <string name="tv_poster_small">Klein</string>
+    <string name="tv_poster_xlarge">Extra groot</string>
+    <string name="tv_read_less">Minder lezen</string>
+    <string name="tv_read_more">Meer lezen</string>
+    <string name="tv_refreshing">Vernieuwen…</string>
+    <string name="tv_remove_from_continue">Verwijder uit Verder kijken</string>
+    <string name="tv_remove_from_history">Verwijder uit geschiedenis</string>
+    <string name="tv_row_cast">Cast</string>
+    <string name="tv_row_episodes">Afleveringen</string>
+    <string name="tv_row_seasons">Seizoenen</string>
+    <string name="tv_row_similar">Vergelijkbare titels</string>
+    <string name="tv_runtime_fmt">%1$du %2$dm</string>
+    <string name="tv_scale_setup_body">Kies hoe groot de interface en de kaarten moeten zijn. Je ziet het effect meteen achter dit venster; later aan te passen in Instellingen.</string>
+    <string name="tv_scale_setup_title">Maak het passend voor jouw scherm</string>
+    <string name="tv_search_clear_history">Geschiedenis wissen</string>
+    <string name="tv_search_clear_query">Wissen</string>
+    <string name="tv_search_corrected_fmt">Resultaten voor “%1$s”</string>
+    <string name="tv_search_hint">Zoek films en series</string>
+    <string name="tv_search_no_results">Niets gevonden voor “%1$s”.</string>
+    <string name="tv_search_prompt">Typ minstens twee letters om te zoeken.</string>
+    <string name="tv_search_recent">Recent gezocht</string>
+    <string name="tv_search_searching">Zoeken…</string>
+    <string name="tv_season_fmt">Seizoen %1$d</string>
+    <string name="tv_select_all">Alles selecteren</string>
+    <string name="tv_select_done">Klaar</string>
+    <string name="tv_select_more">Meerdere selecteren…</string>
+    <string name="tv_select_remove">Selectie verwijderen</string>
+    <string name="tv_selected_count_fmt">%1$d geselecteerd</string>
+    <string name="tv_status_canceled">Geannuleerd</string>
+    <string name="tv_status_ended">Afgelopen</string>
+    <string name="tv_status_in_production">In productie</string>
+    <string name="tv_status_pilot">Pilot</string>
+    <string name="tv_status_planned">Gepland</string>
+    <string name="tv_status_post_production">In postproductie</string>
+    <string name="tv_status_released">Uitgebracht</string>
+    <string name="tv_status_returning">Loopt nog</string>
+    <string name="tv_status_rumored">Gerucht</string>
+    <string name="tv_ui_scale_large">Groot</string>
+    <string name="tv_ui_scale_larger">Grootst</string>
+    <string name="tv_ui_scale_normal">Normaal</string>
+    <string name="tv_ui_scale_small">Klein</string>
+    <string name="tv_ui_scale_smaller">Kleiner</string>
+    <string name="tv_ui_scale_summary">Schaal alles — tekst, afbeeldingen en witruimte — tegelijk</string>
+    <string name="tv_ui_scale_tiny">Piepklein</string>
+    <string name="tv_ui_scale_title">Interfacegrootte</string>
+    <string name="tv_value_off">Uit</string>
+    <string name="tv_value_on">Aan</string>
+    <string name="tv_whatsnew_body">ClipBox is opnieuw opgebouwd voor het grote scherm en je afstandsbediening. Alles wat je had staat er nog, alleen makkelijker te bereiken vanaf de bank. Liever de vorige weergave? Je kunt op elk moment terug via Instellingen.</string>
+    <string name="tv_whatsnew_classic">Klassieke weergave gebruiken</string>
+    <string name="tv_whatsnew_continue">Bekijken</string>
+    <string name="tv_whatsnew_title">Een nieuwe tv-weergave</string>
+    <string name="update_available_msg_fmt">"Er is een nieuwere versie (%1$s) beschikbaar.
+
+Nu downloaden en installeren?"</string>
+    <string name="update_available_title">Update beschikbaar</string>
+    <string name="update_check_button">Controleer op updates</string>
+    <string name="update_check_summary">Zoek een nieuwere versie</string>
+    <string name="update_checking">Aan het checken voor updates…</string>
+    <string name="update_dont_remind">Niet meer herinneren</string>
+    <string name="update_download">Bijwerken</string>
+    <string name="update_download_failed">Download mislukt. Check je verbinding en probeer opnieuw.</string>
+    <string name="update_downloading">Nieuwe versie binnenhalen…</string>
+    <string name="update_install_help">"1. Tik op Bijwerken om de nieuwe APK te downloaden.
+2. Tik op Installeren als het installatievenster opent.
+3. Blokkeert Android het, sta dan \"Onbekende apps installeren\" toe voor ClipBox en tik opnieuw op Installeren.
+4. Je instellingen en lijst blijven behouden, hij wordt over de huidige app geïnstalleerd."</string>
+    <string name="update_install_help_summary">Wat te doen als de installatie wordt geblokkeerd</string>
+    <string name="update_install_help_title">Installatie-uitleg</string>
+    <string name="update_later">Later</string>
+    <string name="update_permission_msg_firetv">"Je Fire TV installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet ClipBox aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
+
+Opent dat scherm niet? Instellingen > Mijn Fire TV > Opties voor ontwikkelaars > Onbekende apps installeren > ClipBox. Geen Opties voor ontwikkelaars? Ga eerst naar Instellingen > Mijn Fire TV > Over en druk 7 keer op OK bij de apparaatnaam."</string>
+    <string name="update_permission_msg_phone">Android installeert alleen updates van apps die je toestemming geeft. Tik op Instellingen openen, zet \"Toestaan van deze bron\" aan voor ClipBox en ga terug. De update gaat daarna vanzelf verder.</string>
+    <string name="update_permission_msg_tv">"Je tv installeert alleen updates van apps die je toestemming geeft. Kies Instellingen openen, zet ClipBox aan onder \"Onbekende apps installeren\" en druk op Terug. De update gaat daarna vanzelf verder.
+
+Opent dat scherm niet? Instellingen > Apps > Beveiliging en beperkingen > Onbekende bronnen > ClipBox."</string>
+    <string name="update_permission_not_opened">Instellingen konden niet worden geopend. Volg de stappen op het scherm.</string>
+    <string name="update_permission_open">Instellingen openen</string>
+    <string name="update_permission_title">ClipBox toestaan updates te installeren</string>
+    <string name="update_unavailable">Update-service niet beschikbaar. De app kan nu niet controleren op updates.</string>
+    <string name="update_up_to_date">Je hebt al de nieuwste versie. Netjes.</string>
+    <string name="v7_preference_off">UIT</string>
+    <string name="v7_preference_on">AAN</string>
+    <string name="voucher_address_copied">Adres gekopieerd. Plak het op azte.co.</string>
+    <string name="voucher_buy_hint_fmt">Azteco-vouchers koop je op azte.co en bij verkopers. Een voucher van $%1$s is genoeg.</string>
+    <string name="voucher_choose_title">Welke voucher heb je?</string>
+    <string name="voucher_code_hint">Vouchercode (16 cijfers)</string>
+    <string name="voucher_founders_hint_fmt">Alleen een &lt;b>On-Chain Bitcoin-voucher&lt;/b> werkt, &lt;b>geen Lightning-voucher&lt;/b>. Hij moet &lt;b>25 in je eigen munt&lt;/b> waard zijn: €25, £25, CHF 25, $25 enzovoort. Eventuele wisselkosten zijn voor jezelf. Je krijgt er Founders mee (%1$d apparaten).</string>
+    <string name="voucher_lightning">Lightning-voucher</string>
+    <string name="voucher_lightning_sub">Direct. VIP staat binnen een paar seconden aan.</string>
+    <string name="voucher_ln_bad">Dit lijkt geen Lightning-voucherlink. Die begint met LNURL.</string>
+    <string name="voucher_ln_redeeming">Je voucher wordt ingewisseld…</string>
+    <string name="voucher_ln_steps">"1. Open azte.co, kies Lightning en wissel daar je vouchercode in.
+2. Je krijgt een Lightning-link (LNURL). Tik erop om ClipBox te openen, of kopieer hem en plak hem hier."</string>
+    <string name="voucher_loading_address">Je adres wordt klaargezet…</string>
+    <string name="voucher_onchain">Bitcoin-voucher</string>
+    <string name="voucher_onchain_note">Dit adres hoort bij je account voor deze betaling. Je kunt ClipBox intussen sluiten; VIP gaat vanzelf aan.</string>
+    <string name="voucher_onchain_steps">"1. Open azte.co en wissel daar je vouchercode in.
+2. Vraagt de site om een Bitcoin-adres, gebruik dan dit adres:"</string>
+    <string name="voucher_onchain_steps_code">"1. Vul hieronder de code van 16 cijfers van je voucher in.
+2. Tik op azte.co openen. Je betaaladres wordt voor je gekopieerd: plak het daar als erom gevraagd wordt."</string>
+    <string name="voucher_onchain_sub">VIP gaat aan zodra de betaling gezien is, meestal binnen enkele minuten.</string>
+    <string name="voucher_open_azteco">azte.co openen</string>
+    <string name="voucher_other_shops">Veel andere winkels verkopen ook Azteco-vouchers. Je kunt er ook zelf een zoeken.</string>
+    <string name="voucher_paste">Plakken</string>
+    <string name="voucher_redeem">Inwisselen</string>
+    <string name="voucher_where_to_buy">Waar koop ik een voucher?</string>
+    <string name="welcome_message">Welkom! Houd de app up-to-date.</string>
+    <string name="wifi_only_blocked">Je gebruikt mobiele data. Zet “Alleen afspelen via wifi” uit in Instellingen om te kijken.</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25 x</item>
+        <item>0,5 x</item>
+        <item>0,75 x</item>
+        <item>Uobičajeno</item>
+        <item>1,25 x</item>
+        <item>1,5 x</item>
+        <item>2 x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Buđenje %1$s…</item>
+        <item>Povezivanje s %1$s…</item>
+        <item>Vrti se %1$s…</item>
+        <item>Biranje %1$s…</item>
+        <item>Pokretanje %1$s…</item>
+        <item>Pobuđuje %1$s…</item>
+        <item>Isprobavanje %1$s…</item>
+    </string-array>
+</resources>

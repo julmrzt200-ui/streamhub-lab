@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normală</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Se trezește %1$s...</item>
+        <item>Se conectează la %1$s...</item>
+        <item>Se învârte %1$s...</item>
+        <item>Se formează %1$s...</item>
+        <item>Se pornește %1$s...</item>
+        <item>Se trezește %1$s...</item>
+        <item>Se dă o șansă %1$s...</item>
+    </string-array>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>標準</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>%1$s が目覚めています…</item>
+        <item>%1$s に接続中…</item>
+        <item>%1$s をスピンアップしています…</item>
+        <item>%1$s にダイヤル中…</item>
+        <item>%1$s を起動中…</item>
+        <item>%1$s を呼び起こします…</item>
+        <item>%1$s に挑戦してみます…</item>
+    </string-array>
+</resources>

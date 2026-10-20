@@ -1,0 +1,130 @@
+.class public final LIW0;
+.super LRc;
+.source "SourceFile"
+
+
+# instance fields
+.field public final Q:I
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;LNc;LOc;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2, p3, p4}, LRc;-><init>(Landroid/content/Context;Landroid/os/Looper;LNc;LOc;)V
+
+    .line 2
+    .line 3
+    .line 4
+    const p1, 0x8c6180
+
+    .line 5
+    .line 6
+    .line 7
+    iput p1, p0, LIW0;->Q:I
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+
+# virtual methods
+.method public final createServiceInterface(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 3
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p1, 0x0
+
+    .line 4
+    goto :goto_0
+
+    .line 5
+    :cond_0
+    const-string v0, "com.google.android.gms.gass.internal.IGassService"
+
+    .line 6
+    .line 7
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    instance-of v2, v1, LPW0;
+
+    .line 12
+    .line 13
+    if-eqz v2, :cond_1
+
+    .line 14
+    .line 15
+    move-object p1, v1
+
+    .line 16
+    check-cast p1, LPW0;
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_1
+    new-instance v1, LPW0;
+
+    .line 20
+    .line 21
+    const/4 v2, 0x3
+
+    .line 22
+    invoke-direct {v1, p1, v0, v2}, LqL0;-><init>(Landroid/os/IBinder;Ljava/lang/String;I)V
+
+    .line 23
+    .line 24
+    .line 25
+    move-object p1, v1
+
+    .line 26
+    :goto_0
+    return-object p1
+.end method
+
+.method public final getMinApkVersion()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, LIW0;->Q:I
+
+    .line 2
+    .line 3
+    return v0
+.end method
+
+.method public final getServiceDescriptor()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const-string v0, "com.google.android.gms.gass.internal.IGassService"
+
+    .line 2
+    .line 3
+    return-object v0
+.end method
+
+.method public final getStartServiceAction()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const-string v0, "com.google.android.gms.gass.START"
+
+    .line 2
+    .line 3
+    return-object v0
+.end method

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="0.0dp">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/attributionsToolbar" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:navigationIcon="@drawable/ic_arrow_back" app:navigationIconTint="@color/text_primary" app:title="" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView android:id="@id/attributionsScroll" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="24.0dp" android:paddingTop="8.0dp" android:paddingRight="24.0dp" android:paddingBottom="32.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp">
+            <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dp" android:text="@string/attr_page_title" />
+            <TextView android:textSize="11.0sp" android:textColor="@color/clipbox_red" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dp" android:layout_marginBottom="10.0dp" android:text="@string/attr_section_data" android:textAllCaps="true" android:letterSpacing="0.12" />
+            <LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dp" android:text="TMDB" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/attr_tmdb_disclaimer" android:lineSpacingExtra="2.0dp" />
+                <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:text="@string/attr_tmdb_detail" android:lineSpacingExtra="2.0dp" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="24.0dp" android:layout_marginTop="12.0dp" android:src="@drawable/logo_tmdb" android:scaleType="fitStart" android:adjustViewBounds="true" android:contentDescription="@string/attr_tmdb_logo_desc" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dp" android:text="OpenSubtitles" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/attr_opensubs_text" android:lineSpacingExtra="2.0dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:padding="16.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dp" android:text="IntroDB &amp; AniSkip" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/attr_skip_text" android:lineSpacingExtra="2.0dp" />
+            </LinearLayout>
+            <TextView android:textSize="11.0sp" android:textColor="@color/clipbox_red" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28.0dp" android:layout_marginBottom="10.0dp" android:text="@string/attr_section_libs" android:textAllCaps="true" android:letterSpacing="0.12" />
+            <LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="16.0dp" android:paddingTop="14.0dp" android:paddingRight="16.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="14.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jetpack Media3 (ExoPlayer)" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="Apache License 2.0" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="16.0dp" android:paddingTop="14.0dp" android:paddingRight="16.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="14.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Google Cast SDK" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/attr_cast_license" />
+                        <TextView android:textSize="11.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dp" android:text="@string/attr_cast_trademark" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="16.0dp" android:paddingTop="14.0dp" android:paddingRight="16.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="14.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NanoHTTPD" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="BSD 3-Clause" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="16.0dp" android:paddingTop="14.0dp" android:paddingRight="16.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="14.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OkHttp" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="Apache License 2.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="11.0sp" android:textColor="@color/clipbox_red" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28.0dp" android:layout_marginBottom="10.0dp" android:text="@string/attr_section_licenses" android:textAllCaps="true" android:letterSpacing="0.12" />
+            <LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/rowLicenseApache" android:background="@drawable/card_bg_clickable" android:paddingLeft="16.0dp" android:paddingTop="16.0dp" android:paddingRight="16.0dp" android:paddingBottom="16.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="16.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Apache License 2.0" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="Media3 (ExoPlayer), OkHttp" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginStart="16.0dp" android:layout_marginEnd="16.0dp" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/rowLicenseBsd" android:background="@drawable/card_bg_clickable" android:paddingLeft="16.0dp" android:paddingTop="16.0dp" android:paddingRight="16.0dp" android:paddingBottom="16.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="16.0dp" android:paddingVertical="16.0dp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BSD 3-Clause" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="NanoHTTPD" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_chevron_right" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

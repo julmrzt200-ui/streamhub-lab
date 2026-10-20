@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>০.২৫x</item>
+        <item>০.৫x</item>
+        <item>০.৭৫x</item>
+        <item>স্বাভাবিক</item>
+        <item>১.২৫x</item>
+        <item>১.৫x</item>
+        <item>২x</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>%1$s জেগে উঠছে...</item>
+        <item>%1$s এর সাথে সংযুক্ত হচ্ছে...</item>
+        <item>%1$s স্পিন করা হচ্ছে...</item>
+        <item>%1$s ডায়াল করা হচ্ছে...</item>
+        <item>%1$s বুট করা হচ্ছে...</item>
+        <item>রোজিং %1$s...</item>
+        <item>%1$s কে একটি শট দেওয়া হচ্ছে...</item>
+    </string-array>
+</resources>

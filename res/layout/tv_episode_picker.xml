@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <HorizontalScrollView android:id="@id/episodeSeasonScroll" android:paddingLeft="6.0dp" android:paddingRight="6.0dp" android:focusable="false" android:scrollbars="none" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" android:overScrollMode="never" android:paddingHorizontal="6.0dp">
+        <LinearLayout android:orientation="horizontal" android:id="@id/episodeSeasonRow" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingVertical="6.0dp" />
+    </HorizontalScrollView>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="360.0dp" android:layout_marginTop="10.0dp">
+        <androidx.leanback.widget.VerticalGridView android:id="@id/episodeGrid" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingVertical="6.0dp" app:focusOutEnd="true" app:focusOutFront="true" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/tv_text_secondary" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/episodeStatus" android:padding="28.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </FrameLayout>
+</LinearLayout>

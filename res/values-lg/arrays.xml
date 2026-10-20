@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="loading_server_phrases">
+        <item>Okuzuukuka %1$s...</item>
+        <item>Okuyunga ku %1$s...</item>
+        <item>Okuwuuta waggulu %1$s...</item>
+        <item>Okukuba %1$s...</item>
+        <item>Okutandika %1$s...</item>
+        <item>Okuzuukusa %1$s...</item>
+        <item>Okuwa %1$s essasi...</item>
+    </string-array>
+</resources>

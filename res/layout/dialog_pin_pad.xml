@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/bg_dialog_rounded" android:paddingLeft="24.0dp" android:paddingTop="28.0dp" android:paddingRight="24.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="30.0dp" android:layout_height="30.0dp" android:src="@drawable/ic_lock_pin" android:contentDescription="@null" />
+    <TextView android:textSize="19.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:gravity="center" android:id="@id/pinTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dp" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/pinDots" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dp">
+        <View android:background="@drawable/pin_dot_empty" android:layout_width="14.0dp" android:layout_height="14.0dp" android:layout_marginLeft="9.0dp" android:layout_marginRight="9.0dp" android:layout_marginHorizontal="9.0dp" />
+        <View android:background="@drawable/pin_dot_empty" android:layout_width="14.0dp" android:layout_height="14.0dp" android:layout_marginLeft="9.0dp" android:layout_marginRight="9.0dp" android:layout_marginHorizontal="9.0dp" />
+        <View android:background="@drawable/pin_dot_empty" android:layout_width="14.0dp" android:layout_height="14.0dp" android:layout_marginLeft="9.0dp" android:layout_marginRight="9.0dp" android:layout_marginHorizontal="9.0dp" />
+        <View android:background="@drawable/pin_dot_empty" android:layout_width="14.0dp" android:layout_height="14.0dp" android:layout_marginLeft="9.0dp" android:layout_marginRight="9.0dp" android:layout_marginHorizontal="9.0dp" />
+    </LinearLayout>
+    <TextView android:textSize="14.0sp" android:textColor="#ff6b7a" android:id="@id/pinError" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" android:minHeight="20.0dp" />
+    <GridLayout android:id="@id/pinGrid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:columnCount="3" />
+    <TextView android:textSize="15.0sp" android:textColor="@color/text_secondary" android:gravity="center" android:id="@id/pinCancel" android:background="?selectableItemBackgroundBorderless" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:minHeight="44.0dp" android:text="@android:string/cancel" android:paddingHorizontal="24.0dp" />
+</LinearLayout>

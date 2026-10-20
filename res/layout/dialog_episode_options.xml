@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:ellipsize="end" android:id="@id/epOptTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:maxLines="2" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/epOptInfo" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="@drawable/ripple_rounded_8" android:paddingVertical="12.0dp">
+        <ImageView android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_info" app:tint="@color/text_primary" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/episode_info" android:layout_marginStart="16.0dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/epOptWatched" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="@drawable/ripple_rounded_8" android:paddingVertical="12.0dp">
+        <ImageView android:id="@id/epOptWatchedIcon" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_visibility" app:tint="@color/text_primary" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:id="@id/epOptWatchedLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/epOptMyList" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="@drawable/ripple_rounded_8" android:paddingVertical="12.0dp">
+        <ImageView android:id="@id/epOptMyListIcon" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_tab_mylist" app:tint="@color/text_primary" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:id="@id/epOptMyListLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16.0dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/epOptShare" android:paddingTop="12.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:foreground="@drawable/ripple_rounded_8" android:paddingVertical="12.0dp">
+        <ImageView android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_share" app:tint="@color/text_primary" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share" android:layout_marginStart="16.0dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rowsRecycler" android:paddingLeft="8.0dp" android:paddingTop="8.0dp" android:paddingRight="8.0dp" android:paddingBottom="12.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="8.0dp" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:gravity="center" android:layout_gravity="center" android:id="@id/emptyText" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/my_list_empty" />
+    <ImageView android:layout_gravity="center|bottom" android:id="@id/scrollIndicator" android:background="@drawable/scroll_hint_bg" android:padding="6.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:layout_marginBottom="16.0dp" android:foreground="@drawable/ripple_circle" android:src="@drawable/ic_chevron_down_light" android:elevation="4.0dp" />
+</FrameLayout>

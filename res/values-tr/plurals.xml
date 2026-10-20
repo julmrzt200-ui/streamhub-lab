@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">%d saniye ileri sar</item>
+        <item quantity="other">%d saniye ileri sar</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">%d saniye geri sar</item>
+        <item quantity="other">%d saniye geri sar</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d yeni bildirim</item>
+        <item quantity="other">%d yeni bildirim</item>
+    </plurals>
+    <plurals name="remove_items_fmt">
+        <item quantity="one">Emin misin? (%1$d ürün)</item>
+        <item quantity="other">Emin misin? (%1$d öğe)</item>
+    </plurals>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25 ×</item>
+        <item>0,5 ×</item>
+        <item>0,75 ×</item>
+        <item>Normálne</item>
+        <item>1,25 ×</item>
+        <item>1,5 ×</item>
+        <item>2 ×</item>
+    </string-array>
+    <string-array name="loading_server_phrases">
+        <item>Prebúdzanie %1$s…</item>
+        <item>Pripája sa k %1$s…</item>
+        <item>Otáčanie %1$s…</item>
+        <item>Vytáča sa %1$s…</item>
+        <item>Spúšťa sa %1$s…</item>
+        <item>Prebieha prebudenie %1$s…</item>
+        <item>Skúsiť %1$s…</item>
+    </string-array>
+</resources>

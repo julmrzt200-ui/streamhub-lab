@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">Avancer de %d seconde</item>
+        <item quantity="other">Avancer de %d secondes</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">Revenir en arrière de %d seconde</item>
+        <item quantity="other">Revenir en arrière de %d secondes</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d nouvelle notification</item>
+        <item quantity="other">%d nouvelles notifications</item>
+    </plurals>
+    <plurals name="remove_items_fmt">
+        <item quantity="one">Es-tu sûr? (%1$d article)</item>
+        <item quantity="other">Es-tu sûr? (%1$d articles)</item>
+    </plurals>
+</resources>

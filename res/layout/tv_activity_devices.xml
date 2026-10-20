@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/tv_page" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/tvBackdrop" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="@null" android:alpha="0.18" />
+    <View android:background="@drawable/tv_scrim_bottom" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <org.clipbox.player.tv.widget.TvPanel android:layout_gravity="center" android:layout_width="620.0dp" android:layout_height="wrap_content" app:tvPanelCornerRadius="@dimen/tv_panel_radius" app:tvPanelTint="@color/tv_panel_tint">
+        <LinearLayout android:orientation="vertical" android:padding="34.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/devices_title" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/tv_text_muted" android:id="@id/tvDevicesSummary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:layout_marginBottom="18.0dp" />
+            <ProgressBar android:layout_gravity="center_horizontal" android:id="@id/tvDevicesLoading" android:layout_width="36.0dp" android:layout_height="36.0dp" />
+            <LinearLayout android:orientation="vertical" android:id="@id/tvDevicesList" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </org.clipbox.player.tv.widget.TvPanel>
+</FrameLayout>

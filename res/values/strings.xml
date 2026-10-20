@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_capital_off">OFF</string>
+    <string name="abc_capital_on">ON</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about_attributions_subtitle">TMDB, libraries &amp; licenses</string>
+    <string name="about_attributions_title">Licenses &amp; attributions</string>
+    <string name="about_changelog_body">"v1.5.9
+• Television: brand tiles for streaming services and studios on the home screen; episode and source pickers rebuilt as panels for the remote; rows scroll only when the highlighted card would leave the screen
+• Title pages open in one step with artwork, logo, facts and studio marks together, and nothing shifts afterwards; Read more scrolls with the text
+• Background choice: blurred artwork or one of three colour patterns; softer default blur with an extra strength; a smaller default interface size and a new Tiny size
+• Automatic subtitle choice prefers files made for web releases and the most-downloaded file, the same file the manual list puts first
+• Sync subtitles now listens to the dialogue on the device itself and matches it to the subtitle text, answering within a couple of minutes from anywhere in a title; runs automatically and backs off when a title cannot be matched
+• Find subtitles online from the player, prefilled with what is playing; a subtitle you pick is never re-timed automatically
+• One source added, two moved to new addresses; three anime-only sources, one with Indian audio
+• A source chosen by hand stays chosen; casting warns when a VPN would block it
+• Parental controls also hide titles with no age rating; bulk delete in My List; clearing My List clears Favourites too
+• Search suggestions match the width of the search box and the clear-history control is always visible
+• Translations completed across all languages
+
+v1.5.8
+• New television interface built for the remote: home with a featured title, browse, search with suggestions, title pages with seasons, cast and related titles, My List, parental controls and settings
+• Subtitles are no longer retimed automatically; Sync subtitles runs only when asked, measures two stretches of the soundtrack and only acts when both agree
+• Fixed subtitles drifting during a title, disappearing when switching source, doubling up, or arriving in the wrong language
+• Subtitle position can be adjusted; the preferred subtitle language setting is honoured
+• Automatic quality starts at a sensible resolution and the quality button names what is actually playing; every quality a source offers can be chosen, including 4K; HDR no longer switches itself off
+• One next-episode card instead of two, an Autoplay next episode setting, and an episode button in the player
+• Episode lists rebuilt with stills, air dates, running times and descriptions; tapping an episode plays it; watched episodes show a progress bar
+• Search can be narrowed to films or series and sorted by rating or date; junk entries are hidden
+• Parental controls with an age limit that hides titles throughout the app; age ratings read far more reliably
+• Fixed watch progress not syncing between devices, and a startup crash for anyone affected
+• Fixed loading failures on certain VPNs and networks that block the film database; the connection help screen works on more devices
+• Sources that stop responding are skipped sooner; sources that no longer exist were removed
+• Profile pictures can be zoomed and panned; the About page was rewritten; translations updated across all languages
+
+v1.4.0
+• Localized Metadata: Movie and show descriptions, taglines, and episode titles now automatically appear in Dutch when the app language is set to Nederlands
+• Global App Access Lock: Implemented a mandatory security screen on launch to ensure authorized access only
+• Security Hardening: Improved internal protection mechanisms to safeguard app integrity and user data
+• UI Performance Peak: Optimized image processing and increased cache capacity, resulting in perfectly fluid 120Hz scrolling through categories
+• Snappy Interactions: Replaced standard long-press with a custom high-speed interaction and added haptic feedback for a more premium feel
+• Stability Fixes: Resolved a critical Picture-in-Picture crash and refined data parsing for the new Favourites system
+
+v1.3.9
+• Favourites System: Added a new 'Favourites' tab to My List. You can now star titles from the detail page or options menu
+• PIP Stability Patch: Fixed a crash issue when entering Picture-in-Picture mode with subtitles active
+• UI Visibility: Added subtle shadows to navigation buttons to ensure visibility on bright backdrops
+• Subtitle Search Automation: Tapping 'Manual search' now instantly starts searching using the current title for a faster experience
+• Improved Stability: Fully removed experimental components and reverted to stable subtitle logic to ensure reliable and fast loading
+• Verified Performance: Preserved all recent stability fixes including improved browse deduplication and server connection logic
+• Memory Stability: Optimized image caching to prevent scrolling stutters and improve app reliability
+• Scraper Stability: Fixed background search engine issues to ensure reliable results
+• Background Audio Patch: Fixed a bug where audio would continue playing when switching between titles
+
+v1.3.8
+• Fixed a major crash occurring when skipping to the next episode in Picture-in-Picture mode
+• Fixed an issue where the loading overlay could obscure the Picture-in-Picture window
+• Added a non-intrusive notification to inform users when a new stream is being searched
+• Fixed casting reliability by resolving data processing issues in the connection layer
+• Resolved a bug where the loading screen would get stuck after a successful cast
+• Added intelligent internet connectivity checks with user notifications
+• Overhauled screen resize logic to better handle different aspect ratios (Fit, Zoom, Fill)
+• Corrected localization for randomized loading phrases
+
+v1.3.7
+• Fixed video seeking failures by maintaining reliable search sessions
+• Optimized the server priority list for faster connection times
+• Translated missing interface text to Dutch
+• Made History and My List views more compact to fit more items on screen
+• Added multi-select mode to My List for easier bulk management
+• Added 'Select All' and 'Delete All' functionality to Watch History and My List
+• Added swipeable navigation tabs to My List for a smoother experience
+• Revamped the Watch History tab into a unified, easy-to-read list
+• Fixed an issue where certain categories would occasionally fail to load due to API limits
+• Reorganized the Browse tabs for better category discoverability
+
+v1.3.6
+• Centered and fully redesigned the My List tabs as pill-shaped toggle buttons
+• Fixed reload animation glitch in the detail screen when returning from the player
+
+v1.3.5
+• Improved Player UI: Gestures now use beautiful vector icons instead of emojis
+• Fixed gesture hitbox: Gestures no longer accidentally trigger when tapping near the edge, top controls, or seekbar
+• Gestures now intelligently show on their respective sides of the screen rather than in the center
+• Search bug fixed: Long pressing a search result now correctly scales the item without dropping the press
+• Swapped server priority list for faster connections
+• Restored reliable stream fallbacks
+• Enabled volume and brightness gesture controls even while playback is paused
+
+v1.3.4
+• Added a dark blocking overlay to prevent interaction while searching for subtitles
+• Improved subtitle extraction to support more extensions and parse languages more robustly
+• Changed subtitle popups to use a neutral ripple effect
+• Subtitle background is now disabled by default for a cleaner look
+• Extracted embedded stream subtitles now automatically sync to the casting overlay
+• Fixed seekbar jumping where dragging or skipping would snap back
+• Unified seek tracking to prevent unpredictable jumps on rapid clicks
+• Corrected auto-advance logic so the next episode countdown pauses precisely when the video is paused
+• Patched subtitle loading to prevent the local player from unpausing while casting
+• Smoothed out the Detail screen animation when returning from the player
+• Search speed greatly improved by running parallel background API requests
+• Fixed the double-back-press requirement to exit the video player
+• Eliminated the visual flash when exiting the player
+• Shorter, simpler haptic vibration for long presses
+• Show rating and year enabled by default in settings
+• Fixed stuck subtitle cues when switching episodes
+• Fixed double-tap seek to instantly show the popup and accumulate time
+• Made stream failovers fully seamless by tracking exact timestamps
+• Re-implemented manual subtitle search with full localization
+• Completely rebuilt the Subtitles dialog: added a real-time search filter and improved layout
+• Added Subtitle Settings: preferred language and auto-select options
+• Improved app startup performance on mobile data
+
+v1.3.3
+• Improved update detection logic to prevent false prompts
+• More robust filename parsing for the in-app updater
+
+v1.3.2
+• Full animation rework: all animations now run at a fixed, consistent speed
+• Added a monitor to immediately re-pin the animator scale if changed by the system
+• Fixed the hero image double-animation glitch on refresh
+• Fixed hero image glitch when switching tabs
+• Fixed the search keyboard not appearing automatically on some devices
+
+v1.3.1
+• Updated stream source domains
+• Integrated new permanent server candidates
+• Improved content filtering to block explicit results
+• Fixed a playback bug where paused video would automatically resume
+• Added a clean styled info notice during stream searching
+
+v1.3.0
+• Added a back button on the loading screen
+• Reworked the long-press hint: tapping it now opens the item
+• The hint highlights the item with a soft glow ring
+• Every reset action now asks for confirmation first
+• Cleaner, smaller hint labels
+• Added a toggle to show the long-press hint once or every time
+• Settings: new Reset section for cleared data and fresh starts
+
+v1.2.9
+• Improved search suggestion speed
+• Replaced system toast with a stylish discovery overlay
+• Humanized the \"About\" section for a friendlier feel
+• Fixed long-press support in search and similar titles
+
+v1.2.8
+• Added reactive \"push down\" feedback to all interactive items
+• New age certification badges in detail views
+• Standardized system back-button behavior with smooth transitions
+• Robust server-switching logic that maintains stream state
+• Improved audio focus handling for external events
+• UX: Added a hint to the welcome screen about long-pressing items
+
+v1.2.7
+• Sort/filter button in all grids (Popular, Top rated, Newest, A to Z)
+• Update prompt: \"Don't remind me\" only mutes that specific version
+• My List search box hint and finished Dutch translations
+• Smoother category grid scrolling
+• Restyled dialog buttons and a cleaner drawer menu
+• Faster, more reliable activity transitions
+• Hardware-accelerated fades for the detail view
+
+v1.2.6
+• Failsafe activity transitions: replaced system transitions with manual fades
+• Instant tab-switching and refresh in Browse views
+• Robust floating scroll-down button in Settings
+
+v1.2.5
+• Bolder, cleaner app bar branding
+• More animations pinned to a fixed speed
+• Switching servers now resumes at the current time
+• My List updates instantly after removing a title
+• Hidden scraper components are now always muted
+• Snappier press feedback and touch reactions
+• Hero images no longer flicker or double-load
+• Pull-to-refresh now rotates in genuinely new titles
+• Ratings and year now show more consistently
+• Next-episode card repositioned to never block controls
+• PIP gained previous/next episode buttons
+
+v1.2.4
+• Next-episode card now counts down and auto-plays
+• Welcome notice shows once per launch
+• Detail page header rebuilt: title bar and back button never get covered
+• All tabs preload at launch for smooth switching
+• Remembers screen orientation and rotation lock
+• Age ratings read clearer
+
+v1.2.1
+• Switching episodes now fully reloads the player for a clean start
+• Previous / next episode buttons added to the cast controls
+• Casting keeps running with the screen locked
+• Subtitles work while casting with dedicated controls
+• Last-watched episode is remembered and restored
+
+v1.1.9
+• Renamed to ClipBox
+• New bottom navigation layout
+• Popular networks and studio rows
+• Star rating and year overlay on posters
+• Cast rebuilt on the official device picker
+• Season and episode last-watched remembered per show
+• Auto-advance to next episode with countdown
+• Language switching applied instantly
+
+v1.1.8
+• Initial stream source integration
+• DLNA casting via local proxy
+• Modern browse interface with hero header
+• Bilingual UI (English / Dutch)"</string>
+    <string name="about_changelog_title">Changelog</string>
+    <string name="about_credits_body">"ClipBox is a streaming app for Android, made by a team of passionate developers.
+
+Everything lives in one place. Browse what is popular, search for something specific, or pick up exactly where you left off. Every title offers several sources, subtitles are found and timed for you in a wide range of languages, and anything you are watching can be sent to a television. An optional account keeps your list and your history in step across every device you use."</string>
+    <string name="about_credits_title">About ClipBox</string>
+    <string name="about_disclaimer_long">"ClipBox is an independent media front-end for Android. It does not host, store, upload, transmit or control any video, audio, subtitle or other media content. Everything played through the app is provided by third-party sources that are not affiliated with, endorsed by or controlled by ClipBox, and that may change or disappear at any time.
+
+ClipBox claims no ownership of third-party content and does not authorise copyright infringement. You are solely responsible for ensuring that your use of the app and of any source complies with the copyright, licensing and other laws that apply where you are. Requests to remove or disable access to content should be directed to the third-party source or rights holder concerned, as ClipBox holds no content to remove.
+
+Title and artwork metadata is provided by The Movie Database (TMDB). ClipBox is not endorsed or certified by TMDB. Subtitles may come from OpenSubtitles and may be machine-translated, so their accuracy and timing are not guaranteed.
+
+Netflix, IMDb, TMDB, OpenSubtitles, Google, Chromecast, Android TV, Google TV, Fire TV, Amazon, ExoPlayer, Media3, DLNA and all other names and trademarks are used for identification only and imply no sponsorship, endorsement or affiliation."</string>
+    <string name="about_disclaimer_short">ClipBox does not host or provide any media content. All streams, subtitles and artwork come from third-party sources. ClipBox is not affiliated with or endorsed by Netflix, IMDb, TMDB, OpenSubtitles, Google, Amazon or any content provider.</string>
+    <string name="about_disclaimer_subtitle">Content sources and trademarks</string>
+    <string name="about_disclaimer_title">Disclaimer</string>
+    <string name="about_legal_title">Legal</string>
+    <string name="about_privacy_subtitle">What data is collected, and why</string>
+    <string name="about_privacy_title">Privacy policy</string>
+    <string name="about_terms_subtitle">How ClipBox may be used</string>
+    <string name="about_terms_title">Terms &amp; Conditions</string>
+    <string name="about_title">About</string>
+    <string name="about_version_fmt">v%1$s (%2$d)</string>
+    <string name="account_change_password">Change password</string>
+    <string name="account_change_username">Change username</string>
+    <string name="account_confirm_password_hint">Confirm password</string>
+    <string name="account_creating">Creating account…</string>
+    <string name="account_current_password_hint">Current password</string>
+    <string name="account_delete_account">Delete account</string>
+    <string name="account_delete_confirm">This will permanently delete your account and all synced data. This cannot be undone. Enter your password to confirm.</string>
+    <string name="account_display_name">Display name</string>
+    <string name="account_display_name_hint">The name shown in the app</string>
+    <string name="account_display_name_unset">Not set, your username is shown</string>
+    <string name="account_forgot_password">Forgot password?</string>
+    <string name="account_founder_member">Founder</string>
+    <string name="account_go_login">Already have an account? Sign in</string>
+    <string name="account_go_login_action">Sign in</string>
+    <string name="account_go_register">New here? Create an account</string>
+    <string name="account_go_register_action">Create an account</string>
+    <string name="account_guest">Guest</string>
+    <string name="account_member">ClipBox Member</string>
+    <string name="account_member_since_fmt">Member since %1$s</string>
+    <string name="account_new_password_hint">New password</string>
+    <string name="account_new_username_hint">New username</string>
+    <string name="account_password_hint">Password</string>
+    <string name="account_recovery_code">Recovery code</string>
+    <string name="account_recovery_code_hint">Recovery code</string>
+    <string name="account_register">Create account</string>
+    <string name="account_register_subtitle">Create your ClipBox account</string>
+    <string name="account_session_ended">"Your account is no longer available. You've been signed out."</string>
+    <string name="account_settings_section">Account settings</string>
+    <string name="account_sign_in">Sign in</string>
+    <string name="account_sign_in_prompt">Sign in to access your account</string>
+    <string name="account_sign_out">Sign out</string>
+    <string name="account_signed_out_offline">"Signed out. Your list couldn't be synced, so it's been kept on this device."</string>
+    <string name="account_signing_in">Signing in…</string>
+    <string name="account_subtitle">Sign in to your ClipBox account</string>
+    <string name="account_sync_done">Sync complete</string>
+    <string name="account_terms_required">Please review the Terms &amp; Conditions before registering</string>
+    <string name="account_title">Account</string>
+    <string name="account_username_hint">Username</string>
+    <string name="account_username_taken">Username already taken</string>
+    <string name="account_vip_ads_off">Ads disabled for VIP members</string>
+    <string name="account_vip_member">VIP Member</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_done">Done</string>
+    <string name="action_generate">Generate</string>
+    <string name="action_open_in_browser">Open in browser</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_save">Save</string>
+    <string name="actor_born_fmt">Born %1$s</string>
+    <string name="actor_died_fmt">Died %1$s</string>
+    <string name="actor_gender_female">Female</string>
+    <string name="actor_gender_male">Male</string>
+    <string name="actor_gender_nonbinary">Non-binary</string>
+    <string name="actor_known_for">Known for</string>
+    <string name="actor_no_bio">No biography available.</string>
+    <string name="actor_open_wikipedia">Open on Wikipedia</string>
+    <string name="actor_read_more">Read more</string>
+    <string name="actor_wikipedia_failed">"Couldn't open Wikipedia."</string>
+    <string name="ad_autoclose_fmt">Closes automatically in %1$d s</string>
+    <string name="ad_blocked_note">An ad blocker is stopping this ad. Ads keep ClipBox free: turn it off for ClipBox, or get VIP.</string>
+    <string name="ad_close">Close ad</string>
+    <string name="ad_label">Ad</string>
+    <string name="ad_loading">Loading ad…</string>
+    <string name="ad_open">Open ad</string>
+    <string name="ad_page_hint">Arrows move the pointer · OK clicks · Back closes</string>
+    <string name="ad_popup_note">Ads keep ClipBox free and help pay for the servers and maintenance.</string>
+    <string name="ad_remove_with_vip">Remove ads with VIP</string>
+    <string name="add_to_favourites">Add to Favourites</string>
+    <string name="added_to_favourites">Added to Favourites</string>
+    <string name="added_to_my_list">Added to My List</string>
+    <string name="alert_dialog_title">Notice</string>
+    <string name="androidx_startup">androidx.startup</string>
+    <string name="app_brand_subtitle" />
+    <string name="app_brand_title">CLIPBOX</string>
+    <string name="app_name">ClipBox</string>
+    <string name="app_name_wordmark">CLIPBOX</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="aspect_fill">Fill</string>
+    <string name="aspect_fills_already">the picture already fills the screen</string>
+    <string name="aspect_fit">Fit</string>
+    <string name="aspect_zoom">Zoom</string>
+    <string name="attr_cast_license">Proprietary Google SDK</string>
+    <string name="attr_cast_trademark">Google Cast is a trademark of Google LLC.</string>
+    <string name="attr_license_unavailable">License text unavailable.</string>
+    <string name="attr_opensubs_text">Subtitle search and subtitle metadata provided by OpenSubtitles.</string>
+    <string name="attr_page_title">Attributions &amp; Licenses</string>
+    <string name="attr_section_community">Community</string>
+    <string name="attr_section_data">Data Providers</string>
+    <string name="attr_section_libs">Third-Party Libraries</string>
+    <string name="attr_section_licenses">Open Source Licenses</string>
+    <string name="attr_skip_text">Intro and outro markers provided by IntroDB and AniSkip.</string>
+    <string name="attr_tmdb_detail">Movie, TV series, cast, crew, artwork and metadata provided by TMDB.</string>
+    <string name="attr_tmdb_disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</string>
+    <string name="attr_tmdb_logo_desc">TMDB logo</string>
+    <string name="audio_button">Audio</string>
+    <string name="audio_import">Import audio track…</string>
+    <string name="audio_import_cast_hls_only">"This stream can't carry an extra audio track while casting. Try another server, or play on the phone."</string>
+    <string name="audio_import_failed">"Couldn't open the file picker"</string>
+    <string name="audio_import_no_permission">Permission is needed to read audio files</string>
+    <string name="audio_import_none_found">No audio files found on this device</string>
+    <string name="audio_import_remove">Remove imported audio track</string>
+    <string name="audio_import_removed">Imported audio track removed</string>
+    <string name="audio_imported_toast">Imported audio track applied</string>
+    <string name="audio_imported_track">Imported audio</string>
+    <string name="avatar_process_failed">Failed to process image</string>
+    <string name="avatar_remove_confirm">Are you sure you want to remove your profile picture?</string>
+    <string name="avatar_remove_failed">Failed to remove picture</string>
+    <string name="avatar_remove_title">Remove profile picture</string>
+    <string name="avatar_removed">Profile picture removed</string>
+    <string name="avatar_updated">Profile picture updated</string>
+    <string name="avatar_upload_failed">Failed to upload picture</string>
+    <string name="back_button_text">Close</string>
+    <string name="badge_founder">FOUNDER</string>
+    <string name="badge_vip">VIP</string>
+    <string name="bottom_sheet_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="bottomsheet_action_collapse">Collapse the bottom sheet</string>
+    <string name="bottomsheet_action_expand">Expand the bottom sheet</string>
+    <string name="bottomsheet_action_expand_halfway">Expand halfway</string>
+    <string name="bottomsheet_drag_handle_clicked">Drag handle double-tapped</string>
+    <string name="bottomsheet_drag_handle_content_description">Drag handle</string>
+    <string name="brightness_button">Brightness</string>
+    <string name="brightness_system_default">Use system brightness</string>
+    <string name="brightness_title">Brightness</string>
+    <string name="btn_continue_watching">Continue watching</string>
+    <string name="btn_play">Play</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_trailer">Trailer</string>
+    <string name="bug_report_contact_hint">Where can we reach you? (optional)</string>
+    <string name="bug_report_contact_placeholder">Telegram, Signal or email</string>
+    <string name="bug_report_failed">"Couldn't send the report. Check your connection."</string>
+    <string name="bug_report_hint">Please describe clearly what went wrong, and what you were doing at the time.</string>
+    <string name="bug_report_message">Describe the problem. Your device and app version are added automatically.</string>
+    <string name="bug_report_send">Send</string>
+    <string name="bug_report_sending">Firing that off…</string>
+    <string name="bug_report_sent">Got it, thanks! We will take a look.</string>
+    <string name="bug_report_title">Bug report</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="capture_blocked_exit">Exit</string>
+    <string name="capture_blocked_intro">ClipBox will not run while a network capture or proxy tool is installed on this device.</string>
+    <string name="capture_blocked_outro">Uninstall it and open ClipBox again.</string>
+    <string name="capture_blocked_title">ClipBox cannot run on this device</string>
+    <string name="cast_ad_label">Ad</string>
+    <string name="cast_button_cast">Cast</string>
+    <string name="cast_casting_to_device">Casting to %1$s</string>
+    <string name="cast_closed_captions">Closed captions</string>
+    <string name="cast_closed_captions_unavailable">Closed captions unavailable</string>
+    <string name="cast_connecting">Connecting to cast device…</string>
+    <string name="cast_connecting_to_device">Connecting to %1$s</string>
+    <string name="cast_device_fallback">Cast device</string>
+    <string name="cast_disconnect">Disconnect</string>
+    <string name="cast_dynamic_group_name_format">%1$s + %2$d</string>
+    <string name="cast_enter_ip">Enter IP</string>
+    <string name="cast_expanded_controller_ad_image_description">Image displayed while the cast receiver is playing an ad</string>
+    <string name="cast_expanded_controller_ad_in_progress">Ad in progress…</string>
+    <string name="cast_expanded_controller_background_image">Album art</string>
+    <string name="cast_expanded_controller_live_head_description">Current position is at the head of the live stream</string>
+    <string name="cast_expanded_controller_live_stream_indicator">Live stream</string>
+    <string name="cast_expanded_controller_loading">Loading…</string>
+    <string name="cast_expanded_controller_skip_ad_label">Skip Ad</string>
+    <string name="cast_expanded_controller_skip_ad_text">You can skip ad in %1$d…</string>
+    <string name="cast_failed_fmt">Cast failed: %1$s</string>
+    <string name="cast_forward">Forward</string>
+    <string name="cast_forward_10">Forward ten seconds</string>
+    <string name="cast_forward_30">Forward thirty seconds</string>
+    <string name="cast_intro_overlay_button_text">@android:string/ok</string>
+    <string name="cast_invalid_stream_duration_text">--:--</string>
+    <string name="cast_invalid_stream_position_text">--:--</string>
+    <string name="cast_keepalive_text">Keeping things warm on the TV</string>
+    <string name="cast_keepalive_title">Casting to TV</string>
+    <string name="cast_live_label">LIVE</string>
+    <string name="cast_load_failed">load failed</string>
+    <string name="cast_load_fmt">Cast: %1$s</string>
+    <string name="cast_loading_next">Queuing up the next one…</string>
+    <string name="cast_loading_prev">Going back in time…</string>
+    <string name="cast_manual_msg">"Find your TV's IP in:
+Settings → Network → Wi-Fi → Advanced"</string>
+    <string name="cast_manual_title">Enter TV IP address</string>
+    <string name="cast_mute">Mute</string>
+    <string name="cast_next_episode">Next episode</string>
+    <string name="cast_no_devices_msg">"Turn your TV off and back on. Check if the TV is connected to the same WiFi.
+
+LG TVs: turn on Settings → Network → LG Connect Apps.
+
+You can also enter your TV's IP manually."</string>
+    <string name="cast_no_devices_title">No TVs found</string>
+    <string name="cast_no_response_fmt">"TV at %1$s didn't respond. Check DLNA on TV."</string>
+    <string name="cast_no_stream">Nothing playing yet bro.</string>
+    <string name="cast_notification_connected_message">Connected to %1$s</string>
+    <string name="cast_notification_connecting_message">Connecting to %1$s</string>
+    <string name="cast_notification_default_channel_name">Cast</string>
+    <string name="cast_notification_disconnect">Disconnect</string>
+    <string name="cast_pause">Pause</string>
+    <string name="cast_pick_device">Cast to…</string>
+    <string name="cast_play">Play</string>
+    <string name="cast_prev_episode">Previous episode</string>
+    <string name="cast_proxy_failed">Could not relay stream to TV. Try another server.</string>
+    <string name="cast_proxy_starting">Packaging this up for your TV…</string>
+    <string name="cast_quality_refused">"Your device couldn't play that quality — keeping the current one"</string>
+    <string name="cast_quality_set_fmt">Quality: %1$s</string>
+    <string name="cast_rewind">Rewind</string>
+    <string name="cast_rewind_10">Rewind ten seconds</string>
+    <string name="cast_rewind_30">Rewind thirty seconds</string>
+    <string name="cast_role_archive">archive footage</string>
+    <string name="cast_role_fmt">%1$s (%2$s)</string>
+    <string name="cast_role_uncredited">uncredited</string>
+    <string name="cast_role_voice">voice</string>
+    <string name="cast_search_again">Search again</string>
+    <string name="cast_search_done">Search finished</string>
+    <string name="cast_searching_msg">Poking around your network (%1$ds)</string>
+    <string name="cast_searching_title">Sniffing out TVs…</string>
+    <string name="cast_section_chromecast">Chromecast</string>
+    <string name="cast_section_other">Other TVs &amp; devices</string>
+    <string name="cast_seek_bar">Playback seek control</string>
+    <string name="cast_skip_next">Skip to next item</string>
+    <string name="cast_skip_prev">Skip to previous item</string>
+    <string name="cast_started_fmt">Casting to %1$s</string>
+    <string name="cast_status_buffering">Buffering…</string>
+    <string name="cast_status_casting">Casting</string>
+    <string name="cast_status_error_next">Cast error — finding next stream…</string>
+    <string name="cast_status_finished">Finished</string>
+    <string name="cast_status_idle">Idle</string>
+    <string name="cast_status_paused">Paused</string>
+    <string name="cast_status_playing">Playing on TV</string>
+    <string name="cast_status_stopped">Stopped</string>
+    <string name="cast_stop">Stop</string>
+    <string name="cast_stop_button">Stop</string>
+    <string name="cast_stop_live_stream">Stop live stream</string>
+    <string name="cast_subs_failed">Could not load that subtitle on the TV.</string>
+    <string name="cast_subs_loading">Beaming subtitles to the TV…</string>
+    <string name="cast_subtitles_button">Subtitles</string>
+    <string name="cast_tracks_chooser_dialog_audio">Audio</string>
+    <string name="cast_tracks_chooser_dialog_cancel">Cancel</string>
+    <string name="cast_tracks_chooser_dialog_closed_captions">Closed Captions</string>
+    <string name="cast_tracks_chooser_dialog_default_track_name">Track %1$d</string>
+    <string name="cast_tracks_chooser_dialog_none">None</string>
+    <string name="cast_tracks_chooser_dialog_ok">OK</string>
+    <string name="cast_tracks_chooser_dialog_subtitles">Subtitles</string>
+    <string name="cast_unmute">Unmute</string>
+    <string name="cast_volume_down">Volume down</string>
+    <string name="cast_volume_title">Volume</string>
+    <string name="cast_volume_up">Volume up</string>
+    <string name="cast_vpn_body">"Your VPN is on, so the app can't reach your TV on the home network. Turn the VPN off for a moment to cast."</string>
+    <string name="cast_vpn_title">"Casting doesn't work with a VPN"</string>
+    <string name="cast_vpn_warning">Heads-up: Casting might be unstable at times. A VPN can also block casting, turn it off if casting fails.</string>
+    <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
+    <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
+    <string name="character_counter_pattern">%1$d/%2$d</string>
+    <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_brightness">Brightness</string>
+    <string name="color_custom">Custom colour</string>
+    <string name="color_green">Green</string>
+    <string name="color_red">Red</string>
+    <string name="common_google_play_services_enable_button">Enable</string>
+    <string name="common_google_play_services_enable_text">"%1$s won't work unless you enable Google Play services."</string>
+    <string name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text">"%1$s won't run without Google Play services, which are missing from your device."</string>
+    <string name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue">%1$s is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text">"%1$s won't run without Google Play services, which are not supported by your device."</string>
+    <string name="common_google_play_services_update_button">Update</string>
+    <string name="common_google_play_services_update_text">"%1$s won't run unless you update Google Play services."</string>
+    <string name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text">"%1$s won't run without Google Play services, which are currently updating."</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="conn_help_body">Your internet is working, but the service that supplies film and series information could not be reached. Some internet providers block it. These two steps usually fix it.</string>
+    <string name="conn_help_dismiss">Not now</string>
+    <string name="conn_help_dns_body">Choose “Private DNS provider hostname” and enter %1$s — that is Cloudflare, the %2$s service.</string>
+    <string name="conn_help_dns_manual">In Settings, search for “Private DNS”.</string>
+    <string name="conn_help_dns_title">Set Private DNS to Cloudflare</string>
+    <string name="conn_help_open_dns">Open DNS settings</string>
+    <string name="conn_help_retry">Try again</string>
+    <string name="conn_help_step_one">1</string>
+    <string name="conn_help_step_two">2</string>
+    <string name="conn_help_title">"Can't load titles"</string>
+    <string name="conn_help_vpn_body">"If you use a VPN, try switching it off. If you don't, switching one on usually gets past a block."</string>
+    <string name="conn_help_vpn_title">Turn your VPN on, or off</string>
+    <string name="countdown_next_server_fmt">Next server in %1$ds</string>
+    <string name="default_notification_channel_name">Now playing</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete All</string>
+    <string name="detail_cast">Cast</string>
+    <string name="detail_episodes">Episodes</string>
+    <string name="detail_failed_load">Failed to load.</string>
+    <string name="detail_more_like_this">More Like This</string>
+    <string name="devices_empty">No devices yet.</string>
+    <string name="devices_last_active_fmt">Last active %1$s</string>
+    <string name="devices_limit_body_fmt">Your account is already signed in on %1$d devices. Choose one to sign out, and this device takes its place.</string>
+    <string name="devices_limit_on_me">This device is not counted as one of your devices yet, so VIP is off here. Sign out a device you no longer use to turn it on.</string>
+    <string name="devices_limit_pick_fmt">Signed in on %1$d devices. Choose one to sign out.</string>
+    <string name="devices_limit_title">Too many devices</string>
+    <string name="devices_manage">Manage devices</string>
+    <string name="devices_now">just now</string>
+    <string name="devices_phone">Phone</string>
+    <string name="devices_sign_out">Sign out</string>
+    <string name="devices_sign_out_body_fmt">%1$s will be signed out of your account the next time it is used.</string>
+    <string name="devices_sign_out_self">This is the device you are using. You will be signed out here.</string>
+    <string name="devices_sign_out_title">Sign out this device?</string>
+    <string name="devices_summary_fmt">%1$d of %2$d devices are signed in to your account.</string>
+    <string name="devices_this_device">This device</string>
+    <string name="devices_title">Your devices</string>
+    <string name="devices_tv">TV</string>
+    <string name="devices_unnamed">Unnamed device</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="empty_url">Please enter a stream URL first.</string>
+    <string name="episode_button_short">S%1$d • E%2$d</string>
+    <string name="episode_fmt">Episode %d</string>
+    <string name="episode_info">Episode details</string>
+    <string name="episode_mark_unwatched">Mark as not watched</string>
+    <string name="episode_mark_watched">Mark as watched</string>
+    <string name="episode_no_overview">No description available for this episode.</string>
+    <string name="episode_number_short_fmt">E%1$d</string>
+    <string name="episode_options">Episode options</string>
+    <string name="episode_picker_empty">No episodes found for this season.</string>
+    <string name="episode_picker_loading">Loading episodes…</string>
+    <string name="episode_play_this">Play this episode</string>
+    <string name="episode_row_fmt">Ep %1$d: %2$s</string>
+    <string name="episode_runtime_fmt">%1$d min</string>
+    <string name="episode_select_this">Select this episode</string>
+    <string name="episode_title">Episode</string>
+    <string name="episode_upcoming">Not aired yet</string>
+    <string name="episodes_show_all_fmt">Show all %1$d episodes</string>
+    <string name="episodes_show_less">Show fewer episodes</string>
+    <string name="err_access_denied">Access denied</string>
+    <string name="err_account_not_found">Account not found</string>
+    <string name="err_avatar_too_large">Image is too large. Maximum size is 100KB</string>
+    <string name="err_current_password_incorrect">Current password is incorrect</string>
+    <string name="err_generic">Something went wrong. Please try again.</string>
+    <string name="err_incorrect_password">Incorrect password</string>
+    <string name="err_invalid_credentials">Incorrect username or password</string>
+    <string name="err_invalid_recovery">Invalid username or recovery code</string>
+    <string name="err_password_required_delete">Password is required to delete your account</string>
+    <string name="err_server">Server error. Please try again later.</string>
+    <string name="err_service_unavailable">Service temporarily unavailable. Please try again.</string>
+    <string name="err_signed_out_sign_in">You have been signed out on this device. Sign in again.</string>
+    <string name="err_too_many_requests">Too many requests. Please wait a moment.</string>
+    <string name="err_update_for_recovery">Update ClipBox to the latest version to create a new recovery code.</string>
+    <string name="error_a11y_label">Error: invalid</string>
+    <string name="error_bad_intent">"Received an invalid link. Couldn't open it."</string>
+    <string name="error_icon_content_description">Error</string>
+    <string name="error_message_authentication_expired">Sign in to use this app</string>
+    <string name="error_message_bad_value">Incorrect input data</string>
+    <string name="error_message_concurrent_stream_limit">Listening on too many devices</string>
+    <string name="error_message_content_already_playing">Already playing that content</string>
+    <string name="error_message_description_text">There was an issue getting more details about this ad</string>
+    <string name="error_message_disconnected">Disconnected from media app</string>
+    <string name="error_message_end_of_playlist">Nothing else is queued up</string>
+    <string name="error_message_fallback">Something’s wrong. Try later.</string>
+    <string name="error_message_info_cancelled">Couldn’t finish. Try again.</string>
+    <string name="error_message_invalid_state">Can’t do that right now</string>
+    <string name="error_message_io">Input/output error</string>
+    <string name="error_message_not_available_in_region">Can’t get that content here</string>
+    <string name="error_message_not_supported">This app can’t do that</string>
+    <string name="error_message_parental_control_restricted">That content is blocked</string>
+    <string name="error_message_permission_denied">Access denied</string>
+    <string name="error_message_premium_account_required">Premium access required</string>
+    <string name="error_message_setup_required">Setup required</string>
+    <string name="error_message_skip_limit_reached">Can’t skip any more tracks</string>
+    <string name="error_message_text">Something went wrong</string>
+    <string name="error_no_browser">No browser app found</string>
+    <string name="error_no_content_pull_to_refresh">Could not load content. Pull down to refresh.</string>
+    <string name="error_no_intent">Nothing to play.</string>
+    <string name="error_no_internet_pull_to_refresh">No internet connection. Please connect and pull to refresh.</string>
+    <string name="exo_controls_cc_disabled_description">Enable subtitles</string>
+    <string name="exo_controls_cc_enabled_description">Disable subtitles</string>
+    <string name="exo_controls_fastforward_description">Fast forward</string>
+    <string name="exo_controls_fullscreen_enter_description">Enter fullscreen</string>
+    <string name="exo_controls_fullscreen_exit_description">Exit fullscreen</string>
+    <string name="exo_controls_hide">Hide player controls</string>
+    <string name="exo_controls_next_description">Next</string>
+    <string name="exo_controls_overflow_hide_description">Hide additional settings</string>
+    <string name="exo_controls_overflow_show_description">Show additional settings</string>
+    <string name="exo_controls_pause_description">Pause</string>
+    <string name="exo_controls_play_description">Play</string>
+    <string name="exo_controls_playback_speed">Speed</string>
+    <string name="exo_controls_previous_description">Previous</string>
+    <string name="exo_controls_repeat_all_description">Current mode: Repeat all. Toggle repeat mode.</string>
+    <string name="exo_controls_repeat_off_description">Current mode: Repeat none. Toggle repeat mode.</string>
+    <string name="exo_controls_repeat_one_description">Current mode: Repeat one. Toggle repeat mode.</string>
+    <string name="exo_controls_rewind_description">Rewind</string>
+    <string name="exo_controls_settings_description">Settings</string>
+    <string name="exo_controls_show">Show player controls</string>
+    <string name="exo_controls_shuffle_off_description">Enable shuffle mode</string>
+    <string name="exo_controls_shuffle_on_description">Disable shuffle mode</string>
+    <string name="exo_controls_stop_description">Stop</string>
+    <string name="exo_controls_time_placeholder">00:00:00</string>
+    <string name="exo_controls_vr_description">VR mode</string>
+    <string name="exo_item_list">%1$s, %2$s</string>
+    <string name="exo_track_bitrate">%1$.2f Mbps</string>
+    <string name="exo_track_mono">Mono</string>
+    <string name="exo_track_resolution">%1$d × %2$d</string>
+    <string name="exo_track_role_alternate">Alternate</string>
+    <string name="exo_track_role_closed_captions">CC</string>
+    <string name="exo_track_role_commentary">Commentary</string>
+    <string name="exo_track_role_supplementary">Supplementary</string>
+    <string name="exo_track_selection_auto">Auto</string>
+    <string name="exo_track_selection_none">None</string>
+    <string name="exo_track_selection_title_audio">Audio</string>
+    <string name="exo_track_stereo">Stereo</string>
+    <string name="exo_track_surround">Surround sound</string>
+    <string name="exo_track_surround_5_point_1">5.1 surround sound</string>
+    <string name="exo_track_surround_7_point_1">7.1 surround sound</string>
+    <string name="exo_track_unknown">Unknown</string>
+    <string name="exo_track_unknown_name">Unknown (%1$s)</string>
+    <string name="expand_button_title">Advanced</string>
+    <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
+    <string name="extracted_subtitles">Extracted Subtitles</string>
+    <string name="fab_transformation_scrim_behavior">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
+    <string name="fab_transformation_sheet_behavior">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fallback_image_content_descriptor">Why this Ad</string>
+    <string name="fallback_menu_item_copy_link">Copy link</string>
+    <string name="fallback_menu_item_open_in_browser">Open in browser</string>
+    <string name="fallback_menu_item_share_link">Share link</string>
+    <string name="filter_title">Sort by</string>
+    <string name="first_launch_body">"Using a VPN may block some movies and series. If a server fails, try disabling your VPN.
+
+Not every title is actually playable, some work and others don't.
+
+ClipBox is new and in development, there might be some bugs."</string>
+    <string name="first_launch_ok">Got it</string>
+    <string name="first_launch_title">Welcome back!</string>
+    <string name="footer_brand">ClipBox</string>
+    <string name="force_update_download">Download update</string>
+    <string name="force_update_fallback_msg">A new version is required to continue using this app.</string>
+    <string name="force_update_subtitle">Update required</string>
+    <string name="gate_connecting">Loading</string>
+    <string name="gate_retry">Retry</string>
+    <string name="gate_unavailable_message">"ClipBox cannot reach its servers.
+Please check your connection and try again."</string>
+    <string name="gate_unavailable_title">Service Unavailable</string>
+    <string name="genre_action">Action</string>
+    <string name="genre_animation">Animation</string>
+    <string name="genre_anime">Anime</string>
+    <string name="genre_comedy">Comedy</string>
+    <string name="genre_drama">Drama</string>
+    <string name="genre_horror">Horror</string>
+    <string name="genre_romance">Romance</string>
+    <string name="genre_scifi">Sci-Fi</string>
+    <string name="genre_thriller">Thriller</string>
+    <string name="hero_btn_info">ⓘ Info</string>
+    <string name="hero_btn_play">Play</string>
+    <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="hint_dismiss">tap to continue</string>
+    <string name="hint_dismiss_tv">press OK to continue</string>
+    <string name="history_empty">Nothing here yet. Movies and shows you watch will show up here.</string>
+    <string name="history_search_hint">Search in history…</string>
+    <string name="ic_media_route_learn_more_accessibility">Learn how to cast</string>
+    <string name="icon_content_description">Dialog Icon</string>
+    <string name="item_view_role_description">Tab</string>
+    <string name="items_selected_fmt">%1$d selected</string>
+    <string name="lang_available_body">You are currently using the app in %1$s. Would you like to switch? You can change this at any time in Settings.</string>
+    <string name="lang_available_keep">Keep %1$s</string>
+    <string name="lang_available_switch">Switch to %1$s</string>
+    <string name="lang_available_title">ClipBox is now available in %1$s</string>
+    <string name="launcher_instructions">"There's nothing you need to do here.
+
+If you have a stream URL, you can play it directly below.
+"</string>
+    <string name="lock_button">Unlock</string>
+    <string name="lock_error_invalid">Invalid Password</string>
+    <string name="lock_hint">Enter your password</string>
+    <string name="lock_toast_identify">Please enter the correct password.</string>
+    <string name="lock_welcome">Welcome back</string>
+    <string name="long_press_hint">Press and hold for options</string>
+    <string name="long_press_hint_tv">Hold OK for options</string>
+    <string name="m3_exceed_max_badge_text_suffix">%1$s%2$s</string>
+    <string name="m3_ref_typeface_brand_regular">sans-serif</string>
+    <string name="m3_ref_typeface_plain_medium">sans-serif-medium</string>
+    <string name="m3_ref_typeface_plain_regular">sans-serif</string>
+    <string name="m3_sys_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="m3_sys_motion_easing_emphasized_path_data">M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1</string>
+    <string name="m3_sys_motion_easing_legacy_accelerate">cubic-bezier(0.4, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_legacy_decelerate">cubic-bezier(0, 0, 0.2, 1)</string>
+    <string name="m3_sys_motion_easing_linear">cubic-bezier(0, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_standard">cubic-bezier(0.2, 0, 0, 1)</string>
+    <string name="material_clock_display_divider">:</string>
+    <string name="material_clock_toggle_content_description">Select AM or PM</string>
+    <string name="material_motion_easing_accelerated">cubic-bezier(0.4, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_decelerated">cubic-bezier(0.0, 0.0, 0.2, 1.0)</string>
+    <string name="material_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="material_motion_easing_linear">cubic-bezier(0.0, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_standard">cubic-bezier(0.4, 0.0, 0.2, 1.0)</string>
+    <string name="material_slider_range_end">Range end</string>
+    <string name="material_slider_range_start">Range start</string>
+    <string name="material_slider_value">Value</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="media3_controls_pause_description">Pause</string>
+    <string name="media3_controls_play_description">Play</string>
+    <string name="media3_controls_seek_back_description">Seek back</string>
+    <string name="media3_controls_seek_forward_description">Seek forward</string>
+    <string name="media3_controls_seek_to_next_description">Seek to next item</string>
+    <string name="media3_controls_seek_to_previous_description">Seek to previous item</string>
+    <string name="media_notification_channel_name">Cast</string>
+    <string name="media_type_movie">Movie</string>
+    <string name="media_type_series">Series</string>
+    <string name="mr_button_content_description">Cast</string>
+    <string name="mr_cast_button_connected">Cast. Connected</string>
+    <string name="mr_cast_button_connecting">Cast. Connecting</string>
+    <string name="mr_cast_button_disconnected">Cast. Disconnected</string>
+    <string name="mr_cast_dialog_title_view_placeholder">No info available</string>
+    <string name="mr_chooser_looking_for_devices">Looking for devices...</string>
+    <string name="mr_chooser_searching">Finding devices</string>
+    <string name="mr_chooser_title">Cast to</string>
+    <string name="mr_chooser_wifi_learn_more"><a href="https://support.google.com/chromecast/?p=trouble-finding-devices">Learn more</a></string>
+    <string name="mr_chooser_wifi_warning_description_car">Make sure the other device is on the same Wi-Fi network as this car</string>
+    <string name="mr_chooser_wifi_warning_description_phone">Make sure the other device is on the same Wi-Fi network as this phone</string>
+    <string name="mr_chooser_wifi_warning_description_tablet">Make sure the other device is on the same Wi-Fi network as this tablet</string>
+    <string name="mr_chooser_wifi_warning_description_tv">Make sure the other device is on the same Wi-Fi network as this tv</string>
+    <string name="mr_chooser_wifi_warning_description_unknown">Make sure the other device is on the same Wi-Fi network as this device</string>
+    <string name="mr_chooser_wifi_warning_description_watch">Make sure the other device is on the same Wi-Fi network as this watch</string>
+    <string name="mr_chooser_zero_routes_found_title">No devices available</string>
+    <string name="mr_controller_album_art">Album art</string>
+    <string name="mr_controller_casting_screen">Casting screen</string>
+    <string name="mr_controller_close_description">Close</string>
+    <string name="mr_controller_collapse_group">Collapse</string>
+    <string name="mr_controller_disconnect">Disconnect</string>
+    <string name="mr_controller_expand_group">Expand</string>
+    <string name="mr_controller_no_info_available">No info available</string>
+    <string name="mr_controller_no_media_selected">No media selected</string>
+    <string name="mr_controller_pause">Pause</string>
+    <string name="mr_controller_play">Play</string>
+    <string name="mr_controller_stop">Stop</string>
+    <string name="mr_controller_stop_casting">Stop casting</string>
+    <string name="mr_controller_volume_slider">Volume slider</string>
+    <string name="mr_dialog_default_group_name">Group</string>
+    <string name="mr_dialog_groupable_header">Add a device</string>
+    <string name="mr_dialog_transferable_header">Play on a group</string>
+    <string name="mr_system_route_name">System</string>
+    <string name="mr_user_route_category_name">Devices</string>
+    <string name="msg_all_fields_required">All fields are required</string>
+    <string name="msg_copied">Copied</string>
+    <string name="msg_failed">Failed</string>
+    <string name="msg_password_min">Password must be at least 8 characters</string>
+    <string name="msg_passwords_no_match">Passwords do not match</string>
+    <string name="msg_register_failed">Registration failed</string>
+    <string name="msg_sign_in_failed">Sign in failed</string>
+    <string name="msg_too_many_attempts_fmt">Too many attempts. Try again in %1$ds</string>
+    <string name="msg_username_empty">Username cannot be empty</string>
+    <string name="msg_username_password_required">Username and password required</string>
+    <string name="msg_username_rules">Username: 3–30 characters, letters/numbers/underscore only</string>
+    <string name="mtrl_badge_numberless_content_description">New notification</string>
+    <string name="mtrl_checkbox_button_icon_path_checked">M14,18.2 11.4,15.6 10,17 14,21 22,13 20.6,11.6z</string>
+    <string name="mtrl_checkbox_button_icon_path_group_name">icon</string>
+    <string name="mtrl_checkbox_button_icon_path_indeterminate">M13.4,15 11,15 11,17 13.4,17 21,17 21,15z</string>
+    <string name="mtrl_checkbox_button_icon_path_name">icon path</string>
+    <string name="mtrl_checkbox_button_path_checked">M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z</string>
+    <string name="mtrl_checkbox_button_path_group_name">button</string>
+    <string name="mtrl_checkbox_button_path_name">button path</string>
+    <string name="mtrl_checkbox_button_path_unchecked">M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z M23,23H9V9h14V23z</string>
+    <string name="mtrl_checkbox_state_description_checked">Checked</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">Partially checked</string>
+    <string name="mtrl_checkbox_state_description_unchecked">Not checked</string>
+    <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
+    <string name="mtrl_exceed_max_badge_number_content_description">More than %1$d new notifications</string>
+    <string name="mtrl_exceed_max_badge_number_suffix">%1$d%2$s</string>
+    <string name="mtrl_picker_a11y_next_month">Change to next month</string>
+    <string name="mtrl_picker_a11y_prev_month">Change to previous month</string>
+    <string name="mtrl_picker_announce_current_range_selection">Start date selection: %1$s – End date selection: %2$s</string>
+    <string name="mtrl_picker_announce_current_selection">Current selection: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection_none">none</string>
+    <string name="mtrl_picker_cancel">Cancel</string>
+    <string name="mtrl_picker_confirm">OK</string>
+    <string name="mtrl_picker_date_header_selected">%1$s</string>
+    <string name="mtrl_picker_date_header_title">Select Date</string>
+    <string name="mtrl_picker_date_header_unselected">Selected date</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
+    <string name="mtrl_picker_end_date_description">End date %1$s</string>
+    <string name="mtrl_picker_invalid_format">Invalid format.</string>
+    <string name="mtrl_picker_invalid_format_example">Example: %1$s</string>
+    <string name="mtrl_picker_invalid_format_use">Use: %1$s</string>
+    <string name="mtrl_picker_invalid_range">Invalid range.</string>
+    <string name="mtrl_picker_navigate_to_current_year_description">Navigate to current year %1$d</string>
+    <string name="mtrl_picker_navigate_to_year_description">Navigate to year %1$d</string>
+    <string name="mtrl_picker_out_of_range">Out of range: %1$s</string>
+    <string name="mtrl_picker_range_header_only_end_selected">Start date – %1$s</string>
+    <string name="mtrl_picker_range_header_only_start_selected">%1$s – End date</string>
+    <string name="mtrl_picker_range_header_selected">%1$s – %2$s</string>
+    <string name="mtrl_picker_range_header_title">Select Range</string>
+    <string name="mtrl_picker_range_header_unselected">Start date – End date</string>
+    <string name="mtrl_picker_save">Save</string>
+    <string name="mtrl_picker_start_date_description">Start date %1$s</string>
+    <string name="mtrl_picker_text_input_date_hint">Date</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint">End date</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint">Start date</string>
+    <string name="mtrl_picker_text_input_day_abbr">d</string>
+    <string name="mtrl_picker_text_input_month_abbr">m</string>
+    <string name="mtrl_picker_text_input_year_abbr">y</string>
+    <string name="mtrl_picker_today_description">Today %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode">Switch to calendar input mode</string>
+    <string name="mtrl_picker_toggle_to_day_selection">Tap to switch to Calendar view</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
+    <string name="mtrl_picker_toggle_to_year_selection">Tap to switch to year view</string>
+    <string name="mtrl_switch_thumb_group_name">circle_group</string>
+    <string name="mtrl_switch_thumb_path_checked">M4,16 A12,12 0 0,1 16,4 H16 A12,12 0 0,1 16,28 H16 A12,12 0 0,1 4,16</string>
+    <string name="mtrl_switch_thumb_path_morphing">M0,16 A11,11 0 0,1 11,5 H21 A11,11 0 0,1 21,27 H11 A11,11 0 0,1 0,16</string>
+    <string name="mtrl_switch_thumb_path_name">circle</string>
+    <string name="mtrl_switch_thumb_path_pressed">M2,16 A14,14 0 0,1 16,2 H16 A14,14 0 0,1 16,30 H16 A14,14 0 0,1 2,16</string>
+    <string name="mtrl_switch_thumb_path_unchecked">M8,16 A8,8 0 0,1 16,8 H16 A8,8 0 0,1 16,24 H16 A8,8 0 0,1 8,16</string>
+    <string name="mtrl_switch_track_decoration_path">M1,16 A15,15 0 0,1 16,1 H36 A15,15 0 0,1 36,31 H16 A15,15 0 0,1 1,16</string>
+    <string name="mtrl_switch_track_path">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
+    <string name="mtrl_timepicker_cancel">Cancel</string>
+    <string name="mtrl_timepicker_confirm">OK</string>
+    <string name="my_list_empty">"Your list is empty.
+
+Add movies and shows from the detail page."</string>
+    <string name="mylist_search_hint">Search in your list</string>
+    <string name="nav_about">About</string>
+    <string name="nav_close_drawer">Close menu</string>
+    <string name="nav_history">History</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_more">More</string>
+    <string name="nav_mylist">My List</string>
+    <string name="nav_open_drawer">Open menu</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_support">Support</string>
+    <string name="next_episode_auto">Plays automatically at the end</string>
+    <string name="next_episode_cancel">Cancel</string>
+    <string name="next_episode_countdown_fmt">Playing in %1$ds</string>
+    <string name="next_episode_label">Next Episode</string>
+    <string name="next_episode_play_now">Play Next</string>
+    <string name="no_description_available">No description available yet.</string>
+    <string name="no_streams_found">Nothing out there. The servers are ghosting us.</string>
+    <string name="not_set">Not set</string>
+    <string name="pair_phone_confirm_body_fmt">%1$s will be signed in to your account %2$s.</string>
+    <string name="pair_phone_confirm_title">Sign in on this TV?</string>
+    <string name="pair_phone_confirm_warning">Only continue if this code is on your own TV screen right now. Never approve a code someone sent you.</string>
+    <string name="pair_phone_done_fmt">%1$s is signed in</string>
+    <string name="pair_phone_enter_title">Code from your TV</string>
+    <string name="pair_phone_not_found">"That code doesn't exist or has expired. Ask for a new code on the TV."</string>
+    <string name="pair_phone_row">Sign in on TV</string>
+    <string name="pair_phone_row_sub">With the code on your TV, no password needed</string>
+    <string name="pair_phone_sign_in_first">Sign in on this phone first, then you can link your TV.</string>
+    <string name="pair_scan_allow">Allow camera</string>
+    <string name="pair_scan_button">Scan QR code</string>
+    <string name="pair_scan_hint">Point your camera at the QR code on your TV</string>
+    <string name="pair_scan_no_camera">To scan the code, ClipBox needs your camera. It is only used while this screen is open.</string>
+    <string name="pair_scan_torch">Flashlight</string>
+    <string name="pair_scan_type_instead">Type the code instead</string>
+    <string name="pair_scan_wrong">That is not a ClipBox TV code. Scan the code on your TV.</string>
+    <string name="pair_tv_button">Sign in with your phone</string>
+    <string name="pair_tv_confirm_hint">Confirm on your phone and this TV signs in by itself.</string>
+    <string name="pair_tv_done_fmt">Signed in as %1$s</string>
+    <string name="pair_tv_expires_fmt">Code valid for %1$s</string>
+    <string name="pair_tv_failed">Could not get a code. Check the connection and try again.</string>
+    <string name="pair_tv_new_code">New code</string>
+    <string name="pair_tv_or_code">Or open ClipBox on your phone, go to Account, then Sign in on TV, and enter the code under the QR code.</string>
+    <string name="pair_tv_scan">"Scan the code with your phone's camera"</string>
+    <string name="pair_tv_waiting">Waiting for your phone…</string>
+    <string name="parental_age_fmt">%1$d and under</string>
+    <string name="parental_age_limit">Age limit</string>
+    <string name="parental_age_off">Off, show everything</string>
+    <string name="parental_blocked_toast">This title is blocked by parental controls.</string>
+    <string name="parental_change_pin">Change PIN</string>
+    <string name="parental_confirm_pin">Enter it again</string>
+    <string name="parental_enter_pin">Enter your PIN</string>
+    <string name="parental_explainer">"Titles rated above the age you choose are hidden everywhere in the app, not just blocked from playing.
+
+Titles with no age rating are hidden too. If we cannot find out how old a title is meant to be, it is not shown."</string>
+    <string name="parental_needs_pin">Set a PIN first, so the limit can be lifted again.</string>
+    <string name="parental_new_pin">Choose a four digit PIN</string>
+    <string name="parental_pin_mismatch">Those did not match.</string>
+    <string name="parental_pin_short">A PIN is four digits.</string>
+    <string name="parental_pin_wrong">Wrong PIN.</string>
+    <string name="parental_set_pin">Set a PIN</string>
+    <string name="parental_title">Parental controls</string>
+    <string name="parental_turn_off">Turn off parental controls</string>
+    <string name="password_toggle_content_description">Show password</string>
+    <string name="paste_url_button">Paste stream URL</string>
+    <string name="paste_url_hint">https://… (.mp4, .m3u8)</string>
+    <string name="paste_url_title">Drop a stream URL</string>
+    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="pick_audio_track">Pick an audio track</string>
+    <string name="pick_server">Pick a server</string>
+    <string name="pip_button">Picture in picture</string>
+    <string name="play">Play</string>
+    <string name="play_episode_fmt">S%1$d • E%2$d</string>
+    <string name="playback_speed_title">Playback speed</string>
+    <string name="player_ad_badge">Ad</string>
+    <string name="player_no_episode_match">No exact episode match found, showing top results</string>
+    <string name="player_no_quality">No quality variants</string>
+    <string name="player_skip_ad">Skip ad ›</string>
+    <string name="player_try_different_server">Try different server</string>
+    <string name="preference_copied">\"%1$s\" copied to clipboard.</string>
+    <string name="premium_benefit_ads">No ads, ever</string>
+    <string name="premium_benefit_devices_fmt">On up to &lt;b>%1$d devices&lt;/b> with your account</string>
+    <string name="premium_benefit_lifetime">Every future update included</string>
+    <string name="premium_benefit_priority">Exclusive server queue priority</string>
+    <string name="premium_benefit_status_fmt">Exclusive &lt;b>%1$s&lt;/b> profile status</string>
+    <string name="premium_benefit_support">Keeps the servers running and the app improving</string>
+    <string name="premium_devices">Your devices</string>
+    <string name="premium_devices_fmt">Your devices (%1$d of %2$d)</string>
+    <string name="premium_footnote">VIP belongs to your account, so it follows you to every device you sign in on. Payments go through our own payment server: no bank details, no personal data.</string>
+    <string name="premium_get_vip">Get VIP</string>
+    <string name="premium_get_vip_from_fmt">No ads, from $%1$s once</string>
+    <string name="premium_get_vip_sub">No ads, $%1$s once</string>
+    <string name="premium_info_button">How it works</string>
+    <string name="premium_info_crypto_body">"It only takes a few minutes:
+
+1. Tap Pay with crypto. Our payment page opens.
+2. Choose Bitcoin, or another coin you have.
+3. Pay from your wallet app: scan the QR code, or tap the button that opens your wallet. The amount is already filled in.
+
+That is all. VIP switches on by itself as soon as the payment is seen. You can close the page and keep watching."</string>
+    <string name="premium_info_crypto_body_tv">"It only takes a few minutes:
+
+1. Scan the QR code on the TV with your phone camera. Our payment page opens on your phone.
+2. Choose Bitcoin, or another coin you have.
+3. Pay from your wallet app: tap the button that opens your wallet. The amount is already filled in.
+
+That is all. VIP switches on by itself on this TV as soon as the payment is seen."</string>
+    <string name="premium_info_crypto_title">Paying with crypto</string>
+    <string name="premium_info_voucher_body">"No crypto? A voucher works like a gift card, and it only takes a few minutes:
+
+1. Tap Redeem an Azteco voucher › Where do I buy a voucher? and buy an Azteco Bitcoin voucher (On-Chain) in one of the shops. You pay the usual way, for example by card.
+2. You get a code of 16 digits.
+3. In ClipBox, tap Redeem an Azteco voucher, then Bitcoin voucher. Our voucher page opens.
+4. Enter the code there. We redeem it for you and check that it arrived.
+
+That is all. VIP switches on by itself within a few minutes."</string>
+    <string name="premium_info_voucher_body_tv">"No crypto? A voucher works like a gift card, and it only takes a few minutes:
+
+1. Buy an Azteco Bitcoin voucher (On-Chain) online, for example at G2A or Kinguin. You pay the usual way and get a code of 16 digits.
+2. On the TV, choose Bitcoin voucher and scan the QR code with your phone camera. Our voucher page opens on your phone.
+3. Enter the code there. We redeem it for you and check that it arrived.
+
+That is all. VIP switches on by itself on this TV within a few minutes."</string>
+    <string name="premium_info_voucher_title">Paying with a voucher</string>
+    <string name="premium_join_now">Join now</string>
+    <string name="premium_not_open">Buying VIP opens soon. Check back in a little while.</string>
+    <string name="premium_now_founders">"You're a Founder now. Your badge is on your account."</string>
+    <string name="premium_now_vip">"You're VIP now. Your badge is on your account."</string>
+    <string name="premium_pay_crypto">Pay with crypto</string>
+    <string name="premium_pay_crypto_sub">Bitcoin, Lightning and more</string>
+    <string name="premium_pay_crypto_sub_plain">Bitcoin and more</string>
+    <string name="premium_price_fmt">$%1$s</string>
+    <string name="premium_price_note">once, no subscription</string>
+    <string name="premium_scan_amount_fmt">Amount: $%1$s</string>
+    <string name="premium_scan_body">Scan this code with your phone camera to open the payment page. This screen updates by itself when the payment arrives.</string>
+    <string name="premium_scan_open_title">Scan to open on your phone</string>
+    <string name="premium_scan_title">Scan to pay</string>
+    <string name="premium_section_pay">Get VIP</string>
+    <string name="premium_sign_in">Sign in to get VIP</string>
+    <string name="premium_sign_in_hint">No account yet? Creating one is free and takes about a minute.</string>
+    <string name="premium_sign_in_needed">VIP is tied to your account, so it works on your phone and your TV. Sign in or create a free account first.</string>
+    <string name="premium_state_admin_body">VIP was given to your account. No ads on any device you sign in on.</string>
+    <string name="premium_state_confirming_body">VIP is on already. The payment is waiting for its network confirmation, which usually takes 10 to 60 minutes. Nothing else to do.</string>
+    <string name="premium_state_confirming_title">Payment received</string>
+    <string name="premium_state_partial_body_fmt">You have paid $%1$s. $%2$s more and VIP is yours. What you paid is kept on your account.</string>
+    <string name="premium_state_partial_title">Almost there</string>
+    <string name="premium_state_vip_body">No ads on any device you sign in on. Thank you for supporting ClipBox.</string>
+    <string name="premium_state_vip_title">You are VIP</string>
+    <string name="premium_state_waiting_body">Finish paying on the payment page. This screen updates by itself as soon as the payment is seen.</string>
+    <string name="premium_state_waiting_title">Waiting for your payment</string>
+    <string name="premium_tagline">One payment. Yours for life.</string>
+    <string name="premium_tier_founders">Founders</string>
+    <string name="premium_tier_vip">VIP</string>
+    <string name="premium_title">ClipBox VIP</string>
+    <string name="premium_tv_phone_hint">Got a Lightning voucher? Redeem it in ClipBox on your phone, signed in to the same account. VIP follows your account to this TV.</string>
+    <string name="premium_tv_scan">Scan with your phone to pay</string>
+    <string name="premium_tv_show_checkout">Pay with crypto</string>
+    <string name="premium_tv_show_voucher">Bitcoin voucher</string>
+    <string name="premium_tv_voucher_scan">Scan to enter your voucher code</string>
+    <string name="premium_unavailable">Payments are unavailable right now. Please try again later.</string>
+    <string name="premium_upgrade_note">to upgrade</string>
+    <string name="premium_upgrade_sub">More devices and extra perks</string>
+    <string name="premium_upgrade_title">Upgrade to Founders</string>
+    <string name="premium_vip_active">Active for life</string>
+    <string name="premium_voucher">Redeem an Azteco voucher</string>
+    <string name="premium_voucher_sub">Vouchers you can buy with cash or a card</string>
+    <string name="premium_welcome_toast">Welcome to VIP. Ads are off.</string>
+    <string name="quality_auto">Auto</string>
+    <string name="quality_auto_short">Auto</string>
+    <string name="quality_no_variants">No quality variants available.</string>
+    <string name="quality_title">Quality</string>
+    <string name="rating_all">All</string>
+    <string name="ready_to_load">ready to load</string>
+    <string name="recovery_code_hint">Recovery code</string>
+    <string name="recovery_failed">Recovery failed</string>
+    <string name="recovery_forgot_info">Enter your username and the recovery code you saved at sign-up to set a new password.</string>
+    <string name="recovery_regenerate_confirm">Generate a new recovery code? Any previous code stops working. The new code is shown only once.</string>
+    <string name="recovery_reset_btn">Reset</string>
+    <string name="recovery_reset_success">"Password reset, you're signed in."</string>
+    <string name="recovery_save_info">"Save this code somewhere safe! It's the only way to reset your password if you forget it, and any previous code no longer works. It won't be shown again."</string>
+    <string name="recovery_saved_btn">"I've saved it"</string>
+    <string name="register_terms_link">Terms &amp; Conditions</string>
+    <string name="register_terms_notice">By creating an account you agree to our Terms &amp; Conditions</string>
+    <string name="remove_from_continue">Remove</string>
+    <string name="remove_from_favourites">Remove from Favourites</string>
+    <string name="remove_from_my_list">Remove from My List</string>
+    <string name="removed_from_continue">Removed from Continue watching</string>
+    <string name="removed_from_favourites">Removed from Favourites</string>
+    <string name="removed_from_my_list">Removed from My List</string>
+    <string name="reset_default">Reset</string>
+    <string name="resume_dialog_msg_fmt">You stopped at %1$s. Pick up there?</string>
+    <string name="resume_dialog_resume">Resume</string>
+    <string name="resume_dialog_start_over">Start over</string>
+    <string name="resume_dialog_title">Continue watching?</string>
+    <string name="resume_finished_msg_fmt">You watched this to %1$s, which is the end. Start it again, or go back there?</string>
+    <string name="resume_finished_title">You already finished this</string>
+    <string name="retry">Retry</string>
+    <string name="rotation_lock_desc">Lock rotation</string>
+    <string name="row_box_office">Box Office</string>
+    <string name="row_companies">Studios</string>
+    <string name="row_continue_watching">Continue watching</string>
+    <string name="row_latest_releases">Latest Releases</string>
+    <string name="row_networks">Networks</string>
+    <string name="row_on_the_air">On The Air</string>
+    <string name="row_popular_movies">Popular Movies</string>
+    <string name="row_popular_tv">Popular TV Shows</string>
+    <string name="row_recommended">Recommended for you</string>
+    <string name="row_see_all">All</string>
+    <string name="row_trending_now">Trending Now</string>
+    <string name="row_trending_series">Trending Series</string>
+    <string name="save_to_my_list">Save to My List</string>
+    <string name="search_clear">Clear</string>
+    <string name="search_clear_history">Clear all</string>
+    <string name="search_clear_history_confirm">Clear your recent searches?</string>
+    <string name="search_corrected_fmt">Showing results for \"%1$s\"</string>
+    <string name="search_empty_hint">Start typing to search</string>
+    <string name="search_filter_all">All</string>
+    <string name="search_filter_movies">Movies</string>
+    <string name="search_filter_newest">Newest</string>
+    <string name="search_filter_no_matches">Nothing in this search matches that filter.</string>
+    <string name="search_filter_series">Series</string>
+    <string name="search_filter_top_rated">Top rated</string>
+    <string name="search_hint">Search movies and shows</string>
+    <string name="search_in_network">Search in %1$s…</string>
+    <string name="search_language_hint">Search language...</string>
+    <string name="search_menu_title">Search</string>
+    <string name="search_no_results_fmt">No results for \"%1$s\"</string>
+    <string name="search_recent">Recent searches</string>
+    <string name="search_suggestions">Suggestions</string>
+    <string name="searchbar_scrolling_view_behavior">com.google.android.material.search.SearchBar$ScrollingViewBehavior</string>
+    <string name="searching_subtitle">Searching for a subtitle…</string>
+    <string name="searchview_clear_text_content_description">Clear text</string>
+    <string name="searchview_navigation_content_description">Back</string>
+    <string name="season_episode_fmt">S%1$d • E%2$d</string>
+    <string name="season_fmt">Season %d</string>
+    <string name="season_title">Season</string>
+    <string name="select">Select</string>
+    <string name="select_all">Select All</string>
+    <string name="select_items_to_remove">Select items to remove</string>
+    <string name="series_finished">"That's the finale — no more episodes."</string>
+    <string name="server_desc_alternative">Alternative server</string>
+    <string name="server_desc_backup">Good reliability • Backup server</string>
+    <string name="server_desc_experimental">Experimental server • Backup source</string>
+    <string name="server_desc_fastest">Fastest response • High reliability</string>
+    <string name="server_desc_indian_audio">Multiple audio languages</string>
+    <string name="server_desc_stable">High reliability • Stable connection</string>
+    <string name="server_name_fmt">Server %1$d</string>
+    <string name="server_name_generic">Server</string>
+    <string name="server_option_fmt">Option %1$d</string>
+    <string name="servers_experimental_data">Leaving this OFF consumes more data.</string>
+    <string name="servers_experimental_notice">"Experimental, some servers may not work. Pick another server if it doesn't load."</string>
+    <string name="servers_finding_experimental">Finding servers in different languages…</string>
+    <string name="servers_label">Servers (%1$d)</string>
+    <string name="servers_none_experimental">No language-specific servers for this title</string>
+    <string name="servers_probe_progress">Found %1$d · checked %2$d of %3$d · %4$ds left</string>
+    <string name="servers_probe_starting">Starting… %1$ds left</string>
+    <string name="servers_tab_experimental">More languages</string>
+    <string name="servers_tab_main">Standard</string>
+    <string name="settings_about">About ClipBox</string>
+    <string name="settings_about_summary">Version info, credits and changelog</string>
+    <string name="settings_account">My account</string>
+    <string name="settings_account_loggedout">Not signed in</string>
+    <string name="settings_app_version">App version</string>
+    <string name="settings_audio_normalize">Normalize audio</string>
+    <string name="settings_audio_normalize_summary">Evens out quiet and loud passages in every stream</string>
+    <string name="settings_auto_enable_subs">Auto-enable subtitles</string>
+    <string name="settings_auto_enable_subs_summary">Automatically turn on subtitles in your preferred language</string>
+    <string name="settings_auto_pip">Auto picture-in-picture</string>
+    <string name="settings_auto_pip_summary">Float video when leaving the app (like YouTube)</string>
+    <string name="settings_auto_resume">Auto-resume playback</string>
+    <string name="settings_auto_resume_summary">Jump straight to where you left off, without asking</string>
+    <string name="settings_autoplay">Autoplay next stream on error</string>
+    <string name="settings_autoplay_summary">Skip to next server when one fails</string>
+    <string name="settings_clear_resume">Clear saved positions</string>
+    <string name="settings_clear_resume_done">All cleared.</string>
+    <string name="settings_clear_resume_summary">Forget where every video stopped</string>
+    <string name="settings_double_tap">Double-tap to seek</string>
+    <string name="settings_double_tap_summary">Skip 10s by double-tapping screen sides</string>
+    <string name="settings_gestures">Volume / brightness gestures</string>
+    <string name="settings_gestures_summary">Swipe left for brightness, right for volume</string>
+    <string name="settings_interface">Interface</string>
+    <string name="settings_interface_summary">Which layout this device uses (restarts the app)</string>
+    <string name="settings_lang_en">English</string>
+    <string name="settings_lang_nl">Nederlands</string>
+    <string name="settings_lang_system">Follow system</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_summary">Choose your vibe</string>
+    <string name="settings_next_episode">Autoplay next episode</string>
+    <string name="settings_next_episode_summary">Show a countdown at the credits and continue on its own</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_summary">Receive announcements and updates from ClipBox</string>
+    <string name="settings_parental">Parental controls</string>
+    <string name="settings_parental_off">Off</string>
+    <string name="settings_parental_on_fmt">Hiding titles rated above %1$d</string>
+    <string name="settings_pref_sub_lang">Preferred language</string>
+    <string name="settings_reset_app">Reset app</string>
+    <string name="settings_reset_app_confirm">This erases all app data and closes ClipBox. Continue?</string>
+    <string name="settings_reset_app_summary">Erase all data and start fresh</string>
+    <string name="settings_reset_tips">Clear My List, Favourites and Continue watching</string>
+    <string name="settings_reset_tips_confirm">Clear your entire My List, your Favourites, and everything you are part way through?</string>
+    <string name="settings_reset_tips_done">My List, Favourites and Continue watching cleared.</string>
+    <string name="settings_reset_tips_summary">Remove every saved and favourited title, and stop resuming anything</string>
+    <string name="settings_resolution">Preferred resolution</string>
+    <string name="settings_resolution_auto">Auto (highest)</string>
+    <string name="settings_resume">Remember playback position</string>
+    <string name="settings_resume_summary">Pick up where you left off</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_section_advanced">Advanced</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_interface">Interface</string>
+    <string name="settings_section_parental">Parental controls</string>
+    <string name="settings_section_player">Player</string>
+    <string name="settings_section_reset">Reset</string>
+    <string name="settings_section_subtitles">Subtitles</string>
+    <string name="settings_section_support">Help</string>
+    <string name="settings_show_adult">Allow adult content</string>
+    <string name="settings_show_adult_summary">Include erotic and adult movies in search and rows</string>
+    <string name="settings_show_poster_meta">Show ratings &amp; year</string>
+    <string name="settings_show_poster_meta_summary">Display score and release year on poster cards</string>
+    <string name="settings_size_huge">Huge</string>
+    <string name="settings_size_large">Large</string>
+    <string name="settings_size_normal">Normal</string>
+    <string name="settings_size_small">Small</string>
+    <string name="settings_static_sources">Ready-made list for Languages tab</string>
+    <string name="settings_static_sources_summary">Shows the list instantly instead of scraping all sources in the background. Leaving this OFF consumes more data.</string>
+    <string name="settings_subtitle_auto_sync">Fix subtitle timing automatically</string>
+    <string name="settings_subtitle_auto_sync_summary">Corrects subtitles automatically using AI. Uses extra data and processing power. One-off 57 MB download, deleted again when you turn this off.</string>
+    <string name="settings_subtitle_bg">Subtitle background</string>
+    <string name="settings_subtitle_bg_summary">Black box behind text</string>
+    <string name="settings_subtitle_color">Subtitle color</string>
+    <string name="settings_subtitle_position">Subtitle position</string>
+    <string name="settings_subtitle_position_summary">Move the subtitles up or down the picture</string>
+    <string name="settings_subtitle_size">Subtitle size</string>
+    <string name="settings_subtitle_size_summary">How big you need them subs</string>
+    <string name="settings_support_summary">Answers to the usual problems, and how to reach us</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_tv_mode">TV mode</string>
+    <string name="settings_tv_mode_summary">Use the television layout on this device (restarts the app)</string>
+    <string name="settings_tv_poster_size">Card size</string>
+    <string name="settings_wifi_only">Play on Wi-Fi only</string>
+    <string name="settings_wifi_only_summary">Stop playback and casting from using mobile data</string>
+    <string name="share">Share</string>
+    <string name="share_text_fmt">Check out %1$s: %2$s</string>
+    <string name="share_via">Share via</string>
+    <string name="shelf_true_crime">True crime</string>
+    <string name="side_sheet_accessibility_pane_title">Side Sheet</string>
+    <string name="side_sheet_behavior">com.google.android.material.sidesheet.SideSheetBehavior</string>
+    <string name="skip_intro">Skip intro</string>
+    <string name="skip_outro">Skip credits</string>
+    <string name="skip_outro_countdown_fmt">Next episode in %1$ds</string>
+    <string name="skip_outro_finale">Skip credits</string>
+    <string name="skip_recap">Skip recap</string>
+    <string name="sort_newest">Newest</string>
+    <string name="sort_popular">Popular</string>
+    <string name="sort_rating">Top rated</string>
+    <string name="sort_title">Title (A to Z)</string>
+    <string name="sort_title_desc">Title (Z to A)</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_loading_info">"I'm looking for the best server. This can take a while, give it a moment. You can also pick a server manually."</string>
+    <string name="status_searching">Hunting something down…</string>
+    <string name="status_stream_failed_fmt">That one flopped — trying %1$s…</string>
+    <string name="status_trying_fmt">Giving %1$s a shot…</string>
+    <string name="subtitle_autosync_action">Auto-sync subtitles</string>
+    <string name="subtitle_autosync_already">Subtitles are already in sync.</string>
+    <string name="subtitle_autosync_applied_fmt">Subtitles moved %1$+.2f s</string>
+    <string name="subtitle_autosync_done_fmt">Sync succeeded! Subtitles moved %1$+.2f s</string>
+    <string name="subtitle_autosync_started">Auto-sync started</string>
+    <string name="subtitle_autosynced">Subtitle synced automatically</string>
+    <string name="subtitle_change">Change subtitle</string>
+    <string name="subtitle_color_cream">Cream</string>
+    <string name="subtitle_color_cyan">Cyan</string>
+    <string name="subtitle_color_gold">Gold</string>
+    <string name="subtitle_color_green">Green</string>
+    <string name="subtitle_color_orange">Orange</string>
+    <string name="subtitle_color_pink">Pink</string>
+    <string name="subtitle_color_purple">Purple</string>
+    <string name="subtitle_color_silver">Silver</string>
+    <string name="subtitle_color_white">White</string>
+    <string name="subtitle_color_yellow">Yellow</string>
+    <string name="subtitle_find_all_langs">All languages</string>
+    <string name="subtitle_find_hint">Title or release name</string>
+    <string name="subtitle_find_online">Find subtitles online</string>
+    <string name="subtitle_found_late">Auto-subtitle available (%1$s). Open CC menu to enable.</string>
+    <string name="subtitle_import">Import subtitle file…</string>
+    <string name="subtitle_import_failed">Failed to read subtitle file</string>
+    <string name="subtitle_import_invalid">Invalid subtitle file format</string>
+    <string name="subtitle_import_none">No subtitle files found on this device</string>
+    <string name="subtitle_import_picker_title">Pick subtitle file</string>
+    <string name="subtitle_imported_label">Imported</string>
+    <string name="subtitle_imported_toast">Subtitles imported</string>
+    <string name="subtitle_languages">Language</string>
+    <string name="subtitle_need_load">Load a subtitle first, then adjust its timing.</string>
+    <string name="subtitle_need_load_translate">Load a subtitle first, then translate it.</string>
+    <string name="subtitle_none_found">No subtitles found for this language</string>
+    <string name="subtitle_not_found">Came up empty. Try a different title.</string>
+    <string name="subtitle_options">Options</string>
+    <string name="subtitle_pick_result">Pick a subtitle</string>
+    <string name="subtitle_position_default">Default</string>
+    <string name="subtitle_position_higher">Higher</string>
+    <string name="subtitle_position_lower">Lower</string>
+    <string name="subtitle_preparing">Preparing subtitles…</string>
+    <string name="subtitle_preview_sample">This is how your subtitles will look</string>
+    <string name="subtitle_search">Auto search subtitles</string>
+    <string name="subtitle_search_error">Could not reach subtitle servers. Check your connection.</string>
+    <string name="subtitle_search_go">Search</string>
+    <string name="subtitle_search_hint">Movie title</string>
+    <string name="subtitle_search_lang_hint">Search language…</string>
+    <string name="subtitle_search_manual">Manual search</string>
+    <string name="subtitle_searching">Rummaging through subtitles…</string>
+    <string name="subtitle_speechsync_disagree">The dialogue was recognised, but it points to different timings in different scenes, so nothing was changed.</string>
+    <string name="subtitle_speechsync_download">Download</string>
+    <string name="subtitle_speechsync_downloading">Getting ready…</string>
+    <string name="subtitle_speechsync_downloading_pct">Getting ready… %1$d%%</string>
+    <string name="subtitle_speechsync_listening_fmt">Listening to the dialogue… %1$d of %2$d</string>
+    <string name="subtitle_speechsync_metered_fmt">This listens to the speech to work out the timing. It needs a one-off %1$d MB download, and you are not on Wi‑Fi.</string>
+    <string name="subtitle_speechsync_nomatch">Nothing that was said appears in this subtitle. It may be for a different version of this title.</string>
+    <string name="subtitle_speechsync_ready">Ready — subtitles can be synced now</string>
+    <string name="subtitle_speechsync_removed">AI file removed - 57 MB freed up</string>
+    <string name="subtitle_speechsync_title">Sync subtitles</string>
+    <string name="subtitle_style_bg">Background box</string>
+    <string name="subtitle_style_color">Text color</string>
+    <string name="subtitle_style_menu">Subtitle appearance</string>
+    <string name="subtitle_style_position">Position on screen</string>
+    <string name="subtitle_style_size">Size</string>
+    <string name="subtitle_style_title">Subtitle appearance</string>
+    <string name="subtitle_sync_earlier">−0.25s (earlier)</string>
+    <string name="subtitle_sync_earlier_big">−2s</string>
+    <string name="subtitle_sync_hint">If the subtitles run ahead, make them later. If they lag behind, make them earlier.</string>
+    <string name="subtitle_sync_later">+0.25s (later)</string>
+    <string name="subtitle_sync_later_big">+2s</string>
+    <string name="subtitle_sync_menu">Adjust timing (sync)</string>
+    <string name="subtitle_sync_offset_fmt">Offset: %1$+.2f s</string>
+    <string name="subtitle_sync_reset">Reset</string>
+    <string name="subtitle_sync_title">Subtitle timing</string>
+    <string name="subtitle_tapsync_applied_rate_fmt">Subtitles moved %1$+.2f s, and drift corrected for the rest</string>
+    <string name="subtitle_tapsync_disagree">The two readings did not agree, so nothing was changed. Try again during a scene with clear speech.</string>
+    <string name="subtitle_tapsync_drift_fixed">Drift corrected. The subtitles will stay in step now.</string>
+    <string name="subtitle_tapsync_failed">Could not work out the timing. Try again during a scene with clear speech.</string>
+    <string name="subtitle_tapsync_hint">You can close this — it keeps working.</string>
+    <string name="subtitle_tapsync_listening_early">Listening near the start…</string>
+    <string name="subtitle_tapsync_listening_late">Listening near the end…</string>
+    <string name="subtitle_tapsync_needs_play">Start playback — this listens to the audio.</string>
+    <string name="subtitle_tapsync_progress_fmt">Listening to the audio… %1$ds of %2$ds</string>
+    <string name="subtitle_tapsync_title">Sync subtitles</string>
+    <string name="subtitle_tapsync_working">Working out the timing…</string>
+    <string name="subtitle_toggle_off">Turn subtitles off</string>
+    <string name="subtitle_toggle_on">Turn subtitles on</string>
+    <string name="subtitle_translate_done">Subtitle translated</string>
+    <string name="subtitle_translate_failed">Translation failed</string>
+    <string name="subtitle_translate_failed_fmt">Could not translate to %1$s. Showing the original subtitles instead.</string>
+    <string name="subtitle_translate_menu">Translate subtitle…</string>
+    <string name="subtitle_translate_title">Translate to</string>
+    <string name="subtitle_translated_fmt">%1$s (translated)</string>
+    <string name="subtitle_translated_note">Translated to %1$s</string>
+    <string name="subtitle_translating">Translating…</string>
+    <string name="subtitle_translating_from_fmt">No %1$s subtitles for this title — translating…</string>
+    <string name="subtitle_translating_pct">Translating… %1$d%%</string>
+    <string name="subtitle_unknown">unknown</string>
+    <string name="subtitles_button">Subtitles</string>
+    <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <string name="super_milan_mode">Oui oui</string>
+    <string name="support_no_browser">No app on this device can open that link</string>
+    <string name="support_offline">The help desk could not be reached. Check your connection.</string>
+    <string name="support_retry">Try again</string>
+    <string name="sync_only_downloaded">Only available for downloaded subtitles</string>
+    <string name="tab_all">All</string>
+    <string name="tab_favourites">Favourites</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_movies">Movies</string>
+    <string name="tab_mylist">My List</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_settings">Settings</string>
+    <string name="tab_tv">TV Shows</string>
+    <string name="tamper_blocked">This copy of the app is not genuine.</string>
+    <string name="terms_full">"1. What ClipBox Is
+ClipBox is a free media front-end for Android. It provides playback: video rendering, subtitle handling, casting and library management. ClipBox does not host, store, upload, transmit or control any video, audio or subtitle content. Everything you play comes from third-party sources that are not operated by, affiliated with, or endorsed by ClipBox.
+
+2. Accepting These Terms
+By installing or using ClipBox you agree to these Terms. If you do not agree, do not use the app. These Terms form a binding agreement between you and ClipBox.
+
+3. Eligibility
+You must be at least 13 years old, or the minimum age required in your country, whichever is higher. If you are under the age of majority where you live, you need the consent of a parent or guardian.
+
+4. Licence
+You are granted a limited, non-exclusive, non-transferable, revocable licence to use ClipBox on your own Android devices for personal, non-commercial purposes.
+
+5. Your Responsibility for Content
+You are solely responsible for what you access through the app and for making sure it is lawful where you live. Copyright law differs by country; accessing material you have no right to view may breach it. ClipBox responds to valid takedown notices under the DMCA and equivalent laws, and will disable features or integrations in response to valid legal orders. Notices go to info@clipbox.mov — but as ClipBox hosts nothing, they are usually better directed at the source or rights holder concerned.
+
+6. Things You May Not Do
+Do not use ClipBox to access or distribute infringing or unlawful material; do not reverse-engineer, decompile or modify the app beyond what the law allows; do not redistribute, resell or sublicense it; do not use it commercially without written permission; and do not attack, disrupt or attempt unauthorised access to any system or account connected to the service.
+
+7. Accounts
+An account is optional — the app works fully without one. If you create one, you choose a username and password; no email address is required or collected. The password is stored only as a salted hash and cannot be read by us. A recovery code is issued once at sign-up: it is the only way to recover an account, we store only a hash of it, and we cannot restore it for you if it is lost. You are responsible for keeping your credentials secure. Accounts used to abuse or attack the service may be suspended without notice.
+
+8. What Syncs to Your Account
+While you are signed in, your My List, watch history, favourites, playback positions and app settings are stored on our server so they follow you between devices. When you sign out, that library is removed from the device and stays only in your account, so the next person to sign in on the same device does not inherit it. Deleting your account from the Account screen permanently deletes this data from our server.
+
+9. Anonymous Usage Data
+The app reports basic, anonymous information about the installation so we can understand how it is used and which devices to support: a random identifier generated at install, device model and manufacturer, Android and app version, the language the app is set to, a two-letter country derived from our content delivery network, screen size, how often the app is opened, and what was watched and for how long.
+
+This identifier is randomly generated. It is not an advertising identifier, not a hardware serial, and it is not linked to your account or to any information that identifies you. We do not store your IP address and we do not collect location data. Individual viewing records are deleted after 120 days.
+
+10. Advertising
+The free version of ClipBox is supported by advertising. Unless your account has VIP or Founders, the app may show a short advertisement before playback and banners on some screens. Ads are served by third-party advertising partners (currently Monetag, and where used Google’s Interactive Media Ads SDK). When an ad loads, the partner may receive technical information such as your IP address, device and browser type, language and approximate location, and may use cookies or similar technologies, under its own privacy policy. We do not sell your personal data. Advertised products come from third parties; we do not endorse them. You may not generate fake ad views or clicks.
+
+11. VIP, Founders and Payments
+VIP and Founders are optional, one-time purchases that remove advertising and raise the number of devices your account can use. They belong to your account, not to a device, and last for as long as ClipBox offers the service. They are not a subscription: nothing renews and there is nothing to cancel.
+Payments are made in cryptocurrency through our own payment server (BTCPay Server), or with an Azteco Bitcoin voucher bought from Azteco or one of its resellers. We never receive card or bank details. Prices are set in US dollars and the amount of cryptocurrency is fixed when you pay; any exchange, network or currency-conversion costs are your own. A voucher must be of a kind and value the app accepts at the time; we are not responsible for vouchers that were already used, have expired or were bought from an unauthorised seller.
+Cryptocurrency payments are irreversible. Because a package is activated as soon as your payment is seen, you ask for it to start straight away; where the law gives you a right of withdrawal, it ends once the package is active. Payments are not refundable except where the law requires it. An underpayment activates nothing until the rest is paid; an overpayment is not returned automatically. A payment that turns out to be invalid or fraudulent, or a package used to abuse the service, may be reversed and the package removed. Donations are voluntary, give no additional rights and are not refundable.
+
+12. Third-Party Services
+Title, artwork and metadata come from The Movie Database (TMDB); ClipBox is not endorsed or certified by TMDB. Subtitles may be retrieved from OpenSubtitles and may be machine-translated on request. Casting uses the Google Cast SDK for Chromecast and standard UPnP/DLNA for other receivers; data is exchanged with those services only while you are actively casting. Push notifications come from our own server — ClipBox does not use Firebase or any third-party analytics or user-tracking SDK.
+
+13. Availability
+We may change, suspend or discontinue any part of the app or service at any time, with or without notice. Sources are operated by third parties and may stop working at any time; that is outside our control.
+
+14. No Warranty
+ClipBox is provided \"as is\" and \"as available\", without warranty of any kind, express or implied, including any implied warranty of merchantability, fitness for a particular purpose or non-infringement. We do not guarantee uptime, availability of any particular title, or compatibility with every device.
+
+15. Limitation of Liability
+To the fullest extent permitted by law, ClipBox and those involved in producing it are not liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, profits or goodwill, arising from your use of or inability to use the app. Where the law does not permit such limits, our liability is limited to the maximum extent it does permit.
+
+16. Indemnity
+You agree to hold ClipBox harmless from any claim, liability, damage, loss or cost, including reasonable legal fees, arising from your breach of these Terms or from your use of the app — including third-party copyright claims relating to material you accessed with it.
+
+17. Governing Law
+If you are in the European Union, the mandatory consumer-protection rules of your country of residence apply and are not affected by these Terms. Otherwise, disputes fall under the courts competent for our principal place of business, unless local law requires otherwise. Please contact us to try to resolve any dispute informally before starting formal proceedings.
+
+18. Severability
+If any provision of these Terms is unenforceable, it will be narrowed to the minimum extent necessary and the remainder stays in force.
+
+19. Changes to These Terms
+We may revise these Terms. Material changes are reflected in an updated version of the app. Continuing to use ClipBox after a change means you accept the revised Terms.
+
+20. Contact
+info@clipbox.mov"</string>
+    <string name="terms_gate_accept">Accept</string>
+    <string name="terms_gate_decline">Decline</string>
+    <string name="terms_gate_message">Please review and accept our Terms &amp; Conditions to start using ClipBox.</string>
+    <string name="terms_gate_subtitle">Please read and accept these to continue</string>
+    <string name="terms_gate_title">Terms &amp; Conditions</string>
+    <string name="touch_lock_desc">Lock screen</string>
+    <string name="touch_lock_unlock">Unlock</string>
+    <string name="touch_locked_toast">Screen locked. Tap the lock icon to unlock.</string>
+    <string name="track_off">Off</string>
+    <string name="tv_account_avatar">Profile picture</string>
+    <string name="tv_account_avatar_phone_only">A profile picture is chosen from a photo on your device. This television has no app that can pick one, so set it in ClipBox on your phone and it will appear here.</string>
+    <string name="tv_account_choose_image">Choose a picture</string>
+    <string name="tv_account_new_password_hint">New password</string>
+    <string name="tv_account_recover_action">Reset password</string>
+    <string name="tv_account_recovery_fmt">"Recovery code: %1$s
+
+Write this down. It is shown once and is the only way back in if you forget your password."</string>
+    <string name="tv_account_register_hint">No account yet? Create one in the ClipBox app on your phone, then sign in here.</string>
+    <string name="tv_account_saved">Saved</string>
+    <string name="tv_account_vip_fmt">%1$s · VIP</string>
+    <string name="tv_backdrop_art">Artwork (blurred)</string>
+    <string name="tv_backdrop_midnight">Midnight</string>
+    <string name="tv_backdrop_ocean">Ocean</string>
+    <string name="tv_backdrop_summary">The artwork behind the panels, or a colour pattern</string>
+    <string name="tv_backdrop_sunset">Sunset</string>
+    <string name="tv_backdrop_title">Background</string>
+    <string name="tv_blur_normal">Normal</string>
+    <string name="tv_blur_off">Off</string>
+    <string name="tv_blur_soft">Soft</string>
+    <string name="tv_blur_strong">Strong</string>
+    <string name="tv_blur_stronger">Stronger</string>
+    <string name="tv_blur_summary">How strongly the panels frost the artwork behind them</string>
+    <string name="tv_blur_title">Blur strength</string>
+    <string name="tv_cd_back">Back</string>
+    <string name="tv_cd_more_info">More info</string>
+    <string name="tv_cd_poster">Poster</string>
+    <string name="tv_cd_title_logo">Title</string>
+    <string name="tv_classic_layout">Classic TV interface</string>
+    <string name="tv_classic_layout_summary">Use the previous television interface (restarts the app)</string>
+    <string name="tv_decoder_ceiling">Hardware decoding</string>
+    <string name="tv_decoder_height_fmt">Up to %1$dp</string>
+    <string name="tv_decoder_unknown">Unknown</string>
+    <string name="tv_director_fmt">Director: %1$s</string>
+    <string name="tv_empty_category">Nothing to show here right now.</string>
+    <string name="tv_empty_favourites">No favourites yet. Open a title and press the star to add it here.</string>
+    <string name="tv_empty_history">Nothing watched yet.</string>
+    <string name="tv_empty_watchlist">Nothing saved yet. Open a title and press + to add it here.</string>
+    <string name="tv_episode_title_fmt">%1$d. %2$s</string>
+    <string name="tv_fact_budget">Budget</string>
+    <string name="tv_fact_language">Language</string>
+    <string name="tv_fact_release">Release Date</string>
+    <string name="tv_fact_revenue">Revenue</string>
+    <string name="tv_fact_runtime">Runtime</string>
+    <string name="tv_fact_seasons">Seasons</string>
+    <string name="tv_fact_status">Status</string>
+    <string name="tv_filter_hint">Filter this list</string>
+    <string name="tv_filter_no_matches">Nothing here matches “%1$s”</string>
+    <string name="tv_hero_rotate_summary">Cycle the featured artwork on its own. Uses noticeably more processor.</string>
+    <string name="tv_hero_rotate_title">Keep the backdrop moving</string>
+    <string name="tv_meta_separator">•</string>
+    <string name="tv_minutes_fmt">%1$d min</string>
+    <string name="tv_mode_auto">Automatic</string>
+    <string name="tv_mode_off">Off</string>
+    <string name="tv_mode_on">On</string>
+    <string name="tv_modern_layout">New TV interface</string>
+    <string name="tv_modern_layout_summary">Switch back to the new television interface (restarts the app)</string>
+    <string name="tv_nav_position_side">Side</string>
+    <string name="tv_nav_position_summary">Along the top of the screen, or down the side</string>
+    <string name="tv_nav_position_title">Menu position</string>
+    <string name="tv_nav_position_top">Top</string>
+    <string name="tv_phone_layout">Normal (phone) interface</string>
+    <string name="tv_pin_clear">Clear</string>
+    <string name="tv_poster_large">Large</string>
+    <string name="tv_poster_medium">Medium</string>
+    <string name="tv_poster_size_summary">How large the poster cards are drawn</string>
+    <string name="tv_poster_small">Small</string>
+    <string name="tv_poster_xlarge">Extra large</string>
+    <string name="tv_read_less">Read Less</string>
+    <string name="tv_read_more">Read More</string>
+    <string name="tv_refreshing">Refreshing…</string>
+    <string name="tv_remove_from_continue">Remove from Continue watching</string>
+    <string name="tv_remove_from_history">Remove from history</string>
+    <string name="tv_row_cast">Cast</string>
+    <string name="tv_row_episodes">Episodes</string>
+    <string name="tv_row_seasons">Seasons</string>
+    <string name="tv_row_similar">More like this</string>
+    <string name="tv_runtime_fmt">%1$dh %2$dm</string>
+    <string name="tv_scale_setup_body">Choose how large the interface and the cards should be. You see the effect right away behind this panel; you can change it later in Settings.</string>
+    <string name="tv_scale_setup_title">Make it fit your screen</string>
+    <string name="tv_search_clear_history">Clear history</string>
+    <string name="tv_search_clear_query">Clear</string>
+    <string name="tv_search_corrected_fmt">Showing results for “%1$s”</string>
+    <string name="tv_search_hint">Search films and series</string>
+    <string name="tv_search_no_results">Nothing found for “%1$s”.</string>
+    <string name="tv_search_prompt">Type at least two letters to search.</string>
+    <string name="tv_search_recent">Recent searches</string>
+    <string name="tv_search_searching">Searching…</string>
+    <string name="tv_season_fmt">Season %1$d</string>
+    <string name="tv_select_all">Select all</string>
+    <string name="tv_select_done">Done</string>
+    <string name="tv_select_more">Select several…</string>
+    <string name="tv_select_remove">Remove selected</string>
+    <string name="tv_selected_count_fmt">%1$d selected</string>
+    <string name="tv_status_canceled">Cancelled</string>
+    <string name="tv_status_ended">Ended</string>
+    <string name="tv_status_in_production">In production</string>
+    <string name="tv_status_pilot">Pilot</string>
+    <string name="tv_status_planned">Planned</string>
+    <string name="tv_status_post_production">Post-production</string>
+    <string name="tv_status_released">Released</string>
+    <string name="tv_status_returning">Returning series</string>
+    <string name="tv_status_rumored">Rumoured</string>
+    <string name="tv_ui_scale_large">Large</string>
+    <string name="tv_ui_scale_larger">Largest</string>
+    <string name="tv_ui_scale_normal">Normal</string>
+    <string name="tv_ui_scale_small">Small</string>
+    <string name="tv_ui_scale_smaller">Smaller</string>
+    <string name="tv_ui_scale_summary">Scale everything — text, artwork and spacing — together</string>
+    <string name="tv_ui_scale_tiny">Tiny</string>
+    <string name="tv_ui_scale_title">Interface size</string>
+    <string name="tv_value_off">Off</string>
+    <string name="tv_value_on">On</string>
+    <string name="tv_whatsnew_body">ClipBox has been rebuilt for the big screen and your remote. Everything you had is still here, just easier to reach from the sofa. Prefer the layout you had before? You can switch back at any time in Settings.</string>
+    <string name="tv_whatsnew_classic">Use the classic layout</string>
+    <string name="tv_whatsnew_continue">Have a look</string>
+    <string name="tv_whatsnew_title">A new look for television</string>
+    <string name="update_available_msg_fmt">"A newer version (%1$s) is available.
+
+Download and install it now?"</string>
+    <string name="update_available_title">Update available</string>
+    <string name="update_check_button">Check for updates</string>
+    <string name="update_check_summary">Look for a newer version</string>
+    <string name="update_checking">Peeking for updates...</string>
+    <string name="update_dont_remind">"Don't remind me"</string>
+    <string name="update_download">Update</string>
+    <string name="update_download_failed">Download failed. Check your connection and try again.</string>
+    <string name="update_downloading">Pulling in the new bits…</string>
+    <string name="update_install_help">"1. Tap Update to download the new APK.
+2. When the installer opens, tap Install.
+3. If Android blocks it, allow \"Install unknown apps\" for ClipBox, then tap Install again.
+4. Your settings and list are kept, it installs over the current app."</string>
+    <string name="update_install_help_summary">What to do if the install is blocked</string>
+    <string name="update_install_help_title">How to install</string>
+    <string name="update_later">Later</string>
+    <string name="update_permission_msg_firetv">"Your Fire TV only installs updates from apps you allow. Choose Open settings, switch on ClipBox under \"Install unknown apps\" and press Back. The update then continues by itself.
+
+If that screen does not open: Settings > My Fire TV > Developer options > Install unknown apps > ClipBox. No Developer options? Go to Settings > My Fire TV > About and press OK on the device name 7 times first."</string>
+    <string name="update_permission_msg_phone">Android only installs updates from apps you allow. Tap Open settings, switch on \"Allow from this source\" for ClipBox and go back. The update then continues by itself.</string>
+    <string name="update_permission_msg_tv">"Your TV only installs updates from apps you allow. Choose Open settings, switch on ClipBox under \"Install unknown apps\" and press Back. The update then continues by itself.
+
+If that screen does not open: Settings > Apps > Security &amp; restrictions > Unknown sources > ClipBox."</string>
+    <string name="update_permission_not_opened">Settings could not be opened. Follow the steps on screen.</string>
+    <string name="update_permission_open">Open settings</string>
+    <string name="update_permission_title">Allow ClipBox to install updates</string>
+    <string name="update_unavailable">Update service unavailable. The app cannot check for updates right now.</string>
+    <string name="update_up_to_date">You are already on the latest version. Nice.</string>
+    <string name="v7_preference_off">OFF</string>
+    <string name="v7_preference_on">ON</string>
+    <string name="voucher_address_copied">Address copied. Paste it on azte.co.</string>
+    <string name="voucher_buy_hint_fmt">Azteco vouchers are sold at azte.co and by resellers. A $%1$s voucher is enough.</string>
+    <string name="voucher_choose_title">Which voucher do you have?</string>
+    <string name="voucher_code_hint">Voucher code (16 digits)</string>
+    <string name="voucher_founders_hint_fmt">Only an &lt;b>On-Chain Bitcoin voucher&lt;/b> works, &lt;b>not a Lightning voucher&lt;/b>. It must be worth &lt;b>25 in your own currency&lt;/b>: €25, £25, CHF 25, $25 and so on. Any exchange costs are your own. It gets you Founders (%1$d devices).</string>
+    <string name="voucher_lightning">Lightning voucher</string>
+    <string name="voucher_lightning_sub">Instant. VIP turns on in seconds.</string>
+    <string name="voucher_ln_bad">That does not look like a Lightning voucher link. It starts with LNURL.</string>
+    <string name="voucher_ln_hint">LNURL1…</string>
+    <string name="voucher_ln_redeeming">Redeeming your voucher…</string>
+    <string name="voucher_ln_steps">"1. Open azte.co, choose Lightning and redeem your voucher code there.
+2. It shows a Lightning link (LNURL). Tap it to open ClipBox, or copy it and paste it here."</string>
+    <string name="voucher_loading_address">Preparing your address…</string>
+    <string name="voucher_onchain">Bitcoin voucher</string>
+    <string name="voucher_onchain_note">This address belongs to your account for this payment. You can close ClipBox meanwhile; VIP turns on by itself.</string>
+    <string name="voucher_onchain_steps">"1. Open azte.co and redeem your voucher code there.
+2. When it asks for a Bitcoin address, use this one:"</string>
+    <string name="voucher_onchain_steps_code">"1. Enter the 16-digit code from your voucher below.
+2. Tap Open azte.co. Your payment address is copied for you: paste it there when asked."</string>
+    <string name="voucher_onchain_sub">VIP turns on as soon as the payment is seen, usually within minutes.</string>
+    <string name="voucher_open_azteco">Open azte.co</string>
+    <string name="voucher_other_shops">Many other shops sell Azteco vouchers too. You can also look for one yourself.</string>
+    <string name="voucher_paste">Paste</string>
+    <string name="voucher_redeem">Redeem</string>
+    <string name="voucher_where_to_buy">Where do I buy a voucher?</string>
+    <string name="welcome_message">Welcome! Be sure to keep the app updated.</string>
+    <string name="wifi_only_blocked">You are on mobile data. Turn off “Play on Wi-Fi only” in Settings to watch.</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="0.0dp">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@id/aboutToolbar" android:layout_width="match_parent" android:layout_height="?actionBarSize" app:navigationIcon="@drawable/ic_arrow_back" app:navigationIconTint="@color/text_primary" app:title="" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <ScrollView android:id="@id/mainScroll" android:background="@color/background" android:focusable="false" android:focusableInTouchMode="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+            <LinearLayout android:orientation="vertical" android:paddingLeft="24.0dp" android:paddingRight="24.0dp" android:paddingBottom="32.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingHorizontal="24.0dp">
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/about_credits_title" />
+                <TextView android:textSize="13.0sp" android:textColor="@color/text_tertiary" android:id="@id/appVersion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="v1.0.0 (1)" />
+                <TextView android:textSize="15.0sp" android:textColor="@color/text_secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/about_credits_body" android:lineSpacingExtra="4.0dp" />
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="24.0dp" android:layout_marginBottom="24.0dp" android:layout_marginVertical="24.0dp" />
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/attr_section_community" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/socialsRow" android:paddingTop="6.0dp" android:paddingBottom="6.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dp" android:paddingVertical="6.0dp" />
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="24.0dp" android:layout_marginBottom="24.0dp" android:layout_marginVertical="24.0dp" />
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/about_changelog_title" />
+                <FrameLayout android:layout_width="match_parent" android:layout_height="240.0dp" android:layout_marginTop="10.0dp">
+                    <ScrollView android:id="@id/changelogScroll" android:background="@drawable/card_bg" android:padding="12.0dp" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:fadeScrollbars="false">
+                        <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:id="@id/changelogText" android:layout_width="match_parent" android:layout_height="wrap_content" android:lineSpacingExtra="3.0dp" android:fontFamily="monospace" />
+                    </ScrollView>
+                    <ImageView android:layout_gravity="center|bottom" android:id="@id/changelogScrollIndicator" android:background="@drawable/scroll_hint_bg" android:padding="4.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="28.0dp" android:layout_height="28.0dp" android:layout_marginBottom="8.0dp" android:foreground="@drawable/ripple_circle" android:src="@drawable/ic_chevron_down_light" android:contentDescription="@string/about_changelog_title" android:elevation="2.0dp" />
+                </FrameLayout>
+                <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="24.0dp" android:layout_marginBottom="24.0dp" android:layout_marginVertical="24.0dp" />
+                <TextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/about_legal_title" />
+                <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" android:layout_marginBottom="14.0dp" android:text="@string/about_disclaimer_short" android:lineSpacingExtra="3.0dp" />
+                <LinearLayout android:id="@id/rowTerms" style="@style/AboutLegalRow">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="15.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_terms_title" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/about_terms_subtitle" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_chevron_right" android:contentDescription="@null" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/readFullDisclaimer" style="@style/AboutLegalRow">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="15.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_disclaimer_title" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/about_disclaimer_subtitle" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_chevron_right" android:contentDescription="@null" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/rowPrivacy" style="@style/AboutLegalRow">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="15.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_privacy_title" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/about_privacy_subtitle" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_open_in_new" android:contentDescription="@null" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/rowAttributions" style="@style/AboutLegalRow">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="15.0sp" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/about_attributions_title" />
+                        <TextView android:textSize="13.0sp" android:textColor="@color/text_tertiary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:text="@string/about_attributions_subtitle" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/ic_chevron_right" android:contentDescription="@null" app:tint="@color/text_tertiary" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <ImageView android:layout_gravity="center|bottom" android:id="@id/mainScrollIndicator" android:background="@drawable/scroll_hint_bg" android:padding="6.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:layout_marginBottom="16.0dp" android:foreground="@drawable/ripple_circle" android:src="@drawable/ic_chevron_down_light" android:contentDescription="@null" android:elevation="4.0dp" />
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

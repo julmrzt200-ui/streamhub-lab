@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/background" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:padding="32.0dp" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/gateIcon" android:layout_width="64.0dp" android:layout_height="64.0dp" android:layout_marginBottom="28.0dp" android:src="@mipmap/ic_launcher" android:contentDescription="@null" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/text_primary" android:gravity="center" android:id="@id/gateTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="@string/gate_connecting" android:fontFamily="sans-serif-medium" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/text_secondary" android:gravity="center" android:id="@id/gateMessage" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="28.0dp" android:lineSpacingMultiplier="1.4" />
+        <LinearLayout android:gravity="center" android:id="@id/retryButton" android:background="@drawable/card_bg_red" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="160.0dp" android:layout_height="48.0dp">
+            <TextView android:textSize="15.0sp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gate_retry" android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

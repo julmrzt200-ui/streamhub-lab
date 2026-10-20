@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/search_box_bg" android:paddingLeft="14.0dp" android:paddingTop="12.0dp" android:paddingRight="14.0dp" android:paddingBottom="12.0dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dp" android:foreground="@drawable/ripple_rounded_10" android:minHeight="64.0dp" android:paddingHorizontal="14.0dp" android:paddingVertical="12.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/actionIcon" android:background="@drawable/premium_icon_tile" android:padding="9.0dp" android:layout_width="40.0dp" android:layout_height="40.0dp" android:contentDescription="@null" />
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="14.0dp">
+        <TextView android:textSize="15.0sp" android:textColor="@color/text_primary" android:id="@id/actionTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif-medium" />
+        <TextView android:textSize="12.5sp" android:textColor="@color/text_secondary" android:id="@id/actionSub" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" />
+    </LinearLayout>
+    <ImageView android:id="@id/actionInfo" android:background="@drawable/ripple_rounded_20" android:padding="8.0dp" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="36.0dp" android:layout_height="36.0dp" android:src="@drawable/ic_info" android:contentDescription="@string/premium_info_button" android:layout_marginEnd="4.0dp" app:tint="@color/text_secondary" />
+    <ImageView android:id="@id/actionChevron" android:layout_width="20.0dp" android:layout_height="20.0dp" android:src="@drawable/ic_chevron_right" android:contentDescription="@null" app:tint="@color/text_tertiary" />
+</LinearLayout>

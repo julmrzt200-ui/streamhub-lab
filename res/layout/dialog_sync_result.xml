@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_dialog_rounded" android:paddingTop="20.0dp" android:paddingBottom="6.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/syncResultIcon" android:background="@drawable/bg_sync_result_icon" android:padding="10.0dp" android:layout_width="40.0dp" android:layout_height="40.0dp" android:contentDescription="@null" />
+    <TextView android:textSize="17.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:gravity="center" android:id="@id/syncResultTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dp" />
+    <TextView android:textSize="13.0sp" android:textColor="@color/text_secondary" android:gravity="center" android:id="@id/syncResultBody" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:lineSpacingMultiplier="1.2" />
+    <com.google.android.material.button.MaterialButton android:textColor="@color/text_primary" android:layout_gravity="end" android:id="@id/syncResultOk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:minWidth="88.0dp" android:text="@android:string/ok" style="@style/Widget.Material3.Button.TextButton" />
+</LinearLayout>

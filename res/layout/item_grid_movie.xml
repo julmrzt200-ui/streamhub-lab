@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="4.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/gridCard" android:duplicateParentState="true" android:layout_width="0.0dp" android:layout_height="0.0dp" android:foreground="@drawable/ripple_rounded_10" app:cardBackgroundColor="@color/surface" app:cardCornerRadius="10.0dp" app:cardElevation="0.0dp" app:layout_constraintDimensionRatio="2:3" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:id="@id/gridPoster" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:contentDescription="Poster" />
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/gridMetaStrip" android:background="#99000000" android:paddingTop="2.0dp" android:paddingBottom="4.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="4.0dp" android:paddingEnd="4.0dp">
+                <TextView android:textSize="9.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center_vertical" android:id="@id/gridRating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:drawablePadding="2.0dp" android:drawableStart="@drawable/ic_star_rating_grid" android:drawableTint="#ffffffff" />
+                <View android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+                <TextView android:textSize="9.0sp" android:textColor="#ffffffff" android:id="@id/gridYear" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ProgressBar android:layout_gravity="bottom" android:id="@id/gridProgress" android:visibility="gone" android:layout_width="match_parent" android:layout_height="3.0dp" android:max="1000" android:progressDrawable="@drawable/watch_progress" style="?android:progressBarStyleHorizontal" />
+            <FrameLayout android:layout_gravity="end|top" android:id="@id/gridCheckContainer" android:visibility="gone" android:layout_width="24.0dp" android:layout_height="24.0dp" android:layout_margin="8.0dp">
+                <ImageView android:id="@id/gridCheckIcon" android:padding="4.0dp" android:layout_width="match_parent" android:layout_height="match_parent" />
+            </FrameLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView android:textSize="12.0sp" android:textColor="@color/text_primary" android:ellipsize="end" android:id="@id/gridTitle" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginTop="6.0dp" android:maxLines="2" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/gridCard" />
+</androidx.constraintlayout.widget.ConstraintLayout>
