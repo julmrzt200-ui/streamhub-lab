@@ -37,11 +37,12 @@ android {
     def rabbitstreamApiValue = properties.getProperty('RABBITSTREAM_SOURCE_API', '')
 
     defaultConfig {
-        applicationId "com.streamhub.app"
+        // Keep the lab build installable alongside the original StreamHub app.
+        applicationId "com.streamhub.applab"
         minSdk 21
         targetSdk 35
-        versionCode 181
-        versionName "1.7.251"
+        versionCode 182
+        versionName "1.7.252-lab"
 
         buildConfigField "String", "APP_LAYOUT", "\"${appLayoutValue}\""
         buildConfigField "String", "TMDB_API_KEY", "\"${tmdbApiKeyValue}\""

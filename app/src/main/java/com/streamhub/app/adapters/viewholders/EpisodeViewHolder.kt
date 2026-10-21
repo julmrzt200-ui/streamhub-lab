@@ -39,6 +39,10 @@ class EpisodeViewHolder(
 
     private val context = itemView.context
     private lateinit var episode: Episode
+    private val episodeArtwork: String?
+        get() = episode.poster?.takeIf { it.isNotBlank() }
+            ?: episode.season?.poster?.takeIf { it.isNotBlank() }
+            ?: episode.tvShow?.poster
 
     fun bind(episode: Episode) {
         this.episode = episode
@@ -81,7 +85,7 @@ class EpisodeViewHolder(
                             id = episode.id,
                             number = episode.number,
                             title = episode.title,
-                            poster = episode.poster,
+                            poster = episodeArtwork,
                             overview = episode.overview,
                             tvShow = Video.Type.Episode.TvShow(
                                 id = episode.tvShow?.id ?: "",
@@ -109,7 +113,7 @@ class EpisodeViewHolder(
         binding.ivEpisodePoster.apply {
             clipToOutline = true
             Glide.with(context)
-                .load(episode.poster)
+                .load(episodeArtwork)
                 .error(R.drawable.glide_fallback_cover)
                 .centerCrop()
                 .transition(DrawableTransitionOptions.withCrossFade())
@@ -181,7 +185,7 @@ class EpisodeViewHolder(
                             id = episode.id,
                             number = episode.number,
                             title = episode.title,
-                            poster = episode.poster,
+                            poster = episodeArtwork,
                             overview = episode.overview,
                             tvShow = Video.Type.Episode.TvShow(
                                 id = episode.tvShow?.id ?: "",
@@ -217,7 +221,7 @@ class EpisodeViewHolder(
         binding.ivEpisodePoster.apply {
             clipToOutline = true
             Glide.with(context)
-                .load(episode.poster)
+                .load(episodeArtwork)
                 .error(R.drawable.glide_fallback_cover)
                 .fallback(R.drawable.glide_fallback_cover)
                 .centerCrop()
@@ -297,7 +301,7 @@ class EpisodeViewHolder(
                             id = episode.id,
                             number = episode.number,
                             title = episode.title,
-                            poster = episode.poster,
+                            poster = episodeArtwork,
                             overview = episode.overview,
                             tvShow = Video.Type.Episode.TvShow(
                                 id = episode.tvShow?.id ?: "",
@@ -398,7 +402,7 @@ class EpisodeViewHolder(
                             id = episode.id,
                             number = episode.number,
                             title = episode.title,
-                            poster = episode.poster,
+                            poster = episodeArtwork,
                             overview = episode.overview,
                             tvShow = Video.Type.Episode.TvShow(
                                 id = episode.tvShow?.id ?: "",
@@ -487,7 +491,7 @@ class EpisodeViewHolder(
         val tvShow = episode.tvShow
         if (tvShow == null) {
             Glide.with(context)
-                .load(episode.poster)
+                .load(episodeArtwork)
                 .error(R.drawable.glide_fallback_cover)
                 .apply {
                     if (withFallback) fallback(R.drawable.glide_fallback_cover)

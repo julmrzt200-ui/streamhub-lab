@@ -73,9 +73,8 @@ class MainMobileActivity : FragmentActivity() {
             val currentFragment = navHostFragment?.childFragmentManager?.primaryNavigationFragment
 
             val isPlayer = currentFragment is PlayerMobileFragment
-            val isBottomNavVisible = binding.bnvMain.visibility == View.VISIBLE
-
-            val bottomPadding = if (isPlayer || isBottomNavVisible) 0 else insets.bottom
+            // Keep the bottom navigation above Android's gesture/three-button area.
+            val bottomPadding = if (isPlayer) 0 else insets.bottom
             val topPadding = if (isPlayer) 0 else insets.top
 
             view.setPadding(insets.left, topPadding, insets.right, bottomPadding)

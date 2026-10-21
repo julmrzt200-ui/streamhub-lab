@@ -175,7 +175,8 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                     player.trackSelectionParameters = player.trackSelectionParameters
                         .buildUpon()
                         .clearOverridesOfType(C.TRACK_TYPE_TEXT)
-                        .setIgnoredTextSelectionFlags(C.SELECTION_FLAG_FORCED.inv())
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
+                        .setIgnoredTextSelectionFlags(0)
                         .build()
                     UserPreferences.subtitleName = null
                 }
@@ -183,13 +184,15 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                 is Settings.Subtitle.TextTrackInformation -> {
                     player.trackSelectionParameters = player.trackSelectionParameters
                         .buildUpon()
+                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
                         .setOverrideForType(
                             TrackSelectionOverride(
                                 subtitle.trackGroup.mediaTrackGroup,
                                 listOf(subtitle.trackIndex)
                             )
                         )
-                        .setTrackTypeDisabled(subtitle.trackGroup.type, false)
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+                        .setIgnoredTextSelectionFlags(0)
                         .build()
                     UserPreferences.subtitleName = (subtitle.language ?: subtitle.label).substringBefore(" ")
                 }

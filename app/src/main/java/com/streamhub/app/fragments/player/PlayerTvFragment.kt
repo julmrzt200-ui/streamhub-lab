@@ -1853,7 +1853,7 @@ class PlayerTvFragment : Fragment() {
             }
 
             Glide.with(this)
-                .load(nextEpisode.poster ?: nextEpisode.tvShow.poster)
+                .load(nextEpisode.poster?.takeIf { it.isNotBlank() } ?: nextEpisode.tvShow.poster)
                 .error(R.drawable.glide_fallback_cover)
                 .fallback(R.drawable.glide_fallback_cover)
                 .centerCrop()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">StreamHub</string>
+    <string name="app_name">StreamHub Lab</string>
 
     <string name="loading_error_title">Ha ocurrido un error</string>
     <string name="loading_error_retry">Reintentar</string>
@@ -112,6 +112,7 @@
 
     <string name="player_subtitle_tv_show">T%d E%d • %s</string>
     <string name="player_subtitle_tv_show_episode_only">E%d • %s</string>
+    <string name="player_server_failed_message">Falló el servidor %1$s: %2$s</string>
     <string name="player_next_episode_up_next">A continuación</string>
     <string name="player_next_episode_action">Reproducir ahora</string>
     <string name="player_next_episode_dismiss">Ocultar</string>

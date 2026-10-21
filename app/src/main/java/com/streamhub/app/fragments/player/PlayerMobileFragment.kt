@@ -170,6 +170,29 @@ class PlayerMobileFragment : Fragment() {
         binding.llPlayerLoading.visibility = View.GONE
     }
 
+    private fun replaceSubtitleConfigurations(
+        configurations: List<MediaItem.SubtitleConfiguration>,
+    ) {
+        if (!::player.isInitialized) return
+        val currentItem = player.currentMediaItem ?: return
+        val position = player.currentPosition.coerceAtLeast(0L)
+        val shouldResume = player.playWhenReady
+
+        player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+            .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+            .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, false)
+            .setIgnoredTextSelectionFlags(0)
+            .build()
+        player.setMediaItem(
+            currentItem.buildUpon()
+                .setSubtitleConfigurations(configurations)
+                .build(),
+            position,
+        )
+        player.prepare()
+        player.playWhenReady = shouldResume
+    }
+
     private var pendingShowSearchResults = false
     private var lastSearchLangCode = "all"
 
@@ -203,6 +226,18 @@ class PlayerMobileFragment : Fragment() {
         } else {
             hidePlayerLoading()
             Log.w("PlayerMobileFragment", "No hay más servidores disponibles para cambiar ($reason)")
+            context?.let { ctx ->
+                Toast.makeText(
+                    ctx,
+                    getString(
+                        R.string.player_server_failed_message,
+                        serverReference?.name ?: "Video",
+                        reason.ifBlank { getString(R.string.player_retry_later_message) },
+                    ),
+                    Toast.LENGTH_LONG,
+                ).show()
+            }
+            if (_binding != null) binding.pvPlayer.showController()
         }
     }
 
@@ -342,6 +377,7 @@ class PlayerMobileFragment : Fragment() {
                     }
                 }
                 Player.STATE_BUFFERING -> {
+                    if (player.playWhenReady) showPlayerLoading() else hidePlayerLoading()
                     if (initialAutoPlayArmed) {
                         player.playWhenReady = true
                     }
@@ -369,6 +405,7 @@ class PlayerMobileFragment : Fragment() {
                 stallWatchdogHandler.postDelayed(stallWatchdogRunnable, 9000L)
             } else {
                 stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
+                if (player.playbackState == Player.STATE_BUFFERING) hidePlayerLoading()
             }
         }
     }
@@ -440,7 +477,6 @@ class PlayerMobileFragment : Fragment() {
                 }
             }
 
-            val currentPosition = player.currentPosition
             val currentSubtitleConfigurations =
                 player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
                     MediaItem.SubtitleConfiguration.Builder(it.uri)
@@ -450,23 +486,13 @@ class PlayerMobileFragment : Fragment() {
                         .setSelectionFlags(0)
                         .build()
                 } ?: listOf()
-            player.setMediaItem(
-                MediaItem.Builder()
-                    .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                    .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                    .setSubtitleConfigurations(
-                        currentSubtitleConfigurations
-                                + MediaItem.SubtitleConfiguration.Builder(subUri)
-                            .setMimeType(subMime)
-                            .setLabel(fileName)
-                            .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                            .build()
-                    )
-                    .setMediaMetadata(player.mediaMetadata)
+            replaceSubtitleConfigurations(
+                currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(subUri)
+                    .setMimeType(subMime)
+                    .setLabel(fileName)
+                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
                     .build()
             )
-            player.seekTo(currentPosition)
-            player.play()
         }
     }
 
@@ -523,7 +549,6 @@ class PlayerMobileFragment : Fragment() {
 
             result.onSuccess { translatedFile ->
                 val translatedUri = translatedFile.toUri()
-                val currentPosition = player.currentPosition
                 val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
                     MediaItem.SubtitleConfiguration.Builder(it.uri)
                         .setMimeType(it.mimeType)
@@ -536,24 +561,15 @@ class PlayerMobileFragment : Fragment() {
                 val resolvedLang = SubtitleTranslator.resolveTargetLanguageCode(targetLanguage.code)
                 val newLabel = "${targetLanguage.displayName} (${getString(R.string.player_settings_translate_subtitles_label).replace("…", "").replace("...", "").trim()})"
 
-                player.setMediaItem(
-                    MediaItem.Builder()
-                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                        .setSubtitleConfigurations(
-                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
-                                .setMimeType(translatedFile.name.toSubtitleMimeType())
-                                .setLabel(newLabel)
-                                .setLanguage(resolvedLang)
-                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                .build()
-                        )
-                        .setMediaMetadata(player.mediaMetadata)
+                replaceSubtitleConfigurations(
+                    currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
+                        .setMimeType(translatedFile.name.toSubtitleMimeType())
+                        .setLabel(newLabel)
+                        .setLanguage(resolvedLang)
+                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
                         .build()
                 )
                 UserPreferences.subtitleName = resolvedLang
-                player.seekTo(currentPosition)
-                player.play()
 
                 Toast.makeText(
                     requireContext(),
@@ -866,12 +882,15 @@ class PlayerMobileFragment : Fragment() {
                                 "All servers failed to load the video."
                             }
                             
+                            val detail = state.error.localizedMessage
+                                ?.takeIf { it.isNotBlank() }
+                                ?: message
                             Toast.makeText(
                                 requireContext(),
-                                message,
+                                getString(R.string.player_server_failed_message, state.server.name, detail),
                                 Toast.LENGTH_LONG
                             ).show()
-                            findNavController().navigateUp()
+                            binding.pvPlayer.showController()
                         }
                     }
                 }
@@ -900,7 +919,6 @@ class PlayerMobileFragment : Fragment() {
                     PlayerViewModel.SubtitleState.DownloadingOpenSubtitle -> {}
                     is PlayerViewModel.SubtitleState.SuccessDownloadingOpenSubtitle -> {
                         val fileName = state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                        val currentPosition = player.currentPosition
                         val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
                             MediaItem.SubtitleConfiguration.Builder(it.uri)
                                 .setMimeType(it.mimeType)
@@ -909,24 +927,15 @@ class PlayerMobileFragment : Fragment() {
                                 .setSelectionFlags(0)
                                 .build()
                         } ?: listOf()
-                        player.setMediaItem(
-                            MediaItem.Builder()
-                                .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                                .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                                .setSubtitleConfigurations(
-                                    currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                        .setMimeType(fileName.toSubtitleMimeType())
-                                        .setLabel(fileName)
-                                        .setLanguage(state.subtitle.languageName)
-                                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                        .build()
-                                )
-                                .setMediaMetadata(player.mediaMetadata)
+                        replaceSubtitleConfigurations(
+                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                .setMimeType(fileName.toSubtitleMimeType())
+                                .setLabel(fileName)
+                                .setLanguage(state.subtitle.languageName)
+                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
                                 .build()
                         )
                         UserPreferences.subtitleName = (state.subtitle.languageName ?: fileName).substringBefore(" ")
-                        player.seekTo(currentPosition)
-                        player.play()
                     }
                     is PlayerViewModel.SubtitleState.FailedDownloadingOpenSubtitle -> {
                         Toast.makeText(requireContext(), "${state.subtitle.subFileName}: ${state.error.message}", Toast.LENGTH_LONG).show()
@@ -940,7 +949,6 @@ class PlayerMobileFragment : Fragment() {
                     PlayerViewModel.SubtitleState.DownloadingSubDLSubtitle -> {}
                     is PlayerViewModel.SubtitleState.SuccessDownloadingSubDLSubtitle -> {
                         val fileName = state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                        val currentPosition = player.currentPosition
                         val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
                             MediaItem.SubtitleConfiguration.Builder(it.uri)
                                 .setMimeType(it.mimeType)
@@ -949,24 +957,15 @@ class PlayerMobileFragment : Fragment() {
                                 .setSelectionFlags(0)
                                 .build()
                         } ?: listOf()
-                        player.setMediaItem(
-                            MediaItem.Builder()
-                                .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                                .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                                .setSubtitleConfigurations(
-                                    currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                        .setMimeType(fileName.toSubtitleMimeType())
-                                        .setLabel(state.subtitle.releaseName ?: state.subtitle.name ?: fileName)
-                                        .setLanguage(state.subtitle.lang ?: state.subtitle.language ?: "Unknown")
-                                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                        .build()
-                                )
-                                .setMediaMetadata(player.mediaMetadata)
+                        replaceSubtitleConfigurations(
+                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                .setMimeType(fileName.toSubtitleMimeType())
+                                .setLabel(state.subtitle.releaseName ?: state.subtitle.name ?: fileName)
+                                .setLanguage(state.subtitle.lang ?: state.subtitle.language ?: "Unknown")
+                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
                                 .build()
                         )
                         UserPreferences.subtitleName = (state.subtitle.releaseName ?: state.subtitle.name ?: fileName).substringBefore(" ")
-                        player.seekTo(currentPosition)
-                        player.play()
                     }
                     is PlayerViewModel.SubtitleState.FailedDownloadingSubDLSubtitle -> {
                         Toast.makeText(requireContext(), "${state.subtitle.name}: ${state.error.message}", Toast.LENGTH_LONG).show()
@@ -1136,10 +1135,6 @@ class PlayerMobileFragment : Fragment() {
                 getString(R.string.player_external_player_error_video),
                 Toast.LENGTH_SHORT
             ).show()
-        }
-
-        binding.pvPlayer.controller.binding.exoReplay.setOnClickListener {
-            player.seekTo(0)
         }
 
         binding.pvPlayer.controller.binding.btnExoLock.setOnClickListener {
@@ -1828,7 +1823,7 @@ class PlayerMobileFragment : Fragment() {
         }
 
         Glide.with(this)
-            .load(nextEpisode.poster ?: nextEpisode.tvShow.poster)
+            .load(nextEpisode.poster?.takeIf { it.isNotBlank() } ?: nextEpisode.tvShow.poster)
             .error(R.drawable.glide_fallback_cover)
             .fallback(R.drawable.glide_fallback_cover)
             .centerCrop()

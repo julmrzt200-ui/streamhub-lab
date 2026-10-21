@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="app_name_wordmark">STREAMHUB</string>
-    <string name="app_name">StreamHub</string>
+    <string name="app_name">StreamHub Lab</string>
 
     <string name="loading_error_title">An error occurred</string>
     <string name="loading_error_retry">Retry</string>
@@ -128,6 +128,7 @@
 
     <string name="player_subtitle_tv_show">S%d E%d • %s</string>
     <string name="player_subtitle_tv_show_episode_only">E%d • %s</string>
+    <string name="player_server_failed_message">Server %1$s failed: %2$s</string>
     <string name="player_picture_in_picture_not_supported">PiP is not supported on your device</string>
     <string name="player_external_player_title">Play using</string>
     <string name="player_external_player_error_video">Video not load yet</string>
