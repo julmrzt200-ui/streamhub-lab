@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:focusable="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dp" android:layout_marginStart="@dimen/tv_safe_horizontal" android:layout_marginEnd="@dimen/tv_safe_horizontal">
-        <TextView android:textSize="@dimen/tv_rail_heading_size" android:textStyle="bold" android:textColor="@color/tv_text_primary" android:ellipsize="end" android:id="@id/tvRailTitle" android:layout_width="0.0dp" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" />
-    </LinearLayout>
-    <androidx.leanback.widget.HorizontalGridView android:id="@id/tvRailList" android:focusable="false" android:clipToPadding="false" android:descendantFocusability="afterDescendants" android:layout_width="match_parent" android:layout_height="wrap_content" />
-</LinearLayout>

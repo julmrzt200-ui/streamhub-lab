@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingEnd="8.0dp"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <org.clipbox.player.ui.ShadowIconView android:id="@id/actionShare" android:background="?android:actionBarItemBackground" android:padding="8.0dp" android:focusable="true" android:clickable="true" android:layout_width="40.0dp" android:layout_height="40.0dp" android:src="@drawable/ic_share" android:contentDescription="@string/share_via" />
-    <org.clipbox.player.ui.ShadowIconView android:id="@id/actionFavourite" android:background="?android:actionBarItemBackground" android:padding="8.0dp" android:focusable="true" android:clickable="true" android:layout_width="40.0dp" android:layout_height="40.0dp" android:src="@drawable/ic_star" android:contentDescription="@string/add_to_favourites" />
-</LinearLayout>

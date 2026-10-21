@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/card_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:clipToOutline="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/text_primary" android:id="@id/episodeListTitle" android:paddingTop="18.0dp" android:paddingBottom="14.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="20.0dp" android:paddingEnd="20.0dp" />
-    <View android:background="@color/divider" android:layout_width="match_parent" android:layout_height="1.0dp" />
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/episodeListRecycler" android:paddingBottom="6.0dp" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" />
-</LinearLayout>

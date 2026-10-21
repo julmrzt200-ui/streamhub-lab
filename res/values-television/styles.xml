@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="ClipBoxDialogButton" parent="@style/Widget.Material3.Button">
-        <item name="android:textColor">@color/dialog_button_text</item>
-        <item name="android:foreground">@drawable/tv_dialog_button_focus</item>
-        <item name="backgroundTint">@color/dialog_button_bg</item>
-    </style>
-</resources>

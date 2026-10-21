@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <plurals name="remove_items_fmt">
-        <item quantity="one">Okakasa? (ekintu 1)</item>
-        <item quantity="other">Okakasa? (%1$d ebintu)</item>
-    </plurals>
-</resources>

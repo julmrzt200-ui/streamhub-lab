@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_background_color"
+    tools:context=".activities.main.MainMobileActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_main_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bnv_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_main_graph_mobile" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_clipbox_toolbar"
+        android:elevation="8dp"
+        app:contentInsetStart="12dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:navigationIcon="@drawable/ic_clipbox_menu"
+        app:navigationIconTint="@color/clipbox_text_primary"
+        app:navigationContentDescription="@string/main_menu_change_provider"
+        app:title="@string/app_name_wordmark"
+        app:titleCentered="true"
+        app:titleTextAppearance="@style/StreamHubToolbarTitle"
+        app:titleTextColor="@color/clipbox_text_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_main_search"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/main_menu_search"
+            android:padding="10dp"
+            android:src="@drawable/ic_clipbox_search"
+            android:visibility="gone"
+            app:tint="@color/clipbox_text_primary" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_main"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="@color/clipbox_surface"
+        android:elevation="12dp"
+        android:theme="@style/Theme.AppCompat"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/nav_item_app"
+        app:itemTextColor="@color/nav_item_app"
+        app:itemTextAppearanceActive="@style/BottomNavLabelStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavLabelStyle"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_main_activity_mobile" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

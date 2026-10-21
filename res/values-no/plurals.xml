@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <plurals name="remove_items_fmt">
-        <item quantity="one">Er du sikker? (%1$d element)</item>
-        <item quantity="other">Er du sikker? (%1$d elementer)</item>
-    </plurals>
-</resources>

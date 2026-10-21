@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_tab_home" android:id="@id/tab_home" android:title="@string/tab_home" />
-    <item android:icon="@drawable/ic_tab_movies" android:id="@id/tab_movies" android:title="@string/tab_movies" />
-    <item android:icon="@drawable/ic_tab_tv" android:id="@id/tab_tv" android:title="@string/tab_tv" />
-    <item android:icon="@drawable/ic_tab_search" android:id="@id/tab_search" android:title="@string/tab_search" />
-    <item android:icon="@drawable/ic_tab_settings" android:id="@id/tab_settings" android:title="@string/tab_settings" />
-</menu>
