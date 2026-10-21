@@ -96,16 +96,30 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, LCl0;->S:Lorg/clipbox/player/ui/ServerGateActivity;
 
+    :try_start_0
     invoke-static {v0}, LDg0;->d(Landroid/content/Context;)LEg0;
     move-result-object v1
 
     sput-object v1, LDg0;->b:LEg0;
 
     invoke-static {v1}, LDg0;->a(LEg0;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_local_config
+
+    goto :config_ready
+
+    :catch_local_config
+    move-exception v1
+
+    const-string v2, "StreamHub"
+    const-string v3, "Local settings could not be loaded; opening the home screen"
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :config_ready
 
     invoke-virtual {v0}, Lorg/clipbox/player/ui/ServerGateActivity;->H()V
 

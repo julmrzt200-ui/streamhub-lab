@@ -1968,6 +1968,8 @@
     .line 835
     .line 836
     :goto_20
+    const-string v5, ""
+
     const-string v8, "ad_popup_enabled"
 
     .line 837
