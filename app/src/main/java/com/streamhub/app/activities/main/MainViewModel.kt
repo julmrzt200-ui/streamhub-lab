@@ -34,6 +34,9 @@ class MainViewModel : ViewModel() {
 
 
     fun checkUpdate() = viewModelScope.launch(Dispatchers.IO) {
+        // The lab build is installed side-by-side with StreamHub. It must never offer
+        // production APKs, which use the original application ID and overwrite it.
+        if (BuildConfig.APPLICATION_ID == "com.streamhub.applab") return@launch
         if (!UserPreferences.updateCheckEnabled) return@launch
         _state.emit(State.CheckingUpdate)
 

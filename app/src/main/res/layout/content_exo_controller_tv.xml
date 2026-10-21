@@ -143,6 +143,10 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:nextFocusDown="@id/exo_settings"
+        app:played_color="@color/clipbox_red"
+        app:scrubber_color="@color/clipbox_red"
+        app:buffered_color="#66FFFFFF"
+        app:unplayed_color="#4DFFFFFF"
         app:layout_constraintBottom_toTopOf="@id/exo_bottom_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

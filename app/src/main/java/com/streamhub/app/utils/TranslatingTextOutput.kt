@@ -20,6 +20,7 @@ import org.json.JSONArray
 import java.net.URLEncoder
 import java.util.Collections
 import java.util.Locale
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
 
 /**
@@ -27,8 +28,8 @@ import java.util.concurrent.TimeUnit
  * (CC embebido, HLS, CEA-608/708, WebVTT, MKV y subtítulos externos).
  *
  * Cambios respecto a la versión anterior (causa del "veo el inglés y luego se traduce"):
- *  1. YA NO se muestra el texto original mientras llega la traducción: el cue se retiene hasta
- *     [HOLD_BACK_MS]; solo si la red tarda más que eso se muestra el original como respaldo.
+ *  1. El texto original se retiene mientras la traducción está en curso y solo se muestra si
+ *     la petición termina fallando; así no aparece en inglés y cambia después a español.
  *  2. Caché más grande y con clave normalizada, que además se llena POR ADELANTADO con
  *     [SubtitleTranslator.prefetchIntoLiveCache] para pistas externas -> traducción instantánea.
  *  3. Si el texto ya está en el idioma destino (heurística local) no se hace ninguna petición.
@@ -47,16 +48,6 @@ class TranslatingTextOutput(
     @Volatile
     private var lastCueGroup: CueGroup? = null
 
-    /** Cuándo vimos por primera vez cada texto sin traducir (solo se toca desde el looper). */
-    private val firstSeenAt = HashMap<String, Long>()
-
-    private val releaseHeldCues = Runnable {
-        val current = lastCueGroup ?: return@Runnable
-        val pref = UserPreferences.preferredTranslateLanguage
-        if (pref == "off") return@Runnable
-        delegate.onCues(translateCueGroup(current, SubtitleTranslator.resolveTargetLanguageCode(pref)))
-    }
-
     init {
         warmUp()
     }
@@ -65,11 +56,12 @@ class TranslatingTextOutput(
         private const val TAG = "TranslatingTextOutput"
         private const val MAX_CACHE_SIZE = 8000
 
-        /** Tiempo máximo que se retiene un cue esperando su traducción. */
-        private const val HOLD_BACK_MS = 1100L
+        /** Evita repetir inmediatamente una petición que acaba de fallar. */
+        private const val FAILURE_RETRY_BACKOFF_MS = 30_000L
 
         private val cache = LruCache<String, String>(MAX_CACHE_SIZE)
         private val pendingKeys = Collections.synchronizedSet(HashSet<String>())
+        private val failedUntil = ConcurrentHashMap<String, Long>()
         private val appScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
         private val httpClient by lazy {
@@ -95,6 +87,7 @@ class TranslatingTextOutput(
         fun clearCache() {
             cache.evictAll()
             pendingKeys.clear()
+            failedUntil.clear()
         }
 
         /** Abre la conexión TLS/HTTP2 de antemano para que la 1.ª traducción real no pague el handshake. */
@@ -163,9 +156,7 @@ class TranslatingTextOutput(
 
     private fun translateCueGroup(cueGroup: CueGroup, targetLang: String): CueGroup {
         val out = ArrayList<Cue>(cueGroup.cues.size)
-        var holding = false
         val now = SystemClock.elapsedRealtime()
-        if (firstSeenAt.size > 600) firstSeenAt.clear()
 
         for (cue in cueGroup.cues) {
             val raw = cue.text?.toString()
@@ -186,20 +177,19 @@ class TranslatingTextOutput(
                 continue
             }
 
-            // Sin traducción todavía: pedirla y RETENER el cue (no mostrar el inglés).
-            scheduleTranslation(text, targetLang)
-            val first = firstSeenAt.getOrPut(key) { now }
-            if (now - first >= HOLD_BACK_MS) {
-                out.add(cue)                    // respaldo: la red tardó demasiado
-            } else {
-                holding = true
+            val retryAt = failedUntil[key]
+            if (retryAt != null) {
+                if (now < retryAt) {
+                    out.add(cue)
+                    continue
+                }
+                failedUntil.remove(key)
             }
+
+            // No se muestra inglés mientras la traducción siga en curso.
+            scheduleTranslation(text, targetLang)
         }
 
-        if (holding) {
-            handler.removeCallbacks(releaseHeldCues)
-            handler.postDelayed(releaseHeldCues, HOLD_BACK_MS)
-        }
         return CueGroup(out, cueGroup.presentationTimeUs)
     }
 
@@ -208,26 +198,35 @@ class TranslatingTextOutput(
         if (!pendingKeys.add(cacheKey)) return
 
         scope.launch {
+            var translatedSuccessfully = false
             try {
                 var translated = fetchTranslation(originalText, targetLang)
                 if (translated == null) translated = fetchTranslation(originalText, targetLang) // 1 reintento
                 if (!translated.isNullOrBlank()) {
                     cache.put(cacheKey, translated)
-                    handler.post {
-                        val current = lastCueGroup ?: return@post
-                        val stillShowing = current.cues.any {
-                            it.text?.toString()?.let(::normalizeKey) == originalText
-                        }
-                        if (stillShowing) {
-                            handler.removeCallbacks(releaseHeldCues)
-                            delegate.onCues(translateCueGroup(current, targetLang))
-                        }
-                    }
+                    failedUntil.remove(cacheKey)
+                    translatedSuccessfully = true
                 }
             } catch (e: Exception) {
                 Log.w(TAG, "Translation error for text: $originalText", e)
             } finally {
                 pendingKeys.remove(cacheKey)
+                if (!translatedSuccessfully) {
+                    failedUntil[cacheKey] = SystemClock.elapsedRealtime() + FAILURE_RETRY_BACKOFF_MS
+                }
+                handler.post {
+                    val pref = UserPreferences.preferredTranslateLanguage
+                    if (pref == "off" || SubtitleTranslator.resolveTargetLanguageCode(pref) != targetLang) {
+                        return@post
+                    }
+                    val current = lastCueGroup ?: return@post
+                    val stillShowing = current.cues.any {
+                        it.text?.toString()?.let(::normalizeKey) == originalText
+                    }
+                    if (stillShowing) {
+                        delegate.onCues(translateCueGroup(current, targetLang))
+                    }
+                }
             }
         }
     }
