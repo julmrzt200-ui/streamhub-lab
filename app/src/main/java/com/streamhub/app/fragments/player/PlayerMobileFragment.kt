@@ -114,6 +114,7 @@ import com.streamhub.app.utils.SubtitleTranslator
 import com.streamhub.app.utils.TranslatingTextOutput
 import com.streamhub.app.utils.OpenSubtitles
 import com.streamhub.app.extractors.TokenManager
+import com.streamhub.app.utils.ExternalSubtitleManager
 
 class PlayerMobileFragment : Fragment() {
     companion object {
@@ -139,6 +140,7 @@ class PlayerMobileFragment : Fragment() {
     private lateinit var progressHandler: android.os.Handler
     private lateinit var progressRunnable: Runnable
     private lateinit var gestureHelper: PlayerGestureHelper
+    private lateinit var externalSubtitleManager: ExternalSubtitleManager
 
     private var servers = listOf<Video.Server>()
     private var zoomToast: Toast? = null
@@ -477,22 +479,31 @@ class PlayerMobileFragment : Fragment() {
                 }
             }
 
-            val currentSubtitleConfigurations =
-                player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                    MediaItem.SubtitleConfiguration.Builder(it.uri)
-                        .setMimeType(it.mimeType)
-                        .setLabel(it.label)
-                        .setLanguage(it.language)
-                        .setSelectionFlags(0)
-                        .build()
-                } ?: listOf()
-            replaceSubtitleConfigurations(
-                currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(subUri)
-                    .setMimeType(subMime)
-                    .setLabel(fileName)
-                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+            val normalizedFile = normalized?.file
+            if (normalizedFile != null && normalizedFile.exists() && externalSubtitleManager.loadSubtitle(normalizedFile)) {
+                player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                    .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                    .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                     .build()
-            )
+                UserPreferences.subtitleName = fileName.substringBefore(" ")
+            } else {
+                val currentSubtitleConfigurations =
+                    player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                        MediaItem.SubtitleConfiguration.Builder(it.uri)
+                            .setMimeType(it.mimeType)
+                            .setLabel(it.label)
+                            .setLanguage(it.language)
+                            .setSelectionFlags(0)
+                            .build()
+                    } ?: listOf()
+                replaceSubtitleConfigurations(
+                    currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(subUri)
+                        .setMimeType(subMime)
+                        .setLabel(fileName)
+                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                        .build()
+                )
+            }
         }
     }
 
@@ -561,21 +572,35 @@ class PlayerMobileFragment : Fragment() {
                 val resolvedLang = SubtitleTranslator.resolveTargetLanguageCode(targetLanguage.code)
                 val newLabel = "${targetLanguage.displayName} (${getString(R.string.player_settings_translate_subtitles_label).replace("…", "").replace("...", "").trim()})"
 
-                replaceSubtitleConfigurations(
-                    currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
-                        .setMimeType(translatedFile.name.toSubtitleMimeType())
-                        .setLabel(newLabel)
-                        .setLanguage(resolvedLang)
-                        .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                if (translatedFile.exists() && externalSubtitleManager.loadSubtitle(translatedFile)) {
+                    player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                         .build()
-                )
-                UserPreferences.subtitleName = resolvedLang
+                    UserPreferences.subtitleName = resolvedLang
 
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.subtitle_translate_done, targetLanguage.displayName),
-                    Toast.LENGTH_SHORT
-                ).show()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.subtitle_translate_done, targetLanguage.displayName),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    replaceSubtitleConfigurations(
+                        currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
+                            .setMimeType(translatedFile.name.toSubtitleMimeType())
+                            .setLabel(newLabel)
+                            .setLanguage(resolvedLang)
+                            .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                            .build()
+                    )
+                    UserPreferences.subtitleName = resolvedLang
+
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.subtitle_translate_done, targetLanguage.displayName),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }.onFailure { err ->
                 Log.e("PlayerMobileFragment", "Error traduciendo subtítulo: ", err)
                 Toast.makeText(
@@ -739,6 +764,12 @@ class PlayerMobileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initialAutoPlayArmed = true
         showPlayerLoading()
+        externalSubtitleManager = ExternalSubtitleManager(binding.subtitleViewExternal)
+        binding.subtitleViewExternal.apply {
+            setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+            setStyle(UserPreferences.captionStyle)
+            setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+        }
         initializePlayer(false)
         initializeVideo()
         gestureHelper = PlayerGestureHelper(
@@ -919,23 +950,32 @@ class PlayerMobileFragment : Fragment() {
                     PlayerViewModel.SubtitleState.DownloadingOpenSubtitle -> {}
                     is PlayerViewModel.SubtitleState.SuccessDownloadingOpenSubtitle -> {
                         val fileName = state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                        val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                            MediaItem.SubtitleConfiguration.Builder(it.uri)
-                                .setMimeType(it.mimeType)
-                                .setLabel(it.label)
-                                .setLanguage(it.language)
-                                .setSelectionFlags(0)
+                        val file = if (state.uri.scheme == "file") File(state.uri.path ?: "") else null
+                        if (file != null && file.exists() && externalSubtitleManager.loadSubtitle(file)) {
+                            player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                                .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                                .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                                 .build()
-                        } ?: listOf()
-                        replaceSubtitleConfigurations(
-                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                .setMimeType(fileName.toSubtitleMimeType())
-                                .setLabel(fileName)
-                                .setLanguage(state.subtitle.languageName)
-                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                .build()
-                        )
-                        UserPreferences.subtitleName = (state.subtitle.languageName ?: fileName).substringBefore(" ")
+                            UserPreferences.subtitleName = (state.subtitle.languageName ?: fileName).substringBefore(" ")
+                        } else {
+                            val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                                MediaItem.SubtitleConfiguration.Builder(it.uri)
+                                    .setMimeType(it.mimeType)
+                                    .setLabel(it.label)
+                                    .setLanguage(it.language)
+                                    .setSelectionFlags(0)
+                                    .build()
+                            } ?: listOf()
+                            replaceSubtitleConfigurations(
+                                currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                    .setMimeType(fileName.toSubtitleMimeType())
+                                    .setLabel(fileName)
+                                    .setLanguage(state.subtitle.languageName)
+                                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                    .build()
+                            )
+                            UserPreferences.subtitleName = (state.subtitle.languageName ?: fileName).substringBefore(" ")
+                        }
                     }
                     is PlayerViewModel.SubtitleState.FailedDownloadingOpenSubtitle -> {
                         Toast.makeText(requireContext(), "${state.subtitle.subFileName}: ${state.error.message}", Toast.LENGTH_LONG).show()
@@ -949,23 +989,32 @@ class PlayerMobileFragment : Fragment() {
                     PlayerViewModel.SubtitleState.DownloadingSubDLSubtitle -> {}
                     is PlayerViewModel.SubtitleState.SuccessDownloadingSubDLSubtitle -> {
                         val fileName = state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                        val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                            MediaItem.SubtitleConfiguration.Builder(it.uri)
-                                .setMimeType(it.mimeType)
-                                .setLabel(it.label)
-                                .setLanguage(it.language)
-                                .setSelectionFlags(0)
+                        val file = if (state.uri.scheme == "file") File(state.uri.path ?: "") else null
+                        if (file != null && file.exists() && externalSubtitleManager.loadSubtitle(file)) {
+                            player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                                .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                                .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                                 .build()
-                        } ?: listOf()
-                        replaceSubtitleConfigurations(
-                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                .setMimeType(fileName.toSubtitleMimeType())
-                                .setLabel(state.subtitle.releaseName ?: state.subtitle.name ?: fileName)
-                                .setLanguage(state.subtitle.lang ?: state.subtitle.language ?: "Unknown")
-                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                .build()
-                        )
-                        UserPreferences.subtitleName = (state.subtitle.releaseName ?: state.subtitle.name ?: fileName).substringBefore(" ")
+                            UserPreferences.subtitleName = (state.subtitle.releaseName ?: state.subtitle.name ?: fileName).substringBefore(" ")
+                        } else {
+                            val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                                MediaItem.SubtitleConfiguration.Builder(it.uri)
+                                    .setMimeType(it.mimeType)
+                                    .setLabel(it.label)
+                                    .setLanguage(it.language)
+                                    .setSelectionFlags(0)
+                                    .build()
+                            } ?: listOf()
+                            replaceSubtitleConfigurations(
+                                currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                    .setMimeType(fileName.toSubtitleMimeType())
+                                    .setLabel(state.subtitle.releaseName ?: state.subtitle.name ?: fileName)
+                                    .setLanguage(state.subtitle.lang ?: state.subtitle.language ?: "Unknown")
+                                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                    .build()
+                            )
+                            UserPreferences.subtitleName = (state.subtitle.releaseName ?: state.subtitle.name ?: fileName).substringBefore(" ")
+                        }
                     }
                     is PlayerViewModel.SubtitleState.FailedDownloadingSubDLSubtitle -> {
                         Toast.makeText(requireContext(), "${state.subtitle.name}: ${state.error.message}", Toast.LENGTH_LONG).show()
@@ -1039,6 +1088,10 @@ class PlayerMobileFragment : Fragment() {
             show(WindowInsetsCompat.Type.systemBars())
         }
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+        if (::externalSubtitleManager.isInitialized) {
+            externalSubtitleManager.detachPlayer()
+            externalSubtitleManager.clear()
+        }
         releasePlayer()
         try {
             requireContext().unregisterReceiver(chooserReceiver)
@@ -1120,6 +1173,25 @@ class PlayerMobileFragment : Fragment() {
             setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
             setStyle(UserPreferences.captionStyle)
             setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+        }
+        binding.subtitleViewExternal.apply {
+            setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+            setStyle(UserPreferences.captionStyle)
+            setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+        }
+        binding.settings.setOnTrackSelectionChangedListener {
+            externalSubtitleManager.clear()
+        }
+        binding.settings.setOnSubtitleOffsetChangedListener {
+            externalSubtitleManager.notifyOffsetOrStyleChanged()
+        }
+        binding.settings.setOnCaptionAppearanceChangedListener {
+            binding.subtitleViewExternal.apply {
+                setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+                setStyle(UserPreferences.captionStyle)
+                setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+            }
+            externalSubtitleManager.notifyOffsetOrStyleChanged()
         }
         setupEpisodeNavigationButtons()
 
@@ -1437,6 +1509,7 @@ class PlayerMobileFragment : Fragment() {
             ) + (video.headers ?: emptyMap())
         )
 
+        externalSubtitleManager.clear()
         player.setMediaItem(
             MediaItem.Builder()
                 .setUri(video.source.toUri())
@@ -1973,6 +2046,9 @@ class PlayerMobileFragment : Fragment() {
             }
 
         binding.pvPlayer.player = player
+        if (::externalSubtitleManager.isInitialized) {
+            externalSubtitleManager.attachPlayer(player)
+        }
         binding.settings.player = player
         binding.settings.subtitleView = binding.pvPlayer.subtitleView
         binding.settings.onSubtitlesClicked = {
@@ -1982,6 +2058,9 @@ class PlayerMobileFragment : Fragment() {
 
     private fun releasePlayer() {
         SubtitleOffset.reset()
+        if (::externalSubtitleManager.isInitialized) {
+            externalSubtitleManager.detachPlayer()
+        }
         stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
         stopProgressHandler()
         binding.pvPlayer.player = null

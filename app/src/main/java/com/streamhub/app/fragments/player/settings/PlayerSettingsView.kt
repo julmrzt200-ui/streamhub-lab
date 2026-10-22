@@ -179,6 +179,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                         .setIgnoredTextSelectionFlags(0)
                         .build()
                     UserPreferences.subtitleName = null
+                    onTrackSelectionChanged?.invoke(subtitle)
                 }
 
                 is Settings.Subtitle.TextTrackInformation -> {
@@ -195,6 +196,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
                         .setIgnoredTextSelectionFlags(0)
                         .build()
                     UserPreferences.subtitleName = (subtitle.language ?: subtitle.label).substringBefore(" ")
+                    onTrackSelectionChanged?.invoke(subtitle)
                 }
 
                 else -> {}
@@ -205,6 +207,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
         fun(offset) {
             val player = player ?: return
             SubtitleOffset.offsetMs = offset.milliseconds
+            onSubtitleOffsetChanged?.invoke(offset.milliseconds)
             // Reset the text renderer so cues discarded under the previous offset are available.
             player.seekTo(player.currentPosition)
         }
@@ -215,6 +218,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
 
             UserPreferences.captionStyle = captionStyle
             subtitleView.setStyle(UserPreferences.captionStyle)
+            onCaptionAppearanceChanged?.invoke()
             subtitleView.setPadding(0, 0, 0, UserPreferences.captionMargin.dp(subtitleView.context))
         }
 
@@ -223,6 +227,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
             val subtitleView = subtitleView ?: return
 
             UserPreferences.captionMargin = margin.value
+            onCaptionAppearanceChanged?.invoke()
             subtitleView.setPadding(0, 0, 0, UserPreferences.captionMargin.dp(subtitleView.context))
         }
 
@@ -245,6 +250,7 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
             val subtitleView = subtitleView ?: return
 
             UserPreferences.captionTextSize = textSize.value
+            onCaptionAppearanceChanged?.invoke()
             subtitleView.setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
         }
 
@@ -357,6 +363,21 @@ abstract class PlayerSettingsView @JvmOverloads constructor(
     var onSearchOnlineSubtitlesClicked: (() -> Unit)? = null
     fun setOnSearchOnlineSubtitlesClickedListener(onSearchOnlineSubtitlesClicked: () -> Unit) {
         this.onSearchOnlineSubtitlesClicked = onSearchOnlineSubtitlesClicked
+    }
+
+    var onTrackSelectionChanged: ((Settings.Subtitle) -> Unit)? = null
+    fun setOnTrackSelectionChangedListener(onTrackSelectionChanged: (Settings.Subtitle) -> Unit) {
+        this.onTrackSelectionChanged = onTrackSelectionChanged
+    }
+
+    var onSubtitleOffsetChanged: ((Long) -> Unit)? = null
+    fun setOnSubtitleOffsetChangedListener(onSubtitleOffsetChanged: (Long) -> Unit) {
+        this.onSubtitleOffsetChanged = onSubtitleOffsetChanged
+    }
+
+    var onCaptionAppearanceChanged: (() -> Unit)? = null
+    fun setOnCaptionAppearanceChangedListener(onCaptionAppearanceChanged: () -> Unit) {
+        this.onCaptionAppearanceChanged = onCaptionAppearanceChanged
     }
 
     protected var onSpeedSelected: ((Settings.Speed) -> Unit) =

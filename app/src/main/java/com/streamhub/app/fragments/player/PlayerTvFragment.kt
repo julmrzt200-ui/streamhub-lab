@@ -87,6 +87,7 @@ import com.streamhub.app.utils.MediaServer
 import com.streamhub.app.utils.PlayerGestureHelper
 import com.streamhub.app.utils.UserPreferences
 import com.streamhub.app.utils.UserDataCache
+import com.streamhub.app.utils.ExternalSubtitleManager
 import com.streamhub.app.utils.dp
 import com.streamhub.app.utils.getFileName
 import com.streamhub.app.utils.next
@@ -139,6 +140,16 @@ class PlayerTvFragment : Fragment() {
     private lateinit var mediaSession: MediaSession
     private lateinit var progressHandler: android.os.Handler
     private lateinit var progressRunnable: Runnable
+    private lateinit var externalSubtitleManager: ExternalSubtitleManager
+
+    private fun replaceMediaItemPreservingPlayback(mediaItem: MediaItem) {
+        val positionMs = player.currentPosition.coerceAtLeast(0L)
+        val shouldResume = player.playWhenReady
+
+        player.setMediaItem(mediaItem, positionMs)
+        player.prepare()
+        player.playWhenReady = shouldResume
+    }
 
     private fun showPlayerLoading(message: String? = null) {
         if (_binding == null) return
@@ -208,33 +219,39 @@ class PlayerTvFragment : Fragment() {
                 }
             }
 
-            val currentPosition = player.currentPosition
-            val currentSubtitleConfigurations =
-                player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                    MediaItem.SubtitleConfiguration.Builder(it.uri)
-                        .setMimeType(it.mimeType)
-                        .setLabel(it.label)
-                        .setLanguage(it.language)
-                        .setSelectionFlags(0)
-                        .build()
-                } ?: listOf()
-            player.setMediaItem(
-                MediaItem.Builder()
-                    .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                    .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                    .setSubtitleConfigurations(
-                        currentSubtitleConfigurations
-                                + MediaItem.SubtitleConfiguration.Builder(subUri)
-                            .setMimeType(subMime)
-                            .setLabel(fileName)
-                            .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                            .build()
-                    )
-                    .setMediaMetadata(player.mediaMetadata)
+            val normalizedFile = normalized?.file
+            if (normalizedFile != null && normalizedFile.exists() && externalSubtitleManager.loadSubtitle(normalizedFile)) {
+                player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                    .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                    .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                     .build()
-            )
-            player.seekTo(currentPosition)
-            player.play()
+                UserPreferences.subtitleName = fileName.substringBefore(" ")
+            } else {
+                val currentSubtitleConfigurations =
+                    player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                        MediaItem.SubtitleConfiguration.Builder(it.uri)
+                            .setMimeType(it.mimeType)
+                            .setLabel(it.label)
+                            .setLanguage(it.language)
+                            .setSelectionFlags(0)
+                            .build()
+                    } ?: listOf()
+                replaceMediaItemPreservingPlayback(
+                    MediaItem.Builder()
+                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                        .setSubtitleConfigurations(
+                            currentSubtitleConfigurations
+                                    + MediaItem.SubtitleConfiguration.Builder(subUri)
+                                .setMimeType(subMime)
+                                .setLabel(fileName)
+                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                .build()
+                        )
+                        .setMediaMetadata(player.mediaMetadata)
+                        .build()
+                )
+            }
         }
     }
 
@@ -327,7 +344,6 @@ class PlayerTvFragment : Fragment() {
 
             result.onSuccess { translatedFile ->
                 val translatedUri = translatedFile.toUri()
-                val currentPosition = player.currentPosition
                 val currentSubtitleConfigurations = player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
                     MediaItem.SubtitleConfiguration.Builder(it.uri)
                         .setMimeType(it.mimeType)
@@ -340,30 +356,42 @@ class PlayerTvFragment : Fragment() {
                 val resolvedLang = SubtitleTranslator.resolveTargetLanguageCode(targetLanguage.code)
                 val newLabel = "${targetLanguage.displayName} (${getString(R.string.player_settings_translate_subtitles_label).replace("…", "").replace("...", "").trim()})"
 
-                player.setMediaItem(
-                    MediaItem.Builder()
-                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                        .setSubtitleConfigurations(
-                            currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
-                                .setMimeType(translatedFile.name.toSubtitleMimeType())
-                                .setLabel(newLabel)
-                                .setLanguage(resolvedLang)
-                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                .build()
-                        )
-                        .setMediaMetadata(player.mediaMetadata)
+                if (translatedFile.exists() && externalSubtitleManager.loadSubtitle(translatedFile)) {
+                    player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                         .build()
-                )
-                UserPreferences.subtitleName = resolvedLang
-                player.seekTo(currentPosition)
-                player.play()
+                    UserPreferences.subtitleName = resolvedLang
 
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.subtitle_translate_done, targetLanguage.displayName),
-                    Toast.LENGTH_SHORT
-                ).show()
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.subtitle_translate_done, targetLanguage.displayName),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    replaceMediaItemPreservingPlayback(
+                        MediaItem.Builder()
+                            .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                            .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                            .setSubtitleConfigurations(
+                                currentSubtitleConfigurations + MediaItem.SubtitleConfiguration.Builder(translatedUri)
+                                    .setMimeType(translatedFile.name.toSubtitleMimeType())
+                                    .setLabel(newLabel)
+                                    .setLanguage(resolvedLang)
+                                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                    .build()
+                            )
+                            .setMediaMetadata(player.mediaMetadata)
+                            .build()
+                    )
+                    UserPreferences.subtitleName = resolvedLang
+
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.subtitle_translate_done, targetLanguage.displayName),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }.onFailure { err ->
                 Log.e("PlayerTvFragment", "Error traduciendo subtítulo: ", err)
                 Toast.makeText(
@@ -502,6 +530,12 @@ class PlayerTvFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        externalSubtitleManager = ExternalSubtitleManager(binding.subtitleViewExternal)
+        binding.subtitleViewExternal.apply {
+            setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+            setStyle(UserPreferences.captionStyle)
+            setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+        }
         initializePlayer(false)
         initializeVideo()
         binding.pvPlayer.onMediaPreviousClicked = ::handleMediaPrevious
@@ -664,36 +698,43 @@ class PlayerTvFragment : Fragment() {
                             is PlayerViewModel.SubtitleState.SuccessDownloadingOpenSubtitle -> {
                                 val fileName =
                                     state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                                val currentPosition = player.currentPosition
-                                val currentSubtitleConfigurations =
-                                    player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                                        MediaItem.SubtitleConfiguration.Builder(it.uri)
-                                            .setMimeType(it.mimeType)
-                                            .setLabel(it.label)
-                                            .setLanguage(it.language)
-                                            .setSelectionFlags(0)
-                                            .build()
-                                    } ?: listOf()
-                                player.setMediaItem(
-                                    MediaItem.Builder()
-                                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                                        .setSubtitleConfigurations(
-                                            currentSubtitleConfigurations
-                                                    + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                                .setMimeType(fileName.toSubtitleMimeType())
-                                                .setLabel(fileName)
-                                                .setLanguage(state.subtitle.languageName)
-                                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                                .build()
-                                        )
-                                        .setMediaMetadata(player.mediaMetadata)
+                                val file = if (state.uri.scheme == "file") File(state.uri.path ?: "") else null
+                                if (file != null && file.exists() && externalSubtitleManager.loadSubtitle(file)) {
+                                    player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                                         .build()
-                                )
-                                UserPreferences.subtitleName =
-                                    (state.subtitle.languageName ?: fileName).substringBefore(" ")
-                                player.seekTo(currentPosition)
-                                player.play()
+                                    UserPreferences.subtitleName =
+                                        (state.subtitle.languageName ?: fileName).substringBefore(" ")
+                                } else {
+                                    val currentSubtitleConfigurations =
+                                        player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                                            MediaItem.SubtitleConfiguration.Builder(it.uri)
+                                                .setMimeType(it.mimeType)
+                                                .setLabel(it.label)
+                                                .setLanguage(it.language)
+                                                .setSelectionFlags(0)
+                                                .build()
+                                        } ?: listOf()
+                                    replaceMediaItemPreservingPlayback(
+                                        MediaItem.Builder()
+                                            .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                                            .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                                            .setSubtitleConfigurations(
+                                                currentSubtitleConfigurations
+                                                        + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                                    .setMimeType(fileName.toSubtitleMimeType())
+                                                    .setLabel(fileName)
+                                                    .setLanguage(state.subtitle.languageName)
+                                                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                                    .build()
+                                            )
+                                            .setMediaMetadata(player.mediaMetadata)
+                                            .build()
+                                    )
+                                    UserPreferences.subtitleName =
+                                        (state.subtitle.languageName ?: fileName).substringBefore(" ")
+                                }
                             }
 
                             is PlayerViewModel.SubtitleState.FailedDownloadingOpenSubtitle -> {
@@ -714,43 +755,51 @@ class PlayerTvFragment : Fragment() {
                             is PlayerViewModel.SubtitleState.SuccessDownloadingSubDLSubtitle -> {
                                 val fileName =
                                     state.uri.getFileName(requireContext()) ?: state.uri.toString()
-                                val currentPosition = player.currentPosition
-                                val currentSubtitleConfigurations =
-                                    player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
-                                        MediaItem.SubtitleConfiguration.Builder(it.uri)
-                                            .setMimeType(it.mimeType)
-                                            .setLabel(it.label)
-                                            .setLanguage(it.language)
-                                            .setSelectionFlags(0)
-                                            .build()
-                                    } ?: listOf()
-                                player.setMediaItem(
-                                    MediaItem.Builder()
-                                        .setUri(player.currentMediaItem?.localConfiguration?.uri)
-                                        .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
-                                        .setSubtitleConfigurations(
-                                            currentSubtitleConfigurations
-                                                    + MediaItem.SubtitleConfiguration.Builder(state.uri)
-                                                .setMimeType(fileName.toSubtitleMimeType())
-                                                .setLabel(
-                                                    state.subtitle.releaseName
-                                                        ?: state.subtitle.name ?: fileName
-                                                )
-                                                .setLanguage(
-                                                    state.subtitle.lang ?: state.subtitle.language
-                                                    ?: "Unknown"
-                                                )
-                                                .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
-                                                .build()
-                                        )
-                                        .setMediaMetadata(player.mediaMetadata)
+                                val file = if (state.uri.scheme == "file") File(state.uri.path ?: "") else null
+                                if (file != null && file.exists() && externalSubtitleManager.loadSubtitle(file)) {
+                                    player.trackSelectionParameters = player.trackSelectionParameters.buildUpon()
+                                        .clearOverridesOfType(C.TRACK_TYPE_TEXT)
+                                        .setTrackTypeDisabled(C.TRACK_TYPE_TEXT, true)
                                         .build()
-                                )
-                                UserPreferences.subtitleName =
-                                    (state.subtitle.releaseName ?: state.subtitle.name
-                                    ?: fileName).substringBefore(" ")
-                                player.seekTo(currentPosition)
-                                player.play()
+                                    UserPreferences.subtitleName =
+                                        (state.subtitle.releaseName ?: state.subtitle.name
+                                        ?: fileName).substringBefore(" ")
+                                } else {
+                                    val currentSubtitleConfigurations =
+                                        player.currentMediaItem?.localConfiguration?.subtitleConfigurations?.map {
+                                            MediaItem.SubtitleConfiguration.Builder(it.uri)
+                                                .setMimeType(it.mimeType)
+                                                .setLabel(it.label)
+                                                .setLanguage(it.language)
+                                                .setSelectionFlags(0)
+                                                .build()
+                                        } ?: listOf()
+                                    replaceMediaItemPreservingPlayback(
+                                        MediaItem.Builder()
+                                            .setUri(player.currentMediaItem?.localConfiguration?.uri)
+                                            .setMimeType(player.currentMediaItem?.localConfiguration?.mimeType)
+                                            .setSubtitleConfigurations(
+                                                currentSubtitleConfigurations
+                                                        + MediaItem.SubtitleConfiguration.Builder(state.uri)
+                                                    .setMimeType(fileName.toSubtitleMimeType())
+                                                    .setLabel(
+                                                        state.subtitle.releaseName
+                                                            ?: state.subtitle.name ?: fileName
+                                                    )
+                                                    .setLanguage(
+                                                        state.subtitle.lang ?: state.subtitle.language
+                                                        ?: "Unknown"
+                                                    )
+                                                    .setSelectionFlags(C.SELECTION_FLAG_DEFAULT)
+                                                    .build()
+                                            )
+                                            .setMediaMetadata(player.mediaMetadata)
+                                            .build()
+                                    )
+                                    UserPreferences.subtitleName =
+                                        (state.subtitle.releaseName ?: state.subtitle.name
+                                        ?: fileName).substringBefore(" ")
+                                }
                             }
 
                             is PlayerViewModel.SubtitleState.FailedDownloadingSubDLSubtitle -> {
@@ -819,6 +868,10 @@ class PlayerTvFragment : Fragment() {
             super.onDestroyView()
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             nextEpisodePrefetchJob?.cancel()
+            if (::externalSubtitleManager.isInitialized) {
+                externalSubtitleManager.detachPlayer()
+                externalSubtitleManager.clear()
+            }
             releasePlayer()
             try {
                 requireContext().unregisterReceiver(chooserReceiver)
@@ -996,6 +1049,25 @@ class PlayerTvFragment : Fragment() {
                 setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
                 setStyle(UserPreferences.captionStyle)
                 setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+            }
+            binding.subtitleViewExternal.apply {
+                setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+                setStyle(UserPreferences.captionStyle)
+                setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+            }
+            binding.settings.setOnTrackSelectionChangedListener {
+                externalSubtitleManager.clear()
+            }
+            binding.settings.setOnSubtitleOffsetChangedListener {
+                externalSubtitleManager.notifyOffsetOrStyleChanged()
+            }
+            binding.settings.setOnCaptionAppearanceChangedListener {
+                binding.subtitleViewExternal.apply {
+                    setFractionalTextSize(SubtitleView.DEFAULT_TEXT_SIZE_FRACTION * UserPreferences.captionTextSize)
+                    setStyle(UserPreferences.captionStyle)
+                    setPadding(0, 0, 0, UserPreferences.captionMargin.dp(context))
+                }
+                externalSubtitleManager.notifyOffsetOrStyleChanged()
             }
             binding.settings.setOnExtraBufferingSelectedListener {
                 displayVideo(
@@ -1274,6 +1346,7 @@ class PlayerTvFragment : Fragment() {
                     "User-Agent" to userAgent,
                 ) + (video.headers ?: emptyMap())
             )
+            externalSubtitleManager.clear()
             player.setMediaItem(
                 MediaItem.Builder()
                     .setUri(video.source.toUri())
@@ -2058,6 +2131,9 @@ class PlayerTvFragment : Fragment() {
                 }
 
             binding.pvPlayer.player = player
+            if (::externalSubtitleManager.isInitialized) {
+                externalSubtitleManager.attachPlayer(player)
+            }
             binding.settings.player = player
             binding.settings.subtitleView = binding.pvPlayer.subtitleView
             binding.settings.onSubtitlesClicked = {
@@ -2067,6 +2143,9 @@ class PlayerTvFragment : Fragment() {
 
         private fun releasePlayer() {
             SubtitleOffset.reset()
+            if (::externalSubtitleManager.isInitialized) {
+                externalSubtitleManager.detachPlayer()
+            }
             stallWatchdogHandler.removeCallbacks(stallWatchdogRunnable)
             stopProgressHandler()
             binding.pvPlayer.player = null

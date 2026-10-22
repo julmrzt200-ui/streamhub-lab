@@ -84,6 +84,11 @@ class TranslatingTextOutput(
             if (key.isNotEmpty() && translated.isNotBlank()) cache.put("$lang:$key", translated.trim())
         }
 
+        fun getTranslation(lang: String, original: String): String? {
+            val key = normalizeKey(original)
+            return if (key.isNotEmpty()) cache.get("$lang:$key") else null
+        }
+
         fun clearCache() {
             cache.evictAll()
             pendingKeys.clear()
@@ -121,7 +126,9 @@ class TranslatingTextOutput(
             if (lang == "es" && (text.contains('¿') || text.contains('¡'))) return true
             val words = text.lowercase(Locale.ROOT).split(Regex("[^\\p{L}']+")).filter { it.isNotEmpty() }
             if (words.size < 3) return false
-            val scores = stopwords.mapValues { (_, set) -> words.count { it in set } }
+            // Repetir una palabra frecuente no es evidencia adicional del idioma.
+            val uniqueWords = words.toSet()
+            val scores = stopwords.mapValues { (_, set) -> uniqueWords.count { it in set } }
             val mine = scores[lang] ?: 0
             val bestOther = scores.filterKeys { it != lang }.values.maxOrNull() ?: 0
             return mine >= 2 && mine > bestOther
@@ -186,7 +193,8 @@ class TranslatingTextOutput(
                 failedUntil.remove(key)
             }
 
-            // No se muestra inglés mientras la traducción siga en curso.
+            // Mantener visible el cue original durante la traducción.
+            out.add(cue)
             scheduleTranslation(text, targetLang)
         }
 
