@@ -19,12 +19,20 @@ object PelisPlusHdParser {
         val language: String
     )
 
-    fun cleanTitle(raw: String): String =
-        raw.replace(Regex("""^VER\s+""", RegexOption.IGNORE_CASE), "")
-            .replace(Regex("""\s+Online\s+Gratis\s+HD$""", RegexOption.IGNORE_CASE), "")
-            .replace(Regex("""\s+Online\s+Latino\s+HD$""", RegexOption.IGNORE_CASE), "")
-            .replace(Regex("""\s*\(\d{4}\)$"""), "")
-            .trim()
+    fun cleanTitle(raw: String): String {
+        var t = raw.replace(Regex("""^VER\s+""", RegexOption.IGNORE_CASE), "").trim()
+        var prev: String
+        do {
+            prev = t
+            t = t.replace(Regex("""\s*\(\d{4}\)$"""), "")
+                .replace(Regex("""\s+Online\s+Gratis(\s+HD)?$""", RegexOption.IGNORE_CASE), "")
+                .replace(Regex("""\s+Online\s+Latino(\s+HD)?$""", RegexOption.IGNORE_CASE), "")
+                .replace(Regex("""\s+Online(\s+HD)?$""", RegexOption.IGNORE_CASE), "")
+                .replace(Regex("""\s+HD$""", RegexOption.IGNORE_CASE), "")
+                .trim()
+        } while (t != prev)
+        return t
+    }
 
     fun cleanServerName(rawName: String, url: String): String {
         val lower = rawName.lowercase().trim()
