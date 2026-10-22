@@ -20,9 +20,9 @@ import kotlinx.coroutines.coroutineScope
 object CineCalidadProvider : Provider {
 
     override val name = "CineCalidad"
-    override val baseUrl = "https://www.cinecalidad.ec"
+    override val baseUrl = "https://www.cinecalidad.vg"
     override val language = "es"
-    override val logo = "https://www.cinecalidad.ec/wp-content/themes/Cinecalidad/assets/img/logo.png"
+    override val logo = "https://www.cinecalidad.vg/wp-content/themes/Cinecalidad/assets/img/logo.png"
 
     private fun getOkHttpClient(): OkHttpClient {
         val appCache = Cache(File("cacheDir", "okhttpcache"), 10 * 1024 * 1024)
@@ -51,30 +51,42 @@ object CineCalidadProvider : Provider {
 
     private val service = retrofit.create(CineCalidadService::class.java)
 
-    private fun parseShows(elements: List<org.jsoup.nodes.Element>): List<Show> {
+        private fun parseShows(elements: List<org.jsoup.nodes.Element>): List<Show> {
         return elements.mapNotNull { element ->
-            val a = element.selectFirst("a") ?: return@mapNotNull null
+            val a = element.selectFirst("a[href*=/pelicula/], a[href*=/ver-pelicula/], a[href*=/ver-serie/], a[href*=/serie/]")
+                ?: element.selectFirst("a")
+                ?: return@mapNotNull null
             val href = a.attr("href")
+            if (href.isBlank() || href == "#!") return@mapNotNull null
 
-            val img = element.selectFirst("div.poster img") ?: return@mapNotNull null
-            val title = img.attr("alt")
+            val title = element.selectFirst("span.sr-only")?.text()
+                ?: element.selectFirst("h2")?.text()
+                ?: element.selectFirst("div.poster img")?.attr("alt")
+                ?: element.selectFirst("img")?.attr("alt")
+                ?: a.text()
+            if (title.isBlank()) return@mapNotNull null
 
-            val posterUrl = img.attr("data-src").ifEmpty { img.attr("src") }
+            val img = element.selectFirst("img")
+            val posterUrl = img?.attr("data-src")?.ifEmpty { img.attr("src") }
+                ?.takeIf { !it.startsWith("data:") }
 
-            if (href.contains("/ver-pelicula/")) {
-                Movie(
-                    id = href,
-                    title = title,
-                    poster = posterUrl
-                )
-            } else if (href.contains("/ver-serie/")) {
+            val year = element.selectFirst("div[style*=bottom]")?.text()
+                ?.let { Regex("""\b(19\d\d|20\d\d)\b""").find(it)?.value }
+
+            if (href.contains("/ver-serie/") || href.contains("/serie")) {
                 TvShow(
                     id = href,
                     title = title,
-                    poster = posterUrl
+                    poster = posterUrl,
+                    released = year
                 )
             } else {
-                null
+                Movie(
+                    id = href,
+                    title = title,
+                    poster = posterUrl,
+                    released = year
+                )
             }
         }
     }
@@ -110,17 +122,17 @@ object CineCalidadProvider : Provider {
                     categories.add(Category(Category.FEATURED, featuredShows))
                 }
 
-                val latestReleases = parseShows(mainDocument.select("article.item[id^=post-]"))
+                val latestReleases = parseShows(mainDocument.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
                 if (latestReleases.isNotEmpty()) {
                     categories.add(Category("Últimos Estrenos", latestReleases))
                 }
 
-                val actionShows = parseShows(actionDocument.select("article.item[id^=post-]"))
+                val actionShows = parseShows(actionDocument.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
                 if (actionShows.isNotEmpty()) {
                     categories.add(Category("Acción", actionShows))
                 }
 
-                val comedyShows = parseShows(comedyDocument.select("article.item[id^=post-]"))
+                val comedyShows = parseShows(comedyDocument.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
                 if (comedyShows.isNotEmpty()) {
                     categories.add(Category("Comedia", comedyShows))
                 }
@@ -160,7 +172,7 @@ object CineCalidadProvider : Provider {
 
         return try {
             val document = service.getPage("$baseUrl/page/$page?s=$query")
-            val searchResults = parseShows(document.select("article.item[id^=post-]"))
+            val searchResults = parseShows(document.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
             searchResults
         } catch (e: Exception) {
             emptyList()
@@ -170,7 +182,7 @@ object CineCalidadProvider : Provider {
     override suspend fun getMovies(page: Int): List<Movie> {
         return try {
             val document = service.getPage("$baseUrl/page/$page")
-            parseShows(document.select("article.item[id^=post-]"))
+            parseShows(document.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
                 .filterIsInstance<Movie>()
         } catch (e: Exception) {
             emptyList()
@@ -180,7 +192,7 @@ object CineCalidadProvider : Provider {
     override suspend fun getTvShows(page: Int): List<TvShow> {
         return try {
             val document = service.getPage("$baseUrl/ver-serie/page/$page")
-            parseShows(document.select("article.item[id^=post-]"))
+            parseShows(document.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
                 .filterIsInstance<TvShow>()
         } catch (e: Exception) {
             emptyList()
@@ -318,39 +330,82 @@ object CineCalidadProvider : Provider {
         }
     }
 
-    override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
+        override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
         return try {
             val document = service.getPage(id)
+            val servers = mutableListOf<Video.Server>()
 
-            document.select("#playeroptionsul li[data-option]")
-                .filterNot { element ->
-                    // Exclude trailer option
-                    element.hasClass("dooplay_player_option_trailer") || 
-                    element.text().contains("trailer", ignoreCase = true)
+            val asideOptions = document.select("aside:has(ul.options.dff), aside:has(a[data-src])")
+            for (aside in asideOptions) {
+                val langText = aside.selectFirst("p.text-sm, p")?.text() ?: ""
+                val langTag = when {
+                    langText.contains("Castellano", ignoreCase = true) || langText.contains("Español", ignoreCase = true) || langText.contains("Espanol", ignoreCase = true) -> "[CAST]"
+                    langText.contains("Subtitul", ignoreCase = true) || langText.contains("Ingles", ignoreCase = true) || langText.contains("Inglés", ignoreCase = true) -> "[SUB]"
+                    else -> "[LAT]"
                 }
-                .map { element ->
-                    val serverUrl = element.attr("data-option")
-                    val serverName = element.text()
 
-                    Video.Server(
-                        id = serverUrl,
-                        name = "$serverName [LAT]"
-                    )
+                val optionLinks = aside.select("ul.options.dff li a[data-src], a[data-src]")
+                for (link in optionLinks) {
+                    val rawDataSrc = link.attr("data-src")
+                    if (rawDataSrc.isBlank()) continue
+
+                    val decodedUrl = try {
+                        val decodedBytes = android.util.Base64.decode(rawDataSrc, android.util.Base64.DEFAULT)
+                        String(decodedBytes, Charsets.UTF_8).trim()
+                    } catch (e: Exception) {
+                        null
+                    }
+
+                    if (!decodedUrl.isNullOrEmpty() && decodedUrl.startsWith("http")) {
+                        val serverName = link.ownText().ifBlank { link.text() }.trim()
+                        servers.add(
+                            Video.Server(
+                                id = decodedUrl,
+                                name = "$serverName $langTag".trim(),
+                                src = decodedUrl
+                            )
+                        )
+                    }
                 }
+            }
+
+            if (servers.isEmpty()) {
+                document.select("#playeroptionsul li[data-option]")
+                    .filterNot { element ->
+                        element.hasClass("dooplay_player_option_trailer") || 
+                        element.text().contains("trailer", ignoreCase = true)
+                    }
+                    .forEach { element ->
+                        val serverUrl = element.attr("data-option")
+                        val serverName = element.text()
+                        if (serverUrl.isNotBlank()) {
+                            servers.add(
+                                Video.Server(
+                                    id = serverUrl,
+                                    name = "$serverName [LAT]",
+                                    src = serverUrl
+                                )
+                            )
+                        }
+                    }
+            }
+
+            servers.distinctBy { it.id }
         } catch (e: Exception) {
             emptyList()
         }
     }
 
-    override suspend fun getVideo(server: Video.Server): Video {
-        return Extractor.extract(server.id, server)
+        override suspend fun getVideo(server: Video.Server): Video {
+        val url = server.src.ifEmpty { server.id }
+        return Extractor.extract(url, server)
     }
 
     override suspend fun getGenre(id: String, page: Int): Genre {
         return try {
             val document = service.getPage("$baseUrl/$id/page/$page")
 
-            val shows = parseShows(document.select("article.item[id^=post-]"))
+            val shows = parseShows(document.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
             val genreName = id.substringAfterLast("/")
                 .replace("-", " ")
                 .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
@@ -383,7 +438,7 @@ object CineCalidadProvider : Provider {
 
             val image = null
 
-            val filmographyShows = parseShows(document.select("article.item[id^=post-]"))
+            val filmographyShows = parseShows(document.select("article.relative.group, article.group, article:has(a[href*=/pelicula/]), article:has(a[href*=/serie/]), article.item[id^=post-]"))
 
             People(
                 id = id,
