@@ -103,7 +103,8 @@ interface Provider {
             CineCityProvider to ProviderSupport(movies = false, tvShows = true),
             CineHaxProvider to ProviderSupport(movies = true, tvShows = true),
             TheFlixBayProvider to ProviderSupport(movies = true, tvShows = true),
-            Embed69Provider to ProviderSupport(movies = true, tvShows = true)
+            Embed69Provider to ProviderSupport(movies = true, tvShows = true),
+            PelisPlusHdProvider to ProviderSupport(movies = true, tvShows = true)
         )
 
         // Helper functions to check support

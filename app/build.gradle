@@ -41,8 +41,8 @@ android {
         applicationId "com.streamhub.applab"
         minSdk 21
         targetSdk 35
-        versionCode 182
-        versionName "1.7.252-lab"
+        versionCode 183
+        versionName "1.7.253-lab"
 
         buildConfigField "String", "APP_LAYOUT", "\"${appLayoutValue}\""
         buildConfigField "String", "TMDB_API_KEY", "\"${tmdbApiKeyValue}\""

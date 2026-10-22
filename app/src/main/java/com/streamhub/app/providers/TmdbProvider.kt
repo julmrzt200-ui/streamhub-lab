@@ -870,6 +870,7 @@ class TmdbProvider(override val language: String) : Provider {
 
                 val spanishProviders = listOf(
                     SpanishTmdbProvider("cuevana", "Cuevana 3", CuevanaEuProvider),
+                    SpanishTmdbProvider("pelisplus", "PelisPlusHD", PelisPlusHdProvider),
                     SpanishTmdbProvider("sololatino", "SoloLatino", SoloLatinoProvider),
                     SpanishTmdbProvider("cinecalidad", "CineCalidad", CineCalidadProvider),
                     SpanishTmdbProvider("poseidonhd2", "PoseidonHD2", PoseidonHD2Provider),
@@ -1378,6 +1379,7 @@ class TmdbProvider(override val language: String) : Provider {
     private fun spanishProviderByKey(key: String): Provider? =
         when (key) {
             "cuevana" -> CuevanaEuProvider
+            "pelisplus" -> PelisPlusHdProvider
             "sololatino" -> SoloLatinoProvider
             "cinecalidad" -> CineCalidadProvider
             "poseidonhd2" -> PoseidonHD2Provider
