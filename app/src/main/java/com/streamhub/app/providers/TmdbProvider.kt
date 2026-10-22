@@ -899,7 +899,6 @@ class TmdbProvider(override val language: String) : Provider {
                     servers.addAll(allDiscovered)
                 }
             }
-            }
             else -> {
                 // Per inglese (en) o altre lingue non specifiche, usiamo i server globali
                 servers.addAll(listOf(
