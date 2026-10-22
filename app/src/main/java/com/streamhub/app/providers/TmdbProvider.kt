@@ -1,5 +1,6 @@
 package com.streamhub.app.providers
 
+import java.util.Calendar
 import java.text.Normalizer
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.AfterDarkExtractor
@@ -1254,8 +1255,8 @@ class TmdbProvider(override val language: String) : Provider {
 
         val itemTitle = if (item is Movie) item.title else (item as TvShow).title
         val candYear = when (item) {
-            is Movie -> extractYear(item.released)
-            is TvShow -> extractYear(item.released)
+            is Movie -> item.released?.get(Calendar.YEAR)
+            is TvShow -> item.released?.get(Calendar.YEAR)
             else -> null
         } ?: extractYear(itemTitle)
 
