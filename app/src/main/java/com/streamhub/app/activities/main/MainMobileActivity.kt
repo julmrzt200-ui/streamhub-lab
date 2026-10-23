@@ -24,7 +24,6 @@ import com.streamhub.app.BuildConfig
 import com.streamhub.app.R
 import com.streamhub.app.databinding.ActivityMainMobileBinding
 import com.streamhub.app.fragments.player.PlayerMobileFragment
-import com.streamhub.app.providers.Cine24hProvider
 import com.streamhub.app.providers.IptvProvider
 import com.streamhub.app.providers.Provider
 import com.streamhub.app.providers.TheFlixBayProvider
@@ -54,7 +53,6 @@ class MainMobileActivity : FragmentActivity() {
 
         super.onCreate(savedInstanceState)
 
-        Cine24hProvider.init(this)
         ZaluknijProvider.init(this)
         TheFlixBayProvider.init(this)
 

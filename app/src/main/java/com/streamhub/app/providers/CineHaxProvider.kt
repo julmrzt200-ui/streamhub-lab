@@ -6,6 +6,7 @@ import androidx.media3.common.MimeTypes
 import com.streamhub.app.adapters.AppAdapter
 import com.streamhub.app.extractors.Extractor
 import com.streamhub.app.models.*
+import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.json.JSONObject
@@ -103,75 +104,54 @@ object CineHaxProvider : Provider {
 
     // endregion
 
-    // region Catalog (TMDb-shaped JSON, no HTML scraping)
+    // region Catalog (HTML scraping — replaces broken AJAX endpoints)
 
-    private fun JSONObject.toShow(): Show? {
-        val id = optInt("id", -1).takeIf { it != -1 } ?: return null
-        val isTv = optString("media_type") == "tv" || (!has("title") && has("name"))
-        val poster = optString("poster_path").takeIf { it.isNotEmpty() }?.let { "$TMDB_IMAGE_BASE$it" }
-        val backdrop = optString("backdrop_path").takeIf { it.isNotEmpty() }?.let { "$TMDB_IMAGE_BASE$it" }
-        val overview = optString("overview").takeIf { it.isNotEmpty() }
+    /**
+     * Parses `[data-cinehax-id]` cards rendered server-side on listing pages.
+     * Each card has: data-cinehax-id (TMDb id), data-cinehax-type ("movie"/"tv"),
+     * data-cinehax-title, data-cinehax-img.
+     */
+    private fun parseCinehaxCards(html: String): List<Show> {
+        val doc = Jsoup.parse(html)
+        return doc.select("[data-cinehax-id]").mapNotNull { el ->
+            val id = el.attr("data-cinehax-id").takeIf { it.isNotEmpty() } ?: return@mapNotNull null
+            val type = el.attr("data-cinehax-type")
+            val title = el.attr("data-cinehax-title").ifEmpty {
+                el.selectFirst("h3, p")?.text()
+            }.orEmpty().ifBlank { return@mapNotNull null }
+            val img = el.attr("data-cinehax-img").ifEmpty {
+                el.selectFirst("img")?.attr("src")
+            }.takeIf { it.isNotEmpty() }
 
-        return if (isTv) {
-            TvShow(
-                id = id.toString(),
-                title = optString("name").ifEmpty { optString("title") },
-                overview = overview,
-                poster = poster,
-                banner = backdrop,
-            )
-        } else {
-            Movie(
-                id = id.toString(),
-                title = optString("title").ifEmpty { optString("name") },
-                overview = overview,
-                poster = poster,
-                banner = backdrop,
-            )
-        }
-    }
-
-    private fun humanizeKey(key: String) = key.replace('_', ' ').replaceFirstChar { it.uppercase() }
-
-    override suspend fun getHome(): List<Category> {
-        val json = JSONObject(get("$baseUrl/wp-json/cinehax/v1/home-data"))
-        val categories = mutableListOf<Category>()
-        json.keys().forEach { key ->
-            val items = json.optJSONArray(key) ?: return@forEach
-            val shows = (0 until items.length()).mapNotNull { items.optJSONObject(it)?.toShow() }
-            if (shows.isNotEmpty()) {
-                categories.add(Category(name = HOME_CATEGORY_LABELS[key] ?: humanizeKey(key), list = shows))
+            if (type == "tv") {
+                TvShow(id = id, title = title, poster = img, banner = img)
+            } else {
+                Movie(id = id, title = title, poster = img, banner = img)
+            }
+        }.distinctBy { show ->
+            when (show) {
+                is Movie  -> show.id
+                is TvShow -> show.id
             }
         }
-        return categories
     }
 
-    @Volatile
-    private var cachedNonce: String? = null
+    override suspend fun getHome(): List<Category> {
+        // Scrape /peliculas and /series pages — both are server-rendered with [data-cinehax-id] cards
+        return try {
+            val moviesHtml = get("$baseUrl/peliculas")
+            val seriesHtml = get("$baseUrl/series")
 
-    private fun getValidNonce(): String {
-        cachedNonce?.let { return it }
-        val html = get(baseUrl)
-        val nonce = Regex(""""nonce"\s*:\s*"([^"]+)"""").find(html)?.groupValues?.get(1)
-            ?: throw Exception("Nonce not found in CineHax")
-        cachedNonce = nonce
-        return nonce
-    }
-
-    private fun fetchWithNonce(action: String, queryParams: String): JSONObject {
-        val urlBuilder = { nonce: String -> "$baseUrl/wp-admin/admin-ajax.php?action=$action&$queryParams&nonce=$nonce" }
-        var response = try {
-            get(urlBuilder(getValidNonce()))
+            val categories = mutableListOf<Category>()
+            val movies = parseCinehaxCards(moviesHtml).filterIsInstance<Movie>()
+            val series = parseCinehaxCards(seriesHtml).filterIsInstance<TvShow>()
+            if (movies.isNotEmpty()) categories.add(Category("Películas populares", movies))
+            if (series.isNotEmpty()) categories.add(Category("Series populares", series))
+            categories
         } catch (e: Exception) {
-            ""
+            Log.w(TAG, "getHome failed: ${e.message}")
+            emptyList()
         }
-        
-        // If 403 or failed, clear nonce and retry once
-        if (response.isBlank() || response.contains("Forbidden") || !JSONObject(response).optBoolean("success")) {
-            cachedNonce = null
-            response = get(urlBuilder(getValidNonce()))
-        }
-        return JSONObject(response)
     }
 
     override suspend fun search(query: String, page: Int): List<AppAdapter.Item> {
@@ -181,42 +161,48 @@ object CineHaxProvider : Provider {
         }
         if (page > 1) return emptyList()
 
-        val queryParams = "query=${URLEncoder.encode(query, "UTF-8")}"
-        val json = fetchWithNonce("tmdb_live_search", queryParams)
-        if (!json.optBoolean("success")) return emptyList()
-        val results = json.optJSONArray("data") ?: return emptyList()
-        return (0 until results.length()).mapNotNull { results.optJSONObject(it)?.toShow() }
-    }
-
-    private fun fetchExplorePage(type: String, page: Int, genre: String = "", sort: String = "popular"): List<Show> {
-        val queryParams = "page=$page&type=$type&genre=$genre&network=&language=&sort=$sort&q="
-        val json = fetchWithNonce("load_explore_data", queryParams)
-        if (!json.optBoolean("success")) return emptyList()
-        val html = json.optJSONObject("data")?.optString("html").orEmpty()
-        if (html.isBlank()) return emptyList()
-
-        return Jsoup.parse(html).select("a[href*=/ver/]").mapNotNull { a ->
-            val id = Regex("""id=(\d+)""").find(a.attr("href"))?.groupValues?.get(1) ?: return@mapNotNull null
-            val title = a.selectFirst("h3")?.text().orEmpty()
-            val poster = a.selectFirst("img")?.attr("src")
-            if (type == "tv") {
-                TvShow(id = id, title = title, poster = poster, banner = poster)
-            } else {
-                Movie(id = id, title = title, poster = poster, banner = poster)
-            }
+        // WordPress standard search: /?s=query — returns [data-cinehax-id] cards in HTML
+        return try {
+            val html = get("$baseUrl/?s=${URLEncoder.encode(query, "UTF-8")}")
+            parseCinehaxCards(html)
+        } catch (e: Exception) {
+            Log.w(TAG, "search failed: ${e.message}")
+            emptyList()
         }
     }
 
-    override suspend fun getMovies(page: Int): List<Movie> =
-        fetchExplorePage("movie", page).filterIsInstance<Movie>()
+    override suspend fun getMovies(page: Int): List<Movie> {
+        val url = if (page <= 1) "$baseUrl/peliculas" else "$baseUrl/peliculas/page/$page"
+        return try {
+            parseCinehaxCards(get(url)).filterIsInstance<Movie>()
+        } catch (e: Exception) {
+            Log.w(TAG, "getMovies page=$page failed: ${e.message}")
+            emptyList()
+        }
+    }
 
-    override suspend fun getTvShows(page: Int): List<TvShow> =
-        fetchExplorePage("tv", page).filterIsInstance<TvShow>()
+    override suspend fun getTvShows(page: Int): List<TvShow> {
+        val url = if (page <= 1) "$baseUrl/series" else "$baseUrl/series/page/$page"
+        return try {
+            parseCinehaxCards(get(url)).filterIsInstance<TvShow>()
+        } catch (e: Exception) {
+            Log.w(TAG, "getTvShows page=$page failed: ${e.message}")
+            emptyList()
+        }
+    }
 
     override suspend fun getGenre(id: String, page: Int): Genre {
         val type = id.substringBefore(":")
         val slug = id.substringAfter(":")
-        val shows = fetchExplorePage(type, page, genre = slug)
+        val basePageUrl = "$baseUrl/${if (type == "tv") "series" else "peliculas"}"
+        val url = if (page <= 1) basePageUrl else "$basePageUrl/page/$page"
+        val shows = try {
+            // Filter by genre from the listing page (no server-side genre filter available via HTML,
+            // so we return the generic listing; genre detail is only reachable via the AJAX endpoint)
+            parseCinehaxCards(get(url))
+        } catch (e: Exception) {
+            emptyList()
+        }
         return Genre(id = id, name = GENRES.toMap()[id] ?: slug, shows = shows)
     }
 
@@ -271,12 +257,7 @@ object CineHaxProvider : Provider {
     }
 
     private fun parseWatchPageFromDom(html: String): WatchPageMeta {
-        val embedDataUrl = Regex("""data-url="(https://$UNLIMPLAY_HOST[^"]*)"""")
-            .find(html)?.groupValues?.get(1)?.replace("&#038;", "&")
-            ?: throw Exception("No se pudo leer la metadata de CineHax")
-        val embedUri = Uri.parse(embedDataUrl)
-
-        val overview = Regex("""Descripción</h3>\s*<p[^>]*>([^<]*)</p>""")
+        val overview = Regex("""Descripción</h3>\s*<p[^>]*>([^<]*)</p>""", RegexOption.IGNORE_CASE)
             .find(html)?.groupValues?.get(1)?.trim()?.takeIf { it.isNotEmpty() }
 
         val rating = Regex("""font-bold text-white flex items-center gap-0\.5">([\d.]+)</div>""")
@@ -292,10 +273,10 @@ object CineHaxProvider : Provider {
             .toList()
 
         return WatchPageMeta(
-            title = embedUri.getQueryParameter("title").orEmpty(),
+            title = "",
             overview = overview,
             poster = extractPoster(html),
-            backdrop = embedUri.getQueryParameter("backdrop"),
+            backdrop = null,
             rating = rating,
             released = released,
             genres = genres,
@@ -312,27 +293,30 @@ object CineHaxProvider : Provider {
     }
 
     override suspend fun getMovie(id: String): Movie {
-        val meta = parseWatchPage(get("$baseUrl/watch/?type=movie&id=$id"))
+        val url = "$baseUrl/ver/?tipo=pelicula&id=$id"
+        val html = runCatching { get(url) }.getOrNull().orEmpty()
+        val meta = if (html.isNotBlank()) parseWatchPage(html) else null
         
         // Fetch missing title/backdrop from TMDb since CineHax removed them from the HTML
         val tmdb = runCatching { TMDb3.Movies.details(id.toInt(), language = language) }.getOrNull()
         
         return Movie(
             id = id,
-            title = tmdb?.title ?: meta.title,
-            overview = tmdb?.overview ?: meta.overview,
-            released = meta.released,
-            rating = meta.rating,
-            poster = meta.poster,
-            banner = tmdb?.backdropPath?.let { "https://image.tmdb.org/t/p/original$it" } ?: meta.backdrop,
-            trailer = meta.trailer,
-            genres = meta.genres,
+            title = tmdb?.title ?: meta?.title.orEmpty().ifBlank { "Película $id" },
+            overview = tmdb?.overview ?: meta?.overview,
+            released = meta?.released,
+            rating = meta?.rating,
+            poster = meta?.poster ?: tmdb?.posterPath?.let { "$TMDB_IMAGE_BASE$it" },
+            banner = tmdb?.backdropPath?.let { "https://image.tmdb.org/t/p/original$it" } ?: meta?.backdrop,
+            trailer = meta?.trailer,
+            genres = tmdb?.genres?.map { Genre(id = it.id.toString(), name = it.name) } ?: meta?.genres.orEmpty(),
         )
     }
 
     override suspend fun getTvShow(id: String): TvShow {
-        val html = get("$baseUrl/watch/?type=tv&id=$id&season=1&episode=1")
-        val meta = parseWatchPage(html)
+        val html = runCatching { get("$baseUrl/ver/?tipo=serie&id=$id&season=1&episode=1") }.getOrNull().orEmpty()
+        val meta = if (html.isNotBlank()) parseWatchPage(html) else null
+
         // The season chips and every episode link on the page both carry "season=N"; collecting
         // every distinct N this way is more robust than pinning to one exact CSS structure.
         val seasonNumbers = Regex("""season=(\d+)""").findAll(html)
@@ -346,14 +330,14 @@ object CineHaxProvider : Provider {
 
         return TvShow(
             id = id,
-            title = tmdb?.name ?: meta.title,
-            overview = tmdb?.overview ?: meta.overview,
-            released = meta.released,
-            rating = meta.rating,
-            poster = meta.poster,
-            banner = tmdb?.backdropPath?.let { "https://image.tmdb.org/t/p/original$it" } ?: meta.backdrop,
-            trailer = meta.trailer,
-            genres = meta.genres,
+            title = tmdb?.name ?: meta?.title.orEmpty().ifBlank { "Serie $id" },
+            overview = tmdb?.overview ?: meta?.overview,
+            released = meta?.released,
+            rating = meta?.rating,
+            poster = meta?.poster ?: tmdb?.posterPath?.let { "$TMDB_IMAGE_BASE$it" },
+            banner = tmdb?.backdropPath?.let { "https://image.tmdb.org/t/p/original$it" } ?: meta?.backdrop,
+            trailer = meta?.trailer,
+            genres = tmdb?.genres?.map { Genre(id = it.id.toString(), name = it.name) } ?: meta?.genres.orEmpty(),
             seasons = seasonNumbers.map { number -> Season(id = "$id-$number", number = number, title = "Temporada $number") },
         )
     }
@@ -391,33 +375,87 @@ object CineHaxProvider : Provider {
     // region Playback
 
     override suspend fun getServers(id: String, videoType: Video.Type): List<Video.Server> {
-        val watchUrl = when (videoType) {
-            is Video.Type.Movie -> "$baseUrl/ver/?tipo=pelicula&id=$id"
+        val (typeStr, mediaId, season, episode, watchUrl) = when (videoType) {
+            is Video.Type.Movie -> Quintuple("movie", id, "1", "1", "$baseUrl/ver/?tipo=pelicula&id=$id")
             is Video.Type.Episode -> {
                 val parts = id.split("|")
-                val tvId = parts.getOrNull(0) ?: return emptyList()
-                val season = parts.getOrNull(1) ?: "1"
-                val episode = parts.getOrNull(2) ?: "1"
-                "$baseUrl/ver/?tipo=serie&id=$tvId&season=$season&episode=$episode"
+                val tvId = parts.getOrNull(0) ?: id
+                val s = parts.getOrNull(1) ?: "1"
+                val ep = parts.getOrNull(2) ?: "1"
+                Quintuple("tv", tvId, s, ep, "$baseUrl/ver/?tipo=serie&id=$tvId&season=$s&episode=$ep")
             }
         }
-
-        val doc = Jsoup.parse(get(watchUrl))
-        val embedPageUrls = doc.select("[data-url*=$UNLIMPLAY_HOST]")
-            .map { it.attr("data-url") }
-            .distinct()
-        if (embedPageUrls.isEmpty()) return emptyList()
 
         val servers = mutableListOf<Video.Server>()
-        for (embedPageUrl in embedPageUrls) {
-            try {
-                servers.addAll(resolveUnlimplayServers(embedPageUrl))
-            } catch (e: Exception) {
-                Log.w(TAG, "Failed to resolve embed page $embedPageUrl: ${e.message}")
+        val html = runCatching { get(watchUrl) }.getOrNull().orEmpty()
+        val nonce = Regex(""""nonce"\s*:\s*"([^"]+)"""").find(html)?.groupValues?.get(1).orEmpty()
+        val serverButtons = Regex("""data-server-idx="(\d+)"""").findAll(html).map { it.groupValues[1] }.toList()
+
+        // 1. Query dynamic servers via cinehax_get_embed AJAX if nonce is available
+        if (nonce.isNotBlank()) {
+            val indices = if (serverButtons.isNotEmpty()) serverButtons else listOf("0", "1")
+            for (idx in indices) {
+                try {
+                    val formBody = FormBody.Builder()
+                        .add("action", "cinehax_get_embed")
+                        .add("nonce", nonce)
+                        .add("server", idx)
+                        .add("type", typeStr)
+                        .add("id", mediaId)
+                        .add("season", season)
+                        .add("episode", episode)
+                        .build()
+
+                    val req = Request.Builder()
+                        .url("$baseUrl/wp-admin/admin-ajax.php")
+                        .header("Referer", watchUrl)
+                        .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+                        .post(formBody)
+                        .build()
+
+                    httpClient.newCall(req).execute().use { resp ->
+                        val body = resp.body?.string().orEmpty()
+                        val json = JSONObject(body)
+                        val embedUrl = json.optJSONObject("data")?.optString("url").orEmpty()
+                        if (embedUrl.isNotBlank()) {
+                            if (embedUrl.contains(UNLIMPLAY_HOST)) {
+                                val resolved = runCatching { resolveUnlimplayServers(embedUrl) }.getOrNull().orEmpty()
+                                if (resolved.isNotEmpty()) {
+                                    servers.addAll(resolved)
+                                } else {
+                                    servers.add(Video.Server(id = embedUrl, name = "Unlimplay (Multi)", src = embedUrl))
+                                }
+                            } else {
+                                val serverLabel = if (embedUrl.contains("moviemaster")) "MovieMaster" else "Servidor ${idx.toInt() + 1}"
+                                servers.add(Video.Server(id = embedUrl, name = "$serverLabel (Multi)", src = embedUrl))
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.w(TAG, "Failed server idx $idx: ${e.message}")
+                }
             }
         }
-        return servers
+
+        // 2. Direct fallback templates if AJAX was blocked or returned no servers
+        if (servers.isEmpty()) {
+            if (typeStr == "movie") {
+                val unlim = "https://unlimplay.com/f/embed/movie/$mediaId"
+                val mm = "https://api.moviemaster.lat/e/movie/$mediaId?skin=minimal"
+                servers.add(Video.Server(id = unlim, name = "Unlimplay (Multi)", src = unlim))
+                servers.add(Video.Server(id = mm, name = "MovieMaster (Multi)", src = mm))
+            } else {
+                val unlim = "https://unlimplay.com/f/embed/tv/$mediaId/$season/$episode"
+                val mm = "https://api.moviemaster.lat/e/tv/$mediaId/$season/$episode?skin=minimal"
+                servers.add(Video.Server(id = unlim, name = "Unlimplay (Multi)", src = unlim))
+                servers.add(Video.Server(id = mm, name = "MovieMaster (Multi)", src = mm))
+            }
+        }
+
+        return servers.distinctBy { it.src }
     }
+
+    private data class Quintuple<A, B, C, D, E>(val first: A, val second: B, val third: C, val fourth: D, val fifth: E)
 
     private fun resolveUnlimplayServers(embedPageUrl: String): List<Video.Server> {
         val embedHtml = get(embedPageUrl, referer = "$baseUrl/")

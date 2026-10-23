@@ -85,7 +85,6 @@ interface Provider {
             TioAnimeProvider to ProviderSupport(movies = true, tvShows = true),
             AnimeAv1Provider to ProviderSupport(movies = false, tvShows = true),
             SoloLatinoProvider to ProviderSupport(movies = true, tvShows = true),
-            Cine24hProvider to ProviderSupport(movies = true, tvShows = true),
             PelisflixHdProvider to ProviderSupport(movies = true, tvShows = true),
             AnimeSaturnProvider to ProviderSupport(movies = false, tvShows = true),
             FrenchStreamProvider to ProviderSupport(movies = true, tvShows = true),
