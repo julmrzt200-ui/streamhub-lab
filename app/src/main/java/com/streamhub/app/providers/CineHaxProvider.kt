@@ -117,10 +117,10 @@ object CineHaxProvider : Provider {
             val id = el.attr("data-cinehax-id").takeIf { it.isNotEmpty() } ?: return@mapNotNull null
             val type = el.attr("data-cinehax-type")
             val title = el.attr("data-cinehax-title").ifEmpty {
-                el.selectFirst("h3, p")?.text()
-            }.orEmpty().ifBlank { return@mapNotNull null }
+                el.selectFirst("h3, p")?.text().orEmpty()
+            }.ifBlank { return@mapNotNull null }
             val img = el.attr("data-cinehax-img").ifEmpty {
-                el.selectFirst("img")?.attr("src")
+                el.selectFirst("img")?.attr("src").orEmpty()
             }.takeIf { it.isNotEmpty() }
 
             if (type == "tv") {
