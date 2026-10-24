@@ -55,6 +55,7 @@ abstract class Extractor {
             ChillxExtractor(),
             ChillxExtractor.JeanExtractor(),
             MoviesapiExtractor(),
+            MovieMasterExtractor(),
             CloseloadExtractor(),
             LuluVdoExtractor(),
             FastreamExtractor(),
